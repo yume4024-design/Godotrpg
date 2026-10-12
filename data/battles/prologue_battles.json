@@ -1,0 +1,24 @@
+{
+  "battles": [
+    {
+      "id": "B001",
+      "name": "森林首次戰鬥",
+      "enemies": [
+        {"id": "forest_slime", "level": 1, "count": 2}
+      ],
+      "tutorial": true,
+      "escape_allowed": false,
+      "rewards": {"gold": 12, "exp": 20}
+    },
+    {
+      "id": "B002",
+      "name": "腐化守衛",
+      "enemies": [
+        {"id": "corrupted_guardian", "level": 3, "count": 1}
+      ],
+      "tutorial": false,
+      "escape_allowed": false,
+      "rewards": {"gold": 50, "exp": 80}
+    }
+  ]
+}

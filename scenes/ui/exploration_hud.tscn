@@ -1,0 +1,124 @@
+[gd_scene load_steps=5 format=3]
+
+[sub_resource type="SystemFont" id="Font"]
+font_names = PackedStringArray("Microsoft JhengHei UI", "Microsoft JhengHei", "Noto Sans CJK TC")
+
+[sub_resource type="StyleBoxFlat" id="Panel"]
+bg_color = Color(0.035, 0.075, 0.095, 0.94)
+border_width_left = 3
+border_color = Color(0.85, 0.68, 0.35, 1)
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 14.0
+content_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxFlat" id="Footer"]
+bg_color = Color(0.035, 0.075, 0.095, 0.94)
+content_margin_left = 20.0
+content_margin_right = 20.0
+content_margin_top = 12.0
+content_margin_bottom = 12.0
+
+[sub_resource type="Theme" id="Theme"]
+default_font = SubResource("Font")
+default_font_size = 18
+Label/colors/font_color = Color(0.91, 0.94, 0.9, 1)
+
+[node name="HUD" type="CanvasLayer"]
+
+[node name="Layout" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = SubResource("Theme")
+theme_override_constants/margin_left = 28
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 24
+
+[node name="Column" type="VBoxContainer" parent="Layout"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Top" type="HBoxContainer" parent="Layout/Column"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Location" type="PanelContainer" parent="Layout/Column/Top"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Panel")
+
+[node name="Text" type="VBoxContainer" parent="Layout/Column/Top/Location"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 5
+
+[node name="Eyebrow" type="Label" parent="Layout/Column/Top/Location/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.73, 0.44, 1)
+theme_override_font_sizes/font_size = 14
+text = "失落星核  /  PROJECT CRYSTAL"
+
+[node name="Title" type="Label" parent="Layout/Column/Top/Location/Text"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "灰石村外 · 練習場"
+
+[node name="Subtitle" type="Label" parent="Layout/Column/Top/Location/Text"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.7, 0.79, 0.78, 1)
+theme_override_font_sizes/font_size = 16
+text = "沿著石徑，試著繞過石塊與矮牆。"
+
+[node name="Space" type="Control" parent="Layout/Column/Top"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Phase" type="Label" parent="Layout/Column/Top"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.95, 0.91, 0.78, 1)
+theme_override_colors/font_shadow_color = Color(0.03, 0.06, 0.08, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 16
+text = "PHASE 01\n探索原型"
+horizontal_alignment = 2
+
+[node name="OpenPlayfield" type="Control" parent="Layout/Column"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="Controls" type="PanelContainer" parent="Layout/Column"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("Footer")
+
+[node name="Row" type="HBoxContainer" parent="Layout/Column/Controls"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 28
+
+[node name="Move" type="Label" parent="Layout/Column/Controls/Row"]
+layout_mode = 2
+text = "W A S D  /  方向鍵     移動"
+
+[node name="Reset" type="Label" parent="Layout/Column/Controls/Row"]
+layout_mode = 2
+text = "R     返回起點"
+
+[node name="Space" type="Control" parent="Layout/Column/Controls/Row"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+
+[node name="Name" type="Label" parent="Layout/Column/Controls/Row"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.88, 0.73, 0.44, 1)
+text = "雷恩  ·  見習冒險者"

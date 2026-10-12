@@ -1,0 +1,295 @@
+{
+  "chapter_id": "CH00",
+  "chapter_name": "灰石村的異變",
+  "initial_event": "E001",
+  "events": [
+    {
+      "id": "E001",
+      "type": "cutscene",
+      "trigger": {
+        "kind": "game_start",
+        "key": "new_game"
+      },
+      "conditions": [],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "清晨的陽光照進灰石村。"
+        },
+        {
+          "speaker": "ren",
+          "text": "今天終於能接第一份正式委託了。"
+        }
+      ],
+      "actions": [
+        {
+          "type": "set_flag",
+          "key": "prologue_started",
+          "value": true
+        },
+        {
+          "type": "set_objective",
+          "text": "前往冒險者公會"
+        },
+        {
+          "type": "unlock_control"
+        }
+      ],
+      "complete_flag": "e001_done"
+    },
+    {
+      "id": "E002",
+      "type": "dialogue",
+      "trigger": {
+        "kind": "interact",
+        "key": "npc_guildmaster"
+      },
+      "conditions": ["e001_done"],
+      "dialogue": [
+        {
+          "speaker": "guildmaster",
+          "text": "雷恩，你來得正好。礦坑出現了異常。"
+        },
+        {
+          "speaker": "ren",
+          "text": "這是我的第一份正式委託嗎？"
+        },
+        {
+          "speaker": "guildmaster",
+          "text": "沒錯。小心行動，別逞強。"
+        }
+      ],
+      "actions": [
+        {
+          "type": "start_quest",
+          "quest_id": "Q001"
+        },
+        {
+          "type": "set_objective",
+          "text": "與公會裡的莉雅交談"
+        }
+      ],
+      "complete_flag": "e002_done"
+    },
+    {
+      "id": "E003",
+      "type": "dialogue",
+      "trigger": {
+        "kind": "interact",
+        "key": "npc_lia"
+      },
+      "conditions": ["e002_done"],
+      "dialogue": [
+        {
+          "speaker": "lia",
+          "text": "等等，你也要去礦坑？讓我同行吧！"
+        },
+        {
+          "speaker": "ren",
+          "text": "你看起來不像擅長野外冒險的人。"
+        },
+        {
+          "speaker": "lia",
+          "text": "我可是星晶研究員！雖然第一次來這裡……"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_party_member",
+          "character_id": "lia"
+        },
+        {
+          "type": "set_objective",
+          "text": "前往村外森林"
+        }
+      ],
+      "complete_flag": "e003_done"
+    },
+    {
+      "id": "E004",
+      "type": "battle",
+      "trigger": {
+        "kind": "area_enter",
+        "key": "forest_first_encounter"
+      },
+      "conditions": ["e003_done"],
+      "dialogue": [
+        {
+          "speaker": "lia",
+          "text": "前面有魔物！準備戰鬥！"
+        }
+      ],
+      "actions": [
+        {
+          "type": "start_battle",
+          "battle_id": "B001",
+          "victory_flag": "battle_b001_won"
+        }
+      ],
+      "complete_conditions": ["battle_b001_won"],
+      "complete_actions": [
+        {
+          "type": "set_objective",
+          "text": "調查廢棄礦坑"
+        }
+      ],
+      "complete_flag": "e004_done"
+    },
+    {
+      "id": "E005",
+      "type": "exploration",
+      "trigger": {
+        "kind": "area_enter",
+        "key": "mine_inner_area"
+      },
+      "conditions": ["e004_done"],
+      "dialogue": [
+        {
+          "speaker": "ren",
+          "text": "這裡好像很久沒有人來過了。"
+        },
+        {
+          "speaker": "lia",
+          "text": "附近的星晶能量有些奇怪。"
+        }
+      ],
+      "actions": [
+        {
+          "type": "add_item",
+          "item_id": "potion",
+          "amount": 2
+        },
+        {
+          "type": "set_objective",
+          "text": "調查礦坑深處的星晶"
+        }
+      ],
+      "complete_flag": "e005_done"
+    },
+    {
+      "id": "E006",
+      "type": "cutscene",
+      "trigger": {
+        "kind": "interact",
+        "key": "ancient_crystal"
+      },
+      "conditions": ["e005_done"],
+      "dialogue": [
+        {
+          "speaker": "aster",
+          "text": "你終於回來了……"
+        },
+        {
+          "speaker": "ren",
+          "text": "誰？你認識我？"
+        },
+        {
+          "speaker": "lia",
+          "text": "雷恩！晶體的能量正在失控！"
+        },
+        {
+          "speaker": "aster",
+          "text": "請不要讓這個世界再次沉睡……"
+        }
+      ],
+      "actions": [
+        {
+          "type": "play_cutscene",
+          "cutscene_id": "crystal_awakening"
+        },
+        {
+          "type": "set_flag",
+          "key": "star_mark_awakened",
+          "value": true
+        },
+        {
+          "type": "add_item",
+          "item_id": "star_seal_01",
+          "amount": 1
+        },
+        {
+          "type": "set_objective",
+          "text": "擊敗甦醒的古代守衛"
+        }
+      ],
+      "complete_flag": "e006_done"
+    },
+    {
+      "id": "E007",
+      "type": "battle",
+      "trigger": {
+        "kind": "area_enter",
+        "key": "mine_boss_arena"
+      },
+      "conditions": ["e006_done"],
+      "dialogue": [
+        {
+          "speaker": "lia",
+          "text": "守衛被喚醒了！小心它的攻擊！"
+        }
+      ],
+      "actions": [
+        {
+          "type": "start_battle",
+          "battle_id": "B002",
+          "victory_flag": "battle_b002_won"
+        }
+      ],
+      "complete_conditions": ["battle_b002_won"],
+      "complete_actions": [
+        {
+          "type": "set_objective",
+          "text": "返回灰石村回報"
+        }
+      ],
+      "complete_flag": "e007_done"
+    },
+    {
+      "id": "E008",
+      "type": "cutscene",
+      "trigger": {
+        "kind": "interact",
+        "key": "npc_guildmaster"
+      },
+      "conditions": ["e007_done"],
+      "dialogue": [
+        {
+          "speaker": "guildmaster",
+          "text": "你們平安回來就好。礦坑究竟發生了什麼？"
+        },
+        {
+          "speaker": "lia",
+          "text": "我們必須去翠影森林找答案。"
+        },
+        {
+          "speaker": "ren",
+          "text": "那就把這當成下一次冒險吧。"
+        }
+      ],
+      "actions": [
+        {
+          "type": "complete_quest",
+          "quest_id": "Q001"
+        },
+        {
+          "type": "add_gold",
+          "amount": 150
+        },
+        {
+          "type": "add_exp",
+          "amount": 200
+        },
+        {
+          "type": "set_flag",
+          "key": "chapter_01_unlocked",
+          "value": true
+        },
+        {
+          "type": "set_objective",
+          "text": "前往翠影森林"
+        }
+      ],
+      "complete_flag": "prologue_complete"
+    }
+  ]
+}

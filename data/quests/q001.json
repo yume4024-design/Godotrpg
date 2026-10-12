@@ -1,0 +1,38 @@
+{
+  "id": "Q001",
+  "name": "礦坑異變調查",
+  "chapter": "CH00",
+  "giver": "npc_guildmaster",
+  "description": "調查村外廢棄礦坑的魔物異常。",
+  "objectives": [
+    {
+      "id": "OBJ01",
+      "description": "前往村外森林",
+      "required_flag": "e004_done"
+    },
+    {
+      "id": "OBJ02",
+      "description": "調查廢棄礦坑",
+      "required_flag": "e005_done"
+    },
+    {
+      "id": "OBJ03",
+      "description": "檢查異常星晶",
+      "required_flag": "e006_done"
+    },
+    {
+      "id": "OBJ04",
+      "description": "擊敗腐化守衛",
+      "required_flag": "e007_done"
+    },
+    {
+      "id": "OBJ05",
+      "description": "向公會長回報",
+      "required_flag": "prologue_complete"
+    }
+  ],
+  "rewards": {
+    "gold": 150,
+    "exp": 200
+  }
+}
