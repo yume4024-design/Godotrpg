@@ -1,0 +1,41 @@
+{
+  "speakers": {
+    "narrator": "旁白",
+    "ren": "雷恩",
+    "guildmaster": "公會長",
+    "lia": "莉雅",
+    "aster": "神秘聲音"
+  },
+  "conversations": {
+    "npc_guildmaster": [
+      {
+        "speaker": "guildmaster",
+        "text": "莉雅就在公會旁。出村前，記得帶上補給。"
+      }
+    ],
+    "npc_lia": [
+      {
+        "speaker": "lia",
+        "text": "我正在整理礦坑的研究資料。先熟悉村子和森林入口吧。"
+      }
+    ],
+    "chest_received": [
+      {
+        "speaker": "narrator",
+        "text": "取得旅人乾糧 ×1。補給已收進背包。"
+      }
+    ],
+    "chest_empty": [
+      {
+        "speaker": "narrator",
+        "text": "補給箱已經空了。"
+      }
+    ],
+    "forest_sign": [
+      {
+        "speaker": "narrator",
+        "text": "前方通往廢棄礦坑。道路暫未開放，請沿原路返回灰石村。"
+      }
+    ]
+  }
+}

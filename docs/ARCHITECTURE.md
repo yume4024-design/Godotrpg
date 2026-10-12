@@ -1,6 +1,25 @@
 # 架構設計與實作邊界
 
-Phase 1 的 Main、Player、固定鏡頭、練習場及 HUD 已實作；其餘管理系統仍為設計約定，於需要的階段逐一加入。
+Phase 1／2 已實作 Main、Player、固定鏡頭、練習場、兩張探索地圖、UI，以及 Flag／Dialogue／Story／EventRunner／Quest／Inventory／SceneManager 的最小行為。Party／Battle／Save 等系統仍為後續設計約定。
+
+## P2 實際組裝與狀態歸屬
+
+Main 的 ExplorationGame 負責初始化、JSON 錯誤處理、輸入鎖與服務注入；保留 Main、Player、CameraRig 和所有服務節點，只替換 MapContainer 下的村莊／森林。沒有 Autoload，也沒有空的 GameManager 或 SessionState；本輪 session 由持續存在的 Main 子組件擁有，P3～P5 在這個生命週期上擴充。
+
+| 狀態 | 唯一擁有者／修改入口 | 通知 |
+| --- | --- | --- |
+| 劇情旗標 | FlagManager.set_flag | changed |
+| 已接受任務 | QuestManager.accept；目標完成數讀 FlagManager | changed |
+| 物品數量、已領來源 | InventoryManager.claim 同步提交兩者 | changed |
+| 目前事件、目標與執行鎖 | EventRunner.try_start／對話完成回呼 | busy_changed、objective_changed、event_completed |
+| 對話行與等待狀態 | DialogueManager.start／advance／mark_revealed | active_changed、line_changed、finished |
+| 地圖與切換鎖 | ExplorationSceneManager.travel | transition_changed、map_changed |
+
+StoryCatalog 解析及驗證 JSON；StoryManager 依 trigger kind/key 路由 E001/E002；EventRunner 在任何狀態變更前檢查可執行動作，對話結束才提交動作及完成旗標。後續事件明確停用，沒有模擬入隊或戰鬥勝利。UI 僅發送 advance_requested，管理打字 Tween 並回報 reveal_finished，不修改旗標／背包／任務。
+
+WorldInteractable 使用距離加物理射線檢查；Main 每個物理幀在地圖快取清單找最近可達對象，執行時再驗證距離與視線。地圖使用 Marker3D 定義出生點與森林鏡頭區域；角度固定，只平滑改變正交視野。切圖立即上鎖，再延後替換地圖與淡入淡出，入口出生點離出口互動半徑至少 3 公尺。
+
+道具定義是唯讀 ItemDefinition Resource；數量／來源帳本為 InventoryManager 私有 Dictionary。P2 寶箱来源 village_supply_chest 僅給 trail_ration ×1，與 E005 potion 分離。本輪沒有磁碟保存、金幣、使用道具或角色數值。
 
 ## 資料流
 

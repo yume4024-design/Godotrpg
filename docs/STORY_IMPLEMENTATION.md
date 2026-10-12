@@ -59,7 +59,7 @@
 | E007 | e006_done；mine_boss_arena | B002 勝利 → battle_b002_won → e007_done | P3 戰鬥 → P5 |
 | E008 | e007_done；返回公會長互動 | Q001 交付、150 金幣/200 EXP、章節解鎖、prologue_complete | P4 獎勵 → P5 |
 
-依故事原文的六項工作包：S01 Story System 於 P2 建最小載入/Flag/Story/EventRunner，S02 Dialogue UI 於 P2，S03 Quest System 於 P2 接任務、P5 完整日誌，S04 Battle Integration 於 P3～P5，S05 Save/Load 於 P5，S06 Full Prologue 於 P5 整合、P6 匯出驗收。實作進度以 [TASKS](TASKS.md) 為準，全部仍待開始。
+依故事原文的六項工作包：S01 Story System 於 P2 建最小載入/Flag/Story/EventRunner，S02 Dialogue UI 於 P2，S03 Quest System 於 P2 接任務、P5 完整日誌，S04 Battle Integration 於 P3～P5，S05 Save/Load 於 P5，S06 Full Prologue 於 P5 整合、P6 匯出驗收。P2 的 S01/S02/S03 最小版已完成，實作進度以 [TASKS](TASKS.md) 為準。
 
 ## 執行契約（待實作）
 
@@ -78,11 +78,11 @@
 
 ## 仍需建立的引用
 
-P2：narrator/ren/guildmaster/lia 的顯示資料、new_game/npc_guildmaster/npc_lia/forest_first_encounter 等場景綁定。
+P2 已建立 narrator/ren/guildmaster/lia 顯示資料與 new_game/npc_guildmaster 綁定。npc_lia 目前僅環境對話，不觸發 E003；forest_first_encounter 留待戰鬥整合。aster 的顯示名稱登記為「神秘聲音」，E006 尚未啟用。環境對話在 data/story/exploration_dialogue.json，未改寫故事原文或 E001～E008。
 
 P3～P4：ren/lia 角色定義、forest_slime/corrupted_guardian 敵人資料、potion 的效果與顯示、行動及獎勵實作。
 
-P5：star_seal_01 關鍵物品、aster 神秘聲音的顯示、crystal_awakening 真正可播放的演出、mine_inner_area/ancient_crystal/mine_boss_arena 綁定及安全讀檔。這些引用目前皆未建立，不應把靜態 JSON 檢查說成引用已解析成功。
+P5：star_seal_01 關鍵物品、aster 對應的 E006 演出、crystal_awakening 真正可播放的演出、mine_inner_area/ancient_crystal/mine_boss_arena 綁定及安全讀檔。這些可執行資源／綁定目前皆未建立，不應把靜態 JSON 檢查說成引用已解析成功。
 
 ## 序章後的內容路線（全部待開始）
 
@@ -98,6 +98,8 @@ P5：star_seal_01 關鍵物品、aster 神秘聲音的顯示、crystal_awakening
 
 結局 A「人類的新時代」關閉能源輸出；B「永恆的光芒」由人類限額控制；C「星核的黎明」修復自然循環與能源分配。真結局需三條角色支線全部完成，且持有/取得過古代修復記錄、工匠能源轉換圖、古樹的祝福；不能只選一個對話選項就解鎖。支線詳細任務、ID、三條支線對應與旗標於後續內容設計時補齊，未定義前不假設已存在。
 
-## 本輪靜態核對
+## 企劃加入時的靜態核對（歷史紀錄）
 
 原文副本逐位元保存並核對 SHA256；三份 JSON 可解析，事件/任務目標/戰鬥 ID 唯一；條件旗標、Q001/B001/B002 引用及任務獎勵數值已核對。角色/資源引用、觸發器、戰鬥與讀檔行為尚無引擎實作，全部待驗證。完整操作清單見 [ACCEPTANCE](ACCEPTANCE.md)。
+
+P2 後續驗證已涵蓋 E001/E002 的條件、輸入鎖、完成旗標、任務接取及切圖保留；JSON 執行時驗證 ID、型別、說話者、旗標、任務／戰鬥 ID 和勝利門檻。後續角色、道具、演出資源尚未解析成可執行系統，不能將其已知動作格式當作功能完成。詳見 [P2 驗收](PHASE2_REPORT.md)。

@@ -7,7 +7,7 @@ func _initialize() -> void:
 
 
 func _run() -> void:
-	var packed: PackedScene = load(ProjectSettings.get_setting("application/run/main_scene")) as PackedScene
+	var packed: PackedScene = load("res://scenes/main/practice_main.tscn") as PackedScene
 	var main: Node3D = packed.instantiate() as Node3D
 	root.add_child(main)
 	current_scene = main

@@ -12,7 +12,7 @@
 | Console 執行檔 | D:\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-stable_win64_console.exe |
 | 引擎 --version | 4.7.2.stable.official.ed1daf0bf |
 | Git --version | 2.55.0.windows.5 |
-| 專案狀態 | Phase 1 已有 project.godot、場景/腳本；故事 JSON 未接遊戲流程 |
+| 專案狀態 | Phase 1／2 已完成；E001/E002、探索／對話／任務接取可玩，詳見 PHASE2_REPORT.md |
 | Git 倉庫 | 已初始化本地 main；無遠端/推送 |
 
 ## 流程準備時執行結果（歷史紀錄）

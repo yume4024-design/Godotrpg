@@ -1,0 +1,31 @@
+class_name WorldInteractable
+extends Node3D
+
+@export var interaction_id: StringName
+@export_enum("npc", "chest", "exit", "sign") var kind: String = "npc"
+@export var label: String = ""
+@export var radius: float = 2.2
+@export var destination: StringName
+@export var spawn_key: StringName = &"entrance"
+@export var item_id: StringName
+@export var reward_source: StringName
+@export var lid: Node3D
+var opened: bool = false
+
+func refresh(inventory: InventoryManager) -> void:
+	if kind != "chest":
+		return
+	opened = inventory.was_claimed(reward_source)
+	if is_instance_valid(lid):
+		lid.rotation_degrees.x = -65.0 if opened else 0.0
+
+func prompt() -> String:
+	return label + ("（已開啟）" if opened else "")
+
+func in_reach(player: CharacterBody3D) -> bool:
+	if global_position.distance_to(player.global_position) > radius:
+		return false
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(
+		player.global_position + Vector3.UP * 0.8, global_position + Vector3.UP * 0.8, 1, [player.get_rid()])
+	var hit: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
+	return hit.is_empty() or is_ancestor_of(hit.collider)

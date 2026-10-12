@@ -2,9 +2,11 @@
 
 原創 Windows Low Poly 3D JRPG。先完成 20～30 分鐘序章《灰石村的異變》，再逐章擴充到六篇章、約 12～16 小時與三種結局的完整企劃目標。
 
-**Phase 1 已完成**：可啟動的 3D 練習場、雷恩幾何體佔位、WASD/方向鍵移動、固定 45 度跟隨鏡頭、碰撞與 HUD。劇情 JSON 已保存，NPC/故事載入器/戰鬥尚未實作。
+**Phase 2 已完成**：灰石村／低語森林可往返探索，支援 NPC 對話、打字跳過、E001/E002、接取 Q001，以及切圖後不重複領取的補給箱。Phase 1 練習場保留作為回歸場景。戰鬥從下一階段開始。
 
-操作：WASD 或方向鍵移動，R 返回起點，關閉視窗退出。鏡頭保持角度並隨角色平移。開啟 project.godot 後按 F5，或執行下面的 Run 指令即可遊玩。
+操作：WASD 或方向鍵移動，靠近後按 E 互動；對話中按 E／空白鍵／Enter 或點擊繼續按鈕，先顯示全文再進下一句；R 返回本區起點。鏡頭保持角度並隨角色平移，森林空地有局部縮放。開啟 project.godot 後按 F5，或執行下面的 Run 指令即可遊玩。
+
+試玩路線：開場對話 → 公會長接受委託 → 莉雅的環境對話 → 補給箱 → 右側入口進森林 → 左側入口回村。莉雅入隊、礦坑與戰鬥尚未開放；當前進度僅在本次執行中保留，關閉後重置。
 
 ## 閱讀順序
 
@@ -18,7 +20,7 @@
 
 故事工作先讀 [故事整合與階段安排](docs/STORY_IMPLEMENTATION.md)，再按需查閱 [Story Bible v1.0 原文](docs/STORY_BIBLE.md)。原文完整保留；實作差異與待補內容均記在整合文件，企劃中的參考圖片不視為已授權遊戲素材。
 
-已加入的內容資料：[E001～E008](data/story/prologue_events.json)、[Q001](data/quests/q001.json)、[B001/B002](data/battles/prologue_battles.json)。它們需在 P2～P5 接上實際系統後才可遊玩。
+內容資料：[E001～E008](data/story/prologue_events.json)、[Q001](data/quests/q001.json)、[B001/B002](data/battles/prologue_battles.json)。E001/E002 與 Q001 接取已接上遊戲；E003～E008 和戰鬥仍按 P3～P5 分階段實作。
 
 ## 本機工具
 
@@ -37,13 +39,15 @@ Set-Location D:\RPGGAME
 .\tools\godot.ps1 -Mode Check
 .\tools\godot.ps1 -Mode Smoke
 .\tools\godot.ps1 -Mode Test
+.\tools\godot.ps1 -Mode TestPhase2
+.\tools\godot.ps1 -Mode VisualPhase2
 .\tools\godot.ps1 -Mode Editor
 .\tools\godot.ps1 -Mode Run
 ```
 
-`Check` 等待資源匯入並檢查引擎輸出；`Smoke` 執行 120 次主迴圈後退出；`Test` 執行 24 項真實場景物理/輸入檢查。首次下載專案先執行 Check，產生 Godot 類別快取再執行 Test。日誌寫入 `artifacts/logs/`，工具將子程序的 Godot 設定/快取隔離在 `artifacts/godot-user` 與 `artifacts/godot-local`，不修改 Windows 全域設定。
+`Check` 等待資源匯入；`Smoke` 執行 120 次主迴圈；`Test` 執行 24 項 P1 物理/輸入回歸；`TestPhase2` 執行 58 項 P2 整合檢查；`VisualPhase2` 用實際渲染器走相同流程並保存八張畫面，共 66 項檢查。首次下載專案先執行 Check，產生類別快取。日誌寫入 `artifacts/logs/`，工具將子程序設定/快取隔離在 `artifacts/godot-user` 與 `artifacts/godot-local`；Run/Editor 使用同版本圖形執行檔啟動獨立視窗。
 
-本輪 [驗收報告](docs/PHASE1_REPORT.md) 包含渲染證據、測試方法與限制。可以使用並修改素材商店資產；本階段仍使用自製幾何體，見 [素材紀錄](docs/ASSET_CREDITS.md)。
+本輪 [P2 驗收報告](docs/PHASE2_REPORT.md) 包含渲染證據、測試方法與限制；[P1 報告](docs/PHASE1_REPORT.md) 保留歷史紀錄。可以使用並修改素材商店資產；目前使用自製幾何體，見 [素材紀錄](docs/ASSET_CREDITS.md)。
 
 引擎換位置時可傳入 `-GodotPath '完整執行檔路徑'`，或設定環境變數 `GODOT_PATH`。若系統執行政策禁止腳本，可用下列直接命令查版本，無需改動整台電腦的政策：
 
@@ -53,4 +57,4 @@ Set-Location D:\RPGGAME
 
 ## 下一個開發任務
 
-> 依照 AGENTS.md 與 docs/TASKS.md，執行 Phase 2：建立灰石村/低語森林往返、NPC 互動與對話 UI，再以 E001/E002 接上最小故事/旗標/接任務流程；保留 Phase 1 的移動與碰撞回歸，實作、驗收並更新紀錄。
+> 下一階段為 Phase 3：角色／技能／敵人定義、指令式回合制戰鬥、勝敗與返回探索。依 TASKS.md 授權階段執行，並保留 P1／P2 回歸。

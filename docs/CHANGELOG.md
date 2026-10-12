@@ -1,5 +1,16 @@
 # 變更紀錄
 
+## 2026-10-12 — Phase 2 探索與互動
+
+- 新增灰石村／低語森林、可往返入口、出生點、鏡頭區域與幾何體 NPC／建築／寶箱；Main 常駐，僅替換地圖。
+- 加入距離／視線檢查、E 互動提示、對話打字／全文跳過／下一句、滑鼠按鈕與輸入鎖。
+- 接起 JSON 驗證、FlagManager／StoryManager／EventRunner、E001/E002 與 Q001 接取／當前目標；停用後續事件。
+- 新增唯讀旅人乾糧 Resource、物品狀態及單次領取來源帳本；村莊補給箱與 E005 分離。
+- 保留 practice_main 供 P1 回歸，增加 TestPhase2／VisualPhase2。Run／Editor 改由圖形執行檔啟動，處理脫離工具 shell 後 console 包裝器造成的空白視窗。
+- 驗收發現 Windows 注入按鍵的 physical_keycode 與 keycode 不一致，對話 Input Map 同時支援兩種；圖形整合測試等待輸入幀完成再斷言，避免多個物理幀先於輸入處理。
+- Check／Smoke、P1 24 項、P2 58 項、Windows 圖形 66 項均通過；已查看八張渲染畫面並操作原生視窗。完整命令、日誌、修復與限制見 PHASE2_REPORT.md。
+- P2 完成，P3～P6 未開始；未下載素材、未加入外掛、未實作存檔或虛構戰鬥結果。
+
 ## 2026-10-12 — Phase 1 可執行探索原型
 
 - 建立 Godot 專案、Main/Player/World/HUD、輸入/移動組件與固定斜視角鏡頭。

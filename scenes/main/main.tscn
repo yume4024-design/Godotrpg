@@ -1,10 +1,20 @@
-[gd_scene load_steps=9 format=3]
+[gd_scene format=3]
 
-[ext_resource type="PackedScene" path="res://scenes/world/practice_world.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/world/village.tscn" id="Village"]
+[ext_resource type="PackedScene" path="res://scenes/world/forest.tscn" id="Forest"]
 [ext_resource type="PackedScene" path="res://scenes/characters/player.tscn" id="2"]
-[ext_resource type="PackedScene" path="res://scenes/ui/exploration_hud.tscn" id="3"]
-[ext_resource type="Script" path="res://scripts/core/main.gd" id="4"]
+[ext_resource type="Script" path="res://scripts/ui/exploration_interface.gd" id="UI"]
+[ext_resource type="Script" path="res://scripts/core/exploration_game.gd" id="4"]
 [ext_resource type="Script" path="res://scripts/world/fixed_camera.gd" id="5"]
+[ext_resource type="Script" path="res://scripts/story/flag_manager.gd" id="Flags"]
+[ext_resource type="Script" path="res://scripts/story/dialogue_manager.gd" id="Dialogue"]
+[ext_resource type="Script" path="res://scripts/story/event_runner.gd" id="Runner"]
+[ext_resource type="Script" path="res://scripts/story/story_manager.gd" id="Story"]
+[ext_resource type="Script" path="res://scripts/quests/quest_manager.gd" id="Quests"]
+[ext_resource type="Script" path="res://scripts/inventory/inventory_manager.gd" id="Inventory"]
+[ext_resource type="Script" path="res://scripts/world/scene_manager.gd" id="Travel"]
+[ext_resource type="Resource" path="res://data/items/trail_ration.tres" id="Ration"]
+[ext_resource type="Script" path="res://scripts/inventory/item_definition.gd" id="Item"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
 sky_top_color = Color(0.2, 0.36, 0.43, 1)
@@ -25,6 +35,10 @@ tonemap_mode = 0
 
 [node name="Main" type="Node3D"]
 script = ExtResource("4")
+story_path = "res://data/story/prologue_events.json"
+dialogue_path = "res://data/story/exploration_dialogue.json"
+quest_path = "res://data/quests/q001.json"
+battles_path = "res://data/battles/prologue_battles.json"
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment")
@@ -36,7 +50,8 @@ light_energy = 1.1
 shadow_enabled = true
 directional_shadow_max_distance = 60.0
 
-[node name="World" parent="." instance=ExtResource("1")]
+[node name="MapContainer" type="Node3D" parent="."]
+unique_name_in_owner = true
 
 [node name="Player" parent="." node_paths=PackedStringArray("movement_camera") instance=ExtResource("2")]
 unique_name_in_owner = true
@@ -60,4 +75,36 @@ size = 17.0
 near = 0.1
 far = 150.0
 
-[node name="HUD" parent="." instance=ExtResource("3")]
+[node name="Interface" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("UI")
+
+[node name="Flags" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Flags")
+
+[node name="Dialogue" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Dialogue")
+
+[node name="EventRunner" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Runner")
+
+[node name="Story" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Story")
+
+[node name="Quests" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Quests")
+
+[node name="Inventory" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Inventory")
+item_definitions = Array[ExtResource("Item")]([ExtResource("Ration")])
+
+[node name="SceneManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Travel")
+maps = Array[PackedScene]([ExtResource("Village"), ExtResource("Forest")])

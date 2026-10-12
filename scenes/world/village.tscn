@@ -1,0 +1,581 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/exploration_map.gd" id="Map"]
+
+[ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
+
+[sub_resource type="StandardMaterial3D" id="Grass"]
+albedo_color = Color(0.36, 0.44, 0.29, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Path"]
+albedo_color = Color(0.64, 0.57, 0.4, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Stone"]
+albedo_color = Color(0.39, 0.44, 0.42, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Wood"]
+albedo_color = Color(0.28, 0.17, 0.12, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Wall"]
+albedo_color = Color(0.68, 0.64, 0.48, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Roof"]
+albedo_color = Color(0.22, 0.34, 0.36, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Leaf"]
+albedo_color = Color(0.14, 0.36, 0.27, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Gold"]
+albedo_color = Color(0.86, 0.65, 0.29, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Blue"]
+albedo_color = Color(0.28, 0.53, 0.66, 1)
+roughness = 0.95
+
+[sub_resource type="StandardMaterial3D" id="Skin"]
+albedo_color = Color(0.85, 0.67, 0.46, 1)
+roughness = 0.95
+
+[sub_resource type="SystemFont" id="Font"]
+font_names = PackedStringArray("Microsoft JhengHei")
+
+[sub_resource type="BoxMesh" id="Shape1Mesh"]
+size = Vector3(25, 0.6, 25)
+
+[sub_resource type="BoxShape3D" id="Shape1Collision"]
+size = Vector3(25, 0.6, 25)
+
+[sub_resource type="BoxMesh" id="Shape2Mesh"]
+size = Vector3(18, 0.03, 2.5)
+
+[sub_resource type="BoxMesh" id="Shape3Mesh"]
+size = Vector3(2.8, 0.03, 4.75)
+
+[sub_resource type="BoxMesh" id="Shape4Mesh"]
+size = Vector3(25, 0.8, 0.6)
+
+[sub_resource type="BoxShape3D" id="Shape4Collision"]
+size = Vector3(25, 0.8, 0.6)
+
+[sub_resource type="BoxMesh" id="Shape5Mesh"]
+size = Vector3(25, 0.8, 0.6)
+
+[sub_resource type="BoxShape3D" id="Shape5Collision"]
+size = Vector3(25, 0.8, 0.6)
+
+[sub_resource type="BoxMesh" id="Shape6Mesh"]
+size = Vector3(0.6, 0.8, 24)
+
+[sub_resource type="BoxShape3D" id="Shape6Collision"]
+size = Vector3(0.6, 0.8, 24)
+
+[sub_resource type="BoxMesh" id="Shape7Mesh"]
+size = Vector3(0.6, 0.8, 24)
+
+[sub_resource type="BoxShape3D" id="Shape7Collision"]
+size = Vector3(0.6, 0.8, 24)
+
+[sub_resource type="BoxMesh" id="Shape8Mesh"]
+size = Vector3(6, 2.6, 3.5)
+
+[sub_resource type="BoxShape3D" id="Shape8Collision"]
+size = Vector3(6, 2.6, 3.5)
+
+[sub_resource type="PrismMesh" id="RoofMesh"]
+size = Vector3(6.8, 1.7, 4.3)
+
+[sub_resource type="BoxMesh" id="Shape9Mesh"]
+size = Vector3(1.2, 2, 0.08)
+
+[sub_resource type="BoxMesh" id="Shape10Mesh"]
+size = Vector3(3.5, 2.2, 3)
+
+[sub_resource type="BoxShape3D" id="Shape10Collision"]
+size = Vector3(3.5, 2.2, 3)
+
+[sub_resource type="BoxMesh" id="Shape11Mesh"]
+size = Vector3(4, 0.5, 3.6)
+
+[sub_resource type="BoxMesh" id="Shape12Mesh"]
+size = Vector3(0.65, 1.1, 0.42)
+
+[sub_resource type="BoxShape3D" id="Shape12Collision"]
+size = Vector3(0.65, 1.1, 0.42)
+
+[sub_resource type="BoxMesh" id="Shape13Mesh"]
+size = Vector3(0.44, 0.42, 0.44)
+
+[sub_resource type="BoxMesh" id="Shape14Mesh"]
+size = Vector3(0.2, 0.36, 0.25)
+
+[sub_resource type="BoxMesh" id="Shape15Mesh"]
+size = Vector3(0.2, 0.36, 0.25)
+
+[sub_resource type="BoxMesh" id="Shape16Mesh"]
+size = Vector3(0.65, 1.1, 0.42)
+
+[sub_resource type="BoxShape3D" id="Shape16Collision"]
+size = Vector3(0.65, 1.1, 0.42)
+
+[sub_resource type="BoxMesh" id="Shape17Mesh"]
+size = Vector3(0.44, 0.42, 0.44)
+
+[sub_resource type="BoxMesh" id="Shape18Mesh"]
+size = Vector3(0.2, 0.36, 0.25)
+
+[sub_resource type="BoxMesh" id="Shape19Mesh"]
+size = Vector3(0.2, 0.36, 0.25)
+
+[sub_resource type="BoxMesh" id="Shape20Mesh"]
+size = Vector3(1.1, 0.7, 0.7)
+
+[sub_resource type="BoxShape3D" id="Shape20Collision"]
+size = Vector3(1.1, 0.7, 0.7)
+
+[sub_resource type="BoxMesh" id="Shape21Mesh"]
+size = Vector3(1.15, 0.15, 0.75)
+
+[sub_resource type="BoxMesh" id="Shape22Mesh"]
+size = Vector3(0.45, 1.6, 0.45)
+
+[sub_resource type="BoxShape3D" id="Shape22Collision"]
+size = Vector3(0.45, 1.6, 0.45)
+
+[sub_resource type="CylinderMesh" id="TreeMesh0"]
+top_radius = 0.0
+bottom_radius = 1.35
+height = 2.8
+radial_segments = 5
+rings = 1
+
+[sub_resource type="BoxMesh" id="Shape23Mesh"]
+size = Vector3(0.45, 1.6, 0.45)
+
+[sub_resource type="BoxShape3D" id="Shape23Collision"]
+size = Vector3(0.45, 1.6, 0.45)
+
+[sub_resource type="CylinderMesh" id="TreeMesh1"]
+top_radius = 0.0
+bottom_radius = 1.35
+height = 2.8
+radial_segments = 5
+rings = 1
+
+[sub_resource type="BoxMesh" id="Shape24Mesh"]
+size = Vector3(0.45, 1.6, 0.45)
+
+[sub_resource type="BoxShape3D" id="Shape24Collision"]
+size = Vector3(0.45, 1.6, 0.45)
+
+[sub_resource type="CylinderMesh" id="TreeMesh2"]
+top_radius = 0.0
+bottom_radius = 1.35
+height = 2.8
+radial_segments = 5
+rings = 1
+
+[sub_resource type="BoxMesh" id="Shape25Mesh"]
+size = Vector3(0.45, 1.6, 0.45)
+
+[sub_resource type="BoxShape3D" id="Shape25Collision"]
+size = Vector3(0.45, 1.6, 0.45)
+
+[sub_resource type="CylinderMesh" id="TreeMesh3"]
+top_radius = 0.0
+bottom_radius = 1.35
+height = 2.8
+radial_segments = 5
+rings = 1
+
+[sub_resource type="BoxMesh" id="Shape26Mesh"]
+size = Vector3(0.45, 1.7, 0.45)
+
+[sub_resource type="BoxShape3D" id="Shape26Collision"]
+size = Vector3(0.45, 1.7, 0.45)
+
+[sub_resource type="BoxMesh" id="Shape27Mesh"]
+size = Vector3(0.45, 1.7, 0.45)
+
+[sub_resource type="BoxShape3D" id="Shape27Collision"]
+size = Vector3(0.45, 1.7, 0.45)
+
+[node name="Village" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn")]
+script = ExtResource("Map")
+map_id = &"village"
+display_name = "灰石村"
+default_spawn = NodePath("DefaultSpawn")
+entrance_spawn = NodePath("EntranceSpawn")
+
+[node name="DefaultSpawn" type="Marker3D" parent="."]
+position = Vector3(0, 0.1, 4)
+
+[node name="EntranceSpawn" type="Marker3D" parent="."]
+position = Vector3(7, 0.1, 0)
+
+[node name="Ground" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.3, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("Shape1Mesh")
+material_override = SubResource("Grass")
+
+[node name="Collision" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("Shape1Collision")
+
+[node name="PathEast" type="Node3D" parent="."]
+position = Vector3(3, 0.01, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="PathEast"]
+cast_shadow = 0
+mesh = SubResource("Shape2Mesh")
+material_override = SubResource("Path")
+
+[node name="PathGuild" type="Node3D" parent="."]
+position = Vector3(0, 0.01, -3.625)
+
+[node name="Mesh" type="MeshInstance3D" parent="PathGuild"]
+cast_shadow = 0
+mesh = SubResource("Shape3Mesh")
+material_override = SubResource("Path")
+
+[node name="PathSouth" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.01, 3.625)
+cast_shadow = 0
+mesh = SubResource("Shape3Mesh")
+material_override = SubResource("Path")
+
+[node name="NorthWall" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.4, -12)
+
+[node name="Mesh" type="MeshInstance3D" parent="NorthWall"]
+mesh = SubResource("Shape4Mesh")
+material_override = SubResource("Stone")
+
+[node name="Collision" type="CollisionShape3D" parent="NorthWall"]
+shape = SubResource("Shape4Collision")
+
+[node name="SouthWall" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.4, 12)
+
+[node name="Mesh" type="MeshInstance3D" parent="SouthWall"]
+mesh = SubResource("Shape5Mesh")
+material_override = SubResource("Stone")
+
+[node name="Collision" type="CollisionShape3D" parent="SouthWall"]
+shape = SubResource("Shape5Collision")
+
+[node name="WestWall" type="StaticBody3D" parent="."]
+position = Vector3(-12, 0.4, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="WestWall"]
+mesh = SubResource("Shape6Mesh")
+material_override = SubResource("Stone")
+
+[node name="Collision" type="CollisionShape3D" parent="WestWall"]
+shape = SubResource("Shape6Collision")
+
+[node name="EastWall" type="StaticBody3D" parent="."]
+position = Vector3(12, 0.4, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="EastWall"]
+mesh = SubResource("Shape7Mesh")
+material_override = SubResource("Stone")
+
+[node name="Collision" type="CollisionShape3D" parent="EastWall"]
+shape = SubResource("Shape7Collision")
+
+[node name="Guild" type="StaticBody3D" parent="."]
+position = Vector3(0, 1.3, -6.8)
+
+[node name="Mesh" type="MeshInstance3D" parent="Guild"]
+mesh = SubResource("Shape8Mesh")
+material_override = SubResource("Wall")
+
+[node name="Collision" type="CollisionShape3D" parent="Guild"]
+shape = SubResource("Shape8Collision")
+
+[node name="GuildRoof" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.35, -6.8)
+mesh = SubResource("RoofMesh")
+material_override = SubResource("Roof")
+
+[node name="Door" type="Node3D" parent="."]
+position = Vector3(0, 1, -5)
+
+[node name="Mesh" type="MeshInstance3D" parent="Door"]
+mesh = SubResource("Shape9Mesh")
+material_override = SubResource("Wood")
+
+[node name="GuildName" type="Label3D" parent="."]
+position = Vector3(0, 3.9, -5)
+billboard = 1
+font = SubResource("Font")
+text = "冒險者公會"
+font_size = 42
+pixel_size = 0.011
+modulate = Color(0.97, 0.88, 0.66, 1)
+outline_size = 10
+no_depth_test = true
+
+[node name="House" type="StaticBody3D" parent="."]
+position = Vector3(-7, 1.1, -4)
+
+[node name="Mesh" type="MeshInstance3D" parent="House"]
+mesh = SubResource("Shape10Mesh")
+material_override = SubResource("Wall")
+
+[node name="Collision" type="CollisionShape3D" parent="House"]
+shape = SubResource("Shape10Collision")
+
+[node name="HouseRoof" type="Node3D" parent="."]
+position = Vector3(-7, 2.45, -4)
+
+[node name="Mesh" type="MeshInstance3D" parent="HouseRoof"]
+mesh = SubResource("Shape11Mesh")
+material_override = SubResource("Roof")
+
+[node name="Guildmaster" type="Node3D" parent="."]
+position = Vector3(0, 0, -2)
+script = ExtResource("Interact")
+interaction_id = &"npc_guildmaster"
+kind = "npc"
+label = "公會長"
+
+
+[node name="Body" type="StaticBody3D" parent="Guildmaster"]
+position = Vector3(0, 0.85, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Guildmaster/Body"]
+mesh = SubResource("Shape12Mesh")
+material_override = SubResource("Gold")
+
+[node name="Collision" type="CollisionShape3D" parent="Guildmaster/Body"]
+shape = SubResource("Shape12Collision")
+
+[node name="Head" type="Node3D" parent="Guildmaster"]
+position = Vector3(0, 1.62, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Guildmaster/Head"]
+mesh = SubResource("Shape13Mesh")
+material_override = SubResource("Skin")
+
+[node name="LegL" type="Node3D" parent="Guildmaster"]
+position = Vector3(-0.17, 0.18, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Guildmaster/LegL"]
+mesh = SubResource("Shape14Mesh")
+material_override = SubResource("Wood")
+
+[node name="LegR" type="Node3D" parent="Guildmaster"]
+position = Vector3(0.17, 0.18, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Guildmaster/LegR"]
+mesh = SubResource("Shape15Mesh")
+material_override = SubResource("Wood")
+
+[node name="Name" type="Label3D" parent="Guildmaster"]
+position = Vector3(0, 2.2, 0)
+billboard = 1
+font = SubResource("Font")
+text = "公會長"
+font_size = 42
+pixel_size = 0.011
+modulate = Color(0.97, 0.88, 0.66, 1)
+outline_size = 10
+no_depth_test = true
+
+[node name="Lia" type="Node3D" parent="."]
+position = Vector3(3, 0, -3)
+script = ExtResource("Interact")
+interaction_id = &"npc_lia"
+kind = "npc"
+label = "莉雅"
+
+
+[node name="Body" type="StaticBody3D" parent="Lia"]
+position = Vector3(0, 0.85, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Lia/Body"]
+mesh = SubResource("Shape16Mesh")
+material_override = SubResource("Blue")
+
+[node name="Collision" type="CollisionShape3D" parent="Lia/Body"]
+shape = SubResource("Shape16Collision")
+
+[node name="Head" type="Node3D" parent="Lia"]
+position = Vector3(0, 1.62, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Lia/Head"]
+mesh = SubResource("Shape17Mesh")
+material_override = SubResource("Skin")
+
+[node name="LegL" type="Node3D" parent="Lia"]
+position = Vector3(-0.17, 0.18, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Lia/LegL"]
+mesh = SubResource("Shape18Mesh")
+material_override = SubResource("Wood")
+
+[node name="LegR" type="Node3D" parent="Lia"]
+position = Vector3(0.17, 0.18, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Lia/LegR"]
+mesh = SubResource("Shape19Mesh")
+material_override = SubResource("Wood")
+
+[node name="Name" type="Label3D" parent="Lia"]
+position = Vector3(0, 2.2, 0)
+billboard = 1
+font = SubResource("Font")
+text = "莉雅"
+font_size = 42
+pixel_size = 0.011
+modulate = Color(0.97, 0.88, 0.66, 1)
+outline_size = 10
+no_depth_test = true
+
+[node name="SupplyChest" type="Node3D" parent="." node_paths=PackedStringArray("lid")]
+position = Vector3(-3, 0, 2)
+script = ExtResource("Interact")
+interaction_id = &"village_supply_chest"
+kind = "chest"
+label = "村莊補給箱"
+item_id = &"trail_ration"
+reward_source = &"village_supply_chest"
+lid = NodePath("Lid")
+
+[node name="Base" type="StaticBody3D" parent="SupplyChest"]
+position = Vector3(0, 0.35, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SupplyChest/Base"]
+mesh = SubResource("Shape20Mesh")
+material_override = SubResource("Wood")
+
+[node name="Collision" type="CollisionShape3D" parent="SupplyChest/Base"]
+shape = SubResource("Shape20Collision")
+
+[node name="Lid" type="Node3D" parent="SupplyChest"]
+position = Vector3(0, 0.75, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="SupplyChest/Lid"]
+mesh = SubResource("Shape21Mesh")
+material_override = SubResource("Gold")
+
+[node name="ChestName" type="Label3D" parent="SupplyChest"]
+position = Vector3(0, 1.55, 0)
+billboard = 1
+font = SubResource("Font")
+text = "補給"
+font_size = 42
+pixel_size = 0.011
+modulate = Color(0.97, 0.88, 0.66, 1)
+outline_size = 10
+no_depth_test = true
+
+[node name="Trunk0" type="StaticBody3D" parent="."]
+position = Vector3(-8, 0.8, 7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Trunk0"]
+mesh = SubResource("Shape22Mesh")
+material_override = SubResource("Wood")
+
+[node name="Collision" type="CollisionShape3D" parent="Trunk0"]
+shape = SubResource("Shape22Collision")
+
+[node name="Crown0" type="MeshInstance3D" parent="."]
+position = Vector3(-8, 2.7, 7)
+mesh = SubResource("TreeMesh0")
+material_override = SubResource("Leaf")
+
+[node name="Trunk1" type="StaticBody3D" parent="."]
+position = Vector3(6, 0.8, 7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Trunk1"]
+mesh = SubResource("Shape23Mesh")
+material_override = SubResource("Wood")
+
+[node name="Collision" type="CollisionShape3D" parent="Trunk1"]
+shape = SubResource("Shape23Collision")
+
+[node name="Crown1" type="MeshInstance3D" parent="."]
+position = Vector3(6, 2.7, 7)
+mesh = SubResource("TreeMesh1")
+material_override = SubResource("Leaf")
+
+[node name="Trunk2" type="StaticBody3D" parent="."]
+position = Vector3(-8, 0.8, -9)
+
+[node name="Mesh" type="MeshInstance3D" parent="Trunk2"]
+mesh = SubResource("Shape24Mesh")
+material_override = SubResource("Wood")
+
+[node name="Collision" type="CollisionShape3D" parent="Trunk2"]
+shape = SubResource("Shape24Collision")
+
+[node name="Crown2" type="MeshInstance3D" parent="."]
+position = Vector3(-8, 2.7, -9)
+mesh = SubResource("TreeMesh2")
+material_override = SubResource("Leaf")
+
+[node name="Trunk3" type="StaticBody3D" parent="."]
+position = Vector3(8, 0.8, -7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Trunk3"]
+mesh = SubResource("Shape25Mesh")
+material_override = SubResource("Wood")
+
+[node name="Collision" type="CollisionShape3D" parent="Trunk3"]
+shape = SubResource("Shape25Collision")
+
+[node name="Crown3" type="MeshInstance3D" parent="."]
+position = Vector3(8, 2.7, -7)
+mesh = SubResource("TreeMesh3")
+material_override = SubResource("Leaf")
+
+[node name="Exit" type="Node3D" parent="."]
+position = Vector3(10, 0, 0)
+script = ExtResource("Interact")
+interaction_id = &"to_forest"
+kind = "exit"
+label = "前往低語森林"
+destination = &"forest"
+radius = 1.8
+
+[node name="GateLeft" type="StaticBody3D" parent="Exit"]
+position = Vector3(-0.1, 0.85, -1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Exit/GateLeft"]
+mesh = SubResource("Shape26Mesh")
+material_override = SubResource("Stone")
+
+[node name="Collision" type="CollisionShape3D" parent="Exit/GateLeft"]
+shape = SubResource("Shape26Collision")
+
+[node name="GateRight" type="StaticBody3D" parent="Exit"]
+position = Vector3(-0.1, 0.85, 1.7)
+
+[node name="Mesh" type="MeshInstance3D" parent="Exit/GateRight"]
+mesh = SubResource("Shape27Mesh")
+material_override = SubResource("Stone")
+
+[node name="Collision" type="CollisionShape3D" parent="Exit/GateRight"]
+shape = SubResource("Shape27Collision")
+
+[node name="ExitName" type="Label3D" parent="Exit"]
+position = Vector3(0, 2.4, 0)
+billboard = 1
+font = SubResource("Font")
+text = "低語森林 →"
+font_size = 42
+pixel_size = 0.011
+modulate = Color(0.97, 0.88, 0.66, 1)
+outline_size = 10
+no_depth_test = true
