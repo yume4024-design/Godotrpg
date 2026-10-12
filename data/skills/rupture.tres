@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SkillDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"rupture"
+display_name = "裂能衝擊"
+effect = 1
+power = 20
+mp_cost = 4

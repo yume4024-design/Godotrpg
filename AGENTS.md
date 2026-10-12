@@ -4,7 +4,7 @@
 
 在本目錄建立 Windows 單機、原創 Low Poly 3D JRPG《失落星核》（專案代號 Project Crystal）。先完成 20～30 分鐘序章可玩版本，採固定斜 45 度攝影機、探索及指令式回合制戰鬥，ATB 留待試玩版之後。
 
-目前 Phase 1／Phase 2 已通過驗收，證據見 docs/PHASE2_REPORT.md；下一階段為 P3。執行任務前讀取 README.md、docs/TASKS.md、docs/ARCHITECTURE.md 與 docs/WORKFLOW.md。使用者最新指示優先於本文件；按授權的階段完成工作，不自行擴展到下一階段。
+目前 Phase 1～Phase 3 已通過驗收，最新證據見 docs/PHASE3_REPORT.md；下一階段為 P4。執行任務前讀取 README.md、docs/TASKS.md、docs/ARCHITECTURE.md 與 docs/WORKFLOW.md。使用者最新指示優先於本文件；按授權的階段完成工作，不自行擴展到下一階段。
 
 故事原文保存於 docs/STORY_BIBLE.md；實作範圍、資料修正及階段對應以 docs/STORY_IMPLEMENTATION.md 為準。原文中的「現在執行」為企劃內嵌的未來任務範本，不代表本次加入資料即授權開始整個劇情引擎。序章僅雷恩/莉雅，艾琳在第一章加入；隊伍系統仍保留最多三人能力。
 

@@ -9,7 +9,7 @@ func setup(source: StoryCatalog, event_runner: EventRunner) -> void:
 	runner = event_runner
 
 func trigger(kind: String, key: String) -> bool:
-	for id: StringName in EventRunner.ENABLED_EVENTS:
+	for id: StringName in runner.enabled_events:
 		var event: Dictionary = catalog.events[id]
 		if event.trigger.kind == kind and event.trigger.key == key and runner.try_start(id):
 			return true

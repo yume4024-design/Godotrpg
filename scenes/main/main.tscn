@@ -15,6 +15,15 @@
 [ext_resource type="Script" path="res://scripts/world/scene_manager.gd" id="Travel"]
 [ext_resource type="Resource" path="res://data/items/trail_ration.tres" id="Ration"]
 [ext_resource type="Script" path="res://scripts/inventory/item_definition.gd" id="Item"]
+[ext_resource type="Resource" path="res://data/items/potion.tres" id="Potion"]
+[ext_resource type="Script" path="res://scripts/characters/party_manager.gd" id="Party"]
+[ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="Actor"]
+[ext_resource type="Script" path="res://scripts/core/battle_flow.gd" id="BattleFlow"]
+[ext_resource type="PackedScene" path="res://scenes/battle/battle_arena.tscn" id="Arena"]
+[ext_resource type="Resource" path="res://data/characters/ren.tres" id="Ren"]
+[ext_resource type="Resource" path="res://data/characters/lia.tres" id="Lia"]
+[ext_resource type="Resource" path="res://data/enemies/forest_slime.tres" id="Slime"]
+[ext_resource type="Resource" path="res://data/enemies/corrupted_guardian.tres" id="Guardian"]
 
 [sub_resource type="ProceduralSkyMaterial" id="SkyMaterial"]
 sky_top_color = Color(0.2, 0.36, 0.43, 1)
@@ -39,6 +48,7 @@ story_path = "res://data/story/prologue_events.json"
 dialogue_path = "res://data/story/exploration_dialogue.json"
 quest_path = "res://data/quests/q001.json"
 battles_path = "res://data/battles/prologue_battles.json"
+starting_character = ExtResource("Ren")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment")
@@ -102,9 +112,19 @@ script = ExtResource("Quests")
 [node name="Inventory" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Inventory")
-item_definitions = Array[ExtResource("Item")]([ExtResource("Ration")])
+item_definitions = Array[ExtResource("Item")]([ExtResource("Ration"), ExtResource("Potion")])
 
 [node name="SceneManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Travel")
 maps = Array[PackedScene]([ExtResource("Village"), ExtResource("Forest")])
+
+[node name="Party" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Party")
+
+[node name="Battles" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("BattleFlow")
+battle_scene = ExtResource("Arena")
+definitions = Array[ExtResource("Actor")]([ExtResource("Ren"), ExtResource("Lia"), ExtResource("Slime"), ExtResource("Guardian")])

@@ -1,6 +1,6 @@
 # 架構設計與實作邊界
 
-Phase 1／2 已實作 Main、Player、固定鏡頭、練習場、兩張探索地圖、UI，以及 Flag／Dialogue／Story／EventRunner／Quest／Inventory／SceneManager 的最小行為。Party／Battle／Save 等系統仍為後續設計約定。
+Phase 1～3 已實作 Main、Player、固定鏡頭、練習場、两張探索地圖、UI、Flag／Dialogue／Story／EventRunner／Quest／Inventory／SceneManager，以及最小 Party／Battle。養成與 Save 仍為後續設計约定。
 
 ## P2 實際組裝與狀態歸屬
 
@@ -10,8 +10,8 @@ Main 的 ExplorationGame 負責初始化、JSON 錯誤處理、輸入鎖與服�
 | --- | --- | --- |
 | 劇情旗標 | FlagManager.set_flag | changed |
 | 已接受任務 | QuestManager.accept；目標完成數讀 FlagManager | changed |
-| 物品數量、已領來源 | InventoryManager.claim 同步提交兩者 | changed |
-| 目前事件、目標與執行鎖 | EventRunner.try_start／對話完成回呼 | busy_changed、objective_changed、event_completed |
+| 物品數量、已領來源 | InventoryManager.claim 同步提交兩者；consume 消耗；restore_counts 僅敗北還原數量 | changed |
+| 目前事件、目標與執行鎖 | EventRunner.try_start／對話與戰鬥結果回呼 | busy_changed、objective_changed、event_completed、event_failed |
 | 對話行與等待狀態 | DialogueManager.start／advance／mark_revealed | active_changed、line_changed、finished |
 | 地圖與切換鎖 | ExplorationSceneManager.travel | transition_changed、map_changed |
 
@@ -19,7 +19,21 @@ StoryCatalog 解析及驗證 JSON；StoryManager 依 trigger kind/key 路由 E00
 
 WorldInteractable 使用距離加物理射線檢查；Main 每個物理幀在地圖快取清單找最近可達對象，執行時再驗證距離與視線。地圖使用 Marker3D 定義出生點與森林鏡頭區域；角度固定，只平滑改變正交視野。切圖立即上鎖，再延後替換地圖與淡入淡出，入口出生點離出口互動半徑至少 3 公尺。
 
-道具定義是唯讀 ItemDefinition Resource；數量／來源帳本為 InventoryManager 私有 Dictionary。P2 寶箱来源 village_supply_chest 僅給 trail_ration ×1，與 E005 potion 分離。本輪沒有磁碟保存、金幣、使用道具或角色數值。
+道具定義是唯讀 ItemDefinition Resource；數量／來源帳本為 InventoryManager 私有 Dictionary。P2 寶箱来源 village_supply_chest 僅給 trail_ration ×1。P3 演練來源 forest_training_supplies 給 potion ×3，與 E005 分離；potion 在戰鬥恢復 60 HP，不復活。沒有磁碟保存或金幣。
+
+## P3 戰鬥組裝與狀態歸屬
+
+Main 的 PartyManager 常駐並持有 CombatantState；CombatantDefinition／SkillDefinition／ItemDefinition 為唯讀 Resource。每位角色與敵人都有獨立 CombatantState，HP／MP 僅由 damage／heal／spend_mp／restore 修改並發出 changed。PartyManager 轉發 changed 給探索 HUD，战鬥使用同一角色實例，不複製一份數值。正式遊戲初始化雷恩；莉雅定義供獨立治療測試，入隊留 P4。
+
+Main 的 BattleFlow 載入 BattleCatalog、管理進戰票號和戰前角色／道具快照；每次進戰才建立 BattleArena。Arena 擁有局部 BattleManager、BattleStage、BattleInterface 和獨立鏡頭。戰鬥期間探索地圖／玩家停止處理且隱藏；Main 保存返回位置，結束後恢复。BattleManager 不設為 Autoload。
+
+BattleManager 依速度降序產生每輪佇列，同速按 instance_id，死亡者跳過。狀態為 IDLE → WAITING／RESOLVING → FINISHED；UI 的 action_requested 帶行動、目標及回合 token，驗證後立即鎖定再消耗。傷害為 max(1, 攻擊或魔法 + 技能威力 − 防禦或魔防)；防禦向上取整減半，直到自己下一次行動。敵人選最低 HP 比例存活目標，守衛偶數輪且 MP 足夠時使用魔法。
+
+BattleStage 僅讀取狀態，依 action_resolved 做位移／數字動畫。每次動畫從固定站位起算並終止舊位移，防止快速行動累積漂移。BattleInterface 僅發請求；未學技能、錯誤目標、無資源及舊 token 均由 manager 拒絕。
+
+勝利保留當前 HP／MP／道具，結果僅含 reward_preview；EXP／金幣實際發放留 P4。敗北重試或撤退還原進戰前快照，物品來源帳本不回退。重試保留票號並重建敵人；按返回後 BattleFlow 只發一次 concluded。EventRunner 必須吻合等待票號和 battle_id 且勝利，才經 FlagManager 寫 victory_flag、執行 complete_actions、寫完成旗標。敗北清除等待，允許重新觸發事件；重試期間持續等待。
+
+E004/E007 目前只在整合測試中明確啟用、設置前置旗標，再以真實指令完成勝敗；預設事件仍僅 E001/E002。森林演練直接使用 B001/B002，沒有主線等待或獎勵。營地恢復 HP／MP，不補道具。完整事件鏈留 P4／P5。
 
 ## 資料流
 
@@ -32,7 +46,7 @@ WorldInteractable 使用距離加物理射線檢查；Main 每個物理幀在地
 | 系統 | 擁有/負責的內容 | 預計引入 | 生命週期 |
 | --- | --- | --- | --- |
 | Main / Player | 主場景組裝、角色位置/速度、鏡頭與 HUD | P1 | 場景內 |
-| GameManager | 探索/戰鬥/結算等模式協調，持有本輪 SessionState | P2～P3 | 跨場景 |
+| ExplorationGame / BattleFlow | 組裝常駐服務、探索／戰鬥輸入鎖、戰鬥票號和戰前快照 | P2～P3 已實作 | Main 常駐組件 |
 | SceneManager | 地圖切換、出生點、探索返回位置及轉場保護 | P2 | 跨場景 |
 | PartyManager | 角色實例 HP/MP、等級、經驗、技能及隊伍成員 ID | P3 最小版，P4 擴充 | 跨場景 |
 | BattleManager | 回合排程、行動驗證、敵方暫態、結算產生 | P3 | 戰鬥場景內 |
@@ -43,14 +57,14 @@ WorldInteractable 使用距離加物理射線檢查；Main 每個物理幀在地
 | QuestManager | 任務接受/交付狀態，依 FlagManager 投影目標完成度 | P2 最小版，P5 日誌/保存 | 跨場景 |
 | SaveManager | 狀態快照、格式驗證、遷移及讀寫 | P5 | 跨場景服務 |
 
-GameManager 持有各狀態分區，不重複建立第二份角色或背包資料。Manager 是職責名稱，不要求全部變成 Autoload；Phase 1 不需要全域管理器。後續跨場景服務採最少必要的 Autoload/組件，由明確入口組裝，避免互相在 `_ready()` 取用。實作時才確定初始化順序並驗證。
+本輪 session 由 Main 常駐組件分別擁有各狀態分區，沒有另建 GameManager／SessionState 空殼，也不重複建立第二份角色或背包資料。Manager 是職責名稱，不要求全部變成 Autoload；由 Main 明確注入依賴，避免互相在 `_ready()` 取用。
 
 ## 定義與實例
 
 - `data/` 下的 Resource 定義角色基礎值、敵人、技能、道具，使用穩定 ID；遊戲中當作唯讀模板。
 - 劇情事件、任務與戰鬥遭遇配置使用 JSON（已加入三份序章資料），經型別、ID、引用及動作驗證後執行；不把對話硬編在場景脚本。詳細契約見 [故事整合規格](STORY_IMPLEMENTATION.md)。
-- SessionState 擁有角色/背包/任務的可變實例。建立新遊戲時複製或由模板產生，不直接修改共享 `.tres`。
-- 隊伍角色以角色實例 ID 引用；戰鬥透過 PartyManager 的方法改變 HP/MP，避免退出戰鬥後遺失。
+- Main 常駐組件擁有角色/背包/任務的可變實例。建立新遊戲時由模板產生，不直接修改共享 `.tres`。
+- 隊伍角色以角色實例 ID 引用；戰鬥透過 PartyManager 持有的 CombatantState 方法改變 HP/MP，避免退出戰鬥後遺失。
 - 行動資料與回合排程分開；未來 ATB 僅替換排程入口。
 - 勝利獎勵在單一結算入口套用一次；死亡、取消選單或連按不可重複消耗/獲得物品。
 - JSON 只保存明確基本型別；位置明確轉成 x/y/z 數值，不直接序列化 Node、Resource 或 Vector3。檔案有 `schema_version`，讀取驗證後再整體套用，損壞檔不覆寫目前進度。

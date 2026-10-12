@@ -22,7 +22,7 @@
     "chest_received": [
       {
         "speaker": "narrator",
-        "text": "取得旅人乾糧 ×1。補給已收進背包。"
+        "text": "取得{item} ×{amount}。補給已收進背包。"
       }
     ],
     "chest_empty": [
@@ -30,6 +30,9 @@
         "speaker": "narrator",
         "text": "補給箱已經空了。"
       }
+    ],
+    "rest": [
+      {"speaker": "narrator", "text": "你在營地稍作休息。HP 與 MP 已恢復，道具不會補充。"}
     ],
     "forest_sign": [
       {

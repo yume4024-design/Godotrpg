@@ -4,6 +4,18 @@
 
 [ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
 
+[sub_resource type="CylinderMesh" id="TrainingMarker"]
+top_radius = 0.0
+bottom_radius = 0.65
+height = 1.6
+radial_segments = 6
+
+[sub_resource type="BoxMesh" id="SupplyBase"]
+size = Vector3(1.1, 0.7, 0.7)
+
+[sub_resource type="BoxMesh" id="SupplyLid"]
+size = Vector3(1.15, 0.15, 0.75)
+
 [sub_resource type="StandardMaterial3D" id="Grass"]
 albedo_color = Color(0.18, 0.32, 0.26, 1)
 roughness = 0.95
@@ -635,4 +647,95 @@ font_size = 42
 pixel_size = 0.011
 modulate = Color(0.97, 0.88, 0.66, 1)
 outline_size = 10
+no_depth_test = true
+
+[node name="SlimeTrial" type="Node3D" parent="."]
+position = Vector3(-3, 0, 0)
+script = ExtResource("Interact")
+interaction_id = &"slime_trial"
+kind = "battle"
+label = "演練 · 森林史萊姆"
+battle_id = &"B001"
+[node name="Marker" type="MeshInstance3D" parent="SlimeTrial"]
+position = Vector3(0, 0.8, 0)
+mesh = SubResource("TrainingMarker")
+material_override = SubResource("Leaf")
+[node name="Label" type="Label3D" parent="SlimeTrial"]
+position = Vector3(0, 2.0, 0)
+billboard = 1
+font = SubResource("Font")
+font_size = 36
+pixel_size = 0.009
+text = "演練 · 森林史萊姆"
+outline_size = 8
+no_depth_test = true
+
+[node name="GuardianTrial" type="Node3D" parent="."]
+position = Vector3(5, 0, 3)
+script = ExtResource("Interact")
+interaction_id = &"guardian_trial"
+kind = "battle"
+label = "挑戰 · 腐化守衛"
+battle_id = &"B002"
+[node name="Marker" type="MeshInstance3D" parent="GuardianTrial"]
+position = Vector3(0, 0.8, 0)
+mesh = SubResource("TrainingMarker")
+material_override = SubResource("Stone")
+[node name="Label" type="Label3D" parent="GuardianTrial"]
+position = Vector3(0, 2.0, 0)
+billboard = 1
+font = SubResource("Font")
+font_size = 36
+pixel_size = 0.009
+text = "挑戰 · 腐化守衛"
+outline_size = 8
+no_depth_test = true
+
+[node name="Camp" type="Node3D" parent="."]
+position = Vector3(-7, 0, 3)
+script = ExtResource("Interact")
+interaction_id = &"forest_camp"
+kind = "rest"
+label = "營地 · 恢復 HP / MP"
+
+[node name="Marker" type="MeshInstance3D" parent="Camp"]
+position = Vector3(0, 0.8, 0)
+mesh = SubResource("TrainingMarker")
+material_override = SubResource("Blue")
+[node name="Label" type="Label3D" parent="Camp"]
+position = Vector3(0, 2.0, 0)
+billboard = 1
+font = SubResource("Font")
+font_size = 36
+pixel_size = 0.009
+text = "營地 · 恢復 HP / MP"
+outline_size = 8
+no_depth_test = true
+
+[node name="TrainingSupply" type="Node3D" parent="." node_paths=PackedStringArray("lid")]
+position = Vector3(-5, 0, -2)
+script = ExtResource("Interact")
+interaction_id = &"forest_training_supplies"
+kind = "chest"
+label = "演練補給箱"
+item_id = &"potion"
+item_amount = 3
+reward_source = &"forest_training_supplies"
+lid = NodePath("Lid")
+[node name="Base" type="MeshInstance3D" parent="TrainingSupply"]
+position = Vector3(0, 0.35, 0)
+mesh = SubResource("SupplyBase")
+material_override = SubResource("Wood")
+[node name="Lid" type="MeshInstance3D" parent="TrainingSupply"]
+position = Vector3(0, 0.75, 0)
+mesh = SubResource("SupplyLid")
+material_override = SubResource("Gold")
+[node name="Label" type="Label3D" parent="TrainingSupply"]
+position = Vector3(0, 1.5, 0)
+billboard = 1
+font = SubResource("Font")
+font_size = 36
+pixel_size = 0.009
+text = "恢復藥補給"
+outline_size = 8
 no_depth_test = true

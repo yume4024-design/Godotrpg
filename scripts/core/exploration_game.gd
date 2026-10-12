@@ -5,6 +5,7 @@ extends Node3D
 @export_file("*.json") var dialogue_path: String
 @export_file("*.json") var quest_path: String
 @export_file("*.json") var battles_path: String
+@export var starting_character: CombatantDefinition
 @onready var player: ExplorationPlayer = %Player
 @onready var camera: Camera3D = %Camera3D
 @onready var ui: ExplorationInterface = %Interface
@@ -15,6 +16,9 @@ extends Node3D
 @onready var runner: EventRunner = %EventRunner
 @onready var story: StoryManager = %Story
 @onready var travel: ExplorationSceneManager = %SceneManager
+@onready var party: PartyManager = %Party
+@onready var battles: BattleFlow = %Battles
+var _battle_origin: Vector3
 var catalog: StoryCatalog = StoryCatalog.new()
 var ready_to_play: bool = false
 var nearest: WorldInteractable
@@ -40,16 +44,23 @@ func _ready() -> void:
 	for lines: Variant in ambient.conversations.values():
 		if not catalog.valid_lines(lines, ambient.speakers):
 			catalog.errors.append("Invalid ambient conversation")
-	for id: String in ["npc_guildmaster", "npc_lia", "chest_received", "chest_empty", "forest_sign"]:
+	for id: String in ["npc_guildmaster", "npc_lia", "chest_received", "chest_empty", "forest_sign", "rest"]:
 		if not ambient.conversations.has(id):
 			catalog.errors.append("Missing conversation: " + id)
 	if not catalog.errors.is_empty():
 		_fail()
 		return
 	_ambient = ambient.conversations
+	if not party.setup([starting_character]) or not battles.setup(battle_data, party, inventory):
+		catalog.errors.append("Battle setup failed: " + "; ".join(battles.catalog.errors))
+		_fail()
+		return
+	party.changed.connect(_refresh_party)
+	battles.active_changed.connect(_on_battle_active)
+	_refresh_party()
 	quests.setup(quest_data, flags)
 	dialogue.setup(ambient.speakers)
-	runner.setup(catalog, flags, quests, dialogue)
+	runner.setup(catalog, flags, quests, dialogue, battles)
 	story.setup(catalog, runner)
 	travel.setup(%MapContainer, player, ui.fade)
 	dialogue.active_changed.connect(ui.set_dialogue_active)
@@ -72,7 +83,7 @@ func _fail() -> void:
 	push_error("; ".join(catalog.errors))
 
 func locked() -> bool:
-	return not ready_to_play or travel.transitioning or dialogue.active or runner.busy
+	return not ready_to_play or travel.transitioning or dialogue.active or runner.busy or battles.active
 
 func _update_lock(_unused: bool = false) -> void:
 	player.input_component.enabled = not locked()
@@ -94,7 +105,7 @@ func _on_map_changed(map: ExplorationMap) -> void:
 		target.refresh(inventory)
 
 func _physics_process(delta: float) -> void:
-	if not ready_to_play or not is_instance_valid(travel.current_map):
+	if not ready_to_play or battles.active or not is_instance_valid(travel.current_map):
 		return
 	camera.size = move_toward(camera.size, travel.current_map.camera_size_at(player.global_position), delta * 5.0)
 	if locked():
@@ -135,11 +146,19 @@ func interact() -> bool:
 			if not story.trigger("interact", String(target.interaction_id)):
 				dialogue.start(_ambient[String(target.interaction_id)])
 		"chest":
-			var received: bool = inventory.claim(target.reward_source, target.item_id, 1)
+			var received: bool = inventory.claim(target.reward_source, target.item_id, target.item_amount)
 			target.refresh(inventory)
-			dialogue.start(_ambient["chest_received" if received else "chest_empty"])
+			var lines: Array = _ambient["chest_received" if received else "chest_empty"].duplicate(true)
+			if received:
+				lines[0].text = lines[0].text.format({"item": inventory.definition(target.item_id).display_name, "amount": target.item_amount})
+			dialogue.start(lines)
 		"sign":
 			dialogue.start(_ambient[String(target.interaction_id)])
+		"battle":
+			return battles.launch(target.battle_id) > 0
+		"rest":
+			party.rest()
+			dialogue.start(_ambient["rest"])
 	return true
 
 func _refresh_inventory() -> void:
@@ -147,3 +166,21 @@ func _refresh_inventory() -> void:
 
 func _refresh_quest() -> void:
 	ui.quest.text = "委託 · " + quests.title(&"Q001") if quests.is_active(&"Q001") else "尚未接受委託"
+
+func _refresh_party() -> void:
+	ui.party_status.text = party.summary()
+
+func _on_battle_active(active: bool) -> void:
+	if active:
+		_battle_origin = player.global_position
+		player.velocity = Vector3.ZERO
+	%MapContainer.visible = not active
+	%MapContainer.process_mode = Node.PROCESS_MODE_DISABLED if active else Node.PROCESS_MODE_INHERIT
+	player.visible = not active
+	player.process_mode = Node.PROCESS_MODE_DISABLED if active else Node.PROCESS_MODE_INHERIT
+	$Sun.visible = not active
+	ui.visible = not active
+	if not active:
+		player.reset_to(_battle_origin)
+		camera.make_current()
+	_update_lock()

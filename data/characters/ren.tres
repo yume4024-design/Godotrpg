@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CombatantDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
+[ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
+[ext_resource type="Resource" path="res://data/skills/star_spark.tres" id="star_spark"]
+[ext_resource type="Resource" path="res://data/skills/guard.tres" id="guard"]
+[resource]
+script = ExtResource("1")
+id = &"ren"
+display_name = "雷恩"
+level = 1
+max_hp = 120
+max_mp = 20
+attack = 24
+magic = 18
+defense = 6
+ward = 5
+speed = 12
+skills = Array[ExtResource("Skill")]([ExtResource("attack"), ExtResource("star_spark"), ExtResource("guard")])
+color = Color(0.95, 0.45, 0.16, 1)
+form = 0

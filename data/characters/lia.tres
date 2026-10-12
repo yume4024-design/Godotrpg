@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="CombatantDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
+[ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
+[ext_resource type="Resource" path="res://data/skills/mend.tres" id="mend"]
+[ext_resource type="Resource" path="res://data/skills/guard.tres" id="guard"]
+[resource]
+script = ExtResource("1")
+id = &"lia"
+display_name = "莉雅"
+level = 1
+max_hp = 85
+max_mp = 30
+attack = 14
+magic = 24
+defense = 4
+ward = 8
+speed = 14
+skills = Array[ExtResource("Skill")]([ExtResource("attack"), ExtResource("mend"), ExtResource("guard")])
+color = Color(0.23, 0.64, 0.78, 1)
+form = 0

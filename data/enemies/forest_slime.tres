@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="CombatantDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
+[ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
+[resource]
+script = ExtResource("1")
+id = &"forest_slime"
+display_name = "森林史萊姆"
+level = 1
+max_hp = 38
+max_mp = 0
+attack = 13
+magic = 0
+defense = 3
+ward = 2
+speed = 8
+skills = Array[ExtResource("Skill")]([ExtResource("attack")])
+color = Color(0.38, 0.76, 0.4, 1)
+form = 1

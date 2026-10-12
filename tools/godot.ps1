@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'Editor', 'Run')]
+    [ValidateSet('Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -27,11 +27,13 @@ if ($Mode -ne 'Version') {
     New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
     $logPath = Join-Path $logRoot ('{0}-{1}.log' -f $Mode.ToLowerInvariant(), (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
     $engineArgs = @('--path', $projectRoot, '--log-file', $logPath)
-    if ($Mode -in @('Check', 'Smoke', 'Test', 'TestPhase2')) { $engineArgs += '--headless' }
+    if ($Mode -in @('Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3')) { $engineArgs += '--headless' }
     if ($Mode -eq 'Check') { $engineArgs += '--import' }
     if ($Mode -eq 'Smoke') { $engineArgs += @('--quit-after', '120') }
     if ($Mode -eq 'Test') { $engineArgs += @('--script', 'res://tests/phase1_movement_test.gd') }
     if ($Mode -in @('TestPhase2', 'VisualPhase2')) { $engineArgs += @('--script', 'res://tests/phase2_exploration_test.gd') }
+    if ($Mode -in @('TestPhase3', 'VisualPhase3', 'PreviewBattle')) { $engineArgs += @('--script', 'res://tests/phase3_battle_test.gd') }
+    if ($Mode -eq 'PreviewBattle') { $engineArgs += @('--', '--manual') }
     if ($Mode -eq 'Editor') { $engineArgs += '--editor' }
 }
 
@@ -44,7 +46,7 @@ $startInfo.UseShellExecute = $false
 $startInfo.CreateNoWindow = $true
 $startInfo.EnvironmentVariables['APPDATA'] = $profileRoot
 $startInfo.EnvironmentVariables['LOCALAPPDATA'] = $cacheRoot
-if ($Mode -in @('Editor', 'Run')) {
+if ($Mode -in @('Editor', 'Run', 'PreviewBattle')) {
     # Use the graphical binary for detached windows. The console wrapper inherits
     # the caller's pipe handles and can stall after a short-lived tool shell exits.
     $graphicalPath = $GodotPath -replace '_console\.exe$', '.exe'

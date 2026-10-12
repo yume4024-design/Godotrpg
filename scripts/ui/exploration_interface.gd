@@ -7,6 +7,7 @@ var location: Label
 var objective: Label
 var quest: Label
 var inventory: Label
+var party_status: Label
 var prompt_label: Label
 var dialogue_panel: PanelContainer
 var speaker: Label
@@ -34,10 +35,12 @@ func _ready() -> void:
 	objective = _label(stack, "序章 · 灰石村的異變", 19)
 	objective.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	quest = _label(stack, "尚未接受委託", 16, Color("#a3b9b4"))
-	var status: PanelContainer = _panel(root_control, Vector4(-342, 22, -24, 126), true)
+	var status: PanelContainer = _panel(root_control, Vector4(-390, 22, -24, 185), true)
 	var status_stack: VBoxContainer = _stack(status)
 	_label(status_stack, "失落星核  /  探索原型", 19, Color("#ebc887"))
 	inventory = _label(status_stack, "背包 · 尚無物品", 18)
+	inventory.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	party_status = _label(status_stack, "", 16, Color("#a9d1c6"))
 	_label(status_stack, "本次進度於關閉遊戲後重置", 14, Color("#a3b9b4"))
 	prompt_label = Label.new()
 	root_control.add_child(prompt_label)

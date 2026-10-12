@@ -80,7 +80,7 @@
 
 P2 已建立 narrator/ren/guildmaster/lia 顯示資料與 new_game/npc_guildmaster 綁定。npc_lia 目前僅環境對話，不觸發 E003；forest_first_encounter 留待戰鬥整合。aster 的顯示名稱登記為「神秘聲音」，E006 尚未啟用。環境對話在 data/story/exploration_dialogue.json，未改寫故事原文或 E001～E008。
 
-P3～P4：ren/lia 角色定義、forest_slime/corrupted_guardian 敵人資料、potion 的效果與顯示、行動及獎勵實作。
+P3 已完成 ren/lia 角色定義、forest_slime/corrupted_guardian 敵人資料、potion 效果與顯示、回合行動及 B001/B002 載入。E004/E007 等待已獨立驗證：僅真實戰鬥勝利並確認返回後寫入旗標，敗北與錯誤／重複回呼不推進。森林演練沒有事件旗標或 EXP／金幣；forest_training_supplies 的 potion ×3 與 E005 來源分離。P4 才實作莉雅入隊、獎勵發放及 E001→E004 主線。
 
 P5：star_seal_01 關鍵物品、aster 對應的 E006 演出、crystal_awakening 真正可播放的演出、mine_inner_area/ancient_crystal/mine_boss_arena 綁定及安全讀檔。這些可執行資源／綁定目前皆未建立，不應把靜態 JSON 檢查說成引用已解析成功。
 
@@ -102,4 +102,4 @@ P5：star_seal_01 關鍵物品、aster 對應的 E006 演出、crystal_awakening
 
 原文副本逐位元保存並核對 SHA256；三份 JSON 可解析，事件/任務目標/戰鬥 ID 唯一；條件旗標、Q001/B001/B002 引用及任務獎勵數值已核對。角色/資源引用、觸發器、戰鬥與讀檔行為尚無引擎實作，全部待驗證。完整操作清單見 [ACCEPTANCE](ACCEPTANCE.md)。
 
-P2 後續驗證已涵蓋 E001/E002 的條件、輸入鎖、完成旗標、任務接取及切圖保留；JSON 執行時驗證 ID、型別、說話者、旗標、任務／戰鬥 ID 和勝利門檻。後續角色、道具、演出資源尚未解析成可執行系統，不能將其已知動作格式當作功能完成。詳見 [P2 驗收](PHASE2_REPORT.md)。
+P2 後續驗證已涵蓋 E001/E002 的條件、輸入鎖、完成旗標、任務接取及切圖保留；JSON 執行時驗證 ID、型別、說話者、旗標、任務／戰鬥 ID 和勝利門檻。P3 已解析角色、敵人、技能與恢復藥並執行真實戰鬥；E003 入隊、後續演出、獎勵與讀檔尚未實作，不能將其已知動作格式當作功能完成。詳見 [P2 驗收](PHASE2_REPORT.md)、[P3 驗收](PHASE3_REPORT.md)。

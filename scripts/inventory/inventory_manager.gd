@@ -32,6 +32,31 @@ func count(id: StringName) -> int:
 	return _counts.get(id, 0)
 
 
+func definition(id: StringName) -> ItemDefinition:
+	for value: ItemDefinition in item_definitions:
+		if value.id == id:
+			return value
+	return null
+
+
+func consume(id: StringName, amount: int) -> bool:
+	if amount <= 0 or count(id) < amount or not knows(id):
+		return false
+	_counts[id] = count(id) - amount
+	changed.emit()
+	return true
+
+
+func snapshot_counts() -> Dictionary:
+	return _counts.duplicate()
+
+
+func restore_counts(snapshot: Dictionary) -> void:
+	# Battle rollback only. Claim ledger remains intact, so boxes never refill.
+	_counts.assign(snapshot)
+	changed.emit()
+
+
 func display_summary() -> String:
 	var entries: PackedStringArray = []
 	for definition: ItemDefinition in item_definitions:
