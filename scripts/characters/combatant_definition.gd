@@ -14,6 +14,7 @@ enum Form { HERO, SLIME, GUARDIAN }
 @export var skills: Array[SkillDefinition] = []
 @export var color: Color = Color.WHITE
 @export var form: Form = Form.HERO
+@export var appearance: PackedScene
 
 func skill(id_to_find: StringName) -> SkillDefinition:
 	for value: SkillDefinition in skills:

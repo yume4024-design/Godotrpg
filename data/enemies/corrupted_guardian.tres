@@ -3,8 +3,11 @@
 [ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
 [ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
 [ext_resource type="Resource" path="res://data/skills/rupture.tres" id="rupture"]
+[ext_resource type="PackedScene" path="res://scenes/characters/guardian_visual.tscn" id="Appearance"]
 [resource]
+
 script = ExtResource("1")
+appearance = ExtResource("Appearance")
 id = &"corrupted_guardian"
 display_name = "腐化守衛"
 level = 3

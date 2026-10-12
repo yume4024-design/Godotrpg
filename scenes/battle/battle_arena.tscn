@@ -1,10 +1,12 @@
 [gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/battle/battle_grove.tscn" id="Grove"]
 [ext_resource type="Script" path="res://scripts/battle/battle_arena.gd" id="Arena"]
 [ext_resource type="Script" path="res://scripts/battle/battle_manager.gd" id="Manager"]
 [ext_resource type="Script" path="res://scripts/battle/battle_stage.gd" id="Stage"]
 [ext_resource type="Script" path="res://scripts/ui/battle_interface.gd" id="UI"]
 [node name="BattleArena" type="Node3D"]
 script = ExtResource("Arena")
+[node name="Grove" parent="." instance=ExtResource("Grove")]
 [node name="BattleManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Manager")
@@ -16,10 +18,10 @@ unique_name_in_owner = true
 script = ExtResource("UI")
 [node name="BattleCamera" type="Camera3D" parent="."]
 unique_name_in_owner = true
-position = Vector3(0, 10, 12)
-rotation_degrees = Vector3(-39, 0, 0)
+position = Vector3(0, 8.5, 12)
+rotation_degrees = Vector3(-35, 0, 0)
 projection = 1
-size = 14.0
+size = 10.5
 current = true
 [node name="Light" type="DirectionalLight3D" parent="."]
 rotation_degrees = Vector3(-55, -25, 0)

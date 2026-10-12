@@ -31,6 +31,10 @@ BattleManager 依速度降序產生每輪佇列，同速按 instance_id，死亡
 
 BattleStage 僅讀取狀態，依 action_resolved 做位移／數字動畫。每次動畫從固定站位起算並終止舊位移，防止快速行動累積漂移。BattleInterface 僅發請求；未學技能、錯誤目標、無資源及舊 token 均由 manager 拒絕。
 
+追加卡通美術後，CombatantDefinition.appearance 注入 PackedScene；BattleStage 不再現造箱型人形。CartoonActor 包裝 GLB 和命名關節，僅處理待機、步行、死亡停止，不改數值或碰撞。探索玩家和 NPC 也實例化同一組 *_visual.tscn；Player 將實際水平速度傳入 set_motion，模型尺寸只縮放視覺子節點，原本碰撞 Shape 不變。
+
+環境美術為 village／forest 中直接實例化的 GLB，編輯器可見，不靠執行時改寫碰撞或搜尋路徑替換模型。battle_grove.tscn 為 BattleArena 的靜態視覺子場景，BattleStage 只管理戰鬥員、回合圈與動畫。宝箱沿用原 Lid 節點及旋轉行為，裝飾不持有任務或獎勵狀態。
+
 勝利保留當前 HP／MP／道具，結果僅含 reward_preview；EXP／金幣實際發放留 P4。敗北重試或撤退還原進戰前快照，物品來源帳本不回退。重試保留票號並重建敵人；按返回後 BattleFlow 只發一次 concluded。EventRunner 必須吻合等待票號和 battle_id 且勝利，才經 FlagManager 寫 victory_flag、執行 complete_actions、寫完成旗標。敗北清除等待，允許重新觸發事件；重試期間持續等待。
 
 E004/E007 目前只在整合測試中明確啟用、設置前置旗標，再以真實指令完成勝敗；預設事件仍僅 E001/E002。森林演練直接使用 B001/B002，沒有主線等待或獎勵。營地恢復 HP／MP，不補道具。完整事件鏈留 P4／P5。

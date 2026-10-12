@@ -21,6 +21,20 @@ P2 新增村莊、公會建築、森林樹木／石塊、路牌、寶箱及公�
 
 P3 新增的戰鬥平台、雷恩／莉雅／守衛人形、史萊姆、回合標記與森林演練標誌皆由 Godot BoxMesh／CylinderMesh／SphereMesh 自製；戰鬥 UI、位移／傷害數字動畫同樣為專案程式生成。沿用本機 SystemFont，無下載、購買或新增外掛；正式模型、音效及可散布字型留 P6。
 
+## 2026-10-13 卡通美術 v1（目前遊戲使用）
+
+作者／來源：本專案原創，由 Codex 使用 Blender Python 建模。商店頁／外部版本／第三方授權文件／必要署名：不適用；沒有下載、購買、使用外部生成服務或複製企劃參考圖。工具版本 Blender 5.2.2 LTS，Godot 4.7.2。這些模型替換上列歷史階段的遊戲佔位，不影響保留的 P1 練習場。
+
+| 素材 | 來源腳本 | 修改與用途 |
+| --- | --- | --- |
+| ren、lia、guildmaster | tools/build_cartoon_assets.py | 原創五官／髮型／多層服裝、背包、法杖、書本，六個剛性關節的視覺擺動 |
+| forest_slime、corrupted_guardian | 同上 | 葉芽膠凍角色、分層石甲與紫晶守衛，探索演練點和戰鬥共用 |
+| round_tree、guild_house、cottage | tools/build_cartoon_environment.py | 圓冠樹、瓦頂／窗框／花箱／煙囪建築，村莊／森林／戰鬥林地 |
+| moss_rock、flower_patch、path_strip | 同上 | 覆苔岩石、花草、平坦圓角路面與邊界裝飾 |
+| chest_base、chest_lid、campfire、signpost | 同上 | 保留開箱樞軸的木箱、金屬包邊、營火、雕刻箭頭路牌 |
+
+原始建模檔：`source_assets/cartoon_v1/*_authoring.blend`；遊戲整理檔：同目錄 `*.blend`；面數：`*_metrics.json`；匯出：`assets/models/cartoon/*.glb`。材質為原創純色色盤，沒有外部貼圖；目前無蒙皮骨架。完整匯入／碰撞／畫面驗證與限制見 [美術報告](CARTOON_ART_REPORT.md)。
+
 ## 後續資產登錄欄位
 
 資產名稱 / 商店與來源 URL / 作者 / 版本或取得日期 / 授權文件位置 / 必要署名 / 原始檔位置 / 修改內容 / Godot 匯入與碰撞驗證 / 使用場景。

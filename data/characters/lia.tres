@@ -4,8 +4,11 @@
 [ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
 [ext_resource type="Resource" path="res://data/skills/mend.tres" id="mend"]
 [ext_resource type="Resource" path="res://data/skills/guard.tres" id="guard"]
+[ext_resource type="PackedScene" path="res://scenes/characters/lia_visual.tscn" id="Appearance"]
 [resource]
+
 script = ExtResource("1")
+appearance = ExtResource("Appearance")
 id = &"lia"
 display_name = "莉雅"
 level = 1

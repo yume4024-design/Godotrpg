@@ -1,0 +1,47 @@
+{
+  "asset": "lia",
+  "triangles": 4664,
+  "budget": 5000,
+  "meshes": [
+    {
+      "name": "Torso_mesh",
+      "triangles": 1070,
+      "degenerate": 0,
+      "nonmanifold": 0
+    },
+    {
+      "name": "Head_mesh",
+      "triangles": 2190,
+      "degenerate": 0,
+      "nonmanifold": 0
+    },
+    {
+      "name": "LegLeft_mesh",
+      "triangles": 316,
+      "degenerate": 0,
+      "nonmanifold": 0
+    },
+    {
+      "name": "ArmLeft_mesh",
+      "triangles": 274,
+      "degenerate": 0,
+      "nonmanifold": 0
+    },
+    {
+      "name": "LegRight_mesh",
+      "triangles": 316,
+      "degenerate": 0,
+      "nonmanifold": 0
+    },
+    {
+      "name": "ArmRight_mesh",
+      "triangles": 498,
+      "degenerate": 0,
+      "nonmanifold": 0
+    }
+  ],
+  "source": "Original procedural Blender geometry",
+  "uv": "Simple generated UV; palette materials only, no texture images",
+  "rig": "Transform hierarchy; no skinned skeleton",
+  "blender": "5.2.2 LTS"
+}

@@ -2,8 +2,11 @@
 [ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="1"]
 [ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
 [ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
+[ext_resource type="PackedScene" path="res://scenes/characters/slime_visual.tscn" id="Appearance"]
 [resource]
+
 script = ExtResource("1")
+appearance = ExtResource("Appearance")
 id = &"forest_slime"
 display_name = "森林史萊姆"
 level = 1

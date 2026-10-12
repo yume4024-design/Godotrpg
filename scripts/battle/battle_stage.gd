@@ -5,18 +5,11 @@ var _labels: Dictionary[StringName, Label3D] = {}
 var _rings: Dictionary[StringName, MeshInstance3D] = {}
 var _origins: Dictionary[StringName, Vector3] = {}
 var _motions: Dictionary[StringName, Tween] = {}
+var _appearances: Dictionary[StringName, CartoonActor] = {}
 var _manager: BattleManager
 
 func setup(manager: BattleManager) -> void:
 	_manager = manager
-	var floor_mesh: CylinderMesh = CylinderMesh.new()
-	floor_mesh.top_radius = 9
-	floor_mesh.bottom_radius = 9
-	floor_mesh.height = 0.3
-	floor_mesh.radial_segments = 12
-	_mesh(self, floor_mesh, Vector3(0, -0.18, 0), Color("#384d4a"))
-	for point: Vector3 in [Vector3(-7, 0.6, -5), Vector3(7, 0.6, -5), Vector3(-7, 0.6, 5), Vector3(7, 0.6, 5)]:
-		_box(self, point, Vector3(0.8, 1.2, 0.8), Color("#697069"))
 	var ally_index: int = 0
 	var enemy_index: int = 0
 	for actor: CombatantState in manager.combatants():
@@ -25,6 +18,8 @@ func setup(manager: BattleManager) -> void:
 		var index: int = ally_index if actor.ally else enemy_index
 		var count: int = manager.allies.size() if actor.ally else manager.enemies.size()
 		root_actor.position = Vector3(-3.4 if actor.ally else 3.1, 0, (index - (count - 1) * 0.5) * 2.8)
+		if not actor.ally and count == 2:
+			root_actor.position.x += (index - 0.5) * 1.6
 		if actor.ally: ally_index += 1
 		else: enemy_index += 1
 		_actors[actor.instance_id] = root_actor
@@ -36,25 +31,14 @@ func setup(manager: BattleManager) -> void:
 		ring.radial_segments = 16
 		_rings[actor.instance_id] = _mesh(root_actor, ring, Vector3(0, 0.02, 0), Color("#daba6c"))
 		var form: CombatantDefinition.Form = actor.definition.form
-		var color: Color = actor.definition.color
-		if form == CombatantDefinition.Form.SLIME:
-			var slime: SphereMesh = SphereMesh.new()
-			slime.radius = 0.85
-			slime.height = 1.15
-			slime.radial_segments = 10
-			slime.rings = 5
-			_mesh(root_actor, slime, Vector3(0, 0.65, 0), color)
-			for z: float in [-0.23, 0.23]:
-				_box(root_actor, Vector3(-0.65, 0.78, z), Vector3(0.08, 0.16, 0.14), Color("#122830"))
-		else:
-			var scale_factor: float = 1.45 if form == CombatantDefinition.Form.GUARDIAN else 1.0
-			_box(root_actor, Vector3(0, 1.0, 0) * scale_factor, Vector3(0.72, 1.0, 0.5) * scale_factor, color)
-			_box(root_actor, Vector3(0, 1.75, 0) * scale_factor, Vector3(0.48, 0.48, 0.48) * scale_factor, Color("#d0bb8c") if actor.ally else color.lightened(0.2))
-			for z: float in [-0.2, 0.2]:
-				_box(root_actor, Vector3(0, 0.26, z) * scale_factor, Vector3(0.28, 0.52, 0.22) * scale_factor, Color("#253137"))
-			_box(root_actor, Vector3(0.55 if actor.ally else -0.55, 1.0, 0.2) * scale_factor, Vector3(0.14, 1.2, 0.14) * scale_factor, Color("#c7d5ce"))
+		var appearance: CartoonActor = actor.definition.appearance.instantiate() as CartoonActor
+		root_actor.add_child(appearance)
+		# Face the opposition while retaining a readable three-quarter view.
+		appearance.rotation.y = deg_to_rad(65.0 if actor.ally else -65.0)
+		_appearances[actor.instance_id] = appearance
 		var label: Label3D = Label3D.new()
-		label.position = root_actor.position + Vector3(0, 3.3 if form == CombatantDefinition.Form.GUARDIAN else 2.5, 0)
+		var label_height: float = 3.0 if form == CombatantDefinition.Form.GUARDIAN else (1.65 if form == CombatantDefinition.Form.SLIME else 2.4)
+		label.position = root_actor.position + Vector3(0, label_height, 0)
 		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 		var font: SystemFont = SystemFont.new()
 		font.font_names = PackedStringArray(["Microsoft JhengHei"])
@@ -74,6 +58,7 @@ func refresh() -> void:
 		label.text = "%s%s\nHP %d / %d" % [actor.definition.display_name, " · 倒下" if not actor.alive() else "", actor.hp, actor.definition.max_hp]
 		_rings[actor.instance_id].visible = actor == _manager.current and actor.alive() and _manager.phase != BattleManager.Phase.FINISHED
 		_actors[actor.instance_id].rotation.z = 0.0 if actor.alive() else 1.2
+		_appearances[actor.instance_id].set_dead(not actor.alive())
 
 func _animate(actor_id: StringName, target_id: StringName, amount: int, healing: bool) -> void:
 	var actor: Node3D = _actors[actor_id]
@@ -100,11 +85,6 @@ func _animate(actor_id: StringName, target_id: StringName, amount: int, healing:
 	var rise: Tween = create_tween()
 	rise.tween_property(popup, "position:y", popup.position.y + 1.0, 0.45)
 	rise.tween_callback(popup.queue_free)
-
-func _box(parent: Node3D, position_value: Vector3, size: Vector3, color: Color) -> void:
-	var box: BoxMesh = BoxMesh.new()
-	box.size = size
-	_mesh(parent, box, position_value, color)
 
 func _mesh(parent: Node3D, mesh: Mesh, position_value: Vector3, color: Color) -> MeshInstance3D:
 	var visual: MeshInstance3D = MeshInstance3D.new()

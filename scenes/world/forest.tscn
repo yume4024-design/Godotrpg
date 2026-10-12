@@ -1,59 +1,22 @@
 [gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/path_strip.glb" id="Art_path"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/round_tree.glb" id="Art_round_tree"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/moss_rock.glb" id="Art_moss_rock"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/flower_patch.glb" id="Art_flower_patch"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/chest_base.glb" id="Art_chest_base"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/chest_lid.glb" id="Art_chest_lid"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/campfire.glb" id="Art_campfire"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/signpost.glb" id="Art_signpost"]
+[ext_resource type="PackedScene" path="res://scenes/characters/slime_visual.tscn" id="Art_slime"]
+[ext_resource type="PackedScene" path="res://scenes/characters/guardian_visual.tscn" id="Art_guardian"]
+
 
 [ext_resource type="Script" path="res://scripts/world/exploration_map.gd" id="Map"]
 
 [ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
 
-[sub_resource type="CylinderMesh" id="TrainingMarker"]
-top_radius = 0.0
-bottom_radius = 0.65
-height = 1.6
-radial_segments = 6
-
-[sub_resource type="BoxMesh" id="SupplyBase"]
-size = Vector3(1.1, 0.7, 0.7)
-
-[sub_resource type="BoxMesh" id="SupplyLid"]
-size = Vector3(1.15, 0.15, 0.75)
-
 [sub_resource type="StandardMaterial3D" id="Grass"]
-albedo_color = Color(0.18, 0.32, 0.26, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Path"]
-albedo_color = Color(0.64, 0.57, 0.4, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Stone"]
-albedo_color = Color(0.39, 0.44, 0.42, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Wood"]
-albedo_color = Color(0.28, 0.17, 0.12, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Wall"]
-albedo_color = Color(0.68, 0.64, 0.48, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Roof"]
-albedo_color = Color(0.22, 0.34, 0.36, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Leaf"]
-albedo_color = Color(0.14, 0.36, 0.27, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Gold"]
-albedo_color = Color(0.86, 0.65, 0.29, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Blue"]
-albedo_color = Color(0.28, 0.53, 0.66, 1)
-roughness = 0.95
-
-[sub_resource type="StandardMaterial3D" id="Skin"]
-albedo_color = Color(0.85, 0.67, 0.46, 1)
+albedo_color = Color(0.29, 0.47, 0.36, 1)
 roughness = 0.95
 
 [sub_resource type="SystemFont" id="Font"]
@@ -65,225 +28,79 @@ size = Vector3(25, 0.6, 25)
 [sub_resource type="BoxShape3D" id="Shape1Collision"]
 size = Vector3(25, 0.6, 25)
 
-[sub_resource type="BoxMesh" id="Shape2Mesh"]
-size = Vector3(18, 0.03, 2.5)
-
-[sub_resource type="BoxMesh" id="Shape3Mesh"]
-size = Vector3(2.8, 0.03, 4.75)
-
-[sub_resource type="BoxMesh" id="Shape4Mesh"]
-size = Vector3(25, 0.8, 0.6)
-
 [sub_resource type="BoxShape3D" id="Shape4Collision"]
-size = Vector3(25, 0.8, 0.6)
-
-[sub_resource type="BoxMesh" id="Shape5Mesh"]
 size = Vector3(25, 0.8, 0.6)
 
 [sub_resource type="BoxShape3D" id="Shape5Collision"]
 size = Vector3(25, 0.8, 0.6)
 
-[sub_resource type="BoxMesh" id="Shape6Mesh"]
-size = Vector3(0.6, 0.8, 24)
-
 [sub_resource type="BoxShape3D" id="Shape6Collision"]
-size = Vector3(0.6, 0.8, 24)
-
-[sub_resource type="BoxMesh" id="Shape7Mesh"]
 size = Vector3(0.6, 0.8, 24)
 
 [sub_resource type="BoxShape3D" id="Shape7Collision"]
 size = Vector3(0.6, 0.8, 24)
 
-[sub_resource type="BoxMesh" id="Shape8Mesh"]
-size = Vector3(0.45, 1.6, 0.45)
-
 [sub_resource type="BoxShape3D" id="Shape8Collision"]
-size = Vector3(0.45, 1.6, 0.45)
-
-[sub_resource type="CylinderMesh" id="TreeMesh0"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape9Mesh"]
 size = Vector3(0.45, 1.6, 0.45)
 
 [sub_resource type="BoxShape3D" id="Shape9Collision"]
 size = Vector3(0.45, 1.6, 0.45)
 
-[sub_resource type="CylinderMesh" id="TreeMesh1"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape10Mesh"]
-size = Vector3(0.45, 1.6, 0.45)
-
 [sub_resource type="BoxShape3D" id="Shape10Collision"]
-size = Vector3(0.45, 1.6, 0.45)
-
-[sub_resource type="CylinderMesh" id="TreeMesh2"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape11Mesh"]
 size = Vector3(0.45, 1.6, 0.45)
 
 [sub_resource type="BoxShape3D" id="Shape11Collision"]
 size = Vector3(0.45, 1.6, 0.45)
 
-[sub_resource type="CylinderMesh" id="TreeMesh3"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape12Mesh"]
-size = Vector3(0.45, 1.6, 0.45)
-
 [sub_resource type="BoxShape3D" id="Shape12Collision"]
-size = Vector3(0.45, 1.6, 0.45)
-
-[sub_resource type="CylinderMesh" id="TreeMesh4"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape13Mesh"]
 size = Vector3(0.45, 1.6, 0.45)
 
 [sub_resource type="BoxShape3D" id="Shape13Collision"]
 size = Vector3(0.45, 1.6, 0.45)
 
-[sub_resource type="CylinderMesh" id="TreeMesh5"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape14Mesh"]
-size = Vector3(0.45, 1.6, 0.45)
-
 [sub_resource type="BoxShape3D" id="Shape14Collision"]
-size = Vector3(0.45, 1.6, 0.45)
-
-[sub_resource type="CylinderMesh" id="TreeMesh6"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape15Mesh"]
 size = Vector3(0.45, 1.6, 0.45)
 
 [sub_resource type="BoxShape3D" id="Shape15Collision"]
 size = Vector3(0.45, 1.6, 0.45)
 
-[sub_resource type="CylinderMesh" id="TreeMesh7"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape16Mesh"]
-size = Vector3(0.45, 1.6, 0.45)
-
 [sub_resource type="BoxShape3D" id="Shape16Collision"]
-size = Vector3(0.45, 1.6, 0.45)
-
-[sub_resource type="CylinderMesh" id="TreeMesh8"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape17Mesh"]
 size = Vector3(0.45, 1.6, 0.45)
 
 [sub_resource type="BoxShape3D" id="Shape17Collision"]
 size = Vector3(0.45, 1.6, 0.45)
 
-[sub_resource type="CylinderMesh" id="TreeMesh9"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape18Mesh"]
-size = Vector3(0.45, 1.6, 0.45)
-
 [sub_resource type="BoxShape3D" id="Shape18Collision"]
-size = Vector3(0.45, 1.6, 0.45)
-
-[sub_resource type="CylinderMesh" id="TreeMesh10"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape19Mesh"]
 size = Vector3(0.45, 1.6, 0.45)
 
 [sub_resource type="BoxShape3D" id="Shape19Collision"]
 size = Vector3(0.45, 1.6, 0.45)
 
-[sub_resource type="CylinderMesh" id="TreeMesh11"]
-top_radius = 0.0
-bottom_radius = 1.35
-height = 2.8
-radial_segments = 5
-rings = 1
-
-[sub_resource type="BoxMesh" id="Shape20Mesh"]
-size = Vector3(1.2, 1.5, 1.2)
-
 [sub_resource type="BoxShape3D" id="Shape20Collision"]
 size = Vector3(1.2, 1.5, 1.2)
-
-[sub_resource type="BoxMesh" id="Shape21Mesh"]
-size = Vector3(1.4, 0.8, 1)
 
 [sub_resource type="BoxShape3D" id="Shape21Collision"]
 size = Vector3(1.4, 0.8, 1)
 
-[sub_resource type="BoxMesh" id="Shape22Mesh"]
-size = Vector3(0.18, 1.4, 0.18)
-
 [sub_resource type="BoxShape3D" id="Shape22Collision"]
 size = Vector3(0.18, 1.4, 0.18)
 
-[sub_resource type="BoxMesh" id="Shape23Mesh"]
-size = Vector3(1.2, 0.5, 0.12)
-
-[sub_resource type="BoxMesh" id="Shape24Mesh"]
-size = Vector3(0.45, 1.7, 0.45)
-
 [sub_resource type="BoxShape3D" id="Shape24Collision"]
-size = Vector3(0.45, 1.7, 0.45)
-
-[sub_resource type="BoxMesh" id="Shape25Mesh"]
 size = Vector3(0.45, 1.7, 0.45)
 
 [sub_resource type="BoxShape3D" id="Shape25Collision"]
 size = Vector3(0.45, 1.7, 0.45)
 
+
+[sub_resource type="StandardMaterial3D" id="PebbleMat"]
+albedo_color = Color(0.74, 0.69, 0.53, 1)
+roughness = 0.95
+[sub_resource type="SphereMesh" id="PathPebble"]
+radius = 0.5
+height = 1.0
+radial_segments = 12
+rings = 6
+material = SubResource("PebbleMat")
 [node name="Forest" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "camera_zone")]
 script = ExtResource("Map")
 map_id = &"forest"
@@ -314,31 +131,11 @@ shape = SubResource("Shape1Collision")
 [node name="PathEast" type="Node3D" parent="."]
 position = Vector3(3, 0.01, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="PathEast"]
-cast_shadow = 0
-mesh = SubResource("Shape2Mesh")
-material_override = SubResource("Path")
-
 [node name="PathGuild" type="Node3D" parent="."]
 position = Vector3(0, 0.01, -3.625)
 
-[node name="Mesh" type="MeshInstance3D" parent="PathGuild"]
-cast_shadow = 0
-mesh = SubResource("Shape3Mesh")
-material_override = SubResource("Path")
-
-[node name="PathSouth" type="MeshInstance3D" parent="."]
-position = Vector3(0, 0.01, 3.625)
-cast_shadow = 0
-mesh = SubResource("Shape3Mesh")
-material_override = SubResource("Path")
-
 [node name="NorthWall" type="StaticBody3D" parent="."]
 position = Vector3(0, 0.4, -12)
-
-[node name="Mesh" type="MeshInstance3D" parent="NorthWall"]
-mesh = SubResource("Shape4Mesh")
-material_override = SubResource("Stone")
 
 [node name="Collision" type="CollisionShape3D" parent="NorthWall"]
 shape = SubResource("Shape4Collision")
@@ -346,19 +143,11 @@ shape = SubResource("Shape4Collision")
 [node name="SouthWall" type="StaticBody3D" parent="."]
 position = Vector3(0, 0.4, 12)
 
-[node name="Mesh" type="MeshInstance3D" parent="SouthWall"]
-mesh = SubResource("Shape5Mesh")
-material_override = SubResource("Stone")
-
 [node name="Collision" type="CollisionShape3D" parent="SouthWall"]
 shape = SubResource("Shape5Collision")
 
 [node name="WestWall" type="StaticBody3D" parent="."]
 position = Vector3(-12, 0.4, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="WestWall"]
-mesh = SubResource("Shape6Mesh")
-material_override = SubResource("Stone")
 
 [node name="Collision" type="CollisionShape3D" parent="WestWall"]
 shape = SubResource("Shape6Collision")
@@ -366,209 +155,89 @@ shape = SubResource("Shape6Collision")
 [node name="EastWall" type="StaticBody3D" parent="."]
 position = Vector3(12, 0.4, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="EastWall"]
-mesh = SubResource("Shape7Mesh")
-material_override = SubResource("Stone")
-
 [node name="Collision" type="CollisionShape3D" parent="EastWall"]
 shape = SubResource("Shape7Collision")
 
 [node name="Trunk0" type="StaticBody3D" parent="."]
 position = Vector3(-9, 0.8, -5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk0"]
-mesh = SubResource("Shape8Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk0"]
 shape = SubResource("Shape8Collision")
-
-[node name="Crown0" type="MeshInstance3D" parent="."]
-position = Vector3(-9, 2.7, -5)
-mesh = SubResource("TreeMesh0")
-material_override = SubResource("Leaf")
 
 [node name="Trunk1" type="StaticBody3D" parent="."]
 position = Vector3(-5, 0.8, -5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk1"]
-mesh = SubResource("Shape9Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk1"]
 shape = SubResource("Shape9Collision")
-
-[node name="Crown1" type="MeshInstance3D" parent="."]
-position = Vector3(-5, 2.7, -5)
-mesh = SubResource("TreeMesh1")
-material_override = SubResource("Leaf")
 
 [node name="Trunk2" type="StaticBody3D" parent="."]
 position = Vector3(-1, 0.8, -6)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk2"]
-mesh = SubResource("Shape10Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk2"]
 shape = SubResource("Shape10Collision")
-
-[node name="Crown2" type="MeshInstance3D" parent="."]
-position = Vector3(-1, 2.7, -6)
-mesh = SubResource("TreeMesh2")
-material_override = SubResource("Leaf")
 
 [node name="Trunk3" type="StaticBody3D" parent="."]
 position = Vector3(4, 0.8, -7)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk3"]
-mesh = SubResource("Shape11Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk3"]
 shape = SubResource("Shape11Collision")
-
-[node name="Crown3" type="MeshInstance3D" parent="."]
-position = Vector3(4, 2.7, -7)
-mesh = SubResource("TreeMesh3")
-material_override = SubResource("Leaf")
 
 [node name="Trunk4" type="StaticBody3D" parent="."]
 position = Vector3(8, 0.8, -5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk4"]
-mesh = SubResource("Shape12Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk4"]
 shape = SubResource("Shape12Collision")
-
-[node name="Crown4" type="MeshInstance3D" parent="."]
-position = Vector3(8, 2.7, -5)
-mesh = SubResource("TreeMesh4")
-material_override = SubResource("Leaf")
 
 [node name="Trunk5" type="StaticBody3D" parent="."]
 position = Vector3(10, 0.8, -9)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk5"]
-mesh = SubResource("Shape13Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk5"]
 shape = SubResource("Shape13Collision")
-
-[node name="Crown5" type="MeshInstance3D" parent="."]
-position = Vector3(10, 2.7, -9)
-mesh = SubResource("TreeMesh5")
-material_override = SubResource("Leaf")
 
 [node name="Trunk6" type="StaticBody3D" parent="."]
 position = Vector3(-9, 0.8, 7)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk6"]
-mesh = SubResource("Shape14Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk6"]
 shape = SubResource("Shape14Collision")
-
-[node name="Crown6" type="MeshInstance3D" parent="."]
-position = Vector3(-9, 2.7, 7)
-mesh = SubResource("TreeMesh6")
-material_override = SubResource("Leaf")
 
 [node name="Trunk7" type="StaticBody3D" parent="."]
 position = Vector3(-5, 0.8, 5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk7"]
-mesh = SubResource("Shape15Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk7"]
 shape = SubResource("Shape15Collision")
-
-[node name="Crown7" type="MeshInstance3D" parent="."]
-position = Vector3(-5, 2.7, 5)
-mesh = SubResource("TreeMesh7")
-material_override = SubResource("Leaf")
 
 [node name="Trunk8" type="StaticBody3D" parent="."]
 position = Vector3(-1, 0.8, 7)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk8"]
-mesh = SubResource("Shape16Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk8"]
 shape = SubResource("Shape16Collision")
-
-[node name="Crown8" type="MeshInstance3D" parent="."]
-position = Vector3(-1, 2.7, 7)
-mesh = SubResource("TreeMesh8")
-material_override = SubResource("Leaf")
 
 [node name="Trunk9" type="StaticBody3D" parent="."]
 position = Vector3(4, 0.8, 6)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk9"]
-mesh = SubResource("Shape17Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk9"]
 shape = SubResource("Shape17Collision")
-
-[node name="Crown9" type="MeshInstance3D" parent="."]
-position = Vector3(4, 2.7, 6)
-mesh = SubResource("TreeMesh9")
-material_override = SubResource("Leaf")
 
 [node name="Trunk10" type="StaticBody3D" parent="."]
 position = Vector3(8, 0.8, 5)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk10"]
-mesh = SubResource("Shape18Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk10"]
 shape = SubResource("Shape18Collision")
-
-[node name="Crown10" type="MeshInstance3D" parent="."]
-position = Vector3(8, 2.7, 5)
-mesh = SubResource("TreeMesh10")
-material_override = SubResource("Leaf")
 
 [node name="Trunk11" type="StaticBody3D" parent="."]
 position = Vector3(-10, 0.8, -9)
 
-[node name="Mesh" type="MeshInstance3D" parent="Trunk11"]
-mesh = SubResource("Shape19Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Trunk11"]
 shape = SubResource("Shape19Collision")
 
-[node name="Crown11" type="MeshInstance3D" parent="."]
-position = Vector3(-10, 2.7, -9)
-mesh = SubResource("TreeMesh11")
-material_override = SubResource("Leaf")
-
 [node name="RuinedPillar" type="StaticBody3D" parent="."]
 position = Vector3(3, 0.75, -2)
-
-[node name="Mesh" type="MeshInstance3D" parent="RuinedPillar"]
-mesh = SubResource("Shape20Mesh")
-material_override = SubResource("Stone")
 
 [node name="Collision" type="CollisionShape3D" parent="RuinedPillar"]
 shape = SubResource("Shape20Collision")
 
 [node name="FallenStone" type="StaticBody3D" parent="."]
 position = Vector3(5, 0.4, -1)
-
-[node name="Mesh" type="MeshInstance3D" parent="FallenStone"]
-mesh = SubResource("Shape21Mesh")
-material_override = SubResource("Stone")
 
 [node name="Collision" type="CollisionShape3D" parent="FallenStone"]
 shape = SubResource("Shape21Collision")
@@ -584,19 +253,11 @@ label = "閱讀路牌"
 [node name="Post" type="StaticBody3D" parent="Sign"]
 position = Vector3(0, 0.7, 0)
 
-[node name="Mesh" type="MeshInstance3D" parent="Sign/Post"]
-mesh = SubResource("Shape22Mesh")
-material_override = SubResource("Wood")
-
 [node name="Collision" type="CollisionShape3D" parent="Sign/Post"]
 shape = SubResource("Shape22Collision")
 
 [node name="Board" type="Node3D" parent="Sign"]
 position = Vector3(0, 1.35, 0)
-
-[node name="Mesh" type="MeshInstance3D" parent="Sign/Board"]
-mesh = SubResource("Shape23Mesh")
-material_override = SubResource("Gold")
 
 [node name="SignName" type="Label3D" parent="Sign"]
 position = Vector3(0, 2, 0)
@@ -621,19 +282,11 @@ radius = 1.8
 [node name="GateLeft" type="StaticBody3D" parent="Exit"]
 position = Vector3(-0.1, 0.85, -1.7)
 
-[node name="Mesh" type="MeshInstance3D" parent="Exit/GateLeft"]
-mesh = SubResource("Shape24Mesh")
-material_override = SubResource("Stone")
-
 [node name="Collision" type="CollisionShape3D" parent="Exit/GateLeft"]
 shape = SubResource("Shape24Collision")
 
 [node name="GateRight" type="StaticBody3D" parent="Exit"]
 position = Vector3(-0.1, 0.85, 1.7)
-
-[node name="Mesh" type="MeshInstance3D" parent="Exit/GateRight"]
-mesh = SubResource("Shape25Mesh")
-material_override = SubResource("Stone")
 
 [node name="Collision" type="CollisionShape3D" parent="Exit/GateRight"]
 shape = SubResource("Shape25Collision")
@@ -656,10 +309,6 @@ interaction_id = &"slime_trial"
 kind = "battle"
 label = "演練 · 森林史萊姆"
 battle_id = &"B001"
-[node name="Marker" type="MeshInstance3D" parent="SlimeTrial"]
-position = Vector3(0, 0.8, 0)
-mesh = SubResource("TrainingMarker")
-material_override = SubResource("Leaf")
 [node name="Label" type="Label3D" parent="SlimeTrial"]
 position = Vector3(0, 2.0, 0)
 billboard = 1
@@ -677,10 +326,6 @@ interaction_id = &"guardian_trial"
 kind = "battle"
 label = "挑戰 · 腐化守衛"
 battle_id = &"B002"
-[node name="Marker" type="MeshInstance3D" parent="GuardianTrial"]
-position = Vector3(0, 0.8, 0)
-mesh = SubResource("TrainingMarker")
-material_override = SubResource("Stone")
 [node name="Label" type="Label3D" parent="GuardianTrial"]
 position = Vector3(0, 2.0, 0)
 billboard = 1
@@ -698,10 +343,6 @@ interaction_id = &"forest_camp"
 kind = "rest"
 label = "營地 · 恢復 HP / MP"
 
-[node name="Marker" type="MeshInstance3D" parent="Camp"]
-position = Vector3(0, 0.8, 0)
-mesh = SubResource("TrainingMarker")
-material_override = SubResource("Blue")
 [node name="Label" type="Label3D" parent="Camp"]
 position = Vector3(0, 2.0, 0)
 billboard = 1
@@ -722,14 +363,10 @@ item_id = &"potion"
 item_amount = 3
 reward_source = &"forest_training_supplies"
 lid = NodePath("Lid")
-[node name="Base" type="MeshInstance3D" parent="TrainingSupply"]
+[node name="Base" type="Node3D" parent="TrainingSupply"]
 position = Vector3(0, 0.35, 0)
-mesh = SubResource("SupplyBase")
-material_override = SubResource("Wood")
-[node name="Lid" type="MeshInstance3D" parent="TrainingSupply"]
+[node name="Lid" type="Node3D" parent="TrainingSupply"]
 position = Vector3(0, 0.75, 0)
-mesh = SubResource("SupplyLid")
-material_override = SubResource("Gold")
 [node name="Label" type="Label3D" parent="TrainingSupply"]
 position = Vector3(0, 1.5, 0)
 billboard = 1
@@ -739,3 +376,894 @@ pixel_size = 0.009
 text = "恢復藥補給"
 outline_size = 8
 no_depth_test = true
+
+[node name="Tree0" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-9.0, 0, -5.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Tree1" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-5.0, 0, -5.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 47, 0)
+
+[node name="Tree2" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-1.0, 0, -6.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 94, 0)
+
+[node name="Tree3" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(4.0, 0, -7.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 141, 0)
+
+[node name="Tree4" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(8.0, 0, -5.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 188, 0)
+
+[node name="Tree5" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(10.0, 0, -9.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 235, 0)
+
+[node name="Tree6" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-9.0, 0, 7.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 282, 0)
+
+[node name="Tree7" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-5.0, 0, 5.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 329, 0)
+
+[node name="Tree8" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-1.0, 0, 7.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 376, 0)
+
+[node name="Tree9" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(4.0, 0, 6.0)
+scale = Vector3(0.68, 0.78, 0.68)
+rotation_degrees = Vector3(0, 423, 0)
+
+[node name="Tree10" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(8.0, 0, 5.0)
+scale = Vector3(0.68, 0.78, 0.68)
+rotation_degrees = Vector3(0, 470, 0)
+
+[node name="Tree11" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-10.0, 0, -9.0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 517, 0)
+
+[node name="Artwork" parent="TrainingSupply" instance=ExtResource("Art_chest_base")]
+position = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Artwork" parent="TrainingSupply/Lid" instance=ExtResource("Art_chest_lid")]
+position = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Artwork" parent="SlimeTrial" instance=ExtResource("Art_slime")]
+position = Vector3(0, 0, 0)
+scale = Vector3(0.85, 0.85, 0.85)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Artwork" parent="GuardianTrial" instance=ExtResource("Art_guardian")]
+position = Vector3(0, 0, 0)
+scale = Vector3(0.7, 0.7, 0.7)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Artwork" parent="Camp" instance=ExtResource("Art_campfire")]
+position = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Artwork" parent="Sign" instance=ExtResource("Art_signpost")]
+position = Vector3(0, 0, 0)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="PillarArtwork" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(3, 0, -2)
+scale = Vector3(1, 1.42, 1)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="FallenArtwork" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(5, 0, -1)
+scale = Vector3(1.18, 0.76, 0.85)
+rotation_degrees = Vector3(0, 12, 0)
+
+[node name="Boundary0_0" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-11.55, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_1" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-10.5, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_2" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-9.450000000000001, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_3" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-8.4, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_4" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-7.3500000000000005, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_5" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-6.300000000000001, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_6" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-5.25, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_7" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-4.2, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_8" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-3.1500000000000004, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_9" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-2.0999999999999996, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_10" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-1.0500000000000007, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_11" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(0.0, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_12" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(1.0500000000000007, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_13" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(2.0999999999999996, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_14" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(3.1500000000000004, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_15" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(4.199999999999999, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_16" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(5.25, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_17" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(6.300000000000001, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_18" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(7.350000000000001, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_19" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(8.399999999999999, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_20" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(9.45, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_21" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(10.5, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary0_22" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(11.55, 0, -12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_0" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-11.55, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_1" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-10.5, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_2" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-9.450000000000001, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_3" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-8.4, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_4" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-7.3500000000000005, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_5" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-6.300000000000001, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_6" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-5.25, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_7" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-4.2, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_8" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-3.1500000000000004, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_9" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-2.0999999999999996, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_10" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-1.0500000000000007, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_11" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(0.0, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_12" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(1.0500000000000007, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_13" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(2.0999999999999996, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_14" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(3.1500000000000004, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_15" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(4.199999999999999, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_16" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(5.25, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_17" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(6.300000000000001, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_18" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(7.350000000000001, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_19" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(8.399999999999999, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_20" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(9.45, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_21" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(10.5, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary1_22" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(11.55, 0, 12)
+scale = Vector3(0.95, 0.78, 0.55)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_0" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -11.55)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_1" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -10.5)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_2" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -9.450000000000001)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_3" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -8.4)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_4" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -7.3500000000000005)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_5" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -6.300000000000001)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_6" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -5.25)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_7" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -4.2)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_8" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -3.1500000000000004)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_9" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -2.0999999999999996)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_10" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, -1.0500000000000007)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_11" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 0.0)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_12" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 1.0500000000000007)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_13" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 2.0999999999999996)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_14" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 3.1500000000000004)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_15" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 4.199999999999999)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_16" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 5.25)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_17" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 6.300000000000001)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_18" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 7.350000000000001)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_19" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 8.399999999999999)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_20" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 9.45)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_21" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 10.5)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary2_22" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-12, 0, 11.55)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_0" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -11.55)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_1" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -10.5)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_2" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -9.450000000000001)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_3" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -8.4)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_4" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -7.3500000000000005)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_5" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -6.300000000000001)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_6" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -5.25)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_7" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -4.2)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_8" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -3.1500000000000004)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_9" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -2.0999999999999996)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_10" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, -1.0500000000000007)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_11" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 0.0)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_12" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 1.0500000000000007)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_13" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 2.0999999999999996)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_14" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 3.1500000000000004)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_15" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 4.199999999999999)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_16" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 5.25)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_17" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 6.300000000000001)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_18" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 7.350000000000001)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_19" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 8.399999999999999)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_20" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 9.45)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_21" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 10.5)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Boundary3_22" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(12, 0, 11.55)
+scale = Vector3(0.55, 0.78, 0.95)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="GateStone0" parent="Exit" instance=ExtResource("Art_moss_rock")]
+position = Vector3(-0.1, 0, -1.7)
+scale = Vector3(0.4, 1.62, 0.4)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="GateStone1" parent="Exit" instance=ExtResource("Art_moss_rock")]
+position = Vector3(-0.1, 0, 1.7)
+scale = Vector3(0.4, 1.62, 0.4)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Flowers0" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(0.9623810762339815, 0.01, 8.211627332237743)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 310, 0)
+
+[node name="Flowers1" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-4.228051291893136, 0.01, 7.039618295195067)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 9, 0)
+
+[node name="Flowers2" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(9.477175926021346, 0.01, -9.630295842400258)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 333, 0)
+
+[node name="Flowers3" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-5.503848671455051, 0.01, 5.287468200123449)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 254, 0)
+
+[node name="Flowers4" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-3.4140206996419646, 0.01, 9.56565624224831)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 102, 0)
+
+[node name="Flowers5" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-1.0558496449756465, 0.01, -6.050850901553797)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 208, 0)
+
+[node name="Flowers6" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(3.485473065483209, 0.01, -7.898692070252579)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 216, 0)
+
+[node name="Flowers7" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-4.032491702098375, 0.01, -9.466876809606706)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 241, 0)
+
+[node name="Flowers8" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(0.31407656426425135, 0.01, 9.113415401474004)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 300, 0)
+
+[node name="Flowers9" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(4.1593235202372565, 0.01, 7.064534469541021)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 316, 0)
+
+[node name="Flowers10" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(6.968886670058726, 0.01, -8.96704958933957)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 188, 0)
+
+[node name="Flowers11" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(7.14918332384703, 0.01, 5.655001252329611)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 174, 0)
+
+[node name="Flowers12" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(6.039072881529613, 0.01, 5.7308844228536255)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 320, 0)
+
+[node name="Flowers13" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(3.1069300213459456, 0.01, 6.403236901246977)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 316, 0)
+
+[node name="Flowers14" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(3.187497579409948, 0.01, 9.049237061939454)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 357, 0)
+
+[node name="Flowers15" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(9.466231013434797, 0.01, -8.628321306307987)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 7, 0)
+
+[node name="Flowers16" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(9.446143173433104, 0.01, -7.07159253705596)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 212, 0)
+
+[node name="Flowers17" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(8.207990757904234, 0.01, -7.287674872274802)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 148, 0)
+
+[node name="Flowers18" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(8.31898540399769, 0.01, -8.929681558347651)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 330, 0)
+
+[node name="Flowers19" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-3.842950594348162, 0.01, -10.163399433932716)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 265, 0)
+
+[node name="Flowers20" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(7.644451418300221, 0.01, -7.734452894775554)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 4, 0)
+
+[node name="Flowers21" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-6.973631803041867, 0.01, 6.906691672015585)
+scale = Vector3(1, 1, 1)
+rotation_degrees = Vector3(0, 33, 0)
+
+[node name="PathStone0" type="MeshInstance3D" parent="."]
+position = Vector3(-6.0, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone1" type="MeshInstance3D" parent="."]
+position = Vector3(-5.58, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone2" type="MeshInstance3D" parent="."]
+position = Vector3(-5.16, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone3" type="MeshInstance3D" parent="."]
+position = Vector3(-4.74, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone4" type="MeshInstance3D" parent="."]
+position = Vector3(-4.32, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone5" type="MeshInstance3D" parent="."]
+position = Vector3(-3.9, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone6" type="MeshInstance3D" parent="."]
+position = Vector3(-3.48, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone7" type="MeshInstance3D" parent="."]
+position = Vector3(-3.06, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone8" type="MeshInstance3D" parent="."]
+position = Vector3(-2.64, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone9" type="MeshInstance3D" parent="."]
+position = Vector3(-2.22, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone10" type="MeshInstance3D" parent="."]
+position = Vector3(-1.7999999999999998, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone11" type="MeshInstance3D" parent="."]
+position = Vector3(-1.38, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone12" type="MeshInstance3D" parent="."]
+position = Vector3(-0.96, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone13" type="MeshInstance3D" parent="."]
+position = Vector3(-0.54, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone14" type="MeshInstance3D" parent="."]
+position = Vector3(-0.1200000000000001, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone15" type="MeshInstance3D" parent="."]
+position = Vector3(0.2999999999999998, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone16" type="MeshInstance3D" parent="."]
+position = Vector3(0.7199999999999998, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone17" type="MeshInstance3D" parent="."]
+position = Vector3(1.1399999999999997, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone18" type="MeshInstance3D" parent="."]
+position = Vector3(1.5599999999999996, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone19" type="MeshInstance3D" parent="."]
+position = Vector3(1.9799999999999995, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone20" type="MeshInstance3D" parent="."]
+position = Vector3(2.4000000000000004, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone21" type="MeshInstance3D" parent="."]
+position = Vector3(2.8200000000000003, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone22" type="MeshInstance3D" parent="."]
+position = Vector3(3.24, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone23" type="MeshInstance3D" parent="."]
+position = Vector3(3.66, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone24" type="MeshInstance3D" parent="."]
+position = Vector3(4.08, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone25" type="MeshInstance3D" parent="."]
+position = Vector3(4.5, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone26" type="MeshInstance3D" parent="."]
+position = Vector3(4.92, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone27" type="MeshInstance3D" parent="."]
+position = Vector3(5.34, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone28" type="MeshInstance3D" parent="."]
+position = Vector3(5.76, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone29" type="MeshInstance3D" parent="."]
+position = Vector3(6.18, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone30" type="MeshInstance3D" parent="."]
+position = Vector3(6.6, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone31" type="MeshInstance3D" parent="."]
+position = Vector3(7.02, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone32" type="MeshInstance3D" parent="."]
+position = Vector3(7.4399999999999995, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone33" type="MeshInstance3D" parent="."]
+position = Vector3(7.859999999999999, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone34" type="MeshInstance3D" parent="."]
+position = Vector3(8.28, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone35" type="MeshInstance3D" parent="."]
+position = Vector3(8.7, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone36" type="MeshInstance3D" parent="."]
+position = Vector3(9.12, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone37" type="MeshInstance3D" parent="."]
+position = Vector3(9.54, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone38" type="MeshInstance3D" parent="."]
+position = Vector3(9.959999999999999, 0.025, -0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathStone39" type="MeshInstance3D" parent="."]
+position = Vector3(10.379999999999999, 0.025, 0.83)
+scale = Vector3(0.35, 0.055, 0.25)
+mesh = SubResource("PathPebble")
+
+[node name="PathArtEast" parent="." instance=ExtResource("Art_path")]
+position = Vector3(3, 0.01, 0)
+[node name="PathArtSouth" parent="." instance=ExtResource("Art_path")]
+position = Vector3(0, 0.009, 3.0)
+rotation_degrees = Vector3(0, 90, 0)
+scale = Vector3(0.34, 1, 1.12)
+[node name="PathArtGuild" parent="." instance=ExtResource("Art_path")]
+position = Vector3(0, 0.009, -3.0)
+rotation_degrees = Vector3(0, 90, 0)
+scale = Vector3(0.34, 1, 1.12)

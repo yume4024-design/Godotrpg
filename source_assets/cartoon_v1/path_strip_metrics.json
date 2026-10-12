@@ -1,0 +1,17 @@
+{
+  "asset": "path_strip",
+  "triangles": 100,
+  "budget": 5000,
+  "meshes": [
+    {
+      "name": "path_strip_mesh",
+      "triangles": 100,
+      "degenerate": 0,
+      "nonmanifold": 0
+    }
+  ],
+  "source": "Original procedural Blender geometry",
+  "uv": "Simple generated UV; palette materials only, no texture images",
+  "rig": "Transform hierarchy; no skinned skeleton",
+  "blender": "5.2.2 LTS"
+}

@@ -1,0 +1,201 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/round_tree.glb" id="Art_round_tree"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/moss_rock.glb" id="Art_moss_rock"]
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/flower_patch.glb" id="Art_flower_patch"]
+
+[sub_resource type="StandardMaterial3D" id="Grass"]
+albedo_color = Color(0.30, 0.48, 0.37, 1)
+roughness = 0.95
+[sub_resource type="CylinderMesh" id="Island"]
+top_radius = 10.5
+bottom_radius = 10.8
+height = 0.5
+radial_segments = 64
+material = SubResource("Grass")
+[sub_resource type="StandardMaterial3D" id="Sand"]
+albedo_color = Color(0.57, 0.56, 0.39, 1)
+roughness = 1.0
+[sub_resource type="CylinderMesh" id="Clearing"]
+top_radius = 6.6
+bottom_radius = 6.6
+height = 0.03
+radial_segments = 64
+material = SubResource("Sand")
+[node name="BattleGrove" type="Node3D"]
+[node name="Ground" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.29, 0)
+mesh = SubResource("Island")
+[node name="Clearing" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.025, 0)
+scale = Vector3(1.25, 1, 0.62)
+mesh = SubResource("Clearing")
+
+[node name="Tree0" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-8, 0, -4)
+scale = Vector3(1.2, 1.2, 1.2)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Tree1" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-5.7, 0, -6)
+scale = Vector3(1.15, 1.15, 1.15)
+rotation_degrees = Vector3(0, 54, 0)
+
+[node name="Tree2" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(-2.8, 0, -7)
+scale = Vector3(1.25, 1.25, 1.25)
+rotation_degrees = Vector3(0, 108, 0)
+
+[node name="Tree3" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(0.8, 0, -7.5)
+scale = Vector3(1.35, 1.35, 1.35)
+rotation_degrees = Vector3(0, 162, 0)
+
+[node name="Tree4" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(4.5, 0, -6.5)
+scale = Vector3(1.15, 1.15, 1.15)
+rotation_degrees = Vector3(0, 216, 0)
+
+[node name="Tree5" parent="." instance=ExtResource("Art_round_tree")]
+position = Vector3(8, 0, -4.5)
+scale = Vector3(1.2, 1.2, 1.2)
+rotation_degrees = Vector3(0, 270, 0)
+
+[node name="Stone0" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-8.8, 0, 6.735557395310443e-16)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Stone1" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-8.679979469943959, 0, -0.9052702465440358)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 37, 0)
+
+[node name="Stone2" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-8.323191726965586, 0, -1.7858470806257587)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 74, 0)
+
+[node name="Stone3" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-7.7393690106171045, 0, -2.617710661703904)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 111, 0)
+
+[node name="Stone4" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-6.944436482688265, 0, -3.378169919793173)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 148, 0)
+
+[node name="Stone5" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-5.960077830306522, 0, -4.0464815087022235)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 185, 0)
+
+[node name="Stone6" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-4.813143791477358, 0, -4.604415630443907)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 222, 0)
+
+[node name="Stone7" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-3.534919736946135, 0, -5.036753296602815)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 259, 0)
+
+[node name="Stone8" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-2.1602722868390325, 0, -5.331701462666317)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 296, 0)
+
+[node name="Stone9" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(-0.7266982401565282, 0, -5.481214711536684)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 333, 0)
+
+[node name="Stone10" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(0.7266982401565248, 0, -5.481214711536684)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 370, 0)
+
+[node name="Stone11" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(2.1602722868390294, 0, -5.3317014626663175)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 407, 0)
+
+[node name="Stone12" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(3.534919736946132, 0, -5.036753296602816)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 444, 0)
+
+[node name="Stone13" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(4.813143791477361, 0, -4.6044156304439054)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 481, 0)
+
+[node name="Stone14" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(5.960077830306517, 0, -4.046481508702227)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 518, 0)
+
+[node name="Stone15" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(6.944436482688262, 0, -3.3781699197931743)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 555, 0)
+
+[node name="Stone16" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(7.739369010617105, 0, -2.617710661703904)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 592, 0)
+
+[node name="Stone17" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(8.323191726965588, 0, -1.785847080625756)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 629, 0)
+
+[node name="Stone18" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(8.679979469943957, 0, -0.9052702465440402)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 666, 0)
+
+[node name="Stone19" parent="." instance=ExtResource("Art_moss_rock")]
+position = Vector3(8.8, 0, -1.3471114790620886e-15)
+scale = Vector3(0.75, 0.55, 0.75)
+rotation_degrees = Vector3(0, 703, 0)
+
+[node name="Flower0" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-6, 0, -3.2)
+scale = Vector3(1.3, 1.3, 1.3)
+rotation_degrees = Vector3(0, 0, 0)
+
+[node name="Flower1" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-4, 0, -4.5)
+scale = Vector3(1.3, 1.3, 1.3)
+rotation_degrees = Vector3(0, 43, 0)
+
+[node name="Flower2" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-1, 0, -5)
+scale = Vector3(1.3, 1.3, 1.3)
+rotation_degrees = Vector3(0, 86, 0)
+
+[node name="Flower3" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(2, 0, -5)
+scale = Vector3(1.3, 1.3, 1.3)
+rotation_degrees = Vector3(0, 129, 0)
+
+[node name="Flower4" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(5, 0, -3.8)
+scale = Vector3(1.3, 1.3, 1.3)
+rotation_degrees = Vector3(0, 172, 0)
+
+[node name="Flower5" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(6, 0, -2.8)
+scale = Vector3(1.3, 1.3, 1.3)
+rotation_degrees = Vector3(0, 215, 0)
+
+[node name="Flower6" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(-7, 0, 2)
+scale = Vector3(1.3, 1.3, 1.3)
+rotation_degrees = Vector3(0, 258, 0)
+
+[node name="Flower7" parent="." instance=ExtResource("Art_flower_patch")]
+position = Vector3(7, 0, 2)
+scale = Vector3(1.3, 1.3, 1.3)
+rotation_degrees = Vector3(0, 301, 0)

@@ -4,6 +4,8 @@
 
 **Phase 3 已完成**：保留灰石村／低語森林探索、對話、E001/E002 與 Q001 接取，新增指令式回合制戰鬥。雷恩可攻擊、施放星火、使用恢復藥及防禦；史萊姆與腐化守衛會依回合行動，支援勝利返回、敗北重試／撤退及持續 HP／MP。
 
+**角色與場景已更新為圓潤可愛的卡通風格**：五個原創角色／敵人模型具備五官、服裝、裝備與待機／步行擺動；村莊、森林及戰鬥舞台加入圓冠樹、瓦屋、覆苔岩石、花草、圓角道路、寶箱和營火。這是使用者指定插入的美術工作，P4 尚未開始。
+
 操作：WASD 或方向鍵移動，靠近後按 E 互動；對話中按 E／空白鍵／Enter 或點擊繼續按鈕，先顯示全文再進下一句；R 返回本區起點。鏡頭保持角度並隨角色平移，森林空地有局部縮放。開啟 project.godot 後按 F5，或執行下面的 Run 指令即可遊玩。
 
 試玩路線：開場對話 → 公會長接受委託 → 右側入口進森林 → 開演練補給箱取得恢復藥 ×3 → 靠近「演練·森林史萊姆」按 E → 選指令及目標 → 勝利返回探索。營地可恢復 HP／MP；「挑戰·腐化守衛」較難，建議先休息並保留藥品。戰鬥使用滑鼠，或 Tab／方向鍵與 Enter 選擇；取消目標不消耗回合。
@@ -46,6 +48,7 @@ Set-Location D:\RPGGAME
 .\tools\godot.ps1 -Mode TestPhase3
 .\tools\godot.ps1 -Mode VisualPhase3
 .\tools\godot.ps1 -Mode PreviewBattle
+.\tools\godot.ps1 -Mode PreviewArt
 .\tools\godot.ps1 -Mode Editor
 .\tools\godot.ps1 -Mode Run
 ```
@@ -54,7 +57,9 @@ Set-Location D:\RPGGAME
 
 `TestPhase3` 執行 75 項戰鬥整合檢查；`VisualPhase3` 用 Windows 渲染器操作同一流程並保存十張畫面，共 85 項。`PreviewBattle` 使用測試腳本走到第一場演練後停下供手動操作，含測試用快速抵達與補給；一般遊玩請用 `Run`。
 
-本輪 [P3 驗收報告](docs/PHASE3_REPORT.md) 包含命令、畫面、修復與限制；[P2 報告](docs/PHASE2_REPORT.md)／[P1 報告](docs/PHASE1_REPORT.md) 保留歷史紀錄。可以使用並修改素材商店資產；目前使用自製幾何體，見 [素材紀錄](docs/ASSET_CREDITS.md)。
+`PreviewArt` 開啟五個卡通模型展示；`TestArt` 執行 17 項模型／材質／關節驗证，`VisualArt` 另保存正側背面與步行姿勢，共 21 項。[美術更新報告](docs/CARTOON_ART_REPORT.md) 包含來源、面數、重建方式與驗收限制。
+
+本輪 [P3 驗收報告](docs/PHASE3_REPORT.md) 包含命令、畫面、修復與限制；[P2 報告](docs/PHASE2_REPORT.md)／[P1 報告](docs/PHASE1_REPORT.md) 保留歷史紀錄。可以使用並修改素材商店資產；目前使用自製 Blender 模型及 Godot 場景，見 [素材紀錄](docs/ASSET_CREDITS.md)。
 
 引擎換位置時可傳入 `-GodotPath '完整執行檔路徑'`，或設定環境變數 `GODOT_PATH`。若系統執行政策禁止腳本，可用下列直接命令查版本，無需改動整台電腦的政策：
 

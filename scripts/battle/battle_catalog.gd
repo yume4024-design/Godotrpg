@@ -14,6 +14,8 @@ func setup(actors: Array[CombatantDefinition], document: Dictionary) -> bool:
 			continue
 		if actor.max_hp < 1 or actor.max_mp < 0 or actor.level < 1 or actor.speed < 1 or actor.attack < 0 or actor.magic < 0 or actor.defense < 0 or actor.ward < 0:
 			errors.append("Invalid combatant stats: " + String(actor.id))
+		if actor.appearance == null:
+			errors.append("Missing combatant appearance: " + String(actor.id))
 		var skills: Array[StringName] = []
 		for skill: SkillDefinition in actor.skills:
 			if skill == null or skill.id.is_empty() or skill.id in skills or skill.mp_cost < 0 or skill.power < 0:

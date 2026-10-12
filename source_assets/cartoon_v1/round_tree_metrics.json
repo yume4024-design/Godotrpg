@@ -1,0 +1,17 @@
+{
+  "asset": "round_tree",
+  "triangles": 2000,
+  "budget": 5000,
+  "meshes": [
+    {
+      "name": "round_tree_mesh",
+      "triangles": 2000,
+      "degenerate": 0,
+      "nonmanifold": 0
+    }
+  ],
+  "source": "Original procedural Blender geometry",
+  "uv": "Simple generated UV; palette materials only, no texture images",
+  "rig": "Transform hierarchy; no skinned skeleton",
+  "blender": "5.2.2 LTS"
+}

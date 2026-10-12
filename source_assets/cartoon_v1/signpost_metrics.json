@@ -1,0 +1,17 @@
+{
+  "asset": "signpost",
+  "triangles": 212,
+  "budget": 5000,
+  "meshes": [
+    {
+      "name": "signpost_mesh",
+      "triangles": 212,
+      "degenerate": 0,
+      "nonmanifold": 0
+    }
+  ],
+  "source": "Original procedural Blender geometry",
+  "uv": "Simple generated UV; palette materials only, no texture images",
+  "rig": "Transform hierarchy; no skinned skeleton",
+  "blender": "5.2.2 LTS"
+}
