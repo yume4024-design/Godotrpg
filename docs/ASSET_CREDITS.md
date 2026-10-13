@@ -43,3 +43,11 @@ P3 新增的戰鬥平台、雷恩／莉雅／守衛人形、史萊姆、回合�
 ## P5 原創礦坑與章末演出（2026-10-13）
 
 `scenes/world/mine.tscn` 與 `scenes/battle/battle_mine.tscn` 為本專案新建；原始生成工具 `tools/build_mine_scene.py`。使用 Godot 基本曲面／幾何構造石壁、坑木、礦軌、礦燈、星晶，沿用既有原創 moss_rock GLB；沒有第三方下載、商店資產或新增署名義務。E006 的模型／光照脈衝與 E009 文字預告淡入淡出為原創程式演出。角色 GLB 及既有來源記錄不變。
+
+
+## P6 聲音、光環與場景參考（2026-10-13）
+
+- `assets/audio/original/*.wav`：本專案原創程式合成，來源工具 `tools/build_audio.py`，22,050 Hz／單聲道。四段短旋律循環（village/forest/mine/battle）、七種音效（confirm/hit/heal/guard/victory/defeat/crystal）。無外部取樣、素材商店頁或第三方署名要求；音訊可由固定種子重建。
+- 攻擊／治療／防禦光環：BattleStage 使用 Godot TorusMesh／Tween 原創製作，無外部特效素材。
+- `docs/references/village_reference.jpg`：使用者提供，僅作場景設計參考，未直接用作遊戲素材；排除於匯出。改造方向見 SCENE_ART_DIRECTION.md，目前尚未套用。
+- Godot 4.7.2 及第三方引擎授權：`docs/GODOT_LICENSES.txt`，由 Engine API 取得並隨 Windows 包附上。Windows SystemFont 只在使用者系統讀取，不打包微軟字型檔。

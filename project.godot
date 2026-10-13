@@ -10,8 +10,11 @@ config_version=5
 
 [application]
 
+config/version="0.6.0"
 config/name="失落星核 — Project Crystal"
 run/main_scene="res://scenes/main/main.tscn"
+run/main_scene.qa="res://tests/qa_entry.tscn"
+run/main_loop_type.qa="DeliveryTestTree"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [debug]
@@ -29,6 +32,40 @@ window/size/min_width=960
 window/size/min_height=540
 
 [input]
+ui_accept={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194309), Object(InputEventJoypadButton,"button_index":0), Object(InputEventKey,"keycode":32)]
+}
+ui_cancel={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194305), Object(InputEventJoypadButton,"button_index":1)]
+}
+ui_left={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194319), Object(InputEventJoypadButton,"button_index":13)]
+}
+ui_right={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194321), Object(InputEventJoypadButton,"button_index":14)]
+}
+ui_up={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194320), Object(InputEventJoypadButton,"button_index":11)]
+}
+ui_down={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194322), Object(InputEventJoypadButton,"button_index":12)]
+}
+
+ui_focus_next={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194306), Object(InputEventJoypadButton,"button_index":10)]
+}
+ui_focus_prev={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"keycode":4194306,"shift_pressed":true), Object(InputEventJoypadButton,"button_index":9)]
+}
+
 quick_save={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"physical_keycode":4194336,"keycode":4194336)]
@@ -41,42 +78,42 @@ quick_load={
 
 party_menu={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"device":16,"physical_keycode":77), Object(InputEventKey,"device":16,"keycode":77)]
+"events": [Object(InputEventKey,"device":16,"physical_keycode":77), Object(InputEventKey,"device":16,"keycode":77), Object(InputEventJoypadButton,"button_index":6)]
 }
 
 
 interact={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"device":16,"physical_keycode":69), Object(InputEventKey,"device":16,"keycode":69)]
+"events": [Object(InputEventKey,"device":16,"physical_keycode":69), Object(InputEventKey,"device":16,"keycode":69), Object(InputEventJoypadButton,"button_index":0)]
 }
 dialogue_advance={
 "deadzone": 0.2,
-"events": [Object(InputEventKey,"device":16,"physical_keycode":32), Object(InputEventKey,"device":16,"physical_keycode":4194309), Object(InputEventKey,"device":16,"keycode":32), Object(InputEventKey,"device":16,"keycode":4194309)]
+"events": [Object(InputEventKey,"device":16,"physical_keycode":32), Object(InputEventKey,"device":16,"physical_keycode":4194309), Object(InputEventKey,"device":16,"keycode":32), Object(InputEventKey,"device":16,"keycode":4194309), Object(InputEventJoypadButton,"button_index":0)]
 }
 
 move_left={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":65,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194319,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
+, Object(InputEventJoypadMotion,"axis":0,"axis_value":-1.0), Object(InputEventJoypadButton,"button_index":13)]
 }
 move_right={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":68,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194321,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
+, Object(InputEventJoypadMotion,"axis":0,"axis_value":1.0), Object(InputEventJoypadButton,"button_index":14)]
 }
 move_forward={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":87,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194320,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
+, Object(InputEventJoypadMotion,"axis":1,"axis_value":-1.0), Object(InputEventJoypadButton,"button_index":11)]
 }
 move_back={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":83,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":16,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194322,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
-]
+, Object(InputEventJoypadMotion,"axis":1,"axis_value":1.0), Object(InputEventJoypadButton,"button_index":12)]
 }
 reset_position={
 "deadzone": 0.2,

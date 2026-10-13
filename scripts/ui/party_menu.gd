@@ -17,6 +17,10 @@ var _members: OptionButton
 var _tabs: HBoxContainer
 var _notice: Label
 var _close: Button
+var _audio: AdventureAudio
+
+func setup_audio(audio: AdventureAudio) -> void:
+	_audio = audio
 
 func _ready() -> void:
 	layer = 4
@@ -74,7 +78,7 @@ func _ready() -> void:
 	_tabs = HBoxContainer.new()
 	_tabs.add_theme_constant_override("separation", 10)
 	tools_row.add_child(_tabs)
-	for title: String in ["狀態", "背包", "技能", "裝備", "任務", "旅程"]:
+	for title: String in ["狀態", "背包", "技能", "裝備", "任務", "旅程", "音量"]:
 		_button(_tabs, title, _select_tab.bind(title))
 	var scroll: ScrollContainer = ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -86,7 +90,7 @@ func _ready() -> void:
 	_body.add_theme_constant_override("separation", 14)
 	scroll.add_child(_body)
 	_notice = _label(layout, "", 17)
-	_label(layout, "選擇上方角色後使用道具或換裝。Tab / 方向鍵選擇，Enter 確認。", 16)
+	_label(layout, "鍵盤 Tab / 方向鍵 · Enter 確認　│　手把 十字鍵 · A 確認 · B 返回", 16)
 	hide()
 
 func setup(party: PartyManager, inventory: InventoryManager) -> void:
@@ -129,7 +133,7 @@ func _select_tab(title: String) -> void:
 func refresh() -> void:
 	if _party == null: return
 	var focused: Control = get_viewport().gui_get_focus_owner()
-	var focus_text: String = focused.text if focused is Button and _body.is_ancestor_of(focused) else ""
+	var focus_text: String = String(focused.get_meta("focus_key", focused.text)) if focused is Button and _body.is_ancestor_of(focused) else ""
 	_title.text = "旅途手冊  /  %s      金幣 %d" % [_tab, _inventory.gold]
 	_members.clear()
 	for actor: CombatantState in _party.members():
@@ -142,6 +146,17 @@ func refresh() -> void:
 		_body.remove_child(child)
 		child.queue_free()
 	match _tab:
+		"音量":
+			if _audio == null: return
+			_label(_body, "旅途的聲音", 26)
+			_label(_body, "音量設定會自動保存，亦可選擇靜音。", 18)
+			for channel: String in ["背景音樂", "遊戲音效"]:
+				var level: float = _audio.music_level if channel == "背景音樂" else _audio.effects_level
+				_label(_body, "%s  ·  %d%%" % [channel, roundi(level * 100)], 22)
+				var row: HBoxContainer = _row()
+				for percent: int in [0, 25, 50, 75, 100]:
+					var volume_button: Button = _button(row, ("靜音" if percent == 0 else "%d%%" % percent), _set_volume.bind(channel, percent))
+					volume_button.set_meta("focus_key", channel + str(percent))
 		"任務":
 			if _quests == null: return
 			var quest: Dictionary = _quests.journal(&"Q001")
@@ -202,8 +217,9 @@ func refresh() -> void:
 		for child: Node in _body.find_children("*", "Button", true, false):
 			var candidate: Button = child as Button
 			if candidate.disabled: continue
-			if replacement == null or candidate.text == focus_text: replacement = candidate
-			if candidate.text == focus_text: break
+			var key: String = String(candidate.get_meta("focus_key", candidate.text))
+			if replacement == null or key == focus_text: replacement = candidate
+			if key == focus_text: break
 		if replacement != null: replacement.grab_focus()
 		else: _close.grab_focus()
 
@@ -212,6 +228,11 @@ func _row() -> HBoxContainer:
 	row.add_theme_constant_override("separation", 16)
 	_body.add_child(row)
 	return row
+
+func _set_volume(channel: String, percent: int) -> void:
+	var error: Error = _audio.set_levels(percent / 100.0 if channel == "背景音樂" else _audio.music_level, percent / 100.0 if channel == "遊戲音效" else _audio.effects_level)
+	_notice.text = "音量已保存。" if error == OK else "本次音量已套用，但無法寫入設定。"
+	refresh()
 
 func _label(parent: Node, text: String, font_size: int = 20) -> Label:
 	var label: Label = Label.new()

@@ -17,6 +17,7 @@ var body: RichTextLabel
 var next_button: Button
 var fade: ColorRect
 var _typing: Tween
+var footer: Label
 
 func _ready() -> void:
 	var root_control: Control = Control.new()
@@ -61,7 +62,7 @@ func _ready() -> void:
 	prompt_label.add_theme_font_size_override("font_size", 23)
 	prompt_label.add_theme_color_override("font_shadow_color", Color.BLACK)
 	prompt_label.add_theme_constant_override("shadow_outline_size", 6)
-	var footer: Label = Label.new()
+	footer = Label.new()
 	root_control.add_child(footer)
 	footer.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	footer.offset_left = 24
@@ -101,6 +102,10 @@ func set_dialogue_active(active: bool) -> void:
 	prompt_label.visible = not active
 	if not active and is_instance_valid(_typing):
 		_typing.kill()
+
+func set_input_hint(gamepad: bool) -> void:
+	footer.text = "左搖桿 / 十字鍵  移動     A  互動     Menu  手冊     B  返回" if gamepad else "WASD / 方向鍵  移動     E  互動     M  手冊     R  返回本區起點"
+	next_button.text = "A  顯示全文・繼續  ›" if gamepad else "E / 空白鍵 / Enter  顯示全文・繼續  ›"
 
 func show_line(who: String, text: String, index: int, total: int) -> void:
 	if is_instance_valid(_typing):

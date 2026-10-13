@@ -23,6 +23,8 @@ extends Node3D
 @onready var party_actions: PartyActions = %PartyActions
 @onready var saves: SaveManager = %Saves
 @onready var sequences: StorySequence = %Sequences
+@onready var audio: AdventureAudio = %Audio
+var using_gamepad: bool = false
 var restoring: bool = false
 var resume_offer: bool = false
 @onready var menu: PartyMenu = %PartyMenu
@@ -35,6 +37,12 @@ var _ambient: Dictionary = {}
 var _started: bool = false
 
 func _ready() -> void:
+	menu.setup_audio(audio)
+	battles.arena_started.connect(audio.bind_battle)
+	battles.active_changed.connect(func(active: bool) -> void:
+		if not active and is_instance_valid(travel.current_map): audio.play_music(travel.current_map.map_id))
+	sequences.started.connect(func(id: StringName) -> void: audio.play_cue(&"crystal" if id == &"crystal_awakening" else &"victory"))
+	saves.saved.connect(func() -> void: audio.play_cue(&"confirm"))
 	player.input_component.enabled = false
 	var document: Dictionary = catalog.read_json(story_path)
 	var ambient: Dictionary = catalog.read_json(dialogue_path)
@@ -130,6 +138,7 @@ func _on_transition(active: bool) -> void:
 	_update_lock()
 
 func _on_map_changed(map: ExplorationMap) -> void:
+	audio.play_music(map.map_id)
 	_area_suppressed = false
 	sequences.bind_map(map)
 	$WorldEnvironment.environment = map.environment if map.environment != null else _default_environment
@@ -160,9 +169,18 @@ func _physics_process(delta: float) -> void:
 		if candidate_distance < distance and target.in_reach(player):
 			nearest = target
 			distance = candidate_distance
-	ui.prompt_label.text = "[ E ]  " + nearest.prompt() if is_instance_valid(nearest) else ""
+	ui.prompt_label.text = ("[ A ]  " if using_gamepad else "[ E ]  ") + nearest.prompt() if is_instance_valid(nearest) else ""
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadButton or (event is InputEventJoypadMotion and absf(event.axis_value) > 0.25):
+		using_gamepad = true
+	elif event is InputEventKey or event is InputEventMouseButton:
+		using_gamepad = false
+	else: return
+	ui.set_input_hint(using_gamepad)
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_echo(): return
 	if event.is_action_pressed("quick_save"):
 		saves.request_save()
 		get_viewport().set_input_as_handled()
@@ -197,6 +215,7 @@ func interact() -> bool:
 	if not target.required_flag.is_empty() and not flags.has_flag(target.required_flag):
 		ui.prompt_label.text = "請先完成目前的主線目標。"
 		return false
+	audio.play_cue(&"confirm")
 	match target.kind:
 		"story":
 			return story.trigger("interact", String(target.interaction_id))

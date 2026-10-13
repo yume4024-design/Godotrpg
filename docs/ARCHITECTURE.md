@@ -120,3 +120,12 @@ Phase 1 場景樹：Main(Node3D) → WorldEnvironment、Sun(DirectionalLight3D)�
 首輪採 Compatibility renderer、60 Hz 物理更新；不引入付費資產、戰鬥外掛、複雜 DI 或多執行緒框架。實際效能目標待 P6 記錄測試硬體後驗證。
 
 故事腳本預定置於 scripts/story；QuestManager 保持在 scripts/quests，對話 UI 放 scenes/ui。原企劃建議目錄不另生成第二份 QuestManager。SessionState 統一保存事件完成狀態、旗標、任務、隊伍及獎勵帳本；事件中途執行時鎖定觸發，僅在安全檢查點存檔，避免等待戰鬥/演出時保存半套狀態。
+
+
+## P6 呈現與匯出
+
+Main 的 AdventureAudio 唯一持有音樂切換、六聲道音效池與音量設定；聆聽 BattleFlow.arena_started、戰鬥結算、StorySequence.started 和保存訊號，不改角色／旗標。PartyMenu 只呼叫 set_levels；設定寫獨立 ConfigFile，不改 SaveCodec v1。headless 不啟動音訊，圖形測試驗混音輸出。
+
+InputMap 明確定義 Xbox 與 UI 動作，PlayerInput 仍用 Input.get_vector／物理移動；Main 僅切換提示。戰鬥 B 只取消目標選擇，回合及資源驗證仍由 BattleManager 負責。
+
+正式 Windows 匯出排除 tests/tools/docs，QA feature 使用 DeliveryTestTree 與空 QAEntry；兩者使用同一 release 模板，遊戲資源逐一比較。測試不靠 release 的命令列入口覆寫。source_assets、日誌、匯出、模板下載都不作遊戲資源。

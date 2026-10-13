@@ -1,6 +1,7 @@
 class_name BattleFlow
 extends Node
 signal active_changed(active: bool)
+signal arena_started(arena: BattleArena)
 signal concluded(ticket: int, battle_id: StringName, won: bool)
 @export var battle_scene: PackedScene
 @export var definitions: Array[CombatantDefinition] = []
@@ -54,6 +55,7 @@ func _spawn() -> void:
 	arena.return_requested.connect(return_to_world)
 	arena.retry_requested.connect(retry)
 	arena.setup(_party, _inventory, catalog.enemies(battle_id), catalog.encounters[battle_id], _practice)
+	arena_started.emit(arena)
 	arena.manager.settled.connect(_on_settled)
 
 func _on_settled(won: bool, _result: Dictionary) -> void:

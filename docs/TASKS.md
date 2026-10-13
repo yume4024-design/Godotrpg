@@ -1,6 +1,6 @@
 # 任務與進度
 
-更新日期：2026-10-13（Asia/Taipei）。目前階段：Phase 5 完成；下一步：Phase 6（尚未開始）。最新證據見 [PHASE5_REPORT](PHASE5_REPORT.md)；歷史紀錄見 [PHASE2_REPORT](PHASE2_REPORT.md) 與 [PHASE1_REPORT](PHASE1_REPORT.md)。
+更新日期：2026-10-13（Asia/Taipei）。目前階段：Phase 6 進行中；0.6.0 Windows 候選版已匯出，仍待场景參考改造及完整試玩／時長。最新證據見 [PHASE6_REPORT](PHASE6_REPORT.md)；P5 見 [PHASE5_REPORT](PHASE5_REPORT.md)；歷史紀錄見 [PHASE2_REPORT](PHASE2_REPORT.md) 與 [PHASE1_REPORT](PHASE1_REPORT.md)。
 
 故事基準：《失落星核》Story Bible v1.0；階段對應及資料契約見 [STORY_IMPLEMENTATION](STORY_IMPLEMENTATION.md)。P1～P6 交付 20～30 分鐘、雷恩/莉雅兩人的序章，完整版六篇章排在其後。
 
@@ -72,13 +72,13 @@ P3 當時驗證：功能 75 項、Windows 渲染 85 項（十張畫面）、P1 2
 
 驗證：P5 功能 69、圖形模式 77、獨立程序重新讀檔 7 項全部通過；P1 24、P2 58／66、P3 75／85、P4 70／82 回歸通過。E001～E008 與追加 E009 可玩，總獎勵精確為 212 金幣／每人 300 EXP。存檔 v1 含備份及載入前碰撞驗證，損毀檔不改現況。詳見 [PHASE5_REPORT](PHASE5_REPORT.md) 和 [SAVE_FORMAT](SAVE_FORMAT.md)。章末調查團使用敘事對話與預告卡，未新增 NPC 動畫；20～30 分鐘時長留 P6 實測。
 
-## P6：整合與 Windows 交付 — 待開始（依賴 P5）
+## P6：整合與 Windows 交付 — 進行中
 
-- [ ] P6.1 正式模型、動畫、音效、特效及來源/授權清單。
-- [ ] P6.2 手把完整流程、UI 焦點/縮放及鍵盤回歸。
-- [ ] P6.3 測試硬體與效能記錄，修復實测瓶頸。
-- [ ] P6.4 核對 export templates、Windows 匯出及獨立啟動。
-- [ ] P6.5 用匯出版本完整通關序章 E001～E008、計時 20～30 分鐘、保存/讀取及缺陷修復。
+- [ ] P6.1 模型／動畫沿用圓潤原創資產，音效／特效及來源清單已補。2026-10-13 新增使用者城鎮參考，灰石村改造待執行，見 [SCENE_ART_DIRECTION](SCENE_ART_DIRECTION.md)。
+- [ ] P6.2 Xbox 配置、95 項圖形流程、UI 焦點／縮放與鍵盘回歸完成；使用者實體 XInput 七項輸入已通過，完整實機遊玩仍待驗收。
+- [x] P6.3 記錄 Ryzen 5 5600／RTX 3080／32 GB、四場景各 120 幀採樣，release 約 60 FPS；短樣本未見持續瓶頸，長時間與其他硬體另驗。
+- [x] P6.4 官方模板 SHA256／4.7.2 版本核對、Windows release 匯出與獨立啟動；正式／QA 遊戲資源一致，正式不含測試腳本。
+- [ ] P6.5 QA release 95 項加速通關、22 項新程序讀檔已通過；玩家正式包完整通關及 20～30 分鐘節奏／計時仍待執行，不能以加速測試抵算。
 
 ## 序章交付後：完整故事擴充 — 全部待開始
 

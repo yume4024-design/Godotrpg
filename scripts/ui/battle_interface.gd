@@ -58,7 +58,12 @@ func _ready() -> void:
 	_log = _label(bottom, 17, Color("#acc6c0"))
 	_log.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var hint: Label = _label(bottom, 14, Color("#93aaa7"))
-	hint.text = "滑鼠選擇，或 Tab / 方向鍵切換、Enter 確認。先選指令，再選目標；取消不消耗回合。"
+	hint.text = "滑鼠 / 方向鍵 · Enter　│　手把 十字鍵 · A 確認 · B 取消目標。取消不消耗回合。"
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("ui_cancel") and not event.is_echo() and not _selection.is_empty():
+		_cancel()
+		get_viewport().set_input_as_handled()
 
 func bind_manager(manager: BattleManager, encounter_name: String, practice: bool) -> void:
 	_manager = manager

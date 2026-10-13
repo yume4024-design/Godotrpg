@@ -3,6 +3,7 @@ var game: ExplorationGame
 var checks: int = 0
 var failures: int = 0
 var slot: String = "user://p5_tests/restart.json"
+var visual_slot: String = "user://p5_tests/visual.json"
 
 func _initialize() -> void:
 	_run.call_deferred()
@@ -11,13 +12,14 @@ func _run() -> void:
 	root.size = Vector2i(1280, 720)
 	root.content_scale_size = Vector2i(1280, 720)
 	DirAccess.make_dir_recursive_absolute("user://p5_tests")
-	if DisplayServer.get_name() != "headless": slot = "user://p5_tests/visual.json"
+	if DisplayServer.get_name() != "headless": slot = visual_slot
 	var reload_only: bool = "--reload" in OS.get_cmdline_user_args()
 	if not reload_only:
 		for suffix: String in ["", ".bak", ".tmp"]:
 			if FileAccess.file_exists(slot + suffix): DirAccess.remove_absolute(slot + suffix)
 	game = load("res://scenes/main/main.tscn").instantiate() as ExplorationGame
 	(game.get_node("Saves") as SaveManager).slot_path = slot
+	(game.get_node("Audio") as AdventureAudio).settings_path = "user://p5_tests/audio.cfg"
 	root.add_child(game)
 	await create_timer(0.8).timeout
 	_check(game.ready_to_play, "Production P5 scene loads")

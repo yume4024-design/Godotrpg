@@ -1,6 +1,6 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
-    [ValidateSet('Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -19,7 +19,8 @@ if ($Mode -ne 'Version' -and -not (Test-Path -LiteralPath (Join-Path $projectRoo
 
 $profileRoot = Join-Path $projectRoot 'artifacts\godot-user'
 $cacheRoot = Join-Path $projectRoot 'artifacts\godot-local'
-New-Item -ItemType Directory -Path $profileRoot, $cacheRoot -Force | Out-Null
+$tempRoot = Join-Path $projectRoot 'artifacts\godot-tmp'
+New-Item -ItemType Directory -Path $profileRoot, $cacheRoot, $tempRoot -Force | Out-Null
 
 $engineArgs = @('--version')
 if ($Mode -ne 'Version') {
@@ -27,7 +28,14 @@ if ($Mode -ne 'Version') {
     New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
     $logPath = Join-Path $logRoot ('{0}-{1}.log' -f $Mode.ToLowerInvariant(), (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
     $engineArgs = @('--path', $projectRoot, '--log-file', $logPath)
-    if ($Mode -in @('Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload')) { $engineArgs += '--headless' }
+    if ($Mode -in @('Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
+    if ($Mode -in @('ExportWindows', 'ExportQA')) {
+        $buildFolder = if ($Mode -eq 'ExportWindows') { 'windows' } else { 'qa' }
+        $presetName = if ($Mode -eq 'ExportWindows') { 'Windows Desktop' } else { 'Windows QA' }
+        $buildRoot = Join-Path $projectRoot ('builds/' + $buildFolder)
+        New-Item -ItemType Directory -Path $buildRoot -Force | Out-Null
+        $engineArgs += @('--export-release', $presetName, (Join-Path $buildRoot 'ProjectCrystal.exe'))
+    }
     if ($Mode -eq 'Check') { $engineArgs += '--import' }
     if ($Mode -eq 'Smoke') { $engineArgs += @('--quit-after', '120') }
     if ($Mode -eq 'Test') { $engineArgs += @('--script', 'res://tests/phase1_movement_test.gd') }
@@ -35,7 +43,9 @@ if ($Mode -ne 'Version') {
     if ($Mode -in @('TestPhase3', 'VisualPhase3', 'PreviewBattle')) { $engineArgs += @('--script', 'res://tests/phase3_battle_test.gd') }
     if ($Mode -in @('TestPhase4', 'VisualPhase4')) { $engineArgs += @('--script', 'res://tests/phase4_progression_test.gd') }
     if ($Mode -in @('TestPhase5', 'VisualPhase5', 'TestPhase5Reload')) { $engineArgs += @('--script', 'res://tests/phase5_prologue_test.gd') }
+    if ($Mode -in @('TestPhase6', 'VisualPhase6')) { $engineArgs += @('--script', 'res://tests/phase6_delivery_test.gd') }
     if ($Mode -eq 'TestPhase5Reload') { $engineArgs += @('--', '--reload') }
+    if ($Mode -eq 'ControllerProbe') { $engineArgs += @('--script', 'res://tests/controller_probe.gd') }
     if ($Mode -eq 'PreviewBattle') { $engineArgs += @('--', '--manual') }
     if ($Mode -in @('TestArt', 'VisualArt', 'PreviewArt')) { $engineArgs += @('--script', 'res://tests/cartoon_asset_test.gd') }
     if ($Mode -eq 'PreviewArt') { $engineArgs += @('--', '--manual') }
@@ -51,7 +61,9 @@ $startInfo.UseShellExecute = $false
 $startInfo.CreateNoWindow = $true
 $startInfo.EnvironmentVariables['APPDATA'] = $profileRoot
 $startInfo.EnvironmentVariables['LOCALAPPDATA'] = $cacheRoot
-if ($Mode -in @('Editor', 'Run', 'PreviewBattle', 'PreviewArt')) {
+$startInfo.EnvironmentVariables['TEMP'] = $tempRoot
+$startInfo.EnvironmentVariables['TMP'] = $tempRoot
+if ($Mode -in @('Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
     # Use the graphical binary for detached windows. The console wrapper inherits
     # the caller's pipe handles and can stall after a short-lived tool shell exits.
     $graphicalPath = $GodotPath -replace '_console\.exe$', '.exe'

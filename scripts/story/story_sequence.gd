@@ -1,5 +1,6 @@
 class_name StorySequence
 extends Node
+signal started(id: StringName)
 ## Finite visible sequences. EventRunner commits only after the animation ends.
 var crystal: Node3D
 var crystal_light: OmniLight3D
@@ -37,6 +38,7 @@ func can_play(id: StringName) -> bool:
 func play(id: StringName) -> bool:
 	if active or not can_play(id): return false
 	active = true
+	started.emit(id)
 	if id == &"crystal_awakening":
 		var original: Vector3 = crystal.scale
 		var energy: float = crystal_light.light_energy

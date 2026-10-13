@@ -75,6 +75,7 @@ func _animate(actor_id: StringName, target_id: StringName, amount: int, healing:
 	var shift: Vector3 = Vector3.UP * 0.2 if actor == target else actor.position.direction_to(target.position) * 0.45
 	tween.tween_property(actor, "position", origin + shift, 0.12)
 	tween.tween_property(actor, "position", origin, 0.18)
+	_flash(target.position, healing, amount == 0)
 	if amount <= 0:
 		return
 	var popup: Label3D = Label3D.new()
@@ -88,6 +89,25 @@ func _animate(actor_id: StringName, target_id: StringName, amount: int, healing:
 	var rise: Tween = create_tween()
 	rise.tween_property(popup, "position:y", popup.position.y + 1.0, 0.45)
 	rise.tween_callback(popup.queue_free)
+
+func _flash(at: Vector3, healing: bool, guard: bool) -> void:
+	var ring: TorusMesh = TorusMesh.new()
+	ring.inner_radius = 0.72
+	ring.outer_radius = 0.85
+	ring.rings = 20
+	ring.ring_segments = 8
+	var color: Color = Color("#83edbc") if healing else Color("#82cbea") if guard else Color("#ffd88b")
+	var flash: MeshInstance3D = _mesh(self, ring, at + Vector3.UP * (0.12 if healing else 1.1), color)
+	var material: StandardMaterial3D = flash.material_override as StandardMaterial3D
+	material.shading_mode = BaseMaterial3D.SHADING_MODE_UNSHADED
+	material.transparency = BaseMaterial3D.TRANSPARENCY_ALPHA
+	if not healing: flash.rotation.x = PI / 2
+	flash.scale = Vector3.ONE * 0.35
+	var tween: Tween = create_tween().set_parallel(true)
+	tween.tween_property(flash, "scale", Vector3.ONE * (1.3 if healing else 1.0), 0.4)
+	tween.tween_property(material, "albedo_color:a", 0.0, 0.4)
+	if healing: tween.tween_property(flash, "position:y", at.y + 1.8, 0.4)
+	tween.chain().tween_callback(flash.queue_free)
 
 func _mesh(parent: Node3D, mesh: Mesh, position_value: Vector3, color: Color) -> MeshInstance3D:
 	var visual: MeshInstance3D = MeshInstance3D.new()

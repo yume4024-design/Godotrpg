@@ -1,0 +1,31 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/audio/adventure_audio.gd" id="Audio"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/village.wav" id="village"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/forest.wav" id="forest"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/mine.wav" id="mine"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/battle.wav" id="battle"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/confirm.wav" id="confirm"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/hit.wav" id="hit"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/heal.wav" id="heal"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/guard.wav" id="guard"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/victory.wav" id="victory"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/defeat.wav" id="defeat"]
+[ext_resource type="AudioStream" path="res://assets/audio/original/crystal.wav" id="crystal"]
+
+[node name="Audio" type="Node"]
+script = ExtResource("Audio")
+tracks = Dictionary[StringName, AudioStream]({
+&"village": ExtResource("village"),
+&"forest": ExtResource("forest"),
+&"mine": ExtResource("mine"),
+&"battle": ExtResource("battle")
+})
+cues = Dictionary[StringName, AudioStream]({
+&"confirm": ExtResource("confirm"),
+&"hit": ExtResource("hit"),
+&"heal": ExtResource("heal"),
+&"guard": ExtResource("guard"),
+&"victory": ExtResource("victory"),
+&"defeat": ExtResource("defeat"),
+&"crystal": ExtResource("crystal")
+})
