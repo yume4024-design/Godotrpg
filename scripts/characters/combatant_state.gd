@@ -109,3 +109,18 @@ func _bonus(attribute: StringName) -> int:
 	for item: ItemDefinition in _equipment.values():
 		value += int(item.get(attribute))
 	return value
+
+func save_state() -> Dictionary:
+	var equipment: Dictionary = {}
+	for slot: StringName in _equipment: equipment[String(slot)] = String(_equipment[slot].id)
+	return {"id": String(definition.id), "level": _level, "exp": _experience, "hp": _hp, "mp": _mp, "equipment": equipment}
+
+func restore_state(data: Dictionary, inventory: InventoryManager) -> void:
+	# Called only with a fully validated save candidate.
+	_level = int(data.level)
+	_experience = int(data.exp)
+	_equipment.clear()
+	for slot: String in data.equipment: _equipment[StringName(slot)] = inventory.definition(StringName(data.equipment[slot]))
+	_hp = int(data.hp)
+	_mp = int(data.mp)
+	changed.emit()

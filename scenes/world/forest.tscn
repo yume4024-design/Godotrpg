@@ -101,11 +101,12 @@ height = 1.0
 radial_segments = 12
 rings = 6
 material = SubResource("PebbleMat")
-[node name="Forest" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "camera_zone", "story_zone")]
+[node name="Forest" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "camera_zone", "story_zone", "return_spawn")]
 script = ExtResource("Map")
 map_id = &"forest"
 story_zone = NodePath("FirstEncounter")
 story_trigger = &"forest_first_encounter"
+return_spawn = NodePath("MineReturn")
 display_name = "低語森林"
 default_spawn = NodePath("DefaultSpawn")
 entrance_spawn = NodePath("EntranceSpawn")
@@ -265,7 +266,7 @@ position = Vector3(0, 1.35, 0)
 position = Vector3(0, 2, 0)
 billboard = 1
 font = SubResource("Font")
-text = "礦坑方向 · 暫未開放"
+text = "礦坑入口 →"
 font_size = 42
 pixel_size = 0.011
 modulate = Color(0.97, 0.88, 0.66, 1)
@@ -1272,3 +1273,14 @@ scale = Vector3(0.34, 1, 1.12)
 
 [node name="FirstEncounter" type="Marker3D" parent="."]
 position = Vector3(-2.5, 0, 0)
+
+[node name="MineReturn" type="Marker3D" parent="."]
+position = Vector3(7, 0.1, 2)
+[node name="MineExit" type="Node3D" parent="."]
+position = Vector3(10, 0, 2)
+script = ExtResource("Interact")
+interaction_id = &"to_mine"
+kind = "exit"
+label = "進入廢棄礦坑"
+destination = &"mine"
+required_flag = &"e004_done"

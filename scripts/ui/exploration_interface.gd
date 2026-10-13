@@ -7,6 +7,7 @@ signal menu_requested
 var location: Label
 var objective: Label
 var quest: Label
+var save_status: Label
 var inventory: Label
 var party_status: Label
 var prompt_label: Label
@@ -42,7 +43,8 @@ func _ready() -> void:
 	inventory = _label(status_stack, "背包 · 尚無物品", 18)
 	inventory.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	party_status = _label(status_stack, "", 16, Color("#a9d1c6"))
-	_label(status_stack, "本次進度於關閉遊戲後重置", 14, Color("#a3b9b4"))
+	save_status = _label(status_stack, "F5 保存 · F9 讀取 · M 任務／旅程", 14, Color("#a3b9b4"))
+	save_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var menu_button: Button = Button.new()
 	menu_button.text = "旅途手冊  [M]"
 	menu_button.focus_mode = Control.FOCUS_NONE

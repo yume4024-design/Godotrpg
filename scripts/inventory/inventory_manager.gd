@@ -89,3 +89,14 @@ func display_summary() -> String:
 		if count(definition.id) > 0:
 			entries.append("%s ×%d" % [definition.display_name, count(definition.id)])
 	return "背包 · 尚無物品" if entries.is_empty() else "背包 · " + " / ".join(entries)
+
+func snapshot() -> Dictionary:
+	return {"gold": _gold, "counts": _counts.duplicate(), "claimed": _claimed.duplicate()}
+
+func restore_state(data: Dictionary) -> void:
+	_gold = int(data.gold)
+	_counts.clear()
+	_claimed.clear()
+	for id: String in data.counts: _counts[StringName(id)] = int(data.counts[id])
+	for id: String in data.claimed: _claimed[StringName(id)] = data.claimed[id]
+	changed.emit()

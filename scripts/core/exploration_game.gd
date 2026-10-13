@@ -6,6 +6,7 @@ extends Node3D
 @export_file("*.json") var quest_path: String
 @export_file("*.json") var battles_path: String
 @export var starting_character: CombatantDefinition
+@onready var _default_environment: Environment = $WorldEnvironment.environment
 @onready var player: ExplorationPlayer = %Player
 @onready var camera: Camera3D = %Camera3D
 @onready var ui: ExplorationInterface = %Interface
@@ -20,6 +21,10 @@ extends Node3D
 @onready var battles: BattleFlow = %Battles
 @onready var rewards: RewardManager = %Rewards
 @onready var party_actions: PartyActions = %PartyActions
+@onready var saves: SaveManager = %Saves
+@onready var sequences: StorySequence = %Sequences
+var restoring: bool = false
+var resume_offer: bool = false
 @onready var menu: PartyMenu = %PartyMenu
 var _area_suppressed: bool = false
 var _battle_origin: Vector3
@@ -48,7 +53,7 @@ func _ready() -> void:
 	for lines: Variant in ambient.conversations.values():
 		if not catalog.valid_lines(lines, ambient.speakers):
 			catalog.errors.append("Invalid ambient conversation")
-	for id: String in ["npc_guildmaster", "npc_lia", "chest_received", "chest_empty", "forest_sign", "rest"]:
+	for id: String in ["npc_guildmaster", "guild_completed", "npc_lia", "chest_received", "chest_empty", "forest_sign", "rest"]:
 		if not ambient.conversations.has(id):
 			catalog.errors.append("Missing conversation: " + id)
 	if not catalog.errors.is_empty():
@@ -63,6 +68,10 @@ func _ready() -> void:
 	rewards.claim(&"starting_kit", 0, 0, {&"bronze_sword": 1, &"willow_staff": 1, &"travel_vest": 1})
 	party_actions.setup(party, inventory, func() -> bool: return menu.visible and not travel.transitioning and not dialogue.active and not runner.busy and not battles.active)
 	menu.setup(party, inventory)
+	menu.setup_journey(quests, saves)
+	menu.new_game_requested.connect(begin_new_game)
+	saves.setup(self)
+	saves.status_changed.connect(func(message: String) -> void: ui.save_status.text = message)
 	menu.close_requested.connect(close_menu)
 	menu.equip_requested.connect(func(character: StringName, slot: StringName, item: StringName) -> void: menu.outcome(party_actions.equip(character, slot, item)))
 	menu.item_requested.connect(func(character: StringName, item: StringName) -> void: menu.outcome(party_actions.use_item(character, item)))
@@ -73,6 +82,11 @@ func _ready() -> void:
 	quests.setup(quest_data, flags)
 	dialogue.setup(ambient.speakers)
 	runner.setup(catalog, flags, quests, dialogue, battles, party)
+	runner.setup_progression(sequences, rewards, inventory)
+	if not runner.validate_bindings():
+		catalog.errors.append(runner.last_error)
+		_fail()
+		return
 	runner.event_failed.connect(func(_id: StringName) -> void: _area_suppressed = true)
 	story.setup(catalog, runner)
 	travel.setup(%MapContainer, player, ui.fade)
@@ -97,7 +111,7 @@ func _fail() -> void:
 	push_error("; ".join(catalog.errors))
 
 func locked() -> bool:
-	return not ready_to_play or travel.transitioning or dialogue.active or runner.busy or battles.active or menu.visible
+	return restoring or resume_offer or not ready_to_play or travel.transitioning or dialogue.active or runner.busy or battles.active or menu.visible
 
 func _update_lock(_unused: bool = false) -> void:
 	player.input_component.enabled = not locked()
@@ -108,11 +122,18 @@ func _update_lock(_unused: bool = false) -> void:
 func _on_transition(active: bool) -> void:
 	if not active and not _started:
 		_started = true
-		story.trigger("game_start", "new_game")
+		if saves.exists():
+			resume_offer = true
+			menu.offer_new_game = true
+			menu.open_journey()
+		else: story.trigger("game_start", "new_game")
 	_update_lock()
 
 func _on_map_changed(map: ExplorationMap) -> void:
 	_area_suppressed = false
+	sequences.bind_map(map)
+	$WorldEnvironment.environment = map.environment if map.environment != null else _default_environment
+	$Sun.light_energy = map.sunlight
 	nearest = null
 	camera.size = 17.0
 	ui.location.text = map.display_name
@@ -127,11 +148,11 @@ func _physics_process(delta: float) -> void:
 	if locked():
 		return
 	var map: ExplorationMap = travel.current_map
-	if is_instance_valid(map.story_zone):
-		var inside: bool = player.global_position.distance_to(map.story_zone.global_position) <= map.story_zone_radius
-		if not inside: _area_suppressed = false
-		if inside and not _area_suppressed and story.trigger("area_enter", String(map.story_trigger)):
-			return
+	var triggers: Array[StringName] = map.triggers_at(player.global_position)
+	if triggers.is_empty(): _area_suppressed = false
+	if not _area_suppressed:
+		for trigger: StringName in triggers:
+			if story.trigger("area_enter", String(trigger)): return
 	nearest = null
 	var distance: float = INF
 	for target: WorldInteractable in travel.current_map.targets:
@@ -142,6 +163,14 @@ func _physics_process(delta: float) -> void:
 	ui.prompt_label.text = "[ E ]  " + nearest.prompt() if is_instance_valid(nearest) else ""
 
 func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action_pressed("quick_save"):
+		saves.request_save()
+		get_viewport().set_input_as_handled()
+		return
+	if event.is_action_pressed("quick_load"):
+		saves.request_load()
+		get_viewport().set_input_as_handled()
+		return
 	if event.is_echo():
 		return
 	if event.is_action_pressed("party_menu") or (menu.visible and event.is_action_pressed("ui_cancel")):
@@ -165,12 +194,17 @@ func interact() -> bool:
 	if locked() or not is_instance_valid(nearest) or not nearest.in_reach(player):
 		return false
 	var target: WorldInteractable = nearest
+	if not target.required_flag.is_empty() and not flags.has_flag(target.required_flag):
+		ui.prompt_label.text = "請先完成目前的主線目標。"
+		return false
 	match target.kind:
+		"story":
+			return story.trigger("interact", String(target.interaction_id))
 		"exit":
 			return travel.travel(target.destination, target.spawn_key)
 		"npc":
 			if not story.trigger("interact", String(target.interaction_id)):
-				dialogue.start(_ambient[String(target.interaction_id)])
+				dialogue.start(_ambient["guild_completed" if target.interaction_id == &"npc_guildmaster" and quests.is_completed(&"Q001") else String(target.interaction_id)])
 		"chest":
 			var received: bool = inventory.claim(target.reward_source, target.item_id, target.item_amount)
 			target.refresh(inventory)
@@ -191,7 +225,7 @@ func _refresh_inventory() -> void:
 	ui.inventory.text = "金幣 %d  ·  恢復藥 ×%d" % [inventory.gold, inventory.count(&"potion")]
 
 func _refresh_quest() -> void:
-	ui.quest.text = "委託 · " + quests.title(&"Q001") if quests.is_active(&"Q001") else "尚未接受委託"
+	ui.quest.text = ("已完成 · " if quests.is_completed(&"Q001") else "委託 · ") + quests.title(&"Q001") if quests.is_active(&"Q001") else "尚未接受委託"
 
 func _refresh_party() -> void:
 	ui.party_status.text = party.summary()
@@ -210,6 +244,7 @@ func toggle_menu() -> void:
 		_update_lock()
 
 func close_menu() -> void:
+	if resume_offer: return
 	menu.hide()
 	_update_lock()
 
@@ -227,3 +262,82 @@ func _on_battle_active(active: bool) -> void:
 		player.reset_to(_battle_origin)
 		camera.make_current()
 	_update_lock()
+
+func safe_to_load() -> bool:
+	return ready_to_play and not restoring and not travel.transitioning and not dialogue.active and not runner.busy and not battles.active and not sequences.active
+
+func safe_to_save() -> bool:
+	return safe_to_load() and not resume_offer and flags.has_flag(&"e001_done")
+
+func capture_state() -> Dictionary:
+	var position: Vector3 = player.global_position
+	var data: Dictionary = {"schema_version": 1, "content_version": "CH00-P5", "flags": flags.snapshot(), "quests": quests.snapshot(), "party": party.save_state(), "inventory": inventory.snapshot(), "rewards": rewards.snapshot(), "location": {"map": String(travel.current_map.map_id), "x": position.x, "y": position.y, "z": position.z}, "story": {"objective": runner.objective, "active_event": "", "area_suppressed": _area_suppressed}}
+
+	return JSON.parse_string(JSON.stringify(data))
+
+func apply_loaded_state(data: Dictionary, members: Array[CombatantState]) -> void:
+	restoring = true
+	resume_offer = false
+	menu.offer_new_game = false
+	menu.hide()
+	_update_lock()
+	# All validation and actor construction finished before any owner is changed.
+	for service: Node in [flags, quests, inventory, party]: service.set_block_signals(true)
+	flags.restore_state(data.flags)
+	quests.restore_state(data.quests)
+	inventory.restore_state(data.inventory)
+	rewards.restore_state(data.rewards)
+	party.restore_members(members)
+	runner.restore_objective(data.story.objective)
+	_started = true
+	travel.travel(StringName(data.location.map), &"default")
+	while travel.transitioning: await get_tree().process_frame
+	player.reset_to(Vector3(data.location.x, data.location.y, data.location.z))
+	_area_suppressed = data.story.area_suppressed
+	for service: Node in [flags, quests, inventory, party]: service.set_block_signals(false)
+	flags.changed.emit(&"", false)
+	inventory.changed.emit()
+	party.changed.emit()
+	_refresh_inventory()
+	_refresh_quest()
+	_refresh_party()
+	menu.reset_selection()
+	restoring = false
+	_update_lock()
+
+func begin_new_game() -> void:
+	if not resume_offer: return
+	resume_offer = false
+	menu.offer_new_game = false
+	close_menu()
+	story.trigger("game_start", "new_game")
+
+func refresh_control_lock() -> void:
+	_update_lock()
+
+func validate_loaded_position(location: Dictionary) -> bool:
+	# Query a separate physics world, so validation cannot alter the active map.
+	var selected: PackedScene
+	for scene: PackedScene in travel.maps:
+		if scene.resource_path.get_file().get_basename() == location.map: selected = scene
+	if selected == null: return false
+	var viewport: SubViewport = SubViewport.new()
+	viewport.world_3d = World3D.new()
+	viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
+	add_child(viewport)
+	var candidate: Node3D = selected.instantiate() as Node3D
+	viewport.add_child(candidate)
+	await get_tree().physics_frame
+	await get_tree().physics_frame
+	var position: Vector3 = Vector3(location.x, location.y, location.z)
+	var shape: CollisionShape3D = player.get_node("CollisionShape3D") as CollisionShape3D
+	var query: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
+	query.shape = shape.shape
+	query.transform = Transform3D(Basis.IDENTITY, position + Vector3.UP * 0.06) * shape.transform
+	query.collision_mask = 1
+	var space: PhysicsDirectSpaceState3D = viewport.world_3d.direct_space_state
+	var empty: bool = space.intersect_shape(query, 1).is_empty()
+	var ray: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(position + Vector3.UP * 0.15, position + Vector3.DOWN * 0.35, 1)
+	var grounded: bool = not space.intersect_ray(ray).is_empty()
+	viewport.queue_free()
+	return empty and grounded

@@ -1,4 +1,8 @@
 [gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/world/mine.tscn" id="Mine"]
+[ext_resource type="Script" path="res://scripts/save/save_manager.gd" id="Saves"]
+[ext_resource type="Script" path="res://scripts/story/story_sequence.gd" id="Sequences"]
+[ext_resource type="Resource" path="res://data/items/star_seal_01.tres" id="Seal"]
 [ext_resource type="Script" path="res://scripts/characters/reward_manager.gd" id="Rewards"]
 [ext_resource type="Script" path="res://scripts/characters/party_actions.gd" id="PartyActions"]
 [ext_resource type="Script" path="res://scripts/ui/party_menu.gd" id="PartyMenu"]
@@ -107,7 +111,7 @@ script = ExtResource("Dialogue")
 [node name="EventRunner" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Runner")
-enabled_events = Array[StringName]([&"E001", &"E002", &"E003", &"E004"])
+enabled_events = Array[StringName]([&"E001", &"E002", &"E003", &"E004", &"E005", &"E006", &"E007", &"E008", &"E009"])
 
 [node name="Story" type="Node" parent="."]
 unique_name_in_owner = true
@@ -120,12 +124,12 @@ script = ExtResource("Quests")
 [node name="Inventory" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Inventory")
-item_definitions = Array[ExtResource("Item")]([ExtResource("Ration"), ExtResource("Potion"), ExtResource("bronze_sword"), ExtResource("willow_staff"), ExtResource("travel_vest")])
+item_definitions = Array[ExtResource("Item")]([ExtResource("Ration"), ExtResource("Potion"), ExtResource("bronze_sword"), ExtResource("willow_staff"), ExtResource("travel_vest"), ExtResource("Seal")])
 
 [node name="SceneManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Travel")
-maps = Array[PackedScene]([ExtResource("Village"), ExtResource("Forest")])
+maps = Array[PackedScene]([ExtResource("Village"), ExtResource("Forest"), ExtResource("Mine")])
 
 [node name="Party" type="Node" parent="."]
 unique_name_in_owner = true
@@ -149,3 +153,10 @@ script = ExtResource("PartyActions")
 [node name="PartyMenu" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("PartyMenu")
+
+[node name="Saves" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Saves")
+[node name="Sequences" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Sequences")

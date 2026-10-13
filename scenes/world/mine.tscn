@@ -1,0 +1,667 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/exploration_map.gd" id="Map"]
+
+[ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
+
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/moss_rock.glb" id="RockArt"]
+
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/path_strip.glb" id="PathArt"]
+
+[sub_resource type="StandardMaterial3D" id="Stone"]
+albedo_color = Color(0.25,0.32,0.36,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Earth"]
+albedo_color = Color(0.30,0.29,0.27,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Wood"]
+albedo_color = Color(0.36,0.23,0.13,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.13,0.20,0.22,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Crystal"]
+albedo_color = Color(0.2,0.8,0.86,1)
+metallic = 0.2
+roughness = 0.25
+emission_enabled = true
+emission = Color(0.05,0.45,0.55,1)
+emission_energy_multiplier = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Lamp"]
+albedo_color = Color(1,0.8,0.35,1)
+emission_enabled = true
+emission = Color(1,0.6,0.15,1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="Environment" id="MineEnvironment"]
+background_mode = 1
+background_color = Color(0.045,0.065,0.085,1)
+ambient_light_source = 3
+ambient_light_color = Color(0.50,0.65,0.8,1)
+ambient_light_energy = 0.75
+reflected_light_source = 2
+
+[sub_resource type="SystemFont" id="Font"]
+font_names = PackedStringArray("Microsoft JhengHei")
+
+[sub_resource type="BoxMesh" id="Floor"]
+size = Vector3(27, 0.6, 19)
+
+[sub_resource type="BoxShape3D" id="FloorShape"]
+size = Vector3(27, 0.6, 19)
+
+[sub_resource type="BoxShape3D" id="WallX"]
+size = Vector3(1, 5, 19)
+
+[sub_resource type="BoxShape3D" id="WallZ"]
+size = Vector3(27, 5, 1)
+
+[sub_resource type="SphereMesh" id="Boulder"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[sub_resource type="CylinderMesh" id="Timber"]
+top_radius = 0.19
+bottom_radius = 0.22
+height = 3.8
+radial_segments = 24
+
+[sub_resource type="CylinderMesh" id="Plinth"]
+top_radius = 1.15
+bottom_radius = 1.45
+height = 0.45
+radial_segments = 32
+
+[sub_resource type="CylinderShape3D" id="CrystalShape"]
+radius = 1.0
+height = 2.6
+
+[sub_resource type="CylinderMesh" id="Gem"]
+top_radius = 0.0
+bottom_radius = 0.65
+height = 1.65
+radial_segments = 6
+
+[sub_resource type="BoxMesh" id="Rail"]
+size = Vector3(18, 0.1, 0.08)
+
+[sub_resource type="BoxMesh" id="Sleeper"]
+size = Vector3(0.22, 0.12, 1.2)
+
+[sub_resource type="SphereMesh" id="LampMesh"]
+radius = 0.18
+height = 0.36
+radial_segments = 24
+rings = 12
+
+[node name="Mine" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "story_zone", "extra_story_zones", "sequence_target", "sequence_light")]
+script = ExtResource("Map")
+map_id = &"mine"
+display_name = "廢棄礦坑 · 星晶回廊"
+environment = SubResource("MineEnvironment")
+sunlight = 0.45
+default_spawn = NodePath("Entrance")
+entrance_spawn = NodePath("Entrance")
+story_zone = NodePath("InnerArea")
+story_trigger = &"mine_inner_area"
+story_zone_radius = 2.8
+extra_story_zones = [NodePath("BossArea")]
+sequence_target = NodePath("Crystal/Prism")
+sequence_light = NodePath("Crystal/Glow")
+
+[node name="Entrance" type="Marker3D" parent="."]
+position = Vector3(-8, 0.1, 0)
+
+[node name="InnerArea" type="Marker3D" parent="."]
+position = Vector3(-3.5, 0, 0)
+
+[node name="BossArea" type="Marker3D" parent="."]
+position = Vector3(4, 0, 0)
+metadata/trigger = "mine_boss_arena"
+metadata/radius = 4.5
+
+[node name="Floor" type="StaticBody3D" parent="."]
+position = Vector3(0, -0.3, 0)
+
+[node name="Mesh" type="MeshInstance3D" parent="Floor"]
+mesh = SubResource("Floor")
+material_override = SubResource("Earth")
+
+[node name="Collision" type="CollisionShape3D" parent="Floor"]
+shape = SubResource("FloorShape")
+
+[node name="Boundary0" type="StaticBody3D" parent="."]
+position = Vector3(-13.5, 2, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Boundary0"]
+shape = SubResource("WallX")
+
+[node name="Boundary1" type="StaticBody3D" parent="."]
+position = Vector3(13.5, 2, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Boundary1"]
+shape = SubResource("WallX")
+
+[node name="Boundary2" type="StaticBody3D" parent="."]
+position = Vector3(0, 2, -9.5)
+
+[node name="Collision" type="CollisionShape3D" parent="Boundary2"]
+shape = SubResource("WallZ")
+
+[node name="Boundary3" type="StaticBody3D" parent="."]
+position = Vector3(0, 2, 9.5)
+
+[node name="Collision" type="CollisionShape3D" parent="Boundary3"]
+shape = SubResource("WallZ")
+
+[node name="Sleeper0" type="MeshInstance3D" parent="."]
+position = Vector3(-10.0, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper1" type="MeshInstance3D" parent="."]
+position = Vector3(-9.3, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper2" type="MeshInstance3D" parent="."]
+position = Vector3(-8.6, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper3" type="MeshInstance3D" parent="."]
+position = Vector3(-7.9, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper4" type="MeshInstance3D" parent="."]
+position = Vector3(-7.2, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper5" type="MeshInstance3D" parent="."]
+position = Vector3(-6.5, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper6" type="MeshInstance3D" parent="."]
+position = Vector3(-5.800000000000001, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper7" type="MeshInstance3D" parent="."]
+position = Vector3(-5.1000000000000005, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper8" type="MeshInstance3D" parent="."]
+position = Vector3(-4.4, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper9" type="MeshInstance3D" parent="."]
+position = Vector3(-3.7, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper10" type="MeshInstance3D" parent="."]
+position = Vector3(-3.0, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper11" type="MeshInstance3D" parent="."]
+position = Vector3(-2.3000000000000007, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper12" type="MeshInstance3D" parent="."]
+position = Vector3(-1.6000000000000014, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper13" type="MeshInstance3D" parent="."]
+position = Vector3(-0.9000000000000004, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper14" type="MeshInstance3D" parent="."]
+position = Vector3(-0.20000000000000107, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper15" type="MeshInstance3D" parent="."]
+position = Vector3(0.5, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper16" type="MeshInstance3D" parent="."]
+position = Vector3(1.1999999999999993, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper17" type="MeshInstance3D" parent="."]
+position = Vector3(1.8999999999999986, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper18" type="MeshInstance3D" parent="."]
+position = Vector3(2.5999999999999996, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper19" type="MeshInstance3D" parent="."]
+position = Vector3(3.299999999999999, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper20" type="MeshInstance3D" parent="."]
+position = Vector3(4.0, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper21" type="MeshInstance3D" parent="."]
+position = Vector3(4.699999999999999, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Sleeper22" type="MeshInstance3D" parent="."]
+position = Vector3(5.399999999999999, 0.07, -0.6)
+mesh = SubResource("Sleeper")
+material_override = SubResource("Wood")
+
+[node name="Rail0" type="MeshInstance3D" parent="."]
+position = Vector3(-2, 0.16, -1.0)
+mesh = SubResource("Rail")
+material_override = SubResource("Metal")
+
+[node name="Rail1" type="MeshInstance3D" parent="."]
+position = Vector3(-2, 0.16, -0.2)
+mesh = SubResource("Rail")
+material_override = SubResource("Metal")
+
+[node name="Bank0" type="MeshInstance3D" parent="."]
+position = Vector3(-12.0, 0.65, -7)
+scale = Vector3(1.7, 2.0, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank1" type="MeshInstance3D" parent="."]
+position = Vector3(-9.6, 0.65, -7)
+scale = Vector3(1.97, 1.86, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank2" type="MeshInstance3D" parent="."]
+position = Vector3(-7.2, 0.65, -7)
+scale = Vector3(1.47, 1.58, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank3" type="MeshInstance3D" parent="."]
+position = Vector3(-4.8, 0.65, -7)
+scale = Vector3(1.62, 1.4, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank4" type="MeshInstance3D" parent="."]
+position = Vector3(-2.4, 0.65, -7)
+scale = Vector3(2.0, 1.5, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank5" type="MeshInstance3D" parent="."]
+position = Vector3(0.0, 0.65, -7)
+scale = Vector3(1.54, 1.79, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank6" type="MeshInstance3D" parent="."]
+position = Vector3(2.4, 0.65, -7)
+scale = Vector3(1.54, 1.99, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank7" type="MeshInstance3D" parent="."]
+position = Vector3(4.8, 0.65, -7)
+scale = Vector3(2.0, 1.93, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank8" type="MeshInstance3D" parent="."]
+position = Vector3(7.2, 0.65, -7)
+scale = Vector3(1.61, 1.66, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank9" type="MeshInstance3D" parent="."]
+position = Vector3(9.6, 0.65, -7)
+scale = Vector3(1.47, 1.43, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank10" type="MeshInstance3D" parent="."]
+position = Vector3(12.0, 0.65, -7)
+scale = Vector3(1.97, 1.45, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank11" type="MeshInstance3D" parent="."]
+position = Vector3(-12.0, 0.65, 7.7)
+scale = Vector3(1.7, 0.8, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank12" type="MeshInstance3D" parent="."]
+position = Vector3(-9.6, 0.65, 7.7)
+scale = Vector3(1.43, 1.05, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank13" type="MeshInstance3D" parent="."]
+position = Vector3(-7.2, 0.65, 7.7)
+scale = Vector3(1.93, 1.07, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank14" type="MeshInstance3D" parent="."]
+position = Vector3(-4.8, 0.65, 7.7)
+scale = Vector3(1.78, 0.84, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank15" type="MeshInstance3D" parent="."]
+position = Vector3(-2.4, 0.65, 7.7)
+scale = Vector3(1.4, 0.57, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank16" type="MeshInstance3D" parent="."]
+position = Vector3(0.0, 0.65, 7.7)
+scale = Vector3(1.87, 0.51, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank17" type="MeshInstance3D" parent="."]
+position = Vector3(2.4, 0.65, 7.7)
+scale = Vector3(1.86, 0.72, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank18" type="MeshInstance3D" parent="."]
+position = Vector3(4.8, 0.65, 7.7)
+scale = Vector3(1.4, 1.0, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank19" type="MeshInstance3D" parent="."]
+position = Vector3(7.2, 0.65, 7.7)
+scale = Vector3(1.79, 1.1, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank20" type="MeshInstance3D" parent="."]
+position = Vector3(9.6, 0.65, 7.7)
+scale = Vector3(1.92, 0.92, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Bank21" type="MeshInstance3D" parent="."]
+position = Vector3(12.0, 0.65, 7.7)
+scale = Vector3(1.43, 0.64, 1.6)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="EastBank0" type="MeshInstance3D" parent="."]
+position = Vector3(11.6, 0.6, -6.0)
+scale = Vector3(1.3, 1.5, 1.4)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="EastBank1" type="MeshInstance3D" parent="."]
+position = Vector3(11.6, 0.6, -4.2)
+scale = Vector3(1.3, 1.5, 1.4)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="EastBank2" type="MeshInstance3D" parent="."]
+position = Vector3(11.6, 0.6, -2.4)
+scale = Vector3(1.3, 1.5, 1.4)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="EastBank3" type="MeshInstance3D" parent="."]
+position = Vector3(11.6, 0.6, -0.5999999999999996)
+scale = Vector3(1.3, 1.5, 1.4)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="EastBank4" type="MeshInstance3D" parent="."]
+position = Vector3(11.6, 0.6, 1.2000000000000002)
+scale = Vector3(1.3, 1.5, 1.4)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="EastBank5" type="MeshInstance3D" parent="."]
+position = Vector3(11.6, 0.6, 3.0)
+scale = Vector3(1.3, 1.5, 1.4)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="EastBank6" type="MeshInstance3D" parent="."]
+position = Vector3(11.6, 0.6, 4.800000000000001)
+scale = Vector3(1.3, 1.5, 1.4)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="EastBank7" type="MeshInstance3D" parent="."]
+position = Vector3(11.6, 0.6, 6.6)
+scale = Vector3(1.3, 1.5, 1.4)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Timber0_0" type="MeshInstance3D" parent="."]
+position = Vector3(-9, 1.8, -3)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Lamp0_0" type="MeshInstance3D" parent="."]
+position = Vector3(-9, 2.3, -2.75)
+mesh = SubResource("LampMesh")
+material_override = SubResource("Lamp")
+
+[node name="Light0_0" type="OmniLight3D" parent="."]
+position = Vector3(-9, 2.5, -3)
+light_color = Color(1,0.72,0.35,1)
+light_energy = 0.8
+omni_range = 4.8
+
+[node name="Timber0_1" type="MeshInstance3D" parent="."]
+position = Vector3(-9, 1.8, 3)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Lamp0_1" type="MeshInstance3D" parent="."]
+position = Vector3(-9, 2.3, 2.75)
+mesh = SubResource("LampMesh")
+material_override = SubResource("Lamp")
+
+[node name="Light0_1" type="OmniLight3D" parent="."]
+position = Vector3(-9, 2.5, 3)
+light_color = Color(1,0.72,0.35,1)
+light_energy = 0.8
+omni_range = 4.8
+
+[node name="Beam0" type="MeshInstance3D" parent="."]
+position = Vector3(-9, 3.65, 0)
+rotation_degrees = Vector3(90, 0, 0)
+scale = Vector3(1, 1.7, 1)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Timber1_0" type="MeshInstance3D" parent="."]
+position = Vector3(-5, 1.8, -3)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Lamp1_0" type="MeshInstance3D" parent="."]
+position = Vector3(-5, 2.3, -2.75)
+mesh = SubResource("LampMesh")
+material_override = SubResource("Lamp")
+
+[node name="Light1_0" type="OmniLight3D" parent="."]
+position = Vector3(-5, 2.5, -3)
+light_color = Color(1,0.72,0.35,1)
+light_energy = 0.8
+omni_range = 4.8
+
+[node name="Timber1_1" type="MeshInstance3D" parent="."]
+position = Vector3(-5, 1.8, 3)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Lamp1_1" type="MeshInstance3D" parent="."]
+position = Vector3(-5, 2.3, 2.75)
+mesh = SubResource("LampMesh")
+material_override = SubResource("Lamp")
+
+[node name="Light1_1" type="OmniLight3D" parent="."]
+position = Vector3(-5, 2.5, 3)
+light_color = Color(1,0.72,0.35,1)
+light_energy = 0.8
+omni_range = 4.8
+
+[node name="Beam1" type="MeshInstance3D" parent="."]
+position = Vector3(-5, 3.65, 0)
+rotation_degrees = Vector3(90, 0, 0)
+scale = Vector3(1, 1.7, 1)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Timber2_0" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.8, -3)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Lamp2_0" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.3, -2.75)
+mesh = SubResource("LampMesh")
+material_override = SubResource("Lamp")
+
+[node name="Light2_0" type="OmniLight3D" parent="."]
+position = Vector3(0, 2.5, -3)
+light_color = Color(1,0.72,0.35,1)
+light_energy = 0.8
+omni_range = 4.8
+
+[node name="Timber2_1" type="MeshInstance3D" parent="."]
+position = Vector3(0, 1.8, 3)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Lamp2_1" type="MeshInstance3D" parent="."]
+position = Vector3(0, 2.3, 2.75)
+mesh = SubResource("LampMesh")
+material_override = SubResource("Lamp")
+
+[node name="Light2_1" type="OmniLight3D" parent="."]
+position = Vector3(0, 2.5, 3)
+light_color = Color(1,0.72,0.35,1)
+light_energy = 0.8
+omni_range = 4.8
+
+[node name="Beam2" type="MeshInstance3D" parent="."]
+position = Vector3(0, 3.65, 0)
+rotation_degrees = Vector3(90, 0, 0)
+scale = Vector3(1, 1.7, 1)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Rock0" parent="." instance=ExtResource("RockArt")]
+position = Vector3(-6, 0, -5)
+scale = Vector3(1.3, 1.2, 1.3)
+
+[node name="Rock1" parent="." instance=ExtResource("RockArt")]
+position = Vector3(-1, 0, -5)
+scale = Vector3(1.3, 1.2, 1.3)
+
+[node name="Rock2" parent="." instance=ExtResource("RockArt")]
+position = Vector3(7, 0, 5)
+scale = Vector3(1.3, 1.2, 1.3)
+
+[node name="Rock3" parent="." instance=ExtResource("RockArt")]
+position = Vector3(9, 0, -4)
+scale = Vector3(1.3, 1.2, 1.3)
+
+[node name="Crystal" type="Node3D" parent="."]
+position = Vector3(5, 0, 0)
+script = ExtResource("Interact")
+interaction_id = &"ancient_crystal"
+kind = "story"
+label = "調查異常星晶"
+radius = 3.0
+required_flag = &"e005_done"
+
+[node name="Base" type="MeshInstance3D" parent="Crystal"]
+position = Vector3(0, 0.23, 0)
+mesh = SubResource("Plinth")
+material_override = SubResource("Metal")
+
+[node name="Prism" type="Node3D" parent="Crystal"]
+position = Vector3(0, 1.85, 0)
+
+[node name="Upper" type="MeshInstance3D" parent="Crystal/Prism"]
+position = Vector3(0, 0.7, 0)
+mesh = SubResource("Gem")
+material_override = SubResource("Crystal")
+
+[node name="Lower" type="MeshInstance3D" parent="Crystal/Prism"]
+position = Vector3(0, -0.7, 0)
+rotation_degrees = Vector3(180, 0, 0)
+mesh = SubResource("Gem")
+material_override = SubResource("Crystal")
+
+[node name="Body" type="StaticBody3D" parent="Crystal"]
+position = Vector3(0, 1.3, 0)
+
+[node name="Collision" type="CollisionShape3D" parent="Crystal/Body"]
+shape = SubResource("CrystalShape")
+
+[node name="Glow" type="OmniLight3D" parent="Crystal"]
+position = Vector3(0, 2, 0)
+light_color = Color(0.25,0.85,1,1)
+light_energy = 1.2
+omni_range = 7.0
+
+[node name="Exit" type="Node3D" parent="."]
+position = Vector3(-11, 0, 0)
+script = ExtResource("Interact")
+interaction_id = &"to_forest"
+kind = "exit"
+label = "返回低語森林"
+destination = &"forest"
+spawn_key = &"return"
+
+[node name="Name" type="Label3D" parent="Crystal"]
+position = Vector3(0, 3.6, 0)
+billboard = 1
+font = SubResource("Font")
+text = "古代星晶"
+font_size = 40
+pixel_size = 0.01
+outline_size = 10
+
+[node name="Name" type="Label3D" parent="Exit"]
+position = Vector3(0, 2, 0)
+billboard = 1
+font = SubResource("Font")
+text = "低語森林 ←"
+font_size = 40
+pixel_size = 0.01
+outline_size = 10

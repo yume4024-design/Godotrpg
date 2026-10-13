@@ -14,7 +14,7 @@ func _run() -> void:
 	root.add_child(game)
 	current_scene = game
 	await create_timer(0.8).timeout
-	_check(game.ready_to_play and game.catalog.events.size() == 8, "Real JSON validates, all eight definitions retained")
+	_check(game.ready_to_play and game.catalog.events.size() == 9 and game.catalog.events.has_all([&"E001", &"E002", &"E003", &"E004", &"E005", &"E006", &"E007", &"E008", &"E009"]), "Real JSON validates, eight original definitions plus P5 departure retained")
 	_check(game.dialogue.active and game.runner.active_event == &"E001", "E001 begins after initial map transition")
 	_check(not game.flags.has_flag(&"e001_done"), "Event incomplete until dialogue finishes")
 	var start: Vector3 = game.player.position

@@ -1,8 +1,12 @@
 class_name PartyMenu
 extends CanvasLayer
+signal new_game_requested
 signal close_requested
 signal equip_requested(character: StringName, slot: StringName, item: StringName)
 signal item_requested(character: StringName, item: StringName)
+var offer_new_game: bool = false
+var _quests: QuestManager
+var _saves: SaveManager
 var _party: PartyManager
 var _inventory: InventoryManager
 var _selected: StringName = &"ren"
@@ -70,7 +74,7 @@ func _ready() -> void:
 	_tabs = HBoxContainer.new()
 	_tabs.add_theme_constant_override("separation", 10)
 	tools_row.add_child(_tabs)
-	for title: String in ["狀態", "背包", "技能", "裝備"]:
+	for title: String in ["狀態", "背包", "技能", "裝備", "任務", "旅程"]:
 		_button(_tabs, title, _select_tab.bind(title))
 	var scroll: ScrollContainer = ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
@@ -90,6 +94,19 @@ func setup(party: PartyManager, inventory: InventoryManager) -> void:
 	_inventory = inventory
 	party.changed.connect(_state_changed)
 	inventory.changed.connect(_state_changed)
+
+func setup_journey(quests: QuestManager, saves: SaveManager) -> void:
+	_quests = quests
+	_saves = saves
+	quests.changed.connect(_state_changed)
+	saves.status_changed.connect(func(message: String) -> void: _notice.text = message)
+
+func open_journey() -> void:
+	_tab = "旅程"
+	open()
+
+func reset_selection() -> void:
+	_selected = &"ren"
 
 func _state_changed() -> void:
 	if visible: refresh.call_deferred()
@@ -125,6 +142,26 @@ func refresh() -> void:
 		_body.remove_child(child)
 		child.queue_free()
 	match _tab:
+		"任務":
+			if _quests == null: return
+			var quest: Dictionary = _quests.journal(&"Q001")
+			_label(_body, quest.name + ("  ·  已完成" if quest.completed else "  ·  進行中" if quest.accepted else "  ·  尚未接受"), 26)
+			_label(_body, quest.description)
+			for step: Dictionary in quest.objectives:
+				_label(_body, ("✓  " if step.done else "○  ") + step.description)
+			_label(_body, "交付獎勵：%d 金幣 / 每人 %d EXP（僅發放一次）" % [quest.rewards.gold, quest.rewards.exp], 18)
+			if quest.completed: _label(_body, "第一章已解鎖。翠影森林的旅程將在後續版本開放。", 18)
+		"旅程":
+			if _saves == null: return
+			_label(_body, "保存這段冒險", 26)
+			_label(_body, "單一存檔欄位。保存會更新此欄位，並保留上一份有效備份。", 18)
+			if offer_new_game:
+				_label(_body, "找到先前的旅程：讀取繼續，或開始新的冒險。", 20)
+				_button(_body, "開始新旅程（保留舊存檔至下次保存）", func() -> void: new_game_requested.emit())
+			else: _button(_body, "保存旅程  [F5]", func() -> void: _saves.request_save())
+			_button(_body, "讀取旅程  [F9]", func() -> void: _saves.request_load())
+			_button(_body, "讀取上一份備份", func() -> void: _saves.request_load(true))
+			_label(_body, _saves.last_message, 18)
 		"狀態":
 			_label(_body, "%s    Lv%d" % [actor.definition.display_name, actor.level], 26)
 			_label(_body, "HP  %d / %d       MP  %d / %d" % [actor.hp, actor.max_hp, actor.mp, actor.max_mp])

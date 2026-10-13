@@ -1,0 +1,205 @@
+[gd_scene format=3]
+
+[ext_resource type="Script" path="res://scripts/world/exploration_map.gd" id="Map"]
+
+[ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
+
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/moss_rock.glb" id="RockArt"]
+
+[ext_resource type="PackedScene" path="res://assets/models/cartoon/path_strip.glb" id="PathArt"]
+
+[sub_resource type="StandardMaterial3D" id="Stone"]
+albedo_color = Color(0.25,0.32,0.36,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Earth"]
+albedo_color = Color(0.30,0.29,0.27,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Wood"]
+albedo_color = Color(0.36,0.23,0.13,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Metal"]
+albedo_color = Color(0.13,0.20,0.22,1)
+roughness = 0.85
+
+[sub_resource type="StandardMaterial3D" id="Crystal"]
+albedo_color = Color(0.2,0.8,0.86,1)
+metallic = 0.2
+roughness = 0.25
+emission_enabled = true
+emission = Color(0.05,0.45,0.55,1)
+emission_energy_multiplier = 0.8
+
+[sub_resource type="StandardMaterial3D" id="Lamp"]
+albedo_color = Color(1,0.8,0.35,1)
+emission_enabled = true
+emission = Color(1,0.6,0.15,1)
+emission_energy_multiplier = 1.5
+
+[sub_resource type="Environment" id="MineEnvironment"]
+background_mode = 1
+background_color = Color(0.045,0.065,0.085,1)
+ambient_light_source = 3
+ambient_light_color = Color(0.50,0.65,0.8,1)
+ambient_light_energy = 0.75
+reflected_light_source = 2
+
+[sub_resource type="SystemFont" id="Font"]
+font_names = PackedStringArray("Microsoft JhengHei")
+
+[sub_resource type="BoxMesh" id="Floor"]
+size = Vector3(27, 0.6, 19)
+
+[sub_resource type="BoxShape3D" id="FloorShape"]
+size = Vector3(27, 0.6, 19)
+
+[sub_resource type="BoxShape3D" id="WallX"]
+size = Vector3(1, 5, 19)
+
+[sub_resource type="BoxShape3D" id="WallZ"]
+size = Vector3(27, 5, 1)
+
+[sub_resource type="SphereMesh" id="Boulder"]
+radius = 1.0
+height = 2.0
+radial_segments = 24
+rings = 12
+
+[sub_resource type="CylinderMesh" id="Timber"]
+top_radius = 0.19
+bottom_radius = 0.22
+height = 3.8
+radial_segments = 24
+
+[sub_resource type="CylinderMesh" id="Plinth"]
+top_radius = 1.15
+bottom_radius = 1.45
+height = 0.45
+radial_segments = 32
+
+[sub_resource type="CylinderShape3D" id="CrystalShape"]
+radius = 1.0
+height = 2.6
+
+[sub_resource type="CylinderMesh" id="Gem"]
+top_radius = 0.0
+bottom_radius = 0.65
+height = 1.65
+radial_segments = 6
+
+[sub_resource type="BoxMesh" id="Rail"]
+size = Vector3(18, 0.1, 0.08)
+
+[sub_resource type="BoxMesh" id="Sleeper"]
+size = Vector3(0.22, 0.12, 1.2)
+
+[sub_resource type="SphereMesh" id="LampMesh"]
+radius = 0.18
+height = 0.36
+radial_segments = 24
+rings = 12
+
+[node name="BattleMine" type="Node3D"]
+
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+position = Vector3(0, -0.32, 0)
+mesh = SubResource("Floor")
+material_override = SubResource("Earth")
+
+[node name="BackRock0" type="MeshInstance3D" parent="."]
+position = Vector3(-9, 0.65, -5.6)
+scale = Vector3(1.9, 1.2, 1.7)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="BackRock1" type="MeshInstance3D" parent="."]
+position = Vector3(-6, 0.65, -5.6)
+scale = Vector3(1.9, 1.5, 1.7)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="BackRock2" type="MeshInstance3D" parent="."]
+position = Vector3(-3, 0.65, -5.6)
+scale = Vector3(1.9, 1.7999999999999998, 1.7)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="BackRock3" type="MeshInstance3D" parent="."]
+position = Vector3(0, 0.65, -5.6)
+scale = Vector3(1.9, 1.2, 1.7)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="BackRock4" type="MeshInstance3D" parent="."]
+position = Vector3(3, 0.65, -5.6)
+scale = Vector3(1.9, 1.5, 1.7)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="BackRock5" type="MeshInstance3D" parent="."]
+position = Vector3(6, 0.65, -5.6)
+scale = Vector3(1.9, 1.7999999999999998, 1.7)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="BackRock6" type="MeshInstance3D" parent="."]
+position = Vector3(9, 0.65, -5.6)
+scale = Vector3(1.9, 1.2, 1.7)
+mesh = SubResource("Boulder")
+material_override = SubResource("Stone")
+
+[node name="Post0" type="MeshInstance3D" parent="."]
+position = Vector3(-7, 1.8, -3.5)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Lamp0" type="MeshInstance3D" parent="."]
+position = Vector3(-7, 2.5, -3.2)
+mesh = SubResource("LampMesh")
+material_override = SubResource("Lamp")
+
+[node name="WarmLight0" type="OmniLight3D" parent="."]
+position = Vector3(-7, 2.5, -3)
+light_color = Color(1,0.7,0.3,1)
+light_energy = 1.8
+omni_range = 7
+
+[node name="Post1" type="MeshInstance3D" parent="."]
+position = Vector3(7, 1.8, -3.5)
+mesh = SubResource("Timber")
+material_override = SubResource("Wood")
+
+[node name="Lamp1" type="MeshInstance3D" parent="."]
+position = Vector3(7, 2.5, -3.2)
+mesh = SubResource("LampMesh")
+material_override = SubResource("Lamp")
+
+[node name="WarmLight1" type="OmniLight3D" parent="."]
+position = Vector3(7, 2.5, -3)
+light_color = Color(1,0.7,0.3,1)
+light_energy = 1.8
+omni_range = 7
+
+[node name="Ore0" type="MeshInstance3D" parent="."]
+position = Vector3(-4, 1.0, -4.3)
+rotation_degrees = Vector3(0, 0, 15)
+scale = Vector3(0.5, 0.7, 0.5)
+mesh = SubResource("Gem")
+material_override = SubResource("Crystal")
+
+[node name="Ore1" type="MeshInstance3D" parent="."]
+position = Vector3(1, 1.0, -4.3)
+rotation_degrees = Vector3(0, 20, 15)
+scale = Vector3(0.5, 0.7, 0.5)
+mesh = SubResource("Gem")
+material_override = SubResource("Crystal")
+
+[node name="Ore2" type="MeshInstance3D" parent="."]
+position = Vector3(5, 1.0, -4.3)
+rotation_degrees = Vector3(0, 40, 15)
+scale = Vector3(0.5, 0.7, 0.5)
+mesh = SubResource("Gem")
+material_override = SubResource("Crystal")

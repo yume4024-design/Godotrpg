@@ -25,3 +25,8 @@ func meets(conditions: Array) -> bool:
 
 func snapshot() -> Dictionary:
 	return _flags.duplicate()
+
+func restore_state(data: Dictionary) -> void:
+	_flags.clear()
+	for key: String in data: _flags[StringName(key)] = data[key]
+	changed.emit(&"", false)

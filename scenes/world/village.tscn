@@ -82,9 +82,10 @@ height = 1.0
 radial_segments = 12
 rings = 6
 material = SubResource("PebbleMat")
-[node name="Village" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn")]
+[node name="Village" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "extra_story_zones")]
 script = ExtResource("Map")
 map_id = &"village"
+extra_story_zones = [NodePath("DepartureZone")]
 display_name = "灰石村"
 default_spawn = NodePath("DefaultSpawn")
 entrance_spawn = NodePath("EntranceSpawn")
@@ -1129,3 +1130,7 @@ scale = Vector3(0.34, 1, 1.12)
 position = Vector3(0, 0.009, -3.0)
 rotation_degrees = Vector3(0, 90, 0)
 scale = Vector3(0.34, 1, 1.12)
+
+[node name="DepartureZone" type="Marker3D" parent="."]
+metadata/trigger = "village_departure"
+metadata/radius = 100.0

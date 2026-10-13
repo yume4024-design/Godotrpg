@@ -14,7 +14,7 @@ func setup(party: PartyManager, inventory: InventoryManager) -> void:
 func was_claimed(source: StringName) -> bool:
 	return _ledger.has(source)
 
-func claim(source: StringName, coins: int, experience: int, items: Dictionary = {}) -> bool:
+func claim(source: StringName, coins: int, experience: int, items: Dictionary = {}, commit: Callable = Callable()) -> bool:
 	if _committing or source.is_empty() or was_claimed(source) or _party.members().is_empty(): return false
 	if experience < 0 or experience > 1000000 or not _inventory.valid_bundle(coins, items): return false
 	_committing = true
@@ -24,6 +24,7 @@ func claim(source: StringName, coins: int, experience: int, items: Dictionary = 
 	_inventory.grant_bundle(coins, items)
 	for actor: CombatantState in members: actor.gain_exp(experience)
 	_ledger[source] = {"gold": coins, "exp": experience, "items": items.duplicate(true)}
+	if commit.is_valid(): commit.call()
 	_inventory.set_block_signals(false)
 	for actor: CombatantState in members: actor.set_block_signals(false)
 	# Observers see the complete bundle and its receipt, even during reentrant signals.
@@ -32,3 +33,10 @@ func claim(source: StringName, coins: int, experience: int, items: Dictionary = 
 	granted.emit(source)
 	_committing = false
 	return true
+
+func snapshot() -> Dictionary:
+	return _ledger.duplicate(true)
+
+func restore_state(data: Dictionary) -> void:
+	_ledger.clear()
+	for source: String in data: _ledger[StringName(source)] = data[source].duplicate(true)

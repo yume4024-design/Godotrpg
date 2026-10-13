@@ -4,7 +4,7 @@
 
 在本目錄建立 Windows 單機、原創 Low Poly 3D JRPG《失落星核》（專案代號 Project Crystal）。先完成 20～30 分鐘序章可玩版本，採固定斜 45 度攝影機、探索及指令式回合制戰鬥，ATB 留待試玩版之後。
 
-目前 Phase 1～Phase 4 已通過驗收，最新證據見 docs/PHASE4_REPORT.md；下一階段為 P5（尚未開始）。執行任務前讀取 README.md、docs/TASKS.md、docs/ARCHITECTURE.md 與 docs/WORKFLOW.md。使用者最新指示優先於本文件；按授權的階段完成工作，不自行擴展到下一階段。
+目前 Phase 1～Phase 5 已通過驗收，最新證據見 docs/PHASE5_REPORT.md；下一階段為 P6（尚未開始）。執行任務前讀取 README.md、docs/TASKS.md、docs/ARCHITECTURE.md 與 docs/WORKFLOW.md。使用者最新指示優先於本文件；按授權的階段完成工作，不自行擴展到下一階段。
 
 故事原文保存於 docs/STORY_BIBLE.md；實作範圍、資料修正及階段對應以 docs/STORY_IMPLEMENTATION.md 為準。原文中的「現在執行」為企劃內嵌的未來任務範本，不代表本次加入資料即授權開始整個劇情引擎。序章僅雷恩/莉雅，艾琳在第一章加入；隊伍系統仍保留最多三人能力。
 
@@ -42,7 +42,7 @@
 
 ## 既有功能與資產
 
-- 修復或重構後重跑受影響階段的驗收。存檔格式修改必須有版本與相容處理。
+- 修復或重構後重跑受影響階段的驗收。存檔格式修改必須有版本與相容處理。目前 v1／CH00-P5 的完整驗證契約見 docs/SAVE_FORMAT.md；擴充獎勵來源、角色或經濟時同步更新驗證和遷移，不繞過 SaveCodec。
 - 所有人物、名稱、故事、圖片和音樂必須原創或有明確可用授權，不使用 FF7 原始素材。
 - 使用者允許使用並修改素材商店資產。選用時記錄商店頁、作者、版本、授權/署名要求及修改内容到 docs/ASSET_CREDITS.md；優先免費且符合需求的素材，不因允許使用素材而自行購買或加入整套無關模板。
 - Phase 1～3 優先使用幾何體佔位。未驗證探索與戰鬥之前不大量製作美術。

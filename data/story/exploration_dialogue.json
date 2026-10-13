@@ -32,12 +32,21 @@
       }
     ],
     "rest": [
-      {"speaker": "narrator", "text": "你在營地稍作休息。HP 與 MP 已恢復，道具不會補充。"}
+      {
+        "speaker": "narrator",
+        "text": "你在營地稍作休息。HP 與 MP 已恢復，道具不會補充。"
+      }
     ],
     "forest_sign": [
       {
         "speaker": "narrator",
-        "text": "前方通往廢棄礦坑。道路暫未開放，請沿原路返回灰石村。"
+        "text": "東側入口通往廢棄礦坑。先和莉雅完成森林戰鬥，再前往調查。"
+      }
+    ],
+    "guild_completed": [
+      {
+        "speaker": "guildmaster",
+        "text": "礦坑的委託已經結清。保管好星印，翠影森林的旅程還在等著你們。"
       }
     ]
   }

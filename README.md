@@ -2,15 +2,19 @@
 
 原創 Windows Low Poly 3D JRPG。先完成 20～30 分鐘序章《灰石村的異變》，再逐章擴充到六篇章、約 12～16 小時與三種結局的完整企劃目標。
 
-**Phase 4 已完成**：E001→E004 主線可玩，與莉雅交談後正式組成雙人隊伍，進入森林觸發第一場主線戰鬥。新增金幣、EXP／升級、裝備與旅途手冊（狀態／背包／技能／裝備）。
+**Phase 5 已完成**：序章 E001～E008 可從新遊戲玩到回村交付，追加章末離村預告 E009。灰石村、低語森林與廢棄礦坑已連通；雷恩／莉雅雙人隊伍、回合戰鬥、成長、裝備、任務日誌與保存／讀取可用。
 
-**角色與場景已更新為圓潤可愛的卡通風格**：五個原創角色／敵人模型具備五官、服裝、裝備與待機／步行擺動；村莊、森林及戰鬥舞台加入圓冠樹、瓦屋、覆苔岩石、花草、圓角道路、寶箱和營火。美術沿用使用者指定的圓潤可愛卡通風格。
+角色與場景保留圓潤可愛卡通風格。礦坑新增開頂回廊、礦軌、坑木、礦燈、星晶覺醒動畫，以及獨立的腐化守衛戰舞台。第一章目前只有解鎖旗標和預告，地圖尚未開放。
 
-操作：WASD 或方向鍵移動，靠近後按 E 互動；對話中按 E／空白鍵／Enter 或點擊繼續按鈕，先顯示全文再進下一句；M 開關旅途手冊，Esc 關閉手冊；R 返回本區起點。鏡頭保持角度並隨角色平移，森林空地有局部縮放。開啟 project.godot 後按 F5，或執行下面的 Run 指令即可遊玩。
+操作：WASD／方向鍵移動，E 互動；對話用 E／空白鍵／Enter 或繼續按鈕。M 開關旅途手冊，Esc 關閉；F5 保存、F9 讀取，亦可使用 M → 旅程頁按鈕。R 返回本區起點。戰鬥用滑鼠，或 Tab／方向鍵和 Enter 選指令與目標。
 
-試玩路線：開場對話 → 公會長接受委託 → 與莉雅交談入隊 → M 開手冊，替雷恩／莉雅換裝 → 右側入口進森林 → 開演練補給箱取得恢復藥 ×3 → 沿路前進觸發主線戰鬥 → 勝利獲得 12 金幣、每人 20 EXP 並升到 Lv2 → 返回探索。營地可恢復 HP／MP；「挑戰·腐化守衛」較難，建議先休息並保留藥品。戰鬥使用滑鼠，或 Tab／方向鍵與 Enter 選擇；取消目標不消耗回合。
+試玩路線：開場 → 公會長接 Q001 → 莉雅入隊 → M 裝備 → 森林補給與史萊姆戰 → 東侧入口進礦坑 → 進入內部取得藥品 → 調查星晶 → 覺醒與腐化守衛戰 → 經森林回村交付 → 離村／第一章預告。營地可恢復 HP／MP；主線與演練分開，演練不給故事獎勵。
 
-主線遭遇獎勵只發一次；演練仍不推進故事、不發金幣或經驗。勝利保留消耗，升級增加存活角色的 HP／MP 差額；敗北重試／撤退回復進戰前狀態。撤退後離開觸發區再走回即可重試。新遊戲提供青銅短劍、柳木法杖、旅人皮衣各一件；裝備從背包取出，卸下歸還。探索顯示隊長，雙人在戰鬥中登場。礦坑、完整任務交付與存檔留 P5；目前關閉遊戲會重置進度。
+兩場主線戰鬥與交付合計 212 金幣、每位隊員 300 EXP；每個來源只給一次，第一枚星印不重複。裝備影響數值，探索仍以隊長代表隊伍，雙人在戰鬥中登場。
+
+**請在離開遊戲前手動保存。** 忙碌時的 F5 請求會等到安全點再寫入，F9 不會中斷戰鬥。已有存檔時開啟遊戲會先顯示續玩／新旅程選擇。單欄位保留上一份有效備份，格式錯誤不污染目前進度；詳見 [存檔格式與路徑](docs/SAVE_FORMAT.md)。工具入口與直接從編輯器啟動使用的 user:// 位置可能不同。
+
+開啟 project.godot 按 F5，或使用下方 Run 指令即可遊玩。Windows 獨立匯出、手把、音效／特效、效能及 20～30 分鐘流程計時仍屬 P6，尚未驗收。
 
 ## 閱讀順序
 
@@ -24,7 +28,7 @@
 
 故事工作先讀 [故事整合與階段安排](docs/STORY_IMPLEMENTATION.md)，再按需查閱 [Story Bible v1.0 原文](docs/STORY_BIBLE.md)。原文完整保留；實作差異與待補內容均記在整合文件，企劃中的參考圖片不視為已授權遊戲素材。
 
-內容資料：[E001～E008](data/story/prologue_events.json)、[Q001](data/quests/q001.json)、[B001/B002](data/battles/prologue_battles.json)。E004/B001 已接入正式主線；E007/B002 的勝利等待橋接保留獨立測試，礦坑主線於 P5 整合。
+內容資料：[E001～E008](data/story/prologue_events.json)、[Q001](data/quests/q001.json)、[B001/B002](data/battles/prologue_battles.json)。E004/B001 與 E007/B002 已接入正式主線；追加 E009 章末敘事不發獎勵。
 
 ## 本機工具
 
@@ -49,6 +53,9 @@ Set-Location D:\RPGGAME
 .\tools\godot.ps1 -Mode VisualPhase3
 .\tools\godot.ps1 -Mode TestPhase4
 .\tools\godot.ps1 -Mode VisualPhase4
+.\tools\godot.ps1 -Mode TestPhase5
+.\tools\godot.ps1 -Mode TestPhase5Reload
+.\tools\godot.ps1 -Mode VisualPhase5
 .\tools\godot.ps1 -Mode PreviewBattle
 .\tools\godot.ps1 -Mode PreviewArt
 .\tools\godot.ps1 -Mode Editor
@@ -61,7 +68,9 @@ Set-Location D:\RPGGAME
 
 `PreviewArt` 開啟五個卡通模型展示；`TestArt` 執行 17 項模型／材質／關節驗证，`VisualArt` 另保存正側背面與步行姿勢，共 21 項。[美術更新報告](docs/CARTOON_ART_REPORT.md) 包含來源、面數、重建方式與驗收限制。
 
-本輪 [P4 驗收報告](docs/PHASE4_REPORT.md) 記錄 70 項功能／82 項圖形檢查、成長规则及限制。`TestPhase4`／`VisualPhase4` 執行主線入隊、選單實際按鈕、兩次敗北／重試及獲獎流程。
+歷史 [P4 驗收報告](docs/PHASE4_REPORT.md) 記錄 70 項功能／82 項圖形檢查、成長规则及限制。`TestPhase4`／`VisualPhase4` 執行主線入隊、選單實際按鈕、兩次敗北／重試及獲獎流程。
+
+本輪 [P5 驗收報告](docs/PHASE5_REPORT.md) 記錄 69 項功能、77 項圖形模式及 7 項跨程序讀檔檢查。先執行 TestPhase5，再執行 TestPhase5Reload；測試只使用獨立的測試存檔。
 
 歷史 [P3 驗收報告](docs/PHASE3_REPORT.md) 包含命令、畫面、修復與限制；[P2 報告](docs/PHASE2_REPORT.md)／[P1 報告](docs/PHASE1_REPORT.md) 保留歷史紀錄。可以使用並修改素材商店資產；目前使用自製 Blender 模型及 Godot 場景，見 [素材紀錄](docs/ASSET_CREDITS.md)。
 
@@ -73,4 +82,4 @@ Set-Location D:\RPGGAME
 
 ## 下一個開發任務
 
-> 下一階段為 Phase 5：完整任務日誌、廢棄礦坑、E005～E008、晶體演出、任務交付及版本化存檔。依 TASKS.md 授權階段執行，保留 P1～P4 回歸。
+> 下一階段為 Phase 6：音效／特效、手把與效能驗收、Windows 匯出及完整序章節奏／時長驗證。按 TASKS.md 執行，保留 P1～P5 回歸。

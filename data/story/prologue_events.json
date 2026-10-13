@@ -44,7 +44,9 @@
         "kind": "interact",
         "key": "npc_guildmaster"
       },
-      "conditions": ["e001_done"],
+      "conditions": [
+        "e001_done"
+      ],
       "dialogue": [
         {
           "speaker": "guildmaster",
@@ -78,7 +80,9 @@
         "kind": "interact",
         "key": "npc_lia"
       },
-      "conditions": ["e002_done"],
+      "conditions": [
+        "e002_done"
+      ],
       "dialogue": [
         {
           "speaker": "lia",
@@ -112,7 +116,9 @@
         "kind": "area_enter",
         "key": "forest_first_encounter"
       },
-      "conditions": ["e003_done"],
+      "conditions": [
+        "e003_done"
+      ],
       "dialogue": [
         {
           "speaker": "lia",
@@ -126,7 +132,9 @@
           "victory_flag": "battle_b001_won"
         }
       ],
-      "complete_conditions": ["battle_b001_won"],
+      "complete_conditions": [
+        "battle_b001_won"
+      ],
       "complete_actions": [
         {
           "type": "set_objective",
@@ -142,7 +150,9 @@
         "kind": "area_enter",
         "key": "mine_inner_area"
       },
-      "conditions": ["e004_done"],
+      "conditions": [
+        "e004_done"
+      ],
       "dialogue": [
         {
           "speaker": "ren",
@@ -173,7 +183,9 @@
         "kind": "interact",
         "key": "ancient_crystal"
       },
-      "conditions": ["e005_done"],
+      "conditions": [
+        "e005_done"
+      ],
       "dialogue": [
         {
           "speaker": "aster",
@@ -221,7 +233,9 @@
         "kind": "area_enter",
         "key": "mine_boss_arena"
       },
-      "conditions": ["e006_done"],
+      "conditions": [
+        "e006_done"
+      ],
       "dialogue": [
         {
           "speaker": "lia",
@@ -235,7 +249,9 @@
           "victory_flag": "battle_b002_won"
         }
       ],
-      "complete_conditions": ["battle_b002_won"],
+      "complete_conditions": [
+        "battle_b002_won"
+      ],
       "complete_actions": [
         {
           "type": "set_objective",
@@ -251,7 +267,9 @@
         "kind": "interact",
         "key": "npc_guildmaster"
       },
-      "conditions": ["e007_done"],
+      "conditions": [
+        "e007_done"
+      ],
       "dialogue": [
         {
           "speaker": "guildmaster",
@@ -290,6 +308,46 @@
         }
       ],
       "complete_flag": "prologue_complete"
+    },
+    {
+      "id": "E009",
+      "type": "cutscene",
+      "trigger": {
+        "kind": "area_enter",
+        "key": "village_departure"
+      },
+      "conditions": [
+        "prologue_complete"
+      ],
+      "dialogue": [
+        {
+          "speaker": "narrator",
+          "text": "暮色降臨，身披黑曜徽記的調查團抵達灰石村。他們正追查礦坑的星晶震動。"
+        },
+        {
+          "speaker": "guildmaster",
+          "text": "你們先帶著星印離開。我會向調查團說明礦坑的情況，替你們爭取時間。"
+        },
+        {
+          "speaker": "lia",
+          "text": "翠影森林裡或許留有古代星晶的記錄。我們一起去找答案。"
+        },
+        {
+          "speaker": "ren",
+          "text": "那就出發吧。這一次，我們不再是一個人。"
+        }
+      ],
+      "actions": [
+        {
+          "type": "play_cutscene",
+          "cutscene_id": "village_departure"
+        },
+        {
+          "type": "set_objective",
+          "text": "序章已完成 · 翠影森林將於後續版本開放"
+        }
+      ],
+      "complete_flag": "chapter_departure_done"
     }
   ]
 }

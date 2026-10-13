@@ -7,8 +7,7 @@ signal control_unlocked
 signal event_completed(id: StringName)
 signal event_failed(id: StringName)
 
-const ENABLED_EVENTS: Array[StringName] = [&"E001", &"E002"]
-const SUPPORTED_ACTIONS: Array[String] = ["set_flag", "set_objective", "unlock_control", "start_quest", "start_battle", "add_party_member"]
+const SUPPORTED_ACTIONS: Array[String] = ["set_flag", "set_objective", "unlock_control", "start_quest", "start_battle", "add_party_member", "add_item", "add_gold", "add_exp", "complete_quest", "play_cutscene"]
 @export var enabled_events: Array[StringName] = [&"E001", &"E002"]
 var busy: bool = false
 var active_event: StringName = &""
@@ -21,6 +20,10 @@ var _dialogue: DialogueManager
 var _battles: BattleFlow
 var _party: PartyManager
 var _awaited_ticket: int = 0
+var _cutscenes: StorySequence
+var _rewards: RewardManager
+var _inventory: InventoryManager
+var _sequence_waiting: bool = false
 
 
 func setup(catalog: StoryCatalog, flags: FlagManager, quests: QuestManager, dialogue: DialogueManager, battles: BattleFlow = null, party: PartyManager = null) -> void:
@@ -34,6 +37,29 @@ func setup(catalog: StoryCatalog, flags: FlagManager, quests: QuestManager, dial
 	if _battles != null:
 		_battles.concluded.connect(_on_battle_concluded)
 
+
+func setup_progression(sequences: StorySequence, rewards: RewardManager, inventory: InventoryManager) -> void:
+	_cutscenes = sequences
+	_rewards = rewards
+	_inventory = inventory
+
+func validate_bindings() -> bool:
+	for id: StringName in enabled_events:
+		if not _catalog.events.has(id):
+			last_error = "Missing enabled event: " + String(id)
+			return false
+		for action: Dictionary in _catalog.events[id].actions:
+			var valid: bool = true
+			match action.type:
+				"add_item": valid = _inventory != null and _inventory.knows(StringName(action.item_id))
+				"play_cutscene": valid = _cutscenes != null and action.cutscene_id in ["crystal_awakening", "village_departure"]
+				"add_party_member": valid = _party != null and _party.can_recruit(StringName(action.character_id))
+				"start_battle": valid = _battles != null and _battles.catalog.encounters.has(StringName(action.battle_id))
+				"start_quest", "complete_quest": valid = _quests.knows(StringName(action.quest_id))
+			if not valid:
+				last_error = "Missing action binding in " + String(id) + ": " + String(action.type)
+				return false
+	return true
 
 func try_start(id: StringName) -> bool:
 	last_error = ""
@@ -71,6 +97,7 @@ func try_start(id: StringName) -> bool:
 	if not has_battle and (not event.get("complete_conditions", []).is_empty() or not event.get("complete_actions", []).is_empty()):
 		last_error = "Deferred completion requires a battle"
 		return false
+	if not _preflight_progression(event): return false
 	busy = true
 	active_event = id
 	busy_changed.emit(true)
@@ -83,7 +110,7 @@ func try_start(id: StringName) -> bool:
 
 
 func _finish_event() -> void:
-	if not busy or _awaited_ticket != 0:
+	if not busy or _awaited_ticket != 0 or _sequence_waiting:
 		return
 	var id: StringName = active_event
 	var event: Dictionary = _catalog.events[id]
@@ -93,14 +120,44 @@ func _finish_event() -> void:
 			last_error = "Battle launch failed"
 			_end(false)
 		return
+	for action: Dictionary in event.actions:
+		if action.type == "play_cutscene":
+			_sequence_waiting = true
+			var played: bool = await _cutscenes.play(StringName(action.cutscene_id))
+			_sequence_waiting = false
+			if not played:
+				last_error = "Sequence failed"
+				_end(false)
+				return
+	if not _preflight_progression(event):
+		_end(false)
+		return
 	# Revalidate recruitment at commit time, before any objective or flag changes.
 	for action: Dictionary in event.actions:
 		if action.type == "add_party_member" and not _party.recruit(StringName(action.character_id)):
 			last_error = "Recruitment failed"
 			_end(false)
 			return
-	_apply_actions(event.actions)
-	_complete()
+	var bundle: Dictionary = _bundle(event.actions)
+	if bundle.has_reward:
+		set_block_signals(true)
+		_flags.set_block_signals(true)
+		_quests.set_block_signals(true)
+		var committed: bool = _rewards.claim(StringName("event:" + String(id)), bundle.gold, bundle.exp, bundle.items, func() -> void:
+			_apply_actions(event.actions)
+			_flags.set_flag(StringName(event.complete_flag)))
+		set_block_signals(false)
+		objective_changed.emit(objective)
+		_flags.set_block_signals(false)
+		_quests.set_block_signals(false)
+		if committed:
+			_flags.changed.emit(StringName(event.complete_flag), true)
+			_quests.changed.emit()
+		else: last_error = "Reward transaction rejected"
+		_end(committed)
+	else:
+		_apply_actions(event.actions)
+		_complete()
 
 
 func _apply_actions(actions: Array) -> void:
@@ -113,6 +170,8 @@ func _apply_actions(actions: Array) -> void:
 				objective_changed.emit(objective)
 			"unlock_control":
 				control_unlocked.emit()
+			"complete_quest":
+				_quests.complete(StringName(action.quest_id))
 			"start_quest":
 				_quests.accept(StringName(action.quest_id))
 
@@ -147,3 +206,32 @@ func _end(completed: bool) -> void:
 	busy_changed.emit(false)
 	if completed: event_completed.emit(id)
 	else: event_failed.emit(id)
+
+func _bundle(actions: Array) -> Dictionary:
+	var result: Dictionary = {"gold": 0, "exp": 0, "items": {}, "has_reward": false}
+	for action: Dictionary in actions:
+		match action.type:
+			"add_gold": result.gold += int(action.amount); result.has_reward = true
+			"add_exp": result.exp += int(action.amount); result.has_reward = true
+			"add_item":
+				result.items[action.item_id] = result.items.get(action.item_id, 0) + int(action.amount)
+				result.has_reward = true
+	return result
+
+func _preflight_progression(event: Dictionary) -> bool:
+	var bundle: Dictionary = _bundle(event.actions)
+	if bundle.has_reward and (_rewards == null or _inventory == null or not _inventory.valid_bundle(bundle.gold, bundle.items) or bundle.exp > 1000000 or _rewards.was_claimed(StringName("event:" + String(event.id)))):
+		last_error = "Invalid or previously claimed event reward"
+		return false
+	for action: Dictionary in event.actions:
+		if action.type == "play_cutscene" and (_cutscenes == null or not _cutscenes.can_play(StringName(action.cutscene_id))):
+			last_error = "Missing cutscene target: " + String(action.cutscene_id)
+			return false
+		if action.type == "complete_quest" and not _quests.can_complete(StringName(action.quest_id)):
+			last_error = "Quest prerequisites are incomplete"
+			return false
+	return true
+
+func restore_objective(value: String) -> void:
+	objective = value
+	objective_changed.emit(value)

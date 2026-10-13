@@ -11,6 +11,8 @@ func _run() -> void:
 	root.size = Vector2i(1280, 720)
 	root.content_scale_size = Vector2i(1280, 720)
 	game = (load("res://scenes/main/main.tscn") as PackedScene).instantiate() as ExplorationGame
+	# Historical P4 contract; P5 suite runs the full production event list.
+	(game.get_node("EventRunner") as EventRunner).enabled_events.assign([&"E001", &"E002", &"E003", &"E004"])
 	root.add_child(game)
 	await create_timer(0.85).timeout
 	_check(game.ready_to_play, "Production data and services loaded")

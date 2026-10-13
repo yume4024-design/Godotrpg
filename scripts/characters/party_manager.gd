@@ -64,3 +64,14 @@ func summary() -> String:
 	for member: CombatantState in _members:
 		lines.append("%s Lv%d  HP %d/%d  MP %d/%d" % [member.definition.display_name, member.level, member.hp, member.max_hp, member.mp, member.max_mp])
 	return "\n".join(lines)
+
+func save_state() -> Array:
+	var result: Array = []
+	for actor: CombatantState in _members: result.append(actor.save_state())
+	return result
+
+func restore_members(members: Array[CombatantState]) -> void:
+	_members = members
+	for actor: CombatantState in _members:
+		actor.changed.connect(func() -> void: changed.emit())
+	changed.emit()

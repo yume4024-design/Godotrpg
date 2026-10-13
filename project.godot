@@ -29,6 +29,15 @@ window/size/min_width=960
 window/size/min_height=540
 
 [input]
+quick_save={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194336,"keycode":4194336)]
+}
+quick_load={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"physical_keycode":4194340,"keycode":4194340)]
+}
+
 
 party_menu={
 "deadzone": 0.2,

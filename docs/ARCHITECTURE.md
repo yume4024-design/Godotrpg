@@ -1,6 +1,6 @@
 # 架構設計與實作邊界
 
-Phase 1～4 已實作探索、故事 E001～E004、指令戰鬥、隊伍／成長／裝備與選單；Save 仍為後續階段。下方 P2／P3 段落記錄各階段基線；最新行為以 P4 段落為準。
+Phase 1～5 已實作三區探索、故事 E001～E009、戰鬥、隊伍／成長／裝備、完整 Q001 日誌與存讀檔。下方 P2～P4 段落為歷史基線；最新行為以 P5 段落為準。
 
 ## P2 組裝與狀態歸屬（歷史基線）
 
@@ -39,7 +39,7 @@ BattleStage 僅讀取狀態，依 action_resolved 做位移／數字動畫。每
 
 E004/E007 目前只在整合測試中明確啟用、設置前置旗標，再以真實指令完成勝敗；預設事件仍僅 E001/E002。森林演練直接使用 B001/B002，沒有主線等待或獎勵。營地恢復 HP／MP，不補道具。完整事件鏈留 P4／P5。
 
-## P4 隊伍、成長與交易
+## P4 隊伍、成長與交易（歷史基線）
 
 Main 增加 Rewards、PartyActions、PartyMenu，仍無 Autoload。PartyManager.recruit 只接受已註冊角色，拒絕重複 ID 和第四人；正式註冊只有莉雅。E003 在對話結束後招募成功才設旗標，招募後隱藏原 NPC 並取消其碰撞；探索仍以隊長代表隊伍。
 
@@ -50,6 +50,16 @@ InventoryManager 擁有 gold、物品數量及既有單物品寶箱來源帳本�
 BattleFlow 接受 settled 事件後，僅主線勝利經 RewardManager 發獎一次；演練不發獎。同一遭遇重複結算被 battle:<id> 阻擋。旗標仍等玩家確認結果返回後才完成；敗北與重試不領獎，回復進戰前 HP／MP／物品快照，無需回退未曾發放的 EXP／金幣。E008 任務完成與旗標的完整交易尚待 P5，P4 僅驗證其獎勵包與去重。
 
 森林使用明確注入的 Marker3D、半徑和 trigger key，ExplorationGame 在可操作的物理幀重新檢查區域及條件。主線敗北撤退後暫抑制同區觸發，離開後解除；前置條件改變時仍會在區內重判。PartyMenu 只讀資料並發 equip_requested／item_requested，Main 轉交 PartyActions；M／Esc、遮罩及探索鎖防止輸入穿透。
+
+## P5 故事提交與保存
+
+Main 新增 StorySequence、SaveManager，仍由同一個持續存在的場景注入服務，不使用 Autoload。礦坑的 sequence_target／sequence_light 和區域 Marker3D 經 export 明確注入；地圖材質與環境獨立，主線 B002 注入礦坑戰鬥背景，演練維持原場景。
+
+EventRunner 先驗證已啟用事件與動作資源引用，E006 等待實際 Tween 完成後才提交物品和旗標。RewardManager 的同步 commit 回呼在獎勵／收據已寫入、尚未通知時提交任務與旗標；EventRunner 暫停自己的目標訊號與 Flag／Quest 訊號，全部完成後才通知。因此 E008 的 complete_quest 不依賴事件尾端才產生的 prologue_complete，也不會讓獎勵觀察者讀到部分狀態。原 E001～E008 不改寫；E009 補章末敘事／預告，沒有獎勵。
+
+QuestManager 擁有 accepted／completed，日誌以 FlagManager 投影五項目標；UI 只讀 journal。SaveManager 擁有待保存請求與檔案 I/O；SaveCodec 驗證 JSON 及建立候選角色，各遊戲服務仍擁有其狀態，沒有第二份持續遊戲狀態。讀取前在獨立 World3D 驗證地圖碰撞及地板；完全通過才凍結通知、經各 owner 還原、替換地圖與位置、恢復通知。
+
+安全點存 active_event 空字串、完成旗標及探索區域抑制；不序列化等待中的戰鬥／演出。對話／演出／戰鬥中的保存請求只排隊，讀取忙碌時拒絕。格式 v1、暫存後替換及上一份有效備份見 [SAVE_FORMAT](SAVE_FORMAT.md)。未來增加商店或額外 EXP 來源，必須擴充 SaveCodec 的收據一致性契約與版本遷移。
 
 ## 資料流
 

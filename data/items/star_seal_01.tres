@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/inventory/item_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"star_seal_01"
+display_name = "第一枚星印"
+description = "礦坑星晶留下的古代印記。關鍵物品，無法使用或丟棄。"
