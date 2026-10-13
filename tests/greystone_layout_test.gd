@@ -22,6 +22,14 @@ func _run() -> void:
 	Engine.time_scale = 6.0
 	await create_timer(1.0).timeout
 	_check(player.is_on_floor(), "Entrance has supporting collision")
+	var holes: int = 0
+	for x: int in range(-42,23,4):
+		for z: int in range(-58,59,4):
+			# The widening river is intentionally excluded; its banks are tested by walking.
+			if x >= 24: continue
+			var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(Vector3(x,25,z),Vector3(x,-5,z),1)
+			if player.get_world_3d().direct_space_state.intersect_ray(query).is_empty(): holes += 1
+	_check(holes == 0,"Interior support grid has no sampled holes (river and irregular rim excluded)")
 	var start: Vector3 = player.position
 	var key: InputEventKey = InputEventKey.new()
 	key.physical_keycode = KEY_W
@@ -33,6 +41,31 @@ func _run() -> void:
 	Input.parse_input_event(key)
 	_check(player.position.distance_to(start) > 2.0, "Actual W input moves existing player")
 	for point: Vector2 in [Vector2(0,40),Vector2(0,16),Vector2(-6,10),Vector2(-23,6),Vector2(-10,6),Vector2(-10,-10),Vector2(-20,-11),Vector2(-10,-10),Vector2(0,-18),Vector2(0,-22),Vector2(12,-22),Vector2(12,-28),Vector2(24,-28),Vector2(24,-52),Vector2(24,-28),Vector2(42,-28),Vector2(24,-28),Vector2(27,-28),Vector2(27,-8),Vector2(20,-8),Vector2(27,-8),Vector2(27,10),Vector2(0,10),Vector2(-53,10),Vector2(0,10),Vector2(0,29),Vector2(-19,29),Vector2(19,29),Vector2(24,32),Vector2(32,32),Vector2(24,32)]:
+		await _walk(point)
+		if point == Vector2(24,-52):
+			_check(absf(player.position.y - 6.0) < 0.15,"Mine terrace reaches 6m")
+			await _capture("03-mine-highland")
+			Engine.time_scale = 1.0
+			Engine.physics_ticks_per_second = 60
+			await _walk(Vector2(24,-44))
+			_check(player.position.y > 4.1 and player.position.y < 4.5,"Normal-speed descent remains on ramp")
+			await _walk(Vector2(24,-52))
+			_check(absf(player.position.y-6.0)<0.15,"Normal-speed ascent reaches mine")
+			Engine.physics_ticks_per_second = 180
+			Engine.time_scale = 6.0
+			await _walk(Vector2(17,-51),false,100)
+			_check(player.position.x > 19,"Mine cliff physically blocks passage")
+			await _walk(Vector2(24,-52))
+		if point == Vector2(-53,10):
+			await _walk(Vector2(-65,10),false,150)
+			_check(player.position.x > -60,"World exit boundary prevents out-of-map fall")
+			await _walk(Vector2(-53,10))
+	# Reach the 4m farm by walking the connected western approach, then return.
+	for point: Vector2 in [Vector2(24,10),Vector2(-10,10),Vector2(-12,-10),Vector2(-12,-27),Vector2(-28,-27),Vector2(-42,-29)]:
+		await _walk(point)
+	_check(absf(player.position.y-4.0)<0.2,"Farm terrace reaches 4m")
+	await _capture("04-farm-highland")
+	for point: Vector2 in [Vector2(-28,-27),Vector2(-12,-27),Vector2(-12,-10),Vector2(-10,10),Vector2(28,10)]:
 		await _walk(point)
 	await _walk(Vector2(28,10))
 	await _walk(Vector2(34,10), false, 100)
@@ -61,6 +94,8 @@ func _run() -> void:
 func _walk(target: Vector2, expect_reach: bool = true, frames: int = 1000) -> void:
 	player.input_component.notification(Node.NOTIFICATION_APPLICATION_FOCUS_IN)
 	for unused: int in range(frames):
+		# User may inspect Blender during automation; focus gating is tested elsewhere.
+		player.input_component.notification(Node.NOTIFICATION_APPLICATION_FOCUS_IN)
 		var delta: Vector2 = target - Vector2(player.position.x,player.position.z)
 		if delta.length() < 0.3:
 			break
@@ -71,7 +106,7 @@ func _walk(target: Vector2, expect_reach: bool = true, frames: int = 1000) -> vo
 	_set_input(Vector2.ZERO)
 	await physics_frame
 	if expect_reach:
-		_check(Vector2(player.position.x,player.position.z).distance_to(target) < 0.5 and player.position.y > -0.1,"Walk to %s" % target)
+		_check(Vector2(player.position.x,player.position.z).distance_to(target) < 0.5 and player.position.y > -0.1,"Walk to %s (actual %s)" % [target,player.position])
 
 func _set_input(stick: Vector2) -> void:
 	for action: String in ["move_left","move_right","move_forward","move_back"]:
@@ -85,6 +120,6 @@ func _capture(title: String) -> void:
 	if DisplayServer.get_name() == "headless": return
 	await create_timer(0.3).timeout
 	await RenderingServer.frame_post_draw
-	DirAccess.make_dir_recursive_absolute("res://artifacts/greystone-g01")
-	var result: Error = root.get_texture().get_image().save_webp("res://artifacts/greystone-g01/%s.webp" % title)
+	DirAccess.make_dir_recursive_absolute("res://artifacts/greystone-g02")
+	var result: Error = root.get_texture().get_image().save_webp("res://artifacts/greystone-g02/%s.webp" % title)
 	_check(result == OK,"Capture " + title)

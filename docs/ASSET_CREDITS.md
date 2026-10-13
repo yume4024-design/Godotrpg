@@ -63,3 +63,7 @@ P3 新增的戰鬥平台、雷恩／莉雅／守衛人形、史萊姆、回合�
 ## Greystone G01（2026-10-14）
 
 scripts/tools/greystone/build_layout.py 生成原創 Godot 原生白盒，七個建物模組，無第三方素材、貼圖或付費生成。角色引用既有 Ren 視覺，授權來源不變。正式GLB尚未製作；建造參考沿用使用者提供的1000003469圖。
+
+## Greystone G02（2026-10-14）
+
+本專案原創程序地形，依使用者提供的灰石村圖製作。Blender5.2.2及原生Python產生59個GLB，12,409三角面（唯一資源）；23棵松樹共享一個模型。無第三方下載、付費生成或額外署名要求。原始OBJ/manifest/metrics與Blender檢視副本在source_assets/greystone_g02；產生器在scripts/tools/greystone。背景松樹屬G02尺度佈景，完整G04素材庫未完成。

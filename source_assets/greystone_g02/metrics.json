@@ -1,0 +1,238 @@
+[
+  {
+    "file": "westground.glb",
+    "triangles": 5400
+  },
+  {
+    "file": "eastground.glb",
+    "triangles": 1320
+  },
+  {
+    "file": "river.glb",
+    "triangles": 110
+  },
+  {
+    "file": "westbankcliff.glb",
+    "triangles": 240
+  },
+  {
+    "file": "eastbankcliff.glb",
+    "triangles": 240
+  },
+  {
+    "file": "westoutercliff.glb",
+    "triangles": 240
+  },
+  {
+    "file": "eastoutercliff.glb",
+    "triangles": 240
+  },
+  {
+    "file": "northskirt.glb",
+    "triangles": 224
+  },
+  {
+    "file": "southskirt.glb",
+    "triangles": 224
+  },
+  {
+    "file": "plaza.glb",
+    "triangles": 48
+  },
+  {
+    "file": "southroad.glb",
+    "triangles": 240
+  },
+  {
+    "file": "northroad.glb",
+    "triangles": 40
+  },
+  {
+    "file": "westroad.glb",
+    "triangles": 230
+  },
+  {
+    "file": "innroad.glb",
+    "triangles": 72
+  },
+  {
+    "file": "shoproad.glb",
+    "triangles": 56
+  },
+  {
+    "file": "mineroad.glb",
+    "triangles": 236
+  },
+  {
+    "file": "bridgeroad.glb",
+    "triangles": 100
+  },
+  {
+    "file": "eastroad.glb",
+    "triangles": 206
+  },
+  {
+    "file": "eastlink.glb",
+    "triangles": 70
+  },
+  {
+    "file": "southcross.glb",
+    "triangles": 192
+  },
+  {
+    "file": "dockroad.glb",
+    "triangles": 20
+  },
+  {
+    "file": "farmroad.glb",
+    "triangles": 136
+  },
+  {
+    "file": "farmlink.glb",
+    "triangles": 62
+  },
+  {
+    "file": "riverrim30.glb",
+    "triangles": 424
+  },
+  {
+    "file": "riverrim38.glb",
+    "triangles": 456
+  },
+  {
+    "file": "northboundary.glb",
+    "triangles": 240
+  },
+  {
+    "file": "southboundary.glb",
+    "triangles": 240
+  },
+  {
+    "file": "westboundary.glb",
+    "triangles": 240
+  },
+  {
+    "file": "eastboundary.glb",
+    "triangles": 240
+  },
+  {
+    "file": "cliff0.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff1.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff2.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff3.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff4.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff5.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff6.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff7.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff8.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff9.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff10.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff11.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff12.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff13.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff14.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff15.glb",
+    "triangles": 21
+  },
+  {
+    "file": "cliff16.glb",
+    "triangles": 21
+  },
+  {
+    "file": "riverrock0.glb",
+    "triangles": 21
+  },
+  {
+    "file": "riverrock1.glb",
+    "triangles": 21
+  },
+  {
+    "file": "riverrock2.glb",
+    "triangles": 21
+  },
+  {
+    "file": "riverrock3.glb",
+    "triangles": 21
+  },
+  {
+    "file": "riverrock4.glb",
+    "triangles": 21
+  },
+  {
+    "file": "riverrock5.glb",
+    "triangles": 21
+  },
+  {
+    "file": "riverrock6.glb",
+    "triangles": 21
+  },
+  {
+    "file": "eastriverrock0.glb",
+    "triangles": 21
+  },
+  {
+    "file": "eastriverrock1.glb",
+    "triangles": 21
+  },
+  {
+    "file": "eastriverrock2.glb",
+    "triangles": 21
+  },
+  {
+    "file": "eastriverrock3.glb",
+    "triangles": 21
+  },
+  {
+    "file": "eastriverrock4.glb",
+    "triangles": 21
+  },
+  {
+    "file": "pinecontext.glb",
+    "triangles": 14
+  }
+]

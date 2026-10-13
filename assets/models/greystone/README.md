@@ -1,6 +1,5 @@
 # Greystone assets
 
-G01 使用 `scenes/world/greystone/*_blockout.tscn` 原生佔位，這裡尚無正式模型。
-G03 建築放 `buildings/`，G04 道具放 `props/`，各自獨立 GLB / glTF 2.0。
-比例 1m、原點地面中心、Godot 正面 +Z；共用材質。來源及授權記入 docs/ASSET_CREDITS.md。
-禁止用空檔或佔位模型宣稱正式資產已完成。
+G02 的 terrain/ 包含原創地形、路面、崖壁、水面及背景松樹 GLB，共59資源。來源、統計及限制見 docs/GREYSTONE_G02_REPORT.md。
+
+G03正式建物尚未製作，目前仍用 scenes/world/greystone/*_blockout.tscn。G04完整道具庫待製作。原點/座標依terrain組件世界座標，建築依地面中心；不可把地形組件自動置中，否則會與碰撞失配。

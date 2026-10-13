@@ -1,0 +1,769 @@
+[
+  {
+    "file": "westground.obj",
+    "color": [
+      0.42,
+      0.57,
+      0.28
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastground.obj",
+    "color": [
+      0.42,
+      0.57,
+      0.28
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "river.obj",
+    "color": [
+      0.16,
+      0.48,
+      0.65
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "westbankcliff.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastbankcliff.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "westoutercliff.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastoutercliff.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "northskirt.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "southskirt.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "plaza.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "southroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "northroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "westroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "innroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "shoproad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "mineroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "bridgeroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastlink.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "southcross.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "dockroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "farmroad.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "farmlink.obj",
+    "color": [
+      0.72,
+      0.62,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrim30.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrim38.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "northboundary.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "southboundary.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "westboundary.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastboundary.obj",
+    "color": [
+      0.4,
+      0.43,
+      0.42
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff0.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff1.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff2.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff3.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff4.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff5.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff6.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff7.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff8.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff9.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff10.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff11.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff12.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff13.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff14.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff15.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "cliff16.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrock0.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrock1.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrock2.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrock3.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrock4.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrock5.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "riverrock6.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastriverrock0.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastriverrock1.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastriverrock2.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastriverrock3.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "eastriverrock4.obj",
+    "color": [
+      0.42,
+      0.45,
+      0.43
+    ],
+    "position": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "file": "pinecontext.obj",
+    "color": [
+      0.15,
+      0.34,
+      0.22
+    ],
+    "position": [
+      -50,
+      4,
+      -40
+    ]
+  }
+]

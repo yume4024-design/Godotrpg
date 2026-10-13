@@ -3,7 +3,7 @@
 > **2026-10-14 正文合併更新（優先於本檔較早條款）**：新企劃已由使用者貼文取得，不再待正文。灰石村採 120×120m、Q 版低面數切面、北側公會/西北農田/東北礦坑/東河/南入口/西出口；平台 Windows + Android，iOS 預留。執行以 [docs/GREYSTONE_VILLAGE_SPEC.md](docs/GREYSTONE_VILLAGE_SPEC.md) 與 [docs/GREYSTONE_BUILD_TASKS.md](docs/GREYSTONE_BUILD_TASKS.md) 為準。G01 獨立佔位預覽，不替換正式0.6.1存檔；G06再遷移位置及串接劇情/觸控。本檔舊「待正文」、PC限定、圖片未列公會、固定舊碰撞等描述保留為歷史，不是目前限制。
 
 
-**最新規劃（2026-10-14）：** [新企劃合併紀錄](docs/PLAN_MERGE_2026_10_14.md)／[九區灰石村設計](docs/GRAYSTONE_VILLAGE_V3.md)。新圖已取代舊水晶廣場方向；新企劃正文仍待取得，正式遊戲仍為下述 0.6.1，尚未換成水井階梯礦村。
+**最新規劃（2026-10-14）：** [新企劃合併紀錄](docs/PLAN_MERGE_2026_10_14.md)／[九區灰石村設計](docs/GRAYSTONE_VILLAGE_V3.md)。新圖已取代舊水晶廣場方向；新企劃正文已合併，G01/G02獨立預覽已完成；正式遊戲仍為下述0.6.1。
 
 原創 Windows Low Poly 3D JRPG。先完成 20～30 分鐘序章《灰石村的異變》，再逐章擴充到六篇章、約 12～16 小時與三種結局的完整企劃目標。
 
@@ -91,6 +91,6 @@ Set-Location D:\RPGGAME
 
 灰石村已完成本輪參考圖改造：藍頂公會、水晶廣場、棚布住宅、橋河／水車與山谷住宅遠景。原有 16 個碰撞和故事落點保留；詳見 [村莊場景報告](docs/VILLAGE_ART_REPORT.md)。`TestVillage`／`VisualVillage` 可重跑碰撞契約、實際输入路線與畫面驗收。
 
-## 灰石村 G01 預覽
+## 灰石村 G02 預覽
 
-在本專案根目錄執行 `./tools/godot.ps1 -Mode PreviewGreystone`，以 WASD／方向鍵／Xbox左搖桿探索。此為120m原生幾何體佔位場景，NPC、觸控與正式模型尚未加入。進度及45項圖形/行走驗證見 [G01報告](docs/GREYSTONE_G01_REPORT.md)。
+在本專案根目錄執行 `./tools/godot.ps1 -Mode PreviewGreystone`，以 WASD／方向鍵／Xbox左搖桿探索。目前已加入多層地形、坡道、彎曲河谷與瀑布；建築仍為佔位，NPC與觸控尚未加入。69項圖形/物理驗證見 [G02報告](docs/GREYSTONE_G02_REPORT.md)。Blender中可檢視Crystal_G02_Review場景。
