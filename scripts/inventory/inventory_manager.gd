@@ -5,6 +5,32 @@ signal changed
 @export var item_definitions: Array[ItemDefinition] = []
 var _counts: Dictionary[StringName, int] = {}
 var _claimed: Dictionary[StringName, bool] = {}
+var _gold: int = 0
+var gold: int:
+	get: return _gold
+
+func valid_bundle(coins: int, items: Dictionary) -> bool:
+	if coins < 0 or coins > 1000000: return false
+	for id: Variant in items:
+		if not id is String and not id is StringName: return false
+		if not knows(StringName(id)) or not (items[id] is int or items[id] is float): return false
+		if float(items[id]) != floor(float(items[id])) or items[id] <= 0 or items[id] > 9999: return false
+	return true
+
+func grant_bundle(coins: int, items: Dictionary) -> bool:
+	if not valid_bundle(coins, items): return false
+	_gold += coins
+	for id: Variant in items: _counts[StringName(id)] = count(StringName(id)) + int(items[id])
+	changed.emit()
+	return true
+
+func exchange(remove_id: StringName, return_id: StringName) -> bool:
+	if not remove_id.is_empty() and (not knows(remove_id) or count(remove_id) < 1): return false
+	if not return_id.is_empty() and not knows(return_id): return false
+	if not remove_id.is_empty(): _counts[remove_id] = count(remove_id) - 1
+	if not return_id.is_empty(): _counts[return_id] = count(return_id) + 1
+	changed.emit()
+	return true
 
 
 func knows(id: StringName) -> bool:

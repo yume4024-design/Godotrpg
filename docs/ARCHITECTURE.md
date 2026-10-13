@@ -1,8 +1,8 @@
 # 架構設計與實作邊界
 
-Phase 1～3 已實作 Main、Player、固定鏡頭、練習場、两張探索地圖、UI、Flag／Dialogue／Story／EventRunner／Quest／Inventory／SceneManager，以及最小 Party／Battle。養成與 Save 仍為後續設計约定。
+Phase 1～4 已實作探索、故事 E001～E004、指令戰鬥、隊伍／成長／裝備與選單；Save 仍為後續階段。下方 P2／P3 段落記錄各階段基線；最新行為以 P4 段落為準。
 
-## P2 實際組裝與狀態歸屬
+## P2 組裝與狀態歸屬（歷史基線）
 
 Main 的 ExplorationGame 負責初始化、JSON 錯誤處理、輸入鎖與服務注入；保留 Main、Player、CameraRig 和所有服務節點，只替換 MapContainer 下的村莊／森林。沒有 Autoload，也沒有空的 GameManager 或 SessionState；本輪 session 由持續存在的 Main 子組件擁有，P3～P5 在這個生命週期上擴充。
 
@@ -21,7 +21,7 @@ WorldInteractable 使用距離加物理射線檢查；Main 每個物理幀在地
 
 道具定義是唯讀 ItemDefinition Resource；數量／來源帳本為 InventoryManager 私有 Dictionary。P2 寶箱来源 village_supply_chest 僅給 trail_ration ×1。P3 演練來源 forest_training_supplies 給 potion ×3，與 E005 分離；potion 在戰鬥恢復 60 HP，不復活。沒有磁碟保存或金幣。
 
-## P3 戰鬥組裝與狀態歸屬
+## P3 戰鬥組裝與狀態歸屬（歷史基線，含美術追加）
 
 Main 的 PartyManager 常駐並持有 CombatantState；CombatantDefinition／SkillDefinition／ItemDefinition 為唯讀 Resource。每位角色與敵人都有獨立 CombatantState，HP／MP 僅由 damage／heal／spend_mp／restore 修改並發出 changed。PartyManager 轉發 changed 給探索 HUD，战鬥使用同一角色實例，不複製一份數值。正式遊戲初始化雷恩；莉雅定義供獨立治療測試，入隊留 P4。
 
@@ -38,6 +38,18 @@ BattleStage 僅讀取狀態，依 action_resolved 做位移／數字動畫。每
 勝利保留當前 HP／MP／道具，結果僅含 reward_preview；EXP／金幣實際發放留 P4。敗北重試或撤退還原進戰前快照，物品來源帳本不回退。重試保留票號並重建敵人；按返回後 BattleFlow 只發一次 concluded。EventRunner 必須吻合等待票號和 battle_id 且勝利，才經 FlagManager 寫 victory_flag、執行 complete_actions、寫完成旗標。敗北清除等待，允許重新觸發事件；重試期間持續等待。
 
 E004/E007 目前只在整合測試中明確啟用、設置前置旗標，再以真實指令完成勝敗；預設事件仍僅 E001/E002。森林演練直接使用 B001/B002，沒有主線等待或獎勵。營地恢復 HP／MP，不補道具。完整事件鏈留 P4／P5。
+
+## P4 隊伍、成長與交易
+
+Main 增加 Rewards、PartyActions、PartyMenu，仍無 Autoload。PartyManager.recruit 只接受已註冊角色，拒絕重複 ID 和第四人；正式註冊只有莉雅。E003 在對話結束後招募成功才設旗標，招募後隱藏原 NPC 並取消其碰撞；探索仍以隊長代表隊伍。
+
+CombatantState 擁有 level／experience／equipment；CombatantDefinition 提供唯讀成長係數，ItemDefinition 提供槽位、角色條件及加值。有效 attack／magic／defense／ward／max_hp／max_mp 由實例計算；BattleManager、BattleStage、UI 和休息均讀有效值，卸下不影響基底或其他角色。PartyActions 以能力檢查確認選單正在開啟且沒有戰鬥／對話／轉場，再協調狀態與背包交易。
+
+InventoryManager 擁有 gold、物品數量及既有單物品寶箱來源帳本。RewardManager 唯一擁有組合獎勵帳本（starting_kit、battle:B001/B002、未來 event:E008）；先驗證完整包，再同步寫金幣／物品／全隊 EXP 和帳本，通知前已全部完成，重入被鎖住。兩類來源各由自己的入口發放，E008／Q001 不可改走 Inventory.claim 繞過組合帳本。QuestManager 的 JSON rewards 仍只顯示，不發放。
+
+BattleFlow 接受 settled 事件後，僅主線勝利經 RewardManager 發獎一次；演練不發獎。同一遭遇重複結算被 battle:<id> 阻擋。旗標仍等玩家確認結果返回後才完成；敗北與重試不領獎，回復進戰前 HP／MP／物品快照，無需回退未曾發放的 EXP／金幣。E008 任務完成與旗標的完整交易尚待 P5，P4 僅驗證其獎勵包與去重。
+
+森林使用明確注入的 Marker3D、半徑和 trigger key，ExplorationGame 在可操作的物理幀重新檢查區域及條件。主線敗北撤退後暫抑制同區觸發，離開後解除；前置條件改變時仍會在區內重判。PartyMenu 只讀資料並發 equip_requested／item_requested，Main 轉交 PartyActions；M／Esc、遮罩及探索鎖防止輸入穿透。
 
 ## 資料流
 

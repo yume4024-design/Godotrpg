@@ -18,6 +18,9 @@ func setup(manager: BattleManager) -> void:
 		var index: int = ally_index if actor.ally else enemy_index
 		var count: int = manager.allies.size() if actor.ally else manager.enemies.size()
 		root_actor.position = Vector3(-3.4 if actor.ally else 3.1, 0, (index - (count - 1) * 0.5) * 2.8)
+		if actor.ally and count > 1:
+			root_actor.position.x += (index - (count - 1) * 0.5) * 1.6
+			root_actor.position.z = (index - (count - 1) * 0.5) * 2.0
 		if not actor.ally and count == 2:
 			root_actor.position.x += (index - 0.5) * 1.6
 		if actor.ally: ally_index += 1
@@ -55,7 +58,7 @@ func setup(manager: BattleManager) -> void:
 func refresh() -> void:
 	for actor: CombatantState in _manager.combatants():
 		var label: Label3D = _labels[actor.instance_id]
-		label.text = "%s%s\nHP %d / %d" % [actor.definition.display_name, " · 倒下" if not actor.alive() else "", actor.hp, actor.definition.max_hp]
+		label.text = "%s%s\nHP %d / %d" % [actor.definition.display_name, " · 倒下" if not actor.alive() else "", actor.hp, actor.max_hp]
 		_rings[actor.instance_id].visible = actor == _manager.current and actor.alive() and _manager.phase != BattleManager.Phase.FINISHED
 		_actors[actor.instance_id].rotation.z = 0.0 if actor.alive() else 1.2
 		_appearances[actor.instance_id].set_dead(not actor.alive())

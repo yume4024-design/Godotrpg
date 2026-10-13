@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ItemDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/inventory/item_definition.gd" id="1"]
+[resource]
+script = ExtResource("1")
+id = &"bronze_sword"
+display_name = "青銅短劍"
+description = "攻擊 +3；雷恩專用"
+slot = "weapon"
+allowed_characters = Array[StringName]([&"ren"])
+attack_bonus = 3

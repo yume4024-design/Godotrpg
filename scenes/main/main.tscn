@@ -1,4 +1,11 @@
 [gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/characters/reward_manager.gd" id="Rewards"]
+[ext_resource type="Script" path="res://scripts/characters/party_actions.gd" id="PartyActions"]
+[ext_resource type="Script" path="res://scripts/ui/party_menu.gd" id="PartyMenu"]
+[ext_resource type="Resource" path="res://data/items/bronze_sword.tres" id="bronze_sword"]
+[ext_resource type="Resource" path="res://data/items/willow_staff.tres" id="willow_staff"]
+[ext_resource type="Resource" path="res://data/items/travel_vest.tres" id="travel_vest"]
+
 
 [ext_resource type="PackedScene" path="res://scenes/world/village.tscn" id="Village"]
 [ext_resource type="PackedScene" path="res://scenes/world/forest.tscn" id="Forest"]
@@ -100,6 +107,7 @@ script = ExtResource("Dialogue")
 [node name="EventRunner" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Runner")
+enabled_events = Array[StringName]([&"E001", &"E002", &"E003", &"E004"])
 
 [node name="Story" type="Node" parent="."]
 unique_name_in_owner = true
@@ -112,7 +120,7 @@ script = ExtResource("Quests")
 [node name="Inventory" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Inventory")
-item_definitions = Array[ExtResource("Item")]([ExtResource("Ration"), ExtResource("Potion")])
+item_definitions = Array[ExtResource("Item")]([ExtResource("Ration"), ExtResource("Potion"), ExtResource("bronze_sword"), ExtResource("willow_staff"), ExtResource("travel_vest")])
 
 [node name="SceneManager" type="Node" parent="."]
 unique_name_in_owner = true
@@ -122,9 +130,22 @@ maps = Array[PackedScene]([ExtResource("Village"), ExtResource("Forest")])
 [node name="Party" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("Party")
+recruit_definitions = Array[ExtResource("Actor")]([ExtResource("Lia")])
 
 [node name="Battles" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("BattleFlow")
 battle_scene = ExtResource("Arena")
 definitions = Array[ExtResource("Actor")]([ExtResource("Ren"), ExtResource("Lia"), ExtResource("Slime"), ExtResource("Guardian")])
+
+[node name="Rewards" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("Rewards")
+
+[node name="PartyActions" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("PartyActions")
+
+[node name="PartyMenu" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("PartyMenu")

@@ -16,10 +16,13 @@ var _party_before: Dictionary
 var _items_before: Dictionary
 var _practice: bool
 var _configured: bool = false
+var _rewards: RewardManager
+var _settling: bool = false
 
-func setup(document: Dictionary, party: PartyManager, inventory: InventoryManager) -> bool:
+func setup(document: Dictionary, party: PartyManager, inventory: InventoryManager, rewards: RewardManager = null) -> bool:
 	_party = party
 	_inventory = inventory
+	_rewards = rewards
 	_configured = catalog.setup(definitions, document) and battle_scene != null
 	return _configured
 
@@ -51,6 +54,17 @@ func _spawn() -> void:
 	arena.return_requested.connect(return_to_world)
 	arena.retry_requested.connect(retry)
 	arena.setup(_party, _inventory, catalog.enemies(battle_id), catalog.encounters[battle_id], _practice)
+	arena.manager.settled.connect(_on_settled)
+
+func _on_settled(won: bool, _result: Dictionary) -> void:
+	if not won or _practice or _rewards == null: return
+	_settling = true
+	var reward: Dictionary = catalog.encounters[battle_id].rewards
+	var source: StringName = StringName("battle:" + String(battle_id))
+	var received: bool = _rewards.claim(source, int(reward.gold), int(reward.exp))
+	arena.manager.history.append("獲得 %d 金幣；每位隊員 +%d EXP。" % [reward.gold, reward.exp] if received else "本遭遇獎勵已領取。")
+	arena.manager.changed.emit()
+	_settling = false
 
 func retry() -> bool:
 	if not active or not is_instance_valid(arena) or arena.manager.phase != BattleManager.Phase.FINISHED or arena.manager.result.won:
@@ -61,7 +75,7 @@ func retry() -> bool:
 	return true
 
 func return_to_world() -> bool:
-	if not active or not is_instance_valid(arena) or arena.manager.phase != BattleManager.Phase.FINISHED:
+	if _settling or not active or not is_instance_valid(arena) or arena.manager.phase != BattleManager.Phase.FINISHED:
 		return false
 	var won: bool = arena.manager.result.won
 	var ended_ticket: int = ticket

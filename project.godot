@@ -30,6 +30,12 @@ window/size/min_height=540
 
 [input]
 
+party_menu={
+"deadzone": 0.2,
+"events": [Object(InputEventKey,"device":16,"physical_keycode":77), Object(InputEventKey,"device":16,"keycode":77)]
+}
+
+
 interact={
 "deadzone": 0.2,
 "events": [Object(InputEventKey,"device":16,"physical_keycode":69), Object(InputEventKey,"device":16,"keycode":69)]

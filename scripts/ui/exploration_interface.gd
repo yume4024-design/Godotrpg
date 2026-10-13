@@ -3,6 +3,7 @@ extends CanvasLayer
 ## Presentation only: requests advance; owns the typewriter animation, no game state.
 signal advance_requested
 signal reveal_finished
+signal menu_requested
 var location: Label
 var objective: Label
 var quest: Label
@@ -37,11 +38,16 @@ func _ready() -> void:
 	quest = _label(stack, "尚未接受委託", 16, Color("#a3b9b4"))
 	var status: PanelContainer = _panel(root_control, Vector4(-390, 22, -24, 185), true)
 	var status_stack: VBoxContainer = _stack(status)
-	_label(status_stack, "失落星核  /  探索原型", 19, Color("#ebc887"))
+	_label(status_stack, "失落星核  /  灰石村的異變", 19, Color("#ebc887"))
 	inventory = _label(status_stack, "背包 · 尚無物品", 18)
 	inventory.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	party_status = _label(status_stack, "", 16, Color("#a9d1c6"))
 	_label(status_stack, "本次進度於關閉遊戲後重置", 14, Color("#a3b9b4"))
+	var menu_button: Button = Button.new()
+	menu_button.text = "旅途手冊  [M]"
+	menu_button.focus_mode = Control.FOCUS_NONE
+	menu_button.pressed.connect(func() -> void: menu_requested.emit())
+	status_stack.add_child(menu_button)
 	prompt_label = Label.new()
 	root_control.add_child(prompt_label)
 	prompt_label.set_anchors_and_offsets_preset(Control.PRESET_CENTER_BOTTOM)
@@ -58,7 +64,7 @@ func _ready() -> void:
 	footer.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_WIDE)
 	footer.offset_left = 24
 	footer.offset_top = -42
-	footer.text = "WASD / 方向鍵  移動     E  互動     R  返回本區起點"
+	footer.text = "WASD / 方向鍵  移動     E  互動     M  手冊     R  返回本區起點"
 	footer.add_theme_font_size_override("font_size", 17)
 	footer.add_theme_color_override("font_shadow_color", Color.BLACK)
 	footer.add_theme_constant_override("shadow_outline_size", 5)

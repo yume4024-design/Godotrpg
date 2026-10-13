@@ -18,6 +18,10 @@ extends Node3D
 @onready var travel: ExplorationSceneManager = %SceneManager
 @onready var party: PartyManager = %Party
 @onready var battles: BattleFlow = %Battles
+@onready var rewards: RewardManager = %Rewards
+@onready var party_actions: PartyActions = %PartyActions
+@onready var menu: PartyMenu = %PartyMenu
+var _area_suppressed: bool = false
 var _battle_origin: Vector3
 var catalog: StoryCatalog = StoryCatalog.new()
 var ready_to_play: bool = false
@@ -51,16 +55,25 @@ func _ready() -> void:
 		_fail()
 		return
 	_ambient = ambient.conversations
-	if not party.setup([starting_character]) or not battles.setup(battle_data, party, inventory):
+	rewards.setup(party, inventory)
+	if not party.setup([starting_character]) or not battles.setup(battle_data, party, inventory, rewards):
 		catalog.errors.append("Battle setup failed: " + "; ".join(battles.catalog.errors))
 		_fail()
 		return
+	rewards.claim(&"starting_kit", 0, 0, {&"bronze_sword": 1, &"willow_staff": 1, &"travel_vest": 1})
+	party_actions.setup(party, inventory, func() -> bool: return menu.visible and not travel.transitioning and not dialogue.active and not runner.busy and not battles.active)
+	menu.setup(party, inventory)
+	menu.close_requested.connect(close_menu)
+	menu.equip_requested.connect(func(character: StringName, slot: StringName, item: StringName) -> void: menu.outcome(party_actions.equip(character, slot, item)))
+	menu.item_requested.connect(func(character: StringName, item: StringName) -> void: menu.outcome(party_actions.use_item(character, item)))
+	ui.menu_requested.connect(toggle_menu)
 	party.changed.connect(_refresh_party)
 	battles.active_changed.connect(_on_battle_active)
 	_refresh_party()
 	quests.setup(quest_data, flags)
 	dialogue.setup(ambient.speakers)
-	runner.setup(catalog, flags, quests, dialogue, battles)
+	runner.setup(catalog, flags, quests, dialogue, battles, party)
+	runner.event_failed.connect(func(_id: StringName) -> void: _area_suppressed = true)
 	story.setup(catalog, runner)
 	travel.setup(%MapContainer, player, ui.fade)
 	dialogue.active_changed.connect(ui.set_dialogue_active)
@@ -73,6 +86,7 @@ func _ready() -> void:
 	runner.objective_changed.connect(func(value: String) -> void: ui.objective.text = "目標 · " + value)
 	quests.changed.connect(_refresh_quest)
 	inventory.changed.connect(_refresh_inventory)
+	_refresh_inventory()
 	travel.transition_changed.connect(_on_transition)
 	travel.map_changed.connect(_on_map_changed)
 	ready_to_play = true
@@ -83,7 +97,7 @@ func _fail() -> void:
 	push_error("; ".join(catalog.errors))
 
 func locked() -> bool:
-	return not ready_to_play or travel.transitioning or dialogue.active or runner.busy or battles.active
+	return not ready_to_play or travel.transitioning or dialogue.active or runner.busy or battles.active or menu.visible
 
 func _update_lock(_unused: bool = false) -> void:
 	player.input_component.enabled = not locked()
@@ -98,11 +112,13 @@ func _on_transition(active: bool) -> void:
 	_update_lock()
 
 func _on_map_changed(map: ExplorationMap) -> void:
+	_area_suppressed = false
 	nearest = null
 	camera.size = 17.0
 	ui.location.text = map.display_name
 	for target: WorldInteractable in map.targets:
 		target.refresh(inventory)
+	_refresh_recruit_visuals()
 
 func _physics_process(delta: float) -> void:
 	if not ready_to_play or battles.active or not is_instance_valid(travel.current_map):
@@ -110,6 +126,12 @@ func _physics_process(delta: float) -> void:
 	camera.size = move_toward(camera.size, travel.current_map.camera_size_at(player.global_position), delta * 5.0)
 	if locked():
 		return
+	var map: ExplorationMap = travel.current_map
+	if is_instance_valid(map.story_zone):
+		var inside: bool = player.global_position.distance_to(map.story_zone.global_position) <= map.story_zone_radius
+		if not inside: _area_suppressed = false
+		if inside and not _area_suppressed and story.trigger("area_enter", String(map.story_trigger)):
+			return
 	nearest = null
 	var distance: float = INF
 	for target: WorldInteractable in travel.current_map.targets:
@@ -121,6 +143,10 @@ func _physics_process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_echo():
+		return
+	if event.is_action_pressed("party_menu") or (menu.visible and event.is_action_pressed("ui_cancel")):
+		toggle_menu()
+		get_viewport().set_input_as_handled()
 		return
 	if dialogue.active:
 		if event.is_action_pressed("interact") or event.is_action_pressed("dialogue_advance"):
@@ -162,13 +188,30 @@ func interact() -> bool:
 	return true
 
 func _refresh_inventory() -> void:
-	ui.inventory.text = inventory.display_summary()
+	ui.inventory.text = "金幣 %d  ·  恢復藥 ×%d" % [inventory.gold, inventory.count(&"potion")]
 
 func _refresh_quest() -> void:
 	ui.quest.text = "委託 · " + quests.title(&"Q001") if quests.is_active(&"Q001") else "尚未接受委託"
 
 func _refresh_party() -> void:
 	ui.party_status.text = party.summary()
+	_refresh_recruit_visuals()
+
+func _refresh_recruit_visuals() -> void:
+	if not is_instance_valid(travel.current_map): return
+	for target: WorldInteractable in travel.current_map.targets:
+		if target.interaction_id == &"npc_lia": target.set_present(party.member(&"lia") == null)
+
+func toggle_menu() -> void:
+	if menu.visible:
+		close_menu()
+	elif not locked():
+		menu.open()
+		_update_lock()
+
+func close_menu() -> void:
+	menu.hide()
+	_update_lock()
 
 func _on_battle_active(active: bool) -> void:
 	if active:

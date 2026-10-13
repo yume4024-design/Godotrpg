@@ -25,9 +25,15 @@ func prompt() -> String:
 	return label + ("（已開啟）" if opened else "")
 
 func in_reach(player: CharacterBody3D) -> bool:
+	if not is_visible_in_tree(): return false
 	if global_position.distance_to(player.global_position) > radius:
 		return false
 	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(
 		player.global_position + Vector3.UP * 0.8, global_position + Vector3.UP * 0.8, 1, [player.get_rid()])
 	var hit: Dictionary = get_world_3d().direct_space_state.intersect_ray(query)
 	return hit.is_empty() or is_ancestor_of(hit.collider)
+
+func set_present(present: bool) -> void:
+	visible = present
+	for body: Node in find_children("*", "StaticBody3D", true, false):
+		(body as StaticBody3D).collision_layer = 1 if present else 0

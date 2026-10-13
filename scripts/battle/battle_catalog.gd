@@ -16,6 +16,8 @@ func setup(actors: Array[CombatantDefinition], document: Dictionary) -> bool:
 			errors.append("Invalid combatant stats: " + String(actor.id))
 		if actor.appearance == null:
 			errors.append("Missing combatant appearance: " + String(actor.id))
+		if actor.level > CombatantState.MAX_LEVEL or mini(mini(actor.hp_growth, actor.mp_growth), mini(actor.attack_growth, actor.magic_growth)) < 0 or mini(actor.defense_growth, actor.ward_growth) < 0:
+			errors.append("Invalid combatant growth: " + String(actor.id))
 		var skills: Array[StringName] = []
 		for skill: SkillDefinition in actor.skills:
 			if skill == null or skill.id.is_empty() or skill.id in skills or skill.mp_cost < 0 or skill.power < 0:
@@ -39,6 +41,8 @@ func setup(actors: Array[CombatantDefinition], document: Dictionary) -> bool:
 		for key: String in ["gold", "exp"]:
 			if not _integer(entry.rewards.get(key), 0):
 				errors.append("Invalid reward preview: " + entry.id)
+			elif entry.rewards[key] > 1000000:
+				errors.append("Reward exceeds supported transaction size: " + entry.id)
 		var total: int = 0
 		for enemy: Variant in entry.enemies:
 			if not enemy is Dictionary or not enemy.get("id") is String or not _integer(enemy.get("level"), 1) or not _integer(enemy.get("count"), 1):

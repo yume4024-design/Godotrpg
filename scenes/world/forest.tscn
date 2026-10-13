@@ -101,9 +101,11 @@ height = 1.0
 radial_segments = 12
 rings = 6
 material = SubResource("PebbleMat")
-[node name="Forest" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "camera_zone")]
+[node name="Forest" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "camera_zone", "story_zone")]
 script = ExtResource("Map")
 map_id = &"forest"
+story_zone = NodePath("FirstEncounter")
+story_trigger = &"forest_first_encounter"
 display_name = "低語森林"
 default_spawn = NodePath("DefaultSpawn")
 entrance_spawn = NodePath("EntranceSpawn")
@@ -1267,3 +1269,6 @@ scale = Vector3(0.34, 1, 1.12)
 position = Vector3(0, 0.009, -3.0)
 rotation_degrees = Vector3(0, 90, 0)
 scale = Vector3(0.34, 1, 1.12)
+
+[node name="FirstEncounter" type="Marker3D" parent="."]
+position = Vector3(-2.5, 0, 0)

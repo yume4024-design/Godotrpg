@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -27,12 +27,13 @@ if ($Mode -ne 'Version') {
     New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
     $logPath = Join-Path $logRoot ('{0}-{1}.log' -f $Mode.ToLowerInvariant(), (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
     $engineArgs = @('--path', $projectRoot, '--log-file', $logPath)
-    if ($Mode -in @('Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt')) { $engineArgs += '--headless' }
+    if ($Mode -in @('Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4')) { $engineArgs += '--headless' }
     if ($Mode -eq 'Check') { $engineArgs += '--import' }
     if ($Mode -eq 'Smoke') { $engineArgs += @('--quit-after', '120') }
     if ($Mode -eq 'Test') { $engineArgs += @('--script', 'res://tests/phase1_movement_test.gd') }
     if ($Mode -in @('TestPhase2', 'VisualPhase2')) { $engineArgs += @('--script', 'res://tests/phase2_exploration_test.gd') }
     if ($Mode -in @('TestPhase3', 'VisualPhase3', 'PreviewBattle')) { $engineArgs += @('--script', 'res://tests/phase3_battle_test.gd') }
+    if ($Mode -in @('TestPhase4', 'VisualPhase4')) { $engineArgs += @('--script', 'res://tests/phase4_progression_test.gd') }
     if ($Mode -eq 'PreviewBattle') { $engineArgs += @('--', '--manual') }
     if ($Mode -in @('TestArt', 'VisualArt', 'PreviewArt')) { $engineArgs += @('--script', 'res://tests/cartoon_asset_test.gd') }
     if ($Mode -eq 'PreviewArt') { $engineArgs += @('--', '--manual') }

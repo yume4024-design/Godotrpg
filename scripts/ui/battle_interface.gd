@@ -44,7 +44,7 @@ func _ready() -> void:
 	var row: HBoxContainer = HBoxContainer.new()
 	row.add_theme_constant_override("separation", 28)
 	bottom.add_child(row)
-	_party = _label(row, 20)
+	_party = _label(row, 18)
 	_party.custom_minimum_size.x = 335
 	_party.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	var commands: VBoxContainer = VBoxContainer.new()
@@ -72,8 +72,8 @@ func refresh() -> void:
 		return
 	var lines: PackedStringArray = []
 	for actor: CombatantState in _manager.allies:
-		lines.append("%s%s\nHP  %d / %d     MP  %d / %d" % [actor.definition.display_name, "  [倒下]" if not actor.alive() else ("  [防禦]" if _manager.guarded(actor.instance_id) else ""), actor.hp, actor.definition.max_hp, actor.mp, actor.definition.max_mp])
-	_party.text = "\n\n".join(lines)
+		lines.append("%s%s L%d  HP %d/%d  MP %d/%d" % [actor.definition.display_name, " [倒下]" if not actor.alive() else (" [防禦]" if _manager.guarded(actor.instance_id) else ""), actor.level, actor.hp, actor.max_hp, actor.mp, actor.max_mp])
+	_party.text = "\n".join(lines)
 	var logs: PackedStringArray = _manager.history.slice(maxi(0, _manager.history.size() - 2))
 	_log.text = "\n".join(logs)
 	var actor_name: String = _manager.current.definition.display_name if _manager.current != null else "準備"

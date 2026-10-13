@@ -4,7 +4,7 @@
 
 在本目錄建立 Windows 單機、原創 Low Poly 3D JRPG《失落星核》（專案代號 Project Crystal）。先完成 20～30 分鐘序章可玩版本，採固定斜 45 度攝影機、探索及指令式回合制戰鬥，ATB 留待試玩版之後。
 
-目前 Phase 1～Phase 3 已通過驗收，最新證據見 docs/PHASE3_REPORT.md；下一階段為 P4。執行任務前讀取 README.md、docs/TASKS.md、docs/ARCHITECTURE.md 與 docs/WORKFLOW.md。使用者最新指示優先於本文件；按授權的階段完成工作，不自行擴展到下一階段。
+目前 Phase 1～Phase 4 已通過驗收，最新證據見 docs/PHASE4_REPORT.md；下一階段為 P5（尚未開始）。執行任務前讀取 README.md、docs/TASKS.md、docs/ARCHITECTURE.md 與 docs/WORKFLOW.md。使用者最新指示優先於本文件；按授權的階段完成工作，不自行擴展到下一階段。
 
 故事原文保存於 docs/STORY_BIBLE.md；實作範圍、資料修正及階段對應以 docs/STORY_IMPLEMENTATION.md 為準。原文中的「現在執行」為企劃內嵌的未來任務範本，不代表本次加入資料即授權開始整個劇情引擎。序章僅雷恩/莉雅，艾琳在第一章加入；隊伍系統仍保留最多三人能力。
 
@@ -24,7 +24,7 @@
 
 探索、戰鬥、UI 分離。Resource 保存資料定義，持續存在的遊戲狀態保存角色與背包的實例資料。UI 發送操作請求、讀取狀態或接收訊號，不直接修改 HP、金錢或任務旗標。
 
-每項狀態須有唯一擁有者、修改入口及通知方式。共享角色定義不可當作可變戰鬥狀態；不得讓兩名角色共用同一份可變 Resource。BattleManager 屬戰鬥場景，不因名称有 Manager 就設成 Autoload。各管理系統依對應階段加入，禁止先建立沒有行為的空殼來宣稱完成。
+每項狀態須有唯一擁有者、修改入口及通知方式。P4 的 CombatantState 持有等級／EXP／裝備並提供有效數值，戰鬥不可直接使用 definition 的基礎數值。InventoryManager 持有金幣／物品；RewardManager 管理組合獎勵來源帳本，PartyActions 驗證選單操作。共享角色定義不可當作可變戰鬥狀態；不得讓兩名角色共用同一份可變 Resource。BattleManager 屬戰鬥場景，不因名称有 Manager 就設成 Autoload。各管理系統依對應階段加入，禁止先建立沒有行為的空殼來宣稱完成。
 
 劇情、任務與遭遇配置採用 data/story、data/quests、data/battles 的 JSON；角色/技能/物品定義仍用 Resource。固定事件與旗標 ID；FlagManager 為唯一旗標修改入口，QuestManager 不另存一份旗標。E004/E007 只在對應戰鬥勝利後完成；Q001 的 rewards 僅供顯示/驗證，實際任務獎勵由 E008 發放一次。JSON 已加入不等於載入器、劇情或戰鬥已完成。
 

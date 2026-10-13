@@ -8,6 +8,9 @@ extends Node3D
 @export var camera_zone: Node3D
 @export var camera_zone_radius: float = 4.0
 @export var zone_camera_size: float = 14.0
+@export var story_zone: Marker3D
+@export var story_zone_radius: float = 2.0
+@export var story_trigger: StringName
 var targets: Array[WorldInteractable] = []
 
 func _ready() -> void:

@@ -31,13 +31,13 @@
 | 賽倫教授 | 莉雅恩師、研究首席 | 第三章揭露身世，第四章協助隊伍 |
 | 艾絲特 Aster | 星核意識 | E006 先以陌生聲音呈現；speaker ID 不代表序章 UI 要揭露真名或身分 |
 
-## 已加入資料與狀態
+## 已加入資料與目前狀態（P4）
 
 | 檔案 | 內容 | 本次狀態 |
 | --- | --- | --- |
-| [prologue_events.json](../data/story/prologue_events.json) | CH00，E001～E008，對話/條件/動作 | 從原文提取，尚無載入器 |
+| [prologue_events.json](../data/story/prologue_events.json) | CH00，E001～E008，對話/條件/動作 | 已載入驗證；正式可玩 E001～E004，E005～E008 待 P5 |
 | [q001.json](../data/quests/q001.json) | 五個目標、顯示用獎勵 | 提取後修正前兩個 required_flag，見下表 |
-| [prologue_battles.json](../data/battles/prologue_battles.json) | B001/B002 敵方配置及獎勵 | 從原文提取，尚無戰鬥連接器 |
+| [prologue_battles.json](../data/battles/prologue_battles.json) | B001/B002 敵方配置及獎勵 | 兩場戰鬥／結算皆可執行，B001 已接主線；B002 主線區域待 P5 |
 
 | 目標 | 原文旗標 | 整合後旗標與理由 |
 | --- | --- | --- |
@@ -61,7 +61,7 @@
 
 依故事原文的六項工作包：S01 Story System 於 P2 建最小載入/Flag/Story/EventRunner，S02 Dialogue UI 於 P2，S03 Quest System 於 P2 接任務、P5 完整日誌，S04 Battle Integration 於 P3～P5，S05 Save/Load 於 P5，S06 Full Prologue 於 P5 整合、P6 匯出驗收。P2 的 S01/S02/S03 最小版已完成，實作進度以 [TASKS](TASKS.md) 為準。
 
-## 執行契約（待實作）
+## 執行契約（逐階段實作）
 
 1. 載入先驗證必要欄位、型別、重複 ID、所有 conditions 的可產生性及對話/動作格式；未知動作直接報錯。角色/物品/敵人/演出/trigger key 必須與註冊表對得上，不能查不到就當成功。
 2. 目前動作集合為 set_flag、set_objective、unlock_control、start_quest、add_party_member、start_battle、add_item、play_cutscene、complete_quest、add_gold、add_exp；逐階段加入實際執行器。P2 可用 E001/E002 子集驗收，尚未支援的事件明確不可用；完整序章啟用前必須全部驗證。
@@ -72,15 +72,17 @@
 7. E008 的 complete_quest 不可要求已存在 prologue_complete：此旗標在事件尾端才設。交付前檢查任務已接受且 e007_done；以同一提交更新任務、獎勵與完成旗標，避免自我依賴或部分成功。
 8. 奖勵採來源帳本與原子狀態提交（或可回復的交易），來源可為 E005、E006、E008 或戰鬥遭遇 ID。Q001 rewards 只做 UI/一致性校驗，由 E008 實際發放；B001/B002 的戰鬥獎勵由唯一戰鬥結算入口發放。消耗道具後重進事件也不可再領。
 9. SaveManager 保存 schema_version、旗標、事件狀態、任務、隊伍、背包、獎勵帳本與安全位置。首版僅在非對話/演出/戰鬥/交易中的安全點存檔，中途請求延後；讀檔不重播 E001，錯誤資料不污染當前狀態。改 ID/Flag 須遷移。
-10. EXP 的數值依來源保存；P4 暫定 add_exp 與戰鬥 exp 都給每位已入隊角色全額，不分攤、不給未入隊艾琳。屬整合決策，需在 UI/測試明示，調整時記錄規則變更。
+10. EXP 的數值依來源保存；P4 的 RewardManager 將戰鬥與組合獎勵 EXP 給每位已入隊角色全額，不分攤、不給未入隊艾琳；劇情 add_exp 動作整合待 P5。規則已於選單與測試明示，調整時記錄變更。
 
 只完成兩場主要戰鬥與 Q001 時，未消費/未領其他獎勵的金幣增量為 12＋50＋150＝212；依上述 EXP 規則，雷恩與莉雅各增加 20＋80＋200＝300 EXP。這些是驗收預期，不是已執行測試結果。
 
 ## 仍需建立的引用
 
-P2 已建立 narrator/ren/guildmaster/lia 顯示資料與 new_game/npc_guildmaster 綁定。npc_lia 目前僅環境對話，不觸發 E003；forest_first_encounter 留待戰鬥整合。aster 的顯示名稱登記為「神秘聲音」，E006 尚未啟用。環境對話在 data/story/exploration_dialogue.json，未改寫故事原文或 E001～E008。
+P2 已建立 narrator/ren/guildmaster/lia 顯示資料與 new_game/npc_guildmaster 綁定。P4 已將 npc_lia 接至 E003 招募、森林區域 forest_first_encounter 接至 E004/B001。aster 的顯示名稱登記為「神秘聲音」，E006 尚未啟用。環境對話在 data/story/exploration_dialogue.json，未改寫故事原文或 E001～E008。
 
-P3 已完成 ren/lia 角色定義、forest_slime/corrupted_guardian 敵人資料、potion 效果與顯示、回合行動及 B001/B002 載入。E004/E007 等待已獨立驗證：僅真實戰鬥勝利並確認返回後寫入旗標，敗北與錯誤／重複回呼不推進。森林演練沒有事件旗標或 EXP／金幣；forest_training_supplies 的 potion ×3 與 E005 來源分離。P4 才實作莉雅入隊、獎勵發放及 E001→E004 主線。
+P3 已完成 ren/lia 角色定義、forest_slime/corrupted_guardian 敵人資料、potion 效果與顯示、回合行動及 B001/B002 載入。E004/E007 等待已獨立驗證：僅真實戰鬥勝利並確認返回後寫入旗標，敗北與錯誤／重複回呼不推進。森林演練沒有事件旗標或 EXP／金幣；forest_training_supplies 的 potion ×3 與 E005 來源分離。P4 已完成莉雅入隊、獎勵發放及 E001→E004 主線。
+
+P4 的 RewardManager 對 battle:B001/B002 與組合獎勵來源各保留單次帳本；通知前金幣、全隊 EXP、物品與帳本已同步提交。QuestManager 不發放 Q001 rewards。event:E008 的獎勵包去重已隔離測試，但任務完成／獎勵／旗標的完整交付交易，以及帳本保存與讀取，仍待 P5。
 
 P5：star_seal_01 關鍵物品、aster 對應的 E006 演出、crystal_awakening 真正可播放的演出、mine_inner_area/ancient_crystal/mine_boss_arena 綁定及安全讀檔。這些可執行資源／綁定目前皆未建立，不應把靜態 JSON 檢查說成引用已解析成功。
 
@@ -102,4 +104,4 @@ P5：star_seal_01 關鍵物品、aster 對應的 E006 演出、crystal_awakening
 
 原文副本逐位元保存並核對 SHA256；三份 JSON 可解析，事件/任務目標/戰鬥 ID 唯一；條件旗標、Q001/B001/B002 引用及任務獎勵數值已核對。角色/資源引用、觸發器、戰鬥與讀檔行為尚無引擎實作，全部待驗證。完整操作清單見 [ACCEPTANCE](ACCEPTANCE.md)。
 
-P2 後續驗證已涵蓋 E001/E002 的條件、輸入鎖、完成旗標、任務接取及切圖保留；JSON 執行時驗證 ID、型別、說話者、旗標、任務／戰鬥 ID 和勝利門檻。P3 已解析角色、敵人、技能與恢復藥並執行真實戰鬥；E003 入隊、後續演出、獎勵與讀檔尚未實作，不能將其已知動作格式當作功能完成。詳見 [P2 驗收](PHASE2_REPORT.md)、[P3 驗收](PHASE3_REPORT.md)。
+P2 後續驗證已涵蓋 E001/E002 的條件、輸入鎖、完成旗標、任務接取及切圖保留；JSON 執行時驗證 ID、型別、說話者、旗標、任務／戰鬥 ID 和勝利門檻。P3 已解析角色、敵人、技能與恢復藥並執行真實戰鬥。P4 已驗證 E003 入隊、E004 完整事件鏈與成長獎勵；E005～E008 演出／交付、讀檔尚未實作，不能將已知動作格式當作功能完成。詳見 [P2 驗收](PHASE2_REPORT.md)、[P3 驗收](PHASE3_REPORT.md)、[P4 驗收](PHASE4_REPORT.md)。

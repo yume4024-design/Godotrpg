@@ -8,7 +8,7 @@ signal event_completed(id: StringName)
 signal event_failed(id: StringName)
 
 const ENABLED_EVENTS: Array[StringName] = [&"E001", &"E002"]
-const SUPPORTED_ACTIONS: Array[String] = ["set_flag", "set_objective", "unlock_control", "start_quest", "start_battle"]
+const SUPPORTED_ACTIONS: Array[String] = ["set_flag", "set_objective", "unlock_control", "start_quest", "start_battle", "add_party_member"]
 @export var enabled_events: Array[StringName] = [&"E001", &"E002"]
 var busy: bool = false
 var active_event: StringName = &""
@@ -19,15 +19,17 @@ var _flags: FlagManager
 var _quests: QuestManager
 var _dialogue: DialogueManager
 var _battles: BattleFlow
+var _party: PartyManager
 var _awaited_ticket: int = 0
 
 
-func setup(catalog: StoryCatalog, flags: FlagManager, quests: QuestManager, dialogue: DialogueManager, battles: BattleFlow = null) -> void:
+func setup(catalog: StoryCatalog, flags: FlagManager, quests: QuestManager, dialogue: DialogueManager, battles: BattleFlow = null, party: PartyManager = null) -> void:
 	_catalog = catalog
 	_flags = flags
 	_quests = quests
 	_dialogue = dialogue
 	_battles = battles
+	_party = party
 	_dialogue.finished.connect(_finish_event)
 	if _battles != null:
 		_battles.concluded.connect(_on_battle_concluded)
@@ -54,6 +56,9 @@ func try_start(id: StringName) -> bool:
 			return false
 		if action.type == "start_quest" and not _quests.knows(StringName(action.quest_id)):
 			last_error = "Unknown quest: " + String(action.quest_id)
+			return false
+		if action.type == "add_party_member" and (_party == null or not _party.can_recruit(StringName(action.character_id))):
+			last_error = "Party member unavailable or capacity reached"
 			return false
 		if action.type == "start_battle":
 			if has_battle or event.actions.size() != 1 or action != event.actions[0] or _battles == null or not _battles.can_launch(StringName(action.battle_id)):
@@ -88,6 +93,12 @@ func _finish_event() -> void:
 			last_error = "Battle launch failed"
 			_end(false)
 		return
+	# Revalidate recruitment at commit time, before any objective or flag changes.
+	for action: Dictionary in event.actions:
+		if action.type == "add_party_member" and not _party.recruit(StringName(action.character_id)):
+			last_error = "Recruitment failed"
+			_end(false)
+			return
 	_apply_actions(event.actions)
 	_complete()
 

@@ -15,6 +15,12 @@ enum Form { HERO, SLIME, GUARDIAN }
 @export var color: Color = Color.WHITE
 @export var form: Form = Form.HERO
 @export var appearance: PackedScene
+@export var hp_growth: int = 12
+@export var mp_growth: int = 4
+@export var attack_growth: int = 2
+@export var magic_growth: int = 2
+@export var defense_growth: int = 1
+@export var ward_growth: int = 1
 
 func skill(id_to_find: StringName) -> SkillDefinition:
 	for value: SkillDefinition in skills:

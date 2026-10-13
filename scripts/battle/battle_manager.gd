@@ -65,7 +65,7 @@ func valid_targets(action: StringName) -> Array[CombatantState]:
 			if target == current:
 				result_targets.append(target)
 		elif healing:
-			if target.ally == current.ally and target.hp < target.definition.max_hp:
+			if target.ally == current.ally and target.hp < target.max_hp:
 				result_targets.append(target)
 		elif target.ally != current.ally:
 			result_targets.append(target)
@@ -117,11 +117,11 @@ func _perform(action: StringName, target: CombatantState) -> void:
 				_guarded[source.instance_id] = true
 			SkillDefinition.Effect.HEAL:
 				healing = true
-				amount = target.heal(skill.power + source.definition.magic)
+				amount = target.heal(skill.power + source.magic)
 			SkillDefinition.Effect.PHYSICAL, SkillDefinition.Effect.MAGIC:
 				var magic_hit: bool = skill.effect == SkillDefinition.Effect.MAGIC
-				var offense: int = source.definition.magic if magic_hit else source.definition.attack
-				var resistance: int = target.definition.ward if magic_hit else target.definition.defense
+				var offense: int = source.magic if magic_hit else source.attack
+				var resistance: int = target.ward if magic_hit else target.defense
 				var damage: int = maxi(1, offense + skill.power - resistance)
 				if guarded(target.instance_id):
 					damage = maxi(1, ceili(damage * 0.5))
@@ -150,9 +150,9 @@ func _advance() -> void:
 		round_number += 1
 		_queue = combatants()
 		_queue.sort_custom(func(a: CombatantState, b: CombatantState) -> bool:
-			if a.definition.speed == b.definition.speed:
+			if a.speed == b.speed:
 				return String(a.instance_id) < String(b.instance_id)
-			return a.definition.speed > b.definition.speed)
+			return a.speed > b.speed)
 		_cursor = 0
 	current = _queue[_cursor]
 	_cursor += 1
@@ -176,8 +176,8 @@ func _enemy_action(token: int) -> void:
 			action = skill.id
 	var targets: Array[CombatantState] = valid_targets(action)
 	targets.sort_custom(func(a: CombatantState, b: CombatantState) -> bool:
-		var ratio_a: float = float(a.hp) / a.definition.max_hp
-		var ratio_b: float = float(b.hp) / b.definition.max_hp
+		var ratio_a: float = float(a.hp) / a.max_hp
+		var ratio_b: float = float(b.hp) / b.max_hp
 		return String(a.instance_id) < String(b.instance_id) if is_equal_approx(ratio_a, ratio_b) else ratio_a < ratio_b)
 	if not targets.is_empty():
 		_perform(action, targets[0])

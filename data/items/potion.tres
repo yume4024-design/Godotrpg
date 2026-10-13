@@ -5,3 +5,5 @@ script = ExtResource("1")
 id = &"potion"
 display_name = "恢復藥"
 heal_hp = 60
+
+description = "恢復 60 HP；無法復活"

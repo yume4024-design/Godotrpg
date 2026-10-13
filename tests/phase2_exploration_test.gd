@@ -9,6 +9,8 @@ func _initialize() -> void:
 
 func _run() -> void:
 	game = (load("res://scenes/main/main.tscn") as PackedScene).instantiate() as ExplorationGame
+	# Historical P2 fixture; production scene enables E001 through E004.
+	(game.get_node("EventRunner") as EventRunner).enabled_events.assign([&"E001", &"E002"])
 	root.add_child(game)
 	current_scene = game
 	await create_timer(0.8).timeout
