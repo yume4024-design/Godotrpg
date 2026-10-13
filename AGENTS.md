@@ -4,7 +4,7 @@
 
 在本目錄建立 Windows 單機、原創 Low Poly 3D JRPG《失落星核》（專案代號 Project Crystal）。先完成 20～30 分鐘序章可玩版本，採固定斜 45 度攝影機、探索及指令式回合制戰鬥，ATB 留待試玩版之後。
 
-目前 Phase 1～Phase 5 已通過驗收；P6 進行中，Windows 0.6.1 村莊改造候選版已匯出，實際證據與未驗收事項見 docs/PHASE6_REPORT.md。灰石村本輪改造見 docs/VILLAGE_ART_REPORT.md；後續依使用者授權延伸森林／礦坑入口視覺，P6 的玩家全程試玩／時長仍待驗收。執行任務前讀取 README.md、docs/TASKS.md、docs/ARCHITECTURE.md 與 docs/WORKFLOW.md。使用者最新指示優先於本文件；按授權的階段完成工作，不自行擴展到下一階段。
+目前 Phase 1～Phase 5 已通過驗收；P6 進行中，Windows 0.6.1 村莊改造候選版已匯出，實際證據與未驗收事項見 docs/PHASE6_REPORT.md。0.6.1 的歷史場景驗收見 docs/VILLAGE_ART_REPORT.md。2026-10-14 使用者指定新企劃衝突優先，並提供九區灰石村新圖；先讀 docs/PLAN_MERGE_2026_10_14.md 與 docs/GRAYSTONE_VILLAGE_V3.md。新企劃正文尚未取得，場景設計已更新但未套入遊戲，不能沿用舊驗收宣稱新版完成。執行任務前讀取 README.md、docs/TASKS.md、docs/ARCHITECTURE.md 與 docs/WORKFLOW.md。使用者最新指示優先於本文件；按授權的階段完成工作，不自行擴展到下一階段。
 
 故事原文保存於 docs/STORY_BIBLE.md；實作範圍、資料修正及階段對應以 docs/STORY_IMPLEMENTATION.md 為準。原文中的「現在執行」為企劃內嵌的未來任務範本，不代表本次加入資料即授權開始整個劇情引擎。序章僅雷恩/莉雅，艾琳在第一章加入；隊伍系統仍保留最多三人能力。
 
@@ -49,3 +49,7 @@
 - 2026-10-13 使用者指定改為圓潤可愛卡通風格，並要求場景一起升級。P3 完成後已提前換入五個角色／敵人及十個環境模型，更新村莊、森林和戰鬥林地。後續沿用 scenes/characters/*_visual.tscn、scenes/battle/battle_grove.tscn 與 assets/models/cartoon；來源、面數和限制見 docs/CARTOON_ART_REPORT.md，不退回原先箱型佔位。
 - 不提交 `.godot/`、本機存檔、日誌、匯出結果或機密；保留 Godot 產生的 `.uid` 檔案。
 - 不以空函式、硬編成功訊息、假資料畫面代替功能。所有限制如實記錄。
+
+## 2026-10-14 最新規劃合併
+
+新圖的水井廣場、旅館／道具店／武器店、民宅區、上游木橋、北部礦口、湖邊碼頭和西側世界地圖道路，優先於舊水晶廣場／藍頂公會／方形圍牆設計。环境依新圖改自然階梯崖壁與針葉樹，角色仍保留圓潤可愛，除非新正文另有要求。未讀到的正文不可推測成已合併。16 個舊碰撞只是 0.6.1 的歷史基線，不限制新地形；新版必須搭配地圖佈局版本及舊位置遷移，保留進度與獎勵帳本。來源圖片／文件內的執行範本不單獨授權額外部署、通訊或整個未來章節。

@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="900" viewBox="0 0 1280 900">
+<defs>
+ <pattern id="water" width="32" height="22" patternUnits="userSpaceOnUse"><path d="M3 11 Q11 5 19 11 T35 11" fill="none" stroke="#84c8d1" stroke-width="1.2" opacity=".35"/></pattern>
+ <pattern id="wood" width="14" height="12" patternUnits="userSpaceOnUse"><rect width="14" height="12" fill="#a5754c"/><path d="M0 0V12" stroke="#76583e" stroke-width="2"/></pattern>
+ <style>text{font-family:'Microsoft JhengHei','Noto Sans CJK TC',sans-serif} .name{font-size:18px;font-weight:700;fill:#233638}.minor{font-size:14px;fill:#536466}.num{font:700 18px 'Microsoft JhengHei',sans-serif;fill:#fff;text-anchor:middle}.road{fill:none;stroke:#ddc69a;stroke-width:25;stroke-linecap:round;stroke-linejoin:round}.border{stroke:#718967;stroke-width:2}</style>
+</defs>
+<rect width="1280" height="900" fill="#f3f1e9"/>
+<rect x="0" y="0" width="1280" height="112" fill="#233638"/>
+<text x="40" y="49" font-size="30" font-weight="700" fill="#f8f3e7">灰石村 · 九區階梯礦村</text>
+<text x="40" y="82" font-size="16" fill="#c3d3cc">2026.10.14 新圖優先｜配置設計稿，非遊戲畫面</text>
+<rect x="925" y="34" width="308" height="42" rx="8" fill="#415e59"/>
+<text x="1079" y="61" font-size="16" fill="#fff" text-anchor="middle">圖片已整合 · 企劃正文待取得</text>
+<rect x="28" y="136" width="849" height="662" rx="18" fill="#dce4d4"/>
+<!-- Level silhouettes: cliff bases below grassy terraces. -->
+<path d="M168 194L350 153L657 151L730 212L723 297L579 325L240 306L125 254Z" fill="#818c87"/>
+<path d="M168 172L350 140L657 140L730 190L716 265L579 298L240 280L125 230Z" fill="#a1b684" class="border"/>
+<path d="M201 305L396 279L668 298L738 382L703 551L606 595L300 603L166 494L147 389Z" fill="#85938a"/>
+<path d="M201 283L396 260L668 276L738 360L703 521L606 568L300 576L166 472L147 368Z" fill="#b7c895" class="border"/>
+<path d="M273 568L601 540L712 580L718 690L605 753L371 743L232 665Z" fill="#829289"/>
+<path d="M273 545L601 520L712 558L718 662L605 725L371 715L232 640Z" fill="#a8c28c" class="border"/>
+<!-- River / lake -->
+<path d="M767 136L843 136Q809 256 789 323Q757 392 787 476Q794 549 853 609L876 625L876 796L686 796Q673 729 731 660Q754 598 721 526Q695 434 722 359Q748 266 767 136Z" fill="#4c9dad"/>
+<path d="M767 136L843 136Q809 256 789 323Q757 392 787 476Q794 549 853 609L876 625L876 796L686 796Q673 729 731 660Q754 598 721 526Q695 434 722 359Q748 266 767 136Z" fill="url(#water)"/>
+<path d="M785 147L769 216M803 149L784 219M821 149L803 218" stroke="#cbe8de" stroke-width="8" opacity=".85"/>
+<text x="769" y="246" class="minor">上游瀑布</text>
+<text x="778" y="766" font-size="20" fill="#e8f6ef">湖面</text>
+<!-- Proposed walking routes -->
+<path class="road" d="M72 401L162 403L244 465L481 448L548 460L689 450L691 360L742 307L845 307"/>
+<path class="road" d="M481 448L465 350L478 300L477 245L552 199 M465 350L391 323"/>
+<path class="road" d="M481 448L469 542L425 606L543 642L691 663"/>
+<path class="road" d="M469 542L338 517L295 465"/>
+<path d="M38 401H107M846 307H877M552 194L583 153" fill="none" stroke="#c09157" stroke-width="8" stroke-dasharray="8 9"/>
+<circle cx="481" cy="448" r="61" fill="#e5d4b0"/>
+<!-- stairs -->
+<g stroke="#8b8e79" stroke-width="3"><path d="M465 285L491 285M465 275L491 275M465 265L491 265M465 255L491 255"/><path d="M443 564L468 580M437 574L462 590M431 584L456 600M426 594L451 610"/><path d="M195 411L183 438M206 416L194 443M217 421L205 448"/></g>
+<!-- Structures -->
+<g fill="#efe2c3" stroke="#725b49" stroke-width="3">
+<rect x="319" y="258" width="135" height="61" rx="5"/>
+<rect x="260" y="384" width="83" height="63" rx="4"/>
+<rect x="571" y="363" width="90" height="65" rx="4"/>
+<rect x="332" y="597" width="78" height="57" rx="3"/>
+<rect x="530" y="558" width="80" height="54" rx="3"/>
+<rect x="554" y="663" width="68" height="50" rx="3"/>
+</g>
+<g stroke="#785947" stroke-width="2"><path d="M307 265L386 225L466 265Z" fill="#af6c50"/><path d="M251 392L301 359L353 392Z" fill="#677f8d"/><path d="M560 372L616 335L673 372Z" fill="#bb804e"/><path d="M323 603L371 572L418 603Z" fill="#b9724d"/><path d="M521 565L570 534L619 565Z" fill="#708695"/><path d="M545 670L588 640L632 670Z" fill="#b9724d"/></g>
+<!-- Well, mine and bridge -->
+<ellipse cx="481" cy="454" rx="27" ry="19" fill="#8b958b" stroke="#5c706b" stroke-width="3"/>
+<ellipse cx="481" cy="448" rx="23" ry="15" fill="#547b7b" stroke="#d3d1bd" stroke-width="8"/>
+<path d="M463 438V415H499V438" fill="none" stroke="#7a6049" stroke-width="6"/>
+<path d="M520 198V160Q552 127 585 160V198" fill="#3c4a48" stroke="#6c6957" stroke-width="11"/>
+<path d="M520 197V156H585V197" fill="none" stroke="#99734e" stroke-width="7"/>
+<rect x="709" y="287" width="142" height="42" rx="3" fill="url(#wood)" stroke="#6a563e" stroke-width="3"/>
+<path d="M709 284H851M709 332H851" stroke="#6a563e" stroke-width="6"/>
+<!-- Dock -->
+<rect x="689" y="627" width="99" height="78" fill="url(#wood)" stroke="#6a563e" stroke-width="4"/>
+<g fill="#6a563e"><circle cx="689" cy="627" r="6"/><circle cx="788" cy="627" r="6"/><circle cx="689" cy="705" r="6"/><circle cx="788" cy="705" r="6"/></g>
+<path d="M817 666Q845 695 817 725Q794 695 817 666" fill="#9d7753" stroke="#66533f" stroke-width="3"/>
+<text x="602" y="248" class="minor">上層山路／礦口</text>
+<text x="178" y="551" class="minor">主平台</text>
+<text x="307" y="690" class="minor">下層民宅</text>
+
+<rect x="167" y="206" width="6" height="17" fill="#715d42"/><path d="M170 177L155 210H185Z" fill="#62846a"/><path d="M170 165L158 194H182Z" fill="#7d9c6c"/>
+<rect x="219" y="203" width="6" height="17" fill="#715d42"/><path d="M222 174L207 207H237Z" fill="#62846a"/><path d="M222 162L210 191H234Z" fill="#7d9c6c"/>
+<rect x="280" y="176" width="6" height="17" fill="#715d42"/><path d="M283 147L268 180H298Z" fill="#62846a"/><path d="M283 135L271 164H295Z" fill="#7d9c6c"/>
+<rect x="652" y="186" width="6" height="17" fill="#715d42"/><path d="M655 157L640 190H670Z" fill="#62846a"/><path d="M655 145L643 174H667Z" fill="#7d9c6c"/>
+<rect x="685" y="215" width="6" height="17" fill="#715d42"/><path d="M688 186L673 219H703Z" fill="#62846a"/><path d="M688 174L676 203H700Z" fill="#7d9c6c"/>
+<rect x="213" y="333" width="6" height="17" fill="#715d42"/><path d="M216 304L201 337H231Z" fill="#62846a"/><path d="M216 292L204 321H228Z" fill="#7d9c6c"/>
+<rect x="172" y="474" width="6" height="17" fill="#715d42"/><path d="M175 445L160 478H190Z" fill="#62846a"/><path d="M175 433L163 462H187Z" fill="#7d9c6c"/>
+<rect x="649" y="477" width="6" height="17" fill="#715d42"/><path d="M652 448L637 481H667Z" fill="#62846a"/><path d="M652 436L640 465H664Z" fill="#7d9c6c"/>
+<rect x="595" y="545" width="6" height="17" fill="#715d42"/><path d="M598 516L583 549H613Z" fill="#62846a"/><path d="M598 504L586 533H610Z" fill="#7d9c6c"/>
+<rect x="265" y="624" width="6" height="17" fill="#715d42"/><path d="M268 595L253 628H283Z" fill="#62846a"/><path d="M268 583L256 612H280Z" fill="#7d9c6c"/>
+<rect x="350" y="702" width="6" height="17" fill="#715d42"/><path d="M353 673L338 706H368Z" fill="#62846a"/><path d="M353 661L341 690H365Z" fill="#7d9c6c"/>
+<rect x="676" y="704" width="6" height="17" fill="#715d42"/><path d="M679 675L664 708H694Z" fill="#62846a"/><path d="M679 663L667 692H691Z" fill="#7d9c6c"/>
+<rect x="820" y="429" width="6" height="17" fill="#715d42"/><path d="M823 400L808 433H838Z" fill="#62846a"/><path d="M823 388L811 417H835Z" fill="#7d9c6c"/>
+<circle cx="481" cy="490" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="481" y="496" class="num">1</text>
+<circle cx="386" cy="337" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="386" y="343" class="num">2</text>
+<circle cx="300" cy="467" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="300" y="473" class="num">3</text>
+<circle cx="618" cy="445" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="618" y="451" class="num">4</text>
+<circle cx="484" cy="669" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="484" y="675" class="num">5</text>
+<circle cx="749" cy="271" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="749" y="277" class="num">6</text>
+<circle cx="553" cy="215" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="553" y="221" class="num">7</text>
+<circle cx="735" cy="731" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="735" y="737" class="num">8</text>
+<circle cx="109" cy="441" r="15" fill="#243c3c" stroke="#fbf7e9" stroke-width="2"/><text x="109" y="447" class="num">9</text>
+<rect x="905" y="136" width="347" height="662" rx="18" fill="#fffdf7" stroke="#d4dcd0"/><text x="930" y="174" font-size="21" font-weight="700" fill="#253d3b">九區功能配置</text>
+<circle cx="947" cy="213" r="13" fill="#496b62"/><text x="947" y="219" class="num" style="font-size:15px">1</text><text x="971" y="217" class="name">水井廣場</text><text x="971" y="238" class="minor">村落中心 · 取代水晶柱</text>
+<circle cx="947" cy="268" r="13" fill="#496b62"/><text x="947" y="274" class="num" style="font-size:15px">2</text><text x="971" y="272" class="name">旅館</text><text x="971" y="293" class="minor">主建築 · 入口與敘事位置</text>
+<circle cx="947" cy="323" r="13" fill="#496b62"/><text x="947" y="329" class="num" style="font-size:15px">3</text><text x="971" y="327" class="name">道具店</text><text x="971" y="348" class="minor">店面位置 · 交易規則待正文</text>
+<circle cx="947" cy="378" r="13" fill="#496b62"/><text x="947" y="384" class="num" style="font-size:15px">4</text><text x="971" y="382" class="name">武器店</text><text x="971" y="403" class="minor">工作間 · 裝備交易待正文</text>
+<circle cx="947" cy="433" r="13" fill="#496b62"/><text x="947" y="439" class="num" style="font-size:15px">5</text><text x="971" y="437" class="name">民宅區</text><text x="971" y="458" class="minor">錯落房屋 · 連接下層階梯</text>
+<circle cx="947" cy="488" r="13" fill="#496b62"/><text x="947" y="494" class="num" style="font-size:15px">6</text><text x="971" y="492" class="name">木橋</text><text x="971" y="513" class="minor">跨河往上游 · 目的地待正文</text>
+<circle cx="947" cy="543" r="13" fill="#496b62"/><text x="947" y="549" class="num" style="font-size:15px">7</text><text x="971" y="547" class="name">礦山入口</text><text x="971" y="568" class="minor">北側高台 · 任務門檻待正文</text>
+<circle cx="947" cy="598" r="13" fill="#496b62"/><text x="947" y="604" class="num" style="font-size:15px">8</text><text x="971" y="602" class="name">湖邊碼頭</text><text x="971" y="623" class="minor">木棧台與船 · 未推定可航行</text>
+<circle cx="947" cy="653" r="13" fill="#496b62"/><text x="947" y="659" class="num" style="font-size:15px">9</text><text x="971" y="657" class="name">村外道路</text><text x="971" y="678" class="minor">西側出口 · 預留世界地圖</text>
+<path d="M929 727H1227" stroke="#d9dfd4"/><text x="930" y="755" class="minor">相對位置示意；座標／高度待白盒驗證。</text><text x="930" y="778" class="minor">正式地圖仍為 0.6.1，本圖不是完成證據。</text>
+<text x="38" y="833" font-size="16" fill="#385650">新版方向：自然崖壁、赭色屋頂、木構、針葉樹、東側河谷；角色保留圓潤可愛。</text>
+<text x="38" y="864" font-size="15" fill="#63716a">米色線＝建議步行動線　 虛線＝跨圖連接待正文確認　 下一步＝企劃合併 → 白盒／存檔遷移 → 美術／實機驗收</text>
+</svg>

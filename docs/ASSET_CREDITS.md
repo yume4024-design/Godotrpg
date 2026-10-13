@@ -55,3 +55,7 @@ P3 新增的戰鬥平台、雷恩／莉雅／守衛人形、史萊姆、回合�
 ## 灰石村 0.6.1 原創場景
 
 `village_guild`、`village_shop`、`village_plaza`、`village_borders`、`village_valley` 五個 GLB 由 `tools/build_village_art.py` 在 Blender 5.2.2 LTS 建立；作者為本專案製作，沒有外部模型／貼圖／商店素材／付費服務。使用者參考圖僅提供色彩與場景方向，沒有擷取圖像作材質。藍色水晶徽章為本專案重新設計。原始 `.blend`、面數紀錄在 `source_assets/village_v2`，不匯出至遊戲。修改內容包含倒角建築、瓦片、花箱、條紋棚布、廣場／晶柱、河岸橋樑和遠景。沿用角色與樹木來源不變；詳見 [場景報告](VILLAGE_ART_REPORT.md)。
+
+## 2026-10-14 灰石村新參考（設計階段）
+
+`docs/references/graystone_village_2026_10_14.jpg` 為使用者提供的 1000003469.jpg，只作最新場景參考，未當作遊戲貼圖或模型。`graystone_village_v3_layout.svg` 與 PNG 是本專案依九區需求繪製的配置示意，非遊戲渲染、非第三方素材、未匯入 runtime。字型使用系統字型渲染，沒有打包字型檔。
