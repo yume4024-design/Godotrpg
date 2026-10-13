@@ -59,3 +59,7 @@ P3 新增的戰鬥平台、雷恩／莉雅／守衛人形、史萊姆、回合�
 ## 2026-10-14 灰石村新參考（設計階段）
 
 `docs/references/graystone_village_2026_10_14.jpg` 為使用者提供的 1000003469.jpg，只作最新場景參考，未當作遊戲貼圖或模型。`graystone_village_v3_layout.svg` 與 PNG 是本專案依九區需求繪製的配置示意，非遊戲渲染、非第三方素材、未匯入 runtime。字型使用系統字型渲染，沒有打包字型檔。
+
+## Greystone G01（2026-10-14）
+
+scripts/tools/greystone/build_layout.py 生成原創 Godot 原生白盒，七個建物模組，無第三方素材、貼圖或付費生成。角色引用既有 Ren 視覺，授權來源不變。正式GLB尚未製作；建造參考沿用使用者提供的1000003469圖。

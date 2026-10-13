@@ -1,0 +1,44 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="M1"]
+albedo_color = Color(0.80, 0.73, 0.57, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G1"]
+size = Vector3(8, 4.760000000000001, 7)
+material = SubResource("M1")
+[sub_resource type="BoxShape3D" id="C1"]
+size = Vector3(8, 4.760000000000001, 7)
+[sub_resource type="StandardMaterial3D" id="M2"]
+albedo_color = Color(0.25, 0.36, 0.47, 1)
+roughness = 0.95
+[sub_resource type="PrismMesh" id="G2"]
+size = Vector3(8.6, 2.24, 7.6)
+material = SubResource("M2")
+[sub_resource type="StandardMaterial3D" id="M3"]
+albedo_color = Color(0.29, 0.20, 0.13, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G3"]
+size = Vector3(1.6, 2, 0.07)
+material = SubResource("M3")
+[node name="Building" type="Node3D"]
+[node name="Walls" type="StaticBody3D" parent="."]
+position = Vector3(0, 2.3800000000000003, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Walls"]
+mesh = SubResource("G1")
+[node name="Collision" type="CollisionShape3D" parent="Walls"]
+shape = SubResource("C1")
+[node name="Roof" type="Node3D" parent="."]
+position = Vector3(0, 5.88, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Roof"]
+mesh = SubResource("G2")
+[node name="DoorMarker" type="Node3D" parent="."]
+position = Vector3(0, 1, 3.535)
+[node name="Mesh" type="MeshInstance3D" parent="DoorMarker"]
+mesh = SubResource("G3")
+[node name="Name" type="Label3D" parent="."]
+position = Vector3(0, 8, 0)
+billboard = 1
+text = "道具店"
+font_size = 48
+pixel_size = 0.025
+outline_size = 8

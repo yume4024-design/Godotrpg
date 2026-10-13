@@ -1,5 +1,8 @@
 # 開發執行流程
 
+> **2026-10-14 正文合併更新（優先於本檔較早條款）**：新企劃已由使用者貼文取得，不再待正文。灰石村採 120×120m、Q 版低面數切面、北側公會/西北農田/東北礦坑/東河/南入口/西出口；平台 Windows + Android，iOS 預留。執行以 [GREYSTONE_VILLAGE_SPEC.md](GREYSTONE_VILLAGE_SPEC.md) 與 [GREYSTONE_BUILD_TASKS.md](GREYSTONE_BUILD_TASKS.md) 為準。G01 獨立佔位預覽，不替換正式0.6.1存檔；G06再遷移位置及串接劇情/觸控。本檔舊「待正文」、PC限定、圖片未列公會、固定舊碰撞等描述保留為歷史，不是目前限制。
+
+
 ## 每次任務
 
 1. **確認基線**：讀 AGENTS、TASKS、相關設計及最近變更；故事工作另讀 STORY_IMPLEMENTATION，按需查 STORY_BIBLE；檢查使用者修改、目前階段、Godot 版本。

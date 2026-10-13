@@ -1,0 +1,533 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/inn_blockout.tscn" id="inn"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/guild_hall_blockout.tscn" id="guild_hall"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/item_shop_blockout.tscn" id="item_shop"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/weapon_shop_blockout.tscn" id="weapon_shop"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/house_a_blockout.tscn" id="house_a"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/house_b_blockout.tscn" id="house_b"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/farm_house_blockout.tscn" id="farm_house"]
+
+[sub_resource type="StandardMaterial3D" id="M1"]
+albedo_color = Color(0.42, 0.57, 0.28, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G1"]
+size = Vector3(90, 2, 120)
+material = SubResource("M1")
+[sub_resource type="BoxShape3D" id="C1"]
+size = Vector3(90, 2, 120)
+[sub_resource type="StandardMaterial3D" id="M2"]
+albedo_color = Color(0.42, 0.57, 0.28, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G2"]
+size = Vector3(22, 2, 120)
+material = SubResource("M2")
+[sub_resource type="BoxShape3D" id="C2"]
+size = Vector3(22, 2, 120)
+[sub_resource type="StandardMaterial3D" id="M3"]
+albedo_color = Color(0.16, 0.48, 0.65, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G3"]
+size = Vector3(8, 0.2, 120)
+material = SubResource("M3")
+[sub_resource type="StandardMaterial3D" id="M4"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G4"]
+size = Vector3(28, 0.024, 28)
+material = SubResource("M4")
+[sub_resource type="StandardMaterial3D" id="M5"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G5"]
+size = Vector3(6, 0.028, 48)
+material = SubResource("M5")
+[sub_resource type="StandardMaterial3D" id="M6"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G6"]
+size = Vector3(6, 0.028, 8)
+material = SubResource("M6")
+[sub_resource type="StandardMaterial3D" id="M7"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G7"]
+size = Vector3(46, 0.028, 6)
+material = SubResource("M7")
+[sub_resource type="StandardMaterial3D" id="M8"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G8"]
+size = Vector3(20, 0.028, 6)
+material = SubResource("M8")
+[sub_resource type="StandardMaterial3D" id="M9"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G9"]
+size = Vector3(14, 0.028, 3)
+material = SubResource("M9")
+[sub_resource type="StandardMaterial3D" id="M10"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G10"]
+size = Vector3(6, 0.028, 44)
+material = SubResource("M10")
+[sub_resource type="StandardMaterial3D" id="M11"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G11"]
+size = Vector3(20, 0.028, 6)
+material = SubResource("M11")
+[sub_resource type="StandardMaterial3D" id="M12"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G12"]
+size = Vector3(6, 0.028, 38)
+material = SubResource("M12")
+[sub_resource type="StandardMaterial3D" id="M13"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G13"]
+size = Vector3(14, 0.028, 6)
+material = SubResource("M13")
+[sub_resource type="StandardMaterial3D" id="M14"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G14"]
+size = Vector3(46, 0.028, 3)
+material = SubResource("M14")
+[sub_resource type="StandardMaterial3D" id="M15"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G15"]
+size = Vector3(10, 0.028, 4)
+material = SubResource("M15")
+[sub_resource type="StandardMaterial3D" id="M16"]
+albedo_color = Color(0.72, 0.62, 0.43, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G16"]
+size = Vector3(24, 0.028, 3)
+material = SubResource("M16")
+[sub_resource type="StandardMaterial3D" id="M17"]
+albedo_color = Color(0.45, 0.28, 0.14, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G17"]
+size = Vector3(8, 0.3, 6)
+material = SubResource("M17")
+[sub_resource type="BoxShape3D" id="C17"]
+size = Vector3(8, 0.3, 6)
+[sub_resource type="StandardMaterial3D" id="M18"]
+albedo_color = Color(0.45, 0.28, 0.14, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G18"]
+size = Vector3(4, 0.3, 8)
+material = SubResource("M18")
+[sub_resource type="BoxShape3D" id="C18"]
+size = Vector3(4, 0.3, 8)
+[sub_resource type="StandardMaterial3D" id="M19"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G19"]
+size = Vector3(0.35, 1.2, 29)
+material = SubResource("M19")
+[sub_resource type="BoxShape3D" id="C19"]
+size = Vector3(0.35, 1.2, 29)
+[sub_resource type="StandardMaterial3D" id="M20"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G20"]
+size = Vector3(0.35, 1.2, 53)
+material = SubResource("M20")
+[sub_resource type="BoxShape3D" id="C20"]
+size = Vector3(0.35, 1.2, 53)
+[sub_resource type="StandardMaterial3D" id="M21"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G21"]
+size = Vector3(0.35, 1.2, 24)
+material = SubResource("M21")
+[sub_resource type="BoxShape3D" id="C21"]
+size = Vector3(0.35, 1.2, 24)
+[sub_resource type="StandardMaterial3D" id="M22"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G22"]
+size = Vector3(0.35, 1.2, 29)
+material = SubResource("M22")
+[sub_resource type="BoxShape3D" id="C22"]
+size = Vector3(0.35, 1.2, 29)
+[sub_resource type="StandardMaterial3D" id="M23"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G23"]
+size = Vector3(0.35, 1.2, 53)
+material = SubResource("M23")
+[sub_resource type="BoxShape3D" id="C23"]
+size = Vector3(0.35, 1.2, 53)
+[sub_resource type="StandardMaterial3D" id="M24"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G24"]
+size = Vector3(0.35, 1.2, 24)
+material = SubResource("M24")
+[sub_resource type="BoxShape3D" id="C24"]
+size = Vector3(0.35, 1.2, 24)
+[sub_resource type="StandardMaterial3D" id="M25"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G25"]
+size = Vector3(0.35, 1.2, 8)
+material = SubResource("M25")
+[sub_resource type="BoxShape3D" id="C25"]
+size = Vector3(0.35, 1.2, 8)
+[sub_resource type="StandardMaterial3D" id="M26"]
+albedo_color = Color(0.45, 0.28, 0.14, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G26"]
+size = Vector3(8, 1.2, 0.25)
+material = SubResource("M26")
+[sub_resource type="BoxShape3D" id="C26"]
+size = Vector3(8, 1.2, 0.25)
+[sub_resource type="StandardMaterial3D" id="M27"]
+albedo_color = Color(0.45, 0.28, 0.14, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G27"]
+size = Vector3(8, 1.2, 0.25)
+material = SubResource("M27")
+[sub_resource type="BoxShape3D" id="C27"]
+size = Vector3(8, 1.2, 0.25)
+[sub_resource type="StandardMaterial3D" id="M28"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G28"]
+size = Vector3(0.25, 1.2, 8)
+material = SubResource("M28")
+[sub_resource type="BoxShape3D" id="C28"]
+size = Vector3(0.25, 1.2, 8)
+[sub_resource type="StandardMaterial3D" id="M29"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G29"]
+size = Vector3(4, 1.2, 0.25)
+material = SubResource("M29")
+[sub_resource type="BoxShape3D" id="C29"]
+size = Vector3(4, 1.2, 0.25)
+[sub_resource type="StandardMaterial3D" id="M30"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G30"]
+size = Vector3(4, 1.2, 0.25)
+material = SubResource("M30")
+[sub_resource type="BoxShape3D" id="C30"]
+size = Vector3(4, 1.2, 0.25)
+[sub_resource type="StandardMaterial3D" id="M31"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G31"]
+size = Vector3(120, 2, 1)
+material = SubResource("M31")
+[sub_resource type="BoxShape3D" id="C31"]
+size = Vector3(120, 2, 1)
+[sub_resource type="StandardMaterial3D" id="M32"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G32"]
+size = Vector3(120, 2, 1)
+material = SubResource("M32")
+[sub_resource type="BoxShape3D" id="C32"]
+size = Vector3(120, 2, 1)
+[sub_resource type="StandardMaterial3D" id="M33"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G33"]
+size = Vector3(1, 2, 120)
+material = SubResource("M33")
+[sub_resource type="BoxShape3D" id="C33"]
+size = Vector3(1, 2, 120)
+[sub_resource type="StandardMaterial3D" id="M34"]
+albedo_color = Color(0.43, 0.44, 0.39, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G34"]
+size = Vector3(1, 2, 120)
+material = SubResource("M34")
+[sub_resource type="BoxShape3D" id="C34"]
+size = Vector3(1, 2, 120)
+[sub_resource type="StandardMaterial3D" id="M35"]
+albedo_color = Color(0.55, 0.56, 0.51, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G35"]
+size = Vector3(2.8, 1.6, 2.8)
+material = SubResource("M35")
+[sub_resource type="BoxShape3D" id="C35"]
+size = Vector3(2.8, 1.6, 2.8)
+[node name="GreystoneVillage" type="Node3D"]
+[node name="Terrain" type="Node3D" parent="."]
+[node name="Roads" type="Node3D" parent="."]
+[node name="Buildings" type="Node3D" parent="."]
+[node name="Water" type="Node3D" parent="."]
+[node name="Landmarks" type="Node3D" parent="."]
+[node name="Bounds" type="Node3D" parent="."]
+[node name="Markers" type="Node3D" parent="."]
+[node name="WestGround" type="StaticBody3D" parent="Terrain"]
+position = Vector3(-15, -1, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Terrain/WestGround"]
+mesh = SubResource("G1")
+[node name="Collision" type="CollisionShape3D" parent="Terrain/WestGround"]
+shape = SubResource("C1")
+[node name="EastGround" type="StaticBody3D" parent="Terrain"]
+position = Vector3(49, -1, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Terrain/EastGround"]
+mesh = SubResource("G2")
+[node name="Collision" type="CollisionShape3D" parent="Terrain/EastGround"]
+shape = SubResource("C2")
+[node name="River" type="Node3D" parent="Water"]
+position = Vector3(34, -0.7, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Water/River"]
+mesh = SubResource("G3")
+[node name="Plaza" type="Node3D" parent="Roads"]
+position = Vector3(0, 0.012, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/Plaza"]
+mesh = SubResource("G4")
+[node name="SouthRoad" type="Node3D" parent="Roads"]
+position = Vector3(0, 0.014, 36)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/SouthRoad"]
+mesh = SubResource("G5")
+[node name="NorthRoad" type="Node3D" parent="Roads"]
+position = Vector3(0, 0.014, -18)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/NorthRoad"]
+mesh = SubResource("G6")
+[node name="WestRoad" type="Node3D" parent="Roads"]
+position = Vector3(-37, 0.014, 10)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/WestRoad"]
+mesh = SubResource("G7")
+[node name="InnRoad" type="Node3D" parent="Roads"]
+position = Vector3(-13, 0.014, -9)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/InnRoad"]
+mesh = SubResource("G8")
+[node name="ShopRoad" type="Node3D" parent="Roads"]
+position = Vector3(-17, 0.014, 5)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/ShopRoad"]
+mesh = SubResource("G9")
+[node name="MineRoad" type="Node3D" parent="Roads"]
+position = Vector3(24, 0.014, -35)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/MineRoad"]
+mesh = SubResource("G10")
+[node name="BridgeRoad" type="Node3D" parent="Roads"]
+position = Vector3(20, 0.014, -28)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/BridgeRoad"]
+mesh = SubResource("G11")
+[node name="EastRoad" type="Node3D" parent="Roads"]
+position = Vector3(24, 0.014, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/EastRoad"]
+mesh = SubResource("G12")
+[node name="EastLink" type="Node3D" parent="Roads"]
+position = Vector3(19, 0.014, 10)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/EastLink"]
+mesh = SubResource("G13")
+[node name="SouthCross" type="Node3D" parent="Roads"]
+position = Vector3(0, 0.014, 29)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/SouthCross"]
+mesh = SubResource("G14")
+[node name="DockRoad" type="Node3D" parent="Roads"]
+position = Vector3(25, 0.014, 32)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/DockRoad"]
+mesh = SubResource("G15")
+[node name="FarmRoad" type="Node3D" parent="Roads"]
+position = Vector3(-34, 0.014, -27)
+[node name="Mesh" type="MeshInstance3D" parent="Roads/FarmRoad"]
+mesh = SubResource("G16")
+[node name="Bridge" type="StaticBody3D" parent="Terrain"]
+position = Vector3(34, -0.15, -28)
+[node name="Mesh" type="MeshInstance3D" parent="Terrain/Bridge"]
+mesh = SubResource("G17")
+[node name="Collision" type="CollisionShape3D" parent="Terrain/Bridge"]
+shape = SubResource("C17")
+[node name="Dock" type="StaticBody3D" parent="Terrain"]
+position = Vector3(32, -0.15, 32)
+[node name="Mesh" type="MeshInstance3D" parent="Terrain/Dock"]
+mesh = SubResource("G18")
+[node name="Collision" type="CollisionShape3D" parent="Terrain/Dock"]
+shape = SubResource("C18")
+[node name="Bank30North" type="StaticBody3D" parent="Bounds"]
+position = Vector3(30, 0.6, -45.5)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/Bank30North"]
+mesh = SubResource("G19")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/Bank30North"]
+shape = SubResource("C19")
+[node name="Bank30Middle" type="StaticBody3D" parent="Bounds"]
+position = Vector3(30, 0.6, 1.5)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/Bank30Middle"]
+mesh = SubResource("G20")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/Bank30Middle"]
+shape = SubResource("C20")
+[node name="Bank30South" type="StaticBody3D" parent="Bounds"]
+position = Vector3(30, 0.6, 48)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/Bank30South"]
+mesh = SubResource("G21")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/Bank30South"]
+shape = SubResource("C21")
+[node name="Bank38North" type="StaticBody3D" parent="Bounds"]
+position = Vector3(38, 0.6, -45.5)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/Bank38North"]
+mesh = SubResource("G22")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/Bank38North"]
+shape = SubResource("C22")
+[node name="Bank38Middle" type="StaticBody3D" parent="Bounds"]
+position = Vector3(38, 0.6, 1.5)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/Bank38Middle"]
+mesh = SubResource("G23")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/Bank38Middle"]
+shape = SubResource("C23")
+[node name="Bank38South" type="StaticBody3D" parent="Bounds"]
+position = Vector3(38, 0.6, 48)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/Bank38South"]
+mesh = SubResource("G24")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/Bank38South"]
+shape = SubResource("C24")
+[node name="EastDockBank" type="StaticBody3D" parent="Bounds"]
+position = Vector3(38, 0.6, 32)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/EastDockBank"]
+mesh = SubResource("G25")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/EastDockBank"]
+shape = SubResource("C25")
+[node name="BridgeRail31" type="StaticBody3D" parent="Bounds"]
+position = Vector3(34, 0.6, -31)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/BridgeRail31"]
+mesh = SubResource("G26")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/BridgeRail31"]
+shape = SubResource("C26")
+[node name="BridgeRail25" type="StaticBody3D" parent="Bounds"]
+position = Vector3(34, 0.6, -25)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/BridgeRail25"]
+mesh = SubResource("G27")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/BridgeRail25"]
+shape = SubResource("C27")
+[node name="DockEnd" type="StaticBody3D" parent="Bounds"]
+position = Vector3(34, 0.6, 32)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/DockEnd"]
+mesh = SubResource("G28")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/DockEnd"]
+shape = SubResource("C28")
+[node name="DockN" type="StaticBody3D" parent="Bounds"]
+position = Vector3(32, 0.6, 28)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/DockN"]
+mesh = SubResource("G29")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/DockN"]
+shape = SubResource("C29")
+[node name="DockS" type="StaticBody3D" parent="Bounds"]
+position = Vector3(32, 0.6, 36)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/DockS"]
+mesh = SubResource("G30")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/DockS"]
+shape = SubResource("C30")
+[node name="North" type="StaticBody3D" parent="Bounds"]
+position = Vector3(0, 1, -60)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/North"]
+mesh = SubResource("G31")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/North"]
+shape = SubResource("C31")
+[node name="South" type="StaticBody3D" parent="Bounds"]
+position = Vector3(0, 1, 60)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/South"]
+mesh = SubResource("G32")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/South"]
+shape = SubResource("C32")
+[node name="West" type="StaticBody3D" parent="Bounds"]
+position = Vector3(-60, 1, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/West"]
+mesh = SubResource("G33")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/West"]
+shape = SubResource("C33")
+[node name="East" type="StaticBody3D" parent="Bounds"]
+position = Vector3(60, 1, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Bounds/East"]
+mesh = SubResource("G34")
+[node name="Collision" type="CollisionShape3D" parent="Bounds/East"]
+shape = SubResource("C34")
+[node name="Inn" parent="Buildings" instance=ExtResource("inn")]
+position = Vector3(-20, 0, -18)
+[node name="inn" type="Marker3D" parent="Markers"]
+position = Vector3(-20, 0.1, -11.5)
+[node name="GuildHall" parent="Buildings" instance=ExtResource("guild_hall")]
+position = Vector3(0, 0, -30)
+[node name="guild_hall" type="Marker3D" parent="Markers"]
+position = Vector3(0, 0.1, -22.5)
+[node name="ItemShop" parent="Buildings" instance=ExtResource("item_shop")]
+position = Vector3(-23, 0, 0)
+[node name="item_shop" type="Marker3D" parent="Markers"]
+position = Vector3(-23, 0.1, 5.5)
+[node name="WeaponShop" parent="Buildings" instance=ExtResource("weapon_shop")]
+position = Vector3(20, 0, -14)
+[node name="weapon_shop" type="Marker3D" parent="Markers"]
+position = Vector3(20, 0.1, -8.5)
+[node name="HouseA" parent="Buildings" instance=ExtResource("house_a")]
+position = Vector3(-19, 0, 22)
+[node name="house_a" type="Marker3D" parent="Markers"]
+position = Vector3(-19, 0.1, 27.0)
+[node name="HouseB" parent="Buildings" instance=ExtResource("house_b")]
+position = Vector3(19, 0, 22)
+[node name="house_b" type="Marker3D" parent="Markers"]
+position = Vector3(19, 0.1, 27.0)
+[node name="FarmHouse" parent="Buildings" instance=ExtResource("farm_house")]
+position = Vector3(-39, 0, -35)
+[node name="farm_house" type="Marker3D" parent="Markers"]
+position = Vector3(-39, 0.1, -30.0)
+[node name="WellBlock" type="StaticBody3D" parent="Landmarks"]
+position = Vector3(0, 0.8, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Landmarks/WellBlock"]
+mesh = SubResource("G35")
+[node name="Collision" type="CollisionShape3D" parent="Landmarks/WellBlock"]
+shape = SubResource("C35")
+[node name="Spawn" type="Marker3D" parent="Markers"]
+position = Vector3(0, 0.1, 48)
+[node name="SpawnLabel" type="Label3D" parent="Landmarks"]
+position = Vector3(0, 3, 48)
+billboard = 1
+text = "村口"
+font_size = 48
+pixel_size = 0.025
+outline_size = 8
+[node name="Mine" type="Marker3D" parent="Markers"]
+position = Vector3(24, 0.1, -52)
+[node name="MineLabel" type="Label3D" parent="Landmarks"]
+position = Vector3(24, 3, -52)
+billboard = 1
+text = "礦坑入口"
+font_size = 48
+pixel_size = 0.025
+outline_size = 8
+[node name="WorldExit" type="Marker3D" parent="Markers"]
+position = Vector3(-53, 0.1, 10)
+[node name="WorldExitLabel" type="Label3D" parent="Landmarks"]
+position = Vector3(-53, 3, 10)
+billboard = 1
+text = "世界地圖出口"
+font_size = 48
+pixel_size = 0.025
+outline_size = 8
+[node name="Dock" type="Marker3D" parent="Markers"]
+position = Vector3(32, 0.1, 32)
+[node name="DockLabel" type="Label3D" parent="Landmarks"]
+position = Vector3(32, 3, 32)
+billboard = 1
+text = "碼頭"
+font_size = 48
+pixel_size = 0.025
+outline_size = 8
+[node name="Bridge" type="Marker3D" parent="Markers"]
+position = Vector3(42, 0.1, -28)
+[node name="BridgeLabel" type="Label3D" parent="Landmarks"]
+position = Vector3(42, 3, -28)
+billboard = 1
+text = "上游木橋"
+font_size = 48
+pixel_size = 0.025
+outline_size = 8
+[node name="Farm" type="Marker3D" parent="Markers"]
+position = Vector3(-42, 0.1, -24)
+[node name="FarmLabel" type="Label3D" parent="Landmarks"]
+position = Vector3(-42, 3, -24)
+billboard = 1
+text = "農田"
+font_size = 48
+pixel_size = 0.025
+outline_size = 8

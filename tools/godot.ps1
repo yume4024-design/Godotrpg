@@ -1,6 +1,6 @@
-﻿[CmdletBinding()]
+[CmdletBinding()]
 param(
-    [ValidateSet('TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -28,7 +28,7 @@ if ($Mode -ne 'Version') {
     New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
     $logPath = Join-Path $logRoot ('{0}-{1}.log' -f $Mode.ToLowerInvariant(), (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
     $engineArgs = @('--path', $projectRoot, '--log-file', $logPath)
-    if ($Mode -in @('TestVillage', 'Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
+    if ($Mode -in @('TestGreystone', 'TestVillage', 'Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
     if ($Mode -in @('ExportWindows', 'ExportQA')) {
         $buildFolder = if ($Mode -eq 'ExportWindows') { 'windows' } else { 'qa' }
         $presetName = if ($Mode -eq 'ExportWindows') { 'Windows Desktop' } else { 'Windows QA' }
@@ -36,6 +36,8 @@ if ($Mode -ne 'Version') {
         New-Item -ItemType Directory -Path $buildRoot -Force | Out-Null
         $engineArgs += @('--export-release', $presetName, (Join-Path $buildRoot 'ProjectCrystal.exe'))
     }
+    if ($Mode -in @('TestGreystone', 'VisualGreystone')) { $engineArgs += @('--script', 'res://tests/greystone_layout_test.gd') }
+    if ($Mode -eq 'PreviewGreystone') { $engineArgs += 'res://scenes/world/greystone_preview.tscn' }
     if ($Mode -eq 'Check') { $engineArgs += '--import' }
     if ($Mode -eq 'Smoke') { $engineArgs += @('--quit-after', '120') }
     if ($Mode -eq 'Test') { $engineArgs += @('--script', 'res://tests/phase1_movement_test.gd') }
@@ -64,7 +66,7 @@ $startInfo.EnvironmentVariables['APPDATA'] = $profileRoot
 $startInfo.EnvironmentVariables['LOCALAPPDATA'] = $cacheRoot
 $startInfo.EnvironmentVariables['TEMP'] = $tempRoot
 $startInfo.EnvironmentVariables['TMP'] = $tempRoot
-if ($Mode -in @('Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
+if ($Mode -in @('PreviewGreystone', 'Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
     # Use the graphical binary for detached windows. The console wrapper inherits
     # the caller's pipe handles and can stall after a short-lived tool shell exits.
     $graphicalPath = $GodotPath -replace '_console\.exe$', '.exe'

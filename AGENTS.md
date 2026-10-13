@@ -1,5 +1,8 @@
 # Project Crystal 開發規範
 
+> **2026-10-14 正文合併更新（優先於本檔較早條款）**：新企劃已由使用者貼文取得，不再待正文。灰石村採 120×120m、Q 版低面數切面、北側公會/西北農田/東北礦坑/東河/南入口/西出口；平台 Windows + Android，iOS 預留。執行以 [docs/GREYSTONE_VILLAGE_SPEC.md](docs/GREYSTONE_VILLAGE_SPEC.md) 與 [docs/GREYSTONE_BUILD_TASKS.md](docs/GREYSTONE_BUILD_TASKS.md) 為準。G01 獨立佔位預覽，不替換正式0.6.1存檔；G06再遷移位置及串接劇情/觸控。本檔舊「待正文」、PC限定、圖片未列公會、固定舊碰撞等描述保留為歷史，不是目前限制。
+
+
 ## 目標與範圍
 
 在本目錄建立 Windows 單機、原創 Low Poly 3D JRPG《失落星核》（專案代號 Project Crystal）。先完成 20～30 分鐘序章可玩版本，採固定斜 45 度攝影機、探索及指令式回合制戰鬥，ATB 留待試玩版之後。

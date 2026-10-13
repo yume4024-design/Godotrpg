@@ -1,5 +1,8 @@
 # 驗收清單與證據
 
+> **2026-10-14 正文合併更新（優先於本檔較早條款）**：新企劃已由使用者貼文取得，不再待正文。灰石村採 120×120m、Q 版低面數切面、北側公會/西北農田/東北礦坑/東河/南入口/西出口；平台 Windows + Android，iOS 預留。執行以 [GREYSTONE_VILLAGE_SPEC.md](GREYSTONE_VILLAGE_SPEC.md) 與 [GREYSTONE_BUILD_TASKS.md](GREYSTONE_BUILD_TASKS.md) 為準。G01 獨立佔位預覽，不替換正式0.6.1存檔；G06再遷移位置及串接劇情/觸控。本檔舊「待正文」、PC限定、圖片未列公會、固定舊碰撞等描述保留為歷史，不是目前限制。
+
+
 P1～P5 已通過驗收；最新證據見 [PHASE5_REPORT](PHASE5_REPORT.md)，歷史結果见 [PHASE1_REPORT](PHASE1_REPORT.md)、[PHASE2_REPORT](PHASE2_REPORT.md)、[PHASE3_REPORT](PHASE3_REPORT.md)、[PHASE4_REPORT](PHASE4_REPORT.md)。以下 P2～P4 清單為當時基線，P5 為最新狀態。P6 匯出、手把、效能及 20～30 分鐘計時仍待執行。
 
 ## P1：遊戲骨架
