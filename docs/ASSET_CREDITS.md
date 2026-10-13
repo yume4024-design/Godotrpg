@@ -49,5 +49,9 @@ P3 新增的戰鬥平台、雷恩／莉雅／守衛人形、史萊姆、回合�
 
 - `assets/audio/original/*.wav`：本專案原創程式合成，來源工具 `tools/build_audio.py`，22,050 Hz／單聲道。四段短旋律循環（village/forest/mine/battle）、七種音效（confirm/hit/heal/guard/victory/defeat/crystal）。無外部取樣、素材商店頁或第三方署名要求；音訊可由固定種子重建。
 - 攻擊／治療／防禦光環：BattleStage 使用 Godot TorusMesh／Tween 原創製作，無外部特效素材。
-- `docs/references/village_reference.jpg`：使用者提供，僅作場景設計參考，未直接用作遊戲素材；排除於匯出。改造方向見 SCENE_ART_DIRECTION.md，目前尚未套用。
+- `docs/references/village_reference.jpg`：使用者提供，僅作場景設計參考，未直接用作遊戲素材；排除於匯出。方向見 SCENE_ART_DIRECTION.md，0.6.1 已以原創幾何實作灰石村第一輪。
 - Godot 4.7.2 及第三方引擎授權：`docs/GODOT_LICENSES.txt`，由 Engine API 取得並隨 Windows 包附上。Windows SystemFont 只在使用者系統讀取，不打包微軟字型檔。
+
+## 灰石村 0.6.1 原創場景
+
+`village_guild`、`village_shop`、`village_plaza`、`village_borders`、`village_valley` 五個 GLB 由 `tools/build_village_art.py` 在 Blender 5.2.2 LTS 建立；作者為本專案製作，沒有外部模型／貼圖／商店素材／付費服務。使用者參考圖僅提供色彩與場景方向，沒有擷取圖像作材質。藍色水晶徽章為本專案重新設計。原始 `.blend`、面數紀錄在 `source_assets/village_v2`，不匯出至遊戲。修改內容包含倒角建築、瓦片、花箱、條紋棚布、廣場／晶柱、河岸橋樑和遠景。沿用角色與樹木來源不變；詳見 [場景報告](VILLAGE_ART_REPORT.md)。

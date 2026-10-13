@@ -14,7 +14,7 @@
 
 **請在離開遊戲前手動保存。** 忙碌時的 F5 請求會等到安全點再寫入，F9 不會中斷戰鬥。已有存檔時開啟遊戲會先顯示續玩／新旅程選擇。單欄位保留上一份有效備份，格式錯誤不污染目前進度；詳見 [存檔格式與路徑](docs/SAVE_FORMAT.md)。工具入口與直接從編輯器啟動使用的 user:// 位置可能不同。
 
-開啟 project.godot 按 F5，或使用下方 Run 指令即可遊玩。P6 已提供 [Windows 0.6.0 試玩包](builds/ProjectCrystal-0.6.0-windows-x64.zip) 與 [試玩說明](docs/PLAYTEST_GUIDE.md)：加入 Xbox 操作、原創短循環配樂／音效、戰鬥光環與音量設定。實體 XInput 基本輸入、QA release 通關及重啟讀檔已驗證；玩家完整通關和 20～30 分鐘節奏仍待驗收，見 [P6 紀錄](docs/PHASE6_REPORT.md)。產物只保留在本機 builds，未納入 Git。
+開啟 project.godot 按 F5，或使用下方 Run 指令即可遊玩。P6 已提供 [Windows 0.6.1 試玩包](builds/ProjectCrystal-0.6.1-windows-x64.zip) 與 [試玩說明](docs/PLAYTEST_GUIDE.md)：加入 Xbox 操作、原創短循環配樂／音效、戰鬥光環與音量設定。實體 XInput 基本輸入、QA release 通關及重啟讀檔已驗證；玩家完整通關和 20～30 分鐘節奏仍待驗收，見 [P6 紀錄](docs/PHASE6_REPORT.md)。產物只保留在本機 builds，未納入 Git。
 
 ## 閱讀順序
 
@@ -83,3 +83,5 @@ Set-Location D:\RPGGAME
 ## 下一個開發任務
 
 > P6 進行中。依使用者提供的 [場景參考](docs/SCENE_ART_DIRECTION.md) 改造灰石村，再完成正式匯出包的玩家全程手把試玩、節奏／時長與長時間效能驗收；保留 P1～P5 回歸，不提前開始第一章。
+
+灰石村已完成本輪參考圖改造：藍頂公會、水晶廣場、棚布住宅、橋河／水車與山谷住宅遠景。原有 16 個碰撞和故事落點保留；詳見 [村莊場景報告](docs/VILLAGE_ART_REPORT.md)。`TestVillage`／`VisualVillage` 可重跑碰撞契約、實際输入路線與畫面驗收。

@@ -5,6 +5,7 @@ extends Node3D
 @export var display_name: String
 @export var environment: Environment
 @export var sunlight: float = 1.1
+@export var default_camera_size: float = 17.0
 @export var default_spawn: Marker3D
 @export var entrance_spawn: Marker3D
 @export var camera_zone: Node3D
@@ -37,4 +38,4 @@ func triggers_at(position: Vector3) -> Array[StringName]:
 func camera_size_at(position: Vector3) -> float:
 	if is_instance_valid(camera_zone) and position.distance_to(camera_zone.global_position) < camera_zone_radius:
 		return zone_camera_size
-	return 17.0
+	return default_camera_size

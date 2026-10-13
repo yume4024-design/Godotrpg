@@ -129,3 +129,5 @@ Main 的 AdventureAudio 唯一持有音樂切換、六聲道音效池與音量�
 InputMap 明確定義 Xbox 與 UI 動作，PlayerInput 仍用 Input.get_vector／物理移動；Main 僅切換提示。戰鬥 B 只取消目標選擇，回合及資源驗證仍由 BattleManager 負責。
 
 正式 Windows 匯出排除 tests/tools/docs，QA feature 使用 DeliveryTestTree 與空 QAEntry；兩者使用同一 release 模板，遊戲資源逐一比較。測試不靠 release 的命令列入口覆寫。source_assets、日誌、匯出、模板下載都不作遊戲資源。
+
+0.6.1 村莊：五個 GLB 分別持有公會、住宅、鋪面／晶柱、邊界及村外遠景；每組在 Blender 合併網格並保留材質分面，避免逐瓦／逐花建立執行期節點。這些是呈現層，碰撞仍由 village.tscn 的 16 個既有代理持有；測試固定基線 `tests/fixtures/village_collision_v1.json`。ExplorationMap.default_camera_size 預設 17，村莊設 21；轉場立刻套用該地圖鏡頭尺寸，區域縮放維持既有行為。開啟 4x MSAA，無新增插件、Autoload 或存檔欄位。

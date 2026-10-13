@@ -1,6 +1,6 @@
 ﻿[CmdletBinding()]
 param(
-    [ValidateSet('Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -28,7 +28,7 @@ if ($Mode -ne 'Version') {
     New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
     $logPath = Join-Path $logRoot ('{0}-{1}.log' -f $Mode.ToLowerInvariant(), (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
     $engineArgs = @('--path', $projectRoot, '--log-file', $logPath)
-    if ($Mode -in @('Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
+    if ($Mode -in @('TestVillage', 'Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
     if ($Mode -in @('ExportWindows', 'ExportQA')) {
         $buildFolder = if ($Mode -eq 'ExportWindows') { 'windows' } else { 'qa' }
         $presetName = if ($Mode -eq 'ExportWindows') { 'Windows Desktop' } else { 'Windows QA' }
@@ -45,6 +45,7 @@ if ($Mode -ne 'Version') {
     if ($Mode -in @('TestPhase5', 'VisualPhase5', 'TestPhase5Reload')) { $engineArgs += @('--script', 'res://tests/phase5_prologue_test.gd') }
     if ($Mode -in @('TestPhase6', 'VisualPhase6')) { $engineArgs += @('--script', 'res://tests/phase6_delivery_test.gd') }
     if ($Mode -eq 'TestPhase5Reload') { $engineArgs += @('--', '--reload') }
+    if ($Mode -in @('TestVillage', 'VisualVillage')) { $engineArgs += @('--script', 'res://tests/village_art_test.gd') }
     if ($Mode -eq 'ControllerProbe') { $engineArgs += @('--script', 'res://tests/controller_probe.gd') }
     if ($Mode -eq 'PreviewBattle') { $engineArgs += @('--', '--manual') }
     if ($Mode -in @('TestArt', 'VisualArt', 'PreviewArt')) { $engineArgs += @('--script', 'res://tests/cartoon_asset_test.gd') }

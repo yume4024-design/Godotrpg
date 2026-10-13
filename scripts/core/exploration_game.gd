@@ -144,7 +144,7 @@ func _on_map_changed(map: ExplorationMap) -> void:
 	$WorldEnvironment.environment = map.environment if map.environment != null else _default_environment
 	$Sun.light_energy = map.sunlight
 	nearest = null
-	camera.size = 17.0
+	camera.size = travel.current_map.camera_size_at(player.global_position)
 	ui.location.text = map.display_name
 	for target: WorldInteractable in map.targets:
 		target.refresh(inventory)

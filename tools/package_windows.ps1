@@ -17,7 +17,9 @@ $manifest = Get-ChildItem -LiteralPath $buildRoot -File | Where-Object { $_.Name
     '{0}  {1}' -f (Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash.ToLowerInvariant(), $_.Name
 }
 $manifest | Set-Content -LiteralPath (Join-Path $buildRoot 'SHA256SUMS.txt') -Encoding utf8
-$zipPath = Join-Path $projectRoot 'builds/ProjectCrystal-0.6.0-windows-x64.zip'
+$versionMatch = [regex]::Match((Get-Content -LiteralPath (Join-Path $projectRoot 'project.godot') -Raw), 'config/version="([0-9]+\.[0-9]+\.[0-9]+)"')
+if (-not $versionMatch.Success) { throw 'Expected a numeric project version before packaging.' }
+$zipPath = Join-Path $projectRoot ('builds/ProjectCrystal-{0}-windows-x64.zip' -f $versionMatch.Groups[1].Value)
 Compress-Archive -Path (Join-Path $buildRoot '*') -DestinationPath $zipPath -Force
 Get-Item -LiteralPath $zipPath | Select-Object FullName, Length
 Get-FileHash -LiteralPath $zipPath -Algorithm SHA256
