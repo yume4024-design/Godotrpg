@@ -79,7 +79,10 @@ func _run() -> void:
 	await _walk(Vector2(20,10))
 	await _walk(Vector2(20,0))
 	await _walk(Vector2(20,-14), false, 150)
-	_check(player.position.z > -11.3, "Shop wall blocks player at adapted building facade")
+	var shop_shape: CollisionShape3D = game.get_node("Village/Buildings/WeaponShop/Walls/Collision")
+	var shop_box: BoxShape3D = shop_shape.shape as BoxShape3D
+	var expected_stop: float = shop_shape.global_position.z + shop_box.size.z * 0.5 + 0.32
+	_check(absf(player.position.z - expected_stop) < 0.12, "Shop wall stops player one capsule radius before current facade")
 	await _walk(Vector2(20,0))
 	await _walk(Vector2(8,6))
 	Engine.time_scale = 1.0

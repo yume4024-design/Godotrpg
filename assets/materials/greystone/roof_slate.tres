@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "CrystalG03_RoofSlate"
+albedo_color = Color(0.35000000, 0.42000001, 0.47000000, 1)
+roughness = 0.88

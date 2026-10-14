@@ -1,14 +1,35 @@
 [gd_scene format=3]
 [ext_resource type="PackedScene" path="res://assets/models/greystone/buildings/guild_hall.glb" id="Visual"]
 
-[sub_resource type="BoxShape3D" id="BuildingCollision"]
-size = Vector3(13.05, 6.6, 8.58)
+[sub_resource type="BoxShape3D" id="Body1"]
+size = Vector3(11.4, 6.6, 6.93)
+[sub_resource type="BoxShape3D" id="Body2"]
+size = Vector3(4.3, 4.5, 1.2999999999999994)
+[sub_resource type="BoxShape3D" id="Body3"]
+size = Vector3(0.34999990463256836, 4.5, 0.39999961853027344)
+[sub_resource type="BoxShape3D" id="Body4"]
+size = Vector3(0.34999990463256836, 4.5, 0.39999961853027344)
 [node name="Building" type="Node3D"]
 [node name="Visual" parent="." instance=ExtResource("Visual")]
 [node name="Walls" type="StaticBody3D" parent="."]
-position = Vector3(0, 3.3, 0)
+position = Vector3(0.0, 3.3, 0.05499999999999994)
 [node name="Collision" type="CollisionShape3D" parent="Walls"]
-shape = SubResource("BuildingCollision")
+shape = SubResource("Body1")
+[node name="EntryBody" type="StaticBody3D" parent="."]
+position = Vector3(0, 2.25, 4.17)
+[node name="Collision" type="CollisionShape3D" parent="EntryBody"]
+shape = SubResource("Body2")
+[node name="DetailBody0" type="StaticBody3D" parent="."]
+position = Vector3(-2.0, 2.25, 4.829999923706055)
+[node name="Collision" type="CollisionShape3D" parent="DetailBody0"]
+shape = SubResource("Body3")
+[node name="DetailBody1" type="StaticBody3D" parent="."]
+position = Vector3(2.0, 2.25, 4.829999923706055)
+[node name="Collision" type="CollisionShape3D" parent="DetailBody1"]
+shape = SubResource("Body4")
+[node name="DoorApproach" type="Marker3D" parent="."]
+position = Vector3(0.0, 0.1, 5.819999999999999)
+metadata/door_width_m = 1.8
 [node name="Name" type="Label3D" parent="."]
 position = Vector3(0, 12, 0)
 billboard = 1

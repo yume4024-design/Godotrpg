@@ -81,3 +81,5 @@ scripts/tools/greystone/build_layout.py 生成原創 Godot 原生白盒，七個
 修改：重新製作米白灰泥/深木色/暖窗/紅褐及灰藍屋頂材質，依地圖規格調整比例與原點，平面著色、Godot Y-up 匯出、新增床/藥瓶/劍招牌，另建簡化 Godot 碰撞。七個輸出在 assets/models/greystone/buildings；Blender 修改腳本 build_buildings.py。模型未被當作本專案原創；招牌浮雕為本專案新增。
 
 公開 GLB 下載位址分別為 static.poly.pizza/270a08b6-87e1-47eb-ad1c-5fd7be321bcd.glb、341c9305-c6dd-4427-ad00-620ad57eb14e.glb、65d155f6-705c-4e6c-9e3a-b9974bb82324.glb，均從對應來源頁取得。外掛一鍵匯入不支援時使用公開下載，不涉及使用者 API key。
+
+2026-10-14 G03 細化：來源沿用上述 CC0 模型。新製旅館側翼、公會門廳、單層山牆屋頂、門廊、煙囪、門板/把手、櫃檯及鍛造設施；移除旅館母型的部分屋頂/門廊幾何。材質提取至 assets/materials/greystone 共用。未加入新的第三方來源或付費資產。

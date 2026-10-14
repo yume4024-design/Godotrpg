@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "CrystalG03_Plaster"
+albedo_color = Color(0.85999998, 0.80000001, 0.64999999, 1)
+roughness = 0.88

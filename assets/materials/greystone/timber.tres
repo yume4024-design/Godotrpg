@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "CrystalG03_Timber"
+albedo_color = Color(0.33999999, 0.23000000, 0.14000000, 1)
+roughness = 0.88

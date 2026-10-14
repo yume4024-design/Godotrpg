@@ -79,6 +79,13 @@ class Scene:
     def label(self, name, parent, text, pos):
         self.nodes.append(f'[node name="{name}" type="Label3D" parent="{parent}"]\nposition = Vector3({", ".join(map(str,pos))})\nbillboard = 1\ntext = "{text}"\nfont_size = 48\npixel_size = 0.025\noutline_size = 8')
 
+    def collider(self, name, pos, size):
+        self.index += 1
+        i=self.index
+        self.resources.append(f'[sub_resource type="BoxShape3D" id="Body{i}"]\nsize = Vector3({", ".join(map(str,size))})')
+        self.nodes.append(f'[node name="{name}" type="StaticBody3D" parent="."]\nposition = Vector3({", ".join(map(str,pos))})')
+        self.nodes.append(f'[node name="Collision" type="CollisionShape3D" parent="{name}"]\nshape = SubResource("Body{i}")')
+
     def surface(self, name, parent, triangles, color, solid=True, pos=(0,0,0)):
         """OBJ uses CCW; Godot collision arrays use the reversed, clockwise order."""
         self.index += 1
@@ -249,6 +256,8 @@ for edge in ['North','South','West','East']:
         triangles.extend([(a,b,c),(c,b,d),(c,b,a),(d,b,c)])
     world.surface(edge+'Boundary','Bounds',triangles,'0.40, 0.43, 0.42')
 ext = ''
+building_metrics_path=ROOT/'source_assets/greystone_g03/export_metrics.json'
+building_metrics={m['file'].removesuffix('.glb'):m for m in json.loads(building_metrics_path.read_text(encoding='utf-8'))} if building_metrics_path.exists() else {}
 for ident, title, pos, (width,height,depth), roof in buildings:
     module = Scene('Building')
     model = ROOT / f'assets/models/greystone/buildings/{ident}.glb'
@@ -256,9 +265,17 @@ for ident, title, pos, (width,height,depth), roof in buildings:
     if model.exists():
         module.external = f'[ext_resource type="PackedScene" path="res://assets/models/greystone/buildings/{ident}.glb" id="Visual"]\n'
         module.nodes.append('[node name="Visual" parent="." instance=ExtResource("Visual")]')
-        module.resources.append(f'[sub_resource type="BoxShape3D" id="BuildingCollision"]\nsize = Vector3({width*.87}, {height*.6}, {depth*.78})')
-        module.nodes.append(f'[node name="Walls" type="StaticBody3D" parent="."]\nposition = Vector3(0, {height*.3}, 0)')
-        module.nodes.append('[node name="Collision" type="CollisionShape3D" parent="Walls"]\nshape = SubResource("BuildingCollision")')
+        metrics=building_metrics[ident]
+        dx=metrics['door_center_x_m'];front=metrics['door_front_z_m']-.10
+        back=metrics['wall_back_z_m']
+        body_width=metrics['wall_width_m']
+        body_front=depth*.32 if ident=='guild_hall' else front
+        module.collider('Walls',(dx,height*.3,(body_front+back)/2),(body_width,height*.6,body_front-back))
+        if ident=='guild_hall':
+            module.collider('EntryBody',(0,2.25,(front+body_front)/2),(4.3,4.5,front-body_front))
+        for n,box in enumerate(metrics['obstacle_boxes']):
+            module.collider('DetailBody'+str(n),box['position'],box['size'])
+        module.nodes.append(f'[node name="DoorApproach" type="Marker3D" parent="."]\nposition = Vector3({dx}, 0.1, {front+1.0})\nmetadata/door_width_m = {metrics["door_width_m"]}')
     else:
         module.box('Walls','.',(0,height*0.34,0),(width,height*0.68,depth),'0.80, 0.73, 0.57')
         module.box('Roof','.',(0,height*0.84,0),(width+0.6,height*0.32,depth+0.6),roof,False,True)
@@ -267,7 +284,9 @@ for ident, title, pos, (width,height,depth), roof in buildings:
     module.save(OUT/(ident+suffix+'.tscn'))
     ext += f'[ext_resource type="PackedScene" path="res://scenes/world/greystone/{ident}{suffix}.tscn" id="{ident}"]\n'
     world.nodes.append(f'[node name="{ident.title().replace("_","")}" parent="Buildings" instance=ExtResource("{ident}")]\nposition = Vector3({", ".join(map(str,pos))})')
-    world.nodes.append(f'[node name="{ident}" type="Marker3D" parent="Markers"]\nposition = Vector3({pos[0]}, {pos[1]+0.1}, {pos[2]+depth/2+2})')
+    mx=pos[0]+(building_metrics[ident]['door_center_x_m'] if model.exists() else 0)
+    mz=pos[2]+(building_metrics[ident]['door_front_z_m']+1.0 if model.exists() else depth/2+2)
+    world.nodes.append(f'[node name="{ident}" type="Marker3D" parent="Markers"]\nposition = Vector3({mx}, {pos[1]+0.1}, {mz})')
 world.box('WellBlock','Landmarks',(0,0.8,0),(2.8,1.6,2.8),'0.55, 0.56, 0.51')
 for n,(x,z,w,h,d) in enumerate([(-52,-30,7,5,6),(-48,-24,7,3,5),(-36,-22,6,3,5),(-29,-38,4,3,7),(17,-51,5,5,7),(28,-53,3,6,6),(23,-57,12,6,5),(41,-52,6,6,7),(47,-45,6,4,8),(-51,-54,16,8,12),(-34,-55,17,9,10),(-17,-55,15,11,10),(1,-55,13,13,10),(-54,-12,7,5,9),(-52,27,10,6,12),(53,-30,10,8,12),(54,-12,9,6,11)]):
     world.rock(f'Cliff{n}',(x,height_at(x,z)-0.4,z),(w,h,d))

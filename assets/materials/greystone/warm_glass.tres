@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "CrystalG03_WarmGlass"
+albedo_color = Color(0.85999998, 0.65999999, 0.32000000, 1)
+roughness = 0.88

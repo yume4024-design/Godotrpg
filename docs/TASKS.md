@@ -1,6 +1,6 @@
 # 任務與進度
 
-更新日期：2026-10-14（Asia/Taipei）。目前階段：Phase 6 進行中；0.6.1 已匯出並完成前一輪村莊驗收。使用者新增企劃與九區灰石村圖，正文已由使用者貼入並合併，G01/G02完成，G03建物改製中，見 [新企劃合併紀錄](PLAN_MERGE_2026_10_14.md)。新版場景已有獨立預覽，尚未替換正式遊戲；完整試玩／時長仍待驗收。歷史證據見 [VILLAGE_ART_REPORT](VILLAGE_ART_REPORT.md)、[PHASE6_REPORT](PHASE6_REPORT.md) 與 [PHASE5_REPORT](PHASE5_REPORT.md)。
+更新日期：2026-10-14（Asia/Taipei）。目前階段：Phase 6 進行中；0.6.1 已匯出並完成前一輪村莊驗收。使用者新增企劃與九區灰石村圖，正文已由使用者貼入並合併，G01/G02完成，G03基礎建物已完成，見 [新企劃合併紀錄](PLAN_MERGE_2026_10_14.md)。新版場景已有獨立預覽，尚未替換正式遊戲；完整試玩／時長仍待驗收。歷史證據見 [VILLAGE_ART_REPORT](VILLAGE_ART_REPORT.md)、[PHASE6_REPORT](PHASE6_REPORT.md) 與 [PHASE5_REPORT](PHASE5_REPORT.md)。
 
 故事基準：《失落星核》Story Bible v1.0；階段對應及資料契約見 [STORY_IMPLEMENTATION](STORY_IMPLEMENTATION.md)。P1～P6 交付 20～30 分鐘、雷恩/莉雅兩人的序章，完整版六篇章排在其後。
 
@@ -114,5 +114,5 @@ P3 當時驗證：功能 75 項、Windows 渲染 85 項（十張畫面）、P1 2
 - [x] 建立120m獨立白盒場景、七個PackedScene建物、道路/河/橋/碼頭佔位、既有角色與45度鏡頭。
 - [x] G01驗收：Check 通過，圖形/行走45項與探索回歸58項通過；見 [GREYSTONE_G01_REPORT](GREYSTONE_G01_REPORT.md)。
 - [x] G02：2m旅館/4m農田/6m礦坑、坡道、彎曲河谷與瀑布、不規則西緣、Blender檢視；69項圖形/物理與58項探索回歸通過，見 [G02報告](GREYSTONE_G02_REPORT.md)。
-- [ ] G03：七棟素材庫改製建物初版已匯入，70項圖形/物理檢查通過；屋型細分、門寬與細部碰撞待完成，見 [G03報告](GREYSTONE_G03_REPORT.md)。
+- [x] G03：七棟差異化基礎建物、實測門板寬、九材質共用與模型對應碰撞完成；43項建物與70項全村驗證通過，見 [G03報告](GREYSTONE_G03_REPORT.md)。
 - [ ] G04～G08：素材/組裝/互動/觸控/效能/匯出依新工作表執行，尚未開始。
