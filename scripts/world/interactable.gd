@@ -2,6 +2,7 @@ class_name WorldInteractable
 extends Node3D
 
 @export var interaction_id: StringName
+@export var ambient_only: bool = false
 @export_enum("npc", "chest", "exit", "sign", "battle", "rest", "story") var kind: String = "npc"
 @export var required_flag: StringName
 @export var label: String = ""

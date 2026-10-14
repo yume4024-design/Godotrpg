@@ -60,3 +60,49 @@ Godot 4.7.2.stable.official.ed1daf0bf；圖形使用 Windows / OpenGL Compatibil
 | TestG06Reload | 6 項/0失敗 | testg06reload-20261014-203435-209.log |
 
 實際畫面：artifacts/phase5/g06-integration.webp；已檢視 HUD、入口按鈕及玩家位置。按鈕位於既有 HUD 下方，圖形測試使用滑鼠事件點擊，不只呼叫方法。畫面可讀性/操作入口各 2/2；場景美術仍沿用 G04/G05 的已知限制。
+
+
+## G06.2 六類 NPC 與環境對話（2026-10-14）
+
+本輪沿用已驗收 G06.1，不重作接軌/存檔。新增 greystone_npcs.tscn 並在 greystone_runtime.tscn 實例化；六個 WorldInteractable 由既有 ExplorationMap 掃描，沒有新增 NPC Manager 或劇情管理器。
+
+| NPC | 位置 X/Y/Z | 重用造型 |
+| --- | --- | --- |
+| 公會長瑪爾克 | -2 / 0 / -22 | guildmaster_visual |
+| 莉雅 | 3 / 0 / -22 | lia_visual |
+| 旅館老闆 | -23 / 2 / -12.5 | guildmaster_visual |
+| 道具商人 | -25 / 0 / 5 | guildmaster_visual |
+| 鐵匠 | 18 / 0 / -8 | ren_visual |
+| 村民 | -17 / 0 / 28 | ren_visual |
+
+使用既有 CartoonActor 待機動畫，CapsuleShape3D 半徑 0.3m、高 1.6m，標籤區分角色。重用造型不是六套新角色美術；目前沒有巡邏 AI。
+
+WorldInteractable 新增 ambient_only（預設 false），本輪六位設 true，NPC 仍走正式 interact 分派與同一 DialogueManager。此模式只跳過 StoryManager 主線事件嘗試，保留現有鎖定、距離、射線及 Dialogue UI。舊地圖設定不變，原本事件仍正常觸發。G06.3 才切換公會長/莉雅至主線事件，不將本輪環境對話誤稱任務接交完成。
+
+莉雅保持 npc_lia 穩定 ID，沿用既有 PartyManager 成員檢查及 set_present；已入隊時隱藏站立角色、停用碰撞，讀檔及換圖均重算，不新增存檔旗標。
+
+新增旅館老闆、商人、鐵匠、村民的對話資料；無扣款、商品、恢復或發獎，這些屬 G06.4。schema 2、v1 遷移、正式 v0.6.1 入口及森林/礦坑事件未修改。
+
+驗收命令：Check、TestG06NPC、VisualG06NPC、TestG06、TestG06Reload、TestPhase5、TestPhase5Reload。NPC 測試使用真實 Input Map 移動及 E 鍵對話，逐個驗距離/碰撞/鎖定/釋放/射線遮擋；門前接近測試分別重設起點，另有村口→廣場→公會連續行走。以真實序章產生的 v1 測試存檔驗莉雅隱藏、往返持續與兩人隊伍/212 金幣保全。測試只使用 user://g06_npc_tests、g06_tests、p5_tests，正式欄位不變。
+
+新增/修改檔案：scenes/world/greystone_npcs.tscn、greystone_runtime.tscn；scripts/world/interactable.gd、scripts/core/exploration_game.gd；data/story/exploration_dialogue.json；tests/greystone_npc_test.gd（含 uid）；tools/godot.ps1；本報告與工作清單、TASKS、CHANGELOG。
+
+下一個未驗收階段：G06.3 新村主線 E001～E003/E008～E009 與森林/礦坑往返整合。尚未切換正式預設主場景；完成故事入口與回歸前保留 opt-in 啟動。Android 真機未測試，G07/G08 和第一章未開始。
+
+### G06.2 實際測試結果
+
+引擎：Godot 4.7.2.stable.official.ed1daf0bf，Windows。下列命令均以 `./tools/godot.ps1 -Mode <模式>` 執行，程序正常結束。
+
+| 模式 | 實際結果 | artifacts/logs 證據 |
+| --- | --- | --- |
+| Check | 載入成功，exit 0 | check-20261014-223027-918.log |
+| TestG06NPC | 60 項，0 失敗 | testg06npc-20261014-223032-242.log |
+| VisualG06NPC | 66 項，0 失敗 | visualg06npc-20261014-223125-090.log |
+| TestG06 | 51 項，0 失敗 | testg06-20261014-223211-820.log |
+| TestG06Reload | 6 項，0 失敗 | testg06reload-20261014-223216-474.log |
+| TestPhase5 | 69 項，0 失敗 | testphase5-20261014-223218-341.log |
+| TestPhase5Reload | 7 項，0 失敗 | testphase5reload-20261014-223234-466.log |
+
+圖形測試實際輸入移動及 E 鍵，產生六張 `artifacts/phase5/g06-npc-npc_*.webp`。已檢視公會長與旅館老闆畫面：角色站位、標籤及對話可見，玩家能靠近對話；對話截圖在逐字顯示期間拍攝。日誌與截圖為本機驗收產物，依既有規範不提交 Git。
+
+本輪 G06.2 通過；角色專屬新造型、巡邏、主線綁定、交易及 Android 真機均不在本輪通過範圍。

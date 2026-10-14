@@ -1,6 +1,7 @@
 [gd_scene format=3]
 [ext_resource type="Script" path="res://scripts/world/exploration_map.gd" id="Map"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone_village.tscn" id="Village"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone_npcs.tscn" id="NPCs"]
 [node name="GreystoneRuntime" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "return_spawn")]
 script = ExtResource("Map")
 map_id = &"greystone_runtime"
@@ -12,3 +13,5 @@ return_spawn = NodePath("SafeSpawn")
 [node name="Village" parent="." instance=ExtResource("Village")]
 [node name="SafeSpawn" type="Marker3D" parent="."]
 position = Vector3(0,0.1,48)
+
+[node name="NPCs" parent="." instance=ExtResource("NPCs")]

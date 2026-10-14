@@ -223,7 +223,7 @@ func interact() -> bool:
 		"exit":
 			return travel.travel(target.destination, target.spawn_key)
 		"npc":
-			if not story.trigger("interact", String(target.interaction_id)):
+			if target.ambient_only or not story.trigger("interact", String(target.interaction_id)):
 				dialogue.start(_ambient["guild_completed" if target.interaction_id == &"npc_guildmaster" and quests.is_completed(&"Q001") else String(target.interaction_id)])
 		"chest":
 			var received: bool = inventory.claim(target.reward_source, target.item_id, target.item_amount)

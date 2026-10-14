@@ -4,7 +4,11 @@
     "ren": "雷恩",
     "guildmaster": "公會長",
     "lia": "莉雅",
-    "aster": "神秘聲音"
+    "aster": "神秘聲音",
+    "innkeeper": "旅館老闆",
+    "item_merchant": "道具商人",
+    "blacksmith": "鐵匠",
+    "villager": "村民"
   },
   "conversations": {
     "npc_guildmaster": [
@@ -47,6 +51,30 @@
       {
         "speaker": "guildmaster",
         "text": "礦坑的委託已經結清。保管好星印，翠影森林的旅程還在等著你們。"
+      }
+    ],
+    "npc_innkeeper": [
+      {
+        "speaker": "innkeeper",
+        "text": "旅途辛苦了。旅館就在我身後，先在村裡歇歇腳吧。"
+      }
+    ],
+    "npc_item_merchant": [
+      {
+        "speaker": "item_merchant",
+        "text": "出門前記得清點補給。藥品和乾糧都要妥善保管。"
+      }
+    ],
+    "npc_blacksmith": [
+      {
+        "speaker": "blacksmith",
+        "text": "山裡的石頭很硬。出發前，別忘了檢查武器與護甲。"
+      }
+    ],
+    "npc_villager": [
+      {
+        "speaker": "villager",
+        "text": "沿著東邊的河岸能看到木橋，北邊的山路通往舊礦坑。"
       }
     ]
   }
