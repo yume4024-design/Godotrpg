@@ -5,6 +5,9 @@ signal changed
 @export var item_definitions: Array[ItemDefinition] = []
 var _counts: Dictionary[StringName, int] = {}
 var _claimed: Dictionary[StringName, bool] = {}
+const POTION_PRICE: int = 5
+const INN_PRICE: int = 10
+var _commerce: Dictionary = {"potion_bought": 0, "inn_stays": 0}
 var _gold: int = 0
 var gold: int:
 	get: return _gold
@@ -94,9 +97,34 @@ func snapshot() -> Dictionary:
 	return {"gold": _gold, "counts": _counts.duplicate(), "claimed": _claimed.duplicate()}
 
 func restore_state(data: Dictionary) -> void:
+	var ledger: Dictionary = data.get("commerce", {})
+	_commerce = {"potion_bought": int(ledger.get("potion_bought", 0)), "inn_stays": int(ledger.get("inn_stays", 0))}
 	_gold = int(data.gold)
 	_counts.clear()
 	_claimed.clear()
 	for id: String in data.counts: _counts[StringName(id)] = int(data.counts[id])
 	for id: String in data.claimed: _claimed[StringName(id)] = data.claimed[id]
 	changed.emit()
+
+func commerce_snapshot() -> Dictionary:
+	return _commerce.duplicate()
+
+func buy_potions(quantity: int) -> bool:
+	if quantity < 1 or quantity > 99 or not knows(&"potion"): return false
+	if count(&"potion") + quantity > 9999 or int(_commerce.potion_bought) + quantity > 9999: return false
+	var cost: int = quantity * POTION_PRICE
+	if _gold < cost: return false
+	_gold -= cost
+	_counts[&"potion"] = count(&"potion") + quantity
+	_commerce.potion_bought = int(_commerce.potion_bought) + quantity
+	changed.emit()
+	return true
+
+func pay_for_inn(restore_party: Callable) -> bool:
+	if _gold < INN_PRICE or int(_commerce.inn_stays) >= 10000 or not restore_party.is_valid(): return false
+	_gold -= INN_PRICE
+	_commerce.inn_stays = int(_commerce.inn_stays) + 1
+	# No awaits: the owner restores all members before inventory notification.
+	restore_party.call()
+	changed.emit()
+	return true

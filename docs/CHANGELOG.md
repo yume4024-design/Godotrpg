@@ -171,3 +171,11 @@
 - 新村西出口連低語森林，森林在整合入口返回新村西側安全點；新礦口只在 E004 勝利後開放，保留礦坑→森林出口。
 - 修正旅館前斜坡出生高度；保留舊 main、三張正式地圖、原故事 JSON、schema 2 與唯讀 v1 遷移。
 - 新增 TestG06Story / VisualG06Story / TestG06StoryReload，驗證真實戰鬥、敗北重試、單次招募/星印/獎勵及重啟。報告見 GREYSTONE_G06_REPORT.md。
+
+
+## 2026-10-15 — G06.4 商店、旅館與交易存檔
+
+- 道具商人提供恢復藥數量購買，旅館按隊收費恢復 HP/MP；確認/取消、距離/金幣/容量及重複回呼檢查完成。
+- 沿用 InventoryManager / PartyManager / DialogueManager；新增呈現用 CommercePanel。
+- 整合存檔升 schema 3，驗證購入/住宿累計與金幣等式；v1/v2 原驗證後遷移，保留來源檔。修正 JSON 帳本還原的整數型別。
+- 新增交易圖形、邊界及重啟測試，重跑原序章/新村序章/遷移。正式 v0.6.1 入口保持不變；詳細紀錄見 GREYSTONE_G06_REPORT.md。

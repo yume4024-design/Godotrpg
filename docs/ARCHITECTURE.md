@@ -141,3 +141,8 @@ InputMap 明確定義 Xbox 與 UI 動作，PlayerInput 仍用 Input.get_vector�
 ## G06.1 安全接軌
 
 新增繼承 Main 的 greystone_integration.tscn，沿用既有管理器；以 greystone_enabled 明確選擇 schema 2，正式模式保持 schema 1。greystone_runtime.tscn 用 ExplorationMap 包裝既有模型場景。SaveManager 在原完整驗證與物理位置通過後呼叫 GreystoneMigration，再驗證新位置，最後透過原狀態所有者還原。沒有第二份劇情狀態或交易系統。
+
+
+## G06.4 商店與旅館
+
+InventoryManager 擁有購入/住宿累計及扣款方法，沿用唯一金幣與物品狀態；沒有第二個經濟 Manager。CommercePanel 僅顯示價格/數量與發出 confirmed/cancelled。GreystoneIntegration 驗證目前互動對象、距離及忙碌狀態，在確認後立即關閉交易意圖以拒絕重複回呼，再轉交 InventoryManager。住宿透過 PartyManager.rest 恢復；全部成員恢復完成後發出 party.changed，使觀察者讀到完整狀態。存檔由既有 SaveManager/SaveCodec 執行版本遷移與交易一致性驗證。

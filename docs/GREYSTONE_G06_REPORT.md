@@ -150,3 +150,44 @@ Godot 4.7.2.stable.official.ed1daf0bf，Windows；圖形使用 OpenGL Compatibil
 修改檔案：scenes/main/greystone_integration.tscn；scenes/world/greystone_runtime.tscn、greystone_npcs.tscn；scripts/core/exploration_game.gd、greystone_integration.gd；scripts/world/exploration_map.gd；tests/greystone_story_test.gd（及 uid）、greystone_npc_test.gd；tools/godot.ps1；GREYSTONE_BUILD_TASKS、TASKS、CHANGELOG、本報告。
 
 下一個子階段為 G06.4：先定義價格與交易規則，再加入商店/住宿及相應存檔帳本驗證。G06.5/6、G07/8 及第一章未開始，Android 真機未驗證。
+
+
+## G06.4 商店、旅館及交易存檔（2026-10-15）
+
+基於 05e1ed9 的 G06.3，只完成本子階段。正式版本仍為 v0.6.1；RunG06 維持獨立整合入口。交易前先定義 [價格與交易規則](GREYSTONE_COMMERCE_RULES.md)：恢復藥 5 金幣/瓶、每次 1～99 瓶；住宿全隊 10 金幣，恢復 HP/MP（含倒下成員），全隊已滿不扣款。鐵匠仍為對話，沒有追加裝備買賣。
+
+### 實作
+
+- 道具商人與旅館老闆透過既有 E 互動開啟 CommercePanel；顯示商品、餘額、藥品數、數量和總價，確認/取消使用標準 Control 按鈕。UI 只發意圖，不持有經濟狀態。
+- GreystoneIntegration 重新驗證距離與忙碌狀態，交易視窗期間鎖探索/讀檔，保存排隊；確認立即消耗當次操作，再由 InventoryManager 扣款/加入物品或呼叫 PartyManager.rest。結果以既有 DialogueManager 顯示。
+- InventoryManager 持有購入及住宿累計；購買同步提交金幣/藥品/帳本，住宿全隊恢復後才通知。重複回呼、缺錢、取消、已滿狀態或數量/容量不符不產生額外支出。
+- SaveCodec schema 3 / CH00-G06.4 精確驗證交易累計、支出、剩餘金幣及藥品上限；EXP、星印、裝備及獎勵去重仍用原契約。SaveManager 僅在原版本及物理驗證通過後升級 v1/v2，不改寫來源。詳見 [存檔契約](SAVE_FORMAT.md)。
+- G06.3 森林/新村/礦坑出入口與勝利門檻保留，完整序章回歸重跑。未開發 MobileInputLayer 或下一章。
+
+### 測試及已修復問題
+
+Godot 4.7.2.stable.official.ed1daf0bf，Windows；圖形 OpenGL Compatibility / RTX 3080。執行命令 `./tools/godot.ps1 -Mode <模式>`。測試路徑只用 user://g06_commerce_tests 與既有測試目錄，沒有讀寫玩家正式存檔。
+
+商店測試以 E 開啟、滑鼠點按確認/取消及 Esc 關閉；測試數量值由 SpinBox 設定，再點正式確認按鈕。包含 212 金幣購入 3 瓶→197，透過 PartyActions 消耗 1 瓶，住宿後→187，重啟保留購入 3/住宿 1 帳本與單次星印/任務收據。含缺錢、負/零/超量、容量、距離重驗、重複確認、全隊滿值不收費、交易中存讀檔、v1/v2 位元組保留、七種無效帳本拒絕。背包滿值使用隔離 InventoryManager 測試 fixture；全隊倒下是測試建立的恢復邊界狀態，不冒充正常探索路徑。
+
+最初重啟帳本字典比對失敗：JSON 還原數字為 float，原執行期累計為 int。實際 gold=187、購入=3、住宿=1 均正確；已在 InventoryManager.restore_state 明確轉成整數，重啟檢查及圖形流程重跑通過，沒有修改存檔驗證接受範圍。
+
+| 模式 | 結果 | artifacts/logs 證據 |
+| --- | --- | --- |
+| TestG06Commerce | 47 項 / 0 失敗（型別修正前同程序測試） | testg06commerce-20261015-013215-831.log |
+| TestG06CommerceReload | 5 項 / 0 失敗（修正後） | testg06commercereload-20261015-035128-486.log |
+| VisualG06Commerce | 50 項 / 0 失敗（修正後完整交易流程） | visualg06commerce-20261015-035130-611.log |
+| Check | 成功，exit 0 | check-20261015-035137-686.log |
+| TestPhase5 | 69 項 / 0 失敗 | testphase5-20261015-035141-884.log |
+| TestPhase5Reload | 7 項 / 0 失敗 | testphase5reload-20261015-035158-113.log |
+| TestG06 | 51 項 / 0 失敗 | testg06-20261015-035159-721.log |
+| TestG06Reload | 6 項 / 0 失敗 | testg06reload-20261015-035204-485.log |
+| TestG06Story | 58 項 / 0 失敗 | testg06story-20261015-035206-556.log |
+| TestG06StoryReload | 7 項 / 0 失敗 | testg06storyreload-20261015-035224-620.log |
+| TestG06NPC | 60 項 / 0 失敗 | testg06npc-20261015-035226-602.log |
+
+已檢視 artifacts/phase5/g064-shop.webp 和 g064-inn.webp 的實際畫面，1280×720 下文字/價格可讀、確認與取消區分明確，視覺可讀性及操作辨識各 2/2。g064-restored.webp 為恢復後證據。這是桌面圖形測試，不是 Android 真機驗收。
+
+新增 CommercePanel（及 uid）、greystone_commerce_test（及 uid）、交易規則文件；修改 ExplorationGame、GreystoneIntegration、InventoryManager、SaveCodec、SaveManager、既有遷移/NPC 測試、tools/godot.ps1，以及 ARCHITECTURE、SAVE_FORMAT、工作清單、TASKS、CHANGELOG 與本報告。未修改正式 main、舊地圖或故事 JSON。
+
+下一個子階段為 G06.5：共用 InputMap 的虛擬搖桿、互動與觸控選單。G06.6 完整回歸、G07/G08 與第一章未開始；本輪未聲稱 Android 通過。

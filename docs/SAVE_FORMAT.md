@@ -43,3 +43,12 @@
 上述 v1 規則繼續適用正式 main.tscn。新 greystone_integration.tscn 使用獨立 crystal_g06_slot_01.json、schema_version=2、content_version=CH00-G06.1。location.layout_version 在舊三圖為 1、新 greystone_runtime 為 2，其他組合拒絕。
 
 v1 必須先通過全部原驗證和原地圖膠囊/地板查詢；合法舊村位置映射 (0,0.1,48)，森林/礦坑原位保留，再驗新版完整狀態與位置。讀取不改寫原檔，明確保存才寫新欄位；舊正式模式拒絕 v2。詳見 [G06報告](GREYSTONE_G06_REPORT.md)。
+
+
+## G06.4 opt-in schema 3（2026-10-15）
+
+整合入口目前寫 schema_version=3 / content_version=CH00-G06.4，位置 layout_version 維持舊三圖 1、新村 2。新增 inventory.commerce，只有 potion_bought（0～9999 整數）及 inn_stays（0～10000 整數）。金幣必須精確吻合原獎勵金幣總額減去購入數×5及住宿數×10；藥品上限加入購入數，允許正常消耗。EXP、星印、裝備與事件收據驗證維持原契約。
+
+v1/v2 不接受 commerce 欄位。SaveManager 先完成來源格式與物理位置驗證；v1 先走既有位置遷移至 v2，再加零交易帳本升至 v3；v2 保留原位置加入零帳本。升級後再次經 SaveCodec 驗證，讀取不覆寫原檔。InventoryManager 還原帳本時明確轉整數，避免 JSON 數值型別造成執行期字典不一致。正式 main 仍只接受 v1。
+
+交易視窗期間保存排隊、讀取拒絕；扣款、物品/帳本與住宿恢復同步完成後才通知，結果對話結束再寫待存檔。詳細價格、容量及取消規則見 [交易規則](GREYSTONE_COMMERCE_RULES.md)。這是資料一致性驗證，不宣稱防作弊。

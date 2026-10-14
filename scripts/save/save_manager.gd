@@ -70,6 +70,13 @@ func request_load(backup: bool = false) -> bool:
 		position_valid = not candidate.is_empty()
 		if position_valid:
 			position_valid = await _game.validate_loaded_position(candidate.data.location)
+	if position_valid and _game.greystone_enabled and int(candidate.data.schema_version) < 3:
+		var upgraded: Dictionary = candidate.data.duplicate(true)
+		upgraded.schema_version = 3
+		upgraded.content_version = "CH00-G06.4"
+		upgraded.inventory.commerce = {"potion_bought": 0, "inn_stays": 0}
+		candidate = codec.prepare(upgraded, _game)
+		position_valid = not candidate.is_empty()
 	_game.restoring = false
 	_game.refresh_control_lock()
 	if not position_valid: return _finish_error("存檔位置無法安全站立；目前進度未變更。")

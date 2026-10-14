@@ -16,7 +16,7 @@ func _run() -> void:
 	_check(game.ready_to_play and game.greystone_enabled,"Integration uses existing main services")
 	if reload_only:
 		_check(game.resume_offer,"Restart offers existing G06 slot")
-		_check(await game.saves.request_load(),"Separate process reloads schema 2")
+		_check(await game.saves.request_load(),"Separate process reloads schema 3")
 		_check(game.travel.current_map.map_id == &"greystone_runtime","Restart restores new map")
 		_check(game.inventory.gold == 212 and game.party.members().size() == 2,"Restart preserves party and gold")
 		_check(game.rewards.was_claimed(&"event:E008") and game.flags.has_flag(&"chapter_departure_done"),"Restart retains reward receipt and ending")
@@ -24,6 +24,7 @@ func _run() -> void:
 		return
 	await _finish_dialogue()
 	var early: Dictionary = game.capture_state()
+	early.inventory.erase("commerce")
 	early.schema_version = 1
 	early.content_version = "CH00-P5"
 	early.location = {"map":"mine","x":-9.0,"y":0.1,"z":0.0}
@@ -35,9 +36,11 @@ func _run() -> void:
 	_check(await game.call("import_legacy"),"Valid legacy save migrates through old and new physics checks")
 	_check(FileAccess.get_file_as_string(LEGACY_COPY)==source,"Import never modifies legacy bytes")
 	var upgraded: Dictionary = game.capture_state()
-	_check(upgraded.schema_version == 2 and upgraded.location.layout_version == 2,"Explicit schema and location layout versions")
+	_check(upgraded.schema_version == 3 and upgraded.location.layout_version == 2,"Explicit schema and location layout versions")
 	for field: String in ["party","inventory","flags","quests","rewards","story"]:
-		_check(upgraded[field] == legacy[field],"Migration preserves " + field)
+		var preserved: Variant = upgraded[field].duplicate(true)
+		if field == "inventory": preserved.erase("commerce")
+		_check(preserved == legacy[field],"Migration preserves " + field)
 	_check(game.travel.current_map.map_id == &"greystone_runtime" and game.player.position.distance_to(Vector3(0,.1,48))<.2,"Old village maps to safe new entrance")
 	_check(game.saves.request_save(),"Save migrated state to isolated G06 slot")
 	_check(FileAccess.get_file_as_string(LEGACY_COPY)==source,"Saving new slot preserves old file")
@@ -104,7 +107,7 @@ func _run() -> void:
 	game.close_menu()
 	_check(not game.rewards.claim(&"event:E008",120,120,{}),"Existing receipt prevents duplicate reward")
 	_check(game.saves.request_save(),"Final migrated position saves")
-	_check(await game.saves.request_load(),"Same-process schema 2 reload")
+	_check(await game.saves.request_load(),"Same-process schema 3 reload")
 	await _capture("g06-integration")
 	_finish()
 

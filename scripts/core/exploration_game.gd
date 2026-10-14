@@ -296,8 +296,9 @@ func capture_state() -> Dictionary:
 	var data: Dictionary = {"schema_version": 1, "content_version": "CH00-P5", "flags": flags.snapshot(), "quests": quests.snapshot(), "party": party.save_state(), "inventory": inventory.snapshot(), "rewards": rewards.snapshot(), "location": {"map": String(travel.current_map.map_id), "x": position.x, "y": position.y, "z": position.z}, "story": {"objective": runner.objective, "active_event": "", "area_suppressed": _area_suppressed}}
 
 	if greystone_enabled:
-		data.schema_version = 2
-		data.content_version = "CH00-G06.1"
+		data.schema_version = 3
+		data.content_version = "CH00-G06.4"
+		data.inventory.commerce = inventory.commerce_snapshot()
 		data.location.layout_version = 2 if data.location.map == "greystone_runtime" else 1
 	return JSON.parse_string(JSON.stringify(data))
 

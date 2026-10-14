@@ -8,13 +8,14 @@ static func integer(value: Variant, low: int, high: int) -> bool:
 
 func prepare(data: Variant, game: ExplorationGame) -> Dictionary:
 	error = "存檔內容不完整或資料不一致。"
-	if not data is Dictionary or not integer(data.get("schema_version"), 1, 2 if game.greystone_enabled else 1):
+	if not data is Dictionary or not integer(data.get("schema_version"), 1, 3 if game.greystone_enabled else 1):
 		error = "不支援的存檔版本，原檔未修改。"
 		return {}
-	var modern: bool = int(data.schema_version) == 2
+	var modern: bool = int(data.schema_version) >= 2
+	var commerce_version: bool = int(data.schema_version) == 3
 	for field: String in ["flags", "quests", "inventory", "rewards", "location", "story"]:
 		if not data.get(field) is Dictionary: return {}
-	if data.get("content_version") != ("CH00-G06.1" if modern else "CH00-P5") or not data.get("party") is Array: return {}
+	if data.get("content_version") != ("CH00-G06.4" if commerce_version else "CH00-G06.1" if modern else "CH00-P5") or not data.get("party") is Array: return {}
 	var flags: Dictionary = data.flags
 	var known_flags: Array[String] = []
 	for event: Dictionary in game.catalog.events.values():
@@ -64,12 +65,20 @@ func prepare(data: Variant, game: ExplorationGame) -> Dictionary:
 		if reward != expected[source]: return {}
 		xp += int(reward.exp)
 		gold += int(reward.gold)
-	if not data.rewards.has("starting_kit") or int(inv.gold) != gold: return {}
+	var bought: int = 0
+	var stays: int = 0
+	if commerce_version:
+		if not inv.get("commerce") is Dictionary or inv.commerce.size() != 2: return {}
+		if not integer(inv.commerce.get("potion_bought"),0,9999) or not integer(inv.commerce.get("inn_stays"),0,10000): return {}
+		bought = int(inv.commerce.potion_bought)
+		stays = int(inv.commerce.inn_stays)
+	elif inv.has("commerce"): return {}
+	if not data.rewards.has("starting_kit") or int(inv.gold) != gold - bought * InventoryManager.POTION_PRICE - stays * InventoryManager.INN_PRICE: return {}
 	for pair: Array in [["battle:B001", "e004_done"], ["battle:B002", "e007_done"], ["event:E005", "e005_done"], ["event:E006", "e006_done"], ["event:E008", "prologue_complete"]]:
 		if data.rewards.has(pair[0]) != flags.get(pair[1], false): return {}
 	if int(inv.counts.get("star_seal_01", 0)) != (1 if flags.get("e006_done", false) else 0): return {}
 	var max_potions: int = (3 if inv.claimed.get("forest_training_supplies", false) else 0) + (2 if flags.get("e005_done", false) else 0)
-	if int(inv.counts.get("potion", 0)) > max_potions or int(inv.counts.get("trail_ration", 0)) != (1 if inv.claimed.get("village_supply_chest", false) else 0): return {}
+	if int(inv.counts.get("potion", 0)) > max_potions + bought or int(inv.counts.get("trail_ration", 0)) != (1 if inv.claimed.get("village_supply_chest", false) else 0): return {}
 	var expected_size: int = 2 if flags.get("e003_done", false) else 1
 	if data.party.size() != expected_size: return {}
 	var members: Array[CombatantState] = []
