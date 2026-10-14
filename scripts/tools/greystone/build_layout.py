@@ -251,12 +251,21 @@ for edge in ['North','South','West','East']:
 ext = ''
 for ident, title, pos, (width,height,depth), roof in buildings:
     module = Scene('Building')
-    module.box('Walls','.',(0,height*0.34,0),(width,height*0.68,depth),'0.80, 0.73, 0.57')
-    module.box('Roof','.',(0,height*0.84,0),(width+0.6,height*0.32,depth+0.6),roof,False,True)
-    module.box('DoorMarker','.',(0,1,depth/2+0.035),(1.6,2,0.07),'0.29, 0.20, 0.13',False)
+    model = ROOT / f'assets/models/greystone/buildings/{ident}.glb'
+    suffix = '' if model.exists() else '_blockout'
+    if model.exists():
+        module.external = f'[ext_resource type="PackedScene" path="res://assets/models/greystone/buildings/{ident}.glb" id="Visual"]\n'
+        module.nodes.append('[node name="Visual" parent="." instance=ExtResource("Visual")]')
+        module.resources.append(f'[sub_resource type="BoxShape3D" id="BuildingCollision"]\nsize = Vector3({width*.87}, {height*.6}, {depth*.78})')
+        module.nodes.append(f'[node name="Walls" type="StaticBody3D" parent="."]\nposition = Vector3(0, {height*.3}, 0)')
+        module.nodes.append('[node name="Collision" type="CollisionShape3D" parent="Walls"]\nshape = SubResource("BuildingCollision")')
+    else:
+        module.box('Walls','.',(0,height*0.34,0),(width,height*0.68,depth),'0.80, 0.73, 0.57')
+        module.box('Roof','.',(0,height*0.84,0),(width+0.6,height*0.32,depth+0.6),roof,False,True)
+        module.box('DoorMarker','.',(0,1,depth/2+0.035),(1.6,2,0.07),'0.29, 0.20, 0.13',False)
     module.label('Name','.',title,(0,height+1,0))
-    module.save(OUT/(ident+'_blockout.tscn'))
-    ext += f'[ext_resource type="PackedScene" path="res://scenes/world/greystone/{ident}_blockout.tscn" id="{ident}"]\n'
+    module.save(OUT/(ident+suffix+'.tscn'))
+    ext += f'[ext_resource type="PackedScene" path="res://scenes/world/greystone/{ident}{suffix}.tscn" id="{ident}"]\n'
     world.nodes.append(f'[node name="{ident.title().replace("_","")}" parent="Buildings" instance=ExtResource("{ident}")]\nposition = Vector3({", ".join(map(str,pos))})')
     world.nodes.append(f'[node name="{ident}" type="Marker3D" parent="Markers"]\nposition = Vector3({pos[0]}, {pos[1]+0.1}, {pos[2]+depth/2+2})')
 world.box('WellBlock','Landmarks',(0,0.8,0),(2.8,1.6,2.8),'0.55, 0.56, 0.51')

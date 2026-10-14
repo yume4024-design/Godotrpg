@@ -1,0 +1,149 @@
+[
+  {
+    "file": "farm_house.glb",
+    "triangles": 7756,
+    "surfaces": 7,
+    "dimensions_xyz": [
+      7.0,
+      6,
+      6
+    ],
+    "min": [
+      -3.5,
+      0,
+      -3
+    ],
+    "max": [
+      3.5,
+      6,
+      3
+    ],
+    "sha256": "4a897bfb15f741792de8d0bd7611b830c1aba260521a60ec275fe2a6d2783cfa"
+  },
+  {
+    "file": "guild_hall.glb",
+    "triangles": 7804,
+    "surfaces": 7,
+    "dimensions_xyz": [
+      15.0,
+      11,
+      11.0
+    ],
+    "min": [
+      -7.5,
+      0,
+      -5.5
+    ],
+    "max": [
+      7.5,
+      11,
+      5.5
+    ],
+    "sha256": "8584acc21116362fc821d87e2ec2d12a94d4b200ba6056ce664c2e34d6836582"
+  },
+  {
+    "file": "house_a.glb",
+    "triangles": 7756,
+    "surfaces": 7,
+    "dimensions_xyz": [
+      7.0,
+      6,
+      6
+    ],
+    "min": [
+      -3.5,
+      0,
+      -3
+    ],
+    "max": [
+      3.5,
+      6,
+      3
+    ],
+    "sha256": "ab819435b49e0971756b51c57c4ac93bdd4ff01ff0573ec7e29580bf84ca5781"
+  },
+  {
+    "file": "house_b.glb",
+    "triangles": 5758,
+    "surfaces": 9,
+    "dimensions_xyz": [
+      7.0,
+      8.0,
+      6
+    ],
+    "min": [
+      -3.5,
+      0,
+      -3
+    ],
+    "max": [
+      3.5,
+      7.999999523162842,
+      3
+    ],
+    "sha256": "cb7e60c79f8da99e60c329e8316566a660745ccbbca6b393c966593bde7d88ff"
+  },
+  {
+    "file": "inn.glb",
+    "triangles": 7816,
+    "surfaces": 7,
+    "dimensions_xyz": [
+      12,
+      9,
+      9.0
+    ],
+    "min": [
+      -6,
+      0,
+      -4.5
+    ],
+    "max": [
+      6,
+      9,
+      4.5
+    ],
+    "sha256": "a49049abb2b3980bdaf14a8b9184862836d526fe87e761d21ecdfa73ecc12d22"
+  },
+  {
+    "file": "item_shop.glb",
+    "triangles": 7792,
+    "surfaces": 7,
+    "dimensions_xyz": [
+      8,
+      7.0,
+      7.0
+    ],
+    "min": [
+      -4,
+      0,
+      -3.5
+    ],
+    "max": [
+      4,
+      7.000000476837158,
+      3.5
+    ],
+    "sha256": "d9964b796557f37edcf173bdfe586bf67105d22c76b9a0ee15be431cf440590a"
+  },
+  {
+    "file": "weapon_shop.glb",
+    "triangles": 7792,
+    "surfaces": 7,
+    "dimensions_xyz": [
+      8,
+      7.0,
+      7.0
+    ],
+    "min": [
+      -4,
+      0,
+      -3.5
+    ],
+    "max": [
+      4,
+      7.000000476837158,
+      3.5
+    ],
+    "sha256": "21eeed4e3dba735baa13968a24321b129f8b3798edbd41c6d8014fad3f62c41d"
+  }
+]

@@ -91,6 +91,6 @@ Set-Location D:\RPGGAME
 
 灰石村已完成本輪參考圖改造：藍頂公會、水晶廣場、棚布住宅、橋河／水車與山谷住宅遠景。原有 16 個碰撞和故事落點保留；詳見 [村莊場景報告](docs/VILLAGE_ART_REPORT.md)。`TestVillage`／`VisualVillage` 可重跑碰撞契約、實際输入路線與畫面驗收。
 
-## 灰石村 G02 預覽
+## 灰石村 G03 建物第一版預覽
 
-在本專案根目錄執行 `./tools/godot.ps1 -Mode PreviewGreystone`，以 WASD／方向鍵／Xbox左搖桿探索。目前已加入多層地形、坡道、彎曲河谷與瀑布；建築仍為佔位，NPC與觸控尚未加入。69項圖形/物理驗證見 [G02報告](docs/GREYSTONE_G02_REPORT.md)。Blender中可檢視Crystal_G02_Review場景。
+在本專案根目錄執行 `./tools/godot.ps1 -Mode PreviewGreystone`，以 WASD／方向鍵／Xbox左搖桿探索。多層地形、坡道、河谷與瀑布上已加入七棟 Quaternius CC0 素材改製建物初版；屋型細分與門寬仍待完成，NPC與觸控尚未加入。70項圖形/物理驗證及限制見 [G03報告](docs/GREYSTONE_G03_REPORT.md)。Blender中可檢視 Crystal_G03_Buildings 建物場景，歷史地形檢視為 Crystal_G02_Review。

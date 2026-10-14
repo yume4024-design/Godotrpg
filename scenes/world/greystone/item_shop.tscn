@@ -1,0 +1,18 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/buildings/item_shop.glb" id="Visual"]
+
+[sub_resource type="BoxShape3D" id="BuildingCollision"]
+size = Vector3(6.96, 4.2, 5.46)
+[node name="Building" type="Node3D"]
+[node name="Visual" parent="." instance=ExtResource("Visual")]
+[node name="Walls" type="StaticBody3D" parent="."]
+position = Vector3(0, 2.1, 0)
+[node name="Collision" type="CollisionShape3D" parent="Walls"]
+shape = SubResource("BuildingCollision")
+[node name="Name" type="Label3D" parent="."]
+position = Vector3(0, 8, 0)
+billboard = 1
+text = "道具店"
+font_size = 48
+pixel_size = 0.025
+outline_size = 8

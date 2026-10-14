@@ -67,3 +67,17 @@ scripts/tools/greystone/build_layout.py 生成原創 Godot 原生白盒，七個
 ## Greystone G02（2026-10-14）
 
 本專案原創程序地形，依使用者提供的灰石村圖製作。Blender5.2.2及原生Python產生59個GLB，12,409三角面（唯一資源）；23棵松樹共享一個模型。無第三方下載、付費生成或額外署名要求。原始OBJ/manifest/metrics與Blender檢視副本在source_assets/greystone_g02；產生器在scripts/tools/greystone。背景松樹屬G02尺度佈景，完整G04素材庫未完成。
+
+## Greystone G03 素材庫改製（2026-10-14）
+
+以下模型均由 Quaternius 製作，Poly Pizza 頁面標示 Public Domain (CC0)，素材庫搜尋顯示 CC0 1.0。可修改/再散布，無強制署名；本專案仍保留作者及來源。頁面無語意版本號，採 2026-10-14 下載版本。未購買付費素材。
+
+| 來源 | 頁面發布日期 | 原始檔 | 使用 |
+| --- | --- | --- | --- |
+| [Fantasy Inn](https://poly.pizza/m/x3ZcGn3jr4) | 2021-10-03 | source_assets/greystone_g03/vendor/quaternius_fantasy_inn.glb | 旅館、公會、商店、民宅 A、農舍初版 |
+| [Fantasy House](https://poly.pizza/m/BH2XHWUNmF) | 2021-10-03 | source_assets/greystone_g03/vendor/quaternius_house.glb | 民宅 B |
+| [House](https://poly.pizza/m/oJJIRwv6Bo) | 2022-09-04 | source_assets/greystone_g03/vendor/quaternius_small_house.glb | 僅 Blender 候選檢視，未用於遊戲 |
+
+修改：重新製作米白灰泥/深木色/暖窗/紅褐及灰藍屋頂材質，依地圖規格調整比例與原點，平面著色、Godot Y-up 匯出、新增床/藥瓶/劍招牌，另建簡化 Godot 碰撞。七個輸出在 assets/models/greystone/buildings；Blender 修改腳本 build_buildings.py。模型未被當作本專案原創；招牌浮雕為本專案新增。
+
+公開 GLB 下載位址分別為 static.poly.pizza/270a08b6-87e1-47eb-ad1c-5fd7be321bcd.glb、341c9305-c6dd-4427-ad00-620ad57eb14e.glb、65d155f6-705c-4e6c-9e3a-b9974bb82324.glb，均從對應來源頁取得。外掛一鍵匯入不支援時使用公開下載，不涉及使用者 API key。

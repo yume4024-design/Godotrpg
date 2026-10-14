@@ -42,6 +42,8 @@ func _run() -> void:
 	_check(player.position.distance_to(start) > 2.0, "Actual W input moves existing player")
 	for point: Vector2 in [Vector2(0,40),Vector2(0,16),Vector2(-6,10),Vector2(-23,6),Vector2(-10,6),Vector2(-10,-10),Vector2(-20,-11),Vector2(-10,-10),Vector2(0,-18),Vector2(0,-22),Vector2(12,-22),Vector2(12,-28),Vector2(24,-28),Vector2(24,-52),Vector2(24,-28),Vector2(42,-28),Vector2(24,-28),Vector2(27,-28),Vector2(27,-8),Vector2(20,-8),Vector2(27,-8),Vector2(27,10),Vector2(0,10),Vector2(-53,10),Vector2(0,10),Vector2(0,29),Vector2(-19,29),Vector2(19,29),Vector2(24,32),Vector2(32,32),Vector2(24,32)]:
 		await _walk(point)
+		if point == Vector2(-20,-11):
+			await _capture("05-inn")
 		if point == Vector2(24,-52):
 			_check(absf(player.position.y - 6.0) < 0.15,"Mine terrace reaches 6m")
 			await _capture("03-mine-highland")
@@ -77,7 +79,7 @@ func _run() -> void:
 	await _walk(Vector2(20,10))
 	await _walk(Vector2(20,0))
 	await _walk(Vector2(20,-14), false, 150)
-	_check(player.position.z > -10.5, "Shop wall blocks player")
+	_check(player.position.z > -11.3, "Shop wall blocks player at adapted building facade")
 	await _walk(Vector2(20,0))
 	await _walk(Vector2(8,6))
 	Engine.time_scale = 1.0
@@ -120,6 +122,6 @@ func _capture(title: String) -> void:
 	if DisplayServer.get_name() == "headless": return
 	await create_timer(0.3).timeout
 	await RenderingServer.frame_post_draw
-	DirAccess.make_dir_recursive_absolute("res://artifacts/greystone-g02")
-	var result: Error = root.get_texture().get_image().save_webp("res://artifacts/greystone-g02/%s.webp" % title)
+	DirAccess.make_dir_recursive_absolute("res://artifacts/greystone-g03")
+	var result: Error = root.get_texture().get_image().save_webp("res://artifacts/greystone-g03/%s.webp" % title)
 	_check(result == OK,"Capture " + title)
