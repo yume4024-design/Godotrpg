@@ -15,6 +15,7 @@ extends Node3D
 @export var story_zone_radius: float = 2.0
 @export var story_trigger: StringName
 @export var extra_story_zones: Array[Marker3D] = []
+@export var opening_spawn: Marker3D
 @export var return_spawn: Marker3D
 @export var sequence_target: Node3D
 @export var sequence_light: OmniLight3D
@@ -25,6 +26,7 @@ func _ready() -> void:
 		targets.append(child as WorldInteractable)
 
 func spawn_position(key: StringName) -> Vector3:
+	if key == &"opening" and is_instance_valid(opening_spawn): return opening_spawn.global_position
 	if key == &"return" and is_instance_valid(return_spawn): return return_spawn.global_position
 	return entrance_spawn.global_position if key == &"entrance" else default_spawn.global_position
 

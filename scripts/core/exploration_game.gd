@@ -7,6 +7,8 @@ extends Node3D
 @export_file("*.json") var battles_path: String
 @export var starting_character: CombatantDefinition
 @export var greystone_enabled: bool = false
+@export var initial_map: StringName = &"village"
+@export var initial_spawn: StringName = &"default"
 @onready var _default_environment: Environment = $WorldEnvironment.environment
 @onready var player: ExplorationPlayer = %Player
 @onready var camera: Camera3D = %Camera3D
@@ -113,7 +115,7 @@ func _ready() -> void:
 	travel.transition_changed.connect(_on_transition)
 	travel.map_changed.connect(_on_map_changed)
 	ready_to_play = true
-	travel.travel(&"village", &"default")
+	travel.travel(initial_map, initial_spawn)
 
 func _fail() -> void:
 	ui.objective.text = "資料載入失敗，請查看開發日誌。"

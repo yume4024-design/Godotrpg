@@ -2,16 +2,44 @@
 [ext_resource type="Script" path="res://scripts/world/exploration_map.gd" id="Map"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone_village.tscn" id="Village"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone_npcs.tscn" id="NPCs"]
-[node name="GreystoneRuntime" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "return_spawn")]
+[ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
+[node name="GreystoneRuntime" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "return_spawn", "opening_spawn", "story_zone")]
 script = ExtResource("Map")
 map_id = &"greystone_runtime"
-display_name = "灰石村 G06.1 · 接軌測試"
+display_name = "灰石村 · G06 序章"
 default_camera_size = 28.0
 default_spawn = NodePath("SafeSpawn")
 entrance_spawn = NodePath("SafeSpawn")
-return_spawn = NodePath("SafeSpawn")
+return_spawn = NodePath("ForestReturn")
+opening_spawn = NodePath("InnOpening")
+story_zone = NodePath("Departure")
+story_zone_radius = 4.0
+story_trigger = &"village_departure"
 [node name="Village" parent="." instance=ExtResource("Village")]
 [node name="SafeSpawn" type="Marker3D" parent="."]
 position = Vector3(0,0.1,48)
 
 [node name="NPCs" parent="." instance=ExtResource("NPCs")]
+
+[node name="InnOpening" type="Marker3D" parent="."]
+position = Vector3(-20, 1.6, -11)
+[node name="ForestReturn" type="Marker3D" parent="."]
+position = Vector3(-48, 0.1, 10)
+[node name="Departure" type="Marker3D" parent="."]
+position = Vector3(-2, 0.1, -20)
+[node name="ForestExit" type="Node3D" parent="."]
+position = Vector3(-53, 0, 10)
+script = ExtResource("Interact")
+interaction_id = &"to_forest"
+kind = "exit"
+label = "村外道路 · 低語森林"
+required_flag = &"e003_done"
+destination = &"forest"
+[node name="MineExit" type="Node3D" parent="."]
+position = Vector3(24, 6, -52)
+script = ExtResource("Interact")
+interaction_id = &"to_mine"
+kind = "exit"
+label = "進入廢棄礦坑"
+required_flag = &"e004_done"
+destination = &"mine"

@@ -4,14 +4,18 @@ func _run() -> void:
 	DirAccess.make_dir_recursive_absolute("user://g06_npc_tests")
 	game = load("res://scenes/main/greystone_integration.tscn").instantiate()
 	(game.get_node("Saves") as SaveManager).slot_path = "user://g06_npc_tests/unused.json"
+	game.initial_map = &"village"
+	game.initial_spawn = &"default"
 	root.add_child(game)
 	await create_timer(.8).timeout
 	await _finish_dialogue()
 	_check(game.call("visit_other_village"),"Enter NPC village with existing SceneManager")
 	await _wait_travel()
-	_check(game.travel.current_map.targets.size()==6,"Six NPCs registered by existing ExplorationMap")
+	_check(game.travel.current_map.targets.filter(func(t: WorldInteractable) -> bool: return t.kind == "npc").size()==6,"Six NPCs registered by existing ExplorationMap")
 	var before: Dictionary = game.capture_state()
 	for target: WorldInteractable in game.travel.current_map.targets:
+		if target.kind != "npc": continue
+		target.ambient_only = true # Isolate ambient behavior; story bindings tested in G06.3.
 		await _place(target.position + Vector3(0,.1,3.5))
 		_check(not target.in_reach(game.player),"Out-of-range interaction rejected: " + target.label)
 		await _walk_local(target.position + Vector3(0,0,1.4))

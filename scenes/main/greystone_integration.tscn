@@ -4,5 +4,7 @@
 [node name="GreystoneIntegration" instance=ExtResource("Main")]
 script = ExtResource("Integration")
 greystone_enabled = true
+initial_map = &"greystone_runtime"
+initial_spawn = &"opening"
 [node name="Saves" parent="."]
 slot_path = "user://crystal_g06_slot_01.json"

@@ -14,7 +14,7 @@ font_names = PackedStringArray("Microsoft JhengHei")
 position = Vector3(-2, 0, -22)
 script = ExtResource("Interact")
 interaction_id = &"npc_guildmaster"
-ambient_only = true
+ambient_only = false
 kind = "npc"
 label = "公會長瑪爾克"
 [node name="Appearance" parent="Guildmaster" instance=ExtResource("Guild")]
@@ -35,7 +35,7 @@ outline_size = 8
 position = Vector3(3, 0, -22)
 script = ExtResource("Interact")
 interaction_id = &"npc_lia"
-ambient_only = true
+ambient_only = false
 kind = "npc"
 label = "莉雅"
 [node name="Appearance" parent="Lia" instance=ExtResource("Lia")]

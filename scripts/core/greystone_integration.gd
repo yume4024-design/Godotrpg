@@ -20,7 +20,7 @@ func _ready() -> void:
 	row.theme = theme
 	layer.add_child(row)
 	bridge_button = Button.new()
-	bridge_button.text = "G06.1 新舊村莊往返"
+	bridge_button.text = "G06 新舊村莊往返"
 	row.add_child(bridge_button)
 	bridge_button.pressed.connect(visit_other_village)
 	import_button = Button.new()
@@ -45,3 +45,13 @@ func import_legacy() -> bool:
 	var result: bool = await saves.request_load()
 	saves.slot_path = destination
 	return result
+
+func _on_map_changed(map: ExplorationMap) -> void:
+	# Integration-only routing; old production scene and forest resource stay intact.
+	if map.map_id == &"forest":
+		for target: WorldInteractable in map.targets:
+			if target.interaction_id == &"to_village":
+				target.destination = &"greystone_runtime"
+				target.spawn_key = &"return"
+	super._on_map_changed(map)
+	if map.map_id == &"greystone_runtime": audio.play_music(&"village")

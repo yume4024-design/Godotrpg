@@ -106,3 +106,47 @@ WorldInteractable 新增 ambient_only（預設 false），本輪六位設 true�
 圖形測試實際輸入移動及 E 鍵，產生六張 `artifacts/phase5/g06-npc-npc_*.webp`。已檢視公會長與旅館老闆畫面：角色站位、標籤及對話可見，玩家能靠近對話；對話截圖在逐字顯示期間拍攝。日誌與截圖為本機驗收產物，依既有規範不提交 Git。
 
 本輪 G06.2 通過；角色專屬新造型、巡邏、主線綁定、交易及 Android 真機均不在本輪通過範圍。
+
+
+## G06.3 新版村莊序章整合（2026-10-15）
+
+本輪基於 b715dbc 的 G06.2，僅完成下一子階段 G06.3。正式發佈版本仍為 v0.6.1；G06 候選入口為 `./tools/godot.ps1 -Mode RunG06`，沒有替換 project.godot 的正式入口。
+
+### 實作及邊界
+
+- ExplorationGame 新增 initial_map / initial_spawn 注入，預設仍為舊村。整合場景指定 greystone_runtime / opening，由同一 Main 服務執行 E001。開場位置 (-20,1.6,-11) 在旅館前斜坡，不宣稱已建旅館室內。
+- 公會長及莉雅關閉 ambient_only，走同一 StoryManager、EventRunner、DialogueManager。原 E001～E009 JSON、Flag ID、Q001、獎勵來源完全保留。
+- 西出口 (-53,0,10) 須 E003；東北礦口 (24,6,-52) 須 E004。森林回村僅在整合入口重定向至 greystone_runtime / return，安全落點 (-48,0.1,10)，距出口 5m。正式森林場景資源不變。
+- 礦坑出口維持返回森林，再由西側回新村；本輪未增加需要存檔的新「來程地圖」狀態。Boss 返回保持戰前位置。
+- 公會前庭以既有 village_departure 區域事件觸發 E009，僅在 E008 完成後執行；第一章仍只有解鎖與預告。
+- 沿用原村音樂；不新增交易、住宿扣款、MobileInputLayer、巡邏或第一章內容。schema/content/layout 版本不變，既有 v1 遷移及新欄位仍保留。
+
+### 驗證方式與限制
+
+新增 greystone_story_test.gd，重用 P5 操作/戰鬥測試 helper，在獨立 user://g06_story_tests 執行完整序章。使用實際 E/M/F5 輸入、選單按鈕與 BattleManager 指令（包含真實敗北和重試），沒有直接設完成旗標或模擬勝利。跨地圖入口以 E 操作。長距離定位使用測試 reset_to，森林與礦坑區域觸發使用移動輸入；不宣稱本測試為整村人工步行通關。整村路線沿用 G05 與 G06.2 驗收。
+
+G06.2 測試只針對環境對話暫時將 NPC 設 ambient_only；實際場景主線綁定由本輪 G06.3 完整流程驗證。NPC 測試亦保留六角色碰撞/遮擋/移動及入隊隱藏檢查。
+
+首次 TestG06Story 58 項中出生高度檢查失敗：旅館前活動區實際地面為 1.5m，不是平台的 2m。已將 opening Marker 從 2.1 改 1.6，重跑通過；沒有放寬存檔驗證。Python 測試產生器曾遇本機 cp950 解碼失敗，改明確 UTF-8 後正常生成。
+
+Godot 4.7.2.stable.official.ed1daf0bf，Windows；圖形使用 OpenGL Compatibility / RTX 3080。命令均為 `./tools/godot.ps1 -Mode <模式>`。
+
+| 模式 | 結果 | artifacts/logs 證據 |
+| --- | --- | --- |
+| Check | 成功，exit 0 | check-20261015-012331-197.log |
+| TestG06Story | 58 項 / 0 失敗 | testg06story-20261015-012253-437.log |
+| VisualG06Story | 68 項 / 0 失敗 | visualg06story-20261015-012313-436.log |
+| TestG06StoryReload | 7 項 / 0 失敗 | testg06storyreload-20261015-012311-551.log |
+| TestPhase5 | 69 項 / 0 失敗 | testphase5-20261015-012335-222.log |
+| TestPhase5Reload | 7 項 / 0 失敗 | testphase5reload-20261015-012351-559.log |
+| TestG06 | 51 項 / 0 失敗 | testg06-20261015-012353-160.log |
+| TestG06Reload | 6 項 / 0 失敗 | testg06reload-20261015-012357-908.log |
+| TestG06NPC | 60 項 / 0 失敗 | testg06npc-20261015-012359-974.log |
+
+已檢視實際 g063-guild.webp、g063-mine-gate.webp、g063-05-chapter-preview.webp：入隊後莉雅站立 NPC 消失，礦口 E 提示可讀，章末預告正常疊加。視覺觀察：HUD/提示可讀性 2/2；環境標籤密度 1/2（礦口既有兩個標籤距離偏近），留後續視覺整理，不影響操作。證據位於本機 artifacts/phase5，依規範不提交產物。
+
+精確結果：212 金幣、雷恩與莉雅各 300 EXP、1 枚星印；E003/E008 和獎勵收據拒絕重播；Boss 敗北不推進，重試勝利後才完成 E007。新舊存檔重啟與完整遷移檢查通過。
+
+修改檔案：scenes/main/greystone_integration.tscn；scenes/world/greystone_runtime.tscn、greystone_npcs.tscn；scripts/core/exploration_game.gd、greystone_integration.gd；scripts/world/exploration_map.gd；tests/greystone_story_test.gd（及 uid）、greystone_npc_test.gd；tools/godot.ps1；GREYSTONE_BUILD_TASKS、TASKS、CHANGELOG、本報告。
+
+下一個子階段為 G06.4：先定義價格與交易規則，再加入商店/住宿及相應存檔帳本驗證。G06.5/6、G07/8 及第一章未開始，Android 真機未驗證。
