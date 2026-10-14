@@ -136,3 +136,8 @@ InputMap 明確定義 Xbox 與 UI 動作，PlayerInput 仍用 Input.get_vector�
 0.6.1 村莊：五個 GLB 分別持有公會、住宅、鋪面／晶柱、邊界及村外遠景；每組在 Blender 合併網格並保留材質分面，避免逐瓦／逐花建立執行期節點。這些是呈現層，碰撞仍由 village.tscn 的 16 個既有代理持有；測試固定基線 `tests/fixtures/village_collision_v1.json`。ExplorationMap.default_camera_size 預設 17，村莊設 21；轉場立刻套用該地圖鏡頭尺寸，區域縮放維持既有行為。開啟 4x MSAA，無新增插件、Autoload 或存檔欄位。
 
 2026-10-14 的九區礦村要求尚處設計階段，未改 runtime。未來換圖须將地圖佈局版本與位置遷移納入 SaveCodec：只有明確識別的舊版合法村莊存檔可轉安全點，仍先驗候選位置再一次套用狀態；非法／損壞資料不可自動改成新遊戲。新商店／住宿若引入金幣支出，須同步擴充經濟帳本契約，不能繞過既有數值一致性驗證。具體版本及資料形狀待新正文合併。
+
+
+## G06.1 安全接軌
+
+新增繼承 Main 的 greystone_integration.tscn，沿用既有管理器；以 greystone_enabled 明確選擇 schema 2，正式模式保持 schema 1。greystone_runtime.tscn 用 ExplorationMap 包裝既有模型場景。SaveManager 在原完整驗證與物理位置通過後呼叫 GreystoneMigration，再驗證新位置，最後透過原狀態所有者還原。沒有第二份劇情狀態或交易系統。

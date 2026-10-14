@@ -6,6 +6,7 @@ extends Node3D
 @export_file("*.json") var quest_path: String
 @export_file("*.json") var battles_path: String
 @export var starting_character: CombatantDefinition
+@export var greystone_enabled: bool = false
 @onready var _default_environment: Environment = $WorldEnvironment.environment
 @onready var player: ExplorationPlayer = %Player
 @onready var camera: Camera3D = %Camera3D
@@ -292,6 +293,10 @@ func capture_state() -> Dictionary:
 	var position: Vector3 = player.global_position
 	var data: Dictionary = {"schema_version": 1, "content_version": "CH00-P5", "flags": flags.snapshot(), "quests": quests.snapshot(), "party": party.save_state(), "inventory": inventory.snapshot(), "rewards": rewards.snapshot(), "location": {"map": String(travel.current_map.map_id), "x": position.x, "y": position.y, "z": position.z}, "story": {"objective": runner.objective, "active_event": "", "area_suppressed": _area_suppressed}}
 
+	if greystone_enabled:
+		data.schema_version = 2
+		data.content_version = "CH00-G06.1"
+		data.location.layout_version = 2 if data.location.map == "greystone_runtime" else 1
 	return JSON.parse_string(JSON.stringify(data))
 
 func apply_loaded_state(data: Dictionary, members: Array[CombatantState]) -> void:

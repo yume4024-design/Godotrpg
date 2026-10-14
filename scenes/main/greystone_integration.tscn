@@ -1,0 +1,8 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/main/main.tscn" id="Main"]
+[ext_resource type="Script" path="res://scripts/core/greystone_integration.gd" id="Integration"]
+[node name="GreystoneIntegration" instance=ExtResource("Main")]
+script = ExtResource("Integration")
+greystone_enabled = true
+[node name="Saves" parent="."]
+slot_path = "user://crystal_g06_slot_01.json"

@@ -36,3 +36,10 @@
 檔案格式為可讀 JSON，沒有加密或防修改承諾；驗證目的是保持可執行與一致的遊戲狀態。未執行斷電、磁碟硬體故障或雲端同步測試。
 
 測試檔只使用 `user://p5_tests/restart.json`／`visual.json`，不讀寫正式欄位。跨程序測試先執行 TestPhase5，再執行 TestPhase5Reload；後者從另一個 Godot 程序讀取前者留下的檔案。指令與結果見 [PHASE5_REPORT](PHASE5_REPORT.md)。
+
+
+## G06.1 opt-in schema 2（2026-10-14）
+
+上述 v1 規則繼續適用正式 main.tscn。新 greystone_integration.tscn 使用獨立 crystal_g06_slot_01.json、schema_version=2、content_version=CH00-G06.1。location.layout_version 在舊三圖為 1、新 greystone_runtime 為 2，其他組合拒絕。
+
+v1 必須先通過全部原驗證和原地圖膠囊/地板查詢；合法舊村位置映射 (0,0.1,48)，森林/礦坑原位保留，再驗新版完整狀態與位置。讀取不改寫原檔，明確保存才寫新欄位；舊正式模式拒絕 v2。詳見 [G06報告](GREYSTONE_G06_REPORT.md)。

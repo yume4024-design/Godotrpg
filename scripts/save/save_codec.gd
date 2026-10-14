@@ -8,12 +8,13 @@ static func integer(value: Variant, low: int, high: int) -> bool:
 
 func prepare(data: Variant, game: ExplorationGame) -> Dictionary:
 	error = "存檔內容不完整或資料不一致。"
-	if not data is Dictionary or not integer(data.get("schema_version"), 1, 1):
-		error = "不支援的存檔版本；本版只讀取版本 1，原檔未修改。"
+	if not data is Dictionary or not integer(data.get("schema_version"), 1, 2 if game.greystone_enabled else 1):
+		error = "不支援的存檔版本，原檔未修改。"
 		return {}
+	var modern: bool = int(data.schema_version) == 2
 	for field: String in ["flags", "quests", "inventory", "rewards", "location", "story"]:
 		if not data.get(field) is Dictionary: return {}
-	if data.get("content_version") != "CH00-P5" or not data.get("party") is Array: return {}
+	if data.get("content_version") != ("CH00-G06.1" if modern else "CH00-P5") or not data.get("party") is Array: return {}
 	var flags: Dictionary = data.flags
 	var known_flags: Array[String] = []
 	for event: Dictionary in game.catalog.events.values():
@@ -98,12 +99,18 @@ func prepare(data: Variant, game: ExplorationGame) -> Dictionary:
 		if int(owned.get(id, 0)) != 1: return {}
 	if not members.any(func(actor: CombatantState) -> bool: return actor.alive()): return {}
 	var location: Dictionary = data.location
-	if location.get("map") not in ["village", "forest", "mine"]: return {}
+	var greystone: bool = modern and location.get("map") == "greystone_runtime"
+	if not greystone and location.get("map") not in ["village", "forest", "mine"]: return {}
+	if modern:
+		if not integer(location.get("layout_version"), 2 if greystone else 1, 2 if greystone else 1): return {}
+	elif location.has("layout_version"): return {}
 	if location.map == "mine" and not flags.get("e004_done", false): return {}
 	for axis: String in ["x", "y", "z"]:
 		var value: Variant = location.get(axis)
 		if not (value is int or value is float) or not is_finite(float(value)): return {}
 	var z_limit: float = 8.5 if location.map == "mine" else 12.0
-	if absf(location.x) > 12.5 or absf(location.z) > z_limit or location.y < -0.1 or location.y > 2.0: return {}
+	if greystone:
+		if absf(location.x) > 60.0 or absf(location.z) > 60.0 or location.y < -0.1 or location.y > 6.2: return {}
+	elif absf(location.x) > 12.5 or absf(location.z) > z_limit or location.y < -0.1 or location.y > 2.0: return {}
 	error = ""
 	return {"data": data.duplicate(true), "members": members}

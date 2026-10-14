@@ -65,6 +65,11 @@ func request_load(backup: bool = false) -> bool:
 	_game.restoring = true
 	_game.refresh_control_lock()
 	var position_valid: bool = await _game.validate_loaded_position(candidate.data.location)
+	if position_valid and _game.greystone_enabled and int(candidate.data.schema_version) == 1:
+		candidate = codec.prepare(GreystoneMigration.upgrade(candidate.data), _game)
+		position_valid = not candidate.is_empty()
+		if position_valid:
+			position_valid = await _game.validate_loaded_position(candidate.data.location)
 	_game.restoring = false
 	_game.refresh_control_lock()
 	if not position_valid: return _finish_error("存檔位置無法安全站立；目前進度未變更。")
