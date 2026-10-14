@@ -1,0 +1,50 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="M1"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G1"]
+size = Vector3(0.18, 1.3, 0.18)
+material = SubResource("M1")
+[sub_resource type="StandardMaterial3D" id="M2"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G2"]
+size = Vector3(0.18, 1.3, 0.18)
+material = SubResource("M2")
+[sub_resource type="StandardMaterial3D" id="M3"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G3"]
+size = Vector3(3, 0.12, 0.12)
+material = SubResource("M3")
+[sub_resource type="StandardMaterial3D" id="M4"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G4"]
+size = Vector3(3, 0.12, 0.12)
+material = SubResource("M4")
+[sub_resource type="BoxShape3D" id="Body5"]
+size = Vector3(3, 1.3, 0.2)
+[node name="Fence" type="Node3D"]
+metadata/stage = "G04 replaceable placeholder"
+[node name="Post-1.4" type="Node3D" parent="."]
+position = Vector3(-1.4, 0.65, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Post-1.4"]
+mesh = SubResource("G1")
+[node name="Post1.4" type="Node3D" parent="."]
+position = Vector3(1.4, 0.65, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Post1.4"]
+mesh = SubResource("G2")
+[node name="Rail0.45" type="Node3D" parent="."]
+position = Vector3(0, 0.45, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Rail0.45"]
+mesh = SubResource("G3")
+[node name="Rail0.95" type="Node3D" parent="."]
+position = Vector3(0, 0.95, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Rail0.95"]
+mesh = SubResource("G4")
+[node name="Barrier" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.65, 0)
+[node name="Collision" type="CollisionShape3D" parent="Barrier"]
+shape = SubResource("Body5")

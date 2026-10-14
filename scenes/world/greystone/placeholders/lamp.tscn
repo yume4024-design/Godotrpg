@@ -1,0 +1,40 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="M1"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G1"]
+size = Vector3(0.16, 3, 0.16)
+material = SubResource("M1")
+[sub_resource type="StandardMaterial3D" id="M2"]
+albedo_color = Color(0.95, 0.72, 0.30, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G2"]
+size = Vector3(0.45, 0.55, 0.45)
+material = SubResource("M2")
+[sub_resource type="StandardMaterial3D" id="M3"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="PrismMesh" id="G3"]
+size = Vector3(0.6, 0.2, 0.6)
+material = SubResource("M3")
+[sub_resource type="BoxShape3D" id="Body4"]
+size = Vector3(0.24, 3, 0.24)
+[node name="Lamp" type="Node3D"]
+metadata/stage = "G04 replaceable placeholder"
+[node name="Pole" type="Node3D" parent="."]
+position = Vector3(0, 1.5, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Pole"]
+mesh = SubResource("G1")
+[node name="Lantern" type="Node3D" parent="."]
+position = Vector3(0, 3.1, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Lantern"]
+mesh = SubResource("G2")
+[node name="Cap" type="Node3D" parent="."]
+position = Vector3(0, 3.45, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Cap"]
+mesh = SubResource("G3")
+[node name="PoleBody" type="StaticBody3D" parent="."]
+position = Vector3(0, 1.5, 0)
+[node name="Collision" type="CollisionShape3D" parent="PoleBody"]
+shape = SubResource("Body4")

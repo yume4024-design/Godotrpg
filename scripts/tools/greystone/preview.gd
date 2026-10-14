@@ -10,4 +10,4 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	camera.position = player.position + Vector3(26, 36.77, 26)
-	status.text = "灰石村 G03｜模組化建築\nWASD／方向鍵／Xbox 左搖桿移動\n西北農田 4m・東北礦坑 6m\nX %.1f  Y %.1f  Z %.1f" % [player.position.x, player.position.y, player.position.z]
+	status.text = "灰石村 G05｜基礎村莊組裝\nWASD／方向鍵／Xbox 左搖桿移動\n西北農田 4m・東北礦坑 6m\nX %.1f  Y %.1f  Z %.1f" % [player.position.x, player.position.y, player.position.z]

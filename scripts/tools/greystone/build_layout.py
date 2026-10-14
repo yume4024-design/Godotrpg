@@ -6,6 +6,7 @@ Only writes the named Greystone scene files; never changes the production villag
 from pathlib import Path
 import math
 import json
+from assemble_village import assemble
 
 ROOT = Path(__file__).resolve().parents[3]
 OUT = ROOT / 'scenes/world/greystone'
@@ -287,7 +288,6 @@ for ident, title, pos, (width,height,depth), roof in buildings:
     mx=pos[0]+(building_metrics[ident]['door_center_x_m'] if model.exists() else 0)
     mz=pos[2]+(building_metrics[ident]['door_front_z_m']+1.0 if model.exists() else depth/2+2)
     world.nodes.append(f'[node name="{ident}" type="Marker3D" parent="Markers"]\nposition = Vector3({mx}, {pos[1]+0.1}, {mz})')
-world.box('WellBlock','Landmarks',(0,0.8,0),(2.8,1.6,2.8),'0.55, 0.56, 0.51')
 for n,(x,z,w,h,d) in enumerate([(-52,-30,7,5,6),(-48,-24,7,3,5),(-36,-22,6,3,5),(-29,-38,4,3,7),(17,-51,5,5,7),(28,-53,3,6,6),(23,-57,12,6,5),(41,-52,6,6,7),(47,-45,6,4,8),(-51,-54,16,8,12),(-34,-55,17,9,10),(-17,-55,15,11,10),(1,-55,13,13,10),(-54,-12,7,5,9),(-52,27,10,6,12),(53,-30,10,8,12),(54,-12,9,6,11)]):
     world.rock(f'Cliff{n}',(x,height_at(x,z)-0.4,z),(w,h,d))
 # Faceted boulders break up the river's engineered outline without occupying roads.
@@ -319,6 +319,7 @@ world.box('MineLintel','Landmarks',(23,10,-54),(5.2,0.5,0.6),'0.31, 0.21, 0.13')
 for name,title,pos in [('Spawn','村口',(0,0.1,48)),('Mine','礦坑入口',(24,6.1,-52)),('WorldExit','世界地圖出口',(-53,0.1,10)),('Dock','碼頭',(32,0.1,32)),('Bridge','上游木橋',(42,0.1,-28)),('Farm','農田',(-42,4.1,-29))]:
     world.nodes.append(f'[node name="{name}" type="Marker3D" parent="Markers"]\nposition = Vector3({", ".join(map(str,pos))})')
     world.label(name+'Label','Landmarks',title,(pos[0],pos[1]+3,pos[2]))
+assemble(world, Scene, OUT, height_at)
 world.save(ROOT/'scenes/world/greystone_village.tscn',ext)
 (TERRAIN/'manifest.json').write_text(json.dumps(world.assets,indent=2),encoding='utf-8')
 (TERRAIN/'layout.json').write_text(json.dumps({'boxes':world.boxes,'buildings':buildings,'trees':[(x,height_at(x,z),z) for x,z in tree_places]},indent=2),encoding='utf-8')

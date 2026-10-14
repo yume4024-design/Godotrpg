@@ -1,0 +1,30 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="M1"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G1"]
+size = Vector3(0.18, 1.8, 0.18)
+material = SubResource("M1")
+[sub_resource type="StandardMaterial3D" id="M2"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G2"]
+size = Vector3(1.6, 0.65, 0.15)
+material = SubResource("M2")
+[sub_resource type="BoxShape3D" id="Body3"]
+size = Vector3(0.2, 1.8, 0.2)
+[node name="Sign" type="Node3D"]
+metadata/stage = "G04 replaceable placeholder"
+[node name="Post" type="Node3D" parent="."]
+position = Vector3(0, 0.9, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Post"]
+mesh = SubResource("G1")
+[node name="Board" type="Node3D" parent="."]
+position = Vector3(0, 1.65, 0)
+[node name="Mesh" type="MeshInstance3D" parent="Board"]
+mesh = SubResource("G2")
+[node name="PostBody" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.9, 0)
+[node name="Collision" type="CollisionShape3D" parent="PostBody"]
+shape = SubResource("Body3")

@@ -72,3 +72,8 @@ E001 旅館、E002 公會委託、E003 莉雅、E008 回公會；E004～E007 仍
 120m是地圖包圍範圍，西側外緣改為不規則折線；水面-3.6m、上游5.4m。地形與碰撞使用相同頂點，靜態地形用ConcavePolygonShape3D；建物/樹幹仍用簡化形狀。道路裁切自地形三角形，僅視覺上浮0.045m。GLB地形組件與source_assets/greystone_g02原始資料由同一產生器維護，不能只手改GLB而不同步碰撞。23棵共用松樹為還原度與尺度背景，不代表G04素材庫完成。
 
 G03七棟差異化素材庫建物已接入預覽，完整狀態見 [G03報告](GREYSTONE_G03_REPORT.md)。現行 scenes/world/greystone/*.tscn 為 GLB 建物實例；保留 *_blockout.tscn 為歷史佔位。門板寬度已量測，屋型、簡化碰撞與九個 Godot 共用材質已驗證；門仍閉合，互動留G06。重建須先依G03報告產生模型及export_metrics，再執行地圖產生器。
+
+
+## G05 基礎組裝補充
+
+[組裝報告](GREYSTONE_G05_REPORT.md)：新增 Props 與 ActivitySpaces 節點、八個可替換佔位 PackedScene，中央水井取代方塊。七棟建築位置沿用已驗證配置，補齊前庭與通路。井/橋/碼頭/水車目前是 G04 佔位，並非正式道具驗收。生成器現在亦寫入 placeholders 目錄；修改應同步 assemble_village.py。

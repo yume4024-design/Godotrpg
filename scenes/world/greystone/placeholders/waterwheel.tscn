@@ -1,0 +1,144 @@
+[gd_scene format=3]
+
+[sub_resource type="StandardMaterial3D" id="M1"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G1"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M1")
+[sub_resource type="StandardMaterial3D" id="M2"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G2"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M2")
+[sub_resource type="StandardMaterial3D" id="M3"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G3"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M3")
+[sub_resource type="StandardMaterial3D" id="M4"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G4"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M4")
+[sub_resource type="StandardMaterial3D" id="M5"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G5"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M5")
+[sub_resource type="StandardMaterial3D" id="M6"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G6"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M6")
+[sub_resource type="StandardMaterial3D" id="M7"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G7"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M7")
+[sub_resource type="StandardMaterial3D" id="M8"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G8"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M8")
+[sub_resource type="StandardMaterial3D" id="M9"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G9"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M9")
+[sub_resource type="StandardMaterial3D" id="M10"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G10"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M10")
+[sub_resource type="StandardMaterial3D" id="M11"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G11"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M11")
+[sub_resource type="StandardMaterial3D" id="M12"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G12"]
+size = Vector3(0.9, 0.48, 0.48)
+material = SubResource("M12")
+[sub_resource type="StandardMaterial3D" id="M13"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G13"]
+size = Vector3(0.28, 4.7, 0.25)
+material = SubResource("M13")
+[sub_resource type="StandardMaterial3D" id="M14"]
+albedo_color = Color(0.43, 0.29, 0.16, 1)
+roughness = 0.95
+[sub_resource type="BoxMesh" id="G14"]
+size = Vector3(0.28, 0.25, 4.7)
+material = SubResource("M14")
+[node name="Waterwheel" type="Node3D"]
+metadata/stage = "G04 replaceable placeholder"
+[node name="Paddle0" type="Node3D" parent="."]
+position = Vector3(0, 2.3, 0.0)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle0"]
+mesh = SubResource("G1")
+[node name="Paddle1" type="Node3D" parent="."]
+position = Vector3(0, 1.991858428704209, 1.1499999999999997)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle1"]
+mesh = SubResource("G2")
+[node name="Paddle2" type="Node3D" parent="."]
+position = Vector3(0, 1.1500000000000001, 1.9918584287042087)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle2"]
+mesh = SubResource("G3")
+[node name="Paddle3" type="Node3D" parent="."]
+position = Vector3(0, 1.408343819019456e-16, 2.3)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle3"]
+mesh = SubResource("G4")
+[node name="Paddle4" type="Node3D" parent="."]
+position = Vector3(0, -1.1499999999999995, 1.991858428704209)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle4"]
+mesh = SubResource("G5")
+[node name="Paddle5" type="Node3D" parent="."]
+position = Vector3(0, -1.991858428704209, 1.1499999999999997)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle5"]
+mesh = SubResource("G6")
+[node name="Paddle6" type="Node3D" parent="."]
+position = Vector3(0, -2.3, 2.816687638038912e-16)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle6"]
+mesh = SubResource("G7")
+[node name="Paddle7" type="Node3D" parent="."]
+position = Vector3(0, -1.9918584287042091, -1.1499999999999992)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle7"]
+mesh = SubResource("G8")
+[node name="Paddle8" type="Node3D" parent="."]
+position = Vector3(0, -1.150000000000001, -1.9918584287042083)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle8"]
+mesh = SubResource("G9")
+[node name="Paddle9" type="Node3D" parent="."]
+position = Vector3(0, -4.225031457058368e-16, -2.3)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle9"]
+mesh = SubResource("G10")
+[node name="Paddle10" type="Node3D" parent="."]
+position = Vector3(0, 1.1500000000000001, -1.9918584287042087)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle10"]
+mesh = SubResource("G11")
+[node name="Paddle11" type="Node3D" parent="."]
+position = Vector3(0, 1.991858428704208, -1.150000000000001)
+[node name="Mesh" type="MeshInstance3D" parent="Paddle11"]
+mesh = SubResource("G12")
+[node name="VerticalSpoke" type="Node3D" parent="."]
+position = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="VerticalSpoke"]
+mesh = SubResource("G13")
+[node name="HorizontalSpoke" type="Node3D" parent="."]
+position = Vector3(0, 0, 0)
+[node name="Mesh" type="MeshInstance3D" parent="HorizontalSpoke"]
+mesh = SubResource("G14")

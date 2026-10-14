@@ -22,6 +22,15 @@ func _run() -> void:
 	Engine.time_scale = 6.0
 	await create_timer(1.0).timeout
 	_check(player.is_on_floor(), "Entrance has supporting collision")
+	_check(game.get_node("Village/Buildings").get_child_count() == 7, "Seven existing building PackedScenes retained")
+	for marker: Node3D in game.get_node("Village/ActivitySpaces").get_children():
+		var space: PhysicsShapeQueryParameters3D = PhysicsShapeQueryParameters3D.new()
+		var sphere: SphereShape3D = SphereShape3D.new()
+		sphere.radius = 0.8
+		space.shape = sphere
+		space.transform.origin = marker.global_position + Vector3(0,1.1,0)
+		space.exclude = [player.get_rid()]
+		_check(player.get_world_3d().direct_space_state.intersect_shape(space).is_empty(), "Clear NPC forecourt: " + marker.name)
 	var holes: int = 0
 	for x: int in range(-42,23,4):
 		for z: int in range(-58,59,4):
@@ -44,6 +53,17 @@ func _run() -> void:
 		await _walk(point)
 		if point == Vector2(-20,-11):
 			await _capture("05-inn")
+		if point == Vector2(42,-28):
+			await _walk(Vector2(34,-28))
+			await _walk(Vector2(34,-34),false,90)
+			_check(player.position.z > -30.6 and player.position.y > -0.1,"Bridge railing blocks sideways river fall")
+			await _walk(Vector2(34,-28))
+			await _capture("06-bridge")
+		if point == Vector2(32,32):
+			await _walk(Vector2(37,32),false,90)
+			_check(player.position.x < 33.7 and player.position.y > -0.1,"Dock end blocks lake fall")
+			await _walk(Vector2(32,32))
+			await _capture("07-dock")
 		if point == Vector2(24,-52):
 			_check(absf(player.position.y - 6.0) < 0.15,"Mine terrace reaches 6m")
 			await _capture("03-mine-highland")
@@ -84,6 +104,13 @@ func _run() -> void:
 	var expected_stop: float = shop_shape.global_position.z + shop_box.size.z * 0.5 + 0.32
 	_check(absf(player.position.z - expected_stop) < 0.12, "Shop wall stops player one capsule radius before current facade")
 	await _walk(Vector2(20,0))
+	# Additional G05 assembly checks: well detour and the continuous north loop.
+	for point: Vector2 in [Vector2(8,6),Vector2(0,6)]:
+		await _walk(point)
+	await _walk(Vector2(0,0),false,100)
+	_check(player.position.z > 1.9, "Central well blocks passage")
+	for point: Vector2 in [Vector2(0,6),Vector2(-6,6),Vector2(-6,-6),Vector2(6,-6),Vector2(6,6),Vector2(12,6),Vector2(12,-22),Vector2(24,-22),Vector2(24,10),Vector2(0,10)]:
+		await _walk(point)
 	await _walk(Vector2(8,6))
 	Engine.time_scale = 1.0
 	await _capture("01-plaza")
@@ -125,6 +152,6 @@ func _capture(title: String) -> void:
 	if DisplayServer.get_name() == "headless": return
 	await create_timer(0.3).timeout
 	await RenderingServer.frame_post_draw
-	DirAccess.make_dir_recursive_absolute("res://artifacts/greystone-g03")
-	var result: Error = root.get_texture().get_image().save_webp("res://artifacts/greystone-g03/%s.webp" % title)
+	DirAccess.make_dir_recursive_absolute("res://artifacts/greystone-g05")
+	var result: Error = root.get_texture().get_image().save_webp("res://artifacts/greystone-g05/%s.webp" % title)
 	_check(result == OK,"Capture " + title)

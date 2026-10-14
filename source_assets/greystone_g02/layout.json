@@ -343,25 +343,6 @@
       "prism": false
     },
     {
-      "name": "WellBlock",
-      "position": [
-        0,
-        0.8,
-        0
-      ],
-      "size": [
-        2.8,
-        1.6,
-        2.8
-      ],
-      "color": [
-        0.55,
-        0.56,
-        0.51
-      ],
-      "prism": false
-    },
-    {
       "name": "Trunk0",
       "position": [
         -50,
@@ -871,6 +852,120 @@
         0.31,
         0.21,
         0.13
+      ],
+      "prism": false
+    },
+    {
+      "name": "NorthCross",
+      "position": [
+        12,
+        0.05,
+        -22
+      ],
+      "size": [
+        24,
+        0.02,
+        3
+      ],
+      "color": [
+        0.72,
+        0.62,
+        0.43
+      ],
+      "prism": false
+    },
+    {
+      "name": "GuildForecourt",
+      "position": [
+        0,
+        0.05,
+        -21
+      ],
+      "size": [
+        10,
+        0.02,
+        5
+      ],
+      "color": [
+        0.72,
+        0.62,
+        0.43
+      ],
+      "prism": false
+    },
+    {
+      "name": "WestHousingApproach",
+      "position": [
+        -19,
+        0.05,
+        27
+      ],
+      "size": [
+        4,
+        0.02,
+        5
+      ],
+      "color": [
+        0.72,
+        0.62,
+        0.43
+      ],
+      "prism": false
+    },
+    {
+      "name": "EastHousingApproach",
+      "position": [
+        19,
+        0.05,
+        27
+      ],
+      "size": [
+        4,
+        0.02,
+        5
+      ],
+      "color": [
+        0.72,
+        0.62,
+        0.43
+      ],
+      "prism": false
+    },
+    {
+      "name": "FarmCourtyard",
+      "position": [
+        -39,
+        4.05,
+        -30
+      ],
+      "size": [
+        10,
+        0.02,
+        4
+      ],
+      "color": [
+        0.72,
+        0.62,
+        0.43
+      ],
+      "prism": false
+    },
+    {
+      "name": "FarmBedAccess",
+      "position": [
+        -36,
+        4.05,
+        -40
+      ],
+      "size": [
+        3,
+        0.02,
+        18
+      ],
+      "color": [
+        0.72,
+        0.62,
+        0.43
       ],
       "prism": false
     }
