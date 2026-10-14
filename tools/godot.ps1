@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -28,7 +28,7 @@ if ($Mode -ne 'Version') {
     New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
     $logPath = Join-Path $logRoot ('{0}-{1}.log' -f $Mode.ToLowerInvariant(), (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
     $engineArgs = @('--path', $projectRoot, '--log-file', $logPath)
-    if ($Mode -in @('TestG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'TestG06StoryReload', 'TestG06NPC', 'TestG06', 'TestG06Reload', 'TestGreystoneProps', 'TestGreystoneBuildings', 'TestGreystone', 'TestVillage', 'Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
+    if ($Mode -in @('TestG06Touch', 'TestG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'TestG06StoryReload', 'TestG06NPC', 'TestG06', 'TestG06Reload', 'TestGreystoneProps', 'TestGreystoneBuildings', 'TestGreystone', 'TestVillage', 'Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
     if ($Mode -in @('ExportWindows', 'ExportQA')) {
         $buildFolder = if ($Mode -eq 'ExportWindows') { 'windows' } else { 'qa' }
         $presetName = if ($Mode -eq 'ExportWindows') { 'Windows Desktop' } else { 'Windows QA' }
@@ -46,6 +46,7 @@ if ($Mode -ne 'Version') {
     if ($Mode -eq 'TestG06StoryReload') { $engineArgs += @('--','--reload') }
     if ($Mode -in @('TestG06Commerce','VisualG06Commerce','TestG06CommerceReload')) { $engineArgs += @('--script','res://tests/greystone_commerce_test.gd') }
     if ($Mode -eq 'TestG06CommerceReload') { $engineArgs += @('--','--reload') }
+    if ($Mode -in @('TestG06Touch','VisualG06Touch')) { $engineArgs += @('--script','res://tests/greystone_touch_test.gd') }
     if ($Mode -eq 'RunG06') { $engineArgs += 'res://scenes/main/greystone_integration.tscn' }
     if ($Mode -eq 'PreviewGreystone') { $engineArgs += 'res://scenes/world/greystone_preview.tscn' }
     if ($Mode -eq 'Check') { $engineArgs += '--import' }

@@ -191,3 +191,46 @@ Godot 4.7.2.stable.official.ed1daf0bf，Windows；圖形 OpenGL Compatibility / 
 新增 CommercePanel（及 uid）、greystone_commerce_test（及 uid）、交易規則文件；修改 ExplorationGame、GreystoneIntegration、InventoryManager、SaveCodec、SaveManager、既有遷移/NPC 測試、tools/godot.ps1，以及 ARCHITECTURE、SAVE_FORMAT、工作清單、TASKS、CHANGELOG 與本報告。未修改正式 main、舊地圖或故事 JSON。
 
 下一個子階段為 G06.5：共用 InputMap 的虛擬搖桿、互動與觸控選單。G06.6 完整回歸、G07/G08 與第一章未開始；本輪未聲稱 Android 通過。
+
+
+## G06.5 觸控輸入與共用選單（2026-10-15）
+
+基於 abb737a 的 G06.4。新增 MobileInputLayer，只作輸入轉接，不持有劇情、任務、戰鬥、金幣或存檔狀態。正式 v0.6.1 入口與 schema 3 不變。
+
+### 操作及架構
+
+- RunG06 上方增加「觸控操作 開/關」，桌面預設關閉；mobile feature 自動開啟，可用 force_touch_controls 測試。
+- 左下方（畫面左側 45%、下方 45%）按住產生動態搖桿，拖曳控制方向。右下方互動與手冊按鈕發送既有 interact / party_menu InputEventAction。
+- 搖桿用獨立虛擬裝置 91，複製現有四個移動 InputMap 的左搖桿映射，不修改鍵盤或實體手把映射。PlayerInput / CharacterBody3D 仍讀原 move_* 行動。退出時移除臨時映射。
+- 非搖桿手指作為單一 GUI 指標，ScreenTouch/Drag 轉接既有 Control 的滑鼠事件；關閉原生 touch→mouse 模擬以避免一次觸控產生兩次點擊，停用/退出恢復原值。支援一支移動手指加一支 GUI 手指；沒有新增第二套選單或戰鬥邏輯。
+- 對話、手冊、戰鬥或交易期間隱藏探索觸控按鈕並釋放搖桿；放開、取消、失焦、App paused 及停用亦清除持有輸入。UI 取消觸控在界外釋放，避免誤確認。
+- 已有對話繼續、角色手冊、戰鬥指令/目標、交易按鈕繼續使用原服務。觸控對話顯示點選提示，探索隱藏鍵盤頁尾。部分手冊/戰鬥頁仍保留既有鍵盤/手把提示，功能不依賴鍵盤。
+
+### 驗證
+
+Godot 4.7.2.stable.official.ed1daf0bf，Windows，圖形 OpenGL Compatibility / RTX 3080。`./tools/godot.ps1 -Mode TestG06Touch` / `VisualG06Touch` 注入真正的 InputEventScreenTouch / ScreenDrag；不是直接呼叫任務完成或戰鬥勝利。
+
+涵蓋 E001 對話、實際移動/InputMap、放開、失焦、雙指手冊、角色/任務頁及返回、公會 E002、鍵盤切換、觸控攻擊與目標提交、960×540 座標轉換及停用。觸控戰鬥檢查一個真實回合提交，後續使用既有自動指令結束演練，不宣稱全程人工或全程觸控通關。測試角色定位採 reset_to，其餘移動以實際輸入驗證。
+
+初次測試發現預設手把映射不接受虛擬裝置 91，已新增獨立臨時映射；失焦檢查原本在輸入緩衝處理前立即斷言，改等待下一幀後驗證零輸入。新增驗證：放開觸控不會取消仍按住的鍵盤方向。
+
+已檢視 g065-touch-exploration.webp、g065-touch-battle.webp、g065-touch-small.webp，搖桿/操作區辨識 2/2、選單文字可讀性 2/2；戰鬥仍有開發入口列及桌面提示，操作提示一致性 1/2。圖形證據在 artifacts/phase5，依規範不提交產物。
+
+本輪為 Windows 觸控模擬及桌面回歸。Android / iOS 真機、瀏海安全區、螢幕密度、系統手勢衝突、背景恢復及效能均未驗收；目前沿用既有橫向畫面配置，沒有宣稱直向手機佈局完成。G06.6 全面回歸為下一子階段，G07/G08/第一章未開始。
+
+新增 scripts/ui/mobile_input_layer.gd（及 uid）、tests/greystone_touch_test.gd（及 uid）；修改 scripts/core/greystone_integration.gd、tools/godot.ps1、TASKS、GREYSTONE_BUILD_TASKS、CHANGELOG 及本報告。
+
+
+### G06.5 實際測試結果
+
+| 模式 | 結果 | artifacts/logs 證據 |
+| --- | --- | --- |
+| TestG06Touch | 17 項 / 0 失敗 | testg06touch-20261015-035831-579.log |
+| VisualG06Touch | 21 項 / 0 失敗；後續新增的鍵盤持有檢查由上列 headless 覆蓋 | visualg06touch-20261015-035800-978.log |
+| Check | 成功，exit 0 | check-20261015-035835-822.log |
+| TestPhase6 | 85 項 / 0 失敗，手把事件模擬，JOYPADS [] | testphase6-20261015-035839-921.log |
+| TestG06Story | 58 項 / 0 失敗 | testg06story-20261015-035858-824.log |
+| TestG06Commerce | 47 項 / 0 失敗 | testg06commerce-20261015-035916-982.log |
+| TestG06CommerceReload | 5 項 / 0 失敗 | testg06commercereload-20261015-035921-729.log |
+
+G06.5 程式與桌面模擬驗收完成；上述手把回歸不代表本輪連接實體手把，觸控模擬不代表 Android 真機。

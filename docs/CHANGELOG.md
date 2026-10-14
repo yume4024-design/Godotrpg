@@ -179,3 +179,11 @@
 - 沿用 InventoryManager / PartyManager / DialogueManager；新增呈現用 CommercePanel。
 - 整合存檔升 schema 3，驗證購入/住宿累計與金幣等式；v1/v2 原驗證後遷移，保留來源檔。修正 JSON 帳本還原的整數型別。
 - 新增交易圖形、邊界及重啟測試，重跑原序章/新村序章/遷移。正式 v0.6.1 入口保持不變；詳細紀錄見 GREYSTONE_G06_REPORT.md。
+
+
+## 2026-10-15 — G06.5 觸控輸入
+
+- 新增 MobileInputLayer，左側動態搖桿與右側互動/手冊按鈕共用 InputMap；對話、角色與戰鬥選單沿用既有 Control。
+- 獨立虛擬裝置映射、單一觸控 GUI 指標、放開/取消/失焦清理，避免重複模擬點擊及殘留移動。
+- RunG06 增加觸控切換；mobile feature 自動啟用。未修改正式入口或 schema 3。
+- 新增桌面觸控與圖形測試，並通過手把事件、序章與交易回歸。Android/iOS 真機仍未驗收。

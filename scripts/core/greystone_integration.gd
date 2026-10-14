@@ -1,8 +1,10 @@
 extends ExplorationGame
 ## Opt-in integration entry; production main and its slot remain unchanged.
+@export var force_touch_controls: bool = false
 @export var legacy_slot_path: String = "user://crystal_slot_01.json"
 var bridge_button: Button
 var import_button: Button
+var mobile_input: MobileInputLayer
 var commerce: CommercePanel
 var _merchant: WorldInteractable
 var _inn_service: bool = false
@@ -37,6 +39,17 @@ func _ready() -> void:
 	commerce_layer.add_child(commerce)
 	commerce.confirmed.connect(confirm_commerce)
 	commerce.cancelled.connect(close_commerce)
+	var touch_layer: CanvasLayer = CanvasLayer.new()
+	touch_layer.layer = 8
+	add_child(touch_layer)
+	mobile_input = MobileInputLayer.new()
+	mobile_input.game = self
+	touch_layer.add_child(mobile_input)
+	mobile_input.set_enabled(force_touch_controls or OS.has_feature("mobile"))
+	var touch_toggle: Button = Button.new()
+	touch_toggle.text = "觸控操作 開/關"
+	row.add_child(touch_toggle)
+	touch_toggle.pressed.connect(func() -> void: mobile_input.set_enabled(not mobile_input.enabled))
 
 func _process(_delta: float) -> void:
 	if bridge_button == null: return
@@ -123,3 +136,7 @@ func _restore_inn_party() -> void:
 	party.rest()
 	for actor: CombatantState in party.members(): actor.set_block_signals(false)
 	party.changed.emit()
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventJoypadMotion and event.device == MobileInputLayer.TOUCH_DEVICE: return
+	super._input(event)
