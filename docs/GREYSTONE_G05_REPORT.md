@@ -55,3 +55,5 @@ Android/iOS、FPS/Draw Calls、觸控、NPC 劇情、切場景與新村莊存檔
 | Smoke | 正式主場景啟動成功，退出 0 | artifacts/logs/smoke-20261014-144851-706.log |
 
 已另查看 06-bridge.webp、07-dock.webp 的實際畫面。git diff --check 通過；無正式主場景、project.godot、存檔或故事腳本變更。
+
+G04 開工前複驗（2026-10-14）：VisualGreystone 98 項、0 失敗，日誌 artifacts/logs/visualgreystone-20261014-145459-311.log。七建物、通路與碰撞基線確認，遠端無新增提交。
