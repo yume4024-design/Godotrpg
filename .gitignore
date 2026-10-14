@@ -13,3 +13,20 @@ Thumbs.db
 __pycache__/
 *.pyc
 .codex-remote-attachments/
+
+# Local Godot export credentials, signing keys and generated packages
+.godot/export_credentials.cfg
+export_credentials.cfg
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+*.apk
+*.aab
+*.ipa
+*.pck
+*.blend1
+*.blend2
+export.cfg
