@@ -1,0 +1,104 @@
+[
+  {
+    "file": "barrel.glb",
+    "bytes": 8520,
+    "triangles": 108,
+    "sha256": "7298078f741e9ab29143942dc0c72eb6b32973fc2a45c2722b087ba8ab7b26ba"
+  },
+  {
+    "file": "bush_a.glb",
+    "bytes": 7360,
+    "triangles": 60,
+    "sha256": "39c603388c6a9830d101057bd369848bd23154668d4e6a8050f8a9e7cab2008e"
+  },
+  {
+    "file": "crate.glb",
+    "bytes": 6252,
+    "triangles": 60,
+    "sha256": "49829bccc4858f3d6351ef94e8654d111657badbdf3425e77e2c586cc81e341c"
+  },
+  {
+    "file": "crystal_blue.glb",
+    "bytes": 6468,
+    "triangles": 72,
+    "sha256": "2502715f4176c74ebef3a3de19fb059f98a261e8837d4e63c9ea477e4231dcba"
+  },
+  {
+    "file": "flower_a.glb",
+    "bytes": 44928,
+    "triangles": 444,
+    "sha256": "5d305ca2fa5badcb5a1ed336a4cee89abced49e1b4b5fd9b2f7bd4a97c61d1cd"
+  },
+  {
+    "file": "grass_a.glb",
+    "bytes": 3944,
+    "triangles": 30,
+    "sha256": "64223aaa85762888f2e2c1973d5f3638b72ef4445375b175a709a84da5c66add"
+  },
+  {
+    "file": "lamp_post.glb",
+    "bytes": 4652,
+    "triangles": 36,
+    "sha256": "ffe7765e52e15a5fac740922cd35a7e11b309cc09d71bcc2adeb2eb9f6fee1de"
+  },
+  {
+    "file": "pine_tree_a.glb",
+    "bytes": 4316,
+    "triangles": 26,
+    "sha256": "99b7a24ac75281d8f48d08a9a206a95ccb61b853d12aaf4a8f8ac3c36ee6027f"
+  },
+  {
+    "file": "pine_tree_b.glb",
+    "bytes": 4268,
+    "triangles": 26,
+    "sha256": "eb1e3a653ff48806c4f0b1ef21043d0b93a199a34ede8585826a77b67ae67261"
+  },
+  {
+    "file": "rock_cliff.glb",
+    "bytes": 2668,
+    "triangles": 21,
+    "sha256": "09b82cced03302c645ca9fdf1d9a081c68acd7d3a488dc3872f7a19f144f69c0"
+  },
+  {
+    "file": "rock_medium.glb",
+    "bytes": 2656,
+    "triangles": 21,
+    "sha256": "03f34970134ebdaf81b144179a15eeded74ef030ec600dda9a40792930bbb65e"
+  },
+  {
+    "file": "rock_small.glb",
+    "bytes": 2688,
+    "triangles": 21,
+    "sha256": "05a1d6d9a356fce52c0164199f97ed1cf0a8d05e6180eaa51183a64bf6493689"
+  },
+  {
+    "file": "stone_well.glb",
+    "bytes": 21656,
+    "triangles": 280,
+    "sha256": "dc920292d6d8fbf9676094081ccf582a559dc3e40d984e01d420622ff454c4f2"
+  },
+  {
+    "file": "wooden_bridge.glb",
+    "bytes": 21356,
+    "triangles": 288,
+    "sha256": "45c4c974b8eef6447b0a77dde9729f84868032dd403456a8c3d179d5988b6013"
+  },
+  {
+    "file": "wooden_dock.glb",
+    "bytes": 17136,
+    "triangles": 228,
+    "sha256": "5c7f40f6db440ef0030e8c60978cfdee4ddc17d6fa849f652d51bb1bbcf615a0"
+  },
+  {
+    "file": "wooden_fence.glb",
+    "bytes": 4576,
+    "triangles": 48,
+    "sha256": "58081002d926ba2f722028d0657b6611d5101c1eda9cc88cb577fc65843ff02c"
+  },
+  {
+    "file": "wooden_sign.glb",
+    "bytes": 2900,
+    "triangles": 24,
+    "sha256": "91200f4de60dcecaf34361f35dd033babfaf275c9a352b7ecd973b1b3d0d46a9"
+  }
+]

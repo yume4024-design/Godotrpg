@@ -1,0 +1,10 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/props/wooden_sign.glb" id="Visual"]
+[sub_resource type="BoxShape3D" id="C0"]
+size = Vector3(0.2, 1.8, 0.2)
+[node name="wooden_sign" type="Node3D"]
+[node name="Visual" parent="." instance=ExtResource("Visual")]
+[node name="Body0" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.9, 0)
+[node name="Collision" type="CollisionShape3D" parent="Body0"]
+shape = SubResource("C0")

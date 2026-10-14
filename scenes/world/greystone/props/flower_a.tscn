@@ -1,0 +1,6 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/props/flower_a.glb" id="Visual"]
+
+[node name="flower_a" type="Node3D"]
+[node name="Visual" parent="." instance=ExtResource("Visual")]
+

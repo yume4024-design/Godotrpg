@@ -1,0 +1,10 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/props/pine_tree_a.glb" id="Visual"]
+[sub_resource type="BoxShape3D" id="C0"]
+size = Vector3(0.5, 1.6, 0.5)
+[node name="pine_tree_a" type="Node3D"]
+[node name="Visual" parent="." instance=ExtResource("Visual")]
+[node name="Body0" type="StaticBody3D" parent="."]
+position = Vector3(0, 0.8, 0)
+[node name="Collision" type="CollisionShape3D" parent="Body0"]
+shape = SubResource("C0")

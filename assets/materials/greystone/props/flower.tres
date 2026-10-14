@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3]
+[resource]
+resource_name = "G04_flower"
+albedo_color = Color(0.87,0.57,0.58,1)
+roughness = 0.9

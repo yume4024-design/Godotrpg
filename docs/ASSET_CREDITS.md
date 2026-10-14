@@ -83,3 +83,8 @@ scripts/tools/greystone/build_layout.py 生成原創 Godot 原生白盒，七個
 公開 GLB 下載位址分別為 static.poly.pizza/270a08b6-87e1-47eb-ad1c-5fd7be321bcd.glb、341c9305-c6dd-4427-ad00-620ad57eb14e.glb、65d155f6-705c-4e6c-9e3a-b9974bb82324.glb，均從對應來源頁取得。外掛一鍵匯入不支援時使用公開下載，不涉及使用者 API key。
 
 2026-10-14 G03 細化：來源沿用上述 CC0 模型。新製旅館側翼、公會門廳、單層山牆屋頂、門廊、煙囪、門板/把手、櫃檯及鍛造設施；移除旅館母型的部分屋頂/門廊幾何。材質提取至 assets/materials/greystone 共用。未加入新的第三方來源或付費資產。
+
+
+## G04 程序環境素材（2026-10-14）
+
+17 項素材由本專案 Blender Python 建立或重用原創 G02/G05 幾何；沒有新第三方下載、付費素材或貼圖。來源/變更/面數見 [G04報告](GREYSTONE_G04_REPORT.md) 與 source_assets/greystone_g04/metrics.json。既有 Quaternius 建築授權與署名記錄不變。

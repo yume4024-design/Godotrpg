@@ -1,0 +1,173 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/stone_well.tscn" id="P0"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/wooden_bridge.tscn" id="P1"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/wooden_dock.tscn" id="P2"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/wooden_fence.tscn" id="P3"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/lamp_post.tscn" id="P4"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/wooden_sign.tscn" id="P5"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/pine_tree_a.tscn" id="P6"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/pine_tree_b.tscn" id="P7"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/rock_small.tscn" id="P8"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/rock_medium.tscn" id="P9"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/rock_cliff.tscn" id="P10"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/bush_a.tscn" id="P11"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/flower_a.tscn" id="P12"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/grass_a.tscn" id="P13"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/barrel.tscn" id="P14"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/crate.tscn" id="P15"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/crystal_blue.tscn" id="P16"]
+[sub_resource type="Environment" id="Env"]
+background_mode = 1
+background_color = Color(0.22,0.29,0.32,1)
+ambient_light_source = 3
+ambient_light_color = Color(1,1,1,1)
+ambient_light_energy = 0.65
+[node name="GreystoneAssetPreview" type="Node3D"]
+[node name="Assets" type="Node3D" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Env")
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-55,-25,0)
+light_energy = 1.1
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(60,58,75)
+rotation_degrees = Vector3(-45,32,0)
+projection = 1
+size = 76.0
+current = true
+[node name="stone_well" parent="Assets" instance=ExtResource("P0")]
+position = Vector3(0,0,0)
+[node name="Label0" type="Label3D" parent="."]
+position = Vector3(0,0.3,5)
+text = "stone_well"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="wooden_bridge" parent="Assets" instance=ExtResource("P1")]
+position = Vector3(12,0,0)
+[node name="Label1" type="Label3D" parent="."]
+position = Vector3(12,0.3,5)
+text = "wooden_bridge"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="wooden_dock" parent="Assets" instance=ExtResource("P2")]
+position = Vector3(24,0,0)
+[node name="Label2" type="Label3D" parent="."]
+position = Vector3(24,0.3,5)
+text = "wooden_dock"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="wooden_fence" parent="Assets" instance=ExtResource("P3")]
+position = Vector3(36,0,0)
+[node name="Label3" type="Label3D" parent="."]
+position = Vector3(36,0.3,5)
+text = "wooden_fence"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="lamp_post" parent="Assets" instance=ExtResource("P4")]
+position = Vector3(48,0,0)
+[node name="Label4" type="Label3D" parent="."]
+position = Vector3(48,0.3,5)
+text = "lamp_post"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="wooden_sign" parent="Assets" instance=ExtResource("P5")]
+position = Vector3(0,0,12)
+[node name="Label5" type="Label3D" parent="."]
+position = Vector3(0,0.3,17)
+text = "wooden_sign"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="pine_tree_a" parent="Assets" instance=ExtResource("P6")]
+position = Vector3(12,0,12)
+[node name="Label6" type="Label3D" parent="."]
+position = Vector3(12,0.3,17)
+text = "pine_tree_a"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="pine_tree_b" parent="Assets" instance=ExtResource("P7")]
+position = Vector3(24,0,12)
+[node name="Label7" type="Label3D" parent="."]
+position = Vector3(24,0.3,17)
+text = "pine_tree_b"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="rock_small" parent="Assets" instance=ExtResource("P8")]
+position = Vector3(36,0,12)
+[node name="Label8" type="Label3D" parent="."]
+position = Vector3(36,0.3,17)
+text = "rock_small"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="rock_medium" parent="Assets" instance=ExtResource("P9")]
+position = Vector3(48,0,12)
+[node name="Label9" type="Label3D" parent="."]
+position = Vector3(48,0.3,17)
+text = "rock_medium"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="rock_cliff" parent="Assets" instance=ExtResource("P10")]
+position = Vector3(0,0,24)
+[node name="Label10" type="Label3D" parent="."]
+position = Vector3(0,0.3,29)
+text = "rock_cliff"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="bush_a" parent="Assets" instance=ExtResource("P11")]
+position = Vector3(12,0,24)
+[node name="Label11" type="Label3D" parent="."]
+position = Vector3(12,0.3,29)
+text = "bush_a"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="flower_a" parent="Assets" instance=ExtResource("P12")]
+position = Vector3(24,0,24)
+[node name="Label12" type="Label3D" parent="."]
+position = Vector3(24,0.3,29)
+text = "flower_a"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="grass_a" parent="Assets" instance=ExtResource("P13")]
+position = Vector3(36,0,24)
+[node name="Label13" type="Label3D" parent="."]
+position = Vector3(36,0.3,29)
+text = "grass_a"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="barrel" parent="Assets" instance=ExtResource("P14")]
+position = Vector3(48,0,24)
+[node name="Label14" type="Label3D" parent="."]
+position = Vector3(48,0.3,29)
+text = "barrel"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="crate" parent="Assets" instance=ExtResource("P15")]
+position = Vector3(0,0,36)
+[node name="Label15" type="Label3D" parent="."]
+position = Vector3(0,0.3,41)
+text = "crate"
+billboard = 1
+font_size = 32
+pixel_size = 0.03
+[node name="crystal_blue" parent="Assets" instance=ExtResource("P16")]
+position = Vector3(12,0,36)
+[node name="Label16" type="Label3D" parent="."]
+position = Vector3(12,0.3,41)
+text = "crystal_blue"
+billboard = 1
+font_size = 32
+pixel_size = 0.03

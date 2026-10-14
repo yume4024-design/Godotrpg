@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3]
+[resource]
+resource_name = "G04_leaf_light"
+albedo_color = Color(0.42,0.57,0.28,1)
+roughness = 0.9

@@ -28,6 +28,13 @@ def assemble(world, scene_type, out, height_at):
         s.nodes.append(f'[node name="{name}" type="MeshInstance3D" parent="."]\nposition = Vector3({pos[0]}, {pos[1]}, {pos[2]})\nmesh = SubResource("G{i}")')
 
     def register(name, s):
+        replacements={'well':'stone_well','bridge_deck':'wooden_bridge','dock_deck':'wooden_dock','fence':'wooden_fence','lamp':'lamp_post','sign':'wooden_sign'}
+        model=replacements.get(name)
+        if model and (out/'props'/(model+'.tscn')).exists():
+            # Bridge/dock keep the already tested G02 supporting bodies/rails.
+            path=f'assets/models/greystone/props/{model}.glb' if name in ['bridge_deck','dock_deck'] else f'scenes/world/greystone/props/{model}.tscn'
+            world.external += f'[ext_resource type="PackedScene" path="res://{path}" id="Prop_{name}"]\n'
+            return
         s.save(props / (name + '.tscn'))
         world.external += f'[ext_resource type="PackedScene" path="res://scenes/world/greystone/placeholders/{name}.tscn" id="Prop_{name}"]\n'
 
@@ -59,6 +66,13 @@ def assemble(world, scene_type, out, height_at):
         register(ident,s)
     place('UpstreamBridge','bridge_deck',34,0,-28)
     place('LakesideDock','dock_deck',32,0,32)
+    if (out/'props/wooden_bridge.tscn').exists():
+        # GLBs now carry the existing rail/pier visuals; retain only G02 collision.
+        hidden=['Terrain/Bridge','Terrain/Dock','Bounds/BridgeRail31','Bounds/BridgeRail25','Bounds/DockEnd','Bounds/DockN','Bounds/DockS']
+        hidden += [f'Terrain/DockPier{x}{z}' for x in [30,33] for z in [28,35]]
+        for n,node in enumerate(world.nodes):
+            if any(f'parent="{path}"' in node and 'name="Mesh"' in node for path in hidden):
+                world.nodes[n] += '\nvisible = false'
 
     s=module('fence')
     for x in [-1.4,1.4]:
@@ -105,6 +119,18 @@ def assemble(world, scene_type, out, height_at):
     s.box('HorizontalSpoke','.',(0,0,0),(.28,.25,4.7),wood,False)
     register('waterwheel',s)
     place('RiverWaterwheel','waterwheel',31.0,-.8,-4)
+
+    # Reuse standalone assets away from roads and reserved door approaches.
+    placements={'pine_tree_a':[(-34,37),(-42,20)],'pine_tree_b':[(46,-18),(49,30)],
+      'bush_a':[(-17,18),(17,18),(-27,2)],'flower_a':[(-16,25),(16,25),(-27,4)],
+      'grass_a':[(-30,32),(10,38)],'rock_small':[(-32,35)],'rock_medium':[(46,20)],
+      'rock_cliff':[(51,-42)],'barrel':[(-26,-18),(17,-20)],'crate':[(-26,-20),(19,-20)],
+      'crystal_blue':[(27,-52),(20,-53)]}
+    for ident,positions in placements.items():
+        if not (out/'props'/(ident+'.tscn')).exists(): continue
+        world.external += f'[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/{ident}.tscn" id="Prop_{ident}"]\n'
+        for n,(x,z) in enumerate(positions):
+            place(ident.title()+str(n),ident,x,height_at(x,z),z)
 
     # Flat road links complete the visible loop and building forecourts.
     for name,pos,size in [

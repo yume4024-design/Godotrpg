@@ -1,0 +1,87 @@
+[
+  {
+    "name": "stone_well",
+    "triangles": 280,
+    "source": "G05 well geometry reused"
+  },
+  {
+    "name": "wooden_bridge",
+    "triangles": 288,
+    "source": "G05 bridge_deck geometry reused; G02 rails/supports reused for standalone deck"
+  },
+  {
+    "name": "wooden_dock",
+    "triangles": 228,
+    "source": "G05 dock_deck geometry reused; G02 rails/supports reused for standalone deck"
+  },
+  {
+    "name": "wooden_fence",
+    "triangles": 48,
+    "source": "G05 fence geometry reused"
+  },
+  {
+    "name": "lamp_post",
+    "triangles": 36,
+    "source": "G05 lamp geometry reused"
+  },
+  {
+    "name": "wooden_sign",
+    "triangles": 24,
+    "source": "G05 sign geometry reused"
+  },
+  {
+    "name": "pine_tree_a",
+    "triangles": 26,
+    "source": "G02 pinecontext reused with trunk"
+  },
+  {
+    "name": "pine_tree_b",
+    "triangles": 26,
+    "source": "G02 pinecontext reused with trunk"
+  },
+  {
+    "name": "rock_small",
+    "triangles": 21,
+    "source": "G02 riverrock0.glb reused"
+  },
+  {
+    "name": "rock_medium",
+    "triangles": 21,
+    "source": "G02 cliff2.glb reused"
+  },
+  {
+    "name": "rock_cliff",
+    "triangles": 21,
+    "source": "G02 cliff0.glb reused"
+  },
+  {
+    "name": "bush_a",
+    "triangles": 60,
+    "source": "Original procedural"
+  },
+  {
+    "name": "flower_a",
+    "triangles": 444,
+    "source": "Original procedural"
+  },
+  {
+    "name": "grass_a",
+    "triangles": 30,
+    "source": "Original procedural"
+  },
+  {
+    "name": "barrel",
+    "triangles": 108,
+    "source": "Original procedural"
+  },
+  {
+    "name": "crate",
+    "triangles": 60,
+    "source": "Original procedural"
+  },
+  {
+    "name": "crystal_blue",
+    "triangles": 72,
+    "source": "Original procedural"
+  }
+]
