@@ -108,7 +108,7 @@ func _run() -> void:
 	var basis: Basis = game.camera.global_basis
 	await _place(Vector3(3, 0.1, 0))
 	await create_timer(0.7).timeout
-	_check(is_equal_approx(game.camera.size, 14.0) and game.camera.global_basis.is_equal_approx(basis), "Forest camera zone zoom preserves fixed angle")
+	_check(is_equal_approx(game.camera.size, 7.0) and game.camera.global_basis.is_equal_approx(basis), "Forest camera zone uses doubled zoom and preserves fixed angle")
 	await _capture("05-forest-clearing")
 	await _place(Vector3(8, 0.1, 0))
 	await _tap(KEY_E)

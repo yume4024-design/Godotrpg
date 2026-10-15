@@ -234,3 +234,62 @@ Godot 4.7.2.stable.official.ed1daf0bf，Windows，圖形 OpenGL Compatibility / 
 | TestG06CommerceReload | 5 項 / 0 失敗 | testg06commercereload-20261015-035921-729.log |
 
 G06.5 程式與桌面模擬驗收完成；上述手把回歸不代表本輪連接實體手把，觸控模擬不代表 Android 真機。
+
+
+## G06.6 全面回歸與跨系統驗收（2026-10-15）
+
+基線 7221a66，沿用 godot-master 的狀態歸屬及實際圖形驗證流程。本輪只做 G06.6，沒有啟動 G07/G08、切換正式入口或建立第一章。
+
+### 新增覆蓋與修正
+
+1. 新增 greystone_touch_commerce_test.gd，繼承交易/遷移測試，以 InputEventScreenTouch 操作商店/旅館確認、取消、互動與結果對話；沒有平行交易系統。涵蓋距離重驗、金幣/數量/容量、重複確認、既有道具消耗、全隊恢復、排隊保存、v1/v2 遷移、schema 3 拒絕無效帳本及來源檔保留。
+2. 新增「已入隊莉雅原站位保存/讀取」測試，首次 TestG06Commerce 實測失敗（49 項中 1 失敗）：執行期莉雅已移除碰撞，但隔離物理驗證場景仍保留預設碰撞，錯誤拒絕合法位置。
+3. 修正 SaveManager 將已驗證的候選 flags 注入 ExplorationGame.validate_loaded_position，在隔離場景套用相同的莉雅出現規則，再執行原地板/膠囊查詢。以候選旗標為準，不使用目前進度，也不放寬位置驗證。新增反例確認「未入隊莉雅」同一位置仍被阻擋。修正後單獨交易 50 項、圖形觸控交易 53 項通過，再跑整套回歸。
+4. 新增 tools/test_g06.ps1，以固定依賴順序執行 16 種模式，任一失敗即停止；逐項記錄起始時間、耗時、引擎輸出、日誌、基線 SHA 與工作目錄是否有修改，輸出 artifacts/regression/g06-*.json。不納入機器產物或玩家正式存檔。
+
+### 重現方式
+
+```powershell
+./tools/test_g06.ps1
+```
+
+此命令先產生真實舊序章測試存檔，再跑遷移/重啟、NPC、新序章、觸控與觸控交易，避免依賴未準備的測試資料。每個 Godot 程序保留既有 60 秒上限；整套耗時較長。圖形模式會開啟測試視窗。
+
+正式仍為 v0.6.1；新版候選使用 RunG06、獨立存檔欄位及 schema 3。G06.6 是桌面整合驗收，不是 G08 平台發佈驗收。NPC 巡邏、第一章地圖、Android/iOS 真機與效能、安全區及系統手勢仍未驗收；六 NPC 現有待機/互動已驗證。手把為事件模擬，不冒充本輪實體手把通關。
+
+新增/修改：scripts/core/exploration_game.gd、scripts/save/save_manager.gd；tests/greystone_commerce_test.gd、greystone_touch_commerce_test.gd（及 uid）；tools/godot.ps1、test_g06.ps1；SAVE_FORMAT、GREYSTONE_BUILD_TASKS、TASKS、CHANGELOG 及本報告。原故事 JSON、獎勵數值與存檔 schema 未變更。
+
+### 戰鬥選敵修正（使用者本輪追加）
+
+舊規則依最低 HP 比例排序，同血量按 instance_id 字母排序，導致滿血先選莉雅，再持續鎖定已受傷的她。改為 BattleManager 內的戰況評分：可造成傷害（上限20）＋失血比例×20、防禦扣20、最近一次敵方受擊者扣35、可擊倒加100。相同分數依敵人索引與回合輪換，不依名字。技能選擇與傷害數值不變；傷害預測和實際扣血共用公式，戰鬥壓力不寫入存檔。
+
+這不是保證平均分傷：防禦及收尾可能仍讓敵人選同一人；一般非致命攻擊會減少持續集火。新增 enemy_targeting_test.gd，涵蓋防禦、收尾、死亡目標、全滅、同分輪換及四次真實敵人行動。實測目標為莉雅→雷恩→莉雅→雷恩，10項通過。另重跑原戰鬥75項與完整序章。
+
+追加修改檔案：scripts/battle/battle_manager.gd、tests/enemy_targeting_test.gd（及 uid）。可單獨執行 `./tools/godot.ps1 -Mode TestEnemyAI`。
+
+### G06.6 最終實測結果
+
+Godot 4.7.2.stable.official.ed1daf0bf / Windows；16種模式全數成功，合計 576 項斷言、0失敗。證據清單：`artifacts/regression/g06-20261015-040750.json`。
+
+| 模式 | 結果 | artifacts/logs 證據 |
+| --- | --- | --- |
+| Check | exit 0 | check-20261015-040750-493.log |
+| TestEnemyAI | 10 項 / 0 失敗 | testenemyai-20261015-040755-077.log |
+| TestPhase3 | 75 項 / 0 失敗 | testphase3-20261015-040755-699.log |
+| Smoke | exit 0 | smoke-20261015-040803-203.log |
+| TestPhase5 | 69 項 / 0 失敗 | testphase5-20261015-040804-916.log |
+| TestPhase5Reload | 7 項 / 0 失敗 | testphase5reload-20261015-040821-278.log |
+| TestPhase6 | 85 項 / 0 失敗 | testphase6-20261015-040823-012.log |
+| TestG06 | 51 項 / 0 失敗 | testg06-20261015-040842-187.log |
+| TestG06Reload | 6 項 / 0 失敗 | testg06reload-20261015-040847-044.log |
+| TestG06NPC | 60 項 / 0 失敗 | testg06npc-20261015-040849-122.log |
+| TestG06Story | 58 項 / 0 失敗 | testg06story-20261015-040932-831.log |
+| TestG06StoryReload | 7 項 / 0 失敗 | testg06storyreload-20261015-040951-105.log |
+| VisualG06Story | 68 項 / 0 失敗 | visualg06story-20261015-040953-091.log |
+| VisualG06Touch | 22 項 / 0 失敗 | visualg06touch-20261015-041016-635.log |
+| VisualG06TouchCommerce | 53 項 / 0 失敗 | visualg06touchcommerce-20261015-041023-777.log |
+| TestG06CommerceReload | 5 項 / 0 失敗 | testg06commercereload-20261015-041031-520.log |
+
+工具選項清理後另跑 TestEnemyAI：10/0（testenemyai-20261015-040832-345.log），相同生產程式。已檢視本輪 g063-04-guardian-battle.webp 與 g066-g064-restored.webp：戰鬥指令、全隊 HP/MP 與交易後金額顯示正常；開發入口列仍會出現在戰鬥畫面，保留為已知介面限制。圖形流程透過輸入事件執行，非 Android 真機或人工全程遊玩。
+
+G06.6 桌面回歸完成。下一步可安排 G07 效能量測與畫質規劃，但本輪未開始；NPC 巡邏與手機真機仍列未完成項目。正式版本保持 v0.6.1，新版仍需由 RunG06 進入。

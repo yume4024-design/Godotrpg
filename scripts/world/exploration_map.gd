@@ -1,6 +1,8 @@
 class_name ExplorationMap
 extends Node3D
 
+const EXPLORATION_ZOOM: float = 2.0
+
 @export var map_id: StringName
 @export var display_name: String
 @export var environment: Environment
@@ -39,5 +41,5 @@ func triggers_at(position: Vector3) -> Array[StringName]:
 
 func camera_size_at(position: Vector3) -> float:
 	if is_instance_valid(camera_zone) and position.distance_to(camera_zone.global_position) < camera_zone_radius:
-		return zone_camera_size
-	return default_camera_size
+		return zone_camera_size / EXPLORATION_ZOOM
+	return default_camera_size / EXPLORATION_ZOOM

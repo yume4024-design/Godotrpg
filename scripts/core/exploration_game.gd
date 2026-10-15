@@ -342,7 +342,7 @@ func begin_new_game() -> void:
 func refresh_control_lock() -> void:
 	_update_lock()
 
-func validate_loaded_position(location: Dictionary) -> bool:
+func validate_loaded_position(location: Dictionary, candidate_flags: Dictionary) -> bool:
 	# Query a separate physics world, so validation cannot alter the active map.
 	var selected: PackedScene
 	for scene: PackedScene in travel.maps:
@@ -354,6 +354,10 @@ func validate_loaded_position(location: Dictionary) -> bool:
 	add_child(viewport)
 	var candidate: Node3D = selected.instantiate() as Node3D
 	viewport.add_child(candidate)
+	# Reconstruct dynamic collision from the already validated candidate, not this session.
+	for target: Node in candidate.find_children("*", "WorldInteractable", true, false):
+		if (target as WorldInteractable).interaction_id == &"npc_lia":
+			(target as WorldInteractable).set_present(not candidate_flags.get("e003_done", false))
 	await get_tree().physics_frame
 	await get_tree().physics_frame
 	var position: Vector3 = Vector3(location.x, location.y, location.z)

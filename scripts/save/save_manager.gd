@@ -64,12 +64,12 @@ func request_load(backup: bool = false) -> bool:
 	_working = true
 	_game.restoring = true
 	_game.refresh_control_lock()
-	var position_valid: bool = await _game.validate_loaded_position(candidate.data.location)
+	var position_valid: bool = await _game.validate_loaded_position(candidate.data.location, candidate.data.flags)
 	if position_valid and _game.greystone_enabled and int(candidate.data.schema_version) == 1:
 		candidate = codec.prepare(GreystoneMigration.upgrade(candidate.data), _game)
 		position_valid = not candidate.is_empty()
 		if position_valid:
-			position_valid = await _game.validate_loaded_position(candidate.data.location)
+			position_valid = await _game.validate_loaded_position(candidate.data.location, candidate.data.flags)
 	if position_valid and _game.greystone_enabled and int(candidate.data.schema_version) < 3:
 		var upgraded: Dictionary = candidate.data.duplicate(true)
 		upgraded.schema_version = 3

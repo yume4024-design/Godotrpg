@@ -20,6 +20,8 @@ var _queue: Array[CombatantState] = []
 var _cursor: int = 0
 var _guarded: Dictionary[StringName, bool] = {}
 var _encounter: Dictionary = {}
+# Battle-local pressure; never persisted into exploration saves.
+var _last_enemy_target: StringName = &""
 
 func setup(party: PartyManager, inventory: InventoryManager, opponents: Array[CombatantState], encounter: Dictionary) -> void:
 	allies = party.members()
@@ -119,13 +121,9 @@ func _perform(action: StringName, target: CombatantState) -> void:
 				healing = true
 				amount = target.heal(skill.power + source.magic)
 			SkillDefinition.Effect.PHYSICAL, SkillDefinition.Effect.MAGIC:
-				var magic_hit: bool = skill.effect == SkillDefinition.Effect.MAGIC
-				var offense: int = source.magic if magic_hit else source.attack
-				var resistance: int = target.ward if magic_hit else target.defense
-				var damage: int = maxi(1, offense + skill.power - resistance)
-				if guarded(target.instance_id):
-					damage = maxi(1, ceili(damage * 0.5))
-				amount = target.damage(damage)
+				amount = target.damage(predicted_damage(source, target, skill))
+	if not source.ally and amount > 0 and not healing:
+		_last_enemy_target = target.instance_id
 	var detail: String = "，恢復 %d HP" % amount if healing else ("，造成 %d 傷害" % amount if amount > 0 else "，傷害減半至下次行動")
 	history.append("%s → %s：%s%s" % [source.definition.display_name, target.definition.display_name, action_name, detail])
 	changed.emit()
@@ -174,13 +172,45 @@ func _enemy_action(token: int) -> void:
 	for skill: SkillDefinition in current.definition.skills:
 		if skill.effect == SkillDefinition.Effect.MAGIC and current.mp >= skill.mp_cost and round_number % 2 == 0:
 			action = skill.id
+	var target: CombatantState = choose_enemy_target(action)
+	if target != null:
+		_perform(action, target)
+
+func predicted_damage(source: CombatantState, target: CombatantState, skill: SkillDefinition) -> int:
+	var magic_hit: bool = skill.effect == SkillDefinition.Effect.MAGIC
+	var offense: int = source.magic if magic_hit else source.attack
+	var resistance: int = target.ward if magic_hit else target.defense
+	var damage: int = maxi(1, offense + skill.power - resistance)
+	return maxi(1, ceili(damage * 0.5)) if guarded(target.instance_id) else damage
+
+func choose_enemy_target(action: StringName) -> CombatantState:
+	if current == null or current.ally:
+		return null
+	var skill: SkillDefinition = current.definition.skill(action)
+	if skill == null or skill.effect not in [SkillDefinition.Effect.PHYSICAL, SkillDefinition.Effect.MAGIC]:
+		return null
 	var targets: Array[CombatantState] = valid_targets(action)
-	targets.sort_custom(func(a: CombatantState, b: CombatantState) -> bool:
-		var ratio_a: float = float(a.hp) / a.max_hp
-		var ratio_b: float = float(b.hp) / b.max_hp
-		return String(a.instance_id) < String(b.instance_id) if is_equal_approx(ratio_a, ratio_b) else ratio_a < ratio_b)
-	if not targets.is_empty():
-		_perform(action, targets[0])
+	if targets.is_empty():
+		return null
+	# Rotate equal scores by enemy/round, never by character name.
+	var offset: int = (maxi(0, enemies.find(current)) + maxi(0, round_number - 1)) % targets.size()
+	var chosen: CombatantState
+	var best_score: float = -INF
+	for index: int in range(targets.size()):
+		var target: CombatantState = targets[(index + offset) % targets.size()]
+		var damage: int = predicted_damage(current, target, skill)
+		var score: float = minf(damage, 20.0) + 20.0 * (1.0 - float(target.hp) / target.max_hp)
+		if guarded(target.instance_id):
+			score -= 20.0
+		if target.instance_id == _last_enemy_target:
+			score -= 35.0
+		# A genuine finishing blow outweighs spreading ordinary attacks.
+		if damage >= target.hp:
+			score += 100.0
+		if score > best_score:
+			best_score = score
+			chosen = target
+	return chosen
 
 func _living(values: Array[CombatantState]) -> int:
 	var count: int = 0

@@ -117,6 +117,13 @@ func _run() -> void:
 	capacity.restore_state({"gold":100,"counts":{"potion":9999},"claimed":{}})
 	_check(not capacity.buy_potions(1) and capacity.gold==100,"Full item stack rejects purchase without debit")
 	capacity.free()
+	var safe_position: Vector3 = game.player.position
+	var recruited_lia: WorldInteractable = game.travel.current_map.get_node("NPCs/Lia")
+	await _place(recruited_lia.position+Vector3(0,.1,0))
+	_check(game.saves.request_save(),"Save on recruited Lia former position")
+	_check(await game.saves.request_load(),"Reload respects recruited NPC collision removal")
+	_check(not await game.validate_loaded_position(game.capture_state().location,{}),"Unrecruited NPC still blocks same position")
+	await _place(safe_position)
 	_check(game.saves.request_save(),"Final commerce save ready for separate process")
 	_finish()
 
