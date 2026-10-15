@@ -1,6 +1,8 @@
 extends "res://tests/phase5_prologue_test.gd"
 ## Diagnostic only: real renderer, isolated save, no production quality changes.
 var samples: Array[Dictionary] = []
+var report_filename: String = "greystone_baseline.json"
+var sampling_method: String = "Six stationary views; 0.6s warmup then 2s wall-clock frame sampling each. No movement/cold-cache/mobile certification. Memory is engine static allocation, not process RSS."
 
 func _run() -> void:
 	if DisplayServer.get_name() == "headless":
@@ -50,8 +52,8 @@ func _run() -> void:
 		"debug_build": OS.is_debug_build(), "android_verified": false,
 		"first_frame_ms": first_frame_ms, "samples": samples,
 		"inventory": _inventory(), "failures": failures,
-		"method": "Six stationary views; 0.6s warmup then 2s wall-clock frame sampling each. No movement/cold-cache/mobile certification. Memory is engine static allocation, not process RSS."}
-	var file: FileAccess = FileAccess.open("res://artifacts/performance/greystone_baseline.json", FileAccess.WRITE)
+		"method": sampling_method}
+	var file: FileAccess = FileAccess.open("res://artifacts/performance/" + report_filename, FileAccess.WRITE)
 	_check(file != null, "Report writable")
 	if file != null:
 		file.store_string(JSON.stringify(report, "\t"))

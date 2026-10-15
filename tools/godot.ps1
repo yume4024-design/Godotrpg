@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -29,6 +29,7 @@ if ($Mode -ne 'Version') {
     $logPath = Join-Path $logRoot ('{0}-{1}.log' -f $Mode.ToLowerInvariant(), (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
     $engineArgs = @('--path', $projectRoot, '--log-file', $logPath)
     if ($Mode -in @('PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'PrepareGreystoneMaterials', 'TestEnemyAI', 'TestG06TouchCommerce', 'TestG06Touch', 'TestG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'TestG06StoryReload', 'TestG06NPC', 'TestG06', 'TestG06Reload', 'TestGreystoneProps', 'TestGreystoneBuildings', 'TestGreystone', 'TestVillage', 'Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
+
     if ($Mode -in @('ExportWindows', 'ExportQA')) {
         $buildFolder = if ($Mode -eq 'ExportWindows') { 'windows' } else { 'qa' }
         $presetName = if ($Mode -eq 'ExportWindows') { 'Windows Desktop' } else { 'Windows QA' }
@@ -59,6 +60,7 @@ if ($Mode -ne 'Version') {
     if ($Mode -eq 'VisualActionEffects') { $engineArgs += @('--script','res://tests/action_effect_test.gd') }
     if ($Mode -eq 'VisualExpansion') { $engineArgs += @('--script','res://tests/wilderness_expansion_test.gd') }
     if ($Mode -eq 'VisualGreystoneQuality') { $engineArgs += @('--script','res://tests/greystone_quality_test.gd') }
+    if ($Mode -eq 'ProfileGreystoneDynamic') { $engineArgs += @('--script','res://tests/greystone_dynamic_probe.gd') }
     if ($Mode -eq 'ProfileGreystone') { $engineArgs += @('--script','res://tests/greystone_performance_probe.gd') }
     if ($Mode -eq 'RunG06') { $engineArgs += 'res://scenes/main/greystone_integration.tscn' }
     if ($Mode -eq 'PreviewGreystone') { $engineArgs += 'res://scenes/world/greystone_preview.tscn' }
