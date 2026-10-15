@@ -6,6 +6,8 @@ var bridge_button: Button
 var import_button: Button
 var mobile_input: MobileInputLayer
 var commerce: CommercePanel
+var quality: ExplorationQuality
+var quality_button: Button
 var _merchant: WorldInteractable
 var _inn_service: bool = false
 
@@ -50,11 +52,20 @@ func _ready() -> void:
 	touch_toggle.text = "觸控操作 開/關"
 	row.add_child(touch_toggle)
 	touch_toggle.pressed.connect(func() -> void: mobile_input.set_enabled(not mobile_input.enabled))
+	quality = ExplorationQuality.new()
+	add_child(quality)
+	quality.setup(get_viewport(), $Sun)
+	quality_button = Button.new()
+	quality_button.text = quality.label()
+	row.add_child(quality_button)
+	quality_button.pressed.connect(quality.cycle)
+	quality.preset_changed.connect(func(_preset: int) -> void: quality_button.text = quality.label())
 
 func _process(_delta: float) -> void:
 	if bridge_button == null: return
 	bridge_button.disabled = locked() or not flags.has_flag(&"e001_done") or travel.current_map.map_id not in [&"village", &"greystone_runtime"]
 	import_button.disabled = not safe_to_load()
+	quality_button.disabled = locked() or battles.active
 
 func visit_other_village() -> bool:
 	if locked() or not flags.has_flag(&"e001_done"): return false
