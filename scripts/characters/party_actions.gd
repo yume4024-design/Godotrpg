@@ -1,5 +1,6 @@
 class_name PartyActions
 extends Node
+signal item_used(character: StringName, item_id: StringName)
 ## Menu operations: validates, then delegates mutation to the state owners.
 var _party: PartyManager
 var _inventory: InventoryManager
@@ -46,4 +47,5 @@ func use_item(character: StringName, item_id: StringName) -> bool:
 	actor.changed.emit()
 	_inventory.changed.emit()
 	_committing = false
+	item_used.emit(character, item_id)
 	return true

@@ -19,6 +19,19 @@ var _notice: Label
 var _close: Button
 var _audio: AdventureAudio
 
+func show_item_effect(character: StringName, item_id: StringName) -> void:
+	var popup: Label = Label.new()
+	popup.text = "＋ %s · %s" % [_party.member(character).definition.display_name, _inventory.definition(item_id).display_name]
+	popup.add_theme_color_override("font_color", Color("7af0a0"))
+	popup.add_theme_font_size_override("font_size", 30)
+	popup.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(popup)
+	popup.position = get_viewport().get_visible_rect().size * Vector2(.35,.42)
+	var tween: Tween = create_tween().set_parallel(true)
+	tween.tween_property(popup, "position:y", popup.position.y - 35, .8)
+	tween.tween_property(popup, "modulate:a", 0.0, .4).set_delay(.5)
+	tween.chain().tween_callback(popup.queue_free)
+
 func setup_audio(audio: AdventureAudio) -> void:
 	_audio = audio
 

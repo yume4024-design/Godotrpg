@@ -85,6 +85,8 @@ func _ready() -> void:
 	saves.status_changed.connect(func(message: String) -> void: ui.save_status.text = message)
 	menu.close_requested.connect(close_menu)
 	menu.equip_requested.connect(func(character: StringName, slot: StringName, item: StringName) -> void: menu.outcome(party_actions.equip(character, slot, item)))
+	party_actions.item_used.connect(menu.show_item_effect)
+	party_actions.item_used.connect(func(_character: StringName, item: StringName) -> void: ActionEffect.play(player, item, Vector3.ZERO, Vector3.ZERO))
 	menu.item_requested.connect(func(character: StringName, item: StringName) -> void: menu.outcome(party_actions.use_item(character, item)))
 	ui.menu_requested.connect(toggle_menu)
 	party.changed.connect(_refresh_party)

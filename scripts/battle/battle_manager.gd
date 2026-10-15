@@ -1,6 +1,7 @@
 class_name BattleManager
 extends Node
 enum Phase { IDLE, WAITING, RESOLVING, FINISHED }
+signal action_presented(action: StringName, actor_id: StringName, target_id: StringName)
 signal changed
 signal action_resolved(actor_id: StringName, target_id: StringName, amount: int, healing: bool)
 signal settled(won: bool, result: Dictionary)
@@ -128,6 +129,7 @@ func _perform(action: StringName, target: CombatantState) -> void:
 	history.append("%s → %s：%s%s" % [source.definition.display_name, target.definition.display_name, action_name, detail])
 	changed.emit()
 	action_resolved.emit(source.instance_id, target.instance_id, amount, healing)
+	action_presented.emit(action, source.instance_id, target.instance_id)
 	_continue_after_action.call_deferred()
 
 func _continue_after_action() -> void:
