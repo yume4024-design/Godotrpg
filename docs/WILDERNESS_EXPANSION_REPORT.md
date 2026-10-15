@@ -45,3 +45,5 @@ Godot 4.7.2.stable.official.ed1daf0bf，Windows／RTX 3080 Compatibility。
 - 正式 main 未切換；不將此工作列為 G07/G08 完成。
 
 補充：TestG06StoryReload 新程序讀取完成序章存檔 7/7 通過（testg06storyreload-20261015-172420-005.log）；此項不是新外圍座標的跨程序驗收。
+
+2026-10-15 後續：低等級單場工程驗證已完成，12情境49項通過，見 [平衡紀錄](WILDERNESS_BALANCE_PLAN.md)。取代上方低等級『尚未測試』狀態；玩家試玩與連戰仍待驗收。
