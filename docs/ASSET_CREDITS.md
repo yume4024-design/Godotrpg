@@ -88,3 +88,7 @@ scripts/tools/greystone/build_layout.py 生成原創 Godot 原生白盒，七個
 ## G04 程序環境素材（2026-10-14）
 
 17 項素材由本專案 Blender Python 建立或重用原創 G02/G05 幾何；沒有新第三方下載、付費素材或貼圖。來源/變更/面數見 [G04報告](GREYSTONE_G04_REPORT.md) 與 source_assets/greystone_g04/metrics.json。既有 Quaternius 建築授權與署名記錄不變。
+
+## 2026-10-15 原創擴充怪物
+
+assets/models/expansion 四個 GLB（孢子菇靈、荊棘野豬、星晶蝙蝠、礦甲蟲）由本專案 Blender Python 幾何體原創建模，無第三方下載、貼圖或付費素材。來源腳本 scripts/tools/expansion/build_monsters.py；可編輯源檔 assets/source/expansion，.gdignore 排除 Godot 自動匯入。面數及限制見 WILDERNESS_EXPANSION_REPORT.md。場景重用原已記錄的 cartoon 與 greystone 素材，未變更其來源授權。

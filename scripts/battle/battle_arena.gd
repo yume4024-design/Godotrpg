@@ -8,7 +8,7 @@ signal retry_requested
 @onready var stage: BattleStage = %Stage
 
 func setup(party: PartyManager, inventory: InventoryManager, enemies: Array[CombatantState], encounter: Dictionary, practice: bool) -> void:
-	if not practice and encounter.id == "B002" and mine_backdrop != null:
+	if (encounter.id in ["X003", "X004"] or (not practice and encounter.id == "B002")) and mine_backdrop != null:
 		$Grove.hide()
 		add_child(mine_backdrop.instantiate())
 		$Light.light_energy = 0.65

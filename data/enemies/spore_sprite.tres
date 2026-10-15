@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CombatantDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
+[ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
+[ext_resource type="PackedScene" path="res://scenes/characters/spore_sprite_visual.tscn" id="Appearance"]
+[ext_resource type="Resource" path="res://data/skills/rupture.tres" id="Magic"]
+[resource]
+
+script = ExtResource("1")
+appearance = ExtResource("Appearance")
+id = &"spore_sprite"
+display_name = "孢子菇靈"
+level = 2
+max_hp = 55
+max_mp = 12
+attack = 14
+magic = 15
+defense = 3
+ward = 7
+speed = 7
+skills = Array[ExtResource("Skill")]([ExtResource("attack"), ExtResource("Magic")])
+color = Color(0.38, 0.76, 0.4, 1)
+form = 1

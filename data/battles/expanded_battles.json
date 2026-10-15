@@ -1,0 +1,106 @@
+{
+  "battles": [
+    {
+      "id": "B001",
+      "name": "森林首次戰鬥",
+      "enemies": [
+        {
+          "id": "forest_slime",
+          "level": 1,
+          "count": 2
+        }
+      ],
+      "tutorial": true,
+      "escape_allowed": false,
+      "rewards": {
+        "gold": 12,
+        "exp": 20
+      }
+    },
+    {
+      "id": "B002",
+      "name": "腐化守衛",
+      "enemies": [
+        {
+          "id": "corrupted_guardian",
+          "level": 3,
+          "count": 1
+        }
+      ],
+      "tutorial": false,
+      "escape_allowed": false,
+      "rewards": {
+        "gold": 50,
+        "exp": 80
+      }
+    },
+    {
+      "id": "X001",
+      "name": "孢子菇靈挑戰",
+      "enemies": [
+        {
+          "id": "spore_sprite",
+          "level": 2,
+          "count": 1
+        }
+      ],
+      "tutorial": false,
+      "escape_allowed": false,
+      "rewards": {
+        "gold": 0,
+        "exp": 0
+      }
+    },
+    {
+      "id": "X002",
+      "name": "荊棘野豬挑戰",
+      "enemies": [
+        {
+          "id": "thorn_boar",
+          "level": 2,
+          "count": 1
+        }
+      ],
+      "tutorial": false,
+      "escape_allowed": false,
+      "rewards": {
+        "gold": 0,
+        "exp": 0
+      }
+    },
+    {
+      "id": "X003",
+      "name": "星晶蝙蝠挑戰",
+      "enemies": [
+        {
+          "id": "crystal_bat",
+          "level": 2,
+          "count": 1
+        }
+      ],
+      "tutorial": false,
+      "escape_allowed": false,
+      "rewards": {
+        "gold": 0,
+        "exp": 0
+      }
+    },
+    {
+      "id": "X004",
+      "name": "礦甲蟲挑戰",
+      "enemies": [
+        {
+          "id": "ore_beetle",
+          "level": 2,
+          "count": 1
+        }
+      ],
+      "tutorial": false,
+      "escape_allowed": false,
+      "rewards": {
+        "gold": 0,
+        "exp": 0
+      }
+    }
+  ]
+}

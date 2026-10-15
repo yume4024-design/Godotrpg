@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CombatantDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
+[ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
+[ext_resource type="PackedScene" path="res://scenes/characters/ore_beetle_visual.tscn" id="Appearance"]
+[resource]
+
+script = ExtResource("1")
+appearance = ExtResource("Appearance")
+id = &"ore_beetle"
+display_name = "礦甲蟲"
+level = 2
+max_hp = 92
+max_mp = 0
+attack = 20
+magic = 0
+defense = 11
+ward = 4
+speed = 6
+skills = Array[ExtResource("Skill")]([ExtResource("attack")])
+color = Color(0.38, 0.76, 0.4, 1)
+form = 1

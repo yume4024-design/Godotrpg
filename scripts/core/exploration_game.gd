@@ -299,7 +299,7 @@ func capture_state() -> Dictionary:
 		data.schema_version = 3
 		data.content_version = "CH00-G06.4"
 		data.inventory.commerce = inventory.commerce_snapshot()
-		data.location.layout_version = 2 if data.location.map == "greystone_runtime" else 1
+		data.location.layout_version = 2 if data.location.map == "greystone_runtime" else (3 if data.location.map in ["forest", "mine"] else 1)
 	return JSON.parse_string(JSON.stringify(data))
 
 func apply_loaded_state(data: Dictionary, members: Array[CombatantState]) -> void:
@@ -347,6 +347,8 @@ func validate_loaded_position(location: Dictionary, candidate_flags: Dictionary)
 	var selected: PackedScene
 	for scene: PackedScene in travel.maps:
 		if scene.resource_path.get_file().get_basename() == location.map: selected = scene
+	if location.map in ["forest", "mine"] and int(location.get("layout_version", 1)) == 1:
+		selected = load("res://scenes/world/%s.tscn" % location.map)
 	if selected == null: return false
 	var viewport: SubViewport = SubViewport.new()
 	viewport.world_3d = World3D.new()

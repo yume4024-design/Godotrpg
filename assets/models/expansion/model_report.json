@@ -1,0 +1,22 @@
+{
+  "spore_sprite": {
+    "triangles": 1848,
+    "rigged": false,
+    "source": "Original Blender primitives"
+  },
+  "thorn_boar": {
+    "triangles": 1918,
+    "rigged": false,
+    "source": "Original Blender primitives"
+  },
+  "crystal_bat": {
+    "triangles": 914,
+    "rigged": false,
+    "source": "Original Blender primitives"
+  },
+  "ore_beetle": {
+    "triangles": 2380,
+    "rigged": false,
+    "source": "Original Blender primitives"
+  }
+}

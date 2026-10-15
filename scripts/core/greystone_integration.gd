@@ -13,6 +13,13 @@ var _inn_service: bool = false
 
 func _ready() -> void:
 	greystone_enabled = true
+	battles_path = "res://data/battles/expanded_battles.json"
+	for id: String in ["spore_sprite", "thorn_boar", "crystal_bat", "ore_beetle"]:
+		battles.definitions.append(load("res://data/enemies/%s.tres" % id))
+	for index: int in range(travel.maps.size()):
+		var id: String = travel.maps[index].resource_path.get_file().get_basename()
+		if id in ["forest", "mine"]:
+			travel.maps[index] = load("res://scenes/world/expanded/%s.tscn" % id)
 	travel.maps.append(preload("res://scenes/world/greystone_runtime.tscn"))
 	super._ready()
 	var layer: CanvasLayer = CanvasLayer.new()

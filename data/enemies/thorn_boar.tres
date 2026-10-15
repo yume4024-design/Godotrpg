@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="CombatantDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
+[ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
+[ext_resource type="PackedScene" path="res://scenes/characters/thorn_boar_visual.tscn" id="Appearance"]
+[resource]
+
+script = ExtResource("1")
+appearance = ExtResource("Appearance")
+id = &"thorn_boar"
+display_name = "荊棘野豬"
+level = 2
+max_hp = 78
+max_mp = 0
+attack = 19
+magic = 0
+defense = 7
+ward = 3
+speed = 11
+skills = Array[ExtResource("Skill")]([ExtResource("attack")])
+color = Color(0.38, 0.76, 0.4, 1)
+form = 1

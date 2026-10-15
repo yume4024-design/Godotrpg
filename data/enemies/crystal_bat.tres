@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="CombatantDefinition" format=3]
+[ext_resource type="Script" path="res://scripts/characters/combatant_definition.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/battle/skill_definition.gd" id="Skill"]
+[ext_resource type="Resource" path="res://data/skills/attack.tres" id="attack"]
+[ext_resource type="PackedScene" path="res://scenes/characters/crystal_bat_visual.tscn" id="Appearance"]
+[ext_resource type="Resource" path="res://data/skills/rupture.tres" id="Magic"]
+[resource]
+
+script = ExtResource("1")
+appearance = ExtResource("Appearance")
+id = &"crystal_bat"
+display_name = "星晶蝙蝠"
+level = 2
+max_hp = 48
+max_mp = 12
+attack = 14
+magic = 18
+defense = 2
+ward = 8
+speed = 17
+skills = Array[ExtResource("Skill")]([ExtResource("attack"), ExtResource("Magic")])
+color = Color(0.38, 0.76, 0.4, 1)
+form = 1

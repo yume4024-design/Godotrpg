@@ -75,7 +75,7 @@ func _run() -> void:
 		_write_fixture(JSON.stringify(travel_save))
 		_check(await game.call("import_legacy"),"Migrate old " + map_id)
 		var migrated: Dictionary = game.capture_state()
-		_check(migrated.location.map == map_id and migrated.location.layout_version == 1 and absf(migrated.location.x+9.0)<.1,"Keep unchanged layout position: " + map_id)
+		_check(migrated.location.map == map_id and migrated.location.layout_version == 3 and absf(migrated.location.x+9.0)<.1,"Upgrade layout while preserving position: " + map_id)
 	_write_fixture(source)
 	_check(await game.call("import_legacy"),"Return to migrated village after other-map checks")
 	_check(game.call("visit_other_village"),"Safe return to retained old village")

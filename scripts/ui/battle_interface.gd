@@ -68,7 +68,7 @@ func _unhandled_input(event: InputEvent) -> void:
 func bind_manager(manager: BattleManager, encounter_name: String, practice: bool) -> void:
 	_manager = manager
 	_practice = practice
-	_title.text = ("森林演練  /  " if practice else "戰鬥  /  ") + encounter_name
+	_title.text = ("自由挑戰  /  " if practice else "戰鬥  /  ") + encounter_name
 	manager.changed.connect(refresh)
 	refresh()
 
