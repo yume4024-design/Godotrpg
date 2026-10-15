@@ -47,3 +47,21 @@ Godot 4.7.2.stable.official.ed1daf0bf，Windows／RTX 3080 Compatibility。
 補充：TestG06StoryReload 新程序讀取完成序章存檔 7/7 通過（testg06storyreload-20261015-172420-005.log）；此項不是新外圍座標的跨程序驗收。
 
 2026-10-15 後續：低等級單場工程驗證已完成，12情境49項通過，見 [平衡紀錄](WILDERNESS_BALANCE_PLAN.md)。取代上方低等級『尚未測試』狀態；玩家試玩與連戰仍待驗收。
+
+## 外圍座標跨程序驗收（2026-10-15）
+
+新增 tests/wilderness_restart_test.gd，透過獨立的 Godot 程序依序執行：
+
+```powershell
+# 若沒有完成序章測試資料，先執行：
+./tools/godot.ps1 -Mode TestG06Story
+./tools/godot.ps1 -Mode PrepareWildernessRestart
+./tools/godot.ps1 -Mode TestForestRestart
+./tools/godot.ps1 -Mode TestMineRestart
+```
+
+準備程序使用真實序章完成存檔，經 SceneManager 進入兩圖，以 SaveManager 分別保存森林 x=23/z=5、礦坑 x=24/z=5 的外圍位置，然後結束。後續兩個新程序各自從其獨立測試槽啟動，不使用前一程序記憶體。
+
+結果：準備6項、森林15項、礦坑15項，共36項通過；Godot 4.7.2載入檢查通過。驗證續玩入口不重播E001、layout 3及原座標恢復、party/inventory/flags/quests/rewards/story完整一致、E008不可重領、讀取不改原檔、重存備份與再次讀取。原檔位元組在啟動遊戲前取得，與讀取後比較。
+
+證據：artifacts/logs/preparewildernessrestart-20261015-210959-216.log、testforestrestart-20261015-211002-116.log；礦坑對應同輪 TestMineRestart 日誌。測試檔僅在隔離 user:// 寫入 wilderness_restart_forest.json 與 wilderness_restart_mine.json，不動玩家正式槽位。本輪只新增測試及文件，未變更遊戲或存檔格式。這是 headless 的狀態持久化驗收，畫面仍沿用先前圖形探索證據，Android未驗收。
