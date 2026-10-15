@@ -1,0 +1,5 @@
+[gd_resource type="StandardMaterial3D" format=3]
+
+[resource]
+resource_name = "Greystone_02"
+albedo_color = Color(0.4, 0.43000004, 0.42000002, 1)

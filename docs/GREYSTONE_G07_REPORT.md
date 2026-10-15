@@ -36,3 +36,30 @@ G07.2優先盤點公會及旅館的重複材質/子網格，採不改路面碰�
 本輪六個靜止視角在此桌面明顯高於60FPS，不能據此宣稱全程Windows效能合格；持續行走、場景切換尖峰、發布匯出、較低階PC、Android/iOS真機仍待驗證。低/中/高畫質、手機比例與觸控效能、G08未開始。
 
 新增tests/greystone_performance_probe.gd（及uid）；修改tools/godot.ps1、TASKS、GREYSTONE_BUILD_TASKS、CHANGELOG。本輪無生產遊戲程式修改。
+
+
+## G07.2 — 共用材質資源（2026-10-15）
+
+公會、旅館GLB盤點結果：各為單一Mesh、七個材質面，已完成基本合批，因此不再破壞建築結構做重複合併。實際可消除的是地形GLB的獨立材質副本，以及村莊場景內相同的StandardMaterial3D定義。
+
+- 新增六個terrain_00～05共用材質；59個地形匯入設定指向terrain_import.gd，保留GLB原檔與匯入LOD設定。
+- 提取工具逐一比較同名材質的所有可保存屬性，存在差異即拒絕，不以近似顏色合併。
+- 場景51個材質區塊縮為11個，僅完全相同序列化內容才共用；重跑工具合併0個，具冪等性。
+- 整村使用中材質 **180→87（減少93，51.7%）**。MeshInstance268、唯一Mesh167、實例三角面88,420及碰撞形狀142保持一致。
+- 六視角draw calls仍148/234/265/417/206/243，渲染圖元不變；不宣稱合批或FPS提升。相同時段控制組公會約695FPS、優化後多輪約808～841FPS，但更早基線929FPS，波動不足以歸因。靜態配置下降約0.6MiB；不是大量節省VRAM的成果。
+
+### 驗證與再現
+
+- `PrepareGreystoneMaterials`：六種材質、同名屬性一致，exit0。
+- `VisualGreystone`：98項/0失敗，實際輸入走訪主要建築、礦坑、碼頭與障礙阻擋；日誌visualgreystone-20261015-093248-688.log。
+- 新舊村莊TSCN將材質參照展開為屬性後比對一致：節點、位置、碰撞、NPC空間與有效材質均未改動。
+- ProfileGreystone：六視角15項通過。控制組JSON保存於artifacts/performance/g072_control.json，原G07.1證據保存於g072_before，最新成果在greystone_baseline.json。產物不提交。
+- 已檢視公會實際畫面，造型/色彩/道路/互動提示保留。曾遇Windows大小寫匯入快取警告，已統一terrain_*.tres命名並重新匯入，不把帶警告輪次當作最終驗收。
+
+維護方式：地形新增色材質時先在未套用匯入替換的來源上執行 `./tools/godot.ps1 -Mode PrepareGreystoneMaterials`，確認屬性一致再匯入；正常專案直接Check即可使用已提交palette。重建greystone_village.tscn後執行 `python scripts/tools/greystone/deduplicate_scene_materials.py`，避免生成器重複材質回流。
+
+本輪僅完成G07.2資源共用；下一步G07.3建立低/中/高畫質與陰影成本比較，仍需評估公會417次繪製呼叫。沒有更動正式入口、存檔或戰鬥。Android/iOS真機與G08未驗收。
+
+檔案：assets/materials/greystone/terrain六個tres、59個terrain GLB.import、greystone_village.tscn、terrain_import.gd/share_terrain_materials.gd（含uid）、deduplicate_scene_materials.py、tools/godot.ps1及任務/變更/本報告。
+
+最終無大小寫警告輪次：check-20261015-093627-458.log（exit0）、profilegreystone-20261015-093633-393.log（15/0）；Godot 4.7.2 / Windows / RTX3080。
