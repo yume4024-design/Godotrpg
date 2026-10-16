@@ -6,16 +6,23 @@ var actor: CartoonActor
 var body: CollisionObject3D
 var sole_height: float = .16
 var allow_motion: bool = false
+var enabled: bool = true
 var _ground: Dictionary[String,Dictionary] = {}
 var _lifts: Dictionary[String,float] = {}
+var _last_ground: Dictionary[String,Dictionary] = {}
+var _normals: Dictionary[String,Vector3] = {}
+var _points: Dictionary[String,Vector3] = {}
+var _weight: float = 0.0
+var _pelvis_drop: float = 0.0
+var _targets: Dictionary[String,Vector3] = {}
 var last_target_errors: Dictionary[String,float] = {}
 
 func _ready() -> void:
 	process_priority = 100
 
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	_ground.clear()
-	if not _can_place(): return
+	if not _can_place() or not enabled: return
 	for side: String in ["Left","Right"]:
 		var foot: int = skeleton.find_bone("Foot"+side)
 		if foot<0: continue
@@ -24,26 +31,61 @@ func _physics_process(_delta: float) -> void:
 		if is_instance_valid(body): query.exclude = [body.get_rid()]
 		var hit: Dictionary = skeleton.get_world_3d().direct_space_state.intersect_ray(query)
 		if not hit.is_empty() and (hit.normal as Vector3).dot(Vector3.UP)>.85:
+			var normal: Vector3 = hit.normal
+			var smoothing: float = 1-exp(-delta*12)
+			_normals[side] = _normals.get(side,Vector3.UP).lerp(normal,smoothing).normalized()
+			_points[side] = _points.get(side,hit.position).lerp(hit.position,smoothing)
+			hit.normal = _normals[side]
+			hit.position = _points[side]
 			_ground[side] = hit
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	last_target_errors.clear()
-	if not _can_place() or _ground.is_empty(): return
+	_targets.clear()
+	if not _can_place():
+		_weight = 0
+		_pelvis_drop = 0
+		_last_ground.clear()
+		_normals.clear()
+		_points.clear()
+		return
+	var applying: bool = enabled and not _ground.is_empty()
+	_weight = move_toward(_weight,1.0 if applying else 0.0,delta/.16)
+	if applying: _last_ground = _ground.duplicate(true)
+	if _weight<=0:
+		_pelvis_drop = 0
+		_last_ground.clear()
+		_normals.clear()
+		_points.clear()
+		return
+	var rotations: Dictionary[int,Quaternion] = {}
+	var positions: Dictionary[int,Vector3] = {}
+	for name: String in ["Root","LegLeft","LegRight","ShinLeft","ShinRight","FootLeft","FootRight"]:
+		var index: int = skeleton.find_bone(name)
+		rotations[index] = skeleton.get_bone_pose_rotation(index)
+		positions[index] = skeleton.get_bone_pose_position(index)
 	_lifts.clear()
-	for side: String in _ground:
+	for side: String in _last_ground:
 		var ankle: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone("Foot"+side)).origin
 		var height: float = sole_height*skeleton.global_basis.get_scale().y
 		_lifts[side] = clampf((ankle-actor.global_position).dot(actor.global_basis.y.normalized())-height,0,.35)
 	var slope: float = 0
-	for hit: Dictionary in _ground.values(): slope = maxf(slope,acos(clampf((hit.normal as Vector3).dot(Vector3.UP),-1,1)))
+	for hit: Dictionary in _last_ground.values(): slope = maxf(slope,acos(clampf((hit.normal as Vector3).dot(Vector3.UP),-1,1)))
 	# A small pelvis allowance keeps the downhill leg within its physical reach.
 	var root: int = skeleton.find_bone("Root")
 	if root>=0:
+		_pelvis_drop = lerpf(_pelvis_drop,minf(.06,slope*.35),1-exp(-delta*12))
 		var position: Vector3 = skeleton.get_bone_pose_position(root)
-		position += skeleton.global_basis.inverse()*Vector3.DOWN*minf(.06,slope*.35)
+		position += skeleton.global_basis.inverse()*Vector3.DOWN*_pelvis_drop
 		skeleton.set_bone_pose_position(root,position)
-	for side: String in _ground:
-		_solve(side,_ground[side])
+	for side: String in _last_ground:
+		_solve(side,_last_ground[side])
+	for index: int in rotations:
+		skeleton.set_bone_pose_rotation(index,rotations[index].slerp(skeleton.get_bone_pose_rotation(index),_weight))
+		skeleton.set_bone_pose_position(index,positions[index].lerp(skeleton.get_bone_pose_position(index),_weight))
+	for side: String in _targets:
+		var foot: int = skeleton.find_bone("Foot"+side)
+		last_target_errors[side] = (skeleton.global_transform*skeleton.get_bone_global_pose(foot).origin).distance_to(_targets[side])
 
 func _can_place() -> bool:
 	return (
@@ -71,11 +113,9 @@ func _solve(side: String,hit: Dictionary) -> void:
 	var lower: float = knee_point.distance_to(ankle_point)
 	var distance: float = clampf(hip_point.distance_to(target),absf(upper-lower)+.001,upper+lower-.001)
 	var direction: Vector3 = hip_point.direction_to(target)
-	var pole: Vector3 = knee_point-hip_point
-	pole -= direction*pole.dot(direction)
-	if pole.length()<.02:
-		pole = Vector3.BACK-direction*Vector3.BACK.dot(direction)
-	pole = pole.normalized()
+	# The nearly straight bind pose cannot provide a stable bend plane.
+	# Keep human knees pointing forward rather than flipping with tiny offsets.
+	var pole: Vector3 = (Vector3.BACK-direction*Vector3.BACK.dot(direction)).normalized()
 	var along: float = clampf((upper*upper+distance*distance-lower*lower)/(2*distance),-upper,upper)
 	var wanted_knee: Vector3 = hip_point+direction*along+pole*sqrt(maxf(0,upper*upper-along*along))
 	_rotate_segment(hip,knee_point-hip_point,wanted_knee-hip_point)
@@ -87,7 +127,7 @@ func _solve(side: String,hit: Dictionary) -> void:
 	var up: Vector3 = (skeleton.global_basis*foot_pose.basis*rest.inverse()*Vector3.UP).normalized()
 	var desired_world: Basis = Basis(Quaternion(up,normal))*skeleton.global_basis*foot_pose.basis
 	_set_global_rotation(foot,skeleton.global_basis.inverse()*desired_world)
-	last_target_errors[side] = (skeleton.global_transform*skeleton.get_bone_global_pose(foot).origin).distance_to(skeleton.global_transform*target)
+	_targets[side] = skeleton.global_transform*target
 
 func _align_shin(knee: int,foot: int,knee_point: Vector3,target: Vector3) -> void:
 	var ankle: Vector3 = skeleton.get_bone_global_pose(foot).origin

@@ -85,6 +85,36 @@ func _run() -> void:
 				root.get_texture().get_image().save_webp("res://artifacts/female_character/moving_slope_%d_%d_%s_%s.webp" % [angle.x,angle.z,str(actor_scale),str(amount)])
 	hero.set_motion(0)
 	await create_timer(.3).timeout
+	var root_joint: int = rig.find_bone("Root")
+	for enabled: bool in [false,true]:
+		var previous: Vector3 = rig.global_transform*rig.get_bone_pose_position(root_joint)
+		var largest: float = 0
+		placement.enabled = enabled
+		for frame: int in range(18):
+			await process_frame
+			await RenderingServer.frame_post_draw
+			var current: Vector3 = rig.global_transform*rig.get_bone_pose_position(root_joint)
+			largest = maxf(largest,previous.distance_to(current))
+			previous = current
+		print("IK_TOGGLE enabled=",enabled," largest_root_step_m=",largest)
+		_check(largest<.02,"IK toggle blends pelvis without 6cm snap")
+		_check(placement.last_target_errors.is_empty()!=enabled,"IK toggle reaches requested state")
+	var previous_rotation: Quaternion = rig.get_bone_pose_rotation(rig.find_bone("ShinLeft"))
+	var largest_rotation: float = 0
+	var transient_sole: float = INF
+	floor.rotation_degrees = Vector3(0,0,-10)
+	for frame: int in range(24):
+		await process_frame
+		await RenderingServer.frame_post_draw
+		var current: Quaternion = rig.get_bone_pose_rotation(rig.find_bone("ShinLeft"))
+		largest_rotation = maxf(largest_rotation,previous_rotation.angle_to(current))
+		previous_rotation = current
+		var soles: Dictionary[String,float] = _soles(body,rig,floor.global_basis.y)
+		transient_sole = minf(transient_sole,minf(soles.Left,soles.Right))
+		if frame==6: root.get_texture().get_image().save_webp("res://artifacts/female_character/foot_transition.webp")
+	print("IK_SLOPE_TRANSITION maximum_shin_step_rad=",largest_rotation)
+	print("IK_INSTANT_FLOOR_FLIP minimum_transient_sole_m=",transient_sole)
+	_check(largest_rotation<.35,"Opposite slope transition avoids large knee jump")
 	hero.set_dead(true)
 	await process_frame
 	await process_frame
@@ -97,7 +127,7 @@ func _run() -> void:
 	collider.disabled = true
 	await physics_frame
 	await physics_frame
-	await process_frame
+	await create_timer(.2).timeout
 	_check(placement.last_target_errors.is_empty(),"Missing ground safely disables IK")
 	stage.queue_free()
 	await process_frame

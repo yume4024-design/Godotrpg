@@ -15,7 +15,7 @@ func _run() -> void:
 	_check(player.is_on_floor(),"Shared controller grounds Lia at village entrance")
 	_check(player.appearance.model.resource_path.ends_with("lia_rigged.glb"),"Player uses production Lia visual")
 	var placement: LiaFootPlacement = preview.get("foot_placement")
-	_check(placement.process_mode==Node.PROCESS_MODE_DISABLED,"Experimental foot placement defaults off")
+	_check(not placement.enabled,"Experimental foot placement defaults off")
 	var toggle: CheckBox = preview.find_child("FootPlacementToggle",true,false)
 	var center: Vector2 = root.get_final_transform()*toggle.get_global_transform_with_canvas()*(toggle.size*.5)
 	for pressed: bool in [true,false]:
@@ -25,7 +25,7 @@ func _run() -> void:
 		event.pressed = pressed
 		Input.parse_input_event(event)
 		await process_frame
-	_check(toggle.button_pressed and placement.process_mode==Node.PROCESS_MODE_INHERIT,"Mouse enables optional foot placement")
+	_check(toggle.button_pressed and placement.enabled,"Mouse enables optional foot placement")
 	var begin: Vector3 = player.position
 	_press(Vector2(.5,0))
 	for frame: int in range(35):

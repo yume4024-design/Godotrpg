@@ -33,7 +33,7 @@ func _ready() -> void:
 	foot_placement.skeleton = player.appearance.get("skeleton")
 	foot_placement.body = player
 	foot_placement.allow_motion = true
-	foot_placement.process_mode = Node.PROCESS_MODE_DISABLED
+	foot_placement.enabled = false
 	player.appearance.add_child(foot_placement)
 	player.reset_to(Vector3(0,0,18))
 	var rig: FixedExplorationCamera = FixedExplorationCamera.new()
@@ -71,4 +71,4 @@ func _ready() -> void:
 	placement_toggle.text = "斜坡腳部貼地（實驗）"
 	placement_toggle.add_theme_font_override("font",font)
 	column.add_child(placement_toggle)
-	placement_toggle.toggled.connect(func(enabled: bool) -> void: foot_placement.process_mode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED)
+	placement_toggle.toggled.connect(func(enabled: bool) -> void: foot_placement.enabled = enabled)
