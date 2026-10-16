@@ -198,3 +198,9 @@ X／Z 方向、0.5／1.0 輸入強度、往返八路段共 1,154 樣本，全部
 回歸 `TestLiaMovement` 20/0（`testliamovement-20261017-051440-945.log`）、`TestFemaleMotionBoundary` 36/0（`testfemalemotionboundary-20261017-051454-172.log`）；原型未加入正式角色場景。這不包含陡坡、真正台階、動態移動平台或 Android；CP16 瞬間翻轉整片地面的穿透限制仍保留。
 
 CP18 正式路徑回歸：VisualFemaleAnimation 38/0（visualfemaleanimation-20261017-051520-317.log），VisualG06Story 68/0（visualg06story-20261017-051526-058.log）。
+
+## CP19：30／120 FPS 更新率
+
+`TestFemaleRamp30`、`TestFemaleRamp120` 各 48/0，日誌 `artifacts/logs/testfemaleramp30-20261017-051714-206.log`、`testfemaleramp120-20261017-051753-571.log`。VSync 關閉，Engine.max_fps 設為目標，另以 Engine.get_frames_drawn 與牆鐘計算真實繪製更新率；各路段須落在目標範圍才通過。30 FPS 實測 29.96～29.99、120 FPS 119.94～119.98，物理更新保持專案設定。
+
+同樣快慢往返八路段、膠囊全程接地；30 FPS 鞋底最低約 -2.50mm，120 FPS 約 -2.65mm，支撐腳最高皆約 4.3mm。這驗證獨立原型不因渲染與物理更新率不同而累積偏移，並非 Android 或低階 PC 效能認證。沒有更動正式遊戲更新率、輸入或存檔。

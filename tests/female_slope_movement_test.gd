@@ -13,7 +13,11 @@ func _run() -> void:
 		quit(1)
 		return
 	root.size = Vector2i(1000,800)
-	Engine.max_fps = 60
+	var target_fps: int = 60
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--test-fps="): target_fps = argument.trim_prefix("--test-fps=").to_int()
+	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
+	Engine.max_fps = target_fps
 	var transitions: bool = "--transitions" in OS.get_cmdline_user_args()
 	var stage: Node3D = Node3D.new()
 	root.add_child(stage)
@@ -92,6 +96,8 @@ func _run() -> void:
 				var highest_stance: float = -INF
 				var grounded: int = 0
 				var samples: int = 0
+				var began: int = Time.get_ticks_usec()
+				var drawn_before: int = Engine.get_frames_drawn()
 				var distance_probe: Callable = Callable()
 				if transitions:
 					distance_probe = func(point: Vector3) -> float:
@@ -115,7 +121,9 @@ func _run() -> void:
 					if player.is_on_floor(): grounded += 1
 					samples += 1
 				_release()
-				print("PHYSICAL_SLOPE transitions=",transitions," axis=",axis," strength=",strength," direction=",sign_value," samples=",samples," grounded=",grounded," minimum_sole_m=",minimum," highest_stance_m=",highest_stance)
+				var observed_fps: float = (Engine.get_frames_drawn()-drawn_before)*1000000.0/(Time.get_ticks_usec()-began)
+				print("PHYSICAL_SLOPE transitions=",transitions," axis=",axis," strength=",strength," direction=",sign_value," samples=",samples," grounded=",grounded," minimum_sole_m=",minimum," highest_stance_m=",highest_stance," target_fps=",target_fps," observed_fps=",observed_fps)
+				_check(observed_fps>target_fps*.7 and observed_fps<target_fps*1.15,"Renderer actually samples requested update range")
 				_check(Vector2(player.position.x-target.x,player.position.z-target.z).length()<.3,"Controller reaches opposite side of ramp")
 				_check(samples>20 and grounded>=samples*.95,"Capsule remains grounded on fixed slope")
 				_check(minimum>-.025,"Moving imported shoes avoid deep slope penetration")
