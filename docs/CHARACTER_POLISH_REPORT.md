@@ -18,3 +18,21 @@
 - 角色 GLB 面數與骨架檢查通過，含 Blender 顯示輔助物為 4,626 面：`artifacts/female_staff_check/report.json`。
 
 限制：手指仍是群組骨，未逐指控制；開放式手型的細節與緊密握柄仍需後續修整。法杖是顯示資產，不新增碰撞或道具能力。腳步貼地與動畫銜接列入下一項。
+
+## CP02：平地鞋底與動作銜接
+
+- 新增左右腳掌骨，合計 19 骨；動作內補償腳掌朝向，依評估後的實際網格鞋底高度烘焙 Root 骨的垂直修正。人物節點沒有平移，碰撞與控制器位置不變。
+- Godot 匯入後直接以 Skin bind、頂點權重與骨骼姿勢重算鞋底，walk／run 各 49 個取樣點。最低點範圍：walk 0.001377～0.002537m，run 0.001274～0.002011m；平地未測得穿入地面。
+- 新增 0.12 秒姿勢混合及循環相位銜接；進入跑步門檻 0.72、退出門檻 0.58。保留速度臨界值的跑步狀態，戰鬥打斷後也能正確恢復。
+- 修正初次混合時未被動畫覆寫的骨骼位置殘留；目前每幀先還原基準再套目標姿勢與混合。
+
+實際驗證：
+
+- Check 成功：`artifacts/logs/check-20261017-034709-*.log`。
+- PreviewFemale 0 失敗：`artifacts/logs/previewfemale-20261017-034555-994.log`，含速度緩衝、戰鬥恢復、停止逐幀旋轉變化與 Root 位置還原。先前殘留導致的四個失敗已修復，不列為通過。
+- TestFemaleGrounding 0 失敗：`artifacts/logs/testfemalegrounding-20261017-034658-184.log`；已查看 grounded_walk／grounded_run 的實際地板與角色截圖。
+- VisualFemaleAnimation 32 通過：`artifacts/logs/visualfemaleanimation-20261017-034713-218.log`。
+- VisualG06Story 68 通過：`artifacts/logs/visualg06story-20261017-034609-217.log`。
+- 資產面數與骨架檢查通過：`artifacts/female_grounded_check/report.json`。
+
+限制：此為烘焙的平地校正，不是即時斜坡 IK，也未完成支撐腳水平鎖定，因此移動速度不匹配時仍可能滑步。混合銜接過程未宣稱每一幀均維持鞋底 2mm。下一項改善面部辨識與眨眼。

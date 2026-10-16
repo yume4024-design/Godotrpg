@@ -3,13 +3,20 @@ extends "res://scripts/characters/user_hero_actor.gd"
 var battle_pose: StringName = &""
 var animation_player: AnimationPlayer
 var _clip_rest: Dictionary[int, Quaternion] = {}
+var _clip_positions: Dictionary[int, Vector3] = {}
 var staff_visual: Node3D
+var _blend_rotations: Dictionary[int, Quaternion] = {}
+var _blend_positions: Dictionary[int, Vector3] = {}
+var _blend_elapsed: float = 0.0
+const BLEND_SECONDS: float = .12
+var _running: bool = false
 
 func _ready() -> void:
 	super._ready()
 	animation_player = _model_root.find_child("AnimationPlayer", true, false) as AnimationPlayer
 	for index: int in range(skeleton.get_bone_count()):
 		_clip_rest[index] = skeleton.get_bone_pose_rotation(index)
+		_clip_positions[index] = skeleton.get_bone_pose_position(index)
 		rest_rotations[index] = _clip_rest[index]
 	if animation_player != null:
 		for library_name: StringName in animation_player.get_animation_library_list():
@@ -47,6 +54,7 @@ func play_battle_action(action: StringName) -> void:
 	if _dead or animation_player == null: return
 	var clip: StringName = &"cast" if action in [&"mend", &"star_spark"] else action
 	if not animation_player.has_animation(clip): return
+	_capture_blend()
 	_reset_clip()
 	battle_pose = action
 	animation_player.play(clip)
@@ -55,30 +63,70 @@ func play_battle_action(action: StringName) -> void:
 func _process(delta: float) -> void:
 	if _dead: return
 	if animation_player != null and battle_pose != &"":
+		_restore_pose()
 		animation_player.advance(delta)
+		_apply_blend(delta)
 		_apply_grip()
 		return
 	if animation_player != null and _motion > .01:
-		var clip: StringName = &"run" if _motion >= .65 else &"walk"
+		var clip: StringName = &"run" if _motion >= (.58 if _running else .72) else &"walk"
+		_running = clip == &"run"
 		if animation_player.current_animation != clip:
+			var phase: float = 0.0
+			if animation_player.current_animation in [&"walk",&"run"]:
+				phase = animation_player.current_animation_position / animation_player.current_animation_length
+			_capture_blend()
 			_reset_clip()
 			animation_player.play(clip)
+			animation_player.seek(phase * animation_player.get_animation(clip).length,true)
+		_restore_pose()
 		animation_player.advance(delta)
+		_apply_blend(delta)
 		_apply_grip()
 		return
-	if animation_player != null and animation_player.is_playing(): _reset_clip()
+	if animation_player != null and animation_player.is_playing():
+		_capture_blend()
+		_reset_clip()
+	_running = false
+	_restore_pose()
 	super._process(delta)
+	_apply_blend(delta)
 	_apply_grip()
 
 func _finished(_clip: StringName) -> void:
+	_capture_blend()
 	_reset_clip()
+
+func _capture_blend() -> void:
+	_blend_elapsed = 0.0
+	for index: int in _clip_rest:
+		_blend_rotations[index] = skeleton.get_bone_pose_rotation(index)
+		_blend_positions[index] = skeleton.get_bone_pose_position(index)
+
+func _apply_blend(delta: float) -> void:
+	if _blend_rotations.is_empty(): return
+	_blend_elapsed += delta
+	var weight: float = smoothstep(0,1,minf(1,_blend_elapsed/BLEND_SECONDS))
+	for index: int in _blend_rotations:
+		skeleton.set_bone_pose_rotation(index,_blend_rotations[index].slerp(skeleton.get_bone_pose_rotation(index),weight))
+		skeleton.set_bone_pose_position(index,_blend_positions[index].lerp(skeleton.get_bone_pose_position(index),weight))
+	if _blend_elapsed >= BLEND_SECONDS:
+		_blend_rotations.clear()
+		_blend_positions.clear()
 
 func _reset_clip() -> void:
 	if animation_player != null: animation_player.stop()
 	battle_pose = &""
+	_restore_pose()
+
+func _restore_pose() -> void:
 	for index: int in _clip_rest:
 		skeleton.set_bone_pose_rotation(index, _clip_rest[index])
+		skeleton.set_bone_pose_position(index, _clip_positions[index])
 
 func set_dead(value: bool) -> void:
-	if value: _reset_clip()
+	if value:
+		_reset_clip()
+		_blend_rotations.clear()
+		_blend_positions.clear()
 	super.set_dead(value)

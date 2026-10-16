@@ -14,8 +14,10 @@
     "FingersRight",
     "LegLeft",
     "ShinLeft",
+    "FootLeft",
     "LegRight",
     "ShinRight",
+    "FootRight",
     "CoatLeft",
     "CoatRight"
   ],
@@ -36,8 +38,20 @@
   "mixed_joint_vertices": {
     "ForearmLeft": 93,
     "ForearmRight": 89,
-    "ShinLeft": 23,
-    "ShinRight": 25
+    "ShinLeft": 61,
+    "ShinRight": 64
   },
-  "weights": "smooth elbow/knee/shoulder/hip blending with separate coat tails; no new reduction"
+  "flat_floor_samples": {
+    "walk": {
+      "minimum_sole_m": 0.0019999295473098755,
+      "maximum_sole_m": 0.0020000766962766647,
+      "sampled_frames": 25
+    },
+    "run": {
+      "minimum_sole_m": 0.0019999127835035324,
+      "maximum_sole_m": 0.002000007778406143,
+      "sampled_frames": 17
+    }
+  },
+  "weights": "smooth joints with separate hands, coat tails and feet; no new reduction"
 }

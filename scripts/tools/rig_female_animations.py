@@ -1,7 +1,7 @@
 """Refine the delivered mesh without another reduction; export reusable joint clips."""
 import bpy, json, math
 from pathlib import Path
-from mathutils import Vector
+from mathutils import Vector, Matrix
 
 ROOT=Path(__file__).resolve().parents[2]
 bpy.ops.wm.open_mainfile(filepath=str(ROOT/'assets/source/female/lia_user.blend'))
@@ -23,12 +23,14 @@ for side,sign in [('Left',1),('Right',-1)]:
  thigh=rig.data.edit_bones['Leg'+side]
  thigh.head=(sign*.16,0,.95); thigh.tail=(sign*.19,0,.55)
  shin=rig.data.edit_bones.new('Shin'+side)
- shin.head=thigh.tail; shin.tail=(sign*.23,0,.12); shin.parent=thigh; shin.use_connect=True
+ shin.head=thigh.tail; shin.tail=(sign*.23,0,.16); shin.parent=thigh; shin.use_connect=True
+ foot=rig.data.edit_bones.new('Foot'+side)
+ foot.head=shin.tail; foot.tail=(sign*.23,-.16,.08); foot.parent=shin; foot.use_connect=True
  coat=rig.data.edit_bones.new('Coat'+side)
  coat.head=(sign*.15,0,1.05); coat.tail=(sign*.2,0,.8); coat.parent=rig.data.edit_bones['Root']
 rig.data.edit_bones['Head'].parent=rig.data.edit_bones['Torso']
 bpy.ops.object.mode_set(mode='OBJECT')
-for name in ['ForearmLeft','ForearmRight','ShinLeft','ShinRight','CoatLeft','CoatRight','HandLeft','HandRight','FingersLeft','FingersRight']:
+for name in ['ForearmLeft','ForearmRight','ShinLeft','ShinRight','FootLeft','FootRight','CoatLeft','CoatRight','HandLeft','HandRight','FingersLeft','FingersRight']:
  body.vertex_groups.new(name=name)
 def smooth(a,b,x):
  t=max(0,min(1,(x-a)/(b-a)))
@@ -56,6 +58,12 @@ for v in body.data.vertices:
    continue
  elif name.startswith('Leg'):
   lower='Shin'+name[3:]; w=1-smooth(.47,.63,z)
+  if z<.25:
+   foot_weight=1-smooth(.12,.25,z)
+   body.vertex_groups[name].add([v.index],0,'REPLACE')
+   body.vertex_groups[lower].add([v.index],1-foot_weight,'REPLACE')
+   body.vertex_groups['Foot'+name[3:]].add([v.index],foot_weight,'REPLACE')
+   continue
  else: continue
  attachment=smooth(.27,.4,abs(x)) if name.startswith('Arm') else 1-smooth(.86,1.01,z)
  body.vertex_groups[name].add([v.index],(1-w)*attachment,'REPLACE')
@@ -88,10 +96,14 @@ for name,recipe in recipes.items():
    bone.rotation_mode='XYZ'
    bone.rotation_euler=Vector(recipe.get(bone.name,(0,0,0)))*amount
    bone.keyframe_insert(data_path='rotation_euler',frame=frame,group=bone.name)
+grounding={}
 for name,amplitude,length in [('walk',.17,24),('run',.27,16)]:
  action=bpy.data.actions.new(name); action.use_fake_user=True
  rig.animation_data.action=action
- for frame in range(1,length+2,2):
+ samples=[]
+ for frame in range(1,length+2):
+  bpy.context.scene.frame_set(frame)
+  rig.pose.bones['Root'].location=(0,0,0)
   phase=(frame-1)/length*math.tau
   pose={}
   for side,sign in [('Left',1),('Right',-1)]:
@@ -103,9 +115,25 @@ for name,amplitude,length in [('walk',.17,24),('run',.27,16)]:
    pose['Coat'+side]=(-stride*amplitude*.4,0,0)
   for bone in rig.pose.bones:
    bone.rotation_euler=pose.get(bone.name,(0,0,0))
+  bpy.context.view_layer.update()
+  for side in ['Left','Right']:
+   foot=rig.pose.bones['Foot'+side]
+   # Keep boots oriented to the floor while the thigh and knee cycle.
+   foot.matrix=Matrix.Translation(foot.matrix.translation) @ foot.bone.matrix_local.to_3x3().to_4x4()
+  bpy.context.view_layer.update()
+  deps=bpy.context.evaluated_depsgraph_get(); evaluated=body.evaluated_get(deps)
+  lowest=min(v.co.z for v in evaluated.data.vertices)
+  rig.pose.bones['Root'].location=rig.data.bones['Root'].matrix_local.to_3x3().inverted() @ Vector((0,0,.002-lowest))
+  bpy.context.view_layer.update()
+  evaluated=body.evaluated_get(bpy.context.evaluated_depsgraph_get())
+  samples.append(min(v.co.z for v in evaluated.data.vertices))
+  for bone in rig.pose.bones:
    bone.keyframe_insert(data_path='rotation_euler',frame=frame,group=bone.name)
+  rig.pose.bones['Root'].keyframe_insert(data_path='location',frame=frame,group='Root')
+ assert min(samples)>-.001 and max(samples)<.006, samples
+ grounding[name]={'minimum_sole_m':min(samples),'maximum_sole_m':max(samples),'sampled_frames':len(samples)}
 rig.animation_data.action=None
-for bone in rig.pose.bones: bone.rotation_euler=(0,0,0)
+for bone in rig.pose.bones: bone.rotation_euler=(0,0,0); bone.location=(0,0,0)
 bpy.context.scene.render.fps=24
 bpy.context.scene.frame_start=1; bpy.context.scene.frame_end=17
 bpy.context.scene.frame_set(1)
@@ -118,4 +146,4 @@ bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'assets/source/female/lia_rigged.b
 tris=0
 for o in meshes: o.data.calc_loop_triangles(); tris+=len(o.data.loop_triangles)
 assert tris<=5000
-(ROOT/'assets/models/female/rigged_report.json').write_text(json.dumps({'triangles':tris,'bones':list(rig.data.bones.keys()),'clips':list(recipes)+['walk','run'],'duration_seconds':{'battle':16/24,'walk':1,'run':16/24},'mixed_joint_vertices':mixed,'weights':'smooth elbow/knee/shoulder/hip blending with separate coat tails; no new reduction'},indent=2))
+(ROOT/'assets/models/female/rigged_report.json').write_text(json.dumps({'triangles':tris,'bones':list(rig.data.bones.keys()),'clips':list(recipes)+['walk','run'],'duration_seconds':{'battle':16/24,'walk':1,'run':16/24},'mixed_joint_vertices':mixed,'flat_floor_samples':grounding,'weights':'smooth joints with separate hands, coat tails and feet; no new reduction'},indent=2))

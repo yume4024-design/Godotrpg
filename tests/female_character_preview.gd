@@ -8,7 +8,7 @@ func _run() -> void:
 	var hero: CartoonActor = load("res://scenes/characters/lia_user_visual.tscn").instantiate()
 	stage.add_child(hero)
 	var rig: Skeleton3D = hero.get("skeleton")
-	if rig == null or rig.get_bone_count() != 17: failures += 1
+	if rig == null or rig.get_bone_count() != 19: failures += 1
 	hero.call("set_equipment_visual",load("res://data/items/willow_staff.tres"))
 	var npcs: Node3D = load("res://scenes/world/greystone_npcs.tscn").instantiate()
 	stage.add_child(npcs)
@@ -72,11 +72,34 @@ func _run() -> void:
 		await create_timer(.8).timeout
 		if clips.current_animation != clip or hero.get("battle_pose") != &"": failures += 1
 	hero.set_motion(0)
-	await create_timer(.1).timeout
+	await create_timer(.2).timeout
 	if clips.is_playing(): failures += 1
 	for name: String in ["ForearmLeft","ShinLeft","CoatLeft","CoatRight"]:
 		var joint: int = rig.find_bone(name)
 		if not rig.get_bone_pose_rotation(joint).is_equal_approx(hero.get("rest_rotations")[joint]): failures += 1
+	var root_joint: int = rig.find_bone("Root")
+	if not rig.get_bone_pose_position(root_joint).is_equal_approx(hero.get("_clip_positions")[root_joint]): failures += 1
+	hero.set_motion(.7)
+	await create_timer(.16).timeout
+	if clips.current_animation != &"walk": failures += 1
+	hero.set_motion(.75)
+	await create_timer(.16).timeout
+	hero.set_motion(.66)
+	await create_timer(.16).timeout
+	if clips.current_animation != &"run": failures += 1
+	hero.call("play_battle_action",&"mend")
+	await create_timer(.8).timeout
+	if clips.current_animation != &"run": failures += 1
+	clips.seek(.16,true)
+	var before_stop: Quaternion = rig.get_bone_pose_rotation(leg)
+	hero.set_motion(0)
+	for frame: int in range(10):
+		await process_frame
+		var current: Quaternion = rig.get_bone_pose_rotation(leg)
+		if before_stop.angle_to(current)>.1: failures += 1
+		before_stop = current
+	await create_timer(.2).timeout
+	if clips.is_playing(): failures += 1
 	hero.set_dead(true)
 	await create_timer(.1).timeout
 	print("FEMALE_PREVIEW_COMPLETE failures=%d" % failures)
