@@ -134,7 +134,7 @@ func _run() -> void:
 	print("FEMALE_SLOPE_RESULT checks=%d failures=%d" % [checks,failures])
 	quit(0 if failures==0 else 1)
 
-static func _soles(body: MeshInstance3D,rig: Skeleton3D,normal: Vector3) -> Dictionary[String,float]:
+static func _soles(body: MeshInstance3D,rig: Skeleton3D,normal: Vector3,surface_distance: Callable = Callable()) -> Dictionary[String,float]:
 	var arrays: Array = body.mesh.surface_get_arrays(0)
 	var vertices: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
 	var bones: PackedInt32Array = arrays[Mesh.ARRAY_BONES]
@@ -153,7 +153,9 @@ static func _soles(body: MeshInstance3D,rig: Skeleton3D,normal: Vector3) -> Dict
 			var offset: int = index*influences+influence
 			if weights[offset]>0: point += (transforms[bones[offset]]*vertices[index])*weights[offset]
 		var side: String = "Left" if vertices[index].x>0 else "Right"
-		result[side] = minf(result[side],normal.dot(rig.global_transform*point))
+		var world: Vector3 = rig.global_transform*point
+		var distance: float = surface_distance.call(world) if surface_distance.is_valid() else normal.dot(world)
+		result[side] = minf(result[side],distance)
 	return result
 
 func _check(ok: bool,label: String) -> void:

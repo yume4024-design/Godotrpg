@@ -5,8 +5,12 @@ var skeleton: Skeleton3D
 var actor: CartoonActor
 var body: CollisionObject3D
 var sole_height: float = .16
+# Conservative footprint around the measured GLB rest bounds (-.135..+.267m).
+const SOLE_FRONT: float = .27
+const SOLE_BACK: float = .14
 var allow_motion: bool = false
 var enabled: bool = true
+var physics_pose: bool = false
 var _ground: Dictionary[String,Dictionary] = {}
 var _lifts: Dictionary[String,float] = {}
 var _last_ground: Dictionary[String,Dictionary] = {}
@@ -19,27 +23,55 @@ var last_target_errors: Dictionary[String,float] = {}
 
 func _ready() -> void:
 	process_priority = 100
+	process_physics_priority = 100
 
 func _physics_process(delta: float) -> void:
+	_sample_ground(delta)
+	if physics_pose: _apply_pose(delta)
+
+func _sample_ground(delta: float) -> void:
 	_ground.clear()
 	if not _can_place() or not enabled: return
 	for side: String in ["Left","Right"]:
 		var foot: int = skeleton.find_bone("Foot"+side)
 		if foot<0: continue
 		var ankle: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(foot).origin
-		var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(ankle+Vector3.UP*.5,ankle-Vector3.UP*.65)
-		if is_instance_valid(body): query.exclude = [body.get_rid()]
-		var hit: Dictionary = skeleton.get_world_3d().direct_space_state.intersect_ray(query)
+		var hit: Dictionary = _ray_hit(ankle)
 		if not hit.is_empty() and (hit.normal as Vector3).dot(Vector3.UP)>.85:
+			var support: Array[Vector3] = [hit.position]
+			var forward: Vector3 = actor.global_basis.z.normalized()
+			var right: Vector3 = actor.global_basis.x.normalized()
+			var model_scale: float = skeleton.global_basis.get_scale().y
+			var front: Dictionary = _ray_hit(ankle+forward*SOLE_FRONT*model_scale)
+			var back: Dictionary = _ray_hit(ankle-forward*SOLE_BACK*model_scale)
+			if not front.is_empty(): support.append(front.position)
+			if not back.is_empty(): support.append(back.position)
+			if not front.is_empty() and not back.is_empty():
+				var grade_forward: float = (front.position.y-back.position.y)/((SOLE_FRONT+SOLE_BACK)*model_scale)
+				var grade_side: float = -(hit.normal as Vector3).dot(right)/hit.normal.y
+				var candidate: Vector3 = (Vector3.UP-forward*grade_forward-right*grade_side).normalized()
+				if candidate.dot(Vector3.UP)>.85: hit.normal = candidate
+				var center: Vector3 = hit.position
+				center.y = maxf(center.y,lerpf(back.position.y,front.position.y,SOLE_BACK/(SOLE_FRONT+SOLE_BACK)))
+				hit.position = center
+			hit["supports"] = support
 			var normal: Vector3 = hit.normal
-			var smoothing: float = 1-exp(-delta*12)
+			var smoothing: float = 1-exp(-delta*(24 if float(actor.get("_motion"))>.01 else 12))
 			_normals[side] = _normals.get(side,Vector3.UP).lerp(normal,smoothing).normalized()
 			_points[side] = _points.get(side,hit.position).lerp(hit.position,smoothing)
 			hit.normal = _normals[side]
 			hit.position = _points[side]
 			_ground[side] = hit
 
+func _ray_hit(at: Vector3) -> Dictionary:
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(at+Vector3.UP*.5,at-Vector3.UP*.65)
+	if is_instance_valid(body): query.exclude = [body.get_rid()]
+	return skeleton.get_world_3d().direct_space_state.intersect_ray(query)
+
 func _process(delta: float) -> void:
+	if not physics_pose: _apply_pose(delta)
+
+func _apply_pose(delta: float) -> void:
 	last_target_errors.clear()
 	_targets.clear()
 	if not _can_place():
@@ -90,7 +122,8 @@ func _process(delta: float) -> void:
 func _can_place() -> bool:
 	return (
 		is_instance_valid(skeleton) and is_instance_valid(actor)
-		and actor.is_processing() and not bool(actor.get("_dead"))
+		and (actor.is_processing() or (physics_pose and actor.is_physics_processing()))
+		and not bool(actor.get("_dead"))
 		and actor.get("battle_pose")==&""
 		and (allow_motion or float(actor.get("_motion"))<.01)
 	)
@@ -107,6 +140,12 @@ func _solve(side: String,hit: Dictionary) -> void:
 	var normal: Vector3 = hit.normal
 	var surface: Vector3 = ankle_world
 	surface.y = (hit.position as Vector3).y-(normal.x*(surface.x-hit.position.x)+normal.z*(surface.z-hit.position.z))/normal.y
+	if float(actor.get("_motion"))>.01:
+		var clearance: float = 0
+		for contact: Vector3 in hit.get("supports",[]):
+			var estimated: float = surface.y-(normal.x*(contact.x-surface.x)+normal.z*(contact.z-surface.z))/normal.y
+			clearance = maxf(clearance,contact.y-estimated)
+		surface.y += clearance+.002*skeleton.global_basis.get_scale().y
 	var height: float = sole_height*skeleton.global_basis.get_scale().y
 	var target: Vector3 = skeleton.to_local(surface+normal*(height+_lifts.get(side,0.0)))
 	var upper: float = hip_point.distance_to(knee_point)

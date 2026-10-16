@@ -33,6 +33,8 @@ func _ready() -> void:
 	foot_placement.skeleton = player.appearance.get("skeleton")
 	foot_placement.body = player
 	foot_placement.allow_motion = true
+	foot_placement.physics_pose = true
+	player.appearance.call("set_animation_physics",true)
 	foot_placement.enabled = false
 	player.appearance.add_child(foot_placement)
 	player.reset_to(Vector3(0,0,18))

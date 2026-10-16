@@ -19,9 +19,11 @@ var _travel_speed: float = -1.0
 var last_motion_rate: float = 1.0
 var _blink_meshes: Array[MeshInstance3D] = []
 var _blink_clock: float = 1.0
+var _animation_physics: bool = false
 
 func _ready() -> void:
 	super._ready()
+	set_physics_process(false)
 	for mesh: MeshInstance3D in _model_root.find_children("*","MeshInstance3D",true,false):
 		if mesh.find_blend_shape_by_name("Blink") >= 0: _blink_meshes.append(mesh)
 	animation_player = _model_root.find_child("AnimationPlayer", true, false) as AnimationPlayer
@@ -64,6 +66,14 @@ func get_spell_focus() -> Node3D:
 
 func set_travel_speed(meters_per_second: float) -> void:
 	_travel_speed = maxf(0,meters_per_second)
+
+func set_animation_physics(enabled: bool) -> void:
+	_animation_physics = enabled
+	set_process(not enabled)
+	set_physics_process(enabled)
+
+func _physics_process(delta: float) -> void:
+	if _animation_physics: _process(delta)
 
 func set_equipment_visual(weapon: ItemDefinition) -> void:
 	if staff_visual != null:

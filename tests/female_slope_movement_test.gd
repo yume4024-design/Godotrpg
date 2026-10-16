@@ -14,6 +14,7 @@ func _run() -> void:
 		return
 	root.size = Vector2i(1000,800)
 	Engine.max_fps = 60
+	var transitions: bool = "--transitions" in OS.get_cmdline_user_args()
 	var stage: Node3D = Node3D.new()
 	root.add_child(stage)
 	var floor: StaticBody3D = StaticBody3D.new()
@@ -33,6 +34,11 @@ func _run() -> void:
 	material.albedo_color = Color("759477")
 	mesh.material_override = material
 	floor.add_child(mesh)
+	var low_flat: StaticBody3D
+	var high_flat: StaticBody3D
+	if transitions:
+		low_flat = _flat_piece(stage)
+		high_flat = _flat_piece(stage)
 	var light: DirectionalLight3D = DirectionalLight3D.new()
 	light.rotation_degrees = Vector3(-45,-30,0)
 	light.light_energy = .6
@@ -53,6 +59,8 @@ func _run() -> void:
 	placement.skeleton = rig
 	placement.body = player
 	placement.allow_motion = true
+	placement.physics_pose = true
+	player.appearance.call("set_animation_physics",true)
 	player.appearance.add_child(placement)
 	var camera: Camera3D = Camera3D.new()
 	stage.add_child(camera)
@@ -62,10 +70,21 @@ func _run() -> void:
 	for axis: int in range(2):
 		floor.rotation_degrees = Vector3(0,0,10) if axis==0 else Vector3(10,0,0)
 		var normal: Vector3 = floor.global_basis.y
+		var ramp_height: float = tan(deg_to_rad(10))*6
+		if transitions:
+			box.size = Vector3(6/cos(deg_to_rad(10)),.4,8) if axis==0 else Vector3(8,.4,6/cos(deg_to_rad(10)))
+			floor_mesh.size = box.size
+			floor.position.y = ramp_height*.5
+			low_flat.position = Vector3(-7,0,0) if axis==0 else Vector3(0,0,7)
+			high_flat.position = Vector3(7,ramp_height,0) if axis==0 else Vector3(0,ramp_height,-7)
 		for strength: float in [.5,1.0]:
 			for sign_value: float in [1.0,-1.0]:
 				var start: Vector3 = Vector3(-3*sign_value,0,0) if axis==0 else Vector3(0,0,-3*sign_value)
-				start.y = -(normal.x*start.x+normal.z*start.z)/normal.y+.05
+				if transitions:
+					start *= 5.0/3.0
+					start.y = (0.0 if start.x<0 else ramp_height) if axis==0 else (ramp_height if start.z<0 else 0.0)
+					start.y += .05
+				else: start.y = -(normal.x*start.x+normal.z*start.z)/normal.y+.05
 				player.reset_to(start)
 				await create_timer(.4).timeout
 				var target: Vector3 = Vector3(-start.x,0,-start.z)
@@ -73,7 +92,14 @@ func _run() -> void:
 				var highest_stance: float = -INF
 				var grounded: int = 0
 				var samples: int = 0
-				for frame: int in range(300):
+				var distance_probe: Callable = Callable()
+				if transitions:
+					distance_probe = func(point: Vector3) -> float:
+						var along: float = point.x if axis==0 else -point.z
+						if along<-3: return point.y
+						if along>3: return point.y-ramp_height
+						return normal.dot(point-floor.position)
+				for frame: int in range(480):
 					var difference: Vector2 = Vector2(target.x-player.position.x,target.z-player.position.z)
 					if difference.length()<.2: break
 					var direction: Vector2 = difference.normalized()
@@ -83,13 +109,13 @@ func _run() -> void:
 					camera.look_at(player.position+Vector3.UP*.8)
 					await physics_frame
 					await RenderingServer.frame_post_draw
-					var soles: Dictionary[String,float] = SURFACE_PROBE._soles(body_mesh,rig,normal)
+					var soles: Dictionary[String,float] = SURFACE_PROBE._soles(body_mesh,rig,normal,distance_probe)
 					minimum = minf(minimum,minf(soles.Left,soles.Right))
 					highest_stance = maxf(highest_stance,minf(soles.Left,soles.Right))
 					if player.is_on_floor(): grounded += 1
 					samples += 1
 				_release()
-				print("PHYSICAL_SLOPE axis=",axis," strength=",strength," direction=",sign_value," samples=",samples," grounded=",grounded," minimum_sole_m=",minimum," highest_stance_m=",highest_stance)
+				print("PHYSICAL_SLOPE transitions=",transitions," axis=",axis," strength=",strength," direction=",sign_value," samples=",samples," grounded=",grounded," minimum_sole_m=",minimum," highest_stance_m=",highest_stance)
 				_check(Vector2(player.position.x-target.x,player.position.z-target.z).length()<.3,"Controller reaches opposite side of ramp")
 				_check(samples>20 and grounded>=samples*.95,"Capsule remains grounded on fixed slope")
 				_check(minimum>-.025,"Moving imported shoes avoid deep slope penetration")
@@ -97,12 +123,32 @@ func _run() -> void:
 				await create_timer(.3).timeout
 				_check(player.velocity.length()<.01,"Controller stops on slope")
 				await RenderingServer.frame_post_draw
-				root.get_texture().get_image().save_webp("res://artifacts/female_character/physical_slope_%d_%s_%s.webp" % [axis,str(strength),str(sign_value)])
+				root.get_texture().get_image().save_webp("res://artifacts/female_character/physical_%s_%d_%s_%s.webp" % ["ramp" if transitions else "slope",axis,str(strength),str(sign_value)])
 	_release()
 	stage.queue_free()
 	await process_frame
-	print("FEMALE_SLOPE_MOVEMENT_RESULT checks=%d failures=%d" % [checks,failures])
+	print("%s checks=%d failures=%d" % ["FEMALE_RAMP_TRANSITIONS_RESULT" if transitions else "FEMALE_SLOPE_MOVEMENT_RESULT",checks,failures])
 	quit(0 if failures==0 else 1)
+
+func _flat_piece(stage: Node3D) -> StaticBody3D:
+	var piece: StaticBody3D = StaticBody3D.new()
+	stage.add_child(piece)
+	var collision: CollisionShape3D = CollisionShape3D.new()
+	var shape: BoxShape3D = BoxShape3D.new()
+	shape.size = Vector3(8,.4,8)
+	collision.shape = shape
+	collision.position.y = -.2
+	piece.add_child(collision)
+	var mesh: MeshInstance3D = MeshInstance3D.new()
+	var box: BoxMesh = BoxMesh.new()
+	box.size = shape.size
+	mesh.mesh = box
+	mesh.position.y = -.2
+	var material: StandardMaterial3D = StandardMaterial3D.new()
+	material.albedo_color = Color("8c9d76")
+	mesh.material_override = material
+	piece.add_child(mesh)
+	return piece
 
 func _press(direction: Vector2) -> void:
 	_release()
