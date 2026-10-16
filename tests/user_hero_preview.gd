@@ -1,0 +1,36 @@
+extends SceneTree
+var failures: int = 0
+func _initialize() -> void: _run.call_deferred()
+func _run() -> void:
+	root.size = Vector2i(800,900)
+	var stage: Node3D = Node3D.new()
+	root.add_child(stage)
+	var hero: CartoonActor = load("res://scenes/characters/ren_user_visual.tscn").instantiate()
+	stage.add_child(hero)
+	var rig: Skeleton3D = hero.get("skeleton")
+	if rig == null or rig.get_bone_count() != 7: failures += 1
+	var camera: Camera3D = Camera3D.new()
+	stage.add_child(camera)
+	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
+	camera.size = 2.5
+	camera.position = Vector3(0,1,4)
+	camera.look_at(Vector3(0,1,0))
+	var light: DirectionalLight3D = DirectionalLight3D.new()
+	stage.add_child(light)
+	light.rotation_degrees = Vector3(-30,-30,0)
+	for mesh: MeshInstance3D in hero.find_children("*","MeshInstance3D",true,false):
+		print(mesh.name, " ", mesh.get_aabb(), " ", mesh.get_active_material(0))
+	for pose: String in ["front","side","back","walk"]:
+		hero.rotation.y = 0 if pose in ["front","walk"] else PI/2 if pose == "side" else PI
+		hero.set_motion(1 if pose == "walk" else 0)
+		await create_timer(.4).timeout
+		await RenderingServer.frame_post_draw
+		root.get_texture().get_image().save_webp("res://artifacts/hero_inspection/godot_%s.webp" % pose)
+	var leg: int = rig.find_bone("LegLeft")
+	if rig.get_bone_pose_rotation(leg).is_equal_approx(rig.get_bone_rest(leg).basis.get_rotation_quaternion()): failures += 1
+	hero.set_dead(true)
+	await create_timer(.1).timeout
+	print("HERO_PREVIEW_COMPLETE failures=%d" % failures)
+	stage.queue_free()
+	await process_frame
+	quit(0 if failures == 0 else 1)

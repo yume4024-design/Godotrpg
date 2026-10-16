@@ -1,5 +1,12 @@
 # 任務與進度
 
+## 2026-10-16 使用者主角模型
+
+- [x] 上色、減面、基本骨架與 G06 探索／戰鬥外觀整合。
+- [x] Godot 載入、四視圖與基本動作預覽；序章 68 項、存檔遷移 51 項通過。
+- [ ] 完整肘膝權重及攻擊動畫仍待後續授權製作；Android 未測。
+- 詳見 [主角模型報告](USER_HERO_REPORT.md)。
+
 更新日期：2026-10-14（Asia/Taipei）。目前階段：Phase 6 進行中；0.6.1 已匯出並完成前一輪村莊驗收。使用者新增企劃與九區灰石村圖，正文已由使用者貼入並合併，G01/G02完成，G03基礎建物已完成，見 [新企劃合併紀錄](PLAN_MERGE_2026_10_14.md)。新版場景已有獨立預覽，尚未替換正式遊戲；完整試玩／時長仍待驗收。歷史證據見 [VILLAGE_ART_REPORT](VILLAGE_ART_REPORT.md)、[PHASE6_REPORT](PHASE6_REPORT.md) 與 [PHASE5_REPORT](PHASE5_REPORT.md)。
 
 故事基準：《失落星核》Story Bible v1.0；階段對應及資料契約見 [STORY_IMPLEMENTATION](STORY_IMPLEMENTATION.md)。P1～P6 交付 20～30 分鐘、雷恩/莉雅兩人的序章，完整版六篇章排在其後。

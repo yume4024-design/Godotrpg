@@ -13,6 +13,17 @@ var _inn_service: bool = false
 
 func _ready() -> void:
 	greystone_enabled = true
+	var hero_visual: PackedScene = load("res://scenes/characters/ren_user_visual.tscn")
+	starting_character = starting_character.duplicate()
+	starting_character.appearance = hero_visual
+	for index: int in range(battles.definitions.size()):
+		if battles.definitions[index].id == &"ren": battles.definitions[index] = starting_character
+	var old_appearance: CartoonActor = player.appearance
+	player.visual.remove_child(old_appearance)
+	old_appearance.queue_free()
+	player.appearance = hero_visual.instantiate()
+	player.appearance.scale = Vector3.ONE * .82
+	player.visual.add_child(player.appearance)
 	battles_path = "res://data/battles/expanded_battles.json"
 	for id: String in ["spore_sprite", "thorn_boar", "crystal_bat", "ore_beetle"]:
 		battles.definitions.append(load("res://data/enemies/%s.tres" % id))
