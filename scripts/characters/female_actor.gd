@@ -12,6 +12,9 @@ var _blend_positions: Dictionary[int, Vector3] = {}
 var _blend_elapsed: float = 0.0
 const BLEND_SECONDS: float = .12
 var _running: bool = false
+@export var motion_profile: CharacterMotionProfile
+var _travel_speed: float = -1.0
+var last_motion_rate: float = 1.0
 var _blink_meshes: Array[MeshInstance3D] = []
 var _blink_clock: float = 1.0
 
@@ -56,6 +59,9 @@ func _ready() -> void:
 
 func get_spell_focus() -> Node3D:
 	return staff_focus if staff_visual != null and staff_visual.visible else palm_focus
+
+func set_travel_speed(meters_per_second: float) -> void:
+	_travel_speed = maxf(0,meters_per_second)
 
 func set_equipment_visual(weapon: ItemDefinition) -> void:
 	if staff_visual != null:
@@ -115,7 +121,12 @@ func _process(delta: float) -> void:
 			animation_player.play(clip)
 			animation_player.seek(phase * animation_player.get_animation(clip).length,true)
 		_restore_pose()
-		animation_player.advance(delta)
+		last_motion_rate = 1.0
+		if motion_profile != null and _travel_speed >= 0:
+			var distance: float = motion_profile.run_cycle_distance if _running else motion_profile.walk_cycle_distance
+			var nominal_speed: float = distance*global_basis.get_scale().y/animation_player.current_animation_length
+			last_motion_rate = clampf(_travel_speed/maxf(.01,nominal_speed),.3,2.2)
+		animation_player.advance(delta*last_motion_rate)
 		_apply_blend(delta)
 		_apply_grip()
 		return

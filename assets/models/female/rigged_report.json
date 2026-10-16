@@ -53,13 +53,13 @@
   },
   "flat_floor_samples": {
     "walk": {
-      "minimum_sole_m": 0.0019999295473098755,
-      "maximum_sole_m": 0.0020000766962766647,
+      "minimum_sole_m": 0.0019999761134386063,
+      "maximum_sole_m": 0.0020000245422124863,
       "sampled_frames": 25
     },
     "run": {
-      "minimum_sole_m": 0.0019999127835035324,
-      "maximum_sole_m": 0.002000007778406143,
+      "minimum_sole_m": 0.0019999276846647263,
+      "maximum_sole_m": 0.0020000082440674305,
       "sampled_frames": 17
     }
   },

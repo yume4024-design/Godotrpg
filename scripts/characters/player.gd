@@ -13,7 +13,10 @@ func _physics_process(delta: float) -> void:
 	if is_instance_valid(movement_camera):
 		camera_basis = movement_camera.global_basis
 	var direction: Vector3 = movement.step(self, input_component.read_direction(), camera_basis, delta)
-	appearance.set_motion(Vector2(velocity.x, velocity.z).length() / movement.speed)
+	var horizontal_speed: float = Vector2(velocity.x, velocity.z).length()
+	if appearance.has_method("set_travel_speed"):
+		appearance.call("set_travel_speed",horizontal_speed)
+	appearance.set_motion(horizontal_speed / movement.speed)
 	if direction.length_squared() > 0.001:
 		visual.rotation.y = lerp_angle(visual.rotation.y, atan2(direction.x, direction.z), 14.0 * delta)
 

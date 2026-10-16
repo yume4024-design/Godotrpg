@@ -196,10 +196,11 @@ for name,recipe in recipes.items():
    bone.rotation_euler=Vector(recipe.get(bone.name,(0,0,0)))*amount
    bone.keyframe_insert(data_path='rotation_euler',frame=frame,group=bone.name)
 grounding={}
-for name,amplitude,length in [('walk',.17,24),('run',.27,16)]:
+cycle_distances={}
+for name,amplitude,length in [('walk',.45,24),('run',.75,16)]:
  action=bpy.data.actions.new(name); action.use_fake_user=True
  rig.animation_data.action=action
- samples=[]
+ samples=[]; forward_samples=[]
  for frame in range(1,length+2):
   bpy.context.scene.frame_set(frame)
   rig.pose.bones['Root'].location=(0,0,0)
@@ -211,10 +212,11 @@ for name,amplitude,length in [('walk',.17,24),('run',.27,16)]:
    pose['Shin'+side]=(max(0,-stride)*amplitude,0,0)
    pose['Arm'+side]=(-stride*amplitude*.65,0,0)
    pose['Forearm'+side]=(-.08-max(0,stride)*.08,0,0)
-   pose['Coat'+side]=(-stride*amplitude*.4,0,0)
+   pose['Coat'+side]=(-stride*min(.14,amplitude*.4),0,0)
   for bone in rig.pose.bones:
    bone.rotation_euler=pose.get(bone.name,(0,0,0))
   bpy.context.view_layer.update()
+  forward_samples.append(rig.pose.bones['FootLeft'].matrix.translation.y)
   for side in ['Left','Right']:
    foot=rig.pose.bones['Foot'+side]
    # Keep boots oriented to the floor while the thigh and knee cycle.
@@ -231,6 +233,7 @@ for name,amplitude,length in [('walk',.17,24),('run',.27,16)]:
   rig.pose.bones['Root'].keyframe_insert(data_path='location',frame=frame,group='Root')
  assert min(samples)>-.001 and max(samples)<.006, samples
  grounding[name]={'minimum_sole_m':min(samples),'maximum_sole_m':max(samples),'sampled_frames':len(samples)}
+ cycle_distances[name]=2*(max(forward_samples)-min(forward_samples))
 rig.animation_data.action=None
 for bone in rig.pose.bones: bone.rotation_euler=(0,0,0); bone.location=(0,0,0)
 bpy.context.scene.render.fps=24
@@ -246,3 +249,5 @@ assert tris+140<=5000, 'Character plus willow staff exceeds the shared visual bu
 bpy.ops.export_scene.gltf(filepath=str(out),export_format='GLB',use_selection=True,export_animations=True,export_animation_mode='ACTIONS',export_frame_range=False)
 bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'assets/source/female/lia_rigged.blend'))
 (ROOT/'assets/models/female/rigged_report.json').write_text(json.dumps({'triangles':tris,'bones':list(rig.data.bones.keys()),'clips':list(recipes)+['walk','run'],'duration_seconds':{'battle':16/24,'walk':1,'run':16/24},'mixed_joint_vertices':mixed,'flat_floor_samples':grounding,'removed_debris_vertices':removed_debris,'weights':'smooth joints, separate five-finger hands, coat tails and feet; no new reduction'},indent=2))
+(ROOT/'assets/models/female/lia_motion_profile.tres').write_text('[gd_resource type="Resource" script_class="CharacterMotionProfile" format=3]\n[ext_resource type="Script" path="res://scripts/characters/character_motion_profile.gd" id="1"]\n[resource]\nscript = ExtResource("1")\nwalk_cycle_distance = %.8f\nrun_cycle_distance = %.8f\n' % (cycle_distances['walk'],cycle_distances['run']))
+print('LOCOMOTION_CYCLE_DISTANCES',cycle_distances)

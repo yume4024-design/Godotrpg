@@ -82,3 +82,21 @@ VisualFemaleAnimation 38 通過、0 失敗（`artifacts/logs/visualfemaleanimati
 - VisualFemaleAnimation：38 通過；VisualG06Story：68 通過，見本輪 `artifacts/logs/visualg06story-20261017-0418*.log`。
 
 此檢查涵蓋目前測試角色與鏡頭，不宣稱所有未來三人隊形、極窄比例或多段連擊均已驗收。
+
+## CP08：控制器、步速與碰撞
+
+- 新增 `scenes/tools/lia_movement_preview.tscn`，可由 `./tools/godot.ps1 -Mode PreviewLiaMovement` 開啟；使用正式 Player、InputMap、固定鏡頭及灰石村碰撞，但不建立劇情／存檔服務，不替換正式探索隊長。
+- 提高烘焙步幅；產生共用 `lia_motion_profile.tres`，行走／跑步模型循環距離分別約 1.036／1.623m。Player 將實際水平速度交給有對應介面的外觀，依角色比例及動畫長度調整播放率，限制 0.3～2.2 倍；不改遊戲移動速度或戰鬥播放時間。
+- 圖形測試透過共用 InputMap 實際移動膠囊，檢查類比半速、停止、三個路點貼地及公會牆面阻擋；17 通過、0 失敗。類比實測 1.688m/s，播放率 2.069。
+- 查看 run_side 及 movement_12 畫面，調低獨立預覽燈光以保留顏色。鞋底 98 點取樣：行走 1.017～2.006mm，跑步 -3.550～2.000mm，均在既有 -5～10mm 容差內。尚未實作斜坡 IK 或水平腳鎖，仍可能有滑步。
+
+Godot 4.7.2／RTX 3080 Compatibility，命令與日誌：
+
+- `-Mode Check`：`artifacts/logs/check-20261017-042518-423.log`，成功。
+- `-Mode TestLiaMovement`：`testliamovement-20261017-042823-598.log`，17/0。
+- `-Mode TestFemaleGrounding`：`testfemalegrounding-20261017-042740-639.log`，0 失敗。
+- `-Mode VisualFemaleAnimation`：`visualfemaleanimation-20261017-042741-896.log`，38/0。
+- `-Mode TestG06`：`testg06-20261017-042747-264.log`，51/0。
+- `-Mode VisualG06Story`：`visualg06story-20261017-042752-107.log`，68/0。
+
+以上是桌面自動輸入與實際渲染驗證，並非 Android 真機或玩家人工通關驗收。

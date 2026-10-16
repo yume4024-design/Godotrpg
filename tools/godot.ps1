@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('VisualFemaleHand', 'PreviewCharacters', 'TestCharacterPreview', 'VisualFemaleFace', 'TestFemaleGrounding', 'VisualFemaleAnimation', 'PreviewFemale', 'PreviewUserHero', 'ProfileGreystoneEndurance', 'ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('PreviewLiaMovement', 'TestLiaMovement', 'VisualFemaleHand', 'PreviewCharacters', 'TestCharacterPreview', 'VisualFemaleFace', 'TestFemaleGrounding', 'VisualFemaleAnimation', 'PreviewFemale', 'PreviewUserHero', 'ProfileGreystoneEndurance', 'ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -57,6 +57,8 @@ if ($Mode -ne 'Version') {
     }
     if ($Mode -eq 'TestWildernessEndurance') { $engineArgs += @('--script','res://tests/wilderness_endurance_test.gd') }
     if ($Mode -eq 'TestWildernessBalance') { $engineArgs += @('--script','res://tests/wilderness_balance_test.gd') }
+    if ($Mode -eq 'PreviewLiaMovement') { $engineArgs += @('res://scenes/tools/lia_movement_preview.tscn') }
+    if ($Mode -eq 'TestLiaMovement') { $engineArgs += @('--script','res://tests/lia_movement_test.gd') }
     if ($Mode -eq 'VisualFemaleHand') { $engineArgs += @('--script','res://tests/female_hand_test.gd') }
     if ($Mode -eq 'PreviewCharacters') { $engineArgs += @('res://scenes/tools/character_preview.tscn') }
     if ($Mode -eq 'TestCharacterPreview') { $engineArgs += @('--script','res://tests/character_preview_test.gd') }
@@ -101,7 +103,7 @@ $startInfo.EnvironmentVariables['APPDATA'] = $profileRoot
 $startInfo.EnvironmentVariables['LOCALAPPDATA'] = $cacheRoot
 $startInfo.EnvironmentVariables['TEMP'] = $tempRoot
 $startInfo.EnvironmentVariables['TMP'] = $tempRoot
-if ($Mode -in @('PreviewCharacters', 'RunG06', 'PreviewGreystone', 'Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
+if ($Mode -in @('PreviewLiaMovement', 'PreviewCharacters', 'RunG06', 'PreviewGreystone', 'Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
     # Use the graphical binary for detached windows. The console wrapper inherits
     # the caller's pipe handles and can stall after a short-lived tool shell exits.
     $graphicalPath = $GodotPath -replace '_console\.exe$', '.exe'
