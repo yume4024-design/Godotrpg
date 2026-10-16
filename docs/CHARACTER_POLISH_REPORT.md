@@ -143,3 +143,9 @@ Godot 4.7.2、Windows RTX 3080、Compatibility、1280×720、VSync 關閉、無 
 動畫時間修正不改 BattleManager 的行動結算或經濟；仍不宣稱斜坡 IK、水平腳鎖及手工拓樸完成。
 
 CP11 release 重新匯出至 builds/character-qa/20261017-044240，Full 83/0、Reload 8/0；日誌 character-export-full-20261017-044245-105.log、character-export-reload-20261017-044307-531.log。
+
+## CP12：戰鬥中途退出的生命週期
+
+`./tools/godot.ps1 -Mode TestCharacterLifecycle`，Godot 4.7.2 圖形模式：12 次建立真實 BattleArena／莉雅／裝備，透過 BattleManager.submit 成功療癒，在追蹤光點仍作用的 0.08 秒時移除整個戰場。
+
+62 項通過、0 失敗，日誌 `artifacts/logs/testcharacterlifecycle-20261017-044430-470.log`。WeakRef 確認每次戰場、角色、骨架及光點均被釋放，場景節點和 frame_pre_draw 連線回到基線；等待延遲戰鬥續行後仍無節點、無作用中 Tween。引擎靜態配置約 39,486,729～39,528,537 bytes，包含快取暖機，不能由短樣本宣稱所有遊戲狀態無洩漏。本輪未發現需額外修改正式功能的殘留。
