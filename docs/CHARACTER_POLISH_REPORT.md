@@ -45,3 +45,14 @@
 - 修復新增形變網格沒有 UV 導致 Godot 無法產生切線的匯入錯誤；新小網格具平面 UV，不使用貼圖。
 
 驗證：Check 成功（`check-20261017-035018-297.log`）；VisualFemaleFace 14 項通過（`visualfemaleface-20261017-0351*.log`）；PreviewFemale 0 失敗（`previewfemale-20261017-035022-308.log`）；TestFemaleGrounding 鞋底取樣不變且通過（`testfemalegrounding-20261017-035118-786.log`）；VisualFemaleAnimation 32 項通過（`visualfemaleanimation-20261017-035119-881.log`）。日誌均在 artifacts/logs。資產檢查通過：`artifacts/female_face_check/report.json`，含骨骼顯示輔助物 4,662 面。
+
+## CP04：獨立角色檢視
+
+- `scenes/tools/character_preview.tscn` 與 `scripts/tools/character_preview.gd` 提供雷恩／莉雅、待機／行走／跑步、莉雅五種戰鬥動作、持杖、轉向、縮放及臉部近看。
+- 即時計算目前可見模型面數；莉雅持杖 4,722 面、空手 4,582 面；雷恩 4,579 面、七骨。雷恩尚無匯入戰鬥動畫，因此相關按鈕停用，不以假動作替代。
+- 「保存預覽圖」寫入獨立 `user://character_previews/`，不建立 Party／Inventory／Saves 等遊戲服務。測試實際以滑鼠點擊按鈕並確認新檔案及保存結果。
+- 小型固定選項改用直接按鈕；原生彈出選單的自動輸入曾導致測試失敗與超時，未列為通過。已查看最終角色、持杖及臉部截圖，降低預覽燈光亮度以保留金髮層次。
+
+執行：`./tools/godot.ps1 -Mode PreviewCharacters`，或在 Godot 開啟上述獨立場景執行。自動驗證 `-Mode TestCharacterPreview`：12 通過、0 失敗，日誌 `artifacts/logs/testcharacterpreview-20261017-040100-504.log`；Check 成功見 `check-20261017-040006-954.log`。證據：`artifacts/female_character/viewer_face.webp`、viewer_lia、viewer_ren。
+
+此場景是角色外觀檢查工具，不是正式旅程或 Android 驗收；角色近距離拓樸仍有生成網格的簡化限制。
