@@ -129,3 +129,17 @@ Godot 4.7.2、Windows RTX 3080、Compatibility、1280×720、VSync 關閉、無 
 - 已查看 release 的 character-cast 畫面；此為加速自動化驗證，不代表人工 20～30 分鐘通關或 Android 真機。
 
 原正式輸出在匯出前後 SHA256 一致：exe `d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562`，pck `a8c95f156c55a0cf15cb6b71e617c435868eb6822d0c08a014fbdefbb42002b7`。證據 `artifacts/character_qa_formal_before.json`。
+
+## CP11：片段邊界與更新順序修復
+
+- 新增 30／60／120 FPS 確定性更新測試，發現匯出第 1 幀起點讓片段多出 1/24 秒；不是調高測試容差。Blender 改從 0 幀建立全部關鍵格，行走精確 1 秒，其餘六片段 2/3 秒，所有軌道起點為 0。
+- 大步幅在 0.12 秒內停步會超過既有單幀旋轉門檻；只將停步收勢延至 0.2 秒，戰鬥與步態切換仍為 0.12 秒。PreviewFemale 最終 0 失敗，前面失敗輪次保留於日誌。
+- 新起點也揭露施法光點落後 BoneAttachment 一幀，持杖／掌心位置測試失敗；改在 RenderingServer.frame_pre_draw 同步光點，追蹤結束及節點退出時解除連線，修復兩項失敗。
+- `TestFemaleMotionBoundary` 36/0，涵蓋精確片段長度、零起點、三種更新率、戰鬥時長不受速度加快、倒下／復活、移動恢復、兩個實例時鐘隔離。日誌 `artifacts/logs/testfemalemotionboundary-20261017-044115-937.log`。
+- `PreviewFemale` 0 失敗（`previewfemale-20261017-044102-229.log`），已查看新 run_side 與 spell_staff_charge 畫面。
+- `TestFemaleGrounding` 98 點取樣通過，行走 1.199～2.000mm、跑步 -2.346～2.000mm（`testfemalegrounding-20261017-043938-926.log`）。
+- `VisualFemaleAnimation` 38/0（`visualfemaleanimation-20261017-044201-990.log`）；`VisualActionEffects` 86/0（`visualactioneffects-20261017-044207-761.log`）；`TestLiaMovement` 17/0（`testliamovement-20261017-044215-607.log`）；序章 68/0（`visualg06story-20261017-044009-980.log`）。修正後類比步速仍為 1.688m/s，播放率改為 1.986，因片段已去除前段停留。
+
+動畫時間修正不改 BattleManager 的行動結算或經濟；仍不宣稱斜坡 IK、水平腳鎖及手工拓樸完成。
+
+CP11 release 重新匯出至 builds/character-qa/20261017-044240，Full 83/0、Reload 8/0；日誌 character-export-full-20261017-044245-105.log、character-export-reload-20261017-044307-531.log。

@@ -48,7 +48,10 @@ func _run() -> void:
 			await RenderingServer.frame_post_draw
 			root.get_texture().get_image().save_webp("res://artifacts/female_character/rigged_%s_%s.webp" % [action,view])
 			await create_timer(.45).timeout
-			if not rig.get_bone_pose_rotation(joint).is_equal_approx(hero.get("rest_rotations")[joint]): failures += 1
+			if not rig.get_bone_pose_rotation(joint).is_equal_approx(hero.get("rest_rotations")[joint]):
+				failures += 1
+				print("FAIL battle reset ",action," ",view)
+	print("PREVIEW_PHASE battle failures=",failures)
 	for amount: float in [.4,1.0]:
 		var clip: String = "walk" if amount < .65 else "run"
 		hero.set_motion(amount)
@@ -73,6 +76,7 @@ func _run() -> void:
 		if clips.current_animation != clip or hero.get("battle_pose") != &"": failures += 1
 	hero.set_motion(0)
 	await create_timer(.2).timeout
+	print("PREVIEW_PHASE locomotion failures=",failures)
 	if clips.is_playing(): failures += 1
 	for name: String in ["ForearmLeft","ShinLeft","CoatLeft","CoatRight"]:
 		var joint: int = rig.find_bone(name)
@@ -96,7 +100,9 @@ func _run() -> void:
 	for frame: int in range(10):
 		await process_frame
 		var current: Quaternion = rig.get_bone_pose_rotation(leg)
-		if before_stop.angle_to(current)>.1: failures += 1
+		if before_stop.angle_to(current)>.1:
+			failures += 1
+			print("FAIL stop discontinuity ",before_stop.angle_to(current))
 		before_stop = current
 	await create_timer(.2).timeout
 	if clips.is_playing(): failures += 1

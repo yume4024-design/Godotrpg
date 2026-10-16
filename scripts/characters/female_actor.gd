@@ -11,6 +11,8 @@ var _blend_rotations: Dictionary[int, Quaternion] = {}
 var _blend_positions: Dictionary[int, Vector3] = {}
 var _blend_elapsed: float = 0.0
 const BLEND_SECONDS: float = .12
+const STOP_BLEND_SECONDS: float = .2
+var _blend_seconds: float = BLEND_SECONDS
 var _running: bool = false
 @export var motion_profile: CharacterMotionProfile
 var _travel_speed: float = -1.0
@@ -131,7 +133,7 @@ func _process(delta: float) -> void:
 		_apply_grip()
 		return
 	if animation_player != null and animation_player.is_playing():
-		_capture_blend()
+		_capture_blend(STOP_BLEND_SECONDS)
 		_reset_clip()
 	_running = false
 	_restore_pose()
@@ -150,8 +152,9 @@ func _finished(_clip: StringName) -> void:
 	_capture_blend()
 	_reset_clip()
 
-func _capture_blend() -> void:
+func _capture_blend(seconds: float = BLEND_SECONDS) -> void:
 	_blend_elapsed = 0.0
+	_blend_seconds = seconds
 	for index: int in _clip_rest:
 		_blend_rotations[index] = skeleton.get_bone_pose_rotation(index)
 		_blend_positions[index] = skeleton.get_bone_pose_position(index)
@@ -159,11 +162,11 @@ func _capture_blend() -> void:
 func _apply_blend(delta: float) -> void:
 	if _blend_rotations.is_empty(): return
 	_blend_elapsed += delta
-	var weight: float = smoothstep(0,1,minf(1,_blend_elapsed/BLEND_SECONDS))
+	var weight: float = smoothstep(0,1,minf(1,_blend_elapsed/_blend_seconds))
 	for index: int in _blend_rotations:
 		skeleton.set_bone_pose_rotation(index,_blend_rotations[index].slerp(skeleton.get_bone_pose_rotation(index),weight))
 		skeleton.set_bone_pose_position(index,_blend_positions[index].lerp(skeleton.get_bone_pose_position(index),weight))
-	if _blend_elapsed >= BLEND_SECONDS:
+	if _blend_elapsed >= _blend_seconds:
 		_blend_rotations.clear()
 		_blend_positions.clear()
 

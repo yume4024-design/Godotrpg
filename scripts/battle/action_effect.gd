@@ -23,6 +23,8 @@ func _build(action: StringName, source: Vector3) -> void:
 	var recovering: bool = action in [&"mend", &"potion"]
 	var focused: bool = is_instance_valid(_source_focus) and _source_focus.is_inside_tree()
 	if focused:
+		# BoneAttachment transforms settle after normal node processing.
+		RenderingServer.frame_pre_draw.connect(_sync_focus)
 		var charge_mesh: SphereMesh = SphereMesh.new()
 		charge_mesh.radius = .075
 		charge_mesh.height = .15
@@ -81,11 +83,20 @@ func _process(delta: float) -> void:
 	if not is_instance_valid(_source_focus) or not _source_focus.is_inside_tree() or _elapsed > .24:
 		if is_instance_valid(_charge): _charge.visible = false
 		_source_focus = null
+		if RenderingServer.frame_pre_draw.is_connected(_sync_focus):
+			RenderingServer.frame_pre_draw.disconnect(_sync_focus)
 		set_process(false)
 		return
+
+func _sync_focus() -> void:
+	if not is_instance_valid(_source_focus) or not _source_focus.is_inside_tree(): return
 	if is_instance_valid(_charge): _charge.global_position = _source_focus.global_position
 	if is_instance_valid(_projectile) and _elapsed < .16:
 		_projectile.global_position = _source_focus.global_position
+
+func _exit_tree() -> void:
+	if RenderingServer.frame_pre_draw.is_connected(_sync_focus):
+		RenderingServer.frame_pre_draw.disconnect(_sync_focus)
 
 func _part(mesh: Mesh, color: Color, at: Vector3) -> MeshInstance3D:
 	var visual: MeshInstance3D = MeshInstance3D.new()

@@ -189,8 +189,8 @@ rig.animation_data_clear()
 for name,recipe in recipes.items():
  action=bpy.data.actions.new(name); action.use_fake_user=True
  rig.animation_data_create(); rig.animation_data.action=action
- for frame in [1,5,9,13,17]:
-  amount=math.sin(math.pi*(frame-1)/16)
+ for frame in [0,4,8,12,16]:
+  amount=math.sin(math.pi*frame/16)
   for bone in rig.pose.bones:
    bone.rotation_mode='XYZ'
    bone.rotation_euler=Vector(recipe.get(bone.name,(0,0,0)))*amount
@@ -201,10 +201,10 @@ for name,amplitude,length in [('walk',.45,24),('run',.75,16)]:
  action=bpy.data.actions.new(name); action.use_fake_user=True
  rig.animation_data.action=action
  samples=[]; forward_samples=[]
- for frame in range(1,length+2):
+ for frame in range(length+1):
   bpy.context.scene.frame_set(frame)
   rig.pose.bones['Root'].location=(0,0,0)
-  phase=(frame-1)/length*math.tau
+  phase=frame/length*math.tau
   pose={}
   for side,sign in [('Left',1),('Right',-1)]:
    stride=math.sin(phase)*sign
@@ -237,8 +237,8 @@ for name,amplitude,length in [('walk',.45,24),('run',.75,16)]:
 rig.animation_data.action=None
 for bone in rig.pose.bones: bone.rotation_euler=(0,0,0); bone.location=(0,0,0)
 bpy.context.scene.render.fps=24
-bpy.context.scene.frame_start=1; bpy.context.scene.frame_end=17
-bpy.context.scene.frame_set(1)
+bpy.context.scene.frame_start=0; bpy.context.scene.frame_end=16
+bpy.context.scene.frame_set(0)
 meshes=[o for o in bpy.context.scene.objects if o.type=='MESH' and o.parent==rig]
 bpy.ops.object.select_all(action='DESELECT'); rig.select_set(True)
 for o in meshes: o.select_set(True)
