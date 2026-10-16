@@ -100,3 +100,20 @@ Godot 4.7.2／RTX 3080 Compatibility，命令與日誌：
 - `-Mode VisualG06Story`：`visualg06story-20261017-042752-107.log`，68/0。
 
 以上是桌面自動輸入與實際渲染驗證，並非 Android 真機或玩家人工通關驗收。
+
+## CP09：Windows 角色效能回歸
+
+Godot 4.7.2、Windows RTX 3080、Compatibility、1280×720、VSync 關閉、無 FPS 上限，均為編輯器 debug 執行。`ProfileCharacters` 在相同森林戰場依序比較舊／新角色外觀，每組先暖機 0.8 秒，待機 2 秒，再每秒實際提交行動共 12 次（攻擊／星火／療癒／用藥／防禦）；測試 fixture 重設 HP／MP 以維持可操作性，不保存進度或發放獎勵。
+
+| 外觀／狀態 | 平均 ms | P95 ms | P99 ms | 最慢 ms | Draw Calls |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 舊角色待機 | 0.771 | 0.850 | 0.954 | 1.133 | 399 |
+| 舊角色行動 | 0.786 | 0.873 | 0.993 | 13.534 | 399～415 |
+| 新角色待機 | 0.940 | 1.172 | 1.361 | 1.589 | 337 |
+| 新角色行動 | 0.938 | 1.026 | 1.150 | 7.360 | 337～353 |
+
+新版行動樣本引擎靜態配置峰值 125.106MiB、顯示配置 53.185MiB；舊版行動 124.074／46.905MiB。順序測試保留資源快取，不能把差值視為模型獨佔大小或洩漏證據。新角色繪製次數較少，但幀時間略高；骨架／形變成本可能是因素，未用 CPU/GPU 硬體計時證實。所有 P95 低於 16.667ms 不代表低階 PC 或發布版本效能合格。
+
+- `ProfileCharacters`：31 通過、0 失敗；`artifacts/logs/profilecharacters-20261017-043116-721.log`，原始 `artifacts/performance/character_battle.json`。核對每組消耗兩瓶藥、特效清理、零獎勵結算；已查看 character_updated_true 畫面。
+- `ProfileGreystoneDynamic`：63 通過、0 失敗；`profilegreystonedynamic-20261017-042958-007.log`，六區實際移動且角色／背包／劇情等狀態不變。正常取樣 P95 1.072～1.462ms，公會 Draw Calls 348～366 最高；引擎靜態配置峰值約 281.97MiB，顯示配置最高 77.29MiB。
+- 45m 隱藏只作診斷比較，沒有套入正式地圖；`TIME_PROCESS` 快取值仍不能當逐幀 CPU 耗時。Android 暫停，未驗收。
