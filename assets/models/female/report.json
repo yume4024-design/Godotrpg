@@ -1,0 +1,23 @@
+{
+  "triangles": 4546,
+  "source_triangles": 397668,
+  "materials": [
+    "skin",
+    "hair",
+    "purple",
+    "cloth",
+    "leather",
+    "gold",
+    "ivory"
+  ],
+  "bones": [
+    "Root",
+    "Torso",
+    "Head",
+    "ArmLeft",
+    "ArmRight",
+    "LegLeft",
+    "LegRight"
+  ],
+  "rig": "Rigid regional weights; limited amplitude procedural motion"
+}

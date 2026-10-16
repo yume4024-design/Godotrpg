@@ -1,0 +1,2716 @@
+{
+  "id": "125197f6-bfa7-49d7-8bb4-380012000004",
+  "revision": 0,
+  "last_node_id": 25,
+  "last_link_id": 62,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "ImageOnlyCheckpointLoader",
+      "pos": [
+        80.21260487425548,
+        139.43759277572042
+      ],
+      "size": [
+        335,
+        110
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "ckpt_name",
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "ckpt_name"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            14
+          ]
+        },
+        {
+          "localized_name": "CLIP 視覺",
+          "name": "CLIP_VISION",
+          "type": "CLIP_VISION",
+          "slot_index": 1,
+          "links": [
+            23
+          ]
+        },
+        {
+          "localized_name": "VAE",
+          "name": "VAE",
+          "type": "VAE",
+          "slot_index": 2,
+          "links": [
+            50
+          ]
+        }
+      ],
+      "title": "多視角 Turbo 模型",
+      "properties": {
+        "Node name for S&R": "ImageOnlyCheckpointLoader",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        "hunyuan3d-dit-v2-mv-turbo_fp16.safetensors"
+      ],
+      "widgets_values_named": {
+        "ckpt_name": "hunyuan3d-dit-v2-mv-turbo_fp16.safetensors"
+      }
+    },
+    {
+      "id": 13,
+      "type": "ModelSamplingAuraFlow",
+      "pos": [
+        468.77748323717555,
+        156.668729914455
+      ],
+      "size": [
+        280,
+        95
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "showAdvanced": true,
+      "inputs": [
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "MODEL",
+          "link": 14
+        },
+        {
+          "localized_name": "偏移",
+          "name": "shift",
+          "type": "FLOAT",
+          "widget": {
+            "name": "shift"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "採樣",
+          "name": "sampling",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "sampling"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "模型",
+          "name": "MODEL",
+          "type": "MODEL",
+          "slot_index": 0,
+          "links": [
+            40
+          ]
+        }
+      ],
+      "title": "模型取樣設定",
+      "properties": {
+        "Node name for S&R": "ModelSamplingAuraFlow",
+        "cnr_id": "comfy-core"
+      },
+      "widgets_values": [
+        1,
+        "flow"
+      ],
+      "widgets_values_named": {
+        "shift": 1,
+        "sampling": "flow"
+      }
+    },
+    {
+      "id": 18,
+      "type": "MarkdownNote",
+      "pos": [
+        0,
+        -330
+      ],
+      "size": [
+        345,
+        400
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "使用說明 — 先上傳四張圖",
+      "properties": {},
+      "widgets_values": [
+        "## 四視角角色建模\n\n1. 在左側四個圖片節點上傳同一角色的正面、左側、背面、右側圖。不要把四張圖拼成一張。\n2. 圖片使用同樣姿勢與角色比例，全身完整、背景乾淨、避免裁掉手腳。\n3. 確認模型下載完成後，按「執行」。\n\n### RTX 3080 12GB 起始設定\n20 步、CFG 1、Guidance 3.5、Seed 50、256 解碼、單件生成。正式品質與速度需依角色實測。\n\n### 輸出\n未貼圖的幾何網格 GLB，儲存於 ComfyUI 的 output/mesh，供 Blender 修整與貼圖。此流程不會自動產生動畫拓樸或骨架。\n\n尚未設定角色圖片；上傳四張圖後才能執行。"
+      ],
+      "widgets_values_named": {
+        "text": "## 四視角角色建模\n\n1. 在左側四個圖片節點上傳同一角色的正面、左側、背面、右側圖。不要把四張圖拼成一張。\n2. 圖片使用同樣姿勢與角色比例，全身完整、背景乾淨、避免裁掉手腳。\n3. 確認模型下載完成後，按「執行」。\n\n### RTX 3080 12GB 起始設定\n20 步、CFG 1、Guidance 3.5、Seed 50、256 解碼、單件生成。正式品質與速度需依角色實測。\n\n### 輸出\n未貼圖的幾何網格 GLB，儲存於 ComfyUI 的 output/mesh，供 Blender 修整與貼圖。此流程不會自動產生動畫拓樸或骨架。\n\n尚未設定角色圖片；上傳四張圖後才能執行。"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 19,
+      "type": "807ceec8-a77a-4fe7-9468-8d1beb154aa0",
+      "pos": [
+        -39.86387970559878,
+        305.5628143066409
+      ],
+      "size": [
+        443.6892373649067,
+        464.0755799104016
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "clip_vision",
+          "name": "clip_vision",
+          "type": "CLIP_VISION",
+          "link": 23
+        },
+        {
+          "label": "正面",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        },
+        {
+          "label": "左側",
+          "name": "image_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "image_1"
+          },
+          "link": null
+        },
+        {
+          "name": "upload_1",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload_1"
+          },
+          "link": null
+        },
+        {
+          "label": "背面",
+          "name": "image_2",
+          "type": "COMBO",
+          "widget": {
+            "name": "image_2"
+          },
+          "link": null
+        },
+        {
+          "name": "upload_2",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload_2"
+          },
+          "link": null
+        },
+        {
+          "label": "右側",
+          "name": "image_3",
+          "type": "COMBO",
+          "widget": {
+            "name": "image_3"
+          },
+          "link": null
+        },
+        {
+          "name": "upload_3",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload_3"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "CLIP 視覺輸出",
+          "name": "CLIP_VISION_OUTPUT",
+          "type": "CLIP_VISION_OUTPUT",
+          "links": [
+            36
+          ]
+        },
+        {
+          "localized_name": "CLIP 視覺輸出_1",
+          "name": "CLIP_VISION_OUTPUT_1",
+          "type": "CLIP_VISION_OUTPUT",
+          "links": [
+            37
+          ]
+        },
+        {
+          "localized_name": "CLIP 視覺輸出_2",
+          "name": "CLIP_VISION_OUTPUT_2",
+          "type": "CLIP_VISION_OUTPUT",
+          "links": [
+            38
+          ]
+        },
+        {
+          "localized_name": "CLIP 視覺輸出_3",
+          "name": "CLIP_VISION_OUTPUT_3",
+          "type": "CLIP_VISION_OUTPUT",
+          "links": [
+            39
+          ]
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "codex-clipboard-0b577ec6-552e-4e1d-9fd5-f8404fc8a68a.png",
+        "image",
+        "codex-clipboard-693bf6b6-4ab0-4c14-93d6-00bb8581269a.png",
+        "image",
+        "codex-clipboard-cdbe047b-ea27-4fed-a28d-df6dc2ef6af4.png",
+        "image",
+        "codex-clipboard-6ad0b3c9-4766-4bf4-9388-f04e5ffa54e7.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "主角-正面1.png",
+        "upload": "image",
+        "image_1": "主角-左側1.png",
+        "upload_1": "image",
+        "image_2": "主角-背面1.png",
+        "upload_2": "image",
+        "image_3": "主角-右側1.png",
+        "upload_3": "image"
+      }
+    },
+    {
+      "id": 20,
+      "type": "9d5f2d57-fed4-4bb8-a35f-2ece92bf147d",
+      "pos": [
+        457.9424895238018,
+        345.54413186840213
+      ],
+      "size": [
+        302.32227411026776,
+        302
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "前視圖",
+          "name": "front",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": 36
+        },
+        {
+          "localized_name": "左視圖",
+          "name": "left",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": 37
+        },
+        {
+          "localized_name": "後視圖",
+          "name": "back",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": 38
+        },
+        {
+          "localized_name": "右視圖",
+          "name": "right",
+          "shape": 7,
+          "type": "CLIP_VISION_OUTPUT",
+          "link": 39
+        },
+        {
+          "localized_name": "模型",
+          "name": "model",
+          "type": "MODEL",
+          "link": 40
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "name": "steps",
+          "type": "INT",
+          "widget": {
+            "name": "steps"
+          },
+          "link": null
+        },
+        {
+          "name": "cfg",
+          "type": "FLOAT",
+          "widget": {
+            "name": "cfg"
+          },
+          "link": null
+        },
+        {
+          "name": "sampler_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "sampler_name"
+          },
+          "link": null
+        },
+        {
+          "name": "scheduler",
+          "type": "COMBO",
+          "widget": {
+            "name": "scheduler"
+          },
+          "link": null
+        },
+        {
+          "name": "denoise",
+          "type": "FLOAT",
+          "widget": {
+            "name": "denoise"
+          },
+          "link": null
+        },
+        {
+          "name": "resolution",
+          "type": "INT",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "name": "batch_size",
+          "type": "INT",
+          "widget": {
+            "name": "batch_size"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "latent (潛空間)",
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            49
+          ]
+        }
+      ],
+      "properties": {
+        "previewExposures": [
+          {
+            "name": "$$canvas-image-preview",
+            "sourceNodeId": "14",
+            "sourcePreviewName": "$$canvas-image-preview"
+          }
+        ]
+      },
+      "widgets_values": [
+        50,
+        30,
+        1.5,
+        "euler",
+        "normal",
+        1,
+        3072,
+        1
+      ],
+      "widgets_values_named": {
+        "seed": 50,
+        "steps": 30,
+        "cfg": 1.5,
+        "sampler_name": "euler",
+        "scheduler": "normal",
+        "denoise": 1,
+        "resolution": 3072,
+        "batch_size": 1
+      }
+    },
+    {
+      "id": 24,
+      "type": "SaveGLB",
+      "pos": [
+        787.0925644711564,
+        160.76795244624418
+      ],
+      "size": [
+        655.5833910215313,
+        575.5378464032999
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "mesh",
+          "name": "mesh",
+          "type": "MESH,FILE_3D_GLB,FILE_3D_GLTF,FILE_3D_OBJ,FILE_3D_FBX,FILE_3D_STL,FILE_3D_USDZ,FILE_3D_PLY,FILE_3D_SPLAT,FILE_3D_SPZ,FILE_3D_KSPLAT,FILE_3D_SPLAT_ANY,FILE_3D_POINT_CLOUD_ANY,FILE_3D",
+          "link": 51
+        },
+        {
+          "localized_name": "檔名前綴",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "影像",
+          "name": "image",
+          "type": "PREVIEW_3D",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [],
+      "title": "儲存 GLB — 匯入 Blender",
+      "properties": {
+        "Node name for S&R": "SaveGLB",
+        "cnr_id": "comfy-core",
+        "Last Time Model File": "mesh/Character_MV_00004_.glb",
+        "Last Time Model Folder": "output",
+        "Camera Config": {
+          "cameraType": "perspective",
+          "fov": 35,
+          "hasCustomUp": false,
+          "state": {
+            "position": {
+              "x": 3.3750392494957837,
+              "y": -0.3836808632365797,
+              "z": 5.014669920258632
+            },
+            "target": {
+              "x": 0.0037491023540496826,
+              "y": 0.003672868013381958,
+              "z": 0.0233168825507164
+            },
+            "zoom": 1,
+            "cameraType": "perspective",
+            "quaternion": {
+              "x": 0.030699481598181345,
+              "y": 0.2925222393266313,
+              "z": -0.009396355297346084,
+              "w": 0.9557196188402025
+            },
+            "fov": 35,
+            "aspect": 1.2589641434262948,
+            "near": 0.01,
+            "far": 10000,
+            "frustum": {
+              "left": -5,
+              "right": 5,
+              "top": 5,
+              "bottom": -5
+            }
+          }
+        },
+        "Light Config": {
+          "intensity": 3,
+          "hdri": {
+            "enabled": false,
+            "hdriPath": "",
+            "showAsBackground": false,
+            "intensity": 1
+          }
+        },
+        "Scene Config": {
+          "showGrid": true,
+          "backgroundColor": "#282828",
+          "backgroundImage": "",
+          "backgroundRenderMode": "tiled",
+          "models": [
+            {
+              "position": {
+                "x": 0,
+                "y": 0,
+                "z": 0
+              },
+              "quaternion": {
+                "x": 0,
+                "y": 0,
+                "z": 0,
+                "w": 1
+              },
+              "scale": {
+                "x": 1,
+                "y": 1,
+                "z": 1
+              }
+            }
+          ]
+        },
+        "Model Config": {
+          "upDirection": "original",
+          "materialMode": "original",
+          "showSkeleton": false,
+          "gizmo": {
+            "enabled": false,
+            "mode": "translate",
+            "position": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "rotation": {
+              "x": 0,
+              "y": 0,
+              "z": 0
+            },
+            "scale": {
+              "x": 1,
+              "y": 1,
+              "z": 1
+            }
+          }
+        }
+      },
+      "widgets_values": [
+        "mesh/Crystal_Female",
+        ""
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "mesh/Character_MV",
+        "image": ""
+      }
+    },
+    {
+      "id": 25,
+      "type": "a1a238e5-0067-4698-936e-a7284b961d7c",
+      "pos": [
+        479.0462912558333,
+        547.430924794624
+      ],
+      "size": [
+        253.89817357228355,
+        98
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "樣本",
+          "name": "samples",
+          "type": "LATENT",
+          "link": 49
+        },
+        {
+          "localized_name": "vae",
+          "name": "vae",
+          "type": "VAE",
+          "link": 50
+        },
+        {
+          "name": "num_chunks",
+          "type": "INT",
+          "widget": {
+            "name": "num_chunks"
+          },
+          "link": null
+        },
+        {
+          "name": "octree_resolution",
+          "type": "INT",
+          "widget": {
+            "name": "octree_resolution"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "網格",
+          "name": "MESH",
+          "type": "MESH",
+          "links": [
+            51
+          ]
+        }
+      ],
+      "properties": {
+        "previewExposures": []
+      },
+      "widgets_values": [
+        8000,
+        256
+      ],
+      "widgets_values_named": {
+        "num_chunks": 8000,
+        "octree_resolution": 256
+      }
+    }
+  ],
+  "links": [
+    [
+      14,
+      1,
+      0,
+      13,
+      0,
+      "MODEL"
+    ],
+    [
+      36,
+      19,
+      0,
+      20,
+      0,
+      "CLIP_VISION_OUTPUT"
+    ],
+    [
+      37,
+      19,
+      1,
+      20,
+      1,
+      "CLIP_VISION_OUTPUT"
+    ],
+    [
+      38,
+      19,
+      2,
+      20,
+      2,
+      "CLIP_VISION_OUTPUT"
+    ],
+    [
+      39,
+      19,
+      3,
+      20,
+      3,
+      "CLIP_VISION_OUTPUT"
+    ],
+    [
+      40,
+      13,
+      0,
+      20,
+      4,
+      "MODEL"
+    ],
+    [
+      49,
+      20,
+      0,
+      25,
+      0,
+      "LATENT"
+    ],
+    [
+      50,
+      1,
+      2,
+      25,
+      1,
+      "VAE"
+    ],
+    [
+      51,
+      25,
+      0,
+      24,
+      0,
+      "MESH"
+    ],
+    [
+      23,
+      1,
+      1,
+      19,
+      0,
+      "CLIP_VISION"
+    ]
+  ],
+  "groups": [],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "807ceec8-a77a-4fe7-9468-8d1beb154aa0",
+        "version": 1,
+        "state": {
+          "lastGroupId": 4,
+          "lastNodeId": 25,
+          "lastLinkId": 62,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "New Subgraph",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -213,
+            751,
+            128,
+            228
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            750,
+            721,
+            138.603515625,
+            128
+          ]
+        },
+        "inputs": [
+          {
+            "id": "12da150e-a62c-4238-ae77-d2a296e337d3",
+            "name": "clip_vision",
+            "type": "CLIP_VISION",
+            "linkIds": [
+              1,
+              3,
+              5,
+              7
+            ],
+            "localized_name": "clip_vision",
+            "pos": [
+              -109,
+              775
+            ]
+          },
+          {
+            "id": "5068ed48-8628-415f-a605-f40cc835f418",
+            "name": "image",
+            "type": "COMBO",
+            "linkIds": [
+              28
+            ],
+            "label": "正面",
+            "pos": [
+              -109,
+              795
+            ]
+          },
+          {
+            "id": "928b4fea-96be-4c3b-8ce9-f6fb4186c4e4",
+            "name": "upload",
+            "type": "IMAGEUPLOAD",
+            "linkIds": [
+              29
+            ],
+            "pos": [
+              -109,
+              815
+            ]
+          },
+          {
+            "id": "2d671d83-e4f4-4c81-ad21-827b1fa0164c",
+            "name": "image_1",
+            "type": "COMBO",
+            "linkIds": [
+              30
+            ],
+            "label": "左側",
+            "pos": [
+              -109,
+              835
+            ]
+          },
+          {
+            "id": "99fe185c-7564-475c-b9f5-d75bf13a5525",
+            "name": "upload_1",
+            "type": "IMAGEUPLOAD",
+            "linkIds": [
+              31
+            ],
+            "pos": [
+              -109,
+              855
+            ]
+          },
+          {
+            "id": "ac026d5f-665c-4b5a-aa0d-574f803bf560",
+            "name": "image_2",
+            "type": "COMBO",
+            "linkIds": [
+              55
+            ],
+            "label": "背面",
+            "pos": [
+              -109,
+              875
+            ]
+          },
+          {
+            "id": "1fedf894-f7d5-4dea-b5bb-6dc0703b9fe5",
+            "name": "upload_2",
+            "type": "IMAGEUPLOAD",
+            "linkIds": [
+              33
+            ],
+            "pos": [
+              -109,
+              895
+            ]
+          },
+          {
+            "id": "a950078b-d0ff-4da2-bc46-dbfd73789c3e",
+            "name": "image_3",
+            "type": "COMBO",
+            "linkIds": [
+              34
+            ],
+            "label": "右側",
+            "pos": [
+              -109,
+              915
+            ]
+          },
+          {
+            "id": "40d766ac-d944-431a-91d6-55e2347956e0",
+            "name": "upload_3",
+            "type": "IMAGEUPLOAD",
+            "linkIds": [
+              35
+            ],
+            "pos": [
+              -109,
+              935
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "cf3fcb30-08f2-469b-83bd-f2b86e13fc1b",
+            "name": "CLIP_VISION_OUTPUT",
+            "type": "CLIP_VISION_OUTPUT",
+            "linkIds": [
+              9
+            ],
+            "localized_name": "CLIP 視覺輸出",
+            "pos": [
+              774,
+              745
+            ]
+          },
+          {
+            "id": "0c2b7ea6-a153-4eed-ba20-ed2c990dd61c",
+            "name": "CLIP_VISION_OUTPUT_1",
+            "type": "CLIP_VISION_OUTPUT",
+            "linkIds": [
+              10
+            ],
+            "localized_name": "CLIP 視覺輸出_1",
+            "pos": [
+              774,
+              765
+            ]
+          },
+          {
+            "id": "fbf163ab-7a56-4769-a5e7-4dc3d757db48",
+            "name": "CLIP_VISION_OUTPUT_2",
+            "type": "CLIP_VISION_OUTPUT",
+            "linkIds": [
+              11
+            ],
+            "localized_name": "CLIP 視覺輸出_2",
+            "pos": [
+              774,
+              785
+            ]
+          },
+          {
+            "id": "91ebcec9-e270-4638-9418-17649844120c",
+            "name": "CLIP_VISION_OUTPUT_3",
+            "type": "CLIP_VISION_OUTPUT",
+            "linkIds": [
+              12
+            ],
+            "localized_name": "CLIP 視覺輸出_3",
+            "pos": [
+              774,
+              805
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 2,
+            "type": "LoadImage",
+            "pos": [
+              0,
+              120
+            ],
+            "size": [
+              310,
+              314
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "影像",
+                "name": "image",
+                "type": "COMBO",
+                "widget": {
+                  "name": "image"
+                },
+                "link": 28
+              },
+              {
+                "localized_name": "選擇要上傳的檔案",
+                "name": "upload",
+                "type": "IMAGEUPLOAD",
+                "widget": {
+                  "name": "upload"
+                },
+                "link": 29
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "影像",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "slot_index": 0,
+                "links": [
+                  2
+                ]
+              },
+              {
+                "localized_name": "遮罩",
+                "name": "MASK",
+                "type": "MASK",
+                "slot_index": 1,
+                "links": []
+              }
+            ],
+            "title": "正面 — 請上傳角色圖片",
+            "properties": {
+              "Node name for S&R": "LoadImage",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "主角-正面1.png",
+              "image"
+            ],
+            "widgets_values_named": {
+              "image": "主角-正面1.png",
+              "upload": "image"
+            }
+          },
+          {
+            "id": 6,
+            "type": "CLIPVisionEncode",
+            "pos": [
+              390,
+              180
+            ],
+            "size": [
+              275,
+              100
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_vision",
+                "name": "clip_vision",
+                "type": "CLIP_VISION",
+                "link": 1
+              },
+              {
+                "localized_name": "圖片",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 2
+              },
+              {
+                "localized_name": "裁切",
+                "name": "crop",
+                "type": "COMBO",
+                "widget": {
+                  "name": "crop"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP 視覺輸出",
+                "name": "CLIP_VISION_OUTPUT",
+                "type": "CLIP_VISION_OUTPUT",
+                "slot_index": 0,
+                "links": [
+                  9
+                ]
+              }
+            ],
+            "title": "正面影像編碼",
+            "properties": {
+              "Node name for S&R": "CLIPVisionEncode",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "none"
+            ],
+            "widgets_values_named": {
+              "crop": "none"
+            }
+          },
+          {
+            "id": 3,
+            "type": "LoadImage",
+            "pos": [
+              0,
+              460
+            ],
+            "size": [
+              310,
+              314
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "影像",
+                "name": "image",
+                "type": "COMBO",
+                "widget": {
+                  "name": "image"
+                },
+                "link": 30
+              },
+              {
+                "localized_name": "選擇要上傳的檔案",
+                "name": "upload",
+                "type": "IMAGEUPLOAD",
+                "widget": {
+                  "name": "upload"
+                },
+                "link": 31
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "影像",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "slot_index": 0,
+                "links": [
+                  4
+                ]
+              },
+              {
+                "localized_name": "遮罩",
+                "name": "MASK",
+                "type": "MASK",
+                "slot_index": 1,
+                "links": []
+              }
+            ],
+            "title": "左側 — 請上傳角色圖片",
+            "properties": {
+              "Node name for S&R": "LoadImage",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "主角-左側1.png",
+              "image"
+            ],
+            "widgets_values_named": {
+              "image": "主角-左側1.png",
+              "upload": "image"
+            }
+          },
+          {
+            "id": 7,
+            "type": "CLIPVisionEncode",
+            "pos": [
+              390,
+              520
+            ],
+            "size": [
+              275,
+              100
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_vision",
+                "name": "clip_vision",
+                "type": "CLIP_VISION",
+                "link": 3
+              },
+              {
+                "localized_name": "圖片",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 4
+              },
+              {
+                "localized_name": "裁切",
+                "name": "crop",
+                "type": "COMBO",
+                "widget": {
+                  "name": "crop"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP 視覺輸出",
+                "name": "CLIP_VISION_OUTPUT",
+                "type": "CLIP_VISION_OUTPUT",
+                "slot_index": 0,
+                "links": [
+                  10
+                ]
+              }
+            ],
+            "title": "左側影像編碼",
+            "properties": {
+              "Node name for S&R": "CLIPVisionEncode",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "none"
+            ],
+            "widgets_values_named": {
+              "crop": "none"
+            }
+          },
+          {
+            "id": 4,
+            "type": "LoadImage",
+            "pos": [
+              0,
+              800
+            ],
+            "size": [
+              310,
+              314
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "影像",
+                "name": "image",
+                "type": "COMBO",
+                "widget": {
+                  "name": "image"
+                },
+                "link": 55
+              },
+              {
+                "localized_name": "選擇要上傳的檔案",
+                "name": "upload",
+                "type": "IMAGEUPLOAD",
+                "widget": {
+                  "name": "upload"
+                },
+                "link": 33
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "影像",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "slot_index": 0,
+                "links": [
+                  6
+                ]
+              },
+              {
+                "localized_name": "遮罩",
+                "name": "MASK",
+                "type": "MASK",
+                "slot_index": 1,
+                "links": []
+              }
+            ],
+            "title": "背面 — 請上傳角色圖片",
+            "properties": {
+              "Node name for S&R": "LoadImage",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "主角-背面1.png",
+              "image"
+            ],
+            "widgets_values_named": {
+              "image": "主角-背面1.png",
+              "upload": "image"
+            }
+          },
+          {
+            "id": 8,
+            "type": "CLIPVisionEncode",
+            "pos": [
+              390,
+              860
+            ],
+            "size": [
+              275,
+              100
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_vision",
+                "name": "clip_vision",
+                "type": "CLIP_VISION",
+                "link": 5
+              },
+              {
+                "localized_name": "圖片",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 6
+              },
+              {
+                "localized_name": "裁切",
+                "name": "crop",
+                "type": "COMBO",
+                "widget": {
+                  "name": "crop"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP 視覺輸出",
+                "name": "CLIP_VISION_OUTPUT",
+                "type": "CLIP_VISION_OUTPUT",
+                "slot_index": 0,
+                "links": [
+                  11
+                ]
+              }
+            ],
+            "title": "背面影像編碼",
+            "properties": {
+              "Node name for S&R": "CLIPVisionEncode",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "none"
+            ],
+            "widgets_values_named": {
+              "crop": "none"
+            }
+          },
+          {
+            "id": 5,
+            "type": "LoadImage",
+            "pos": [
+              0,
+              1140
+            ],
+            "size": [
+              310,
+              314
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "影像",
+                "name": "image",
+                "type": "COMBO",
+                "widget": {
+                  "name": "image"
+                },
+                "link": 34
+              },
+              {
+                "localized_name": "選擇要上傳的檔案",
+                "name": "upload",
+                "type": "IMAGEUPLOAD",
+                "widget": {
+                  "name": "upload"
+                },
+                "link": 35
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "影像",
+                "name": "IMAGE",
+                "type": "IMAGE",
+                "slot_index": 0,
+                "links": [
+                  8
+                ]
+              },
+              {
+                "localized_name": "遮罩",
+                "name": "MASK",
+                "type": "MASK",
+                "slot_index": 1,
+                "links": []
+              }
+            ],
+            "title": "右側 — 請上傳角色圖片",
+            "properties": {
+              "Node name for S&R": "LoadImage",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "主角-右側1.png",
+              "image"
+            ],
+            "widgets_values_named": {
+              "image": "主角-右側1.png",
+              "upload": "image"
+            }
+          },
+          {
+            "id": 9,
+            "type": "CLIPVisionEncode",
+            "pos": [
+              390,
+              1200
+            ],
+            "size": [
+              275,
+              100
+            ],
+            "flags": {},
+            "order": 7,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "clip_vision",
+                "name": "clip_vision",
+                "type": "CLIP_VISION",
+                "link": 7
+              },
+              {
+                "localized_name": "圖片",
+                "name": "image",
+                "type": "IMAGE",
+                "link": 8
+              },
+              {
+                "localized_name": "裁切",
+                "name": "crop",
+                "type": "COMBO",
+                "widget": {
+                  "name": "crop"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "CLIP 視覺輸出",
+                "name": "CLIP_VISION_OUTPUT",
+                "type": "CLIP_VISION_OUTPUT",
+                "slot_index": 0,
+                "links": [
+                  12
+                ]
+              }
+            ],
+            "title": "右側影像編碼",
+            "properties": {
+              "Node name for S&R": "CLIPVisionEncode",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "none"
+            ],
+            "widgets_values_named": {
+              "crop": "none"
+            }
+          }
+        ],
+        "groups": [
+          {
+            "id": 1,
+            "title": "1. 四張角色視角圖",
+            "bounding": [
+              -25,
+              60,
+              715,
+              1450
+            ],
+            "color": "#3f789e",
+            "flags": {}
+          }
+        ],
+        "links": [
+          {
+            "id": 2,
+            "origin_id": 2,
+            "origin_slot": 0,
+            "target_id": 6,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 4,
+            "origin_id": 3,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 6,
+            "origin_id": 4,
+            "origin_slot": 0,
+            "target_id": 8,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 8,
+            "origin_id": 5,
+            "origin_slot": 0,
+            "target_id": 9,
+            "target_slot": 1,
+            "type": "IMAGE"
+          },
+          {
+            "id": 1,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 6,
+            "target_slot": 0,
+            "type": "CLIP_VISION"
+          },
+          {
+            "id": 3,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 7,
+            "target_slot": 0,
+            "type": "CLIP_VISION"
+          },
+          {
+            "id": 5,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 8,
+            "target_slot": 0,
+            "type": "CLIP_VISION"
+          },
+          {
+            "id": 7,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 9,
+            "target_slot": 0,
+            "type": "CLIP_VISION"
+          },
+          {
+            "id": 9,
+            "origin_id": 6,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "CLIP_VISION_OUTPUT"
+          },
+          {
+            "id": 10,
+            "origin_id": 7,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "CLIP_VISION_OUTPUT"
+          },
+          {
+            "id": 11,
+            "origin_id": 8,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 2,
+            "type": "CLIP_VISION_OUTPUT"
+          },
+          {
+            "id": 12,
+            "origin_id": 9,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 3,
+            "type": "CLIP_VISION_OUTPUT"
+          },
+          {
+            "id": 28,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 2,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 29,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 2,
+            "target_slot": 1,
+            "type": "IMAGEUPLOAD"
+          },
+          {
+            "id": 30,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 3,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 31,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 3,
+            "target_slot": 1,
+            "type": "IMAGEUPLOAD"
+          },
+          {
+            "id": 33,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 4,
+            "target_slot": 1,
+            "type": "IMAGEUPLOAD"
+          },
+          {
+            "id": 34,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 5,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 35,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 5,
+            "target_slot": 1,
+            "type": "IMAGEUPLOAD"
+          },
+          {
+            "id": 55,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 4,
+            "target_slot": 0,
+            "type": "COMBO"
+          }
+        ],
+        "extra": {}
+      },
+      {
+        "id": "9d5f2d57-fed4-4bb8-a35f-2ece92bf147d",
+        "version": 1,
+        "state": {
+          "lastGroupId": 4,
+          "lastNodeId": 25,
+          "lastLinkId": 62,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "New Subgraph",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            547,
+            501,
+            130.564453125,
+            308
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            1825,
+            541,
+            128,
+            68
+          ]
+        },
+        "inputs": [
+          {
+            "id": "0c0b8ccf-e38b-44e2-8f06-3053c46bd95d",
+            "name": "front",
+            "type": "CLIP_VISION_OUTPUT",
+            "linkIds": [
+              24
+            ],
+            "localized_name": "前視圖",
+            "shape": 7,
+            "pos": [
+              653.564453125,
+              525
+            ]
+          },
+          {
+            "id": "529af170-efe0-4e6d-8857-7150a07720d5",
+            "name": "left",
+            "type": "CLIP_VISION_OUTPUT",
+            "linkIds": [
+              25
+            ],
+            "localized_name": "左視圖",
+            "shape": 7,
+            "pos": [
+              653.564453125,
+              545
+            ]
+          },
+          {
+            "id": "3c269909-ca6c-473a-a169-54ed14a4913b",
+            "name": "back",
+            "type": "CLIP_VISION_OUTPUT",
+            "linkIds": [
+              26
+            ],
+            "localized_name": "後視圖",
+            "shape": 7,
+            "pos": [
+              653.564453125,
+              565
+            ]
+          },
+          {
+            "id": "839dd0e7-4f22-4716-b2c5-0f5067d742f6",
+            "name": "right",
+            "type": "CLIP_VISION_OUTPUT",
+            "linkIds": [
+              27
+            ],
+            "localized_name": "右視圖",
+            "shape": 7,
+            "pos": [
+              653.564453125,
+              585
+            ]
+          },
+          {
+            "id": "d0db5e1f-49e4-4127-aa6f-bf51afa48baa",
+            "name": "model",
+            "type": "MODEL",
+            "linkIds": [
+              15
+            ],
+            "localized_name": "模型",
+            "pos": [
+              653.564453125,
+              605
+            ]
+          },
+          {
+            "id": "dbfebc3f-b658-4fb8-bee6-9c1eae8f0548",
+            "name": "seed",
+            "type": "INT",
+            "linkIds": [
+              42
+            ],
+            "pos": [
+              653.564453125,
+              625
+            ]
+          },
+          {
+            "id": "d80e8452-69fc-4a00-b999-a633171757fd",
+            "name": "steps",
+            "type": "INT",
+            "linkIds": [
+              56
+            ],
+            "pos": [
+              653.564453125,
+              645
+            ]
+          },
+          {
+            "id": "0fdb6df2-6b41-4056-8e7b-451af3ba8ae8",
+            "name": "cfg",
+            "type": "FLOAT",
+            "linkIds": [
+              57
+            ],
+            "pos": [
+              653.564453125,
+              665
+            ]
+          },
+          {
+            "id": "20aeab11-890a-4576-b1d6-6019b31be4b1",
+            "name": "sampler_name",
+            "type": "COMBO",
+            "linkIds": [
+              58
+            ],
+            "pos": [
+              653.564453125,
+              685
+            ]
+          },
+          {
+            "id": "d54d9b49-df88-4a83-9f78-4eb648d38569",
+            "name": "scheduler",
+            "type": "COMBO",
+            "linkIds": [
+              59
+            ],
+            "pos": [
+              653.564453125,
+              705
+            ]
+          },
+          {
+            "id": "96b3b221-c6a1-4d06-8068-e42801bb3d93",
+            "name": "denoise",
+            "type": "FLOAT",
+            "linkIds": [
+              60
+            ],
+            "pos": [
+              653.564453125,
+              725
+            ]
+          },
+          {
+            "id": "5764f047-7ea4-4ae1-b461-fd08a8ef6aee",
+            "name": "resolution",
+            "type": "INT",
+            "linkIds": [
+              61
+            ],
+            "pos": [
+              653.564453125,
+              745
+            ]
+          },
+          {
+            "id": "f362143c-3453-4e27-8dfe-df334ede30a9",
+            "name": "batch_size",
+            "type": "INT",
+            "linkIds": [
+              62
+            ],
+            "pos": [
+              653.564453125,
+              765
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "7e9c880f-2dcd-4d3a-a784-64a916039d70",
+            "name": "LATENT",
+            "type": "LATENT",
+            "linkIds": [
+              19
+            ],
+            "localized_name": "latent (潛空間)",
+            "pos": [
+              1849,
+              565
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 10,
+            "type": "Hunyuan3Dv2ConditioningMultiView",
+            "pos": [
+              760,
+              500
+            ],
+            "size": [
+              280,
+              170
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "前視圖",
+                "name": "front",
+                "shape": 7,
+                "type": "CLIP_VISION_OUTPUT",
+                "link": 24
+              },
+              {
+                "localized_name": "左視圖",
+                "name": "left",
+                "shape": 7,
+                "type": "CLIP_VISION_OUTPUT",
+                "link": 25
+              },
+              {
+                "localized_name": "後視圖",
+                "name": "back",
+                "shape": 7,
+                "type": "CLIP_VISION_OUTPUT",
+                "link": 26
+              },
+              {
+                "localized_name": "右視圖",
+                "name": "right",
+                "shape": 7,
+                "type": "CLIP_VISION_OUTPUT",
+                "link": 27
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "正向",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "slot_index": 0,
+                "links": [
+                  13
+                ]
+              },
+              {
+                "localized_name": "負向",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "slot_index": 1,
+                "links": [
+                  17
+                ]
+              }
+            ],
+            "title": "合併四視角條件",
+            "properties": {
+              "Node name for S&R": "Hunyuan3Dv2ConditioningMultiView",
+              "cnr_id": "comfy-core"
+            }
+          },
+          {
+            "id": 11,
+            "type": "FluxGuidance",
+            "pos": [
+              1100,
+              340
+            ],
+            "size": [
+              270,
+              90
+            ],
+            "flags": {},
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "條件設定",
+                "name": "conditioning",
+                "type": "CONDITIONING",
+                "link": 13
+              },
+              {
+                "localized_name": "引導",
+                "name": "guidance",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "guidance"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "條件設定",
+                "name": "CONDITIONING",
+                "type": "CONDITIONING",
+                "slot_index": 0,
+                "links": [
+                  16
+                ]
+              }
+            ],
+            "title": "Turbo 引導強度 3.5",
+            "properties": {
+              "Node name for S&R": "FluxGuidance",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              3.5
+            ],
+            "widgets_values_named": {
+              "guidance": 3.5
+            }
+          },
+          {
+            "id": 12,
+            "type": "EmptyLatentHunyuan3Dv2",
+            "pos": [
+              1100,
+              710
+            ],
+            "size": [
+              270,
+              100
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "解析度",
+                "name": "resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "resolution"
+                },
+                "link": 61
+              },
+              {
+                "localized_name": "批次大小",
+                "name": "batch_size",
+                "type": "INT",
+                "widget": {
+                  "name": "batch_size"
+                },
+                "link": 62
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "latent (潛空間)",
+                "name": "LATENT",
+                "type": "LATENT",
+                "slot_index": 0,
+                "links": [
+                  18
+                ]
+              }
+            ],
+            "title": "形狀潛在空間 — 單件",
+            "properties": {
+              "Node name for S&R": "EmptyLatentHunyuan3Dv2",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              3072,
+              1
+            ],
+            "widgets_values_named": {
+              "resolution": 3072,
+              "batch_size": 1
+            }
+          },
+          {
+            "id": 14,
+            "type": "KSampler",
+            "pos": [
+              1450,
+              340
+            ],
+            "size": [
+              280,
+              300
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "模型",
+                "name": "model",
+                "type": "MODEL",
+                "link": 15
+              },
+              {
+                "localized_name": "正向條件",
+                "name": "positive",
+                "type": "CONDITIONING",
+                "link": 16
+              },
+              {
+                "localized_name": "負向條件",
+                "name": "negative",
+                "type": "CONDITIONING",
+                "link": 17
+              },
+              {
+                "localized_name": "潛在空間影像",
+                "name": "latent_image",
+                "type": "LATENT",
+                "link": 18
+              },
+              {
+                "localized_name": "種子",
+                "name": "seed",
+                "type": "INT",
+                "widget": {
+                  "name": "seed"
+                },
+                "link": 42
+              },
+              {
+                "localized_name": "步驟數",
+                "name": "steps",
+                "type": "INT",
+                "widget": {
+                  "name": "steps"
+                },
+                "link": 56
+              },
+              {
+                "localized_name": "cfg",
+                "name": "cfg",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "cfg"
+                },
+                "link": 57
+              },
+              {
+                "localized_name": "取樣器",
+                "name": "sampler_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "sampler_name"
+                },
+                "link": 58
+              },
+              {
+                "localized_name": "排程器",
+                "name": "scheduler",
+                "type": "COMBO",
+                "widget": {
+                  "name": "scheduler"
+                },
+                "link": 59
+              },
+              {
+                "localized_name": "去雜訊強度",
+                "name": "denoise",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "denoise"
+                },
+                "link": 60
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "latent (潛空間)",
+                "name": "LATENT",
+                "type": "LATENT",
+                "slot_index": 0,
+                "links": [
+                  19
+                ]
+              }
+            ],
+            "title": "生成網格 — 20 步 / CFG 1",
+            "properties": {
+              "Node name for S&R": "KSampler",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              50,
+              "fixed",
+              30,
+              1.5,
+              "euler",
+              "normal",
+              1
+            ],
+            "widgets_values_named": {
+              "seed": 50,
+              "control_after_generate": "fixed",
+              "steps": 30,
+              "cfg": 1.5,
+              "sampler_name": "euler",
+              "scheduler": "normal",
+              "denoise": 1
+            }
+          }
+        ],
+        "groups": [
+          {
+            "id": 2,
+            "title": "2. 多視角生成",
+            "bounding": [
+              735,
+              250,
+              1030,
+              650
+            ],
+            "color": "#785e9e",
+            "flags": {}
+          }
+        ],
+        "links": [
+          {
+            "id": 13,
+            "origin_id": 10,
+            "origin_slot": 0,
+            "target_id": 11,
+            "target_slot": 0,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 16,
+            "origin_id": 11,
+            "origin_slot": 0,
+            "target_id": 14,
+            "target_slot": 1,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 17,
+            "origin_id": 10,
+            "origin_slot": 1,
+            "target_id": 14,
+            "target_slot": 2,
+            "type": "CONDITIONING"
+          },
+          {
+            "id": 18,
+            "origin_id": 12,
+            "origin_slot": 0,
+            "target_id": 14,
+            "target_slot": 3,
+            "type": "LATENT"
+          },
+          {
+            "id": 24,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 10,
+            "target_slot": 0,
+            "type": "CLIP_VISION_OUTPUT"
+          },
+          {
+            "id": 25,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 10,
+            "target_slot": 1,
+            "type": "CLIP_VISION_OUTPUT"
+          },
+          {
+            "id": 26,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 10,
+            "target_slot": 2,
+            "type": "CLIP_VISION_OUTPUT"
+          },
+          {
+            "id": 27,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 10,
+            "target_slot": 3,
+            "type": "CLIP_VISION_OUTPUT"
+          },
+          {
+            "id": 15,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 14,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 19,
+            "origin_id": 14,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 42,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 14,
+            "target_slot": 4,
+            "type": "INT"
+          },
+          {
+            "id": 56,
+            "origin_id": -10,
+            "origin_slot": 6,
+            "target_id": 14,
+            "target_slot": 5,
+            "type": "INT"
+          },
+          {
+            "id": 57,
+            "origin_id": -10,
+            "origin_slot": 7,
+            "target_id": 14,
+            "target_slot": 6,
+            "type": "FLOAT"
+          },
+          {
+            "id": 58,
+            "origin_id": -10,
+            "origin_slot": 8,
+            "target_id": 14,
+            "target_slot": 7,
+            "type": "COMBO"
+          },
+          {
+            "id": 59,
+            "origin_id": -10,
+            "origin_slot": 9,
+            "target_id": 14,
+            "target_slot": 8,
+            "type": "COMBO"
+          },
+          {
+            "id": 60,
+            "origin_id": -10,
+            "origin_slot": 10,
+            "target_id": 14,
+            "target_slot": 9,
+            "type": "FLOAT"
+          },
+          {
+            "id": 61,
+            "origin_id": -10,
+            "origin_slot": 11,
+            "target_id": 12,
+            "target_slot": 0,
+            "type": "INT"
+          },
+          {
+            "id": 62,
+            "origin_id": -10,
+            "origin_slot": 12,
+            "target_id": 12,
+            "target_slot": 1,
+            "type": "INT"
+          }
+        ],
+        "extra": {}
+      },
+      {
+        "id": "a1a238e5-0067-4698-936e-a7284b961d7c",
+        "version": 1,
+        "state": {
+          "lastGroupId": 4,
+          "lastNodeId": 25,
+          "lastLinkId": 62,
+          "lastRerouteId": 0
+        },
+        "revision": 0,
+        "config": {},
+        "name": "New Subgraph",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            613.7685291322879,
+            405.5385033074165,
+            146.126953125,
+            128
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            1545.8125991366874,
+            415.5385033074165,
+            128,
+            68
+          ]
+        },
+        "inputs": [
+          {
+            "id": "ec81d5cb-3152-4d02-bb2e-daca668102ab",
+            "name": "samples",
+            "type": "LATENT",
+            "linkIds": [
+              47
+            ],
+            "localized_name": "樣本",
+            "pos": [
+              735.8954822572879,
+              429.5385033074165
+            ]
+          },
+          {
+            "id": "c38e0909-5641-4fbe-b7c8-52fbf636a334",
+            "name": "vae",
+            "type": "VAE",
+            "linkIds": [
+              48
+            ],
+            "localized_name": "vae",
+            "pos": [
+              735.8954822572879,
+              449.5385033074165
+            ]
+          },
+          {
+            "id": "2b8c2429-04ec-4abd-9cbb-5244cb131ee1",
+            "name": "num_chunks",
+            "type": "INT",
+            "linkIds": [
+              52
+            ],
+            "pos": [
+              735.8954822572879,
+              469.5385033074165
+            ]
+          },
+          {
+            "id": "308e1923-5036-465f-8e27-32a0aad5abb8",
+            "name": "octree_resolution",
+            "type": "INT",
+            "linkIds": [
+              53
+            ],
+            "pos": [
+              735.8954822572879,
+              489.5385033074165
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "f77ca333-ce3b-432f-84d1-addd1a9c6e4a",
+            "name": "MESH",
+            "type": "MESH",
+            "linkIds": [
+              46
+            ],
+            "localized_name": "網格",
+            "pos": [
+              1569.8125991366874,
+              439.5385033074165
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 22,
+            "type": "VAEDecodeHunyuan3D",
+            "pos": [
+              826.7685291322879,
+              380.43826458074057
+            ],
+            "size": [
+              280,
+              150
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "showAdvanced": true,
+            "inputs": [
+              {
+                "localized_name": "樣本",
+                "name": "samples",
+                "type": "LATENT",
+                "link": 47
+              },
+              {
+                "localized_name": "vae",
+                "name": "vae",
+                "type": "VAE",
+                "link": 48
+              },
+              {
+                "localized_name": "分塊數量",
+                "name": "num_chunks",
+                "type": "INT",
+                "widget": {
+                  "name": "num_chunks"
+                },
+                "link": 52
+              },
+              {
+                "localized_name": "八叉樹解析度",
+                "name": "octree_resolution",
+                "type": "INT",
+                "widget": {
+                  "name": "octree_resolution"
+                },
+                "link": 53
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "體素",
+                "name": "VOXEL",
+                "type": "VOXEL",
+                "slot_index": 0,
+                "links": [
+                  45
+                ]
+              }
+            ],
+            "title": "3D 解碼 — 256 解析度",
+            "properties": {
+              "Node name for S&R": "VAEDecodeHunyuan3D",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              8000,
+              256
+            ],
+            "widgets_values_named": {
+              "num_chunks": 8000,
+              "octree_resolution": 256
+            }
+          },
+          {
+            "id": 23,
+            "type": "VoxelToMesh",
+            "pos": [
+              1176.768529132288,
+              380.43826458074057
+            ],
+            "size": [
+              280,
+              110
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "voxel",
+                "name": "voxel",
+                "type": "VOXEL",
+                "link": 45
+              },
+              {
+                "localized_name": "演算法",
+                "name": "algorithm",
+                "type": "COMBO",
+                "widget": {
+                  "name": "algorithm"
+                },
+                "link": null
+              },
+              {
+                "localized_name": "臨界值",
+                "name": "threshold",
+                "type": "FLOAT",
+                "widget": {
+                  "name": "threshold"
+                },
+                "link": null
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "網格",
+                "name": "MESH",
+                "type": "MESH",
+                "slot_index": 0,
+                "links": [
+                  46
+                ]
+              }
+            ],
+            "title": "轉換為可編輯網格",
+            "properties": {
+              "Node name for S&R": "VoxelToMesh",
+              "cnr_id": "comfy-core"
+            },
+            "widgets_values": [
+              "surface net",
+              0.6
+            ],
+            "widgets_values_named": {
+              "algorithm": "surface net",
+              "threshold": 0.6
+            }
+          }
+        ],
+        "groups": [
+          {
+            "id": 4,
+            "title": "3. 網格解碼與輸出",
+            "bounding": [
+              801.7685291322879,
+              310.4382645807405,
+              684.0440700043995,
+              278.2004774533519
+            ],
+            "color": "#4d8d69",
+            "flags": {}
+          }
+        ],
+        "links": [
+          {
+            "id": 45,
+            "origin_id": 22,
+            "origin_slot": 0,
+            "target_id": 23,
+            "target_slot": 0,
+            "type": "VOXEL"
+          },
+          {
+            "id": 47,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 22,
+            "target_slot": 0,
+            "type": "LATENT"
+          },
+          {
+            "id": 48,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 22,
+            "target_slot": 1,
+            "type": "VAE"
+          },
+          {
+            "id": 46,
+            "origin_id": 23,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "MESH"
+          },
+          {
+            "id": 52,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 22,
+            "target_slot": 2,
+            "type": "INT"
+          },
+          {
+            "id": 53,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 22,
+            "target_slot": 3,
+            "type": "INT"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 3.922132470456846,
+      "offset": [
+        -705.4994619835917,
+        -255.1044507752543
+      ]
+    },
+    "workflow_name": "HY3D 四視角角色 — RTX3080 12GB",
+    "linearData": {
+      "inputs": [
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:2:image",
+          "image"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:3:image",
+          "image"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:4:image",
+          "image"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:5:image",
+          "image"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:14:seed",
+          "seed"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:14:steps",
+          "steps"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:14:cfg",
+          "cfg"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:14:sampler_name",
+          "sampler_name"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:14:scheduler",
+          "scheduler"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:14:denoise",
+          "denoise"
+        ],
+        [
+          "125197f6-bfa7-49d7-8bb4-380012000004:11:guidance",
+          "guidance"
+        ]
+      ],
+      "outputs": [
+        "17"
+      ]
+    }
+  },
+  "version": 0.4
+}

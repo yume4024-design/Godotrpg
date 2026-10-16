@@ -18,6 +18,10 @@ func _ready() -> void:
 	starting_character.appearance = hero_visual
 	for index: int in range(battles.definitions.size()):
 		if battles.definitions[index].id == &"ren": battles.definitions[index] = starting_character
+		if battles.definitions[index].id == &"lia":
+			var lia_definition: CombatantDefinition = battles.definitions[index].duplicate()
+			lia_definition.appearance = load("res://scenes/characters/lia_user_visual.tscn")
+			battles.definitions[index] = lia_definition
 	var old_appearance: CartoonActor = player.appearance
 	player.visual.remove_child(old_appearance)
 	old_appearance.queue_free()

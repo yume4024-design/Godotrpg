@@ -1,7 +1,7 @@
 [gd_scene format=3]
 [ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
 [ext_resource type="PackedScene" path="res://scenes/characters/guildmaster_visual.tscn" id="Guild"]
-[ext_resource type="PackedScene" path="res://scenes/characters/lia_visual.tscn" id="Lia"]
+[ext_resource type="PackedScene" path="res://scenes/characters/lia_user_visual.tscn" id="Lia"]
 [ext_resource type="PackedScene" path="res://scenes/characters/ren_visual.tscn" id="Ren"]
 [sub_resource type="CapsuleShape3D" id="Body"]
 radius = 0.3
@@ -39,6 +39,7 @@ ambient_only = false
 kind = "npc"
 label = "莉雅"
 [node name="Appearance" parent="Lia" instance=ExtResource("Lia")]
+scale = Vector3(0.82, 0.82, 0.82)
 [node name="Body" type="StaticBody3D" parent="Lia"]
 position = Vector3(0,0.8,0)
 [node name="Collision" type="CollisionShape3D" parent="Lia/Body"]
