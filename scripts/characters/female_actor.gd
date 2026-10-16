@@ -5,6 +5,8 @@ var animation_player: AnimationPlayer
 var _clip_rest: Dictionary[int, Quaternion] = {}
 var _clip_positions: Dictionary[int, Vector3] = {}
 var staff_visual: Node3D
+var staff_focus: Marker3D
+var palm_focus: Marker3D
 var _blend_rotations: Dictionary[int, Quaternion] = {}
 var _blend_positions: Dictionary[int, Vector3] = {}
 var _blend_elapsed: float = 0.0
@@ -40,6 +42,20 @@ func _ready() -> void:
 		socket.add_child(staff_visual)
 		staff_visual.transform = skeleton.get_bone_global_rest(hand).affine_inverse() * Transform3D(Basis.IDENTITY, Vector3(-.67,.955,.085))
 		staff_visual.visible = false
+		staff_focus = Marker3D.new()
+		staff_focus.position = Vector3(.07,.75,0)
+		staff_visual.add_child(staff_focus)
+	var casting_hand: int = skeleton.find_bone("HandRight")
+	if casting_hand >= 0:
+		var socket: BoneAttachment3D = BoneAttachment3D.new()
+		socket.bone_name = "HandRight"
+		skeleton.add_child(socket)
+		palm_focus = Marker3D.new()
+		socket.add_child(palm_focus)
+		palm_focus.transform = skeleton.get_bone_global_rest(casting_hand).affine_inverse()*Transform3D(Basis.IDENTITY,Vector3(-.66,.95,.08))
+
+func get_spell_focus() -> Node3D:
+	return staff_focus if staff_visual != null and staff_visual.visible else palm_focus
 
 func set_equipment_visual(weapon: ItemDefinition) -> void:
 	if staff_visual != null:

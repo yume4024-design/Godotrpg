@@ -42,6 +42,16 @@ func _run() -> void:
 		_check(manager.submit(action,&"bat" if action == &"attack" else &"lia",manager.turn_token),"Real action accepted: " + action)
 		manager.phase = BattleManager.Phase.IDLE
 		_check(visual.get("battle_pose") == action,"Action drives pose: " + action)
+		if action == &"mend":
+			await create_timer(.08).timeout
+			await RenderingServer.frame_post_draw
+			var focus: Node3D = visual.call("get_spell_focus")
+			var effect: ActionEffect = _focused_effect(arena.stage,focus)
+			_check(focus==visual.get("staff_focus") and effect!=null,"Equipped healing uses staff focus")
+			if effect != null:
+				var charge: Node3D = effect.get("_charge")
+				_check(charge.global_position.distance_to(focus.global_position)<.005,"Charge follows moving staff tip")
+			root.get_texture().get_image().save_webp("res://artifacts/female_character/spell_staff_charge.webp")
 		await create_timer(.3).timeout
 		var bone: int = rig.find_bone("ArmRight" if action == &"attack" else "ArmLeft")
 		_check(not rig.get_bone_pose_rotation(bone).is_equal_approx(visual.get("rest_rotations")[bone]),"Arm leaves idle pose: " + action)
@@ -82,6 +92,28 @@ func _run() -> void:
 	_check(not staff_visual.visible and lia.magic == 24,"Unequip restores empty hand and existing stats")
 	var fingers: int = rig.find_bone("FingersRight")
 	_check(rig.get_bone_pose_rotation(fingers).is_equal_approx(visual.get("rest_rotations")[fingers]),"Unequip releases finger grip")
+	lia.damage(20)
+	manager.current = lia
+	manager.phase = BattleManager.Phase.WAITING
+	manager.turn_token += 1
+	_check(manager.submit(&"mend",&"lia",manager.turn_token),"Unarmed healing accepted")
+	manager.phase = BattleManager.Phase.IDLE
+	await create_timer(.08).timeout
+	await RenderingServer.frame_post_draw
+	var palm: Node3D = visual.call("get_spell_focus")
+	var palm_effect: ActionEffect = _focused_effect(arena.stage,palm)
+	_check(palm==visual.get("palm_focus") and palm_effect!=null,"Unarmed healing uses palm focus")
+	if palm_effect != null:
+		var charge: Node3D = palm_effect.get("_charge")
+		_check(charge.global_position.distance_to(palm.global_position)<.005,"Charge follows moving palm")
+	root.get_texture().get_image().save_webp("res://artifacts/female_character/spell_palm_charge.webp")
+	var temporary: Marker3D = Marker3D.new()
+	arena.stage.add_child(temporary)
+	var orphan_effect: ActionEffect = ActionEffect.play(arena.stage,&"mend",Vector3.ZERO,Vector3.ZERO,temporary)
+	temporary.queue_free()
+	await process_frame
+	await process_frame
+	_check(not orphan_effect.is_processing(),"Removed source safely stops focus tracking")
 	print("FEMALE_ANIMATION_RESULT checks=%d failures=%d" % [checks,failures])
 	arena.queue_free()
 	party.queue_free()
@@ -93,3 +125,8 @@ func _check(ok: bool, label: String) -> void:
 	checks += 1
 	if not ok: failures += 1
 	print("%s %s" % ["PASS" if ok else "FAIL",label])
+
+func _focused_effect(stage: Node,focus: Node3D) -> ActionEffect:
+	for node: Node in stage.get_children():
+		if node is ActionEffect and node.get("_source_focus")==focus: return node as ActionEffect
+	return null

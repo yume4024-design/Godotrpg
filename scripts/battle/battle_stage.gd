@@ -57,8 +57,11 @@ func setup(manager: BattleManager) -> void:
 	refresh()
 
 func _present_action(action: StringName, source: StringName, target: StringName) -> void:
-	ActionEffect.play(self, action, _origins[source], _origins[target])
 	var appearance: CartoonActor = _appearances[source]
+	var focus: Node3D
+	if action in [&"mend",&"star_spark"] and appearance.has_method("get_spell_focus"):
+		focus = appearance.call("get_spell_focus")
+	ActionEffect.play(self, action, _origins[source], _origins[target],focus)
 	if appearance.has_method("play_battle_action"):
 		appearance.call("play_battle_action", action)
 

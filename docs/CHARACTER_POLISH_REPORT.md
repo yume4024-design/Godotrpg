@@ -64,4 +64,12 @@
 - 手掌連接延伸到原護腕內，修正早期手腕接縫與旋轉方向；握持按掌心方向彎曲，拇指加入對握。近景仍可見簡化幾何接縫，不宣稱封閉拓樸或所有持物角度零穿插。
 - 匯出前檢查人物與法杖總面數，不在面數失敗時覆寫交付檔。
 
-已查看 hand_open／hand_grip 近景及 viewer_face 清理後畫面。VisualFemaleHand 各指綁定、五指彎曲及卸裝回位 22 項通過；其餘 VisualFemaleAnimation 32、TestCharacterPreview 12、VisualFemaleFace 14、VisualG06Story 68 項通過，鞋底 98 點取樣維持通過。主要證據：`artifacts/logs/visualfemalehand-20261017-0409*.log`、`testcharacterpreview-20261017-040902-773.log`、`visualg06story-20261017-040912-503.log`；資產檢查 `artifacts/female_hands_check/report.json` 通過，含顯示輔助物 4,742 面。
+已查看 hand_open／hand_grip 近景及 viewer_face 清理後畫面。VisualFemaleHand 各指綁定、五指彎曲及卸裝回位 22 項通過；其餘 VisualFemaleAnimation 32、TestCharacterPreview 12、VisualFemaleFace 14、VisualG06Story 68 項通過，鞋底 98 點取樣維持通過。主要證據：`artifacts/logs/visualfemalehand-20261017-041103-904.log`、`testcharacterpreview-20261017-040902-773.log`、`visualg06story-20261017-040912-503.log`；資產檢查 `artifacts/female_hands_check/report.json` 通過，含顯示輔助物 4,742 面。
+
+## CP06：施法光點跟隨來源
+
+- 莉雅提供杖端／掌心 Marker，BattleStage 沿既有成功行動訊號傳給 ActionEffect。持杖時選杖端，空手選朝目前戰鬥鏡頭一側的右掌。
+- 新角色的施法蓄光跟隨來源 0.24 秒；有來源的魔法投射物先短暫蓄力再飛向目標。舊角色沒有 Marker 時保持既有播放方式，不修改消耗、傷害或回合結算時機。
+- 節點移除或釋放時停止追蹤，特效沿原有生命週期清理。未新增特效管理器、貼圖或粒子依賴。
+
+VisualFemaleAnimation 38 通過、0 失敗（`artifacts/logs/visualfemaleanimation-20261017-041423-106.log`）；含實際持杖／空手療癒、移動中光點位置誤差 <5mm 及來源釋放。VisualActionEffects 26 通過、VisualG06Story 68 通過（`visualg06story-20261017-041331-807.log`）。已查看 `spell_staff_charge.webp`／`spell_palm_charge.webp`；治療數字遮擋角色資訊列入下一項修正。
