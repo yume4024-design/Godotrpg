@@ -1,5 +1,21 @@
 # 莉雅 11 骨與 GLB 動畫 — 2026-10-16
 
+## 2026-10-17 更新：13 骨、行走與跑步
+
+`lia_rigged.glb`／`lia_rigged.blend` 已加入 walk（1 秒）及 run（2/3 秒），共七段動畫。左右 Coat 骨讓紫色裙襬跟隨小幅步伐擺動，腰部以平滑權重固定至 Torso；肩部與髖部加入過渡權重。共 13 骨，仍為 4,546 三角形，未再次減面。下方 11 骨數據為上一輪歷史紀錄。
+
+`female_actor.gd` 依既有 set_motion 的 0～1 強度選擇待機、walk（0.01～0.65）或 run（≥0.65）。每個角色複製自己的動畫資源後設定循環，避免改動共享資源。戰鬥動作優先播放，結束後依移動強度恢復循環；停止明確還原前臂、小腿及裙襬。片段無根位移，移動仍由既有角色控制器負責。未新增隊伍跟隨或 NPC 巡邏；目前莉雅在實際探索仍沿用既有駐點／入隊隱藏行為。
+
+Windows、Godot 4.7.2，實際驗證：
+
+- Check：成功，`artifacts/logs/check-20261017-031956-966.log`。
+- PreviewFemale：循環模式、首尾關節旋轉一致、超過一個週期仍播放、無根位移、停止回位、戰鬥打斷及恢復，0 失敗；見最新 `artifacts/logs/previewfemale-20261017-0320*.log`。
+- VisualFemaleAnimation：24 通過、0 失敗，`artifacts/logs/visualfemaleanimation-20261017-032012-583.log`。
+- VisualG06Story：68 通過、0 失敗，`artifacts/logs/visualg06story-20261017-032017-563.log`。
+- Blender 資產檢查通過；含骨骼顯示輔助物 4,626 面，無退化面，`artifacts/female_locomotion_check/report.json`。
+
+已查看 walk／run 各三張正、側、背面圖（`artifacts/female_character/walk_*.webp`、`run_*.webp`），以及改權重後的戰鬥動作。動作為小幅風格化循環，沒有腳部 IK／地面貼合、布料模擬或完整肩髖拓樸；近距離穿插與滑步仍需依實際移動速度進一步調整，不宣稱所有大幅姿勢合格。Android 未驗收。下一步可先改善手部／持杖姿勢與施法的可讀性。
+
 本輪在既有網格上加入獨立前臂、小腿關節與可匯出動畫，接入 G06 莉雅。保留前一版七骨模型與 Blender 檔，不重新生成或減面。
 
 ## 產物與實作

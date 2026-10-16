@@ -8,7 +8,7 @@ func _run() -> void:
 	var hero: CartoonActor = load("res://scenes/characters/lia_user_visual.tscn").instantiate()
 	stage.add_child(hero)
 	var rig: Skeleton3D = hero.get("skeleton")
-	if rig == null or rig.get_bone_count() != 11: failures += 1
+	if rig == null or rig.get_bone_count() != 13: failures += 1
 	var npcs: Node3D = load("res://scenes/world/greystone_npcs.tscn").instantiate()
 	stage.add_child(npcs)
 	var npc_visual: CartoonActor = npcs.get_node("Lia/Appearance")
@@ -48,6 +48,34 @@ func _run() -> void:
 			root.get_texture().get_image().save_webp("res://artifacts/female_character/rigged_%s_%s.webp" % [action,view])
 			await create_timer(.45).timeout
 			if not rig.get_bone_pose_rotation(joint).is_equal_approx(hero.get("rest_rotations")[joint]): failures += 1
+	for amount: float in [.4,1.0]:
+		var clip: String = "walk" if amount < .65 else "run"
+		hero.set_motion(amount)
+		await create_timer(.21).timeout
+		if clips.current_animation != clip or clips.get_animation(clip).loop_mode != Animation.LOOP_LINEAR: failures += 1
+		var animation: Animation = clips.get_animation(clip)
+		for track: int in range(animation.get_track_count()):
+			if animation.track_get_type(track) == Animation.TYPE_ROTATION_3D and animation.track_get_key_count(track)>1:
+				var first: Quaternion = animation.track_get_key_value(track,0)
+				var last: Quaternion = animation.track_get_key_value(track,animation.track_get_key_count(track)-1)
+				if first.angle_to(last) > .001: failures += 1
+		for view: String in ["front","side","back"]:
+			hero.rotation.y = 0 if view == "front" else PI/2 if view == "side" else PI
+			clips.seek(.21,true)
+			await RenderingServer.frame_post_draw
+			root.get_texture().get_image().save_webp("res://artifacts/female_character/%s_%s.webp" % [clip,view])
+		await create_timer(1.1).timeout
+		if not clips.is_playing() or hero.position != Vector3.ZERO: failures += 1
+		hero.call("play_battle_action",&"mend")
+		if hero.get("battle_pose") != &"mend": failures += 1
+		await create_timer(.8).timeout
+		if clips.current_animation != clip or hero.get("battle_pose") != &"": failures += 1
+	hero.set_motion(0)
+	await create_timer(.1).timeout
+	if clips.is_playing(): failures += 1
+	for name: String in ["ForearmLeft","ShinLeft","CoatLeft","CoatRight"]:
+		var joint: int = rig.find_bone(name)
+		if not rig.get_bone_pose_rotation(joint).is_equal_approx(hero.get("rest_rotations")[joint]): failures += 1
 	hero.set_dead(true)
 	await create_timer(.1).timeout
 	print("FEMALE_PREVIEW_COMPLETE failures=%d" % failures)

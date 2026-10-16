@@ -11,6 +11,12 @@ func _ready() -> void:
 		_clip_rest[index] = skeleton.get_bone_pose_rotation(index)
 		rest_rotations[index] = _clip_rest[index]
 	if animation_player != null:
+		for library_name: StringName in animation_player.get_animation_library_list():
+			var library: AnimationLibrary = animation_player.get_animation_library(library_name).duplicate(true)
+			for clip: StringName in [&"walk", &"run"]:
+				if library.has_animation(clip): library.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
+			animation_player.remove_animation_library(library_name)
+			animation_player.add_animation_library(library_name, library)
 		animation_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 		animation_player.animation_finished.connect(_finished)
 
@@ -24,9 +30,18 @@ func play_battle_action(action: StringName) -> void:
 	animation_player.advance(0)
 
 func _process(delta: float) -> void:
-	if animation_player != null and animation_player.is_playing():
+	if _dead: return
+	if animation_player != null and battle_pose != &"":
 		animation_player.advance(delta)
 		return
+	if animation_player != null and _motion > .01:
+		var clip: StringName = &"run" if _motion >= .65 else &"walk"
+		if animation_player.current_animation != clip:
+			_reset_clip()
+			animation_player.play(clip)
+		animation_player.advance(delta)
+		return
+	if animation_player != null and animation_player.is_playing(): _reset_clip()
 	super._process(delta)
 
 func _finished(_clip: StringName) -> void:

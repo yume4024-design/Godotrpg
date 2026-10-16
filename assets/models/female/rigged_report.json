@@ -11,21 +11,29 @@
     "LegLeft",
     "ShinLeft",
     "LegRight",
-    "ShinRight"
+    "ShinRight",
+    "CoatLeft",
+    "CoatRight"
   ],
   "clips": [
     "cast",
     "hit",
     "guard",
     "attack",
-    "potion"
+    "potion",
+    "walk",
+    "run"
   ],
-  "duration_seconds": 0.6666666666666666,
+  "duration_seconds": {
+    "battle": 0.6666666666666666,
+    "walk": 1,
+    "run": 0.6666666666666666
+  },
   "mixed_joint_vertices": {
-    "ForearmLeft": 72,
-    "ForearmRight": 70,
+    "ForearmLeft": 75,
+    "ForearmRight": 72,
     "ShinLeft": 23,
     "ShinRight": 25
   },
-  "weights": "smooth elbow and knee regional blending; no new reduction"
+  "weights": "smooth elbow/knee/shoulder/hip blending with separate coat tails; no new reduction"
 }
