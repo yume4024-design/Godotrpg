@@ -1,44 +1,43 @@
 extends "res://scripts/characters/user_hero_actor.gd"
-## Presentation follows resolved actions; it never changes combat state.
+## Imported clips own the skeleton during battle; idle resumes after explicit reset.
 var battle_pose: StringName = &""
-var _pose_time: float = 0.0
-const POSE_SECONDS: float = 0.65
+var animation_player: AnimationPlayer
+var _clip_rest: Dictionary[int, Quaternion] = {}
+
+func _ready() -> void:
+	super._ready()
+	animation_player = _model_root.find_child("AnimationPlayer", true, false) as AnimationPlayer
+	for index: int in range(skeleton.get_bone_count()):
+		_clip_rest[index] = skeleton.get_bone_pose_rotation(index)
+		rest_rotations[index] = _clip_rest[index]
+	if animation_player != null:
+		animation_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
+		animation_player.animation_finished.connect(_finished)
 
 func play_battle_action(action: StringName) -> void:
-	if _dead: return
+	if _dead or animation_player == null: return
+	var clip: StringName = &"cast" if action in [&"mend", &"star_spark"] else action
+	if not animation_player.has_animation(clip): return
+	_reset_clip()
 	battle_pose = action
-	_pose_time = 0.0
+	animation_player.play(clip)
+	animation_player.advance(0)
 
 func _process(delta: float) -> void:
-	super._process(delta)
-	if _dead or skeleton == null or battle_pose == &"": return
-	_pose_time += delta
-	if _pose_time >= POSE_SECONDS:
-		battle_pose = &""
+	if animation_player != null and animation_player.is_playing():
+		animation_player.advance(delta)
 		return
-	var weight: float = sin(PI * _pose_time / POSE_SECONDS)
-	match battle_pose:
-		&"mend", &"star_spark":
-			_offset("ArmLeft", Vector3(-0.28, 0, 0.12) * weight)
-			_offset("ArmRight", Vector3(-0.28, 0, -0.12) * weight)
-			_offset("Head", Vector3(-0.04, 0, 0) * weight)
-		&"attack":
-			_offset("ArmRight", Vector3(-0.38, 0.1, 0) * weight)
-			_offset("Torso", Vector3(0, 0.06, 0) * weight)
-		&"guard":
-			_offset("ArmLeft", Vector3(-0.2, 0, 0.08) * weight)
-			_offset("ArmRight", Vector3(-0.2, 0, -0.08) * weight)
-		&"potion":
-			_offset("ArmLeft", Vector3(-0.3, 0, 0) * weight)
-		&"hit":
-			_offset("Torso", Vector3(-0.09, 0, 0) * weight)
-			_offset("Head", Vector3(0.06, 0, 0) * weight)
+	super._process(delta)
 
-func _offset(bone_name: String, angles: Vector3) -> void:
-	var index: int = skeleton.find_bone(bone_name)
-	if index >= 0:
-		skeleton.set_bone_pose_rotation(index, skeleton.get_bone_pose_rotation(index) * Quaternion.from_euler(angles))
+func _finished(_clip: StringName) -> void:
+	_reset_clip()
+
+func _reset_clip() -> void:
+	if animation_player != null: animation_player.stop()
+	battle_pose = &""
+	for index: int in _clip_rest:
+		skeleton.set_bone_pose_rotation(index, _clip_rest[index])
 
 func set_dead(value: bool) -> void:
-	if value: battle_pose = &""
+	if value: _reset_clip()
 	super.set_dead(value)

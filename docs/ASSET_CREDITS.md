@@ -2,6 +2,8 @@
 
 ## 2026-10-16 四視角女角
 
+- 後續修改：保留七骨原件，新增 `lia_rigged.glb`／`lia_rigged.blend` 的 11 骨平滑肘膝權重及五段自製動畫；來源授權紀錄同下，詳見 [動畫報告](FEMALE_ANIMATION_REPORT.md)。
+
 - 來源：使用者本次提供的四張女角圖；副本保存在 `assets/source/female/references/`。使用者授權本次建模，外部作者及散布授權未獨立確認。
 - 本機 HY3D 多視角生成幾何，Blender 重建／減面、頂點配色、眼睛／衣緣／腰扣及基本七骨綁定。
 - 遊戲資產：`assets/models/female/lia_user.glb`；未購買或下載素材商店角色。製作與限制見 [女角報告](FEMALE_CHARACTER_REPORT.md)。

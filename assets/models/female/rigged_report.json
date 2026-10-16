@@ -1,0 +1,31 @@
+{
+  "triangles": 4546,
+  "bones": [
+    "Root",
+    "Torso",
+    "Head",
+    "ArmLeft",
+    "ForearmLeft",
+    "ArmRight",
+    "ForearmRight",
+    "LegLeft",
+    "ShinLeft",
+    "LegRight",
+    "ShinRight"
+  ],
+  "clips": [
+    "cast",
+    "hit",
+    "guard",
+    "attack",
+    "potion"
+  ],
+  "duration_seconds": 0.6666666666666666,
+  "mixed_joint_vertices": {
+    "ForearmLeft": 72,
+    "ForearmRight": 70,
+    "ShinLeft": 23,
+    "ShinRight": 25
+  },
+  "weights": "smooth elbow and knee regional blending; no new reduction"
+}
