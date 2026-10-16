@@ -164,3 +164,14 @@ CP11 release 重新匯出至 builds/character-qa/20261017-044240，Full 83/0、R
 - `TestLiaMovement` 20/0，`testliamovement-20261017-045118-803.log`；滑鼠確認預設關閉與開啟，再實際走三個路點、停止及碰撞公會牆面。已查看動態斜坡兩張近景。
 
 有限原型：尚未驗證陡坡、台階／落差、斜坡轉折的平滑度或長時間動態效能；不作為正式全地形 IK 完成宣稱。Android 暫停。
+
+## CP15：護腕與接縫外觀
+
+依參考圖自製兩側棕皮護腕與金色腕帶，64 個三角形、共用兩種材質，使用既有 Forearm 骨，遮住手腕交接。人物 4,726 面、持杖 4,866 面，仍為 29 骨。原七骨資產保留；沒有增加貼圖或外部資產。
+
+- ai-3d-agent 面數／骨架檢查通過，`artifacts/female_bracers_check/report.json`：含 80 面骨架顯示輔助物 4,806 面，GLB 本身 4,726；開口衣物邊界仍有警告，不宣稱封閉網格。
+- `TestCharacterPreview` 12/0（`testcharacterpreview-20261017-045438-147.log`）；`VisualFemaleHand` 22/0（`visualfemalehand-20261017-045441-662.log`）；`VisualFemaleAnimation` 38/0（`visualfemaleanimation-20261017-045442-914.log`）。已查看 viewer_lia 與 hand_grip 近景，腕帶、手型與持杖可辨識。
+- `PreviewFemale` 0 失敗、`TestFemaleMotionBoundary` 36/0；本輪重建未改骨架或七個片段時間。
+- release 更新至 `builds/character-qa/20261017-045535`，Full 83/0、Reload 8/0；日誌 `character-export-full-20261017-045540-131.log`、`character-export-reload-20261017-045602-569.log`。
+
+仍為簡化的生成網格搭配程序零件，並非逐細節還原或完整手工拓樸。每指只有單關節，水平腳鎖與正式全地形 IK 尚未完成。

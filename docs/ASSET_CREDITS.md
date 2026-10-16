@@ -117,3 +117,7 @@ scripts/tools/greystone/build_layout.py 生成原創 Godot 原生白盒，七個
 ## 2026-10-15 原創擴充怪物
 
 assets/models/expansion 四個 GLB（孢子菇靈、荊棘野豬、星晶蝙蝠、礦甲蟲）由本專案 Blender Python 幾何體原創建模，無第三方下載、貼圖或付費素材。來源腳本 scripts/tools/expansion/build_monsters.py；可編輯源檔 assets/source/expansion，.gdignore 排除 Godot 自動匯入。面數及限制見 WILDERNESS_EXPANSION_REPORT.md。場景重用原已記錄的 cartoon 與 greystone 素材，未變更其來源授權。
+
+## 2026-10-17 護腕修整
+
+女角雙側皮革護腕及金色腕帶由專案 Blender Python 以八邊形開口環自行製作，參照使用者提供的角色四視圖配色；共 64 三角形，綁定既有 Forearm 骨。沒有外部下載、貼圖或新增第三方授權。總面數與限制見 CHARACTER_POLISH_REPORT.md CP15；開口位於衣物／手腕接合處，不宣稱封閉拓樸。

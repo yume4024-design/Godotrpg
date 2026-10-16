@@ -157,6 +157,28 @@ for side,sign in [('Left',1),('Right',-1)]:
  for name,indices in assignments.items(): obj.vertex_groups.new(name=name).add(indices,1,'REPLACE')
  hand_mesh=bmesh.new(); hand_mesh.from_mesh(obj.data)
  bmesh.ops.recalc_face_normals(hand_mesh,faces=list(hand_mesh.faces)); hand_mesh.to_mesh(obj.data); hand_mesh.free()
+
+# Reference-inspired leather cuffs hide the wrist transition without extra body density.
+bracer_mat=face_material('BracerLeather',(.17,.075,.035))
+band_mat=face_material('WristBandGold',(.65,.35,.06))
+def cuff(name,start,end,start_radius,end_radius,material,bone):
+ axis=(end-start).normalized()
+ u=axis.cross(Vector((0,1,0))).normalized(); v=axis.cross(u).normalized()
+ vertices=[]
+ for center,radius in [(start,start_radius),(end,end_radius)]:
+  for index in range(8):
+   angle=index/8*math.tau
+   vertices.append(tuple(center+radius*(u*math.cos(angle)+v*math.sin(angle))))
+ faces=[(i,(i+1)%8,(i+1)%8+8,i+8) for i in range(8)]
+ obj=skinned_face(name,vertices,faces,material)
+ obj.vertex_groups.clear()
+ obj.vertex_groups.new(name=bone).add(list(range(len(vertices))),1,'REPLACE')
+ return obj
+for side,sign in [('Left',1),('Right',-1)]:
+ upper=Vector((sign*.51,-.015,1.12)); lower=Vector((sign*.61,-.025,1.015))
+ direction=(lower-upper).normalized()
+ cuff('Bracer'+side,upper,lower,.057,.047,bracer_mat,'Forearm'+side)
+ cuff('WristBand'+side,lower-direction*.012,lower+direction*.001,.049,.048,band_mat,'Forearm'+side)
 for iris in [o for o in list(bpy.context.scene.objects) if o.type=='MESH' and o.name.startswith('Iris')]:
  for name,rx,rz,dx,dz,dy,segments,mat in [('Pupil',.006,.012,0,0,-.010,8,pupil_mat),('EyeGlint',.003,.004,-.003,.007,-.011,6,glint_mat)]:
   center=iris.location+Vector((dx,dy,dz))
