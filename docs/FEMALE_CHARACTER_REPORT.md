@@ -1,5 +1,20 @@
 # 四視角女角製作與遊戲整合 — 2026-10-16
 
+## 後續：基本戰鬥姿勢完成
+
+新增 `scripts/characters/female_actor.gd`，沿用既有七骨外觀，對成功戰鬥事件播放療癒施法、普攻、防禦、用藥、受擊五種小幅姿勢。每次約 0.65 秒，結束恢復待機；倒下中止、死亡期間拒絕新動作，復活後可再次播放。BattleStage 使用既有 action_presented／action_resolved 訊號；動作不修改 HP、MP、物品、回合或存檔，也不延後戰鬥結算。舊角色外觀繼續使用既有演出。
+
+這些為 Godot 程序骨架動作，尚未烘焙至 GLB；不代表已完成肘膝、手指或正式動畫片段。已查看五個實際戰鬥截圖，未見整體骨架崩解；目前鏡頭與小幅動作下可用，大幅或近距離變形仍待完整權重處理。
+
+Godot 4.7.2／Windows：
+
+- `./tools/godot.ps1 -Mode Check`：載入成功，`artifacts/logs/check-20261016-195620-618.log`。
+- `./tools/godot.ps1 -Mode VisualFemaleAnimation`：24 項通過、0 失敗，`artifacts/logs/visualfemaleanimation-20261016-195626-065.log`。實際技能／道具提交、敵人傷害、拒絕操作、死亡／復活及待機恢復均驗證；截圖在 `artifacts/female_character/battle_*.webp`。
+- `./tools/godot.ps1 -Mode VisualActionEffects`：26 項通過、0 失敗，`artifacts/logs/visualactioneffects-20261016-195634-547.log`。
+- `./tools/godot.ps1 -Mode VisualG06Story`：68 項通過、0 失敗，`artifacts/logs/visualg06story-20261016-195642-407.log`。
+
+下一個角色製作項目：完整肘膝骨架、關節權重與可匯出的施法／受擊動畫片段。Android 仍未驗收。
+
 依使用者提供的正面、左側、背面、右側圖，建立金髮、藍眼、紫色冒險服女角，作為 G06 莉雅的新外觀。角色 ID、能力、技能、入隊時機、獎勵與存檔格式均沿用既有系統；舊版莉雅外觀及正式 v0.6.1 保留。
 
 ## 檔案

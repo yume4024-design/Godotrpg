@@ -1,5 +1,5 @@
 [gd_scene format=3]
-[ext_resource type="Script" path="res://scripts/characters/user_hero_actor.gd" id="1"]
+[ext_resource type="Script" path="res://scripts/characters/female_actor.gd" id="1"]
 [ext_resource type="PackedScene" path="res://assets/models/female/lia_user.glb" id="2"]
 [node name="LiaUserVisual" type="Node3D"]
 script = ExtResource("1")

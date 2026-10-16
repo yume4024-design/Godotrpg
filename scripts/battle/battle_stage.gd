@@ -53,8 +53,14 @@ func setup(manager: BattleManager) -> void:
 		_labels[actor.instance_id] = label
 	manager.changed.connect(refresh)
 	manager.action_resolved.connect(_animate)
-	manager.action_presented.connect(func(action: StringName, source: StringName, target: StringName) -> void: ActionEffect.play(self, action, _origins[source], _origins[target]))
+	manager.action_presented.connect(_present_action)
 	refresh()
+
+func _present_action(action: StringName, source: StringName, target: StringName) -> void:
+	ActionEffect.play(self, action, _origins[source], _origins[target])
+	var appearance: CartoonActor = _appearances[source]
+	if appearance.has_method("play_battle_action"):
+		appearance.call("play_battle_action", action)
 
 func refresh() -> void:
 	for actor: CombatantState in _manager.combatants():
@@ -65,6 +71,8 @@ func refresh() -> void:
 		_appearances[actor.instance_id].set_dead(not actor.alive())
 
 func _animate(actor_id: StringName, target_id: StringName, amount: int, healing: bool) -> void:
+	if amount > 0 and not healing and _appearances[target_id].has_method("play_battle_action"):
+		_appearances[target_id].call("play_battle_action", &"hit")
 	var actor: Node3D = _actors[actor_id]
 	var target: Node3D = _actors[target_id]
 	var origin: Vector3 = _origins[actor_id]
