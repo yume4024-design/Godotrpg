@@ -6,8 +6,12 @@
     "Head",
     "ArmLeft",
     "ForearmLeft",
+    "HandLeft",
+    "FingersLeft",
     "ArmRight",
     "ForearmRight",
+    "HandRight",
+    "FingersRight",
     "LegLeft",
     "ShinLeft",
     "LegRight",
@@ -30,8 +34,8 @@
     "run": 0.6666666666666666
   },
   "mixed_joint_vertices": {
-    "ForearmLeft": 75,
-    "ForearmRight": 72,
+    "ForearmLeft": 93,
+    "ForearmRight": 89,
     "ShinLeft": 23,
     "ShinRight": 25
   },

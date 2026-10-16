@@ -27,6 +27,11 @@ func _run() -> void:
 	var lia: CombatantState = party.member(&"lia")
 	var visual: CartoonActor = arena.stage.get("_appearances")[lia.instance_id]
 	var rig: Skeleton3D = visual.get("skeleton")
+	var staff_visual: Node3D = visual.get("staff_visual")
+	_check(staff_visual != null and not staff_visual.visible,"Unarmed actor has no staff")
+	_check(lia.set_equipment(&"weapon",load("res://data/items/willow_staff.tres")),"Existing equipment owner accepts staff")
+	arena.stage.refresh()
+	_check(staff_visual.visible and lia.magic == 27,"Equipment display matches existing stat bonus")
 	for action: StringName in [&"attack", &"mend", &"guard", &"potion"]:
 		party.rest()
 		lia.damage(40)
@@ -68,6 +73,15 @@ func _run() -> void:
 	_check(visual.get("battle_pose") == &"guard","Revived actor accepts pose")
 	await create_timer(.75).timeout
 	_check(visual.get("battle_pose") == &"","Revived pose returns to idle")
+	var hand: int = rig.find_bone("HandRight")
+	var socket: Node3D = staff_visual.get_parent()
+	_check(socket is BoneAttachment3D and (socket as BoneAttachment3D).bone_name == "HandRight","Staff uses hand attachment")
+	_check(socket.position.distance_to(rig.get_bone_global_pose(hand).origin)<.001,"Staff attachment follows hand pose")
+	_check(lia.set_equipment(&"weapon",null),"Existing equipment owner removes staff")
+	arena.stage.refresh()
+	_check(not staff_visual.visible and lia.magic == 24,"Unequip restores empty hand and existing stats")
+	var fingers: int = rig.find_bone("FingersRight")
+	_check(rig.get_bone_pose_rotation(fingers).is_equal_approx(visual.get("rest_rotations")[fingers]),"Unequip releases finger grip")
 	print("FEMALE_ANIMATION_RESULT checks=%d failures=%d" % [checks,failures])
 	arena.queue_free()
 	party.queue_free()

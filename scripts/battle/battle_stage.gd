@@ -69,6 +69,8 @@ func refresh() -> void:
 		_rings[actor.instance_id].visible = actor == _manager.current and actor.alive() and _manager.phase != BattleManager.Phase.FINISHED
 		_actors[actor.instance_id].rotation.z = 0.0 if actor.alive() else 1.2
 		_appearances[actor.instance_id].set_dead(not actor.alive())
+		if _appearances[actor.instance_id].has_method("set_equipment_visual"):
+			_appearances[actor.instance_id].call("set_equipment_visual", actor.equipped(&"weapon"))
 
 func _animate(actor_id: StringName, target_id: StringName, amount: int, healing: bool) -> void:
 	if amount > 0 and not healing and _appearances[target_id].has_method("play_battle_action"):

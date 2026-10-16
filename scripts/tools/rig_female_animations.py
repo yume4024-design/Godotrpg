@@ -15,7 +15,11 @@ for side,sign in [('Left',1),('Right',-1)]:
  upper.head=(sign*.29,0,1.43); upper.tail=(sign*.42,0,1.22)
  upper.parent=rig.data.edit_bones['Torso']
  fore=rig.data.edit_bones.new('Forearm'+side)
- fore.head=upper.tail; fore.tail=(sign*.66,0,.88); fore.parent=upper; fore.use_connect=True
+ fore.head=upper.tail; fore.tail=(sign*.61,0,1.0); fore.parent=upper; fore.use_connect=True
+ hand=rig.data.edit_bones.new('Hand'+side)
+ hand.head=fore.tail; hand.tail=(sign*.68,0,.92); hand.parent=fore; hand.use_connect=True
+ fingers=rig.data.edit_bones.new('Fingers'+side)
+ fingers.head=hand.tail; fingers.tail=(sign*.735,0,.84); fingers.parent=hand; fingers.use_connect=True
  thigh=rig.data.edit_bones['Leg'+side]
  thigh.head=(sign*.16,0,.95); thigh.tail=(sign*.19,0,.55)
  shin=rig.data.edit_bones.new('Shin'+side)
@@ -24,7 +28,7 @@ for side,sign in [('Left',1),('Right',-1)]:
  coat.head=(sign*.15,0,1.05); coat.tail=(sign*.2,0,.8); coat.parent=rig.data.edit_bones['Root']
 rig.data.edit_bones['Head'].parent=rig.data.edit_bones['Torso']
 bpy.ops.object.mode_set(mode='OBJECT')
-for name in ['ForearmLeft','ForearmRight','ShinLeft','ShinRight','CoatLeft','CoatRight']:
+for name in ['ForearmLeft','ForearmRight','ShinLeft','ShinRight','CoatLeft','CoatRight','HandLeft','HandRight','FingersLeft','FingersRight']:
  body.vertex_groups.new(name=name)
 def smooth(a,b,x):
  t=max(0,min(1,(x-a)/(b-a)))
@@ -42,6 +46,14 @@ for v in body.data.vertices:
   continue
  if name.startswith('Arm'):
   lower='Forearm'+name[3:]; w=1-smooth(1.13,1.29,z)
+  if z<1.045 and abs(x)>.55:
+   hand_weight=1-smooth(.97,1.045,z)
+   finger_weight=1-smooth(.87,.945,z)
+   body.vertex_groups[name].add([v.index],0,'REPLACE')
+   body.vertex_groups[lower].add([v.index],1-hand_weight,'REPLACE')
+   body.vertex_groups['Hand'+name[3:]].add([v.index],hand_weight*(1-finger_weight),'REPLACE')
+   body.vertex_groups['Fingers'+name[3:]].add([v.index],hand_weight*finger_weight,'REPLACE')
+   continue
  elif name.startswith('Leg'):
   lower='Shin'+name[3:]; w=1-smooth(.47,.63,z)
  else: continue
@@ -60,7 +72,7 @@ print('JOINT_WEIGHT_AUDIT',mixed)
 
 # Every clip contains explicit zero endpoints for all joints.
 recipes={
- 'cast':{'ArmLeft':(-.22,0,.12),'ArmRight':(-.22,0,-.12),'ForearmLeft':(-.38,0,0),'ForearmRight':(-.38,0,0),'Head':(-.04,0,0)},
+ 'cast':{'ArmLeft':(-.35,0,.12),'ArmRight':(-.22,0,-.12),'ForearmLeft':(-.65,0,0),'ForearmRight':(-.45,0,0),'HandLeft':(.12,0,0),'Head':(-.04,0,0)},
  'hit':{'Torso':(-.09,0,0),'Head':(.06,0,0),'ShinLeft':(.08,0,0),'ShinRight':(.08,0,0)},
  'guard':{'ArmLeft':(-.16,0,.08),'ArmRight':(-.16,0,-.08),'ForearmLeft':(-.32,0,0),'ForearmRight':(-.32,0,0)},
  'attack':{'ArmRight':(-.3,.1,0),'ForearmRight':(-.25,0,0),'Torso':(0,.06,0)},

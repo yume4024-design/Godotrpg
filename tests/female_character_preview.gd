@@ -8,7 +8,8 @@ func _run() -> void:
 	var hero: CartoonActor = load("res://scenes/characters/lia_user_visual.tscn").instantiate()
 	stage.add_child(hero)
 	var rig: Skeleton3D = hero.get("skeleton")
-	if rig == null or rig.get_bone_count() != 13: failures += 1
+	if rig == null or rig.get_bone_count() != 17: failures += 1
+	hero.call("set_equipment_visual",load("res://data/items/willow_staff.tres"))
 	var npcs: Node3D = load("res://scenes/world/greystone_npcs.tscn").instantiate()
 	stage.add_child(npcs)
 	var npc_visual: CartoonActor = npcs.get_node("Lia/Appearance")

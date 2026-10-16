@@ -1,5 +1,10 @@
 # 素材來源與修改紀錄
 
+## 2026-10-17 柳木法杖
+
+- 專案自製 Blender 幾何體及材質，無外部素材、貼圖或授權依賴。
+- `assets/models/female/willow_staff.glb`、`assets/source/female/willow_staff.blend`；140 三角形，骨骼附件與既有 willow_staff 裝備 ID 對應。
+
 ## 2026-10-16 四視角女角
 
 - 2026-10-17：新增自製 walk／run 片段、左右裙襬骨及肩髖權重，來源圖片與網格同下；無新增外部素材。
