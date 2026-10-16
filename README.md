@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-17 功能分支已提供新版灰石村 Windows 預覽與角色更新，見 [預覽說明](docs/GREYSTONE_PREVIEW_GUIDE.md) 及 [角色修整紀錄](docs/CHARACTER_POLISH_REPORT.md)。用 `tools/godot.ps1 -Mode ExportGreystonePreview` 產生獨立預覽；正式 v0.6.1 輸出保留。
+
 > **2026-10-14 正文合併更新（優先於本檔較早條款）**：新企劃已由使用者貼文取得，不再待正文。灰石村採 120×120m、Q 版低面數切面、北側公會/西北農田/東北礦坑/東河/南入口/西出口；平台 Windows + Android，iOS 預留。執行以 [docs/GREYSTONE_VILLAGE_SPEC.md](docs/GREYSTONE_VILLAGE_SPEC.md) 與 [docs/GREYSTONE_BUILD_TASKS.md](docs/GREYSTONE_BUILD_TASKS.md) 為準。G01 獨立佔位預覽，不替換正式0.6.1存檔；G06再遷移位置及串接劇情/觸控。本檔舊「待正文」、PC限定、圖片未列公會、固定舊碰撞等描述保留為歷史，不是目前限制。
 
 

@@ -204,3 +204,19 @@ CP18 正式路徑回歸：VisualFemaleAnimation 38/0（visualfemaleanimation-202
 `TestFemaleRamp30`、`TestFemaleRamp120` 各 48/0，日誌 `artifacts/logs/testfemaleramp30-20261017-051714-206.log`、`testfemaleramp120-20261017-051753-571.log`。VSync 關閉，Engine.max_fps 設為目標，另以 Engine.get_frames_drawn 與牆鐘計算真實繪製更新率；各路段須落在目標範圍才通過。30 FPS 實測 29.96～29.99、120 FPS 119.94～119.98，物理更新保持專案設定。
 
 同樣快慢往返八路段、膠囊全程接地；30 FPS 鞋底最低約 -2.50mm，120 FPS 約 -2.65mm，支撐腳最高皆約 4.3mm。這驗證獨立原型不因渲染與物理更新率不同而累積偏移，並非 Android 或低階 PC 效能認證。沒有更動正式遊戲更新率、輸入或存檔。
+
+## CP20：可遊玩 Windows 預覽交付
+
+新增 `Windows Greystone Preview` feature／preset，主入口為 `scenes/main/greystone_preview.tscn`，繼承現有 G06 整合場景；僅此 feature 使用預覽版本標籤，原正式 main／0.6.1 設定保留。依時間輸出、打包，沒有上傳執行檔至 Git。
+
+最初用 --quit-after 強制退出錄影，查出 village.wav／AudioStreamPlaybackWAV 尚未釋放，沒有將該輪當作通過。預覽入口改為處理關閉請求，先釋放場景，再留 0.15 秒給音訊清理後退出；自動啟動檢查使用相同關閉函式。正式既有入口不改動。
+
+- `ExportGreystonePreview`：`artifacts/logs/exportgreystonepreview-20261017-052401-407.log`，成功。
+- `tools/test_greystone_preview.ps1`：`greystone-export-smoke-20261017-052406-832.log` 及 `.console.txt`，錄製 66 幀後退出，0 錯誤；已查看實際灰石村開場。Movie Maker 的編碼時間不作為 G07 效能量測。
+- 新版 QA release：`builds/character-qa/20261017-052511`，Full 83/0、Reload 8/0，日誌 `character-export-full-20261017-052515-617.log`、`character-export-reload-20261017-052537-965.log`。
+- 可玩預覽：`builds/greystone-preview/20261017-052401/ProjectCrystal.exe`。
+- ZIP：`builds/ProjectCrystal-G06-preview-20261017-052401-windows-x64.zip`，52,084,731 bytes，SHA256 `673960f4be93805590f99909d5be159630d8bad7ed9d2ebfd4b2d66c79fe2b98`。
+- 逐項解壓讀取並核對五個內容檔 SHA256，ZIP 只有 exe／pck／README／素材來源／引擎授權／SHA256SUMS 六項。證據 `artifacts/greystone-preview-package.json`。外部素材來源連結保留，專案內部文件連結在攜帶版改成說明。
+- 原正式 exe／pck SHA256 與 CP10 記錄完全一致。測試均使用隔離 APPDATA；預覽遊戲沿用既有 G06 專用存檔及安全遷移，不改 schema。
+
+此為開發預覽，未宣稱人工通關、全硬體相容、正式貼地或 Android 真機通過。使用方式見 GREYSTONE_PREVIEW_GUIDE.md。所有持續工作保存於 feature/greystone-g06，不合併 main。

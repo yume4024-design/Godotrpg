@@ -17,6 +17,8 @@ run/main_scene.qa="res://tests/qa_entry.tscn"
 run/main_loop_type.qa="DeliveryTestTree"
 run/main_scene.character_qa="res://tests/qa_entry.tscn"
 run/main_loop_type.character_qa="CharacterDeliveryTestTree"
+run/main_scene.greystone_preview="res://scenes/main/greystone_preview.tscn"
+config/version.greystone_preview="0.6.1-g06-preview"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [debug]
