@@ -7,6 +7,7 @@ func _initialize() -> void:
 
 func _run() -> void:
 	root.size = Vector2i(1000,800)
+	Engine.max_fps = 60
 	var stage: Node3D = Node3D.new()
 	root.add_child(stage)
 	var floor: StaticBody3D = StaticBody3D.new()
@@ -45,31 +46,12 @@ func _run() -> void:
 	placement.actor = hero
 	hero.add_child(placement)
 	var body: MeshInstance3D = hero.find_child("LiaBody",true,false)
-	var arrays: Array = body.mesh.surface_get_arrays(0)
-	var vertices: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
-	var bones: PackedInt32Array = arrays[Mesh.ARRAY_BONES]
-	var weights: PackedFloat32Array = arrays[Mesh.ARRAY_WEIGHTS]
-	var influences: int = bones.size()/vertices.size()
 	for orientation: Vector3 in [Vector3.ZERO,Vector3(10,0,0),Vector3(-10,0,0),Vector3(0,0,10),Vector3(0,0,-10)]:
 		floor.rotation_degrees = orientation
 		await create_timer(.2).timeout
 		await RenderingServer.frame_post_draw
 		var normal: Vector3 = floor.global_basis.y
-		var lowest: Dictionary[String,float] = {"Left":INF,"Right":INF}
-		var transforms: Array[Transform3D] = []
-		for bind: int in range(body.skin.get_bind_count()):
-			var joint: int = body.skin.get_bind_bone(bind)
-			if joint<0: joint = rig.find_bone(body.skin.get_bind_name(bind))
-			transforms.append(rig.get_bone_global_pose(joint)*body.skin.get_bind_pose(bind))
-		for index: int in range(vertices.size()):
-			if vertices[index].y>.13: continue
-			var point: Vector3 = Vector3.ZERO
-			for influence: int in range(influences):
-				var offset: int = index*influences+influence
-				if weights[offset]>0: point += (transforms[bones[offset]]*vertices[index])*weights[offset]
-			var distance: float = normal.dot(rig.global_transform*point)
-			var side: String = "Left" if vertices[index].x>0 else "Right"
-			lowest[side] = minf(lowest[side],distance)
+		var lowest: Dictionary[String,float] = _soles(body,rig,normal)
 		print("SLOPE_RESULT degrees=",orientation," soles_m=",lowest," ankle_errors=",placement.last_target_errors)
 		_check(placement.last_target_errors.size()==2,"Both foot rays find slope")
 		for side: String in lowest:
@@ -77,6 +59,32 @@ func _run() -> void:
 			_check(placement.last_target_errors.get(side,INF)<.01,"Two-bone ankle reaches target: "+side)
 		_check(hero.position==Vector3.ZERO,"Foot placement leaves actor position unchanged")
 		root.get_texture().get_image().save_webp("res://artifacts/female_character/slope_%d_%d.webp" % [orientation.x,orientation.z])
+	placement.allow_motion = true
+	for actor_scale: float in [1.0,.82]:
+		hero.scale = Vector3.ONE*actor_scale
+		for angle: Vector3 in [Vector3(10,0,0),Vector3(0,0,10)]:
+			floor.rotation_degrees = angle
+			for amount: float in [.4,1.0]:
+				hero.set_motion(amount)
+				await create_timer(.25).timeout
+				var minimum: float = INF
+				var highest_stance: float = -INF
+				var maximum_lift: Dictionary[String,float] = {"Left":0,"Right":0}
+				for sample: int in range(72):
+					await process_frame
+					await RenderingServer.frame_post_draw
+					var soles: Dictionary[String,float] = _soles(body,rig,floor.global_basis.y)
+					minimum = minf(minimum,minf(soles.Left,soles.Right))
+					highest_stance = maxf(highest_stance,minf(soles.Left,soles.Right))
+					for side: String in soles: maximum_lift[side] = maxf(maximum_lift[side],soles[side])
+				print("MOVING_SLOPE scale=",actor_scale," degrees=",angle," motion=",amount," minimum_m=",minimum," highest_stance_m=",highest_stance," maximum_lift_m=",maximum_lift)
+				_check(minimum>-.025,"Moving soles avoid deep penetration")
+				_check(highest_stance<.035,"At least one stance foot stays near ground")
+				_check(maximum_lift.Left>.03 and maximum_lift.Right>.03,"Both swing feet retain lift")
+				_check(hero.position==Vector3.ZERO,"Moving IK leaves actor transform unchanged")
+				root.get_texture().get_image().save_webp("res://artifacts/female_character/moving_slope_%d_%d_%s_%s.webp" % [angle.x,angle.z,str(actor_scale),str(amount)])
+	hero.set_motion(0)
+	await create_timer(.3).timeout
 	hero.set_dead(true)
 	await process_frame
 	await process_frame
@@ -95,6 +103,28 @@ func _run() -> void:
 	await process_frame
 	print("FEMALE_SLOPE_RESULT checks=%d failures=%d" % [checks,failures])
 	quit(0 if failures==0 else 1)
+
+func _soles(body: MeshInstance3D,rig: Skeleton3D,normal: Vector3) -> Dictionary[String,float]:
+	var arrays: Array = body.mesh.surface_get_arrays(0)
+	var vertices: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
+	var bones: PackedInt32Array = arrays[Mesh.ARRAY_BONES]
+	var weights: PackedFloat32Array = arrays[Mesh.ARRAY_WEIGHTS]
+	var influences: int = bones.size()/vertices.size()
+	var result: Dictionary[String,float] = {"Left":INF,"Right":INF}
+	var transforms: Array[Transform3D] = []
+	for bind: int in range(body.skin.get_bind_count()):
+		var joint: int = body.skin.get_bind_bone(bind)
+		if joint<0: joint = rig.find_bone(body.skin.get_bind_name(bind))
+		transforms.append(rig.get_bone_global_pose(joint)*body.skin.get_bind_pose(bind))
+	for index: int in range(vertices.size()):
+		if vertices[index].y>.13: continue
+		var point: Vector3 = Vector3.ZERO
+		for influence: int in range(influences):
+			var offset: int = index*influences+influence
+			if weights[offset]>0: point += (transforms[bones[offset]]*vertices[index])*weights[offset]
+		var side: String = "Left" if vertices[index].x>0 else "Right"
+		result[side] = minf(result[side],normal.dot(rig.global_transform*point))
+	return result
 
 func _check(ok: bool,label: String) -> void:
 	checks += 1

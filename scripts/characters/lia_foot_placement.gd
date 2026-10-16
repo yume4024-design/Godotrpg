@@ -5,7 +5,9 @@ var skeleton: Skeleton3D
 var actor: CartoonActor
 var body: CollisionObject3D
 var sole_height: float = .16
+var allow_motion: bool = false
 var _ground: Dictionary[String,Dictionary] = {}
+var _lifts: Dictionary[String,float] = {}
 var last_target_errors: Dictionary[String,float] = {}
 
 func _ready() -> void:
@@ -27,6 +29,11 @@ func _physics_process(_delta: float) -> void:
 func _process(_delta: float) -> void:
 	last_target_errors.clear()
 	if not _can_place() or _ground.is_empty(): return
+	_lifts.clear()
+	for side: String in _ground:
+		var ankle: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone("Foot"+side)).origin
+		var height: float = sole_height*skeleton.global_basis.get_scale().y
+		_lifts[side] = clampf((ankle-actor.global_position).dot(actor.global_basis.y.normalized())-height,0,.35)
 	var slope: float = 0
 	for hit: Dictionary in _ground.values(): slope = maxf(slope,acos(clampf((hit.normal as Vector3).dot(Vector3.UP),-1,1)))
 	# A small pelvis allowance keeps the downhill leg within its physical reach.
@@ -39,7 +46,12 @@ func _process(_delta: float) -> void:
 		_solve(side,_ground[side])
 
 func _can_place() -> bool:
-	return is_instance_valid(skeleton) and is_instance_valid(actor) and actor.is_processing() and not bool(actor.get("_dead")) and actor.get("battle_pose")==&"" and float(actor.get("_motion"))<.01
+	return (
+		is_instance_valid(skeleton) and is_instance_valid(actor)
+		and actor.is_processing() and not bool(actor.get("_dead"))
+		and actor.get("battle_pose")==&""
+		and (allow_motion or float(actor.get("_motion"))<.01)
+	)
 
 func _solve(side: String,hit: Dictionary) -> void:
 	var hip: int = skeleton.find_bone("Leg"+side)
@@ -54,7 +66,7 @@ func _solve(side: String,hit: Dictionary) -> void:
 	var surface: Vector3 = ankle_world
 	surface.y = (hit.position as Vector3).y-(normal.x*(surface.x-hit.position.x)+normal.z*(surface.z-hit.position.z))/normal.y
 	var height: float = sole_height*skeleton.global_basis.get_scale().y
-	var target: Vector3 = skeleton.to_local(surface+normal*height)
+	var target: Vector3 = skeleton.to_local(surface+normal*(height+_lifts.get(side,0.0)))
 	var upper: float = hip_point.distance_to(knee_point)
 	var lower: float = knee_point.distance_to(ankle_point)
 	var distance: float = clampf(hip_point.distance_to(target),absf(upper-lower)+.001,upper+lower-.001)

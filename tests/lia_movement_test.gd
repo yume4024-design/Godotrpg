@@ -14,6 +14,18 @@ func _run() -> void:
 	await create_timer(.3).timeout
 	_check(player.is_on_floor(),"Shared controller grounds Lia at village entrance")
 	_check(player.appearance.model.resource_path.ends_with("lia_rigged.glb"),"Player uses production Lia visual")
+	var placement: LiaFootPlacement = preview.get("foot_placement")
+	_check(placement.process_mode==Node.PROCESS_MODE_DISABLED,"Experimental foot placement defaults off")
+	var toggle: CheckBox = preview.find_child("FootPlacementToggle",true,false)
+	var center: Vector2 = root.get_final_transform()*toggle.get_global_transform_with_canvas()*(toggle.size*.5)
+	for pressed: bool in [true,false]:
+		var event: InputEventMouseButton = InputEventMouseButton.new()
+		event.position = center
+		event.button_index = MOUSE_BUTTON_LEFT
+		event.pressed = pressed
+		Input.parse_input_event(event)
+		await process_frame
+	_check(toggle.button_pressed and placement.process_mode==Node.PROCESS_MODE_INHERIT,"Mouse enables optional foot placement")
 	var begin: Vector3 = player.position
 	_press(Vector2(.5,0))
 	for frame: int in range(35):
@@ -29,6 +41,7 @@ func _run() -> void:
 	await create_timer(.25).timeout
 	_check(Vector2(player.velocity.x,player.velocity.z).length()<.01,"Release stops capsule")
 	_check(not (player.appearance.get("animation_player") as AnimationPlayer).is_playing(),"Release blends back to idle")
+	_check(placement.last_target_errors.size()==2,"Preview feet sample real village collision")
 	player.reset_to(Vector3(0,0,18))
 	for point: Vector3 in [Vector3(6,0,6),Vector3(6,0,-6),Vector3(0,0,-18)]:
 		await _walk(point,350)

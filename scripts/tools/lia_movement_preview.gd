@@ -2,6 +2,7 @@ extends Node3D
 ## Real village collision and shared player controller, without story/save services.
 var player: ExplorationPlayer
 var camera: Camera3D
+var foot_placement: LiaFootPlacement
 
 func _ready() -> void:
 	var village: Node3D = load("res://scenes/world/greystone_village.tscn").instantiate()
@@ -27,6 +28,13 @@ func _ready() -> void:
 	player.appearance = load("res://scenes/characters/lia_user_visual.tscn").instantiate()
 	player.appearance.scale = Vector3.ONE*.82
 	player.visual.add_child(player.appearance)
+	foot_placement = LiaFootPlacement.new()
+	foot_placement.actor = player.appearance
+	foot_placement.skeleton = player.appearance.get("skeleton")
+	foot_placement.body = player
+	foot_placement.allow_motion = true
+	foot_placement.process_mode = Node.PROCESS_MODE_DISABLED
+	player.appearance.add_child(foot_placement)
 	player.reset_to(Vector3(0,0,18))
 	var rig: FixedExplorationCamera = FixedExplorationCamera.new()
 	rig.target = player
@@ -58,3 +66,9 @@ func _ready() -> void:
 	reset.add_theme_font_override("font",font)
 	column.add_child(reset)
 	reset.pressed.connect(func() -> void: player.reset_to(Vector3(0,0,18)))
+	var placement_toggle: CheckBox = CheckBox.new()
+	placement_toggle.name = "FootPlacementToggle"
+	placement_toggle.text = "斜坡腳部貼地（實驗）"
+	placement_toggle.add_theme_font_override("font",font)
+	column.add_child(placement_toggle)
+	placement_toggle.toggled.connect(func(enabled: bool) -> void: foot_placement.process_mode = Node.PROCESS_MODE_INHERIT if enabled else Node.PROCESS_MODE_DISABLED)
