@@ -134,7 +134,7 @@ func _run() -> void:
 	print("FEMALE_SLOPE_RESULT checks=%d failures=%d" % [checks,failures])
 	quit(0 if failures==0 else 1)
 
-func _soles(body: MeshInstance3D,rig: Skeleton3D,normal: Vector3) -> Dictionary[String,float]:
+static func _soles(body: MeshInstance3D,rig: Skeleton3D,normal: Vector3) -> Dictionary[String,float]:
 	var arrays: Array = body.mesh.surface_get_arrays(0)
 	var vertices: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
 	var bones: PackedInt32Array = arrays[Mesh.ARRAY_BONES]

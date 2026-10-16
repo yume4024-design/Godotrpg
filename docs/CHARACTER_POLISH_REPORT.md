@@ -182,3 +182,9 @@ CP11 release 重新匯出至 builds/character-qa/20261017-044240，Full 83/0、R
 - 近乎伸直的腿不能用微小幾何偏差推算穩定彎曲方向，改用角色向前的膝蓋參考。第一版反向斜坡仍單幀跳轉 0.903rad，加入地面點及骨盆緩衝後降為約 0.129rad（7.4 度）。
 - `TestFemaleSlope` 最終 70/0，`artifacts/logs/testfemaleslope-20261017-050141-852.log`；開／關最大單幀骨盆位移約 6.25／6.63mm，原先最多 6cm 一次切換。`TestLiaMovement` 20/0，`testliamovement-20261017-050058-208.log`。
 - 已查看 foot_transition 畫面。上述測試把整片平面由 +10 度瞬間改成 -10 度；這個合成突變仍出現最低 -0.0695m 暫時鞋底距離，不列為「全地形無穿透」。一般固定斜坡的物理玩家行走另於 CP17 驗證。原型仍僅在獨立工具、預設關閉。
+
+## CP17：固定坡面實際移動
+
+`./tools/godot.ps1 -Mode TestFemaleSlopeMovement`，`artifacts/logs/testfemaleslopemovement-20261017-050420-276.log`，40/0。獨立固定 10 度坡面使用正式 PlayerMovement、InputMap、半徑 0.32／高度 1.6 的膠囊及 0.82 角色比例，不使用動畫移動角色位置；只注入測試焦點與方向輸入。
+
+X／Z 方向、0.5／1.0 輸入強度、往返八路段共 1,154 樣本，全部物理接地；鞋底最小約 -2.583mm，最近支撐腳最高約 1.637mm，各路段到達目標且鬆開輸入後停下。已查看 physical_slope 的正背方向畫面。與 CP16 的「地面瞬間翻轉」不同，這輪坡面保持固定，玩家確實沿坡面行走。仍未驗證平地接縫、台階、陡坡或 Android，正式角色場景保持不啟用此實驗。
