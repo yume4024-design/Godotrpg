@@ -1,5 +1,5 @@
 """Refine the delivered mesh without another reduction; export reusable joint clips."""
-import bpy, json, math
+import bpy, json, math, bmesh
 from pathlib import Path
 from mathutils import Vector, Matrix
 
@@ -7,6 +7,36 @@ ROOT=Path(__file__).resolve().parents[2]
 bpy.ops.wm.open_mainfile(filepath=str(ROOT/'assets/source/female/lia_user.blend'))
 rig=bpy.data.objects['LiaRig']
 body=bpy.data.objects['LiaBody']
+# Remove isolated triangle debris and the coarse distal hand geometry on a copy.
+bm=bmesh.new(); bm.from_mesh(body.data)
+remaining=set(bm.verts); debris=set()
+while remaining:
+ seed=remaining.pop(); group={seed}; frontier=[seed]
+ while frontier:
+  current=frontier.pop()
+  for edge in current.link_edges:
+   other=edge.other_vert(current)
+   if other in remaining: remaining.remove(other); group.add(other); frontier.append(other)
+ if len(group)<=3: debris.update(group)
+cut={v for v in bm.verts if v.co.z<1.01 and abs(v.co.x)>.58}
+removed_debris=len(debris)
+bmesh.ops.delete(bm,geom=list(debris|cut),context='VERTS')
+bm.to_mesh(body.data); bm.free()
+
+def hand_layout(sign):
+ wrist=Vector((sign*.59,-.035,1.04))
+ down=Vector((sign*.55,0,-.835)).normalized()
+ across=Vector((sign*.835,0,.55)).normalized()
+ depth=Vector((0,1,0))
+ fingers=[]
+ for name,offset,length in [('Index',-.025,.105),('Middle',-.008,.115),('Ring',.009,.105),('Pinky',.026,.09)]:
+  start=wrist+down*.12+across*offset
+  direction=(down+across*(offset/.026)*.07).normalized()
+  fingers.append((name,[start,start+direction*length*.55-depth*.004,start+direction*length-depth*.012]))
+ start=wrist+down*.052-across*.024
+ thumb_direction=(down*.5-across*.85).normalized()
+ fingers.append(('Thumb',[start,start+thumb_direction*.04-depth*.004,start+thumb_direction*.08-depth*.012]))
+ return wrist,down,across,depth,fingers
 bpy.ops.object.select_all(action='DESELECT'); rig.select_set(True)
 bpy.context.view_layer.objects.active=rig
 bpy.ops.object.mode_set(mode='EDIT')
@@ -17,9 +47,12 @@ for side,sign in [('Left',1),('Right',-1)]:
  fore=rig.data.edit_bones.new('Forearm'+side)
  fore.head=upper.tail; fore.tail=(sign*.61,0,1.0); fore.parent=upper; fore.use_connect=True
  hand=rig.data.edit_bones.new('Hand'+side)
- hand.head=fore.tail; hand.tail=(sign*.68,0,.92); hand.parent=fore; hand.use_connect=True
+ hand.head=fore.tail; hand.tail=hand_layout(sign)[0]+hand_layout(sign)[1]*.12; hand.parent=fore; hand.use_connect=True
  fingers=rig.data.edit_bones.new('Fingers'+side)
  fingers.head=hand.tail; fingers.tail=(sign*.735,0,.84); fingers.parent=hand; fingers.use_connect=True
+ for name,points in hand_layout(sign)[4]:
+  finger=rig.data.edit_bones.new(name+side)
+  finger.head=points[0]; finger.tail=points[-1]; finger.parent=hand if name=='Thumb' else fingers
  thigh=rig.data.edit_bones['Leg'+side]
  thigh.head=(sign*.16,0,.95); thigh.tail=(sign*.19,0,.55)
  shin=rig.data.edit_bones.new('Shin'+side)
@@ -99,6 +132,31 @@ def skinned_face(name,vertices,faces,mat):
  obj.vertex_groups.new(name='Head').add(list(range(len(vertices))),1,'REPLACE')
  modifier=obj.modifiers.new('Skin','ARMATURE'); modifier.object=rig
  return obj
+skin_mat=face_material('HandSkin',(.88,.63,.43))
+for side,sign in [('Left',1),('Right',-1)]:
+ wrist,down,across,depth,fingers=hand_layout(sign)
+ vertices=[]; faces=[]; assignments={}
+ def tube(centers,radii,segments,bone):
+  base=len(vertices)
+  for center,(width,thickness) in zip(centers,radii):
+   for segment in range(segments):
+    angle=segment/segments*math.tau
+    vertices.append(tuple(center+across*width*math.cos(angle)+depth*thickness*math.sin(angle)))
+  for ring in range(len(centers)-1):
+   for segment in range(segments):
+    a=base+ring*segments+segment; b=base+ring*segments+(segment+1)%segments
+    faces.append((a,b,b+segments,a+segments))
+  faces.append(tuple(base+i for i in reversed(range(segments))))
+  faces.append(tuple(base+(len(centers)-1)*segments+i for i in range(segments)))
+  assignments[bone]=list(range(base,len(vertices)))
+ tube([wrist,wrist+down*.05,wrist+down*.12],[(.025,.02),(.028,.018),(.035,.017)],8,'Hand'+side)
+ for name,points in fingers:
+  tube(points,[(.0095,.010),(.007,.008),(.006,.007)],4,name+side)
+ obj=skinned_face('DetailedHand'+side,vertices,faces,skin_mat)
+ obj.vertex_groups.clear()
+ for name,indices in assignments.items(): obj.vertex_groups.new(name=name).add(indices,1,'REPLACE')
+ hand_mesh=bmesh.new(); hand_mesh.from_mesh(obj.data)
+ bmesh.ops.recalc_face_normals(hand_mesh,faces=list(hand_mesh.faces)); hand_mesh.to_mesh(obj.data); hand_mesh.free()
 for iris in [o for o in list(bpy.context.scene.objects) if o.type=='MESH' and o.name.startswith('Iris')]:
  for name,rx,rz,dx,dz,dy,segments,mat in [('Pupil',.006,.012,0,0,-.010,8,pupil_mat),('EyeGlint',.003,.004,-.003,.007,-.011,6,glint_mat)]:
   center=iris.location+Vector((dx,dy,dz))
@@ -182,9 +240,9 @@ meshes=[o for o in bpy.context.scene.objects if o.type=='MESH' and o.parent==rig
 bpy.ops.object.select_all(action='DESELECT'); rig.select_set(True)
 for o in meshes: o.select_set(True)
 out=ROOT/'assets/models/female/lia_rigged.glb'
-bpy.ops.export_scene.gltf(filepath=str(out),export_format='GLB',use_selection=True,export_animations=True,export_animation_mode='ACTIONS',export_frame_range=False)
-bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'assets/source/female/lia_rigged.blend'))
 tris=0
 for o in meshes: o.data.calc_loop_triangles(); tris+=len(o.data.loop_triangles)
-assert tris<=5000
-(ROOT/'assets/models/female/rigged_report.json').write_text(json.dumps({'triangles':tris,'bones':list(rig.data.bones.keys()),'clips':list(recipes)+['walk','run'],'duration_seconds':{'battle':16/24,'walk':1,'run':16/24},'mixed_joint_vertices':mixed,'flat_floor_samples':grounding,'weights':'smooth joints with separate hands, coat tails and feet; no new reduction'},indent=2))
+assert tris+140<=5000, 'Character plus willow staff exceeds the shared visual budget'
+bpy.ops.export_scene.gltf(filepath=str(out),export_format='GLB',use_selection=True,export_animations=True,export_animation_mode='ACTIONS',export_frame_range=False)
+bpy.ops.wm.save_as_mainfile(filepath=str(ROOT/'assets/source/female/lia_rigged.blend'))
+(ROOT/'assets/models/female/rigged_report.json').write_text(json.dumps({'triangles':tris,'bones':list(rig.data.bones.keys()),'clips':list(recipes)+['walk','run'],'duration_seconds':{'battle':16/24,'walk':1,'run':16/24},'mixed_joint_vertices':mixed,'flat_floor_samples':grounding,'removed_debris_vertices':removed_debris,'weights':'smooth joints, separate five-finger hands, coat tails and feet; no new reduction'},indent=2))

@@ -38,21 +38,35 @@ func _ready() -> void:
 		skeleton.add_child(socket)
 		staff_visual = load("res://assets/models/female/willow_staff.glb").instantiate()
 		socket.add_child(staff_visual)
-		staff_visual.transform = skeleton.get_bone_global_rest(hand).affine_inverse() * Transform3D(Basis.IDENTITY, Vector3(-.67,.955,.045))
+		staff_visual.transform = skeleton.get_bone_global_rest(hand).affine_inverse() * Transform3D(Basis.IDENTITY, Vector3(-.67,.955,.085))
 		staff_visual.visible = false
 
 func set_equipment_visual(weapon: ItemDefinition) -> void:
 	if staff_visual != null:
 		staff_visual.visible = weapon != null and weapon.id == &"willow_staff"
 		if not staff_visual.visible:
-			var finger: int = skeleton.find_bone("FingersRight")
-			if _clip_rest.has(finger): skeleton.set_bone_pose_rotation(finger,_clip_rest[finger])
+			for name: String in ["FingersRight","IndexRight","MiddleRight","RingRight","PinkyRight","ThumbRight"]:
+				var finger: int = skeleton.find_bone(name)
+				if _clip_rest.has(finger): skeleton.set_bone_pose_rotation(finger,_clip_rest[finger])
 
 func _apply_grip() -> void:
 	if staff_visual == null or not staff_visual.visible: return
-	var finger: int = skeleton.find_bone("FingersRight")
-	if finger >= 0:
-		skeleton.set_bone_pose_rotation(finger, _clip_rest[finger] * Quaternion.from_euler(Vector3(.45,0,0)))
+	_curl_bone("FingersRight",.45)
+	for name: String in ["IndexRight","MiddleRight","RingRight","PinkyRight"]:
+		_curl_bone(name,.35)
+	_curl_bone("ThumbRight",.25)
+	var thumb: int = skeleton.find_bone("ThumbRight")
+	if thumb >= 0:
+		var opposition: Vector3 = (skeleton.get_bone_global_rest(thumb).basis.inverse()*Vector3.BACK).normalized()
+		skeleton.set_bone_pose_rotation(thumb,skeleton.get_bone_pose_rotation(thumb)*Quaternion(opposition,-1.1))
+
+func _curl_bone(name: String,angle: float) -> void:
+	var index: int = skeleton.find_bone(name)
+	if index < 0: return
+	var rest_basis: Basis = skeleton.get_bone_global_rest(index).basis
+	var axis: Vector3 = rest_basis.y.cross(Vector3.BACK).normalized()
+	var local_axis: Vector3 = (rest_basis.inverse()*axis).normalized()
+	skeleton.set_bone_pose_rotation(index,_clip_rest[index]*Quaternion(local_axis,angle))
 
 func play_battle_action(action: StringName) -> void:
 	if _dead or animation_player == null: return

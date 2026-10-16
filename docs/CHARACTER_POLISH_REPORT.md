@@ -56,3 +56,12 @@
 執行：`./tools/godot.ps1 -Mode PreviewCharacters`，或在 Godot 開啟上述獨立場景執行。自動驗證 `-Mode TestCharacterPreview`：12 通過、0 失敗，日誌 `artifacts/logs/testcharacterpreview-20261017-040100-504.log`；Check 成功見 `check-20261017-040006-954.log`。證據：`artifacts/female_character/viewer_face.webp`、viewer_lia、viewer_ren。
 
 此場景是角色外觀檢查工具，不是正式旅程或 Android 驗收；角色近距離拓樸仍有生成網格的簡化限制。
+
+## CP05：五指手型與碎片清理
+
+- 在保留的七骨原件副本上移除 42 個獨立碎片頂點（14 個小三角片），清除瀏海旁的懸空短線。
+- 取代原生成網格的粗糙遠端手型，製作左右手掌與各五指，29 骨、4,662 面；持法杖共 4,802 面。每指目前只有一個可控關節，並非完整人手多節骨架。
+- 手掌連接延伸到原護腕內，修正早期手腕接縫與旋轉方向；握持按掌心方向彎曲，拇指加入對握。近景仍可見簡化幾何接縫，不宣稱封閉拓樸或所有持物角度零穿插。
+- 匯出前檢查人物與法杖總面數，不在面數失敗時覆寫交付檔。
+
+已查看 hand_open／hand_grip 近景及 viewer_face 清理後畫面。VisualFemaleHand 各指綁定、五指彎曲及卸裝回位 22 項通過；其餘 VisualFemaleAnimation 32、TestCharacterPreview 12、VisualFemaleFace 14、VisualG06Story 68 項通過，鞋底 98 點取樣維持通過。主要證據：`artifacts/logs/visualfemalehand-20261017-0409*.log`、`testcharacterpreview-20261017-040902-773.log`、`visualg06story-20261017-040912-503.log`；資產檢查 `artifacts/female_hands_check/report.json` 通過，含顯示輔助物 4,742 面。

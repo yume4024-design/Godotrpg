@@ -1,5 +1,5 @@
 {
-  "triangles": 4582,
+  "triangles": 4662,
   "bones": [
     "Root",
     "Torso",
@@ -8,10 +8,20 @@
     "ForearmLeft",
     "HandLeft",
     "FingersLeft",
+    "IndexLeft",
+    "MiddleLeft",
+    "RingLeft",
+    "PinkyLeft",
+    "ThumbLeft",
     "ArmRight",
     "ForearmRight",
     "HandRight",
     "FingersRight",
+    "IndexRight",
+    "MiddleRight",
+    "RingRight",
+    "PinkyRight",
+    "ThumbRight",
     "LegLeft",
     "ShinLeft",
     "FootLeft",
@@ -36,8 +46,8 @@
     "run": 0.6666666666666666
   },
   "mixed_joint_vertices": {
-    "ForearmLeft": 93,
-    "ForearmRight": 89,
+    "ForearmLeft": 87,
+    "ForearmRight": 84,
     "ShinLeft": 61,
     "ShinRight": 64
   },
@@ -53,5 +63,6 @@
       "sampled_frames": 17
     }
   },
-  "weights": "smooth joints with separate hands, coat tails and feet; no new reduction"
+  "removed_debris_vertices": 42,
+  "weights": "smooth joints, separate five-finger hands, coat tails and feet; no new reduction"
 }

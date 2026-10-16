@@ -11,10 +11,10 @@ func _run() -> void:
 	root.add_child(viewer)
 	await create_timer(.3).timeout
 	var info: Label = viewer.get("info")
-	_check(info.text.contains("19 骨") and info.text.contains("4582"),"Lia resources and exact mesh budget load")
+	_check(info.text.contains("29 骨") and info.text.contains("4662"),"Lia resources and exact mesh budget load")
 	var staff: CheckBox = viewer.get("staff_toggle")
 	await _click(staff)
-	_check(staff.button_pressed and info.text.contains("4722"),"Mouse toggles staff and exact combined budget")
+	_check(staff.button_pressed and info.text.contains("4802"),"Mouse toggles staff and exact combined budget")
 	var actions: Dictionary = viewer.get("action_buttons")
 	await _click(actions[&"mend"])
 	var actor: CartoonActor = viewer.get("actor")
