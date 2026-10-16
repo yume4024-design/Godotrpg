@@ -149,3 +149,9 @@ CP11 release 重新匯出至 builds/character-qa/20261017-044240，Full 83/0、R
 `./tools/godot.ps1 -Mode TestCharacterLifecycle`，Godot 4.7.2 圖形模式：12 次建立真實 BattleArena／莉雅／裝備，透過 BattleManager.submit 成功療癒，在追蹤光點仍作用的 0.08 秒時移除整個戰場。
 
 62 項通過、0 失敗，日誌 `artifacts/logs/testcharacterlifecycle-20261017-044430-470.log`。WeakRef 確認每次戰場、角色、骨架及光點均被釋放，場景節點和 frame_pre_draw 連線回到基線；等待延遲戰鬥續行後仍無節點、無作用中 Tween。引擎靜態配置約 39,486,729～39,528,537 bytes，包含快取暖機，不能由短樣本宣稱所有遊戲狀態無洩漏。本輪未發現需額外修改正式功能的殘留。
+
+## CP13：靜止斜坡腳部 IK 原型
+
+`scripts/characters/lia_foot_placement.gd` 是明確注入角色／Skeleton 的選用組件。物理更新執行腳底射線，視覺更新在角色動畫之後解算大腿／小腿，將鞋底朝向地面；斜坡提供最多 6cm 骨盆下沉空間。只改骨架，不移動 actor／碰撞膠囊，倒下、施法、沒有地面或停用角色處理時不作用。目前行走時停用，沒有接入正式 NPC 或戰鬥。
+
+`./tools/godot.ps1 -Mode TestFemaleSlope`：33/0，`artifacts/logs/testfemaleslope-20261017-044833-261.log`。在平地、前後／左右各 10 度斜坡，以匯入網格 Skin 實際計算雙腳鞋底；靜止鞋底與平面距離約 -0.159～0.872mm，腳踝目標誤差 <1mm，actor 位置不變。已查看 slope_10_0 與 slope_0_10 實際畫面，膝部彎曲可見。這是原型的有限角度驗證，不是全地形、台階、移動／抬腳或完整 IK 驗收。
