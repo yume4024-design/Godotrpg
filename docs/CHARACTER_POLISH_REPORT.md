@@ -73,3 +73,12 @@
 - 節點移除或釋放時停止追蹤，特效沿原有生命週期清理。未新增特效管理器、貼圖或粒子依賴。
 
 VisualFemaleAnimation 38 通過、0 失敗（`artifacts/logs/visualfemaleanimation-20261017-041423-106.log`）；含實際持杖／空手療癒、移動中光點位置誤差 <5mm 及來源釋放。VisualActionEffects 26 通過、VisualG06Story 68 通過（`visualg06story-20261017-041331-807.log`）。已查看 `spell_staff_charge.webp`／`spell_palm_charge.webp`；治療數字遮擋角色資訊列入下一項修正。
+
+## CP07：戰鬥浮字避開資訊
+
+- 傷害／治療浮字依同組角色位置向外側顯示，減低起點及上升範圍，避開名稱與 HP。數值、顏色及 0.45 秒生命週期不變。
+- 自動測試以相機投影、字型大小與外框估算螢幕矩形，在四個時間點檢查全部角色資訊；初稿仍與小型蝙蝠標籤重疊八次，增大側向間距後修復。
+- VisualActionEffects：86 通過、0 失敗，`artifacts/logs/visualactioneffects-20261017-041810-327.log`。已查看 fx_attack 與 spell_staff_charge 畫面確認浮字可讀。
+- VisualFemaleAnimation：38 通過；VisualG06Story：68 通過，見本輪 `artifacts/logs/visualg06story-20261017-0418*.log`。
+
+此檢查涵蓋目前測試角色與鏡頭，不宣稱所有未來三人隊形、極窄比例或多段連擊均已驗收。

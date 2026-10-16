@@ -98,9 +98,15 @@ func _animate(actor_id: StringName, target_id: StringName, amount: int, healing:
 	popup.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 	popup.modulate = Color("#8ce6b0") if healing else Color("#ffe3a3")
 	add_child(popup)
-	popup.position = target.position + Vector3.UP * 1.5
+	var target_state: CombatantState = _manager.find_actor(target_id)
+	var group: Array[CombatantState] = _manager.allies if target_state.ally else _manager.enemies
+	var mean_x: float = 0.0
+	for member: CombatantState in group: mean_x += _origins[member.instance_id].x
+	mean_x /= group.size()
+	var side: float = (-1.0 if target_state.ally else 1.0) if group.size()==1 else (-1.0 if _origins[target_id].x<=mean_x else 1.0)
+	popup.position = target.position + Vector3(side*1.6,.9,.35)
 	var rise: Tween = create_tween()
-	rise.tween_property(popup, "position:y", popup.position.y + 1.0, 0.45)
+	rise.tween_property(popup, "position:y", popup.position.y + .6, 0.45)
 	rise.tween_callback(popup.queue_free)
 
 func _mesh(parent: Node3D, mesh: Mesh, position_value: Vector3, color: Color) -> MeshInstance3D:

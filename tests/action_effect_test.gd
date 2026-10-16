@@ -43,7 +43,14 @@ func _run() -> void:
 			_check(manager.submit(action,target,manager.turn_token), "Successful action " + action)
 		manager.phase = BattleManager.Phase.IDLE
 		_check(events[-1] == action, "Correct presentation id " + action)
-		await create_timer(.32).timeout
+		for sample: int in range(4):
+			await create_timer(.08).timeout
+			var camera: Camera3D = root.get_camera_3d()
+			var labels: Dictionary = arena.stage.get("_labels")
+			for child: Node in arena.stage.get_children():
+				if child is Label3D and child not in labels.values():
+					for label: Label3D in labels.values():
+						_check(not _screen_rect(child,camera).intersects(_screen_rect(label,camera)),"Floating number clears HP/name labels")
 		_check(_effects(arena.stage) == 1, "Exactly one active effect")
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_webp("res://artifacts/fx_%s.webp" % action)
@@ -73,3 +80,13 @@ func _check(ok: bool, label: String) -> void:
 	checks += 1
 	if not ok: failures += 1
 	print("%s %s" % ["PASS" if ok else "FAIL",label])
+
+func _screen_rect(label: Label3D,camera: Camera3D) -> Rect2:
+	var font: Font = label.font if label.font!=null else ThemeDB.fallback_font
+	var size: Vector2 = font.get_multiline_string_size(label.text,HORIZONTAL_ALIGNMENT_CENTER,-1,label.font_size)
+	size += Vector2.ONE*label.outline_size*2
+	size *= label.pixel_size
+	var center: Vector2 = camera.unproject_position(label.global_position)
+	var width: float = absf(camera.unproject_position(label.global_position+camera.global_basis.x*size.x).x-center.x)
+	var height: float = absf(camera.unproject_position(label.global_position+camera.global_basis.y*size.y).y-center.y)
+	return Rect2(center-Vector2(width,height)*.5,Vector2(width,height))
