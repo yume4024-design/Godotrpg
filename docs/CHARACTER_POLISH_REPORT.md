@@ -117,3 +117,15 @@ Godot 4.7.2、Windows RTX 3080、Compatibility、1280×720、VSync 關閉、無 
 - `ProfileCharacters`：31 通過、0 失敗；`artifacts/logs/profilecharacters-20261017-043116-721.log`，原始 `artifacts/performance/character_battle.json`。核對每組消耗兩瓶藥、特效清理、零獎勵結算；已查看 character_updated_true 畫面。
 - `ProfileGreystoneDynamic`：63 通過、0 失敗；`profilegreystonedynamic-20261017-042958-007.log`，六區實際移動且角色／背包／劇情等狀態不變。正常取樣 P95 1.072～1.462ms，公會 Draw Calls 348～366 最高；引擎靜態配置峰值約 281.97MiB，顯示配置最高 77.29MiB。
 - 45m 隱藏只作診斷比較，沒有套入正式地圖；`TIME_PROCESS` 快取值仍不能當逐幀 CPU 耗時。Android 暫停，未驗收。
+
+## CP10：獨立 Windows release 包
+
+- 新增 `Windows Character QA` preset 與 `character_qa` feature 專用入口。既有正式與 QA preset 保留；`ExportCharacterQA` 每次輸出新的時間目錄，不覆寫 v0.6.1。
+- QA release 先用滑鼠操作角色檢視工具，驗證 29 骨、七片段、步距 Resource、法杖與八個臉部形變表面，再沿既有 G06 測試跑完實際序章。使用獨立 APPDATA 及 `user://character_qa/` 槽位，截圖也寫入該目錄。
+- `./tools/godot.ps1 -Mode ExportCharacterQA`：成功，`artifacts/logs/exportcharacterqa-20261017-043434-331.log`。
+- `./tools/test_character_build.ps1 -Mode Full`：83 通過、0 失敗，`character-export-full-20261017-043448-788.log`。
+- `./tools/test_character_build.ps1 -Mode Reload`：8 通過、0 失敗，`character-export-reload-20261017-043531-941.log`。確認獨立程序保留角色、裝備、212 金幣、300 EXP、星印與獎勵帳本。
+- 產物：`builds/character-qa/20261017-043434/ProjectCrystal.exe`（109,268,480 bytes）、`.pck`（13,988,476 bytes）。不加入 Git。匯出紀錄中未出現來源 `.blend`／assets/source 或根目錄使用者參考圖；preset 明確排除這些來源。
+- 已查看 release 的 character-cast 畫面；此為加速自動化驗證，不代表人工 20～30 分鐘通關或 Android 真機。
+
+原正式輸出在匯出前後 SHA256 一致：exe `d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562`，pck `a8c95f156c55a0cf15cb6b71e617c435868eb6822d0c08a014fbdefbb42002b7`。證據 `artifacts/character_qa_formal_before.json`。
