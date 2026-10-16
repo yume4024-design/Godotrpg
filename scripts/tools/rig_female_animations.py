@@ -78,6 +78,47 @@ for v in body.data.vertices:
 assert all(mixed.values()), mixed
 print('JOINT_WEIGHT_AUDIT',mixed)
 
+# Small facial accents from the supplied front reference; no new body topology.
+def face_material(name,color):
+ mat=bpy.data.materials.new(name); mat.diffuse_color=(*color,1); mat.use_nodes=True
+ mat.node_tree.nodes['Principled BSDF'].inputs['Base Color'].default_value=(*color,1)
+ mat.node_tree.nodes['Principled BSDF'].inputs['Roughness'].default_value=.9
+ return mat
+pupil_mat=face_material('Pupil',(.008,.018,.035))
+glint_mat=face_material('EyeGlint',(.95,.95,.95))
+mouth_mat=face_material('LipLine',(.17,.065,.045))
+def skinned_face(name,vertices,faces,mat):
+ mesh=bpy.data.meshes.new(name); mesh.from_pydata(vertices,[],faces); mesh.update()
+ uv=mesh.uv_layers.new(name='UVMap')
+ xs=[v.co.x for v in mesh.vertices]; zs=[v.co.z for v in mesh.vertices]
+ for loop in mesh.loops:
+  co=mesh.vertices[loop.vertex_index].co
+  uv.data[loop.index].uv=((co.x-min(xs))/max(.00001,max(xs)-min(xs)),(co.z-min(zs))/max(.00001,max(zs)-min(zs)))
+ obj=bpy.data.objects.new(name,mesh); bpy.context.collection.objects.link(obj)
+ obj.data.materials.append(mat); obj.parent=rig
+ obj.vertex_groups.new(name='Head').add(list(range(len(vertices))),1,'REPLACE')
+ modifier=obj.modifiers.new('Skin','ARMATURE'); modifier.object=rig
+ return obj
+for iris in [o for o in list(bpy.context.scene.objects) if o.type=='MESH' and o.name.startswith('Iris')]:
+ for name,rx,rz,dx,dz,dy,segments,mat in [('Pupil',.006,.012,0,0,-.010,8,pupil_mat),('EyeGlint',.003,.004,-.003,.007,-.011,6,glint_mat)]:
+  center=iris.location+Vector((dx,dy,dz))
+  points=[(0,0,0)]+[(rx*math.cos(i/segments*math.tau),0,rz*math.sin(i/segments*math.tau)) for i in range(segments)]
+  obj=skinned_face(name,points,[(0,i+1,(i+1)%segments+1) for i in range(segments)],mat)
+  obj.location=center
+points=[]
+for x in [-.03,-.015,0,.015,.03]:
+ z=1.625+abs(x)*.2
+ hit,p,_,_=body.ray_cast(Vector((x,-2,z)),Vector((0,1,0)))
+ if hit: points.extend([tuple(p+Vector((0,-.002,-.002))),tuple(p+Vector((0,-.002,.002)))])
+if len(points)==10:
+ skinned_face('SmileLine',points,[(i+2,i+3,i+1,i) for i in range(0,8,2)],mouth_mat)
+for obj in [o for o in bpy.context.scene.objects if o.type=='MESH' and o.name.startswith(('EyeWhite','Iris','Pupil','EyeGlint'))]:
+ obj.shape_key_add(name='Basis')
+ blink=obj.shape_key_add(name='Blink')
+ for point in blink.data:
+  center=1.715-obj.location.z
+  point.co.z=center+(point.co.z-center)*.08
+
 # Every clip contains explicit zero endpoints for all joints.
 recipes={
  'cast':{'ArmLeft':(-.35,0,.12),'ArmRight':(-.22,0,-.12),'ForearmLeft':(-.65,0,0),'ForearmRight':(-.45,0,0),'HandLeft':(.12,0,0),'Head':(-.04,0,0)},

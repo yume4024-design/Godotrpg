@@ -10,9 +10,13 @@ var _blend_positions: Dictionary[int, Vector3] = {}
 var _blend_elapsed: float = 0.0
 const BLEND_SECONDS: float = .12
 var _running: bool = false
+var _blink_meshes: Array[MeshInstance3D] = []
+var _blink_clock: float = 1.0
 
 func _ready() -> void:
 	super._ready()
+	for mesh: MeshInstance3D in _model_root.find_children("*","MeshInstance3D",true,false):
+		if mesh.find_blend_shape_by_name("Blink") >= 0: _blink_meshes.append(mesh)
 	animation_player = _model_root.find_child("AnimationPlayer", true, false) as AnimationPlayer
 	for index: int in range(skeleton.get_bone_count()):
 		_clip_rest[index] = skeleton.get_bone_pose_rotation(index)
@@ -61,6 +65,7 @@ func play_battle_action(action: StringName) -> void:
 	animation_player.advance(0)
 
 func _process(delta: float) -> void:
+	_update_face(delta)
 	if _dead: return
 	if animation_player != null and battle_pose != &"":
 		_restore_pose()
@@ -92,6 +97,13 @@ func _process(delta: float) -> void:
 	super._process(delta)
 	_apply_blend(delta)
 	_apply_grip()
+
+func _update_face(delta: float) -> void:
+	_blink_clock += delta
+	var phase: float = fmod(_blink_clock,4.3)
+	var closure: float = 1.0 if _dead else sin(PI*phase/.16) if phase < .16 else 0.0
+	for mesh: MeshInstance3D in _blink_meshes:
+		mesh.set_blend_shape_value(mesh.find_blend_shape_by_name("Blink"),closure)
 
 func _finished(_clip: StringName) -> void:
 	_capture_blend()
@@ -130,3 +142,4 @@ func set_dead(value: bool) -> void:
 		_blend_rotations.clear()
 		_blend_positions.clear()
 	super.set_dead(value)
+	_update_face(0)
