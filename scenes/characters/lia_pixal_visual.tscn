@@ -1,0 +1,10 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/characters/female_actor.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/pixal3d/lia_rigged.glb" id="2"]
+[ext_resource type="Resource" path="res://assets/models/pixal3d/lia_motion_profile.tres" id="3"]
+[node name="LiaPixalVisual" type="Node3D"]
+script = ExtResource("1")
+model = ExtResource("2")
+motion_profile = ExtResource("3")
+staff_rest_origin = Vector3(-0.485,0.91,0.05)
+palm_rest_origin = Vector3(-0.485,0.91,0.05)

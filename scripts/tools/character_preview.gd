@@ -153,14 +153,14 @@ func _select_character(index: int) -> void:
 	if actor != null:
 		remove_child(actor)
 		actor.queue_free()
-	var file: String = "ren_user_visual" if index == 0 else "lia_user_visual"
+	var file: String = "ren_pixal_visual" if index == 0 else "lia_pixal_visual"
 	actor = load("res://scenes/characters/%s.tscn" % file).instantiate()
 	add_child(actor)
 	actor.position.x = -.65
 	character_buttons[index].set_pressed_no_signal(true)
 	motion_buttons[0].set_pressed_no_signal(true)
 	staff_toggle.set_pressed_no_signal(false)
-	staff_toggle.disabled = not actor.has_method("set_equipment_visual")
+	staff_toggle.disabled = index==0 or not actor.has_method("set_equipment_visual")
 	for action: StringName in action_buttons:
 		action_buttons[action].disabled = not actor.has_method("play_battle_action")
 	actor.rotation.y = deg_to_rad(angle_slider.value)

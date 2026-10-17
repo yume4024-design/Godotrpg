@@ -11,10 +11,10 @@ func _run() -> void:
 	root.add_child(viewer)
 	await create_timer(.3).timeout
 	var info: Label = viewer.get("info")
-	_check(info.text.contains("29 骨") and info.text.contains("4726"),"Lia resources and exact mesh budget load")
+	_check(info.text.contains("19 骨") and info.text.contains("4806"),"New Lia resources and exact mesh budget load")
 	var staff: CheckBox = viewer.get("staff_toggle")
 	await _click(staff)
-	_check(staff.button_pressed and info.text.contains("4866"),"Mouse toggles staff and exact combined budget")
+	_check(staff.button_pressed and info.text.contains("4946"),"Mouse toggles staff and exact combined budget")
 	var actions: Dictionary = viewer.get("action_buttons")
 	await _click(actions[&"mend"])
 	var actor: CartoonActor = viewer.get("actor")
@@ -35,9 +35,9 @@ func _run() -> void:
 	await _click(choices[0])
 	await create_timer(.1).timeout
 	actor = viewer.get("actor")
-	_check(choices[0].button_pressed and actor.model.resource_path.ends_with("ren_user.glb"),"Mouse selects Ren")
-	_check(staff.disabled and actions[&"mend"].disabled,"Unavailable Ren controls disabled")
-	_check(info.text.contains("4579"),"Ren exact mesh budget loads")
+	_check(choices[0].button_pressed and actor.model.resource_path.ends_with("pixal3d/ren_rigged.glb"),"Mouse selects new Ren")
+	_check(staff.disabled and not actions[&"mend"].disabled,"New Ren has imported action controls")
+	_check(info.text.contains("4815"),"Ren exact mesh budget loads")
 	var motions: Array = viewer.get("motion_buttons")
 	await _click(motions[2])
 	await create_timer(.2).timeout

@@ -29,8 +29,8 @@ func _run() -> void:
 		var ren: CombatantDefinition = load("res://data/characters/ren.tres").duplicate()
 		var lia: CombatantDefinition = load("res://data/characters/lia.tres").duplicate()
 		if updated:
-			ren.appearance = load("res://scenes/characters/ren_user_visual.tscn")
-			lia.appearance = load("res://scenes/characters/lia_user_visual.tscn")
+			ren.appearance = load("res://scenes/characters/ren_pixal_visual.tscn")
+			lia.appearance = load("res://scenes/characters/lia_pixal_visual.tscn")
 		party.setup([ren,lia])
 		party.member(&"lia").set_equipment(&"weapon",load("res://data/items/willow_staff.tres"))
 		inventory.item_definitions.assign([load("res://data/items/potion.tres")])

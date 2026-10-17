@@ -13,14 +13,14 @@ var _inn_service: bool = false
 
 func _ready() -> void:
 	greystone_enabled = true
-	var hero_visual: PackedScene = load("res://scenes/characters/ren_user_visual.tscn")
+	var hero_visual: PackedScene = load("res://scenes/characters/ren_pixal_visual.tscn")
 	starting_character = starting_character.duplicate()
 	starting_character.appearance = hero_visual
 	for index: int in range(battles.definitions.size()):
 		if battles.definitions[index].id == &"ren": battles.definitions[index] = starting_character
 		if battles.definitions[index].id == &"lia":
 			var lia_definition: CombatantDefinition = battles.definitions[index].duplicate()
-			lia_definition.appearance = load("res://scenes/characters/lia_user_visual.tscn")
+			lia_definition.appearance = load("res://scenes/characters/lia_pixal_visual.tscn")
 			battles.definitions[index] = lia_definition
 	var old_appearance: CartoonActor = player.appearance
 	player.visual.remove_child(old_appearance)

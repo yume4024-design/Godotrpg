@@ -1,12 +1,17 @@
 """Read-only GLB inventory for the Windows character acceptance gate."""
 import json
 import math
+import argparse
 import pathlib
 import struct
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
+parser = argparse.ArgumentParser()
+parser.add_argument("--pixal",action="store_true")
+args = parser.parse_args()
 rows = []
-for relative in ("assets/models/hero/ren_user.glb", "assets/models/female/lia_rigged.glb", "assets/models/female/willow_staff.glb"):
+characters = ("assets/models/pixal3d/ren_rigged.glb","assets/models/pixal3d/lia_rigged.glb") if args.pixal else ("assets/models/hero/ren_user.glb","assets/models/female/lia_rigged.glb")
+for relative in (*characters,"assets/models/female/willow_staff.glb"):
     path = ROOT / relative
     raw = path.read_bytes()
     magic, version, length = struct.unpack_from("<III", raw)
@@ -65,7 +70,7 @@ for relative in ("assets/models/hero/ren_user.glb", "assets/models/female/lia_ri
     rows.append(row)
     print(json.dumps({k: v for k, v in row.items() if k != "primitives"}, ensure_ascii=False))
 assert rows[1]["triangles"] + rows[2]["triangles"] < 5000
-output = ROOT / "artifacts/character_cp23/glb_audit.json"
+output = ROOT / ("artifacts/pixal3d/glb_audit.json" if args.pixal else "artifacts/character_cp23/glb_audit.json")
 output.parent.mkdir(parents=True, exist_ok=True)
 output.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
 print("GLB_AUDIT_PASS: individual and equipped Lia budgets < 5000")

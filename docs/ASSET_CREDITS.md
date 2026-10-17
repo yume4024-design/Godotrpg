@@ -1,5 +1,12 @@
 # 素材來源與修改紀錄
 
+## 2026-10-17 Pixal3D 雙角色重製
+
+- 使用者指定本機 `3d_pixal3d_multi_views`，ComfyUI 0.41.3、模型檔 `pixal3d_multiview_int8_convrot.safetensors`；未在此儲存庫分發權重或呼叫付費 API。
+- [Comfy-Org/Pixal3D](https://huggingface.co/Comfy-Org/Pixal3D) 為 [TencentARC/Pixal3D](https://huggingface.co/TencentARC/Pixal3D) 的封裝；模型頁均標示 MIT，核對日期 2026-10-17。工作流為使用者已配置副本，參照 [官方多視角模板](https://github.com/Comfy-Org/workflow_templates/blob/main/templates/3d_pixal3d_multi_views.json)。
+- 雷恩／莉雅參考圖由使用者提供；副本與雜湊存於 `assets/source/pixal3d/references/`、generation_manifest.json，原件保留。
+- 修改：重新生成身體／服裝／UV／PBR、比例、骨架、七段小幅動作、原創眼睛／嘴線／Blink、執行用貼圖 1K。法杖沿用本專案原創資產；不宣稱 AI 輸出為純手工建模。細節見 [重製報告](PIXAL3D_CHARACTER_REPORT.md)。
+
 ## 2026-10-17 柳木法杖
 
 - 專案自製 Blender 幾何體及材質，無外部素材、貼圖或授權依賴。

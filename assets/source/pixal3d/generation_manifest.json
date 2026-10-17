@@ -1,0 +1,141 @@
+{
+  "workflow": "3d_pixal3d_multi_views",
+  "template": {
+    "path": "scripts/tools/workflows/pixal3d/3d_pixal3d_multi_views.api.json",
+    "bytes": 19109,
+    "sha256": "2906628f76f2066468c241c39d253a307d4c964abc295971234e93a0cf330722"
+  },
+  "comfyui": "0.41.3",
+  "comfy_cli": "1.22.0",
+  "model": "pixal3d_multiview_int8_convrot.safetensors",
+  "shape_resolution": 1024,
+  "texture_resolution": 1024,
+  "remesh_resolution": 384,
+  "target_faces": 4800,
+  "hardware": "RTX 3080 12GiB",
+  "cost": "local inference; no partner API",
+  "cancelled_invalid_crop_prompt": "eda8fda3-d667-4641-a65a-80513c6bb39f",
+  "characters": [
+    {
+      "character": "ren",
+      "prompt_id": "4397b111-bf37-4ff4-8312-02494c7ba4f5",
+      "runtime": {
+        "path": "assets/models/pixal3d/ren_rigged.glb",
+        "bytes": 3298216,
+        "sha256": "6bb14ae0c547d4b187cf6f87548f601856580e6412770623b7a42e40543921f6"
+      },
+      "raw": {
+        "path": "assets/source/pixal3d/raw/ren_generated.glb",
+        "bytes": 5566868,
+        "sha256": "7589a1ea74d1a705e0b04e055ac0fc394086bd6e26b1f93ffb41af415297d903"
+      },
+      "workfile": {
+        "path": "assets/source/pixal3d/ren_rigged.blend",
+        "bytes": 3316703,
+        "sha256": "f60c14c3455122e89a5e58d5ff08c6b00e5dd73a209e34e4ed5a3517440cf462"
+      },
+      "references": [
+        {
+          "path": "assets/source/pixal3d/references/ren_turnaround.png",
+          "bytes": 1847888,
+          "sha256": "f69cc4e453126e6dc8e915c1b36e3a9bd8c04b9a09c413ed616125cf4a934832"
+        }
+      ],
+      "triangles": 4815,
+      "skin_joint_counts": [
+        19
+      ],
+      "animations": [
+        "attack",
+        "cast",
+        "guard",
+        "hit",
+        "potion",
+        "run",
+        "walk"
+      ],
+      "texture_sizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ]
+    },
+    {
+      "character": "lia",
+      "prompt_id": "5bed02b9-a91d-463d-9b5a-b13db2b591fa",
+      "runtime": {
+        "path": "assets/models/pixal3d/lia_rigged.glb",
+        "bytes": 3639532,
+        "sha256": "d2ebab02be6b38b6d539f8a77d50d82baaebcf4e64153ac0c36b94e9fdfc96a4"
+      },
+      "raw": {
+        "path": "assets/source/pixal3d/raw/lia_generated.glb",
+        "bytes": 5841316,
+        "sha256": "989314f3d11d7c9a5541b6758f8fdb19f94c4bd449dc550048cb6e9c56ef2240"
+      },
+      "workfile": {
+        "path": "assets/source/pixal3d/lia_rigged.blend",
+        "bytes": 3655367,
+        "sha256": "37122d8e4d34f4535aa095a45f21f63f1f15036148b1095362a327d1ddb0279f"
+      },
+      "references": [
+        {
+          "path": "assets/source/pixal3d/references/lia_front.png",
+          "bytes": 1767231,
+          "sha256": "5b313ed2dee9c39f15c26f961f8add6301b299cd9ae39f9a8b4364e62af2ab73"
+        },
+        {
+          "path": "assets/source/pixal3d/references/lia_left.png",
+          "bytes": 1651745,
+          "sha256": "65a8d97dde047e90d913b3a29b407a4b9490b551ab8d61f48282b270d4e8e05f"
+        },
+        {
+          "path": "assets/source/pixal3d/references/lia_back.png",
+          "bytes": 1720941,
+          "sha256": "4758aec54bf1ca17e309f21eb67d945566d6d44b090fd8543b161d5fde6ea90a"
+        },
+        {
+          "path": "assets/source/pixal3d/references/lia_right.png",
+          "bytes": 1656866,
+          "sha256": "f5f94fb4030dcfcd7faab9f2732eb619433df02af0f3baa277af56efa1e13ab7"
+        }
+      ],
+      "triangles": 4806,
+      "skin_joint_counts": [
+        19
+      ],
+      "animations": [
+        "attack",
+        "cast",
+        "guard",
+        "hit",
+        "potion",
+        "run",
+        "walk"
+      ],
+      "texture_sizes": [
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ],
+        [
+          1024,
+          1024
+        ]
+      ]
+    }
+  ]
+}

@@ -1,4 +1,6 @@
 extends "res://scripts/characters/user_hero_actor.gd"
+@export var staff_rest_origin: Vector3 = Vector3(-.67,.955,.085)
+@export var palm_rest_origin: Vector3 = Vector3(-.66,.95,.08)
 ## Imported clips own the skeleton during battle; idle resumes after explicit reset.
 var battle_pose: StringName = &""
 var animation_player: AnimationPlayer
@@ -47,7 +49,7 @@ func _ready() -> void:
 		skeleton.add_child(socket)
 		staff_visual = load("res://assets/models/female/willow_staff.glb").instantiate()
 		socket.add_child(staff_visual)
-		staff_visual.transform = skeleton.get_bone_global_rest(hand).affine_inverse() * Transform3D(Basis.IDENTITY, Vector3(-.67,.955,.085))
+		staff_visual.transform = skeleton.get_bone_global_rest(hand).affine_inverse() * Transform3D(Basis.IDENTITY, staff_rest_origin)
 		staff_visual.visible = false
 		staff_focus = Marker3D.new()
 		staff_focus.position = Vector3(.07,.75,0)
@@ -59,7 +61,7 @@ func _ready() -> void:
 		skeleton.add_child(socket)
 		palm_focus = Marker3D.new()
 		socket.add_child(palm_focus)
-		palm_focus.transform = skeleton.get_bone_global_rest(casting_hand).affine_inverse()*Transform3D(Basis.IDENTITY,Vector3(-.66,.95,.08))
+		palm_focus.transform = skeleton.get_bone_global_rest(casting_hand).affine_inverse()*Transform3D(Basis.IDENTITY,palm_rest_origin)
 
 func get_spell_focus() -> Node3D:
 	return staff_focus if staff_visual != null and staff_visual.visible else palm_focus

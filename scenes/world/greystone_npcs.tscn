@@ -1,7 +1,7 @@
 [gd_scene format=3]
 [ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
 [ext_resource type="PackedScene" path="res://scenes/characters/guildmaster_visual.tscn" id="Guild"]
-[ext_resource type="PackedScene" path="res://scenes/characters/lia_user_visual.tscn" id="Lia"]
+[ext_resource type="PackedScene" path="res://scenes/characters/lia_pixal_visual.tscn" id="Lia"]
 [ext_resource type="PackedScene" path="res://scenes/characters/ren_visual.tscn" id="Ren"]
 [sub_resource type="CapsuleShape3D" id="Body"]
 radius = 0.3
