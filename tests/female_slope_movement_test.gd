@@ -14,8 +14,14 @@ func _run() -> void:
 		return
 	root.size = Vector2i(1000,800)
 	var target_fps: int = 60
+	var slope_degrees: float = 10.0
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--test-fps="): target_fps = argument.trim_prefix("--test-fps=").to_int()
+		if argument.begins_with("--slope-degrees="): slope_degrees = argument.trim_prefix("--slope-degrees=").to_float()
+	if slope_degrees<=0 or slope_degrees>=45:
+		push_error("Probe slope must be between 0 and the controller's 45 degree floor limit")
+		quit(1)
+		return
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
 	Engine.max_fps = target_fps
 	var transitions: bool = "--transitions" in OS.get_cmdline_user_args()
@@ -72,11 +78,11 @@ func _run() -> void:
 	camera.size = 3.5
 	player.movement_camera = camera
 	for axis: int in range(2):
-		floor.rotation_degrees = Vector3(0,0,10) if axis==0 else Vector3(10,0,0)
+		floor.rotation_degrees = Vector3(0,0,slope_degrees) if axis==0 else Vector3(slope_degrees,0,0)
 		var normal: Vector3 = floor.global_basis.y
-		var ramp_height: float = tan(deg_to_rad(10))*6
+		var ramp_height: float = tan(deg_to_rad(slope_degrees))*6
 		if transitions:
-			box.size = Vector3(6/cos(deg_to_rad(10)),.4,8) if axis==0 else Vector3(8,.4,6/cos(deg_to_rad(10)))
+			box.size = Vector3(6/cos(deg_to_rad(slope_degrees)),.4,8) if axis==0 else Vector3(8,.4,6/cos(deg_to_rad(slope_degrees)))
 			floor_mesh.size = box.size
 			floor.position.y = ramp_height*.5
 			low_flat.position = Vector3(-7,0,0) if axis==0 else Vector3(0,0,7)
@@ -122,7 +128,7 @@ func _run() -> void:
 					samples += 1
 				_release()
 				var observed_fps: float = (Engine.get_frames_drawn()-drawn_before)*1000000.0/(Time.get_ticks_usec()-began)
-				print("PHYSICAL_SLOPE transitions=",transitions," axis=",axis," strength=",strength," direction=",sign_value," samples=",samples," grounded=",grounded," minimum_sole_m=",minimum," highest_stance_m=",highest_stance," target_fps=",target_fps," observed_fps=",observed_fps)
+				print("PHYSICAL_SLOPE degrees=",slope_degrees," transitions=",transitions," axis=",axis," strength=",strength," direction=",sign_value," samples=",samples," grounded=",grounded," minimum_sole_m=",minimum," highest_stance_m=",highest_stance," target_fps=",target_fps," observed_fps=",observed_fps)
 				_check(observed_fps>target_fps*.7 and observed_fps<target_fps*1.15,"Renderer actually samples requested update range")
 				_check(Vector2(player.position.x-target.x,player.position.z-target.z).length()<.3,"Controller reaches opposite side of ramp")
 				_check(samples>20 and grounded>=samples*.95,"Capsule remains grounded on fixed slope")
@@ -131,7 +137,7 @@ func _run() -> void:
 				await create_timer(.3).timeout
 				_check(player.velocity.length()<.01,"Controller stops on slope")
 				await RenderingServer.frame_post_draw
-				root.get_texture().get_image().save_webp("res://artifacts/female_character/physical_%s_%d_%s_%s.webp" % ["ramp" if transitions else "slope",axis,str(strength),str(sign_value)])
+				root.get_texture().get_image().save_webp("res://artifacts/female_character/physical_%s_%ddeg_%d_%s_%s.webp" % ["ramp" if transitions else "slope",slope_degrees,axis,str(strength),str(sign_value)])
 	_release()
 	stage.queue_free()
 	await process_frame
