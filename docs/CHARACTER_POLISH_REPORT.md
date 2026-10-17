@@ -220,3 +220,22 @@ CP18 正式路徑回歸：VisualFemaleAnimation 38/0（visualfemaleanimation-202
 - 原正式 exe／pck SHA256 與 CP10 記錄完全一致。測試均使用隔離 APPDATA；預覽遊戲沿用既有 G06 專用存檔及安全遷移，不改 schema。
 
 此為開發預覽，未宣稱人工通關、全硬體相容、正式貼地或 Android 真機通過。使用方式見 GREYSTONE_PREVIEW_GUIDE.md。所有持續工作保存於 feature/greystone-g06，不合併 main。
+
+## CP21：實際村莊的貼地成本
+
+測試專用 `measured_foot_placement.gd` 子類包住地面取樣與骨架解算，正式 `LiaFootPlacement` 沒有計時或陣列記錄負擔。`ProfileLiaFootPlacement` 在獨立移動工具載入真實灰石村地形、建物及碰撞，交替關／開四輪，每輪暖機 0.6 秒、實際 InputMap 往返 4 秒／約 18m。沒有正式 NPC、劇情、戰鬥或存檔服務。
+
+Godot 4.7.2／RTX 3080／Compatibility／1280×720，VSync 關閉、無 FPS 上限：
+
+| 輪次 | 貼地 | 平均幀 ms | P95 幀 ms | 方法平均 µs | 方法 P95 µs |
+| --- | --- | ---: | ---: | ---: | ---: |
+| 0 | 關 | 0.560 | 0.699 | 4.82 | 6 |
+| 1 | 開 | 0.568 | 0.769 | 102.08 | 128 |
+| 2 | 關 | 0.565 | 0.702 | 4.83 | 6 |
+| 3 | 開 | 0.560 | 0.762 | 99.29 | 110 |
+
+每輪 240 次物理方法樣本；開啟時取樣平均約 53～55µs、解算約 46～47µs。Draw Calls 均 121～137，引擎靜態配置約 79.58～79.60MiB、顯示配置約 50.24MiB。計時只含兩個腳本方法，未包含延遲骨架／渲染工作；靜態配置不是程序 RSS，陣列與快取暖機不能視為洩漏。平均幀時間差很小，不宣稱開啟比較快或確證 CPU/GPU 瓶頸。
+
+13/0，`artifacts/logs/profileliafootplacement-20261017-182501-409.log`；原始 `artifacts/performance/lia_foot_placement.json`，已查看 lia_foot_enabled 實際畫面。這是單一桌面／單一角色／廣場動線樣本，不能推論 Android 或多人同時 IK 的效能。
+
+交付補充：以空白專案路徑掛載已交付 PCK，`greystone-pack-audit.log` 正常退出，資源清單 602 項；tests、assets/source、source_assets、根目錄主角／莉雅 PNG 均為 0，沒有混入原生 exe。清單在 `artifacts/greystone-preview-pack-audit.json`。較早未指定可寫日誌路徑的嘗試有 user:// 日誌錯誤，不列為此輪通過證據。
