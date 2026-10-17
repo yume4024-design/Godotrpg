@@ -64,7 +64,8 @@ func _sample_ground(delta: float) -> void:
 			_ground[side] = hit
 
 func _ray_hit(at: Vector3) -> Dictionary:
-	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(at+Vector3.UP*.5,at-Vector3.UP*.65)
+	var mask: int = body.collision_mask if is_instance_valid(body) else 1
+	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(at+Vector3.UP*.5,at-Vector3.UP*.65,mask)
 	if is_instance_valid(body): query.exclude = [body.get_rid()]
 	return skeleton.get_world_3d().direct_space_state.intersect_ray(query)
 
@@ -101,12 +102,24 @@ func _apply_pose(delta: float) -> void:
 		var ankle: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone("Foot"+side)).origin
 		var height: float = sole_height*skeleton.global_basis.get_scale().y
 		_lifts[side] = clampf((ankle-actor.global_position).dot(actor.global_basis.y.normalized())-height,0,.35)
+		_targets[side] = _desired_target(side,_last_ground[side],ankle)
 	var slope: float = 0
 	for hit: Dictionary in _last_ground.values(): slope = maxf(slope,acos(clampf((hit.normal as Vector3).dot(Vector3.UP),-1,1)))
-	# A small pelvis allowance keeps the downhill leg within its physical reach.
+	# Keep both leg targets within reach, including steeper sideways slopes.
+	var desired_drop: float = slope*.35
+	for side: String in _targets:
+		var hip: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone("Leg"+side)).origin
+		var knee: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone("Shin"+side)).origin
+		var ankle: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone("Foot"+side)).origin
+		var reach: float = hip.distance_to(knee)+knee.distance_to(ankle)-.002
+		var horizontal: float = Vector2(hip.x-_targets[side].x,hip.z-_targets[side].z).length()
+		var vertical: float = sqrt(maxf(.0001,reach*reach-horizontal*horizontal))
+		var required: float = hip.y-_targets[side].y-vertical
+		if slope>.02 and required>0: desired_drop = maxf(desired_drop,required+.01)
+	desired_drop = clampf(desired_drop,0,.25)
 	var root: int = skeleton.find_bone("Root")
 	if root>=0:
-		_pelvis_drop = lerpf(_pelvis_drop,minf(.06,slope*.35),1-exp(-delta*12))
+		_pelvis_drop = lerpf(_pelvis_drop,desired_drop,1-exp(-delta*12))
 		var position: Vector3 = skeleton.get_bone_pose_position(root)
 		position += skeleton.global_basis.inverse()*Vector3.DOWN*_pelvis_drop
 		skeleton.set_bone_pose_position(root,position)
@@ -136,18 +149,8 @@ func _solve(side: String,hit: Dictionary) -> void:
 	var hip_point: Vector3 = skeleton.get_bone_global_pose(hip).origin
 	var knee_point: Vector3 = skeleton.get_bone_global_pose(knee).origin
 	var ankle_point: Vector3 = skeleton.get_bone_global_pose(foot).origin
-	var ankle_world: Vector3 = skeleton.global_transform*ankle_point
 	var normal: Vector3 = hit.normal
-	var surface: Vector3 = ankle_world
-	surface.y = (hit.position as Vector3).y-(normal.x*(surface.x-hit.position.x)+normal.z*(surface.z-hit.position.z))/normal.y
-	if float(actor.get("_motion"))>.01:
-		var clearance: float = 0
-		for contact: Vector3 in hit.get("supports",[]):
-			var estimated: float = surface.y-(normal.x*(contact.x-surface.x)+normal.z*(contact.z-surface.z))/normal.y
-			clearance = maxf(clearance,contact.y-estimated)
-		surface.y += clearance+.002*skeleton.global_basis.get_scale().y
-	var height: float = sole_height*skeleton.global_basis.get_scale().y
-	var target: Vector3 = skeleton.to_local(surface+normal*(height+_lifts.get(side,0.0)))
+	var target: Vector3 = skeleton.to_local(_targets[side])
 	var upper: float = hip_point.distance_to(knee_point)
 	var lower: float = knee_point.distance_to(ankle_point)
 	var distance: float = clampf(hip_point.distance_to(target),absf(upper-lower)+.001,upper+lower-.001)
@@ -166,7 +169,19 @@ func _solve(side: String,hit: Dictionary) -> void:
 	var up: Vector3 = (skeleton.global_basis*foot_pose.basis*rest.inverse()*Vector3.UP).normalized()
 	var desired_world: Basis = Basis(Quaternion(up,normal))*skeleton.global_basis*foot_pose.basis
 	_set_global_rotation(foot,skeleton.global_basis.inverse()*desired_world)
-	_targets[side] = skeleton.global_transform*target
+
+func _desired_target(side: String,hit: Dictionary,ankle_world: Vector3) -> Vector3:
+	var normal: Vector3 = hit.normal
+	var surface: Vector3 = ankle_world
+	surface.y = (hit.position as Vector3).y-(normal.x*(surface.x-hit.position.x)+normal.z*(surface.z-hit.position.z))/normal.y
+	if float(actor.get("_motion"))>.01:
+		var clearance: float = 0
+		for contact: Vector3 in hit.get("supports",[]):
+			var estimated: float = surface.y-(normal.x*(contact.x-surface.x)+normal.z*(contact.z-surface.z))/normal.y
+			clearance = maxf(clearance,contact.y-estimated)
+		surface.y += clearance+.002*skeleton.global_basis.get_scale().y
+	var height: float = sole_height*skeleton.global_basis.get_scale().y
+	return surface+normal*(height+_lifts.get(side,0.0))
 
 func _align_shin(knee: int,foot: int,knee_point: Vector3,target: Vector3) -> void:
 	var ankle: Vector3 = skeleton.get_bone_global_pose(foot).origin

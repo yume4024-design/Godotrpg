@@ -239,3 +239,15 @@ Godot 4.7.2／RTX 3080／Compatibility／1280×720，VSync 關閉、無 FPS 上�
 13/0，`artifacts/logs/profileliafootplacement-20261017-182501-409.log`；原始 `artifacts/performance/lia_foot_placement.json`，已查看 lia_foot_enabled 實際畫面。這是單一桌面／單一角色／廣場動線樣本，不能推論 Android 或多人同時 IK 的效能。
 
 交付補充：以空白專案路徑掛載已交付 PCK，`greystone-pack-audit.log` 正常退出，資源清單 602 項；tests、assets/source、source_assets、根目錄主角／莉雅 PNG 均為 0，沒有混入原生 exe。清單在 `artifacts/greystone-preview-pack-audit.json`。較早未指定可寫日誌路徑的嘗試有 user:// 日誌錯誤，不列為此輪通過證據。
+
+## CP22：碰撞遮罩與較陡側坡
+
+初輪邊界測試 9 項中兩項失敗：射線讀取所有碰撞層，讓本來不與玩家碰撞的第 4 層物件把鞋底抬高約 15cm；25 度側坡下坡腳距離目標約 7.10cm。其餘陡坡拒絕、單腳落差及無地面恢復均通過，沒有擴大成全地形完成宣稱。
+
+- 地面射線改讀取注入碰撞體的 collision_mask，無碰撞體時只讀地面第 1 層；保留排除自身 RID。測試確認 mask=1 忽略第 4 層，mask=5 才會明確接受它。
+- 先計算雙腳目標，再根據當前腿長與水平距離求必要骨盆下沉，保留時間緩衝、最多 0.25m；不移動 actor 或物理膠囊。避免單純夾住腳踝目標而留下懸空。
+- `TestFemaleFootBoundary` 10/0，`artifacts/logs/testfemalefootboundary-20261017-183341-311.log`。25 度靜止坡雙腳目標誤差 <1mm，實際 Skin 鞋底距離約 -0.160／-0.038mm；已從下坡方向查看含接觸陰影的 foot_boundary_25。35 度面仍不解算；單腳落差只解算有地面的腳，沒有地面時回到原動畫，所有骨架變換有限值。
+- `TestFemaleSlope` 70/0（`testfemaleslope-20261017-183041-768.log`）；`TestFemaleRampTransitions` 48/0（`testfemaleramptransitions-20261017-183057-895.log`）。既有 10 度移動及接縫維持通過。
+- 再量測 `ProfileLiaFootPlacement` 13/0（`profileliafootplacement-20261017-183142-695.log`）；開啟時方法平均 114.6～132.6µs、P95 146～205µs，每輪 240 次樣本；Draw Calls 121～137。不同輪次存在排程／暖機差異，不把差額全歸因於新計算，沒有手機或完整 G07 認證。
+
+此輪只證明 25 度靜止坡可達，尚待實際控制器快慢往返；35 度、台階及動態平台不宣稱通過。正式場景仍未掛入貼地組件。
