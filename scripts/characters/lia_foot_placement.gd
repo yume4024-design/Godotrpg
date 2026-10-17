@@ -57,8 +57,14 @@ func _sample_ground(delta: float) -> void:
 			hit["supports"] = support
 			var normal: Vector3 = hit.normal
 			var smoothing: float = 1-exp(-delta*(24 if float(actor.get("_motion"))>.01 else 12))
-			_normals[side] = _normals.get(side,Vector3.UP).lerp(normal,smoothing).normalized()
-			_points[side] = _points.get(side,hit.position).lerp(hit.position,smoothing)
+			if hit.get("collider") is AnimatableBody3D:
+				# The controller already follows its platform. World-space smoothing
+				# would leave the feet behind during otherwise correct platform motion.
+				_normals[side] = normal
+				_points[side] = hit.position
+			else:
+				_normals[side] = _normals.get(side,Vector3.UP).lerp(normal,smoothing).normalized()
+				_points[side] = _points.get(side,hit.position).lerp(hit.position,smoothing)
 			hit.normal = _normals[side]
 			hit.position = _points[side]
 			_ground[side] = hit

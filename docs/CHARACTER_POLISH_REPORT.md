@@ -259,3 +259,15 @@ Godot 4.7.2／RTX 3080／Compatibility／1280×720，VSync 關閉、無 FPS 上�
 - 固定坡 48/0，`artifacts/logs/testfemaleslope25-20261017-183550-896.log`；1,259 樣本，鞋底最小 1.356mm、最近支撐腳最高 3.150mm。
 - 平地／25 度坡／約 2.798m 高台接縫 48/0，`testfemaleramp25-20261017-183618-804.log`；2,044 樣本，鞋底最小 -6.504mm、最近支撐腳最高 18.416mm，未超過原 -25／45mm 門檻。
 - 已查看 physical_slope_25deg 的正背方向實際畫面，角色可到達路點並鬆開輸入後停步。這些是桌面合成固定地形，不取代實際村莊所有坡路、真正台階、動態平台或 Android 驗收；貼地仍只在獨立工具選用。
+
+## CP24：AnimatableBody 移動平台
+
+獨立測試平台以 ±0.2m 水平、±0.25m 垂直正弦運動，既有玩家控制器負責平台跟隨，角色使用物理更新動畫與貼地。首次程序未啟動且沒有遊戲日誌，經確認程序已結束、引擎 Version／Check 正常後才重跑；該逾時輪次不列為通過。
+
+實際初輪 9 項中一項失敗：膠囊 360 樣本全程接地、水平跟隨誤差近零，但鞋底因世界座標命中點平滑而在平台下降時浮高約 57.1mm。對 AnimatableBody3D 改用當次接觸點／法線；靜態地形仍保留平滑，沒有更動角色位移或物理平台跟隨。
+
+- `TestFemalePlatform` 9/0，`artifacts/logs/testfemaleplatform-20261017-184348-614.log`；360 樣本全程接地，鞋底相對平台距離約 0.701mm，水平誤差 <1mm。
+- 實際 InputMap 走離平台後解除 IK；測試設定將玩家放回停住的平台，再移除占用中的平台，確認節點釋放、無殘留支持及有限值骨架。這個測試設定不宣稱玩家能從空中自動返回。
+- 已查看 platform_ride 實際畫面。`TestFemaleFootBoundary` 10/0（`testfemalefootboundary-20261017-184359-633.log`）、`TestFemaleRampTransitions` 48/0（`testfemaleramptransitions-20261017-184404-937.log`）維持通過。
+
+只驗證單一平移 AnimatableBody；旋轉、剛體平台、多人及 Android 未驗收。正式 RPG 地圖沒有新增平台，貼地仍是獨立工具選項。
