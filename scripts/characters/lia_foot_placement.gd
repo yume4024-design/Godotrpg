@@ -37,6 +37,12 @@ func _sample_ground(delta: float) -> void:
 		if foot<0: continue
 		var ankle: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(foot).origin
 		var hit: Dictionary = _ray_hit(ankle)
+		# A capsule can straddle a terrain corner whose foot ray is steeper
+		# than the orientation limit. Retain height support while moving,
+		# without rotating the boot onto that steep face.
+		if not hit.is_empty() and float(actor.get("_motion"))>.01:
+			var upward: float = (hit.normal as Vector3).dot(Vector3.UP)
+			if upward>.65 and upward<=.85: hit.normal = Vector3.UP
 		if not hit.is_empty() and (hit.normal as Vector3).dot(Vector3.UP)>.85:
 			var support: Array[Vector3] = [hit.position]
 			var forward: Vector3 = actor.global_basis.z.normalized()
@@ -46,6 +52,13 @@ func _sample_ground(delta: float) -> void:
 			var back: Dictionary = _ray_hit(ankle-forward*SOLE_BACK*model_scale)
 			if not front.is_empty(): support.append(front.position)
 			if not back.is_empty(): support.append(back.position)
+			# Terrain triangle seams can cross the boot diagonally; a centre
+			# line alone misses the higher outer sole corner.
+			if float(actor.get("_motion"))>.01:
+				for length: float in [SOLE_FRONT,-SOLE_BACK]:
+					for width: float in [-.10,.10]:
+						var corner: Dictionary = _ray_hit(ankle+(forward*length+right*width)*model_scale)
+						if not corner.is_empty(): support.append(corner.position)
 			if not front.is_empty() and not back.is_empty():
 				var grade_forward: float = (front.position.y-back.position.y)/((SOLE_FRONT+SOLE_BACK)*model_scale)
 				var grade_side: float = -(hit.normal as Vector3).dot(right)/hit.normal.y

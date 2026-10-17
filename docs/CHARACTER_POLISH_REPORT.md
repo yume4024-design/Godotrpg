@@ -271,3 +271,17 @@ Godot 4.7.2／RTX 3080／Compatibility／1280×720，VSync 關閉、無 FPS 上�
 - 已查看 platform_ride 實際畫面。`TestFemaleFootBoundary` 10/0（`testfemalefootboundary-20261017-184359-633.log`）、`TestFemaleRampTransitions` 48/0（`testfemaleramptransitions-20261017-184404-937.log`）維持通過。
 
 只驗證單一平移 AnimatableBody；旋轉、剛體平台、多人及 Android 未驗收。正式 RPG 地圖沒有新增平台，貼地仍是獨立工具選項。
+
+## CP25：實際村莊坡路往返
+
+Godot 4.7.2／Windows RTX 3080 Compatibility，使用既有 Player、InputMap 與灰石村碰撞；每次測試只在村口初始化一次，連續往返路點，不用路點傳送代替通行。逐 Skin 鞋底頂點向地面射線，排除玩家、沿用玩家碰撞遮罩。沒有建立故事／存檔服務。
+
+初次旅館路線可通行，但陡三角面觸及原法線限制後，單腳停止解算，最深物理穿透約 282mm。移動中對法線向上分量 0.65～0.85 的面保留高度支撐，腳掌不沿該陡面旋轉；並補上鞋尖／鞋跟兩側四角，避免斜向三角接縫的高角漏測。靜止 35 度拒絕條件仍保留。這不表示所有陡面都能正常攀走。
+
+- 旅館 12/0：`artifacts/logs/testliavillageinn-20261017-185919-128.log`，1,126 樣本，最深 -13.975mm、最近支撐腳最高 21.180mm。
+- 農田 16/0：`testliavillagefarm-20261017-185608-899.log`，2,140 樣本，最深 -12.752mm、最近支撐腳最高 27.555mm。
+- 礦坑 24/0：`testliavillagemine-20261017-185715-473.log`，2,871 樣本，最深 -7.587mm、最近支撐腳最高 25.012mm。初次直穿廣場水井的錯誤測試路線被碰撞阻擋，改為繞井後通過；沒有移除碰撞。
+- 三條路線全部樣本膠囊接地、鞋底射線未遺漏地面。保留原 -25／45mm 門檻；不是零誤差腳鎖。
+- `TestFemaleFootBoundary` 10/0（`testfemalefootboundary-20261017-185810-266.log`）、`TestFemaleRamp25` 48/0（`testfemaleramp25-20261017-185814-867.log`）、`TestFemalePlatform` 9/0（`testfemaleplatform-20261017-185856-520.log`）。Check 成功：`check-20261017-185853-342.log`。
+
+已查看旅館路點實際遊戲畫面。路面外觀網格比碰撞地形高 0.045m；以上數字只對物理面，不能宣稱鞋底已貼住可見道路，後續 CP26 分開處理。沒有更改正式角色選擇、主線、存檔格式、地圖碰撞或 Android 狀態。
