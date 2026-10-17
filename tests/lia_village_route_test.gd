@@ -8,6 +8,8 @@ var _samples: int = 0
 var _grounded: int = 0
 var _minimum: float = INF
 var _highest_stance: float = -INF
+var _finite_pose: bool = true
+var _stops: int = 0
 
 func _initialize() -> void:
 	_run.call_deferred()
@@ -40,6 +42,12 @@ func _run() -> void:
 		_check(reached,"Real village route reaches "+str(point))
 		if not reached: break
 		if player.position.y>.5:
+			for frame: int in range(18):
+				await physics_frame
+				await RenderingServer.frame_post_draw
+				_observe(body,rig)
+			_check(Vector2(player.velocity.x,player.velocity.z).length()<.01,"Controller stops at elevated waypoint "+str(point))
+			_stops += 1
 			await RenderingServer.frame_post_draw
 			root.get_texture().get_image().save_webp("res://artifacts/female_character/village_route_%s_%d_%d.webp" % [site,int(point.x),int(point.y)])
 	_release()
@@ -49,8 +57,11 @@ func _run() -> void:
 	_check(_missed_rays==0,"All sampled foot vertices have physical support below")
 	_check(is_finite(_minimum) and _minimum>-.025,"Imported feet avoid deep physical-terrain penetration")
 	_check(is_finite(_highest_stance) and _highest_stance<.045,"At least one foot remains near physical terrain")
+	_check(_finite_pose,"Turning and stopping leave finite bone transforms")
+	_check(_stops>0,"Route includes measured elevated stops")
 	_check(preview.find_child("Saves",true,false)==null,"Route does not create or write game saves")
 	print("VILLAGE_ROUTE site=",site," samples=",_samples," grounded=",_grounded," missed_rays=",_missed_rays," minimum_physical_sole_m=",_minimum," highest_physical_stance_m=",_highest_stance)
+	print("ROUTE_STOPS count=",_stops)
 	await RenderingServer.frame_post_draw
 	root.get_texture().get_image().save_webp("res://artifacts/female_character/village_route_%s.webp" % site)
 	preview.queue_free()
@@ -79,14 +90,19 @@ func _walk(target: Vector2,body: MeshInstance3D,rig: Skeleton3D) -> bool:
 		player.input_component.notification(Node.NOTIFICATION_APPLICATION_FOCUS_IN)
 		await physics_frame
 		await RenderingServer.frame_post_draw
-		var soles: Dictionary[String,float] = SURFACE_PROBE._soles(body,rig,Vector3.UP,_physical_distance)
-		_minimum = minf(_minimum,minf(soles.Left,soles.Right))
-		_highest_stance = maxf(_highest_stance,minf(soles.Left,soles.Right))
-		_samples += 1
-		if player.is_on_floor(): _grounded += 1
+		_observe(body,rig)
 	_release()
 	print("STALLED_ROUTE target=",target," player=",player.position)
 	return false
+
+func _observe(body: MeshInstance3D,rig: Skeleton3D) -> void:
+	var soles: Dictionary[String,float] = SURFACE_PROBE._soles(body,rig,Vector3.UP,_physical_distance)
+	_minimum = minf(_minimum,minf(soles.Left,soles.Right))
+	_highest_stance = maxf(_highest_stance,minf(soles.Left,soles.Right))
+	for bone: int in range(rig.get_bone_count()):
+		if not rig.get_bone_global_pose(bone).is_finite(): _finite_pose = false
+	_samples += 1
+	if player.is_on_floor(): _grounded += 1
 
 func _physical_distance(point: Vector3) -> float:
 	var query: PhysicsRayQueryParameters3D = PhysicsRayQueryParameters3D.create(point+Vector3.UP*.35,point-Vector3.UP*.65,player.collision_mask)
