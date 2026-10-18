@@ -18,6 +18,8 @@ func _run() -> void:
 	root.add_child(game)
 	current_scene = game
 	player = game.player
+	if "--bounded-stairs" in OS.get_cmdline_user_args():
+		player.movement.max_step_height = .18
 	Engine.physics_ticks_per_second = 180
 	Engine.time_scale = 6.0
 	await create_timer(1.0).timeout

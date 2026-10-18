@@ -33,7 +33,10 @@ for role in ("candidate", "qa"):
 candidate, qa = inventories["candidate"], inventories["qa"]
 forbidden = ("res://tests/", "res://tools/", "res://docs/", "res://assets/source/",
              "res://source_assets/", "res://scripts/tools/", "res://artifacts/", "res://builds/")
-bad = [p for p in candidate if p.startswith(forbidden) or p.endswith(".blend")]
+source_folders = tuple("res://" + p.name + "/" for p in ROOT.iterdir()
+                       if p.is_dir() and p.name not in {"assets", "data", "scenes", "scripts", "tests", ".godot"}
+                       and not p.name.startswith("."))
+bad = [p for p in candidate if p.startswith(forbidden + source_folders) or p.endswith(".blend")]
 root_images = [p for p in candidate if p.startswith("res://") and "/" not in p[6:]
                and pathlib.PurePosixPath(p).suffix.lower() in {".png", ".jpg", ".jpeg", ".glb"}]
 assert not bad and not root_images, (bad, root_images)

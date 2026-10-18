@@ -6,8 +6,11 @@ import re
 ROOT = pathlib.Path(__file__).resolve().parents[1]
 root_references = sorted(p.name for p in ROOT.iterdir() if p.is_file()
                          and p.suffix.lower() in {".png", ".jpg", ".jpeg", ".glb", ".gltf", ".blend"})
+runtime_roots = {"assets", "data", "scenes", "scripts", "tests", ".godot"}
+source_folders = sorted(p.name + "/*" for p in ROOT.iterdir()
+                        if p.is_dir() and p.name not in runtime_roots and not p.name.startswith("."))
 common_excludes = ["assets/source/*", "source_assets/*", "scripts/tools/*", "docs/*",
-                   "tools/*", "artifacts/*", "builds/*", "*.md", "*.blend"] + root_references
+                   "tools/*", "artifacts/*", "builds/*", "*.md", "*.blend"] + root_references + source_folders
 presets = ROOT / "export_presets.cfg"
 text = presets.read_text(encoding="utf-8")
 marker = "\n; G08 generated presets (tools/prepare_windows_candidate.py)"

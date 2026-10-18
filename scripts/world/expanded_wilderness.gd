@@ -2,6 +2,9 @@ extends ExplorationMap
 ## Additive exploration layout: old event/spawn coordinates remain unchanged.
 func _ready() -> void:
 	var forest: bool = map_id == &"forest"
+	if not forest:
+		for index: int in range(3):
+			get_node("Beam%d" % index).add_to_group(&"exploration_occluder")
 	var extent: Vector2 = Vector2(24.5,24.5) if forest else Vector2(25.5,19.5)
 	for key: String in (["NorthWall","SouthWall","WestWall","EastWall"] if forest else ["Boundary0","Boundary1","Boundary2","Boundary3"]):
 		var old: Node = get_node(key)
@@ -82,6 +85,7 @@ func _box(label: String, position_value: Vector3, size_value: Vector3, color: Co
 	mesh.material = material
 	var visual: MeshInstance3D = MeshInstance3D.new()
 	visual.mesh = mesh
+	if label == "PitBeam": visual.add_to_group(&"exploration_occluder")
 	if label == "OuterWall":
 		mesh.size.y = .35
 		visual.position.y = -.825

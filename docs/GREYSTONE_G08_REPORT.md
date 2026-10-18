@@ -1,5 +1,7 @@
 # G08 Windows 候選驗收 — 第一輪
 
+**最新：2026-10-18 G08.2 低台階／礦坑橫梁修正已驗收，候選更新為 rc2，詳見本文件末節。G08 整體仍未完成。** 下文 rc1 為第一輪歷史紀錄。
+
 日期：2026-10-18（Asia/Taipei）；分支 `feature/greystone-g06`，起點 `b9218700fc721df348d07b7072b5adf52231f93f`。**G08.1 候選匯出與自動化功能驗收通過；G08 整體未完成，不是發佈核准。**
 
 ## 候選包與測試環境
@@ -66,3 +68,43 @@ python tools/audit_windows_candidate.py <新產生的 manifest.json 路徑>
 下一個最小階段為 **G08.2：遮擋／台階問題的重現與修正驗收**，再安排玩家候選包完整通關及發佈前門檻。不能將本輪寫成整體 G08 或正式發佈完成。遊玩說明見 [候選版指南](GREYSTONE_G08_GUIDE.md)。原始日誌／builds 留在被 Git 忽略的本機目錄，報告與工具提交功能分支；不合併 main，保留先前 Skill 及根目錄參考圖修改。
 
 可玩 ZIP：builds/g08/ProjectCrystal-0.6.1-g08-rc1-Windows-20261018.zip；SHA256：641F1E06ECA81D2B912980178322DD7FCD7576FD683FD57B36EFBC7B40403F92。隨附 README、授權與已逐檔核對的 SHA256.json；不包含 QA 執行檔。
+
+## G08.2 — 低台階與礦坑橫梁（2026-10-18）
+
+基線 `d14e89a8bfa1739fce37681f52677e9bf6accf2a`，功能分支 `feature/greystone-g06`。同一 Windows／RTX 3080／Godot 4.7.2 Compatibility 圖形環境。本輪完成這兩項有限範圍的修正驗收，未開始下一階段完整人工通關／長測；不代表整體 G08 或發佈核准。
+
+### 問題、修正及保留範圍
+
+- 新圖形專項先重現兩名角色均卡在第一階，位置 `(0,0,1.749316)`；原控制器只有 `move_and_slide`，不會跨上 12cm 垂直面。
+- PlayerMovement 新增預設 **0（停用）** 的台階高度參數，只在新版整合入口設為 0.18m。接地且前進受非坡面阻擋時，以完整膠囊依序掃描向上、前進及落點，拒絕頭頂碰撞、無支撐及過陡落點。只補垂直高度，水平移動仍走原碰撞解算；速度維持 4.5m/s。沒有改碰撞形狀、地圖道路或啟用莉雅實驗 IK。三階各 12cm 實際通過，頂部 y=0.360554；並非所有 18cm 以下任意形狀都已認證。
+- Expanded mine 明確註冊既有三根／擴充八根橫梁。新版 ExplorationOcclusion 以正交鏡頭投影的平行視線檢查角色三個身體高度；被擋時只切為 shadows-only，支柱／地形／碰撞及陰影保留，離開遮擋時恢復原設定。小幅遲滯避免邊緣反覆切換。切圖、角色隱藏／戰鬥鏡頭及組件移除均恢復顯示；不修改共用 Mesh／材質或新增物理代理。
+- 只對明確註冊的十一根橫梁處理，沒有宣稱樹木、屋頂、岩石及所有視角遮擋都已解決。梁退讓是直接切換，不是透明淡出。
+- rc2 匯出排除非遊戲根資料夾（含新增的角色／敵人參考圖），原始使用者檔案保留。包內稽核同步檢查，正式主入口、base version 0.6.1、角色 ID／數值、旗標、獎勵與存檔 schema 都不變。
+
+### 可執行結果
+
+| 命令 | 結果／證據 |
+| --- | --- |
+| `./tools/godot.ps1 -Mode TestG08Accessibility` | **18/0**，真實圖形、InputMap 注入，雷恩／莉雅三階上下與停止、斜向登階、平地速度、1m 高牆、22cm 階差、低天花板、停用保持舊行為、十一梁註冊／退讓／恢復；`testg08accessibility-20261018-101604-611.log` |
+| `./tools/test_g06.ps1` | **576/0**、16 模式，含正式序章、G06、戰鬥、NPC、交易、遷移、重啟、模擬觸控；`artifacts/regression/g06-20261018-101536.json` |
+| `./tools/godot.ps1 -Mode VisualGreystone` | 舊預設台階設定 **98/0**，`visualgreystone-20261018-101836-403.log` |
+| `./tools/godot.ps1 -Mode TestG08Routes` | 同一村莊路線，啟用 0.18m 設定 **98/0**；農田／礦口斜坡、木橋／碼頭圍欄、井／商店牆及河岸仍正確，`testg08routes-20261018-102019-964.log` |
+| `./tools/godot.ps1 -Mode TestPixalCharacters` | **88/0**，4,815／4,806 triangles，19 骨架、動畫切換／恢復及法杖掛載；`testpixalcharacters-20261018-102119-843.log` |
+| `./tools/test_windows_candidate.ps1` | 新 release 匯出、候選啟動 exit 0；包內圖形 **107/0**，另程序重啟 **14/0**。含既有序章／交易／v1 原檔保留遷移，以及礦坑十一梁、正式固定鏡頭退讓、回存檔村莊及帳本完整 |
+| `python tools/audit_windows_candidate.py artifacts/g08/20261018-101916/manifest.json` | 候選614／QA725檔，**610 個共用遊戲資源雜湊一致**，無禁用路徑／根參考圖；`pack_audit.json` |
+
+核心斷言合計 999（576＋18＋98＋98＋88＋121），同一測試重跑不重複累加；兩個98分別是停用／啟用台階的不同配置。資源雜湊比對另計。載入 Check 與全部上述退出碼均為0。這些為自動化圖形操作，不是玩家實體鍵鼠／手把完整通關。
+
+已查看 `artifacts/g082/ren-steps.webp`、`mine-before.webp`／`mine-after.webp` 以及獨立 Release 的 `g08_tests/evidence/g082-packaged-mine.webp`：橫梁不再蓋住角色軀幹，支柱及陰影仍在。原始日誌／畫面／包均為本機 ignored 產物。
+
+失敗紀錄保留：初版專項3失敗（尚未修正的兩角色登階及不存在的遮擋組件）；擴充後一輪因等待 physics frame 即檢查 `_process` 顯示狀態，隱藏恢復判斷過早失敗。測試改為等待實際 render 完成再檢查，未添加遊戲狀態特判。最終18/0，不以失敗輪次抵算通過。
+
+### rc2 交付與下一步
+
+- 可玩：`builds/g08/candidate/20261018-101920/ProjectCrystal.exe`；QA：`builds/g08/qa/20261018-101925/ProjectCrystal.exe`。
+- Release 證據：`artifacts/g08/20261018-101916/manifest.json`。包內序章26.069秒、重啟2.408秒，**不是30分鐘長測**。
+- 候選 PCK SHA256：`28BBC2BD4FF4FD26E965720DD07CBE748327E514F24591C531DEC81BD934DF77`。
+- ZIP：`builds/g08/ProjectCrystal-0.6.1-g08-rc2-Windows-20261018.zip`，55.86MiB；SHA256 `3BCF54568F976F896D0ADCDCA61C353FF16BFBDC86ABE13294A27CB90962D6BB`。六個檔案，CRC及五個內容雜湊核對通過，隨附說明、授權與SHA256.json；rc1仍保留。
+- 正式 Windows exe／PCK 雜湊仍與第一輪所列相同，未覆蓋正式 v0.6.1；不合併 main。Skill及未追蹤參考圖保留，不納入本次提交。
+
+下一階段為 **G08.3 候選包完整通關與效能尖峰驗收**。既有初始化／戰鬥載入尖峰、發佈包30分鐘長測、人工實體輸入完整通關、其他 Windows／低階 PC、角色近景／專用劍招及其他物件遮擋仍待驗收。Android／iOS及第一章繼續暫停。

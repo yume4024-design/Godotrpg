@@ -1,6 +1,6 @@
 # 《失落星核》｜Project Crystal
 
-2026-10-18 Windows G08 候選第一輪完成，版本 0.6.1-g08-rc1；[遊玩指南](docs/GREYSTONE_G08_GUIDE.md)、[驗收結果與未完成項目](docs/GREYSTONE_G08_REPORT.md)。G08 整體未完成，正式 v0.6.1 保留。
+2026-10-18 Windows G08.2 台階／礦坑橫梁修正驗收完成，候選版本 0.6.1-g08-rc2；[遊玩指南](docs/GREYSTONE_G08_GUIDE.md)、[驗收結果與未完成項目](docs/GREYSTONE_G08_REPORT.md)。G08 整體未完成，正式 v0.6.1 保留。
 
 2026-10-17 雷恩／莉雅已改用 ComfyUI Pixal3D 重製模型，見 [重製報告](docs/PIXAL3D_CHARACTER_REPORT.md)。以 `tools/godot.ps1 -Mode PreviewCharacters` 檢視兩人，`-Mode RunG06` 遊玩新版灰石村；正式 v0.6.1 入口與既有匯出保留。
 

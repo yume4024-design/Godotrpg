@@ -8,11 +8,18 @@ var mobile_input: MobileInputLayer
 var commerce: CommercePanel
 var quality: ExplorationQuality
 var quality_button: Button
+var occlusion: ExplorationOcclusion
 var _merchant: WorldInteractable
 var _inn_service: bool = false
 
 func _ready() -> void:
 	greystone_enabled = true
+	player.movement.max_step_height = .18
+	occlusion = ExplorationOcclusion.new()
+	occlusion.target = player
+	occlusion.camera = camera
+	occlusion.enabled = true
+	add_child(occlusion)
 	var hero_visual: PackedScene = load("res://scenes/characters/ren_pixal_visual.tscn")
 	starting_character = starting_character.duplicate()
 	starting_character.appearance = hero_visual
@@ -103,6 +110,7 @@ func import_legacy() -> bool:
 	return result
 
 func _on_map_changed(map: ExplorationMap) -> void:
+	if is_instance_valid(occlusion): occlusion.set_map(map)
 	# Integration-only routing; old production scene and forest resource stay intact.
 	if map.map_id == &"forest":
 		for target: WorldInteractable in map.targets:
