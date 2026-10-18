@@ -1,0 +1,22 @@
+[
+  {
+    "file": "source_assets\\quality_characters_20261018\\blacksmith\\blacksmith_shape_original.glb",
+    "bytes": 178369780,
+    "sha256": "7b06da899a426779270fc34a01197575b75931c67ec188fc0045bf6f8bacf6c8",
+    "triangles": 9927242,
+    "materials": 1,
+    "images": 0,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "file": "source_assets\\quality_characters_20261018\\blacksmith\\blacksmith_textured_full.glb",
+    "bytes": 196224548,
+    "sha256": "b761e222b745d82155f464ccd11a633d1b1febd06ddc133c78c0f67d176b7d72",
+    "triangles": 4490390,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "animations": 0
+  }
+]

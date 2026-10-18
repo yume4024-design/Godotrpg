@@ -1,0 +1,53 @@
+{
+  "input": "D:/RPGGAME/source_assets/quality_characters_20261018/aerin/aerin_textured_full.glb",
+  "topology_modified": false,
+  "rigged": false,
+  "objects": [
+    {
+      "name": "Mesh_0",
+      "vertices": 2399516,
+      "triangles": 4029104,
+      "uv_layers": 1,
+      "boundary_edges": 737553,
+      "nonmanifold_edges_more_than_two_faces": 39,
+      "zero_area_faces_epsilon_1e_16": 0,
+      "materials": [
+        "Material_0"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "triangles": 4029104,
+  "bounds_min": [
+    -0.2658292055130005,
+    -0.12509194016456604,
+    -0.49087488651275635
+  ],
+  "bounds_max": [
+    0.2674097418785095,
+    0.12571310997009277,
+    0.49898332357406616
+  ]
+}

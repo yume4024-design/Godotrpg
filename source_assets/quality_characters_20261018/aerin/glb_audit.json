@@ -1,0 +1,22 @@
+[
+  {
+    "file": "source_assets\\quality_characters_20261018\\aerin\\aerin_shape_original.glb",
+    "bytes": 172240816,
+    "sha256": "b8dd3cd1b548c7b32fb17812f0741b2702bde3e7d46bb325ceb51d2b56e3f27c",
+    "triangles": 9605674,
+    "materials": 1,
+    "images": 0,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "file": "source_assets\\quality_characters_20261018\\aerin\\aerin_textured_full.glb",
+    "bytes": 185945428,
+    "sha256": "e7502608578fe9a181ec48cf09904835b148cdf7445c782a79e6a5c368213ed6",
+    "triangles": 4030176,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "animations": 0
+  }
+]

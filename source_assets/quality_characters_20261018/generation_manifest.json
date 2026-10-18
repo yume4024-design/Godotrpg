@@ -1,0 +1,231 @@
+{
+  "source": "D:\\Comfy-Desktop\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\user\\default\\workflows\\3d_pixal3d_multi_views.json",
+  "source_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "quality_policy": "No DecimateMesh, no final triangle budget; preserve source and textured output.",
+  "shape_resolution": 1536,
+  "texture_resolution": 4096,
+  "remesh_resolution": 768,
+  "remesh_smooth_iters": 0,
+  "drop_small_components": 0,
+  "characters": {
+    "blacksmith": {
+      "references": [
+        {
+          "direction": "front",
+          "source": "npc\\鐵匠-正面.Png",
+          "copy": "source_assets\\quality_characters_20261018\\references\\blacksmith_front.png",
+          "sha256": "0ab52326708e838b6f13982636b439ac2a895ca915c314884daa4aea302a05fc"
+        },
+        {
+          "direction": "left",
+          "source": "npc\\鐵匠-左側.Png",
+          "copy": "source_assets\\quality_characters_20261018\\references\\blacksmith_left.png",
+          "sha256": "b874f788485095ad0e39ed07651efccec689931719a0e8aae6c5c842a2032d19"
+        },
+        {
+          "direction": "back",
+          "source": "npc\\鐵匠-背面.Png",
+          "copy": "source_assets\\quality_characters_20261018\\references\\blacksmith_back.png",
+          "sha256": "50f2ff780fb54a7675bf7775af729b8e5f55765250b8af3e9bf69ef6d817280b"
+        },
+        {
+          "direction": "right",
+          "source": "npc\\鐵匠-右側.Png",
+          "copy": "source_assets\\quality_characters_20261018\\references\\blacksmith_right.png",
+          "sha256": "c46f737faef46a717fce19404e4b553488d7931962f1961b0b0cb67614d24e64"
+        }
+      ],
+      "full_nodes": 57,
+      "input_nodes": 17,
+      "input_prompt_id": "c838fc02-a6f9-43bd-b893-b1c8dce87f01",
+      "generation_prompt_id": "1ae48984-0a04-4753-ba4e-b4b5d9acba85",
+      "status": "completed",
+      "glb_audit": [
+        {
+          "file": "source_assets\\quality_characters_20261018\\blacksmith\\blacksmith_shape_original.glb",
+          "bytes": 178369780,
+          "sha256": "7b06da899a426779270fc34a01197575b75931c67ec188fc0045bf6f8bacf6c8",
+          "triangles": 9927242,
+          "materials": 1,
+          "images": 0,
+          "skins": 0,
+          "animations": 0
+        },
+        {
+          "file": "source_assets\\quality_characters_20261018\\blacksmith\\blacksmith_textured_full.glb",
+          "bytes": 196224548,
+          "sha256": "b761e222b745d82155f464ccd11a633d1b1febd06ddc133c78c0f67d176b7d72",
+          "triangles": 4490390,
+          "materials": 1,
+          "images": 3,
+          "skins": 0,
+          "animations": 0
+        }
+      ],
+      "blender_inspection": {
+        "input": "D:/RPGGAME/source_assets/quality_characters_20261018/blacksmith/blacksmith_textured_full.glb",
+        "topology_modified": false,
+        "rigged": false,
+        "objects": [
+          {
+            "name": "Mesh_0",
+            "vertices": 2581039,
+            "triangles": 4489845,
+            "uv_layers": 1,
+            "boundary_edges": 649614,
+            "nonmanifold_edges_more_than_two_faces": 28,
+            "zero_area_faces_epsilon_1e_16": 0,
+            "materials": [
+              "Material_0"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "name": "Image_0",
+            "size": [
+              4096,
+              4096
+            ]
+          },
+          {
+            "name": "Image_1",
+            "size": [
+              4096,
+              4096
+            ]
+          },
+          {
+            "name": "Image_2",
+            "size": [
+              2048,
+              2048
+            ]
+          }
+        ],
+        "triangles": 4489845,
+        "bounds_min": [
+          -0.2887710928916931,
+          -0.10861067473888397,
+          -0.4804694950580597
+        ],
+        "bounds_max": [
+          0.28938451409339905,
+          0.1183755099773407,
+          0.4982569217681885
+        ]
+      },
+      "visual_review": "Front/side/back rendered and viewed. Full body retained; AI detail artifacts remain. Static source, not rigged or gameplay validated.",
+      "blend": "source_assets/quality_characters_20261018/blacksmith/inspection/blacksmith_full.blend"
+    },
+    "aerin": {
+      "references": [
+        {
+          "direction": "front",
+          "source": "艾琳角色圖\\正.png",
+          "copy": "source_assets\\quality_characters_20261018\\references\\aerin_front.png",
+          "sha256": "f9845d459c609e74353e3c2ccd049daf87871762996c2aaf4219cb592f7c8050"
+        },
+        {
+          "direction": "left",
+          "source": "艾琳角色圖\\左.png",
+          "copy": "source_assets\\quality_characters_20261018\\references\\aerin_left.png",
+          "sha256": "feef3a3fd578c06ec82829b07b6d8ade0c733e63d1052177af9ebb9e61b27618"
+        },
+        {
+          "direction": "back",
+          "source": "艾琳角色圖\\背.png",
+          "copy": "source_assets\\quality_characters_20261018\\references\\aerin_back.png",
+          "sha256": "b8b4020c394e6d878969a8f611dcb498aa071a626de0301b8546a297dc2fcb23"
+        },
+        {
+          "direction": "right",
+          "source": "艾琳角色圖\\右.png",
+          "copy": "source_assets\\quality_characters_20261018\\references\\aerin_right.png",
+          "sha256": "fe8c7160419c295fe5f606b366156c8dae06f55268a21196b30a82f84fd9deb7"
+        }
+      ],
+      "full_nodes": 57,
+      "input_nodes": 17,
+      "generation_prompt_id": "6f477860-f244-483d-9ff1-2e7e483564c8",
+      "status": "completed",
+      "glb_audit": [
+        {
+          "file": "source_assets\\quality_characters_20261018\\aerin\\aerin_shape_original.glb",
+          "bytes": 172240816,
+          "sha256": "b8dd3cd1b548c7b32fb17812f0741b2702bde3e7d46bb325ceb51d2b56e3f27c",
+          "triangles": 9605674,
+          "materials": 1,
+          "images": 0,
+          "skins": 0,
+          "animations": 0
+        },
+        {
+          "file": "source_assets\\quality_characters_20261018\\aerin\\aerin_textured_full.glb",
+          "bytes": 185945428,
+          "sha256": "e7502608578fe9a181ec48cf09904835b148cdf7445c782a79e6a5c368213ed6",
+          "triangles": 4030176,
+          "materials": 1,
+          "images": 3,
+          "skins": 0,
+          "animations": 0
+        }
+      ],
+      "blender_inspection": {
+        "input": "D:/RPGGAME/source_assets/quality_characters_20261018/aerin/aerin_textured_full.glb",
+        "topology_modified": false,
+        "rigged": false,
+        "objects": [
+          {
+            "name": "Mesh_0",
+            "vertices": 2399516,
+            "triangles": 4029104,
+            "uv_layers": 1,
+            "boundary_edges": 737553,
+            "nonmanifold_edges_more_than_two_faces": 39,
+            "zero_area_faces_epsilon_1e_16": 0,
+            "materials": [
+              "Material_0"
+            ]
+          }
+        ],
+        "images": [
+          {
+            "name": "Image_0",
+            "size": [
+              4096,
+              4096
+            ]
+          },
+          {
+            "name": "Image_1",
+            "size": [
+              4096,
+              4096
+            ]
+          },
+          {
+            "name": "Image_2",
+            "size": [
+              2048,
+              2048
+            ]
+          }
+        ],
+        "triangles": 4029104,
+        "bounds_min": [
+          -0.2658292055130005,
+          -0.12509194016456604,
+          -0.49087488651275635
+        ],
+        "bounds_max": [
+          0.2674097418785095,
+          0.12571310997009277,
+          0.49898332357406616
+        ]
+      },
+      "visual_review": "Front/side/back rendered and viewed. Full body retained; AI detail artifacts remain. Static source, not rigged or gameplay validated.",
+      "blend": "source_assets/quality_characters_20261018/aerin/inspection/aerin_full.blend"
+    }
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "input": "D:/RPGGAME/source_assets/quality_characters_20261018/blacksmith/blacksmith_textured_full.glb",
+  "topology_modified": false,
+  "rigged": false,
+  "objects": [
+    {
+      "name": "Mesh_0",
+      "vertices": 2581039,
+      "triangles": 4489845,
+      "uv_layers": 1,
+      "boundary_edges": 649614,
+      "nonmanifold_edges_more_than_two_faces": 28,
+      "zero_area_faces_epsilon_1e_16": 0,
+      "materials": [
+        "Material_0"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "triangles": 4489845,
+  "bounds_min": [
+    -0.2887710928916931,
+    -0.10861067473888397,
+    -0.4804694950580597
+  ],
+  "bounds_max": [
+    0.28938451409339905,
+    0.1183755099773407,
+    0.4982569217681885
+  ]
+}

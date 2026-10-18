@@ -1,0 +1,6 @@
+# Full-detail local masters exceed normal GitHub file limits.
+**/*.glb
+**/*.blend
+**/*.png
+**/outputs/
+**/inspection/
