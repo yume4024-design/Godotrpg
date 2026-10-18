@@ -12,7 +12,7 @@ func _run() -> void:
 	root.add_child(party)
 	root.add_child(inventory)
 	var definition: CombatantDefinition = load("res://data/characters/lia.tres").duplicate()
-	definition.appearance = load("res://scenes/characters/lia_user_visual.tscn")
+	definition.appearance = load("res://scenes/characters/lia_pixal_visual.tscn" if "--pixal" in OS.get_cmdline_user_args() else "res://scenes/characters/lia_user_visual.tscn")
 	party.setup([definition])
 	inventory.item_definitions.assign([load("res://data/items/potion.tres")])
 	inventory.grant_bundle(0,{"potion":2})
@@ -114,7 +114,7 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 	_check(not orphan_effect.is_processing(),"Removed source safely stops focus tracking")
-	print("FEMALE_ANIMATION_RESULT checks=%d failures=%d" % [checks,failures])
+	print(("PIXAL_ATTACHMENT_RESULT" if "--pixal" in OS.get_cmdline_user_args() else "FEMALE_ANIMATION_RESULT") + " checks=%d failures=%d" % [checks,failures])
 	arena.queue_free()
 	party.queue_free()
 	inventory.queue_free()

@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('TestPixalCharacters', 'TestCharacterSteps', 'TestLiaVillageInn', 'TestLiaVillageFarm', 'TestLiaVillageMine', 'TestFemalePlatform', 'TestFemaleSlope25', 'TestFemaleRamp25', 'TestFemaleFootBoundary', 'ProfileLiaFootPlacement', 'ExportGreystonePreview', 'TestFemaleRamp30', 'TestFemaleRamp120', 'TestFemaleRampTransitions', 'TestFemaleSlopeMovement', 'TestFemaleSlope', 'TestCharacterLifecycle', 'TestFemaleMotionBoundary', 'ExportCharacterQA', 'ProfileCharacters', 'PreviewLiaMovement', 'TestLiaMovement', 'VisualFemaleHand', 'PreviewCharacters', 'TestCharacterPreview', 'VisualFemaleFace', 'TestFemaleGrounding', 'VisualFemaleAnimation', 'PreviewFemale', 'PreviewUserHero', 'ProfileGreystoneEndurance', 'ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('TestPixalAttachments', 'TestWindowsStability', 'TestPixalCharacters', 'TestCharacterSteps', 'TestLiaVillageInn', 'TestLiaVillageFarm', 'TestLiaVillageMine', 'TestFemalePlatform', 'TestFemaleSlope25', 'TestFemaleRamp25', 'TestFemaleFootBoundary', 'ProfileLiaFootPlacement', 'ExportGreystonePreview', 'TestFemaleRamp30', 'TestFemaleRamp120', 'TestFemaleRampTransitions', 'TestFemaleSlopeMovement', 'TestFemaleSlope', 'TestCharacterLifecycle', 'TestFemaleMotionBoundary', 'ExportCharacterQA', 'ProfileCharacters', 'PreviewLiaMovement', 'TestLiaMovement', 'VisualFemaleHand', 'PreviewCharacters', 'TestCharacterPreview', 'VisualFemaleFace', 'TestFemaleGrounding', 'VisualFemaleAnimation', 'PreviewFemale', 'PreviewUserHero', 'ProfileGreystoneEndurance', 'ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH
 )
@@ -74,6 +74,7 @@ if ($Mode -ne 'Version') {
     if ($Mode -eq 'TestCharacterPreview') { $engineArgs += @('--script','res://tests/character_preview_test.gd') }
     if ($Mode -eq 'VisualFemaleFace') { $engineArgs += @('--script','res://tests/female_face_test.gd') }
     if ($Mode -eq 'TestFemaleGrounding') { $engineArgs += @('--script','res://tests/female_grounding_test.gd') }
+    if ($Mode -eq 'TestPixalAttachments') { $engineArgs += @('--script','res://tests/female_battle_animation_test.gd','--','--pixal') }
     if ($Mode -eq 'VisualFemaleAnimation') { $engineArgs += @('--script','res://tests/female_battle_animation_test.gd') }
     if ($Mode -eq 'PreviewFemale') { $engineArgs += @('--script','res://tests/female_character_preview.gd') }
     if ($Mode -eq 'PreviewUserHero') { $engineArgs += @('--script','res://tests/user_hero_preview.gd') }
@@ -104,6 +105,7 @@ if ($Mode -ne 'Version') {
     if ($Mode -eq 'ProfileGreystone') { $engineArgs += @('--script','res://tests/greystone_performance_probe.gd') }
     if ($Mode -eq 'RunG06') { $engineArgs += 'res://scenes/main/greystone_integration.tscn' }
     if ($Mode -eq 'PreviewGreystone') { $engineArgs += 'res://scenes/world/greystone_preview.tscn' }
+    if ($Mode -eq 'TestWindowsStability') { $engineArgs += @('--script','res://tests/windows_stability_test.gd') }
     if ($Mode -eq 'Check') { $engineArgs += '--import' }
     if ($Mode -eq 'Smoke') { $engineArgs += @('--quit-after', '120') }
     if ($Mode -eq 'Test') { $engineArgs += @('--script', 'res://tests/phase1_movement_test.gd') }
@@ -144,6 +146,11 @@ if ($Mode -in @('PreviewLiaMovement', 'PreviewCharacters', 'RunG06', 'PreviewGre
     $launched.Dispose()
     return
 }
+if ($Mode -eq 'TestWindowsStability') {
+    $graphicalPath = $GodotPath -replace '_console\.exe$', '.exe'
+    if (-not (Test-Path -LiteralPath $graphicalPath)) { throw 'Graphical Godot binary required for process memory sampling.' }
+    $startInfo.FileName = $graphicalPath
+}
 $startInfo.RedirectStandardOutput = $true
 $startInfo.RedirectStandardError = $true
 $process = New-Object System.Diagnostics.Process
@@ -152,8 +159,19 @@ try {
     if (-not $process.Start()) { throw 'Godot process did not start.' }
     $stdoutTask = $process.StandardOutput.ReadToEndAsync()
     $stderrTask = $process.StandardError.ReadToEndAsync()
-    $timeoutMs = if ($Mode -eq 'ProfileGreystoneEndurance') { 180000 } elseif ($Mode -in @('TestLiaVillageFarm','TestLiaVillageMine')) { 120000 } else { 60000 }
-    if (-not $process.WaitForExit($timeoutMs)) {
+    $timeoutMs = if ($Mode -eq 'TestWindowsStability') { 1950000 } elseif ($Mode -eq 'ProfileGreystoneEndurance') { 180000 } elseif ($Mode -in @('TestLiaVillageFarm','TestLiaVillageMine')) { 120000 } else { 60000 }
+    if ($Mode -eq 'TestWindowsStability') {
+        $rssPath = Join-Path $projectRoot 'artifacts/performance/g075-process.csv'
+        'elapsed_seconds,working_set_bytes,private_bytes,peak_working_set_bytes' | Set-Content $rssPath
+        $clock = [Diagnostics.Stopwatch]::StartNew()
+        while (-not $process.WaitForExit(1000) -and $clock.ElapsedMilliseconds -lt $timeoutMs) {
+            $process.Refresh()
+            if (-not $process.HasExited) {
+                ('{0:F3},{1},{2},{3}' -f $clock.Elapsed.TotalSeconds,$process.WorkingSet64,$process.PrivateMemorySize64,$process.PeakWorkingSet64) | Add-Content $rssPath
+            }
+        }
+    }
+    if (-not $process.WaitForExit([Math]::Max(1, $(if ($Mode -eq 'TestWindowsStability') { 1 } else { $timeoutMs })))) {
         $process.Kill()
         throw "Godot exceeded the $timeoutMs ms timeout. Inspect the log before retrying."
     }
