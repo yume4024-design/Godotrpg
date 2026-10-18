@@ -25,7 +25,7 @@ func _run() -> void:
 	slot = "user://g08_tests/prologue.json"
 	visual_slot = slot
 	DirAccess.make_dir_recursive_absolute("user://g08_tests/evidence")
-	_check(OS.has_feature("g08_qa") and not OS.is_debug_build(), "G08 release template and isolated feature")
+	_check((OS.has_feature("g08_qa") or OS.has_feature("g083_qa")) and not OS.is_debug_build(), "G08 release template and isolated feature")
 	_check(DisplayServer.get_name() != "headless", "G08 rendered Windows process")
 	_check(ProjectSettings.get_setting("application/config/version") == "0.6.1" and ProjectSettings.get_setting_with_override("application/config/version") == "0.6.1-g08-rc2", "Candidate version override preserves formal version")
 	for key: int in MOVE_KEYS:

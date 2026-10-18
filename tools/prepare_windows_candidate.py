@@ -14,14 +14,19 @@ common_excludes = ["assets/source/*", "source_assets/*", "scripts/tools/*", "doc
 presets = ROOT / "export_presets.cfg"
 text = presets.read_text(encoding="utf-8")
 marker = "\n; G08 generated presets (tools/prepare_windows_candidate.py)"
-if marker not in text and any(f"[preset.{index}]" in text for index in (4, 5)):
+if "[preset.6]" in text:
+    slot_six = text.split("[preset.6]", 1)[1].split("[preset.", 1)[0]
+    if 'name="Windows G083 Soak QA"' not in slot_six:
+        raise RuntimeError("Preset slot 6 belongs to another configuration")
+if marker not in text and any(f"[preset.{index}]" in text for index in (4, 5, 6)):
     raise RuntimeError("Preset slots 4/5 already belong to another configuration")
-if marker in text and any(int(index) not in (4, 5) for index in re.findall(r"\[preset\.(\d+)\]", text.split(marker, 1)[1])):
+if marker in text and any(int(index) not in (4, 5, 6) for index in re.findall(r"\[preset\.(\d+)\]", text.split(marker, 1)[1])):
     raise RuntimeError("Unmanaged preset after G08 block; preserve it before regenerating")
 text = text.split(marker)[0].rstrip() + "\n" + marker + "\n"
 for index, label, feature in [
     (4, "Windows G08 Candidate", "g08_candidate"),
     (5, "Windows G08 QA", "g08_qa"),
+    (6, "Windows G083 Soak QA", "g083_qa"),
 ]:
     text += f'''\n[preset.{index}]
 name="{label}"
