@@ -1,0 +1,9 @@
+{
+  "span": 1.815,
+  "center_z": 0.825,
+  "height": 1.65,
+  "input": "source_assets\\npc_rebuild_20261020\\item_merchant\\outputs\\87d64b9d_010.glb",
+  "input_sha256": "e7d0cb47170dd11b54f0f38a29f6055c5536d5b88d3e7759850c0c8c645be9a0",
+  "method": "Base colour emission render, orthographic, standard colour transform; unchanged topology",
+  "back_horizontal_axis": "Back camera reverses world X"
+}

@@ -1,0 +1,21 @@
+{
+  "date": "2026-10-20",
+  "tool": "built-in image_gen; not Comfy 3D generation",
+  "scope": "Bounded front/back colour repair only; geometry stays fixed in Blender",
+  "front": {
+    "sources": [
+      "albedo_front.png",
+      "source_assets/reference_library_20261020/npc/item_merchant/references/front.png"
+    ],
+    "output": "front_repair.png",
+    "prompt": "Precise texture-repair EDIT of FIRST image. First image is a 1024x1024 orthographic emission-only render of a game model: keep its EXACT square framing, scale, silhouette, A pose, face, head, hair, hands, skirt and every pixel position. Second reference only shows the already approved clothing colors, do not adopt its geometry or pose. Repair only the upper clothing within x=275..750,y=230..480: make the cream blouse continuous with a neat collar and puffy sleeves, remove accidental skin-colored patches/gray cracks from the fabric, restore the dark muted forest-green waistcoat and its simple brass buttons. Keep the existing neckline with visible skin only inside the intended opening, never paint skin over blouse. Also within x=405..620,y=830..910 clean the boundary between pale calves and brown boots without moving hem or boots. Preserve soft flat albedo colors and existing gentle shading, no new lighting or drawn edges. All regions outside these two repair areas must remain unchanged. Transparent background. Do not crop, recenter, zoom, change perspective, add accessories or text. This will be projected back onto the exact original 3D mesh, so alignment is critical."
+  },
+  "back": {
+    "sources": [
+      "albedo_back.png",
+      "source_assets/reference_library_20261020/npc/item_merchant/references/back.png"
+    ],
+    "output": "back_repair.png",
+    "prompt": "Precise texture-repair EDIT of FIRST image. Preserve its EXACT 1024x1024 square framing, orthographic back view, scale, silhouette, pose, hair bun, arms/hands, skirt, boots and pixel alignment. Second image is the approved costume color reference only; do not reshape the first image. Repair only the blouse and waistcoat in x=275..750,y=230..480: a continuous cream blouse with clean back collar and sleeves, a plain dark muted forest-green waistcoat with clean straps/edges, no random skin-colored or pale patches across the upper back and no jagged seams. Preserve the original waistcoat cut and belt. Also within x=405..620,y=830..910 clean the pale calf/brown boot boundary, keeping garment lengths and positions unchanged. Use the same soft flat albedo palette and gentle original shading; no added lighting, texture noise, outlines or logos. Everything outside these two regions must remain unchanged. Transparent background. No crop, zoom, recenter, front-facing features, new equipment or text. The result is for UV projection onto the exact original 3D mesh."
+  }
+}

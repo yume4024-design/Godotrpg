@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-20 — A05 NPC 候選來源與顏色修補
+
+道具商使用已由使用者核准的綠背心四視圖，本機現有 Pixal3D 工作流生成；沒有新商店下載或付費 Comfy API。內建 imagegen 修補衣服局部顏色，Blender 原生 BVH 投影與 emission-only 回烘，原件及提示詞／SHA 均保留。高密度來源留在本機 source_assets，未將巨型中間檔上傳。完整來源、prompt_id、測試及限制見 [A05 報告](ASSET_A05_REPORT.md)。鐵匠重用既有來源，此輪僅診斷材質。
+
 ## 2026-10-20 — A02 NPC 四視圖來源
 
 source_assets/reference_library_20261020 保留使用者既有五敵、鐵匠、艾琳、雷恩及莉雅設計的來源／SHA；四組新 NPC 以內建 imagegen 製作，使用者明確回答「四組都採用」。雷恩第四格朝向修正另存，未覆蓋原件；其採用仍保留人工確認。圖片去背使用本機既有 BiRefNet，分離／縮放為專案機械工具，無新增第三方商店資產或付費 API。模型權重的既有授權紀錄不因本次去背而改寫。來源、prompt_id、限制與驗收見 [A02 報告](ASSET_A02_REPORT.md)。

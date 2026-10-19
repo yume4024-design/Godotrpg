@@ -1,0 +1,5 @@
+# Original dense masters and transient Comfy output maps remain local.
+**/outputs/
+# Diagnostic Blender scene copies can be rebuilt from the preserved source.
+**/inspection/*_full.blend
+**/review/*_full.blend

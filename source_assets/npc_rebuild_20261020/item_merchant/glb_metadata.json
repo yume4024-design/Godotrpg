@@ -1,0 +1,22 @@
+[
+  {
+    "file": "source_assets\\npc_rebuild_20261020\\item_merchant\\outputs\\87d64b9d_004.glb",
+    "bytes": 256242252,
+    "sha256": "07155b341d71f4760ad96b91fbafa3d03de737df51360ed81a24f9dd19122fd7",
+    "triangles": 14418394,
+    "materials": 1,
+    "images": 0,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "file": "source_assets\\npc_rebuild_20261020\\item_merchant\\outputs\\87d64b9d_010.glb",
+    "bytes": 19422516,
+    "sha256": "e7d0cb47170dd11b54f0f38a29f6055c5536d5b88d3e7759850c0c8c645be9a0",
+    "triangles": 12584,
+    "materials": 1,
+    "images": 3,
+    "skins": 0,
+    "animations": 0
+  }
+]

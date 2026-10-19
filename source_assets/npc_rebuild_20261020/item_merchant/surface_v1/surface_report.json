@@ -1,0 +1,42 @@
+{
+  "source": "source_assets\\npc_rebuild_20261020\\item_merchant\\surface_patch",
+  "projection": {
+    "span": 1.815,
+    "center_z": 0.825,
+    "height": 1.65,
+    "input": "source_assets\\npc_rebuild_20261020\\item_merchant\\outputs\\87d64b9d_010.glb",
+    "input_sha256": "e7d0cb47170dd11b54f0f38a29f6055c5536d5b88d3e7759850c0c8c645be9a0",
+    "method": "Base colour emission render, orthographic, standard colour transform; unchanged topology",
+    "back_horizontal_axis": "Back camera reverses world X"
+  },
+  "method": "Reviewed imagegen colour repair, bounded visible-surface UV projection and emission-only bake",
+  "regions_at_1024": [
+    [
+      275,
+      230,
+      750,
+      480
+    ],
+    [
+      405,
+      830,
+      620,
+      910
+    ]
+  ],
+  "topology_modified": false,
+  "rigged": false,
+  "material_change": "Baked normal map disabled after controlled diagnostic showed false black tears",
+  "patches": [
+    {
+      "view": "front",
+      "selected_polygons": 1259,
+      "sha256": "89b68085d4d99605439d1ba3b99d7d59d7df44324b3cfebfd2b331f160a8fa9c"
+    },
+    {
+      "view": "back",
+      "selected_polygons": 914,
+      "sha256": "a4efa4c8a193868a80b5c8a9872b7c4e0d9efea6d369b9f4b5aed2006af58c5a"
+    }
+  ]
+}

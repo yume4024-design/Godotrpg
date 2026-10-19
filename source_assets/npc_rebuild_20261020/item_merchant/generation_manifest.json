@@ -1,0 +1,225 @@
+{
+  "asset": "item_merchant",
+  "category": "npc",
+  "maximum_triangles": 15000,
+  "candidate_target": 13800,
+  "status": "IN_PROGRESS",
+  "generation_submitted": true,
+  "source_workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "changes": [
+    {
+      "node": "186",
+      "field": "target_face_count",
+      "before": 30000,
+      "after": 13800,
+      "reason": "8% candidate headroom; final mesh still audited"
+    },
+    {
+      "node": "94",
+      "field": "target_resolution",
+      "before": "1536",
+      "after": 1536,
+      "reason": "INT correction from current UI"
+    },
+    {
+      "node": "241",
+      "field": "smooth_iters",
+      "before": 20,
+      "after": 0,
+      "reason": "Preserve small fingers/hair/clothing facets"
+    },
+    {
+      "node": "241",
+      "field": "drop_small_components",
+      "before": 0.01,
+      "after": 0.0,
+      "reason": "Do not delete small garment/hand/accessory components"
+    }
+  ],
+  "views": {
+    "front": {
+      "load_node": "364",
+      "server_image": "crystal_item_merchant_front.png",
+      "preview_node": "340",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "left": {
+      "load_node": "377",
+      "server_image": "crystal_item_merchant_left.png",
+      "preview_node": "344",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "back": {
+      "load_node": "378",
+      "server_image": "crystal_item_merchant_back.png",
+      "preview_node": "343",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "right": {
+      "load_node": "379",
+      "server_image": "crystal_item_merchant_right.png",
+      "preview_node": "346",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    }
+  },
+  "references": {
+    "references": "source_assets/reference_library_20261020/npc/item_merchant/references",
+    "structural_gate": "PASS",
+    "visual_review": "agent_viewed_four_directions",
+    "approval_basis": "user_adopted_four_new_npc_designs",
+    "status": "PASS",
+    "ready_for_generation": true,
+    "files": [
+      {
+        "view": "front",
+        "file": "source_assets/reference_library_20261020/npc/item_merchant/references/front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          254,
+          64,
+          770,
+          960
+        ],
+        "sha256": "8a53b78f753cf2ef8d7b17a191806f3f3346a66f3a7c8c64bfda659529e71e49"
+      },
+      {
+        "view": "left",
+        "file": "source_assets/reference_library_20261020/npc/item_merchant/references/left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          343,
+          64,
+          681,
+          960
+        ],
+        "sha256": "5871c32dec784e35b6c12f4c8a5da2779f2d006d90623887fc60c930f5d90793"
+      },
+      {
+        "view": "back",
+        "file": "source_assets/reference_library_20261020/npc/item_merchant/references/back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          261,
+          64,
+          763,
+          960
+        ],
+        "sha256": "2a34f92c7d63a34a9ca5c653de2cdbd1e384326ecd23ef7ae575f449676c9a60"
+      },
+      {
+        "view": "right",
+        "file": "source_assets/reference_library_20261020/npc/item_merchant/references/right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          344,
+          64,
+          680,
+          960
+        ],
+        "sha256": "637e8f13654cda9c46155dfc74074ddfac351eac38dd532c151b0ce626073454"
+      }
+    ]
+  },
+  "seeds": {
+    "12.seed": 43,
+    "18.seed": 42,
+    "3.seed": 56,
+    "23.seed": 42
+  },
+  "unverified": [
+    "Rig and animation",
+    "Formal gameplay integration",
+    "Final material/visual review"
+  ],
+  "input_prompt_id": "3439e594-2830-41c4-bc4b-7c21bb557957",
+  "input_status": "completed",
+  "conditioning_review": "Agent viewed all four actual 1024-square conditioning outputs: full body, correct opposite profiles, no labels. Outputs are opaque RGB on black, not the canonical RGBA source files.",
+  "generation_prompt_id": "87d64b9d-0500-4042-b144-e7c207bc4894",
+  "generation_status": "completed",
+  "preflight_vram_free_gib": 10.35956,
+  "raw_glb_metadata": [
+    {
+      "file": "source_assets\\npc_rebuild_20261020\\item_merchant\\outputs\\87d64b9d_004.glb",
+      "bytes": 256242252,
+      "sha256": "07155b341d71f4760ad96b91fbafa3d03de737df51360ed81a24f9dd19122fd7",
+      "triangles": 14418394,
+      "materials": 1,
+      "images": 0,
+      "skins": 0,
+      "animations": 0
+    },
+    {
+      "file": "source_assets\\npc_rebuild_20261020\\item_merchant\\outputs\\87d64b9d_010.glb",
+      "bytes": 19422516,
+      "sha256": "e7d0cb47170dd11b54f0f38a29f6055c5536d5b88d3e7759850c0c8c645be9a0",
+      "triangles": 12584,
+      "materials": 1,
+      "images": 3,
+      "skins": 0,
+      "animations": 0
+    }
+  ],
+  "raw_mesh_note": "GLB 12584, Blender imports 12573 (11 nonrepresentable triangles dropped by importer); both under 15000, no rig yet.",
+  "visual_findings": "Full body and adopted clothing present. Jagged dark patches on blouse/skin and small facial details need material/topology diagnosis before animation acceptance.",
+  "static_candidate": {
+    "file": "assets/models/rebuilt_npc/item_merchant_static.glb",
+    "sha256": "386a63c8cfd6fdaf6dca46c4d943ad2de6a460099df228eca54c6ac06f096ba5",
+    "triangles": 12573,
+    "height_m": 1.65,
+    "rigged": false,
+    "animations": 0
+  },
+  "gates": {
+    "triangle": "PASS",
+    "static_uv_import": "PASS",
+    "graphical_preview": "PASS",
+    "visual_surface": "IN_PROGRESS: small collar/armpit/hem overlaps remain",
+    "rig": "NOT_STARTED",
+    "animation": "NOT_STARTED",
+    "formal_gameplay": "NOT_STARTED"
+  }
+}

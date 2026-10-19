@@ -1,0 +1,39 @@
+{
+  "input": "D:/RPGGAME/source_assets/npc_rebuild_20261020/item_merchant/surface_v1/item_merchant_surface.glb",
+  "topology_modified": false,
+  "rigged": false,
+  "objects": [
+    {
+      "name": "ItemMerchantBody",
+      "vertices": 13326,
+      "triangles": 12573,
+      "uv_layers": 1,
+      "boundary_edges": 11435,
+      "nonmanifold_edges_more_than_two_faces": 2,
+      "zero_area_faces_epsilon_1e_16": 0,
+      "materials": [
+        "Material_0"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "albedo",
+      "size": [
+        4096,
+        4096
+      ]
+    }
+  ],
+  "triangles": 12573,
+  "bounds_min": [
+    -0.4618472754955292,
+    -0.30282267928123474,
+    0.0
+  ],
+  "bounds_max": [
+    0.4618472754955292,
+    0.30282267928123474,
+    1.649999976158142
+  ]
+}

@@ -1,0 +1,557 @@
+{
+  "workflow": "D:\\Comfy-Desktop\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\user\\default\\workflows\\3d_pixal3d_multi_views.json",
+  "slots": [
+    {
+      "address": "118.vae_name",
+      "current_value": "trellis_2_texture_vae_bf16.safetensors"
+    },
+    {
+      "address": "15.clip_name",
+      "current_value": "dino_v3_L_naf_fp32.safetensors"
+    },
+    {
+      "address": "261.resolution",
+      "current_value": 1024
+    },
+    {
+      "address": "12.seed",
+      "current_value": 43
+    },
+    {
+      "address": "12.steps",
+      "current_value": 12
+    },
+    {
+      "address": "12.cfg",
+      "current_value": 1
+    },
+    {
+      "address": "12.sampler_name",
+      "current_value": "euler"
+    },
+    {
+      "address": "12.scheduler",
+      "current_value": "normal"
+    },
+    {
+      "address": "12.denoise",
+      "current_value": 1
+    },
+    {
+      "address": "147.texture_size",
+      "current_value": 2048
+    },
+    {
+      "address": "288.value",
+      "current_value": 4096
+    },
+    {
+      "address": "238.crease_angle",
+      "current_value": 180
+    },
+    {
+      "address": "18.seed",
+      "current_value": 42
+    },
+    {
+      "address": "18.steps",
+      "current_value": 20
+    },
+    {
+      "address": "18.cfg",
+      "current_value": 7.5
+    },
+    {
+      "address": "18.sampler_name",
+      "current_value": "euler"
+    },
+    {
+      "address": "18.scheduler",
+      "current_value": "normal"
+    },
+    {
+      "address": "18.denoise",
+      "current_value": 1
+    },
+    {
+      "address": "279.cfg",
+      "current_value": 1
+    },
+    {
+      "address": "279.start_percent",
+      "current_value": 0.769
+    },
+    {
+      "address": "279.end_percent",
+      "current_value": 1
+    },
+    {
+      "address": "126.multiplier",
+      "current_value": 0.5
+    },
+    {
+      "address": "246.viewport_state",
+      "current_value": ""
+    },
+    {
+      "address": "246.width",
+      "current_value": 1024
+    },
+    {
+      "address": "246.height",
+      "current_value": 1024
+    },
+    {
+      "address": "119.resolution",
+      "current_value": "32"
+    },
+    {
+      "address": "4.algorithm",
+      "current_value": "basic"
+    },
+    {
+      "address": "4.threshold",
+      "current_value": 0.6
+    },
+    {
+      "address": "3.seed",
+      "current_value": 56
+    },
+    {
+      "address": "3.steps",
+      "current_value": 12
+    },
+    {
+      "address": "3.cfg",
+      "current_value": 7.5
+    },
+    {
+      "address": "3.sampler_name",
+      "current_value": "euler"
+    },
+    {
+      "address": "3.scheduler",
+      "current_value": "normal"
+    },
+    {
+      "address": "3.denoise",
+      "current_value": 1
+    },
+    {
+      "address": "125.multiplier",
+      "current_value": 0.7
+    },
+    {
+      "address": "199.cfg",
+      "current_value": 1
+    },
+    {
+      "address": "199.start_percent",
+      "current_value": 0.667
+    },
+    {
+      "address": "199.end_percent",
+      "current_value": 1
+    },
+    {
+      "address": "108.shift",
+      "current_value": 5
+    },
+    {
+      "address": "94.target_resolution",
+      "current_value": "1536"
+    },
+    {
+      "address": "233.resolution",
+      "current_value": 1024
+    },
+    {
+      "address": "233.samples",
+      "current_value": 64
+    },
+    {
+      "address": "233.max_distance",
+      "current_value": 0.71
+    },
+    {
+      "address": "233.strength",
+      "current_value": 1
+    },
+    {
+      "address": "233.bias",
+      "current_value": 0.01
+    },
+    {
+      "address": "224.resolution",
+      "current_value": 2048
+    },
+    {
+      "address": "224.cage_distance",
+      "current_value": 0.05
+    },
+    {
+      "address": "224.ignore_backfaces",
+      "current_value": true
+    },
+    {
+      "address": "241.resolution",
+      "current_value": 768
+    },
+    {
+      "address": "241.sign_mode",
+      "current_value": "udf"
+    },
+    {
+      "address": "241.sign_mode.qef",
+      "current_value": false
+    },
+    {
+      "address": "241.sign_mode.drop_inverted_components",
+      "current_value": false
+    },
+    {
+      "address": "241.sign_mode.drop_enclosed_components",
+      "current_value": false
+    },
+    {
+      "address": "241.band",
+      "current_value": 1
+    },
+    {
+      "address": "241.project_back",
+      "current_value": 0
+    },
+    {
+      "address": "241.fix_poles",
+      "current_value": false
+    },
+    {
+      "address": "241.smooth_iters",
+      "current_value": 20
+    },
+    {
+      "address": "241.drop_small_components",
+      "current_value": 0.01
+    },
+    {
+      "address": "241.precluster_max_verts",
+      "current_value": 20000000
+    },
+    {
+      "address": "186.target_face_count",
+      "current_value": 30000
+    },
+    {
+      "address": "186.placement_mode",
+      "current_value": "qem"
+    },
+    {
+      "address": "186.placement_mode.line_quadric_weight",
+      "current_value": 0
+    },
+    {
+      "address": "186.placement_mode.feature_edge_quadric_weight",
+      "current_value": 0
+    },
+    {
+      "address": "186.placement_mode.feature_edge_min_dihedral_deg",
+      "current_value": 30
+    },
+    {
+      "address": "186.placement_mode.clamp_v_to_edge",
+      "current_value": true
+    },
+    {
+      "address": "196.segmenter",
+      "current_value": "pec"
+    },
+    {
+      "address": "196.resolution",
+      "current_value": 2048
+    },
+    {
+      "address": "196.padding",
+      "current_value": 1
+    },
+    {
+      "address": "196.weld_distance",
+      "current_value": 0.0002
+    },
+    {
+      "address": "117.vae_name",
+      "current_value": "trellis_2_shape_vae_bf16.safetensors"
+    },
+    {
+      "address": "193.bg_removal_name",
+      "current_value": "birefnet.safetensors"
+    },
+    {
+      "address": "260.crease_angle",
+      "current_value": 180
+    },
+    {
+      "address": "87.batch_size",
+      "current_value": 1
+    },
+    {
+      "address": "23.seed",
+      "current_value": 42
+    },
+    {
+      "address": "23.steps",
+      "current_value": 12
+    },
+    {
+      "address": "23.cfg",
+      "current_value": 7.5
+    },
+    {
+      "address": "23.sampler_name",
+      "current_value": "euler"
+    },
+    {
+      "address": "23.scheduler",
+      "current_value": "simple"
+    },
+    {
+      "address": "23.denoise",
+      "current_value": 1
+    },
+    {
+      "address": "312.width",
+      "current_value": 1024
+    },
+    {
+      "address": "312.height",
+      "current_value": 1024
+    },
+    {
+      "address": "312.pad_factor",
+      "current_value": 1.1
+    },
+    {
+      "address": "312.grow_mask",
+      "current_value": 0
+    },
+    {
+      "address": "312.background",
+      "current_value": "#000000"
+    },
+    {
+      "address": "319.unet_name",
+      "current_value": "pixal3d_multiview_int8_convrot.safetensors"
+    },
+    {
+      "address": "319.weight_dtype",
+      "current_value": "default"
+    },
+    {
+      "address": "323.viewport_state",
+      "current_value": ""
+    },
+    {
+      "address": "323.width",
+      "current_value": 1024
+    },
+    {
+      "address": "323.height",
+      "current_value": 1024
+    },
+    {
+      "address": "324.fov",
+      "current_value": 20
+    },
+    {
+      "address": "338.crop_region",
+      "current_value": {
+        "x": 0,
+        "y": 0,
+        "width": 494,
+        "height": 2230
+      }
+    },
+    {
+      "address": "340.filename_prefix",
+      "current_value": "front_view"
+    },
+    {
+      "address": "340.format",
+      "current_value": "png"
+    },
+    {
+      "address": "340.format.bit_depth",
+      "current_value": "8-bit"
+    },
+    {
+      "address": "340.format.input_color_space",
+      "current_value": "sRGB"
+    },
+    {
+      "address": "341.crop_region",
+      "current_value": {
+        "x": 1209,
+        "y": 0,
+        "width": 314,
+        "height": 2459
+      }
+    },
+    {
+      "address": "342.crop_region",
+      "current_value": {
+        "x": 729,
+        "y": 0,
+        "width": 485,
+        "height": 2688
+      }
+    },
+    {
+      "address": "343.filename_prefix",
+      "current_value": "back_view"
+    },
+    {
+      "address": "343.format",
+      "current_value": "png"
+    },
+    {
+      "address": "343.format.bit_depth",
+      "current_value": "8-bit"
+    },
+    {
+      "address": "343.format.input_color_space",
+      "current_value": "sRGB"
+    },
+    {
+      "address": "344.filename_prefix",
+      "current_value": "left_view"
+    },
+    {
+      "address": "344.format",
+      "current_value": "png"
+    },
+    {
+      "address": "344.format.bit_depth",
+      "current_value": "8-bit"
+    },
+    {
+      "address": "344.format.input_color_space",
+      "current_value": "sRGB"
+    },
+    {
+      "address": "345.crop_region",
+      "current_value": {
+        "x": 469,
+        "y": 0,
+        "width": 280,
+        "height": 2466
+      }
+    },
+    {
+      "address": "346.filename_prefix",
+      "current_value": "right_view"
+    },
+    {
+      "address": "346.format",
+      "current_value": "png"
+    },
+    {
+      "address": "346.format.bit_depth",
+      "current_value": "8-bit"
+    },
+    {
+      "address": "346.format.input_color_space",
+      "current_value": "sRGB"
+    },
+    {
+      "address": "349.width",
+      "current_value": 1024
+    },
+    {
+      "address": "349.height",
+      "current_value": 1024
+    },
+    {
+      "address": "349.pad_factor",
+      "current_value": 1.1
+    },
+    {
+      "address": "349.grow_mask",
+      "current_value": 0
+    },
+    {
+      "address": "349.background",
+      "current_value": "#000000"
+    },
+    {
+      "address": "350.width",
+      "current_value": 1024
+    },
+    {
+      "address": "350.height",
+      "current_value": 1024
+    },
+    {
+      "address": "350.pad_factor",
+      "current_value": 1.1
+    },
+    {
+      "address": "350.grow_mask",
+      "current_value": 0
+    },
+    {
+      "address": "350.background",
+      "current_value": "#000000"
+    },
+    {
+      "address": "352.width",
+      "current_value": 1024
+    },
+    {
+      "address": "352.height",
+      "current_value": 1024
+    },
+    {
+      "address": "352.pad_factor",
+      "current_value": 1.1
+    },
+    {
+      "address": "352.grow_mask",
+      "current_value": 0
+    },
+    {
+      "address": "352.background",
+      "current_value": "#000000"
+    },
+    {
+      "address": "364.image",
+      "current_value": "森林史萊姆正面.png"
+    },
+    {
+      "address": "372.filename_prefix",
+      "current_value": "3d/ComfyUI"
+    },
+    {
+      "address": "372.viewport_state",
+      "current_value": ""
+    },
+    {
+      "address": "372.width",
+      "current_value": 1024
+    },
+    {
+      "address": "372.height",
+      "current_value": 1024
+    },
+    {
+      "address": "377.image",
+      "current_value": "森林史萊姆左側.png"
+    },
+    {
+      "address": "378.image",
+      "current_value": "森林史萊姆背面.png"
+    },
+    {
+      "address": "379.image",
+      "current_value": "森林史萊姆右側.png"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+	"animation_test": false,
+	"checks": 14,
+	"failures": [],
+	"formal_gameplay_test": false,
+	"graphical": true,
+	"model_sha256": "386a63c8cfd6fdaf6dca46c4d943ad2de6a460099df228eca54c6ac06f096ba5",
+	"physical_input_test": false,
+	"rigged": false,
+	"triangles": 12573
+}

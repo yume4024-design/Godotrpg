@@ -1,0 +1,41 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\npc_rebuild_20261020\\item_merchant\\surface_v1\\item_merchant_surface.glb",
+    "category": "npc",
+    "sha256": "386a63c8cfd6fdaf6dca46c4d943ad2de6a460099df228eca54c6ac06f096ba5",
+    "maximum_triangles": 15000,
+    "triangles": 12573,
+    "headroom_triangles": 2427,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 12573,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 1,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 12573,
+  "status": "PASS"
+}
