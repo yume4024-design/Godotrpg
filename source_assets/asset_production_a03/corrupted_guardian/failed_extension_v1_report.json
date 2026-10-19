@@ -1,0 +1,115 @@
+{
+  "input": "source_assets\\asset_production_a03\\corrupted_guardian\\action_extension_v1\\extended.blend",
+  "sha256": "ffe084dfdfa7a7e4b346fd760ab97369c409bcab1e30c044bc28806fd85f2f40",
+  "category": "boss",
+  "maximum_triangles": 15000,
+  "bones": 17,
+  "actions": {
+    "attack": {
+      "frames": 29,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 2.2582391810093347,
+      "floor_range": [
+        0.003999956417828798,
+        0.003999956417828798
+      ]
+    },
+    "cast": {
+      "frames": 37,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 2.2582391810093347,
+      "floor_range": [
+        0.003999956417828798,
+        0.003999956417828798
+      ]
+    },
+    "death": {
+      "frames": 37,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 2.3098926804959774,
+      "max_edge_stretch": 1.0000395092051477,
+      "floor_range": [
+        0.003999840933829546,
+        0.004000071436166763
+      ]
+    },
+    "heavy_attack": {
+      "frames": 43,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 2.5860692405990098,
+      "floor_range": [
+        0.003999956417828798,
+        0.003999956417828798
+      ]
+    },
+    "hit": {
+      "frames": 19,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.1858509504587789,
+      "floor_range": [
+        0.003999956417828798,
+        0.003999956417828798
+      ]
+    },
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.0184591147149065,
+      "floor_range": [
+        0.003999956417828798,
+        0.003999956417828798
+      ]
+    },
+    "special_attack": {
+      "frames": 49,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 2.114616564580522,
+      "floor_range": [
+        0.003999956417828798,
+        0.003999956417828798
+      ]
+    },
+    "stagger": {
+      "frames": 31,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.3593554035662039,
+      "floor_range": [
+        0.003999943844974041,
+        0.004000050015747547
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 9762,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.4072655976842845,
+      "floor_range": [
+        0.003999956417828798,
+        0.004000045359134674
+      ]
+    }
+  },
+  "total_frames": 319,
+  "topology_warnings": [
+    {
+      "mesh": "corrupted_guardian_body",
+      "boundary_edges": 11,
+      "nonmanifold_edges": 153
+    }
+  ],
+  "failures": [
+    "heavy_attack:EXCESSIVE_EDGE_STRETCH"
+  ],
+  "status": "FAIL",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

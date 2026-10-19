@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\corrupted_guardian\\references\\corrupted_guardian_front.png",
+    "source_sha256": "314996b51093e6221dd59208a3172f8248128556c3b032e5a31d0f517f8dd150",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\corrupted_guardian\\references\\front.png",
+    "output_sha256": "f61af73f4b8c447c890f6706a24781c6f157ffe29031ee7cc10911d4eb266be3",
+    "resized_size": [
+      691,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      106,
+      26,
+      647,
+      727
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\corrupted_guardian\\references\\corrupted_guardian_left.png",
+    "source_sha256": "1fdeb1f55f9bf6a506ea9e5b406b2535e414bef5843492ffbf2e557110a64a0a",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\corrupted_guardian\\references\\left.png",
+    "output_sha256": "946ac7504f8d0304843d2d59c8212e738b1014d1a491c0f68a824d28402ef057",
+    "resized_size": [
+      302,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      258,
+      26,
+      494,
+      727
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\corrupted_guardian\\references\\corrupted_guardian_back.png",
+    "source_sha256": "f97137110d6d6703eb6bb665412a1ab832fd2d17ede8bd848aa44bae4ba21798",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\corrupted_guardian\\references\\back.png",
+    "output_sha256": "69a1f282ff378ad773db60ac346de9db7d97ba99e614589ee3e2fd0a6a63dd7a",
+    "resized_size": [
+      663,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      117,
+      26,
+      636,
+      727
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\corrupted_guardian\\references\\corrupted_guardian_right.png",
+    "source_sha256": "3732e8b355eccdc2f655fc689926a38225c5b27be80171f5ef541070246ce802",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\corrupted_guardian\\references\\right.png",
+    "output_sha256": "4b48494a51994be875a11f44410bf6e23c69860d7be4e5e2282d9e7797625203",
+    "resized_size": [
+      309,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      254,
+      26,
+      494,
+      721
+    ]
+  }
+]

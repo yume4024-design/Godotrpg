@@ -1,0 +1,213 @@
+{
+  "asset": "corrupted_guardian",
+  "category": "boss",
+  "status": "PASS",
+  "method": "Reuse existing Pixal3D + Blender surface candidate; no new Comfy job",
+  "generation_prompt_id": "8d6225a6-e5ad-4e80-8e1d-14f678d8a3e2",
+  "workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "shape_resolution": 1536,
+  "texture_resolution": 4096,
+  "remesh_resolution": 768,
+  "runtime_glb": "assets/models/rebuilt_enemies/corrupted_guardian.glb",
+  "high_density_master": {
+    "path": "source_assets/monster_rebuild_20261019/corrupted_guardian/outputs/corrupted_guardian_source_00001.glb",
+    "sha256": "fda645733ecf9af25b9e4c787b406676750fd9a4429335c7e74277919a2fb00a",
+    "bytes": 373552760,
+    "git_policy": "Original preserved locally; giant binary excluded from commit"
+  },
+  "selected_source": {
+    "file": "source_assets/monster_rebuild_20261019/corrupted_guardian/surface_v4/corrupted_guardian_animated.glb",
+    "blend": "source_assets/monster_rebuild_20261019/corrupted_guardian/surface_v4/corrupted_guardian_animated.blend",
+    "triangles": 9762,
+    "bones": 17,
+    "clips": [
+      "attack",
+      "cast",
+      "death",
+      "hit",
+      "idle",
+      "walk"
+    ],
+    "weight_sum_error": 1.7881393432617188e-07,
+    "loop_endpoint_error": 0,
+    "max_edge_stretch": 2.2582391810093347,
+    "frames_sampled": 196,
+    "status": "rigged_candidate_offline_checks_passed"
+  },
+  "original_sources": [
+    {
+      "path": "source_assets/monster_rebuild_20261019/corrupted_guardian/surface_v4/corrupted_guardian_animated.glb",
+      "sha256": "9792680e3fab39d43bfd82f651882e407a07114373444a1560b626899b48ce92"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/corrupted_guardian/surface_v4/corrupted_guardian_animated.blend",
+      "sha256": "0ec59779b479272999fd968852cdc7a2253f2a1141491713a7b6bde8cbdb8f02"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/corrupted_guardian/outputs/corrupted_guardian_textured_00001.glb",
+      "sha256": "a5fd2b7a84c6951711f030d18683cd4f39a05dc8e0840d607633237efe5f6602"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "deformation_report.json",
+      "sha256": "d73dc918f54212d2b12bbbfd4bb5930c415339103b28ecc5660992cbcdec06bc"
+    },
+    {
+      "file": "failed_extension_v1_report.json",
+      "sha256": "8aeae68e9ea899b6c7d815b03476a84faee07980b9f25d1d3bcc9085e75abe4e"
+    },
+    {
+      "file": "generated_raw.glb",
+      "sha256": "a5fd2b7a84c6951711f030d18683cd4f39a05dc8e0840d607633237efe5f6602"
+    },
+    {
+      "file": "godot_report.json",
+      "sha256": "1eb38cddfbc696bbb62e9923887c0ca71ae56443c24a5ba7b7fc4b6f00f0f697"
+    },
+    {
+      "file": "optimized.blend",
+      "sha256": "b186d479033bc06730c05318d5ce1f6cdd77f0a938a9ad5e618f4f2c5cdf7f80"
+    },
+    {
+      "file": "optimized.glb",
+      "sha256": "f0b66505c8809209b9502a09000d06991bf0114a7d748c980878421255c1c8ad"
+    },
+    {
+      "file": "preview_back.webp",
+      "sha256": "530a0e1b14d7d0b6c7df0e0a9a5e6f0d31891dd981f87bbc38c913e0b2571791"
+    },
+    {
+      "file": "preview_front.webp",
+      "sha256": "7198f5e748ff631e13cbf8b6b932ee495e84d4221f0be9a4b535078120a5a1aa"
+    },
+    {
+      "file": "preview_in_godot.webp",
+      "sha256": "7198f5e748ff631e13cbf8b6b932ee495e84d4221f0be9a4b535078120a5a1aa"
+    },
+    {
+      "file": "preview_side.webp",
+      "sha256": "88ccd63ed23ac3321a2164e2fbb7d7c31905b53c228a8d009e9661db03842737"
+    },
+    {
+      "file": "triangle_report.json",
+      "sha256": "4cc0323dd9af82531c37d1ba5aa736378d1cb93e6f103090b9e50aaf3bf2bc7e"
+    },
+    {
+      "file": "validation_report.md",
+      "sha256": "9d778fb1aa6234298dce78e9ce1b9c5b01a9870827ea969f29a61dfb58ec7e98"
+    }
+  ],
+  "references": {
+    "references": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references",
+    "structural_gate": "PASS",
+    "visual_review": "agent_viewed_four_directions",
+    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "status": "PASS",
+    "ready_for_generation": true,
+    "files": [
+      {
+        "view": "front",
+        "file": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references/front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          166,
+          64,
+          857,
+          960
+        ],
+        "sha256": "f61af73f4b8c447c890f6706a24781c6f157ffe29031ee7cc10911d4eb266be3"
+      },
+      {
+        "view": "left",
+        "file": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references/left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          361,
+          64,
+          663,
+          960
+        ],
+        "sha256": "946ac7504f8d0304843d2d59c8212e738b1014d1a491c0f68a824d28402ef057"
+      },
+      {
+        "view": "back",
+        "file": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references/back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          180,
+          64,
+          843,
+          960
+        ],
+        "sha256": "69a1f282ff378ad773db60ac346de9db7d97ba99e614589ee3e2fd0a6a63dd7a"
+      },
+      {
+        "view": "right",
+        "file": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references/right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          357,
+          64,
+          666,
+          960
+        ],
+        "sha256": "4b48494a51994be875a11f44410bf6e23c69860d7be4e5e2282d9e7797625203"
+      }
+    ]
+  },
+  "limitations": [
+    "Nonmanifold intersections remain; not certified watertight",
+    "No new physical player playthrough or performance benchmark",
+    "A04 formal battle/exploration regression remains required"
+  ],
+  "action_extension": {
+    "selected": "action_extension_v2",
+    "details": {
+      "asset": "corrupted_guardian",
+      "input": "source_assets\\asset_production_a03\\corrupted_guardian\\optimized.blend",
+      "added_clips": [
+        "heavy_attack",
+        "special_attack",
+        "stagger"
+      ],
+      "mesh_geometry_edits": false,
+      "wing_weight_smoothing": false,
+      "fps": 24,
+      "root_translation": "Floor compensated; charge visual offset <= 0.18m, no gameplay movement"
+    },
+    "failed_attempt_reports": [
+      "failed_extension_v1_report.json"
+    ]
+  },
+  "acceptance_scope": "A03 model/rig/representative animation candidate; A04 gameplay integration pending",
+  "gates": {
+    "triangle": "PASS",
+    "structure_weights_uv": "PASS",
+    "deformation": "PASS",
+    "graphical_import_motion": "PASS",
+    "agent_visual_review": "PASS",
+    "formal_battle": "NOT_STARTED"
+  },
+  "visual_notes": "已查看四面、九動作、雙臂重擊蓄力／落下、特殊攻擊與踉蹌側面。石塊／肩甲保持連接，代表畫面未見碎裂；首版重擊肩背接縫拉伸2.586，第二版限縮擺幅後通過。11邊界／153非流形邊保留警告。"
+}

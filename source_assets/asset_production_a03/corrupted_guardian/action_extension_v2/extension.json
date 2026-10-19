@@ -1,0 +1,13 @@
+{
+  "asset": "corrupted_guardian",
+  "input": "source_assets\\asset_production_a03\\corrupted_guardian\\optimized.blend",
+  "added_clips": [
+    "heavy_attack",
+    "special_attack",
+    "stagger"
+  ],
+  "mesh_geometry_edits": false,
+  "wing_weight_smoothing": false,
+  "fps": 24,
+  "root_translation": "Floor compensated; charge visual offset <= 0.18m, no gameplay movement"
+}

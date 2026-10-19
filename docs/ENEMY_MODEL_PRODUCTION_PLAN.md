@@ -8,7 +8,7 @@
 | A03.2 Ore Beetle | common_enemy／10000 | source_assets/asset_production_a03/ore_beetle | PASS：9911 面／15 骨／5 動作；159 影格／Godot 416 項 |
 | A03.3 Thorn Boar | common_enemy／10000 | source_assets/asset_production_a03/thorn_boar | PASS：9998 面／12 骨／7 動作；211 影格／Godot 471 項 |
 | A03.4 Crystal Bat | common_enemy／10000 | source_assets/asset_production_a03/crystal_bat | HUMAN_REVIEW：9686 面；數值通過但側面有脫離翼膜，保留正式舊模型 |
-| A03.5 Corrupted Guardian | boss／15000 | 同根目錄 corrupted_guardian | NOT_STARTED |
+| A03.5 Corrupted Guardian | boss／15000 | source_assets/asset_production_a03/corrupted_guardian | PASS：9762 面／17 骨／9 動作；319 影格／Godot 827 項 |
 
 每個來源下 `references/<id>_{front,left,back,right}.png` 已存在；A02 仍須依新標準核對 Alpha、畫布、方向、完整性與 SHA，才可 READY。孢子菇靈與守衛另有 reference_sheet_corrected.png，保留方向修正歷史，不回用錯方向原圖。
 

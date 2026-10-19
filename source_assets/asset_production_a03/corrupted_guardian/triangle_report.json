@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "file": "assets/models/rebuilt_enemies/corrupted_guardian.glb",
+  "category": "boss",
+  "sha256": "f0b66505c8809209b9502a09000d06991bf0114a7d748c980878421255c1c8ad",
+  "maximum_triangles": 15000,
+  "triangles": 9762,
+  "headroom_triangles": 5238,
+  "triangle_gate": "PASS",
+  "status": "PASS",
+  "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+  "requirements": {
+    "uv": true,
+    "rig": true
+  },
+  "max_weight_sum_error": 1.30385160446167e-07,
+  "primitives": [
+    {
+      "node": 17,
+      "mesh": 0,
+      "triangles": 9762,
+      "attributes": [
+        "JOINTS_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "WEIGHTS_0"
+      ]
+    }
+  ],
+  "skins": [
+    17
+  ],
+  "materials": 1,
+  "animations": [
+    "attack",
+    "cast",
+    "death",
+    "heavy_attack",
+    "hit",
+    "idle",
+    "special_attack",
+    "stagger",
+    "walk"
+  ],
+  "failures": [],
+  "warnings": [],
+  "visual_gate": "HUMAN_REVIEW",
+  "animation_gate": "NOT_STARTED"
+}
