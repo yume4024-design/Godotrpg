@@ -1,0 +1,198 @@
+{
+  "asset": "thorn_boar",
+  "category": "common_enemy",
+  "status": "PASS",
+  "method": "Reuse existing Pixal3D + Blender surface candidate; no new Comfy job",
+  "generation_prompt_id": "602745ea-05fa-4e38-b63e-2ca4052309a8",
+  "workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "shape_resolution": 1536,
+  "texture_resolution": 4096,
+  "remesh_resolution": 768,
+  "runtime_glb": "assets/models/rebuilt_enemies/thorn_boar.glb",
+  "high_density_master": {
+    "path": "source_assets/monster_rebuild_20261019/thorn_boar/outputs/thorn_boar_source_00001.glb",
+    "sha256": "b4746a8bde3332de5824695816282e950ab16126b27d2981a7b71baae2d097f0",
+    "bytes": 581629880,
+    "git_policy": "Original preserved locally; giant binary excluded from commit"
+  },
+  "selected_source": {
+    "file": "source_assets/monster_rebuild_20261019/thorn_boar/surface_v1/thorn_boar_animated.glb",
+    "blend": "source_assets/monster_rebuild_20261019/thorn_boar/surface_v1/thorn_boar_animated.blend",
+    "triangles": 9998,
+    "bones": 12,
+    "clips": [
+      "attack",
+      "death",
+      "hit",
+      "idle",
+      "walk"
+    ],
+    "weight_sum_error": 1.1920928955078125e-07,
+    "loop_endpoint_error": 0,
+    "max_edge_stretch": 1.6379387753154688,
+    "frames_sampled": 159,
+    "status": "rigged_candidate_offline_checks_passed"
+  },
+  "original_sources": [
+    {
+      "path": "source_assets/monster_rebuild_20261019/thorn_boar/surface_v1/thorn_boar_animated.glb",
+      "sha256": "0333a7b7b8624f40e1d92bcd22936194966c9358652ad785b84aaf630ded9d71"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/thorn_boar/surface_v1/thorn_boar_animated.blend",
+      "sha256": "a93f25118218f3dce518528a40f00d5c71fec18f168244acdd9d68260ada7d3c"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/thorn_boar/outputs/thorn_boar_textured_00002.glb",
+      "sha256": "9dacedcf7f61993f353c7be86ada3e0e71f664ec2e0f5322aada08c2403bfd57"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "deformation_report.json",
+      "sha256": "4b29dfb3e3f4b3d4e9ecb32cd53222a770dcf4bd872bbcabdd30a25de12665dd"
+    },
+    {
+      "file": "generated_raw.glb",
+      "sha256": "9dacedcf7f61993f353c7be86ada3e0e71f664ec2e0f5322aada08c2403bfd57"
+    },
+    {
+      "file": "godot_report.json",
+      "sha256": "c3ed439d41950f9ccccd4e159fc8a106d6ddbe437512e3d23255e0e3c086bb2c"
+    },
+    {
+      "file": "optimized.blend",
+      "sha256": "781281b1a86bab52e79c4887f740193ea5459967236e1098869bda3f1aa25932"
+    },
+    {
+      "file": "optimized.glb",
+      "sha256": "3b212d70f5de4321325aba30d6de338ea9f7e8b49103d8bfa3267554fae493ed"
+    },
+    {
+      "file": "preview_back.webp",
+      "sha256": "c6b04749fd378c2f9acc0993579e717d0e394b9aafd37609c6f4248736b8275c"
+    },
+    {
+      "file": "preview_front.webp",
+      "sha256": "1f97a72d4299e821a2a3bd0ad534aef597e516f9039ae9fe29bdcce4d625fac9"
+    },
+    {
+      "file": "preview_in_godot.webp",
+      "sha256": "1f97a72d4299e821a2a3bd0ad534aef597e516f9039ae9fe29bdcce4d625fac9"
+    },
+    {
+      "file": "preview_side.webp",
+      "sha256": "828f599d2e07ba1fa977b80a21c74025e17e16c1b7ffa8ab9ac23da5a20c98ec"
+    },
+    {
+      "file": "triangle_report.json",
+      "sha256": "f09a9989e8bbc984be8f84d279f3aec2454acd534b391650d3f88208eb880574"
+    },
+    {
+      "file": "validation_report.md",
+      "sha256": "d808649a25f31fa7824765b4109ec84c5d3ec47052bfc517ec0399c3533e8742"
+    }
+  ],
+  "references": {
+    "references": "source_assets/reference_library_20261020/enemies/thorn_boar/references",
+    "structural_gate": "PASS",
+    "visual_review": "agent_viewed_four_directions",
+    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "status": "PASS",
+    "ready_for_generation": true,
+    "files": [
+      {
+        "view": "front",
+        "file": "source_assets/reference_library_20261020/enemies/thorn_boar/references/front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          242,
+          168,
+          781,
+          960
+        ],
+        "sha256": "bd93dac099abc097fd6f2350e2accbe55bf05e9af0d0c4491d568cf394d43324"
+      },
+      {
+        "view": "left",
+        "file": "source_assets/reference_library_20261020/enemies/thorn_boar/references/left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          64,
+          168,
+          960,
+          960
+        ],
+        "sha256": "9dae9ef836ef8804d85bc794d011907c0706924e5b84ca27fa0cf1b8dec65270"
+      },
+      {
+        "view": "back",
+        "file": "source_assets/reference_library_20261020/enemies/thorn_boar/references/back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          252,
+          168,
+          771,
+          960
+        ],
+        "sha256": "8cb360986b58efe4ee91187c456e927086b67d6d3bb0fb82b37ff91d3b5dfc5a"
+      },
+      {
+        "view": "right",
+        "file": "source_assets/reference_library_20261020/enemies/thorn_boar/references/right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          120,
+          168,
+          903,
+          960
+        ],
+        "sha256": "890810ffe992725d757f62c9de36e56ded6bd38206008d2061a9a16fa4bbbf7a"
+      }
+    ]
+  },
+  "limitations": [
+    "Nonmanifold intersections remain; not certified watertight",
+    "No new physical player playthrough or performance benchmark",
+    "A04 formal battle/exploration regression remains required"
+  ],
+  "action_extension": {
+    "selected": "action_extension_v2",
+    "failed_attempt": "action_extension_v1: charge maximum edge stretch 2.57565",
+    "added_clips": [
+      "run",
+      "charge"
+    ],
+    "mesh_and_weights_unchanged": true
+  },
+  "acceptance_scope": "A03 model/rig/representative animation candidate; A04 gameplay integration pending",
+  "gates": {
+    "triangle": "PASS",
+    "structure_weights_uv": "PASS",
+    "deformation": "PASS",
+    "graphical_import_motion": "PASS",
+    "agent_visual_review": "PASS",
+    "formal_battle": "NOT_STARTED"
+  },
+  "visual_notes": "四面、七動作及奔跑四分之一週期／衝撞側圖已查看，四足步態可辨識且未見骨架碎裂。衝撞首版在頭／前足混合權重接縫拉伸2.57565，第二版降低頭部與前足同時擺幅後通過；非流形藤蔓／鬃毛仍粗糙，無足部IK。"
+}

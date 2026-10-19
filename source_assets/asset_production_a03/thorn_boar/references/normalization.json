@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\thorn_boar\\references\\thorn_boar_front.png",
+    "source_sha256": "74c40de20fedd25b5918915a717ca83e19b8041a64cd6bf1ba70f22de9dc9840",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\thorn_boar\\references\\front.png",
+    "output_sha256": "bd93dac099abc097fd6f2350e2accbe55bf05e9af0d0c4491d568cf394d43324",
+    "resized_size": [
+      539,
+      792
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      97,
+      26,
+      400,
+      471
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\thorn_boar\\references\\thorn_boar_left.png",
+    "source_sha256": "e25182d3e44aba6ba6abfde62e37afafffbbd98c9862a130a02e10e214d45598",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\thorn_boar\\references\\left.png",
+    "output_sha256": "9dae9ef836ef8804d85bc794d011907c0706924e5b84ca27fa0cf1b8dec65270",
+    "resized_size": [
+      896,
+      792
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      26,
+      53,
+      527,
+      496
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\thorn_boar\\references\\thorn_boar_back.png",
+    "source_sha256": "9bf923931b495e2af3265be6356e6b87432cf5027b0a2e37b47e6e2eef76c3a9",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\thorn_boar\\references\\back.png",
+    "output_sha256": "8cb360986b58efe4ee91187c456e927086b67d6d3bb0fb82b37ff91d3b5dfc5a",
+    "resized_size": [
+      519,
+      792
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      102,
+      26,
+      394,
+      472
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\thorn_boar\\references\\thorn_boar_right.png",
+    "source_sha256": "fd3b8c36b768ca59cad05b8bfdb33b1a12498f86f698d6df8bad1f9972dc95e1",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\thorn_boar\\references\\right.png",
+    "output_sha256": "890810ffe992725d757f62c9de36e56ded6bd38206008d2061a9a16fa4bbbf7a",
+    "resized_size": [
+      783,
+      792
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      27,
+      26,
+      465,
+      469
+    ]
+  }
+]

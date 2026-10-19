@@ -116,7 +116,8 @@ func _run() -> void:
 				if fraction == 0.0: first.append(pose)
 				else: motion = motion or not pose.is_equal_approx(first[bone])
 		_check(motion, _kind(clip) + " changes pose")
-		player.seek(animation.length * (0.999 if _kind(clip) == "death" else 0.5), true)
+		var representative: float = 0.999 if _kind(clip) == "death" else 0.25 if _kind(clip) in ["idle", "walk", "run"] else 0.43 if _kind(clip) == "charge" else 0.5
+		player.seek(animation.length * representative, true)
 		await _capture(_kind(clip))
 		pivot.rotation.y = PI / 2.0
 		await _capture(_kind(clip) + "_side")
@@ -143,7 +144,7 @@ func _run() -> void:
 	pivot.add_child(model)
 	await process_frame
 	_check(model.find_children("*", "Skeleton3D", true, false).size() == 1, "instantiate again retains rig")
-	var report: Dictionary = {"asset": asset_id, "model": model_path, "checks": checks, "failures": failures,
+	var report: Dictionary = {"asset": asset_id, "model": model_path, "model_sha256": FileAccess.get_sha256(model_path), "checks": checks, "failures": failures,
 		"triangles": triangles, "category": category, "clips": clips, "graphical": true,
 		"physical_input_test": false, "formal_battle_test": false,
 		"draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME),

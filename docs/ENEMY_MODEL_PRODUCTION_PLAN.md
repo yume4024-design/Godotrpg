@@ -6,7 +6,7 @@
 |---|---|---|---|
 | A03.1 Spore Sprite | common_enemy／10000 | source_assets/asset_production_a03/spore_sprite | PASS：9811 面／7 骨／6 動作；196 影格／Godot 256 項 |
 | A03.2 Ore Beetle | common_enemy／10000 | source_assets/asset_production_a03/ore_beetle | PASS：9911 面／15 骨／5 動作；159 影格／Godot 416 項 |
-| A03.3 Thorn Boar | common_enemy／10000 | 同根目錄 thorn_boar | NOT_STARTED |
+| A03.3 Thorn Boar | common_enemy／10000 | source_assets/asset_production_a03/thorn_boar | PASS：9998 面／12 骨／7 動作；211 影格／Godot 471 項 |
 | A03.4 Crystal Bat | common_enemy／10000 | 同根目錄 crystal_bat | NOT_STARTED |
 | A03.5 Corrupted Guardian | boss／15000 | 同根目錄 corrupted_guardian | NOT_STARTED |
 

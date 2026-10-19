@@ -1,0 +1,3 @@
+# Keep failed/intermediate native copies locally; optimized outputs and reports are tracked.
+**/action_extension_v*/*.blend
+**/action_extension_v*/*.glb

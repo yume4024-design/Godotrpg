@@ -18,6 +18,14 @@ def finalize(name, visual_notes):
         raise ValueError('Do not finalize a failing candidate')
     if graphical['triangles'] != triangle['triangles']:
         raise ValueError('Engine/export triangle mismatch')
+    runtime = ROOT / triangle['file']
+    current_sha = hashlib.sha256(runtime.read_bytes()).hexdigest()
+    if current_sha != triangle['sha256'] or current_sha != graphical.get('model_sha256'):
+        raise ValueError('GLB changed since executable QA; rerun against the selected export')
+    if hashlib.sha256((folder / 'optimized.glb').read_bytes()).hexdigest() != current_sha:
+        raise ValueError('Review/runtime GLB mismatch')
+    if hashlib.sha256((folder / 'optimized.blend').read_bytes()).hexdigest() != deformation['sha256']:
+        raise ValueError('Blend changed since evaluated motion QA')
     required = {'idle', 'walk', 'attack', 'hit', 'death'}
     if name == 'thorn_boar': required |= {'run', 'charge'}
     if name == 'corrupted_guardian': required |= {'heavy_attack', 'special_attack', 'stagger'}
@@ -62,6 +70,11 @@ def finalize(name, visual_notes):
 產生的 4 張 WebP 為真實 Godot 畫面，不是模型示意。動畫／物理／戰鬥功能需在 A04 接線後重新驗證；數值、技能、旗標及存檔未改。
 '''
     (folder / 'validation_report.md').write_text(text, encoding='utf8')
+    manifest['outputs'] = [{'file': path.relative_to(folder).as_posix(),
+                            'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
+                           for path in sorted(folder.glob('*'))
+                           if path.is_file() and path.name != 'generation_manifest.json']
+    manifest_path.write_text(json.dumps(manifest, ensure_ascii=False, indent=2), encoding='utf8')
     print('A03_CANDIDATE_PASS', name, graphical['checks'])
 
 

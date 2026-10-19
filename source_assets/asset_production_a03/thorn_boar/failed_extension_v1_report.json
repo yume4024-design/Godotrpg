@@ -1,0 +1,88 @@
+{
+  "input": "source_assets\\asset_production_a03\\thorn_boar\\action_extension_v1\\extended.blend",
+  "sha256": "de05a072bec8c3b26e2fa7b96fdc6b93d412093532123262689093de408ddc61",
+  "category": "common_enemy",
+  "maximum_triangles": 10000,
+  "bones": 12,
+  "actions": {
+    "attack": {
+      "frames": 29,
+      "maximum_triangles": 9998,
+      "max_edge_stretch": 1.3235150334934827,
+      "floor_range": [
+        0.003999978303909302,
+        0.004000053275376558
+      ]
+    },
+    "charge": {
+      "frames": 33,
+      "maximum_triangles": 9998,
+      "max_edge_stretch": 2.575646786973053,
+      "floor_range": [
+        0.003999974578619003,
+        0.004000037908554077
+      ]
+    },
+    "death": {
+      "frames": 37,
+      "maximum_triangles": 9998,
+      "max_edge_stretch": 1.000035299848335,
+      "floor_range": [
+        0.003999963402748108,
+        0.004000075161457062
+      ]
+    },
+    "hit": {
+      "frames": 19,
+      "maximum_triangles": 9998,
+      "max_edge_stretch": 1.000025026394244,
+      "floor_range": [
+        0.0039999233558773994,
+        0.004000029060989618
+      ]
+    },
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 9998,
+      "max_edge_stretch": 1.0000266287754593,
+      "floor_range": [
+        0.0039999354630708694,
+        0.004000029060989618
+      ]
+    },
+    "run": {
+      "frames": 19,
+      "maximum_triangles": 9998,
+      "max_edge_stretch": 2.058145861417928,
+      "floor_range": [
+        0.004000019747763872,
+        0.02727634832262993
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 9998,
+      "max_edge_stretch": 1.6379387753154688,
+      "floor_range": [
+        0.003999978769570589,
+        0.004000027664005756
+      ]
+    }
+  },
+  "total_frames": 211,
+  "topology_warnings": [
+    {
+      "mesh": "thorn_boar_body",
+      "boundary_edges": 50,
+      "nonmanifold_edges": 513
+    }
+  ],
+  "failures": [
+    "charge:EXCESSIVE_EDGE_STRETCH"
+  ],
+  "status": "FAIL",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

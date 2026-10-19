@@ -1,0 +1,11 @@
+{
+  "asset": "thorn_boar",
+  "input": "source_assets\\asset_production_a03\\thorn_boar\\optimized.blend",
+  "added_clips": [
+    "run",
+    "charge"
+  ],
+  "mesh_or_weight_edits": false,
+  "fps": 24,
+  "root_translation": "Floor compensated; charge visual offset <= 0.18m, no gameplay movement"
+}

@@ -44,6 +44,7 @@ for action in bpy.data.actions:
     if action.slots:
         rig.animation_data.action_slot = action.slots[0]
     frames, stretch, maximum, floor = 0, 0.0, 0, []
+    first_points, last_points = {}, {}
     for frame in range(int(action.frame_range[0]), int(action.frame_range[1]) + 1):
         scene.frame_set(frame)
         bpy.context.view_layer.update()
@@ -54,6 +55,9 @@ for action in bpy.data.actions:
             mesh.calc_loop_triangles()
             total += len(mesh.loop_triangles)
             points = np.array([tuple(v.co) for v in mesh.vertices])
+            if frames == 0:
+                first_points[body.name] = points.copy()
+            last_points[body.name] = points.copy()
             if not np.isfinite(points).all():
                 failures.append(f'{action.name}:{frame}:NONFINITE_VERTEX')
             edges, lengths, valid = baseline[body.name]
@@ -69,7 +73,11 @@ for action in bpy.data.actions:
         failures.append(action.name + ':TRIANGLE_BUDGET')
     if stretch >= 2.5:
         failures.append(action.name + ':EXCESSIVE_EDGE_STRETCH')
+    loop_error = max(float(np.abs(last_points[name] - values).max()) for name, values in first_points.items())
+    if action.name in ['idle', 'walk', 'run'] and loop_error > 1e-4:
+        failures.append(action.name + ':LOOP_SEAM')
     actions[action.name] = {'frames': frames, 'maximum_triangles': maximum,
+                            'endpoint_vertex_difference': loop_error,
                             'max_edge_stretch': stretch, 'floor_range': [min(floor), max(floor)]}
 if not actions:
     failures.append('NO_ACTIONS')
