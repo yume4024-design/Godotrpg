@@ -1,5 +1,9 @@
 # 資產生成與整合紀錄
 
+## A03.2 — 礦甲蟲候選 PASS（2026-10-20）
+
+重用 surface_v4，嚴格 GLB／Blender evaluated 9911 triangles、15 骨、5 動作；159 影格離線變形及 Godot 圖形 416 項／0。已檢視四面、正側動作與六足輪廓；5 邊界／65 非流形邊保留警告。來源與交付在 `source_assets/asset_production_a03/ore_beetle/`，沒有新 Comfy 送件或正式戰鬥引用修改。
+
 ## A03.1 — 菇靈候選 PASS（2026-10-20）
 
 重用 surface_v3，未重複生成。嚴格 GLB／Blender evaluated 9811 triangles、7 骨、6 動作；196 影格離線變形及 Godot 圖形 256 項／0 失敗，四面／動作截圖已查看。5 個邊界／118 非流形邊仍記為拓樸警告；沒有看到代表性畫面的骨架碎裂。完整來源、Blend、GLB、SHA、prompt_id、報告及真實引擎 WebP 在 `source_assets/asset_production_a03/spore_sprite/`。高密度原件 223MB 留在原目錄，不加入 Git。正式遭遇引用與 RPG 狀態未改；A04 待執行。

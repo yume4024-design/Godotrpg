@@ -1,0 +1,68 @@
+{
+  "input": "source_assets\\asset_production_a03\\ore_beetle\\optimized.blend",
+  "sha256": "6bab045ac7cccbc11bfeb72a9f4b0de208adcde1abf6d4ee30a93f8fc1e0302e",
+  "category": "common_enemy",
+  "maximum_triangles": 10000,
+  "bones": 15,
+  "actions": {
+    "attack": {
+      "frames": 29,
+      "maximum_triangles": 9911,
+      "max_edge_stretch": 1.2937732160968411,
+      "floor_range": [
+        0.003999956883490086,
+        0.004000039305537939
+      ]
+    },
+    "death": {
+      "frames": 37,
+      "maximum_triangles": 9911,
+      "max_edge_stretch": 1.0000350951482364,
+      "floor_range": [
+        0.003999955952167511,
+        0.004000041633844376
+      ]
+    },
+    "hit": {
+      "frames": 19,
+      "maximum_triangles": 9911,
+      "max_edge_stretch": 1.0000240086632908,
+      "floor_range": [
+        0.003999983426183462,
+        0.0040000262670218945
+      ]
+    },
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 9911,
+      "max_edge_stretch": 1.0000219981494718,
+      "floor_range": [
+        0.003999955486506224,
+        0.004000043496489525
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 9911,
+      "max_edge_stretch": 1.5774172698447615,
+      "floor_range": [
+        0.003999987151473761,
+        0.0040000141598284245
+      ]
+    }
+  },
+  "total_frames": 159,
+  "topology_warnings": [
+    {
+      "mesh": "ore_beetle_body",
+      "boundary_edges": 5,
+      "nonmanifold_edges": 65
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

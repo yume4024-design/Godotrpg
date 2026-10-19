@@ -1,0 +1,161 @@
+{
+  "asset": "ore_beetle",
+  "category": "common_enemy",
+  "status": "PASS",
+  "method": "Reuse existing Pixal3D + Blender surface candidate; no new Comfy job",
+  "generation_prompt_id": "04e7d860-95c0-495d-8b68-e3583ea7b977",
+  "workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "shape_resolution": 1536,
+  "texture_resolution": 4096,
+  "remesh_resolution": 768,
+  "runtime_glb": "assets/models/rebuilt_enemies/ore_beetle.glb",
+  "high_density_master": {
+    "path": "source_assets/monster_rebuild_20261019/ore_beetle/outputs/ore_beetle_source_00001.glb",
+    "sha256": "3bb2d94e326b140afa1cec21ec781fcb0d94ebb3565d9cc7252db117cbf60ff9",
+    "bytes": 415221608,
+    "git_policy": "Original preserved locally; giant binary excluded from commit"
+  },
+  "selected_source": {
+    "file": "source_assets/monster_rebuild_20261019/ore_beetle/surface_v4/ore_beetle_animated.glb",
+    "blend": "source_assets/monster_rebuild_20261019/ore_beetle/surface_v4/ore_beetle_animated.blend",
+    "triangles": 9911,
+    "bones": 15,
+    "clips": [
+      "attack",
+      "death",
+      "hit",
+      "idle",
+      "walk"
+    ],
+    "weight_sum_error": 1.7881393432617188e-07,
+    "loop_endpoint_error": 0,
+    "max_edge_stretch": 1.5774172698447615,
+    "frames_sampled": 159,
+    "status": "rigged_candidate_offline_checks_passed"
+  },
+  "original_sources": [
+    {
+      "path": "source_assets/monster_rebuild_20261019/ore_beetle/surface_v4/ore_beetle_animated.glb",
+      "sha256": "5eb5cc52ae0ece0595baecca218eeec1621e8a43a05c375384a9b6c58512d2af"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/ore_beetle/surface_v4/ore_beetle_animated.blend",
+      "sha256": "6bab045ac7cccbc11bfeb72a9f4b0de208adcde1abf6d4ee30a93f8fc1e0302e"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/ore_beetle/outputs/ore_beetle_textured_00001.glb",
+      "sha256": "ce2ff02690da6c0ef848795acd50a37376d6f86e367c9e5b4a7b616f3123b493"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "generated_raw.glb",
+      "sha256": "ce2ff02690da6c0ef848795acd50a37376d6f86e367c9e5b4a7b616f3123b493"
+    },
+    {
+      "file": "optimized.blend",
+      "sha256": "6bab045ac7cccbc11bfeb72a9f4b0de208adcde1abf6d4ee30a93f8fc1e0302e"
+    },
+    {
+      "file": "optimized.glb",
+      "sha256": "5eb5cc52ae0ece0595baecca218eeec1621e8a43a05c375384a9b6c58512d2af"
+    },
+    {
+      "file": "triangle_report.json",
+      "sha256": "1c45f4ee55aa1259219ab37a6cbc4f4c568c2341d4068e6c4d052bf7ec67ca8a"
+    }
+  ],
+  "references": {
+    "references": "source_assets/reference_library_20261020/enemies/ore_beetle/references",
+    "structural_gate": "PASS",
+    "visual_review": "agent_viewed_four_directions",
+    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "status": "PASS",
+    "ready_for_generation": true,
+    "files": [
+      {
+        "view": "front",
+        "file": "source_assets/reference_library_20261020/enemies/ore_beetle/references/front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          97,
+          69,
+          927,
+          960
+        ],
+        "sha256": "88650e404a50bbe2e3e987d3056000e1e0f1cbde061042a6c20a1821abc175db"
+      },
+      {
+        "view": "left",
+        "file": "source_assets/reference_library_20261020/enemies/ore_beetle/references/left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          64,
+          69,
+          960,
+          960
+        ],
+        "sha256": "df837d3856bfa874ea60927b85467c4588c7355321d504a1fa1cdb7129861d22"
+      },
+      {
+        "view": "back",
+        "file": "source_assets/reference_library_20261020/enemies/ore_beetle/references/back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          109,
+          69,
+          915,
+          960
+        ],
+        "sha256": "45c27d08f48e5648adb5b67c70254160d58e67a09ca62a29fedf35148e11b095"
+      },
+      {
+        "view": "right",
+        "file": "source_assets/reference_library_20261020/enemies/ore_beetle/references/right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          70,
+          69,
+          954,
+          960
+        ],
+        "sha256": "58f4d691748923e128e98076be0fd1c76995c66139c68a02ad2233d3345adee8"
+      }
+    ]
+  },
+  "limitations": [
+    "Nonmanifold intersections remain; not certified watertight",
+    "No new physical player playthrough or performance benchmark",
+    "A04 formal battle/exploration regression remains required"
+  ],
+  "acceptance_scope": "A03 model/rig/representative animation candidate; A04 gameplay integration pending",
+  "gates": {
+    "triangle": "PASS",
+    "structure_weights_uv": "PASS",
+    "deformation": "PASS",
+    "graphical_import_motion": "PASS",
+    "agent_visual_review": "PASS",
+    "formal_battle": "NOT_STARTED"
+  },
+  "visual_notes": "已查看四面、五動作正側面與六足行走側圖：每側三足、鉗部與甲殼保持分離，晶石色塊完整，代表姿勢未見碎裂或足部穿過甲殼。既有5個邊界／65非流形邊仍記警告。"
+}
