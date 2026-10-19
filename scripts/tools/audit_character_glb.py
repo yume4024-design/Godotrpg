@@ -1,76 +1,72 @@
-"""Read-only GLB inventory for the Windows character acceptance gate."""
-import json
-import math
+"""Audit one classified GLB, or the existing Windows character bundle (read-only)."""
 import argparse
-import pathlib
-import struct
+import json
+from pathlib import Path
+from asset_glb_validation import audit_glb
+from asset_triangle_budget import ROOT, resolve_budget
 
-ROOT = pathlib.Path(__file__).resolve().parents[2]
-parser = argparse.ArgumentParser()
-parser.add_argument("--pixal",action="store_true")
-args = parser.parse_args()
-rows = []
-characters = ("assets/models/pixal3d/ren_rigged.glb","assets/models/pixal3d/lia_rigged.glb") if args.pixal else ("assets/models/hero/ren_user.glb","assets/models/female/lia_rigged.glb")
-for relative in (*characters,"assets/models/female/willow_staff.glb"):
-    path = ROOT / relative
-    raw = path.read_bytes()
-    magic, version, length = struct.unpack_from("<III", raw)
-    assert magic == 0x46546C67 and version == 2 and length == len(raw)
-    chunk_length, chunk_type = struct.unpack_from("<II", raw, 12)
-    assert chunk_type == 0x4E4F534A
-    doc = json.loads(raw[20:20+chunk_length])
-    binary_offset = 20 + chunk_length
-    binary_length, binary_type = struct.unpack_from("<II", raw, binary_offset)
-    assert binary_type == 0x004E4942
-    binary = raw[binary_offset+8:binary_offset+8+binary_length]
 
-    def values(accessor_index):
-        accessor = doc["accessors"][accessor_index]
-        assert "sparse" not in accessor, "Sparse accessor requires a separate audit"
-        view = doc["bufferViews"][accessor["bufferView"]]
-        formats = {5121: "B", 5123: "H", 5125: "I", 5126: "f"}
-        components = {"SCALAR": 1, "VEC3": 3, "VEC4": 4}[accessor["type"]]
-        fmt = "<" + formats[accessor["componentType"]] * components
-        stride = view.get("byteStride", struct.calcsize(fmt))
-        start = view.get("byteOffset", 0) + accessor.get("byteOffset", 0)
-        for index in range(accessor["count"]):
-            row_values = struct.unpack_from(fmt, binary, start + index * stride)
-            if accessor.get("normalized"):
-                denominator = {5121: 255, 5123: 65535}[accessor["componentType"]]
-                row_values = tuple(value / denominator for value in row_values)
-            yield row_values
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--pixal', action='store_true')
+    parser.add_argument('--input', type=Path)
+    parser.add_argument('--category')
+    parser.add_argument('--budget', type=int)
+    parser.add_argument('--equipment', type=Path, action='append', default=[])
+    parser.add_argument('--equipment-budget', type=int)
+    parser.add_argument('--allow-missing-uv', action='store_true')
+    parser.add_argument('--allow-static', action='store_true')
+    parser.add_argument('--output', type=Path)
+    args = parser.parse_args()
+    if args.input and args.pixal:
+        parser.error('Choose --input or --pixal')
+    if args.input:
+        try:
+            maximum = resolve_budget(args.category, args.budget)
+        except ValueError as error:
+            parser.error(str(error))
+        body = audit_glb(args.input, args.category, maximum, not args.allow_missing_uv, not args.allow_static)
+        if args.equipment and not args.equipment_budget:
+            parser.error('Replaceable equipment requires --equipment-budget')
+        equipment = [audit_glb(p, maximum=args.equipment_budget, require_rig=False,
+                              require_uv=not args.allow_missing_uv) for p in args.equipment]
+        report = {'body': body, 'equipment': equipment,
+                  'combined_visible_triangles': body['triangles'] + sum(e['triangles'] for e in equipment),
+                  'status': 'PASS' if all(r['status'] == 'PASS' for r in [body, *equipment]) else 'FAIL'}
+        output = args.output or ROOT / 'artifacts/asset_validation/glb_audit.json'
+    else:
+        if args.category or args.equipment:
+            parser.error('--category/--equipment require --input')
+        maximum = resolve_budget('player_character', args.budget)
+        folder = 'pixal3d' if args.pixal else None
+        characters = [ROOT / f'assets/models/{folder}/ren_rigged.glb', ROOT / f'assets/models/{folder}/lia_rigged.glb'] if folder else [
+            ROOT / 'assets/models/hero/ren_user.glb', ROOT / 'assets/models/female/lia_rigged.glb']
+        # This compatibility bundle allows constant-colour surfaces with no UV.
+        # The strict single-file gate above requires UV by default.
+        rows = [audit_glb(p, 'player_character', maximum, require_uv=False) for p in characters]
+        staff = audit_glb(ROOT / 'assets/models/female/willow_staff.glb', maximum=maximum,
+                         require_uv=False, require_rig=False)
+        report = {'characters': rows, 'equipment': [staff],
+                  'combined_lia_and_staff_triangles': rows[1]['triangles'] + staff['triangles'],
+                  'equipment_note': 'Separate staff; provisional explicit cap equals character cap',
+                  'status': 'PASS' if all(r['status'] == 'PASS' for r in [*rows, staff]) else 'FAIL'}
+        output = args.output or ROOT / ('artifacts/pixal3d/glb_audit.json' if args.pixal else 'artifacts/character_cp23/glb_audit.json')
+    output.parent.mkdir(parents=True, exist_ok=True)
+    if args.input:
+        payload = report
+    else:
+        # Existing write_pixal3d_manifest.py consumes this list and relative path.
+        # Preserve that contract; richer gate data lives in a separate sidecar.
+        payload = []
+        for row in [*rows, staff]:
+            row['path'] = Path(row['file']).relative_to(ROOT).as_posix()
+            row['max_weight_error'] = row['max_weight_sum_error']
+            payload.append(row)
+        output.with_suffix('.gate.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
+    output.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding='utf-8')
+    print(f"GLB_AUDIT_{report['status']}: {output}")
+    return 0 if report['status'] == 'PASS' else 1
 
-    triangles = 0
-    primitives = []
-    max_weight_error = 0.0
-    skin_by_mesh = {node["mesh"]: doc["skins"][node["skin"]] for node in doc.get("nodes", []) if "skin" in node}
-    for mesh_index, mesh in enumerate(doc.get("meshes", [])):
-        for primitive in mesh["primitives"]:
-            assert primitive.get("mode", 4) == 4, "Non-triangle primitive"
-            count = doc["accessors"][primitive["indices"]]["count"] if "indices" in primitive else doc["accessors"][primitive["attributes"]["POSITION"]]["count"]
-            assert count % 3 == 0
-            triangles += count // 3
-            attributes = primitive["attributes"]
-            # Eyes, bracers and equipment may use a constant material colour.
-            material = doc["materials"][primitive["material"]]
-            color = material.get("pbrMetallicRoughness", {}).get("baseColorFactor", [1, 1, 1, 1])
-            assert len(color) == 4 and all(math.isfinite(component) for component in color)
-            for point in values(attributes["POSITION"]):
-                assert all(math.isfinite(component) for component in point)
-            if mesh_index in skin_by_mesh:
-                assert "JOINTS_0" in attributes and "WEIGHTS_0" in attributes
-                for joints, weights in zip(values(attributes["JOINTS_0"]), values(attributes["WEIGHTS_0"])):
-                    assert all(0 <= joint < len(skin_by_mesh[mesh_index]["joints"]) for joint in joints)
-                    assert all(math.isfinite(weight) and weight >= 0 for weight in weights)
-                    max_weight_error = max(max_weight_error, abs(sum(weights) - 1))
-            primitives.append({"mesh": mesh.get("name"), "triangles": count // 3, "attributes": sorted(primitive["attributes"])})
-    assert triangles < 5000, (path, triangles)
-    assert max_weight_error < .002, max_weight_error
-    row = {"path": path.relative_to(ROOT).as_posix(), "triangles": triangles, "skins": [len(s["joints"]) for s in doc.get("skins", [])], "animations": [a.get("name") for a in doc.get("animations", [])], "materials": len(doc.get("materials", [])), "max_weight_sum_error": max_weight_error, "primitives": primitives}
-    rows.append(row)
-    print(json.dumps({k: v for k, v in row.items() if k != "primitives"}, ensure_ascii=False))
-assert rows[1]["triangles"] + rows[2]["triangles"] < 5000
-output = ROOT / ("artifacts/pixal3d/glb_audit.json" if args.pixal else "artifacts/character_cp23/glb_audit.json")
-output.parent.mkdir(parents=True, exist_ok=True)
-output.write_text(json.dumps(rows, indent=2, ensure_ascii=False), encoding="utf-8")
-print("GLB_AUDIT_PASS: individual and equipped Lia budgets < 5000")
+
+if __name__ == '__main__':
+    raise SystemExit(main())

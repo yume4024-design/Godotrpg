@@ -11,6 +11,7 @@ var zoom_slider: HSlider
 var action_buttons: Dictionary[StringName, Button] = {}
 var info: Label
 var status: Label
+const BUDGET_POLICY = preload("res://scripts/tools/asset_budget_policy.gd")
 
 func _ready() -> void:
 	get_viewport().gui_embed_subwindows = true
@@ -193,7 +194,10 @@ func _update_info() -> void:
 			var indices: PackedInt32Array = arrays[Mesh.ARRAY_INDEX]
 			triangles += indices.size()/3 if not indices.is_empty() else arrays[Mesh.ARRAY_VERTEX].size()/3
 	var rig: Skeleton3D = actor.get("skeleton")
-	info.text = "%d 骨 · %d 三角面" % [rig.get_bone_count(),triangles]
+	var maximum: int = BUDGET_POLICY.maximum("player_character")
+	info.text = "%d 骨 · %d 三角面\n角色上限 %d（含固定配件）" % [rig.get_bone_count(),triangles,maximum]
+	if staff_toggle.button_pressed:
+		info.text += "\n上方為角色＋可換法杖同屏總量"
 
 func _save_image() -> void:
 	DirAccess.make_dir_recursive_absolute("user://character_previews")

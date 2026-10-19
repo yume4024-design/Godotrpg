@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Project Crystal Asset Triangle Budget Policy v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "comparison", "recommended_headroom_fraction", "categories", "counting"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "comparison": {"const": "inclusive_maximum"},
+    "recommended_headroom_fraction": {"const": [0.05, 0.10]},
+    "categories": {
+      "type": "object", "additionalProperties": false,
+      "required": ["common_enemy", "elite_enemy", "boss", "player_character", "npc"],
+      "properties": {
+        "common_enemy": {"$ref": "#/$defs/common"},
+        "elite_enemy": {"$ref": "#/$defs/character"},
+        "boss": {"$ref": "#/$defs/character"},
+        "player_character": {"$ref": "#/$defs/character"},
+        "npc": {"$ref": "#/$defs/character"}
+      }
+    },
+    "counting": {
+      "const": {
+        "fixed_accessories": "included",
+        "replaceable_equipment": "reported_separately_with_combined_total",
+        "duplicate_mesh_instances": "fail",
+        "unclassified_asset": "explicit_positive_budget_required"
+      }
+    }
+  },
+  "$defs": {
+    "common": {"type": "object", "additionalProperties": false, "required": ["maximum_triangles"],
+      "properties": {"maximum_triangles": {"const": 10000}}},
+    "character": {"type": "object", "additionalProperties": false, "required": ["maximum_triangles"],
+      "properties": {"maximum_triangles": {"const": 15000}}}
+  }
+}

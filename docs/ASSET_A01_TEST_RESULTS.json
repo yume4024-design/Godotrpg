@@ -1,0 +1,242 @@
+{
+  "date": "2026-10-20",
+  "gate": "A01",
+  "status": "PASS",
+  "python_test_groups": 7,
+  "blender_glb_cases": [
+    {
+      "case": "9999",
+      "expected_asset_pass": true,
+      "actual_asset_pass": true,
+      "exit_code": 0,
+      "test_passed": true,
+      "triangles": 9999,
+      "failures": []
+    },
+    {
+      "case": "10000",
+      "expected_asset_pass": true,
+      "actual_asset_pass": true,
+      "exit_code": 0,
+      "test_passed": true,
+      "triangles": 10000,
+      "failures": []
+    },
+    {
+      "case": "10001",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 10001,
+      "failures": [
+        "TRIANGLE_BUDGET_EXCEEDED"
+      ]
+    },
+    {
+      "case": "14999",
+      "expected_asset_pass": true,
+      "actual_asset_pass": true,
+      "exit_code": 0,
+      "test_passed": true,
+      "triangles": 14999,
+      "failures": []
+    },
+    {
+      "case": "15000",
+      "expected_asset_pass": true,
+      "actual_asset_pass": true,
+      "exit_code": 0,
+      "test_passed": true,
+      "triangles": 15000,
+      "failures": []
+    },
+    {
+      "case": "15001",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 15001,
+      "failures": [
+        "TRIANGLE_BUDGET_EXCEEDED"
+      ]
+    },
+    {
+      "case": "missing_uv",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 2,
+      "failures": [
+        "MISSING_UV"
+      ]
+    },
+    {
+      "case": "missing_rig",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 2,
+      "failures": [
+        "MISSING_RIG"
+      ]
+    },
+    {
+      "case": "empty",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 0,
+      "failures": [
+        "EMPTY_MESH"
+      ]
+    },
+    {
+      "case": "invalid_mesh",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 0,
+      "failures": [
+        "INVALID_GLB: list index out of range"
+      ]
+    },
+    {
+      "case": "nan",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 2,
+      "failures": [
+        "NONFINITE_OR_INVALID_POSITION"
+      ]
+    },
+    {
+      "case": "inf",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 2,
+      "failures": [
+        "NONFINITE_OR_INVALID_POSITION"
+      ]
+    },
+    {
+      "case": "bad_index",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 2,
+      "failures": [
+        "INVALID_INDEX"
+      ]
+    },
+    {
+      "case": "duplicate",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 4,
+      "failures": [
+        "DUPLICATE_MESH_INSTANCE"
+      ]
+    },
+    {
+      "case": "instancing",
+      "expected_asset_pass": false,
+      "actual_asset_pass": false,
+      "exit_code": 1,
+      "test_passed": true,
+      "triangles": 2,
+      "failures": [
+        "UNACCOUNTED_INSTANCES"
+      ]
+    }
+  ],
+  "blender_evaluated_cases": [
+    {
+      "case": "evaluated_9999",
+      "count": 9999,
+      "test_passed": true
+    },
+    {
+      "case": "evaluated_10000",
+      "count": 10000,
+      "test_passed": true
+    },
+    {
+      "case": "evaluated_10001",
+      "count": 10001,
+      "test_passed": true
+    },
+    {
+      "case": "evaluated_14999",
+      "count": 14999,
+      "test_passed": true
+    },
+    {
+      "case": "evaluated_15000",
+      "count": 15000,
+      "test_passed": true
+    },
+    {
+      "case": "evaluated_15001",
+      "count": 15001,
+      "test_passed": true
+    },
+    {
+      "case": "duplicate_mesh_data",
+      "test_passed": true
+    },
+    {
+      "case": "collection_instance",
+      "test_passed": true
+    },
+    {
+      "case": "evaluated_nonfinite",
+      "test_passed": true
+    },
+    {
+      "case": "unbound_armature",
+      "test_passed": true
+    }
+  ],
+  "godot_budget": {
+    "cases": 26,
+    "failures": []
+  },
+  "godot_character_preview": {
+    "checks": 12,
+    "failures": 0,
+    "graphical": true
+  },
+  "godot_pixal_regression": {
+    "checks": 88,
+    "failures": 0,
+    "graphical": true
+  },
+  "workflow": {
+    "source_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+    "validation_errors": 0,
+    "validation_warnings": 0,
+    "generation_submitted": false
+  },
+  "failed_attempts_preserved": [
+    "blender_cases.first_failure.json",
+    "evaluated_console.first_failure.log"
+  ],
+  "limitations": [
+    "Structural tool gate only; no newly generated asset certification",
+    "Physical input and release soak not part of A01",
+    "A02 references not yet approved"
+  ]
+}

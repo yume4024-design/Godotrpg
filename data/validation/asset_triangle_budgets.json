@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "comparison": "inclusive_maximum",
+  "recommended_headroom_fraction": [0.05, 0.10],
+  "categories": {
+    "common_enemy": {"maximum_triangles": 10000},
+    "elite_enemy": {"maximum_triangles": 15000},
+    "boss": {"maximum_triangles": 15000},
+    "player_character": {"maximum_triangles": 15000},
+    "npc": {"maximum_triangles": 15000}
+  },
+  "counting": {
+    "fixed_accessories": "included",
+    "replaceable_equipment": "reported_separately_with_combined_total",
+    "duplicate_mesh_instances": "fail",
+    "unclassified_asset": "explicit_positive_budget_required"
+  }
+}

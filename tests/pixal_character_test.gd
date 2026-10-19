@@ -1,4 +1,5 @@
 extends SceneTree
+const BUDGET_POLICY = preload("res://scripts/tools/asset_budget_policy.gd")
 var checks: int = 0
 var failures: int = 0
 
@@ -44,7 +45,7 @@ func _run() -> void:
 				var material: StandardMaterial3D = mesh.get_active_material(surface)
 				_check(material!=null,character+" material imported")
 				if material.albedo_texture!=null: textured += 1
-		_check(triangles<5000,character+" actual Godot mesh budget")
+		_check(BUDGET_POLICY.within_budget(triangles,"player_character"),character+" actual Godot mesh budget")
 		_check(textured>0,character+" generated UV texture preserved")
 		_check(rig.get_bone_count()==19,character+" fresh humanoid rig imports")
 		_check((actor.get("_blink_meshes") as Array).size()==8,character+" eight new eyelid morph surfaces")
