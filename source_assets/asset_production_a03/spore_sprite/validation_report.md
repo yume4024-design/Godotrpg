@@ -6,7 +6,7 @@
 - 分類 common_enemy，上限 10000；GLB／Godot 9811 triangles。
 - 骨架 7 骨，6 片段；Blender 196 影格數值檢查 PASS。
 - Godot 圖形 256 checks，0 failures；UV／貼圖／Skin、動作切換、循環／單次、四面與重新實例化驗證。
-- 實際視覺檢查：已查看四面、六動作正側面與施法／倒下近圖：帽緣、雙臂與葉披肩保持連接；腹部單一螺旋未投影到背面。沒有觀察到骨架碎裂，既有交疊拓樸仍保留警告。
+- 實際視覺檢查：四面、六動作及施法／倒下已查看；原圖設計保留，代表畫面無碎裂；非流形交疊仍為警告。
 - 拓樸警告：[{"mesh": "spore_sprite_body", "boundary_edges": 5, "nonmanifold_edges": 118}]。沒有宣稱全封閉或完美自碰撞。
 - 舊 Pixal3D 原始及高密度來源保留；本輪重用選定候選，沒有重複提交生成工作。雜湊、歷史 prompt_id、參數見 generation_manifest.json。
 

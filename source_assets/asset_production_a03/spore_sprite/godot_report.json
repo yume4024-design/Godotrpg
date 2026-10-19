@@ -29,11 +29,12 @@
 		}
 	],
 	"draw_calls": 1.0,
-	"engine_memory_bytes": 36400650.0,
+	"engine_memory_bytes": 36410484.0,
 	"failures": [],
 	"formal_battle_test": false,
 	"graphical": true,
 	"model": "res://assets/models/rebuilt_enemies/spore_sprite.glb",
+	"model_sha256": "bd38151d3b0e8bb48063eb72914b9c99f6ba97511d72ea1ec9b13f52de56d037",
 	"physical_input_test": false,
 	"triangles": 9811
 }

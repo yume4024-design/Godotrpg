@@ -28,6 +28,7 @@ def finalize(name, visual_notes):
         raise ValueError('Blend changed since evaluated motion QA')
     required = {'idle', 'walk', 'attack', 'hit', 'death'}
     if name == 'thorn_boar': required |= {'run', 'charge'}
+    if name == 'crystal_bat': required |= {'fold_wings'}
     if name == 'corrupted_guardian': required |= {'heavy_attack', 'special_attack', 'stagger'}
     if not required <= {clip['name'] for clip in graphical['clips']}:
         raise ValueError('Missing species-specific clips')

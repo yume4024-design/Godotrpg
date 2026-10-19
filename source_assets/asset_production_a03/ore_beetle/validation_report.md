@@ -6,7 +6,7 @@
 - 分類 common_enemy，上限 10000；GLB／Godot 9911 triangles。
 - 骨架 15 骨，5 片段；Blender 159 影格數值檢查 PASS。
 - Godot 圖形 416 checks，0 failures；UV／貼圖／Skin、動作切換、循環／單次、四面與重新實例化驗證。
-- 實際視覺檢查：已查看四面、五動作正側面與六足行走側圖：每側三足、鉗部與甲殼保持分離，晶石色塊完整，代表姿勢未見碎裂或足部穿過甲殼。既有5個邊界／65非流形邊仍記警告。
+- 實際視覺檢查：四面、五動作及六足側圖已查看，鉗部與甲殼可辨識，代表姿勢無碎裂；非流形交疊仍為警告。
 - 拓樸警告：[{"mesh": "ore_beetle_body", "boundary_edges": 5, "nonmanifold_edges": 65}]。沒有宣稱全封閉或完美自碰撞。
 - 舊 Pixal3D 原始及高密度來源保留；本輪重用選定候選，沒有重複提交生成工作。雜湊、歷史 prompt_id、參數見 generation_manifest.json。
 

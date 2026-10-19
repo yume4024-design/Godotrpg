@@ -1,0 +1,85 @@
+{
+  "input": "source_assets\\asset_production_a03\\crystal_bat\\action_extension_v1\\extended.blend",
+  "sha256": "45fba9524a6bf0625b08e67535431a0dc1155df70c135299ee56fb9c53b8990c",
+  "category": "common_enemy",
+  "maximum_triangles": 10000,
+  "bones": 11,
+  "actions": {
+    "attack": {
+      "frames": 29,
+      "maximum_triangles": 9686,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.4637685808966356,
+      "floor_range": [
+        0.14699997007846832,
+        0.1470000445842743
+      ]
+    },
+    "death": {
+      "frames": 37,
+      "maximum_triangles": 9686,
+      "endpoint_vertex_difference": 0.5511826276779175,
+      "max_edge_stretch": 2.281598783618017,
+      "floor_range": [
+        0.004000011831521988,
+        0.1469999998807907
+      ]
+    },
+    "fold_wings": {
+      "frames": 37,
+      "maximum_triangles": 9686,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 2.788249287345926,
+      "floor_range": [
+        0.1469999998807907,
+        0.1469999998807907
+      ]
+    },
+    "hit": {
+      "frames": 19,
+      "maximum_triangles": 9686,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.00003289747476,
+      "floor_range": [
+        0.14699997007846832,
+        0.1470000296831131
+      ]
+    },
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 9686,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.3851698467905806,
+      "floor_range": [
+        0.14699997007846832,
+        0.1470000147819519
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 9686,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.763241643178268,
+      "floor_range": [
+        0.14699998497962952,
+        0.1469999998807907
+      ]
+    }
+  },
+  "total_frames": 196,
+  "topology_warnings": [
+    {
+      "mesh": "crystal_bat_body",
+      "boundary_edges": 14,
+      "nonmanifold_edges": 160
+    }
+  ],
+  "failures": [
+    "fold_wings:EXCESSIVE_EDGE_STRETCH"
+  ],
+  "status": "FAIL",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

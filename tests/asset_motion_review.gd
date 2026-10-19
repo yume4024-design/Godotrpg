@@ -117,11 +117,19 @@ func _run() -> void:
 				else: motion = motion or not pose.is_equal_approx(first[bone])
 		_check(motion, _kind(clip) + " changes pose")
 		var representative: float = 0.999 if _kind(clip) == "death" else 0.25 if _kind(clip) in ["idle", "walk", "run"] else 0.43 if _kind(clip) == "charge" else 0.5
+		if asset_id == "crystal_bat" and _kind(clip) == "walk": representative = 0.125
+		if _kind(clip) == "heavy_attack": representative = 0.4
 		player.seek(animation.length * representative, true)
 		await _capture(_kind(clip))
 		pivot.rotation.y = PI / 2.0
 		await _capture(_kind(clip) + "_side")
 		pivot.rotation.y = 0
+		if asset_id == "crystal_bat" and _kind(clip) in ["idle", "walk"]:
+			player.seek(animation.length * (0.75 if _kind(clip) == "idle" else 0.375), true)
+			await _capture(_kind(clip) + "_opposite_stroke")
+		if _kind(clip) == "heavy_attack":
+			player.seek(animation.length * 0.62, true)
+			await _capture("heavy_attack_impact")
 		player.play(clip, 0.0)
 		player.advance(0.0)
 		player.advance(animation.length * 2.0 + 0.1)

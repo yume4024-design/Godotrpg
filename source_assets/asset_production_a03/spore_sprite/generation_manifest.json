@@ -44,8 +44,16 @@
   ],
   "outputs": [
     {
+      "file": "deformation_report.json",
+      "sha256": "b82970b69f82d8b55bcdf76aa1ac6e044ef70f1d5bee53d77183a74845bf247e"
+    },
+    {
       "file": "generated_raw.glb",
       "sha256": "a8c2a3d6762b56869d7aeb37d6454aea358cc88b8064f42a32b02a2496ba9a20"
+    },
+    {
+      "file": "godot_report.json",
+      "sha256": "030dab414065afbb963b63db41cbdb2a2d3f1e4a3b10a0bbb66821ee8c2a1b87"
     },
     {
       "file": "optimized.blend",
@@ -56,8 +64,28 @@
       "sha256": "bd38151d3b0e8bb48063eb72914b9c99f6ba97511d72ea1ec9b13f52de56d037"
     },
     {
+      "file": "preview_back.webp",
+      "sha256": "1663e38274fd43f8ba6762e1b21eeb46bef05a74b9bbd8c00bfcdf5c48131747"
+    },
+    {
+      "file": "preview_front.webp",
+      "sha256": "c898e692682e093dd0a3e26a4dae0289653128ab53759cddcb2adc49c1396b34"
+    },
+    {
+      "file": "preview_in_godot.webp",
+      "sha256": "c898e692682e093dd0a3e26a4dae0289653128ab53759cddcb2adc49c1396b34"
+    },
+    {
+      "file": "preview_side.webp",
+      "sha256": "2042865a0a837f241cc6c563f078fb5621becc2b2561fecd01a0ea5eefef5382"
+    },
+    {
       "file": "triangle_report.json",
       "sha256": "a98b11885024a0d3f5259ac8ec7d5b16b66772facd0340456e897b51aef4492f"
+    },
+    {
+      "file": "validation_report.md",
+      "sha256": "d19810498062fe2d225264e63a9c5d64e7e7af7b545a5cca2687ed128d574283"
     }
   ],
   "references": {
@@ -158,5 +186,5 @@
     "agent_visual_review": "PASS",
     "formal_battle": "NOT_STARTED"
   },
-  "visual_notes": "已查看四面、六動作正側面與施法／倒下近圖：帽緣、雙臂與葉披肩保持連接；腹部單一螺旋未投影到背面。沒有觀察到骨架碎裂，既有交疊拓樸仍保留警告。"
+  "visual_notes": "四面、六動作及施法／倒下已查看；原圖設計保留，代表畫面無碎裂；非流形交疊仍為警告。"
 }

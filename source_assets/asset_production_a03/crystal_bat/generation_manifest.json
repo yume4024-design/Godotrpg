@@ -1,0 +1,173 @@
+{
+  "asset": "crystal_bat",
+  "category": "common_enemy",
+  "status": "HUMAN_REVIEW",
+  "method": "Reuse existing Pixal3D + Blender surface candidate; no new Comfy job",
+  "generation_prompt_id": "e9c54512-4159-46bd-a0b7-311bddcc9f50",
+  "workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "shape_resolution": 1536,
+  "texture_resolution": 4096,
+  "remesh_resolution": 768,
+  "runtime_glb": "assets/models/rebuilt_enemies/crystal_bat.glb",
+  "high_density_master": {
+    "path": "source_assets/monster_rebuild_20261019/crystal_bat/outputs/crystal_bat_source_00001.glb",
+    "sha256": "6c66680631e9819107f5bba4fd863547b6ffb0d759bb23ade122d2a56b008c80",
+    "bytes": 247532368,
+    "git_policy": "Preserved locally; deliberately not committed as a giant binary"
+  },
+  "selected_source": {
+    "file": "source_assets/monster_rebuild_20261019/crystal_bat/surface_v1/crystal_bat_animated.glb",
+    "blend": "source_assets/monster_rebuild_20261019/crystal_bat/surface_v1/crystal_bat_animated.blend",
+    "triangles": 9686,
+    "bones": 11,
+    "clips": [
+      "attack",
+      "death",
+      "hit",
+      "idle",
+      "walk"
+    ],
+    "weight_sum_error": 1.7881393432617188e-07,
+    "loop_endpoint_error": 0,
+    "max_edge_stretch": 2.281598783618017,
+    "frames_sampled": 159,
+    "status": "rigged_candidate_offline_checks_passed"
+  },
+  "original_sources": [
+    {
+      "path": "source_assets/monster_rebuild_20261019/crystal_bat/surface_v1/crystal_bat_animated.glb",
+      "sha256": "5edc04a4eed14d721f74e06ca4510379eaa00a331aeaedd8c7b6fc22767fa04e"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/crystal_bat/surface_v1/crystal_bat_animated.blend",
+      "sha256": "a87d695a8085a9c1a737e14f2388d25e4830ae0baa0b461c94915ecc07964356"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/crystal_bat/outputs/crystal_bat_textured_00001.glb",
+      "sha256": "06ef1dac967a30590ee5eb22c4ae4c548217001e8af7d62276a6096aa5c6eefd"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "generated_raw.glb",
+      "sha256": "06ef1dac967a30590ee5eb22c4ae4c548217001e8af7d62276a6096aa5c6eefd"
+    },
+    {
+      "file": "optimized.blend",
+      "sha256": "a87d695a8085a9c1a737e14f2388d25e4830ae0baa0b461c94915ecc07964356"
+    },
+    {
+      "file": "optimized.glb",
+      "sha256": "5edc04a4eed14d721f74e06ca4510379eaa00a331aeaedd8c7b6fc22767fa04e"
+    },
+    {
+      "file": "triangle_report.json",
+      "sha256": "e696481820fa6dcd388badd5bf236cde28728e441ad1d2f4dbdce5650585f171"
+    }
+  ],
+  "references": {
+    "references": "source_assets/reference_library_20261020/enemies/crystal_bat/references",
+    "structural_gate": "PASS",
+    "visual_review": "agent_viewed_four_directions",
+    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "status": "PASS",
+    "ready_for_generation": true,
+    "files": [
+      {
+        "view": "front",
+        "file": "source_assets/reference_library_20261020/enemies/crystal_bat/references/front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          64,
+          327,
+          960,
+          960
+        ],
+        "sha256": "9dda98f5a1006837fcc1c9950e57359c9f41466ea6ca6b618f063a1903751695"
+      },
+      {
+        "view": "left",
+        "file": "source_assets/reference_library_20261020/enemies/crystal_bat/references/left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          250,
+          327,
+          774,
+          960
+        ],
+        "sha256": "20b18e37e3a5231ec42db80f93d9d46857bbc11e8d13f0015510c5e6ffd8eebf"
+      },
+      {
+        "view": "back",
+        "file": "source_assets/reference_library_20261020/enemies/crystal_bat/references/back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          91,
+          327,
+          932,
+          960
+        ],
+        "sha256": "637a379f2893af6bd12c1ca6e9c5880be1686f875755facbe927f4bf6fe36e9d"
+      },
+      {
+        "view": "right",
+        "file": "source_assets/reference_library_20261020/enemies/crystal_bat/references/right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          242,
+          327,
+          781,
+          960
+        ],
+        "sha256": "f31555d7b504d5c4844aabb3a1650140757a2118e113469c026786b6aa6f12f2"
+      }
+    ]
+  },
+  "limitations": [
+    "Graphical and deformation gates must run before acceptance",
+    "A04 battle/exploration integration has not run",
+    "High-density original masters remain in their original outputs directory",
+    "Baseline side-view fly also shows detached membrane; previous stable-version option is withdrawn"
+  ],
+  "action_extension": {
+    "selected": null,
+    "details": {
+      "asset": "crystal_bat",
+      "input": "source_assets\\asset_production_a03\\crystal_bat\\optimized.blend",
+      "added_clips": [
+        "fold_wings"
+      ],
+      "mesh_geometry_edits": false,
+      "wing_weight_smoothing": true,
+      "fps": 24,
+      "root_translation": "Floor compensated; charge visual offset <= 0.18m, no gameplay movement"
+    },
+    "failed_attempt_reports": [
+      "failed_extension_v1_report.json",
+      "failed_extension_v2_report.json"
+    ],
+    "rejected_visual_candidate": "action_extension_v3",
+    "reason": "Detached wing membrane visible from side despite numeric PASS"
+  },
+  "acceptance_scope": "HUMAN_REVIEW: both existing five-clip candidate and extended folding candidate have detached membrane from side; original formal cartoon visual remains active"
+}

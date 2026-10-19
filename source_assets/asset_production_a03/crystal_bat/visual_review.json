@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "candidate": "baseline and action_extension_v3",
+  "numeric_gate": "PASS",
+  "problem": "Detached wing membrane visible during both fly and fold",
+  "attempts": 3,
+  "next": "Manual topology/rig correction; retain existing formal game visual"
+}

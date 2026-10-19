@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "file": "assets\\models\\rebuilt_enemies\\crystal_bat.glb",
+  "category": "common_enemy",
+  "sha256": "5edc04a4eed14d721f74e06ca4510379eaa00a331aeaedd8c7b6fc22767fa04e",
+  "maximum_triangles": 10000,
+  "triangles": 9686,
+  "headroom_triangles": 314,
+  "triangle_gate": "PASS",
+  "status": "PASS",
+  "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+  "requirements": {
+    "uv": true,
+    "rig": true
+  },
+  "max_weight_sum_error": 1.341104507446289e-07,
+  "primitives": [
+    {
+      "node": 11,
+      "mesh": 0,
+      "triangles": 9686,
+      "attributes": [
+        "JOINTS_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "WEIGHTS_0"
+      ]
+    }
+  ],
+  "skins": [
+    11
+  ],
+  "materials": 1,
+  "animations": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+  ],
+  "failures": [],
+  "warnings": [
+    "Less than 5% correction headroom; cap is still inclusive"
+  ],
+  "visual_gate": "HUMAN_REVIEW",
+  "animation_gate": "NOT_STARTED"
+}

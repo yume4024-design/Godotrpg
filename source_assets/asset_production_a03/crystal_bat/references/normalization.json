@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\crystal_bat\\references\\crystal_bat_front.png",
+    "source_sha256": "fff8aaa42cec6233e26a4a457a03c034d7c3e751e9e611f5f2e840593f8b1843",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\crystal_bat\\references\\front.png",
+    "output_sha256": "9dda98f5a1006837fcc1c9950e57359c9f41466ea6ca6b618f063a1903751695",
+    "resized_size": [
+      896,
+      633
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      27,
+      102,
+      545,
+      468
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\crystal_bat\\references\\crystal_bat_left.png",
+    "source_sha256": "5de779746f3cf75c4127417e031c07ff1431a5dba534feb64c5e61a0cb5ef678",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\crystal_bat\\references\\left.png",
+    "output_sha256": "20b18e37e3a5231ec42db80f93d9d46857bbc11e8d13f0015510c5e6ffd8eebf",
+    "resized_size": [
+      524,
+      633
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      57,
+      26,
+      342,
+      370
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\crystal_bat\\references\\crystal_bat_back.png",
+    "source_sha256": "fb7103e20d16e1b60023dcb97fcc51dd1d8f3e2c5639932bf30e63497da9d18a",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\crystal_bat\\references\\back.png",
+    "output_sha256": "637a379f2893af6bd12c1ca6e9c5880be1686f875755facbe927f4bf6fe36e9d",
+    "resized_size": [
+      841,
+      633
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      26,
+      84,
+      511,
+      449
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\crystal_bat\\references\\crystal_bat_right.png",
+    "source_sha256": "313ad105ec62034fcc92695056e965f6cbaaae59a3167272214b219c74b86a0c",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\crystal_bat\\references\\right.png",
+    "output_sha256": "f31555d7b504d5c4844aabb3a1650140757a2118e113469c026786b6aa6f12f2",
+    "resized_size": [
+      539,
+      633
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      51,
+      26,
+      344,
+      370
+    ]
+  }
+]

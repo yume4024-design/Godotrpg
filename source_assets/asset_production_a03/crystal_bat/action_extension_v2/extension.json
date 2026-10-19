@@ -1,0 +1,11 @@
+{
+  "asset": "crystal_bat",
+  "input": "source_assets\\asset_production_a03\\crystal_bat\\optimized.blend",
+  "added_clips": [
+    "fold_wings"
+  ],
+  "mesh_geometry_edits": false,
+  "wing_weight_smoothing": true,
+  "fps": 24,
+  "root_translation": "Floor compensated; charge visual offset <= 0.18m, no gameplay movement"
+}

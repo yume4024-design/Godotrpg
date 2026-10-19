@@ -49,8 +49,16 @@
   ],
   "outputs": [
     {
+      "file": "deformation_report.json",
+      "sha256": "c5333acb78af36a252ab5d2c823da585ce6b64dbd7a76b91fc5ecea245a67fdb"
+    },
+    {
       "file": "generated_raw.glb",
       "sha256": "ce2ff02690da6c0ef848795acd50a37376d6f86e367c9e5b4a7b616f3123b493"
+    },
+    {
+      "file": "godot_report.json",
+      "sha256": "8367708fe684cf2424245b6c5d49c86b4b2bc0c9184f078995334f8841da2412"
     },
     {
       "file": "optimized.blend",
@@ -61,8 +69,28 @@
       "sha256": "5eb5cc52ae0ece0595baecca218eeec1621e8a43a05c375384a9b6c58512d2af"
     },
     {
+      "file": "preview_back.webp",
+      "sha256": "da38d70ce538e0deea58642a7dddeab901595f31c622ee39e569c6f23e2799b5"
+    },
+    {
+      "file": "preview_front.webp",
+      "sha256": "77ef197ca9c1747a166a1ce4ee69465b09dc32a2f47d552e7860f45927e8c7f2"
+    },
+    {
+      "file": "preview_in_godot.webp",
+      "sha256": "77ef197ca9c1747a166a1ce4ee69465b09dc32a2f47d552e7860f45927e8c7f2"
+    },
+    {
+      "file": "preview_side.webp",
+      "sha256": "8871f07091d276bf7160d2b76442cff9a6d0482a41b4533abe686c2b82df3b47"
+    },
+    {
       "file": "triangle_report.json",
       "sha256": "1c45f4ee55aa1259219ab37a6cbc4f4c568c2341d4068e6c4d052bf7ec67ca8a"
+    },
+    {
+      "file": "validation_report.md",
+      "sha256": "81bd411c5f41c52151311cbe9de1f7f8686e20056d94afa39496977b7daa8e13"
     }
   ],
   "references": {
@@ -157,5 +185,5 @@
     "agent_visual_review": "PASS",
     "formal_battle": "NOT_STARTED"
   },
-  "visual_notes": "已查看四面、五動作正側面與六足行走側圖：每側三足、鉗部與甲殼保持分離，晶石色塊完整，代表姿勢未見碎裂或足部穿過甲殼。既有5個邊界／65非流形邊仍記警告。"
+  "visual_notes": "四面、五動作及六足側圖已查看，鉗部與甲殼可辨識，代表姿勢無碎裂；非流形交疊仍為警告。"
 }

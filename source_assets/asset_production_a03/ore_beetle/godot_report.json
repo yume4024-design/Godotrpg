@@ -25,11 +25,12 @@
 		}
 	],
 	"draw_calls": 1.0,
-	"engine_memory_bytes": 36426727.0,
+	"engine_memory_bytes": 36436244.0,
 	"failures": [],
 	"formal_battle_test": false,
 	"graphical": true,
 	"model": "res://assets/models/rebuilt_enemies/ore_beetle.glb",
+	"model_sha256": "5eb5cc52ae0ece0595baecca218eeec1621e8a43a05c375384a9b6c58512d2af",
 	"physical_input_test": false,
 	"triangles": 9911
 }

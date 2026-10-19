@@ -8,6 +8,7 @@
     "attack": {
       "frames": 29,
       "maximum_triangles": 9811,
+      "endpoint_vertex_difference": 0.0,
       "max_edge_stretch": 1.2527946436188249,
       "floor_range": [
         0.07599999010562897,
@@ -17,6 +18,7 @@
     "cast": {
       "frames": 37,
       "maximum_triangles": 9811,
+      "endpoint_vertex_difference": 0.0,
       "max_edge_stretch": 2.2838402417162524,
       "floor_range": [
         0.07599999755620956,
@@ -26,6 +28,7 @@
     "death": {
       "frames": 37,
       "maximum_triangles": 9811,
+      "endpoint_vertex_difference": 1.106258675456047,
       "max_edge_stretch": 1.5323965831466682,
       "floor_range": [
         0.0040000081062316895,
@@ -35,6 +38,7 @@
     "hit": {
       "frames": 19,
       "maximum_triangles": 9811,
+      "endpoint_vertex_difference": 0.0,
       "max_edge_stretch": 1.000039797011536,
       "floor_range": [
         0.07599998265504837,
@@ -44,6 +48,7 @@
     "idle": {
       "frames": 49,
       "maximum_triangles": 9811,
+      "endpoint_vertex_difference": 0.0,
       "max_edge_stretch": 1.0000449814058696,
       "floor_range": [
         0.07599997520446777,
@@ -53,6 +58,7 @@
     "walk": {
       "frames": 25,
       "maximum_triangles": 9811,
+      "endpoint_vertex_difference": 0.0,
       "max_edge_stretch": 1.0942026745363231,
       "floor_range": [
         0.07599999755620956,
