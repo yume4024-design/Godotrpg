@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_male\\turnaround_source.png",
+    "source_sha256": "268e0ec0535910e68bb1a042afc8d9edae126d1f9176d4a08d4396979c109ca5",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_male\\references\\front.png",
+    "output_sha256": "a37e5d79cc4714df7c0077bb783e41aba19e2e3784f19ef86557f62a13ceab99",
+    "resized_size": [
+      450,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      40,
+      31,
+      508,
+      963
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_male\\turnaround_source.png",
+    "source_sha256": "268e0ec0535910e68bb1a042afc8d9edae126d1f9176d4a08d4396979c109ca5",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_male\\references\\left.png",
+    "output_sha256": "ee7702a8e40771f4ee815b07385dd32e716a56e8495155734c3dcfe2f7a76f69",
+    "resized_size": [
+      167,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      552,
+      30,
+      727,
+      968
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_male\\turnaround_source.png",
+    "source_sha256": "268e0ec0535910e68bb1a042afc8d9edae126d1f9176d4a08d4396979c109ca5",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_male\\references\\back.png",
+    "output_sha256": "69b19e4b430c9cd5bb84e170d21719bda3bddf30c52483cfa11a5dfb5ecf1238",
+    "resized_size": [
+      441,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      762,
+      29,
+      1223,
+      966
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_male\\turnaround_source.png",
+    "source_sha256": "268e0ec0535910e68bb1a042afc8d9edae126d1f9176d4a08d4396979c109ca5",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_male\\references\\right.png",
+    "output_sha256": "7389ed37a060f80785a8b77a540d3a3753118555111d8d6c66653dfc3b61a60f",
+    "resized_size": [
+      167,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      1286,
+      31,
+      1461,
+      968
+    ]
+  }
+]

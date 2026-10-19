@@ -1,16 +1,16 @@
 # NPC 模型製作與整合計畫
 
-2026-10-20。A01 建立需求清單，A02／A05 尚未開始。
+2026-10-20。A02 已完成 NPC 五套來源結構及四面檢視；四組新設計由使用者回覆「四組都採用」。A05 依 A03／A04 後順序逐件執行，未宣稱模型已完成。
 
 | 順序／ID | NPC | 四視圖候選來源 | 狀態 |
 |---|---|---|---|
-| N01 | Blacksmith | npc/鐵匠-{正面,左側,背面,右側}.Png | NOT_STARTED |
-| N02 | Item Merchant | 本輪來源入口未找到完整四圖 | BLOCKED（缺來源圖） |
-| N03 | Innkeeper | 本輪來源入口未找到完整四圖 | BLOCKED（缺來源圖） |
-| N04 | Village Citizen Male | 本輪來源入口未找到完整四圖 | BLOCKED（缺來源圖） |
-| N05 | Village Citizen Female | 本輪來源入口未找到完整四圖 | BLOCKED（缺來源圖） |
+| N01 | Blacksmith | reference_library_20261020/npc/blacksmith/references | 來源 PASS；A05 NOT_STARTED |
+| N02 | Item Merchant | 同庫 npc/item_merchant/references | 來源 PASS；A05 NOT_STARTED |
+| N03 | Innkeeper | 同庫 npc/innkeeper/references | 來源 PASS；A05 NOT_STARTED |
+| N04 | Village Citizen Male | 同庫 npc/villager_male/references | 來源 PASS；A05 NOT_STARTED |
+| N05 | Village Citizen Female | 同庫 npc/villager_female/references | 來源 PASS；A05 NOT_STARTED |
 
-四類缺圖為當前檔案入口盤點結果，不表示已搜索使用者所有磁碟；A02 先再核對專案來源與後續提供的圖片。
+上次四類缺圖已補製並核准，不能再列為阻擋。來源庫前綴為 source_assets/；詳見 [A02 報告](ASSET_A02_REPORT.md)。
 
 每套整理為獨立 front.png／left.png／back.png／right.png 的 PNG RGBA。保留原路徑，不直接搬移或覆蓋。鐵匠既有 source_assets/quality_characters_20261018/blacksmith 高面數與約萬面動作候選必須先盤點；特別確認背部腰間已去除舊工具袋／工具、保留皮帶／圍裙，並核對拇指解剖方向。候選來源存在不等於修正版已驗收。
 

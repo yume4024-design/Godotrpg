@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\innkeeper\\turnaround_source.png",
+    "source_sha256": "02fd2bf38223c80d8e45c6051fc96ab9af0536e75064bf035dd74915995de35f",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\innkeeper\\references\\front.png",
+    "output_sha256": "be372f72c04cb0d14afe9a13f4892eb8f899bbbf39e3c141857d93ebf342416a",
+    "resized_size": [
+      546,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      15,
+      13,
+      531,
+      860
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\innkeeper\\turnaround_source.png",
+    "source_sha256": "02fd2bf38223c80d8e45c6051fc96ab9af0536e75064bf035dd74915995de35f",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\innkeeper\\references\\left.png",
+    "output_sha256": "bd0d02cafbf9360f68cd379106363c33bc6f87dc4af4f349adcc6858bb2057eb",
+    "resized_size": [
+      251,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      575,
+      16,
+      812,
+      863
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\innkeeper\\turnaround_source.png",
+    "source_sha256": "02fd2bf38223c80d8e45c6051fc96ab9af0536e75064bf035dd74915995de35f",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\innkeeper\\references\\back.png",
+    "output_sha256": "9439850dcc3919690b279b17133b4ddad7393e7b52be405703c43c00f8271c79",
+    "resized_size": [
+      549,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      891,
+      13,
+      1411,
+      861
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\innkeeper\\turnaround_source.png",
+    "source_sha256": "02fd2bf38223c80d8e45c6051fc96ab9af0536e75064bf035dd74915995de35f",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\innkeeper\\references\\right.png",
+    "output_sha256": "f5812bf95bc9856c8b956ecdea2cfda6b859d27e4e3540e752ecf6c60b3ce35d",
+    "resized_size": [
+      251,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      1500,
+      17,
+      1737,
+      864
+    ]
+  }
+]

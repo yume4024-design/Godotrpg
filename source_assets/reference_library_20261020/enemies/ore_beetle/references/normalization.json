@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\ore_beetle\\references\\ore_beetle_front.png",
+    "source_sha256": "4535a56bc734d8c5f1054df54f942f3201f2e5d947a1e4624433c1ca692d7daa",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\ore_beetle\\references\\front.png",
+    "output_sha256": "88650e404a50bbe2e3e987d3056000e1e0f1cbde061042a6c20a1821abc175db",
+    "resized_size": [
+      830,
+      891
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      39,
+      26,
+      408,
+      422
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\ore_beetle\\references\\ore_beetle_left.png",
+    "source_sha256": "626b0b117cad9feffcd951d4b96c7368d46b7f0dc9d70af62b504c67c0de62e6",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\ore_beetle\\references\\left.png",
+    "output_sha256": "df837d3856bfa874ea60927b85467c4588c7355321d504a1fa1cdb7129861d22",
+    "resized_size": [
+      896,
+      891
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      26,
+      28,
+      422,
+      422
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\ore_beetle\\references\\ore_beetle_back.png",
+    "source_sha256": "e3b08ce2ce13004ad9075a6a467ba75305df83d79d994bf154e0ece136c3e1da",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\ore_beetle\\references\\back.png",
+    "output_sha256": "45c27d08f48e5648adb5b67c70254160d58e67a09ca62a29fedf35148e11b095",
+    "resized_size": [
+      806,
+      891
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      45,
+      27,
+      403,
+      423
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\ore_beetle\\references\\ore_beetle_right.png",
+    "source_sha256": "4fa018cb57276300bdd4919dd872c1bee8e39d16c4dd65eb15454d55275b0822",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\ore_beetle\\references\\right.png",
+    "output_sha256": "58f4d691748923e128e98076be0fd1c76995c66139c68a02ad2233d3345adee8",
+    "resized_size": [
+      884,
+      891
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      27,
+      26,
+      418,
+      420
+    ]
+  }
+]

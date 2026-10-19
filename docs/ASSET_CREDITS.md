@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-20 — A02 NPC 四視圖來源
+
+source_assets/reference_library_20261020 保留使用者既有五敵、鐵匠、艾琳、雷恩及莉雅設計的來源／SHA；四組新 NPC 以內建 imagegen 製作，使用者明確回答「四組都採用」。雷恩第四格朝向修正另存，未覆蓋原件；其採用仍保留人工確認。圖片去背使用本機既有 BiRefNet，分離／縮放為專案機械工具，無新增第三方商店資產或付費 API。模型權重的既有授權紀錄不因本次去背而改寫。來源、prompt_id、限制與驗收見 [A02 報告](ASSET_A02_REPORT.md)。
+
 ## 2026-10-17 Pixal3D 雙角色重製
 
 - 使用者指定本機 `3d_pixal3d_multi_views`，ComfyUI 0.41.3、模型檔 `pixal3d_multiview_int8_convrot.safetensors`；未在此儲存庫分發權重或呼叫付費 API。

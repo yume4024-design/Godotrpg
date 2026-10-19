@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-20",
+  "source": "User reply in this chat",
+  "question": "Four newly generated NPC turnarounds adopted for modeling?",
+  "answer": "四組都採用",
+  "assets": [
+    "item_merchant",
+    "innkeeper",
+    "villager_male",
+    "villager_female"
+  ]
+}

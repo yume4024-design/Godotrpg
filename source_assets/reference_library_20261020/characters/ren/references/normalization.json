@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\ren\\preprocessed\\e7df9a30_000.png",
+    "source_sha256": "7d035bce71c5349eba16824b9f80c148852a24e0ed82134d57d52b8a4ac74f7c",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\ren\\references\\front.png",
+    "output_sha256": "7079233b53a07f9b45fdc8e6f456863121db7bb6d37c1d43b8db206434aeb80e",
+    "resized_size": [
+      415,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      16,
+      15,
+      476,
+      1008
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\ren\\preprocessed\\e7df9a30_000.png",
+    "source_sha256": "7d035bce71c5349eba16824b9f80c148852a24e0ed82134d57d52b8a4ac74f7c",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\ren\\references\\left.png",
+    "output_sha256": "3580cfd67bf95957d3a7a8a8db83e99d3b695c295af1f0edee54acde68925436",
+    "resized_size": [
+      179,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      515,
+      10,
+      714,
+      1008
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\ren\\preprocessed\\e7df9a30_000.png",
+    "source_sha256": "7d035bce71c5349eba16824b9f80c148852a24e0ed82134d57d52b8a4ac74f7c",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\ren\\references\\back.png",
+    "output_sha256": "5fe5e046c1cbe2457d4802eed87681d2218078c1521d4b63d6be0c1a3b6eac7f",
+    "resized_size": [
+      414,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      737,
+      14,
+      1196,
+      1007
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\ren\\preprocessed\\e7df9a30_000.png",
+    "source_sha256": "7d035bce71c5349eba16824b9f80c148852a24e0ed82134d57d52b8a4ac74f7c",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\ren\\references\\right.png",
+    "output_sha256": "a9300546163a2439b9bc0a9b83c2d3e761260e480e2f9fa1b8b66d86114a70d5",
+    "resized_size": [
+      176,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      1257,
+      11,
+      1453,
+      1008
+    ]
+  }
+]

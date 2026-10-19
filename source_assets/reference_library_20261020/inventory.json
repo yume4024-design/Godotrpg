@@ -1,0 +1,352 @@
+[
+  {
+    "file": "source_assets/reference_library_20261020/characters/eryn/references/back.png",
+    "bytes": 363077,
+    "sha256": "d615bc5ace93ecd2cc9610cc1f4001aa8b63f9518f78a33d9e051dfb554b89f6"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/eryn/references/front.png",
+    "bytes": 383301,
+    "sha256": "58ecbf06ba5b4e0d7c883529fb736d3b4c354787014a6ac429410ff6f2230b30"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/eryn/references/left.png",
+    "bytes": 246131,
+    "sha256": "b320aa4dbf8a5a149825a07bbadf32d5fc13698775abc2875ec409a1beb549e3"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/eryn/references/right.png",
+    "bytes": 260442,
+    "sha256": "b2f74c7dad6eabd6c98d45f11386e4a2e113c269a2133ed0652dd24950f34475"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/lia/preprocessed/45dd0521_000.png",
+    "bytes": 1675396,
+    "sha256": "0a1b537d92b3464fef94e72327774ca343918a8e45f99cd62e64958a98206280"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/lia/preprocessed/45dd0521_001.png",
+    "bytes": 1781399,
+    "sha256": "436842c549fff01eef8c6e648bbf5cfda4b757c3a29694c9c062cd2f4acc33f6"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/lia/preprocessed/45dd0521_002.png",
+    "bytes": 1675148,
+    "sha256": "36ea6c5920ea28d1af59531a4982e88aa73652ebed758107ac4ec8415300c80d"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/lia/preprocessed/45dd0521_003.png",
+    "bytes": 1846212,
+    "sha256": "bea0c536e7f12e9128a0f2cea39d03888dcb32ab9de7ad068760a726c4b73ca7"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/lia/references/back.png",
+    "bytes": 347186,
+    "sha256": "ffea3a0279aaf42112a046db4cf40e66000ac3ded262df477df89a6413dd69f2"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/lia/references/front.png",
+    "bytes": 373460,
+    "sha256": "bb9ca12f35a05432a29a980c254a6bd5ce9a049993ac33b0ea6eb78806611c6e"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/lia/references/left.png",
+    "bytes": 250201,
+    "sha256": "41a708c90303a1ce9d3c8d4f5682a71af4a7d7d333e9f7384878621bc5dc4137"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/lia/references/right.png",
+    "bytes": 233950,
+    "sha256": "a2728eacb94c8bf85e67feb2eaeafc68358366df2009e499116141e4be14500c"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/ren/preprocessed/e7df9a30_000.png",
+    "bytes": 1895412,
+    "sha256": "7d035bce71c5349eba16824b9f80c148852a24e0ed82134d57d52b8a4ac74f7c"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/ren/references/back.png",
+    "bytes": 336022,
+    "sha256": "5fe5e046c1cbe2457d4802eed87681d2218078c1521d4b63d6be0c1a3b6eac7f"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/ren/references/front.png",
+    "bytes": 361951,
+    "sha256": "7079233b53a07f9b45fdc8e6f456863121db7bb6d37c1d43b8db206434aeb80e"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/ren/references/left.png",
+    "bytes": 227064,
+    "sha256": "3580cfd67bf95957d3a7a8a8db83e99d3b695c295af1f0edee54acde68925436"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/ren/references/right.png",
+    "bytes": 226475,
+    "sha256": "a9300546163a2439b9bc0a9b83c2d3e761260e480e2f9fa1b8b66d86114a70d5"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/characters/ren/turnaround_corrected.png",
+    "bytes": 1898369,
+    "sha256": "0af1ba93699806f7d8ff600a79f9911afeb5ab4ad43e2461bfacd314f0c09170"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references/back.png",
+    "bytes": 784851,
+    "sha256": "69a1f282ff378ad773db60ac346de9db7d97ba99e614589ee3e2fd0a6a63dd7a"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references/front.png",
+    "bytes": 830150,
+    "sha256": "f61af73f4b8c447c890f6706a24781c6f157ffe29031ee7cc10911d4eb266be3"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references/left.png",
+    "bytes": 432518,
+    "sha256": "946ac7504f8d0304843d2d59c8212e738b1014d1a491c0f68a824d28402ef057"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references/right.png",
+    "bytes": 438049,
+    "sha256": "4b48494a51994be875a11f44410bf6e23c69860d7be4e5e2282d9e7797625203"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/crystal_bat/references/back.png",
+    "bytes": 451365,
+    "sha256": "637a379f2893af6bd12c1ca6e9c5880be1686f875755facbe927f4bf6fe36e9d"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/crystal_bat/references/front.png",
+    "bytes": 491867,
+    "sha256": "9dda98f5a1006837fcc1c9950e57359c9f41466ea6ca6b618f063a1903751695"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/crystal_bat/references/left.png",
+    "bytes": 332389,
+    "sha256": "20b18e37e3a5231ec42db80f93d9d46857bbc11e8d13f0015510c5e6ffd8eebf"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/crystal_bat/references/right.png",
+    "bytes": 338669,
+    "sha256": "f31555d7b504d5c4844aabb3a1650140757a2118e113469c026786b6aa6f12f2"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/ore_beetle/references/back.png",
+    "bytes": 667537,
+    "sha256": "45c27d08f48e5648adb5b67c70254160d58e67a09ca62a29fedf35148e11b095"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/ore_beetle/references/front.png",
+    "bytes": 728082,
+    "sha256": "88650e404a50bbe2e3e987d3056000e1e0f1cbde061042a6c20a1821abc175db"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/ore_beetle/references/left.png",
+    "bytes": 755768,
+    "sha256": "df837d3856bfa874ea60927b85467c4588c7355321d504a1fa1cdb7129861d22"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/ore_beetle/references/right.png",
+    "bytes": 742178,
+    "sha256": "58f4d691748923e128e98076be0fd1c76995c66139c68a02ad2233d3345adee8"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/spore_sprite/references/back.png",
+    "bytes": 398123,
+    "sha256": "95bf5cf3915b6057b8773e05e1d2877d39407d11acafb8f764f02942e983e721"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/spore_sprite/references/front.png",
+    "bytes": 442285,
+    "sha256": "ab8765ce6346e390bf91ba9fa9e4cd773f7c252a4aa7d423d6fd867793c4dfcf"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/spore_sprite/references/left.png",
+    "bytes": 369942,
+    "sha256": "690608856fc0a1efaf6bc3252da986e8275cb679c22e6887be9c862bc48c9b61"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/spore_sprite/references/right.png",
+    "bytes": 362209,
+    "sha256": "1e1ed48fcb0ea395e97eb9f463e998cf819e33679fefec4cd99d1ef618bebea3"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/thorn_boar/references/back.png",
+    "bytes": 500135,
+    "sha256": "8cb360986b58efe4ee91187c456e927086b67d6d3bb0fb82b37ff91d3b5dfc5a"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/thorn_boar/references/front.png",
+    "bytes": 522236,
+    "sha256": "bd93dac099abc097fd6f2350e2accbe55bf05e9af0d0c4491d568cf394d43324"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/thorn_boar/references/left.png",
+    "bytes": 728397,
+    "sha256": "9dae9ef836ef8804d85bc794d011907c0706924e5b84ca27fa0cf1b8dec65270"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/enemies/thorn_boar/references/right.png",
+    "bytes": 668023,
+    "sha256": "890810ffe992725d757f62c9de36e56ded6bd38206008d2061a9a16fa4bbbf7a"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/blacksmith/references/back.png",
+    "bytes": 429576,
+    "sha256": "6ed8e30d81d3092abff136fafea0e0e966e25b8fd23d31a298cc21523e695c5a"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/blacksmith/references/front.png",
+    "bytes": 418189,
+    "sha256": "e60d432aa88a06ec76023035618b4fff5c9ccecd051d0ac764860b0c7199259b"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/blacksmith/references/left.png",
+    "bytes": 258118,
+    "sha256": "7d59f3710c5e82f37964be5abff9bd6c3f30098d2a812e7d9cca9c544fba3481"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/blacksmith/references/right.png",
+    "bytes": 261727,
+    "sha256": "ce297727e1e8cf268d86d8a3313f86e6474e8c4f8357a4cad10e55697cc31773"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/innkeeper/references/back.png",
+    "bytes": 457239,
+    "sha256": "9439850dcc3919690b279b17133b4ddad7393e7b52be405703c43c00f8271c79"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/innkeeper/references/front.png",
+    "bytes": 477403,
+    "sha256": "be372f72c04cb0d14afe9a13f4892eb8f899bbbf39e3c141857d93ebf342416a"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/innkeeper/references/left.png",
+    "bytes": 322141,
+    "sha256": "bd0d02cafbf9360f68cd379106363c33bc6f87dc4af4f349adcc6858bb2057eb"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/innkeeper/references/right.png",
+    "bytes": 323343,
+    "sha256": "f5812bf95bc9856c8b956ecdea2cfda6b859d27e4e3540e752ecf6c60b3ce35d"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/innkeeper/turnaround_source.png",
+    "bytes": 1374896,
+    "sha256": "02fd2bf38223c80d8e45c6051fc96ab9af0536e75064bf035dd74915995de35f"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/item_merchant/references/back.png",
+    "bytes": 364187,
+    "sha256": "2a34f92c7d63a34a9ca5c653de2cdbd1e384326ecd23ef7ae575f449676c9a60"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/item_merchant/references/front.png",
+    "bytes": 386936,
+    "sha256": "8a53b78f753cf2ef8d7b17a191806f3f3346a66f3a7c8c64bfda659529e71e49"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/item_merchant/references/left.png",
+    "bytes": 292986,
+    "sha256": "5871c32dec784e35b6c12f4c8a5da2779f2d006d90623887fc60c930f5d90793"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/item_merchant/references/right.png",
+    "bytes": 299674,
+    "sha256": "637e8f13654cda9c46155dfc74074ddfac351eac38dd532c151b0ce626073454"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/item_merchant/turnaround_source.png",
+    "bytes": 1260509,
+    "sha256": "ba29201564ebc81227be9f5233d9e249dd6c3455891203232da6bdf36e8c4857"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_female/references/back.png",
+    "bytes": 306038,
+    "sha256": "934bdf437d74ff4d01df4c1d464906a9797d21c31f1bb83a685ee8902d375f9c"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_female/references/front.png",
+    "bytes": 330167,
+    "sha256": "6eb0e5dc31b766dd27561c434b185f076782633af45aaed7f7f7920430d62ec2"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_female/references/left.png",
+    "bytes": 241181,
+    "sha256": "e438e2070af8ea1283eb81b9ac494057b4f539c215a48aafe60910d1e5592318"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_female/references/right.png",
+    "bytes": 239026,
+    "sha256": "a644eac1c228c6ac9c42523a77ab58d8496d361b61e5f08cc333197521e169da"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_female/turnaround_source.png",
+    "bytes": 1680465,
+    "sha256": "59cfcc19277a94f67c308a18167c896c27b166a6f566cbd1d7c3537773ea3371"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_male/references/back.png",
+    "bytes": 292098,
+    "sha256": "69b19e4b430c9cd5bb84e170d21719bda3bddf30c52483cfa11a5dfb5ecf1238"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_male/references/front.png",
+    "bytes": 310613,
+    "sha256": "a37e5d79cc4714df7c0077bb783e41aba19e2e3784f19ef86557f62a13ceab99"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_male/references/left.png",
+    "bytes": 193376,
+    "sha256": "ee7702a8e40771f4ee815b07385dd32e716a56e8495155734c3dcfe2f7a76f69"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_male/references/right.png",
+    "bytes": 193483,
+    "sha256": "7389ed37a060f80785a8b77a540d3a3753118555111d8d6c66653dfc3b61a60f"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/npc/villager_male/turnaround_source.png",
+    "bytes": 1657964,
+    "sha256": "268e0ec0535910e68bb1a042afc8d9edae126d1f9176d4a08d4396979c109ca5"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/preprocessed_blacksmith_eryn/5ebc06fb_000.png",
+    "bytes": 541360,
+    "sha256": "7474271f5023cb3b0fcade9587fa17572b5f655f59c6e3fb98892d51dccb4f17"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/preprocessed_blacksmith_eryn/5ebc06fb_001.png",
+    "bytes": 1620753,
+    "sha256": "8269d756301f427132b59b447dca1857597774e28458b1ef75ce5d661a3b7701"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/preprocessed_blacksmith_eryn/5ebc06fb_002.png",
+    "bytes": 536386,
+    "sha256": "ad53ca1d438a4e5cdc4c3b7a7aa299b065952c58f8dc6fcc643415f194460a62"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/preprocessed_blacksmith_eryn/5ebc06fb_003.png",
+    "bytes": 889078,
+    "sha256": "3ceb6d57a8e9017d04084e5ec473da8c8245e7ab236b62c227703b249eefb9d6"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/preprocessed_blacksmith_eryn/5ebc06fb_004.png",
+    "bytes": 753215,
+    "sha256": "8079dd87f5c91dba3df85ae24c9ef6becad9d0f100eccbefb4d8b98aeeba31a8"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/preprocessed_blacksmith_eryn/5ebc06fb_005.png",
+    "bytes": 801655,
+    "sha256": "30f00b2fb3816eeed7300017f16c29b49625af0bb8636c8fcb12af648d235bf7"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/preprocessed_blacksmith_eryn/5ebc06fb_006.png",
+    "bytes": 1840669,
+    "sha256": "7615004461864195b6072f0ba3b5d9dfdc15f9e8ee9f5b236d50c9ddc02daa6d"
+  },
+  {
+    "file": "source_assets/reference_library_20261020/preprocessed_blacksmith_eryn/5ebc06fb_007.png",
+    "bytes": 551882,
+    "sha256": "2b2ed31d9af0ebec94c273089d40cf56e967202f357c17a939afd8d306798142"
+  }
+]

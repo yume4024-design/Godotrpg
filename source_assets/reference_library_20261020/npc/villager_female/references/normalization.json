@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_female\\turnaround_source.png",
+    "source_sha256": "59cfcc19277a94f67c308a18167c896c27b166a6f566cbd1d7c3537773ea3371",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_female\\references\\front.png",
+    "output_sha256": "6eb0e5dc31b766dd27561c434b185f076782633af45aaed7f7f7920430d62ec2",
+    "resized_size": [
+      430,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      16,
+      38,
+      465,
+      974
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_female\\turnaround_source.png",
+    "source_sha256": "59cfcc19277a94f67c308a18167c896c27b166a6f566cbd1d7c3537773ea3371",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_female\\references\\left.png",
+    "output_sha256": "e438e2070af8ea1283eb81b9ac494057b4f539c215a48aafe60910d1e5592318",
+    "resized_size": [
+      291,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      466,
+      38,
+      770,
+      974
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_female\\turnaround_source.png",
+    "source_sha256": "59cfcc19277a94f67c308a18167c896c27b166a6f566cbd1d7c3537773ea3371",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_female\\references\\back.png",
+    "output_sha256": "934bdf437d74ff4d01df4c1d464906a9797d21c31f1bb83a685ee8902d375f9c",
+    "resized_size": [
+      428,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      769,
+      36,
+      1216,
+      972
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_female\\turnaround_source.png",
+    "source_sha256": "59cfcc19277a94f67c308a18167c896c27b166a6f566cbd1d7c3537773ea3371",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\villager_female\\references\\right.png",
+    "output_sha256": "a644eac1c228c6ac9c42523a77ab58d8496d361b61e5f08cc333197521e169da",
+    "resized_size": [
+      289,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      1204,
+      38,
+      1506,
+      974
+    ]
+  }
+]

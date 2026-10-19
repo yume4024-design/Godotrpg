@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\item_merchant\\turnaround_source.png",
+    "source_sha256": "ba29201564ebc81227be9f5233d9e249dd6c3455891203232da6bdf36e8c4857",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\item_merchant\\references\\front.png",
+    "output_sha256": "8a53b78f753cf2ef8d7b17a191806f3f3346a66f3a7c8c64bfda659529e71e49",
+    "resized_size": [
+      516,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      15,
+      8,
+      512,
+      871
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\item_merchant\\turnaround_source.png",
+    "source_sha256": "ba29201564ebc81227be9f5233d9e249dd6c3455891203232da6bdf36e8c4857",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\item_merchant\\references\\left.png",
+    "output_sha256": "5871c32dec784e35b6c12f4c8a5da2779f2d006d90623887fc60c930f5d90793",
+    "resized_size": [
+      338,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      533,
+      7,
+      859,
+      871
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\item_merchant\\turnaround_source.png",
+    "source_sha256": "ba29201564ebc81227be9f5233d9e249dd6c3455891203232da6bdf36e8c4857",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\item_merchant\\references\\back.png",
+    "output_sha256": "2a34f92c7d63a34a9ca5c653de2cdbd1e384326ecd23ef7ae575f449676c9a60",
+    "resized_size": [
+      502,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      879,
+      7,
+      1361,
+      868
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\item_merchant\\turnaround_source.png",
+    "source_sha256": "ba29201564ebc81227be9f5233d9e249dd6c3455891203232da6bdf36e8c4857",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\item_merchant\\references\\right.png",
+    "output_sha256": "637e8f13654cda9c46155dfc74074ddfac351eac38dd532c151b0ce626073454",
+    "resized_size": [
+      336,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "sheet_box": [
+      1401,
+      8,
+      1725,
+      871
+    ]
+  }
+]

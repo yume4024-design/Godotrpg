@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\preprocessed_blacksmith_eryn\\5ebc06fb_003.png",
+    "source_sha256": "3ceb6d57a8e9017d04084e5ec473da8c8245e7ab236b62c227703b249eefb9d6",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\blacksmith\\references\\front.png",
+    "output_sha256": "e60d432aa88a06ec76023035618b4fff5c9ccecd051d0ac764860b0c7199259b",
+    "resized_size": [
+      512,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      145,
+      6,
+      954,
+      1421
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\preprocessed_blacksmith_eryn\\5ebc06fb_000.png",
+    "source_sha256": "7474271f5023cb3b0fcade9587fa17572b5f655f59c6e3fb98892d51dccb4f17",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\blacksmith\\references\\left.png",
+    "output_sha256": "7d59f3710c5e82f37964be5abff9bd6c3f30098d2a812e7d9cca9c544fba3481",
+    "resized_size": [
+      222,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      365,
+      7,
+      718,
+      1431
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\preprocessed_blacksmith_eryn\\5ebc06fb_001.png",
+    "source_sha256": "8269d756301f427132b59b447dca1857597774e28458b1ef75ce5d661a3b7701",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\blacksmith\\references\\back.png",
+    "output_sha256": "6ed8e30d81d3092abff136fafea0e0e966e25b8fd23d31a298cc21523e695c5a",
+    "resized_size": [
+      531,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      63,
+      5,
+      955,
+      1509
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\preprocessed_blacksmith_eryn\\5ebc06fb_007.png",
+    "source_sha256": "2b2ed31d9af0ebec94c273089d40cf56e967202f357c17a939afd8d306798142",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\npc\\blacksmith\\references\\right.png",
+    "output_sha256": "ce297727e1e8cf268d86d8a3313f86e6474e8c4f8357a4cad10e55697cc31773",
+    "resized_size": [
+      222,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      372,
+      0,
+      726,
+      1430
+    ]
+  }
+]

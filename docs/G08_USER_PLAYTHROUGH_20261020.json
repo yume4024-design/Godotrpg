@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-20",
+  "source": "User reply in this task",
+  "statement": "已完成，鍵鼠與 Xbox 手把通過",
+  "question_scope": [
+    "RC2 playable package",
+    "new game through prologue",
+    "tutorial battle",
+    "Boss",
+    "return guild hand-in",
+    "shop",
+    "inn",
+    "save close restart load"
+  ],
+  "verification_type": "USER_REPORTED_PHYSICAL_PLAYTHROUGH",
+  "candidate_exe": "builds\\g08\\candidate\\20261018-101920\\ProjectCrystal.exe",
+  "candidate_pck": "builds\\g08\\candidate\\20261018-101920\\ProjectCrystal.pck",
+  "exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+  "pck_sha256": "28bbc2bd4ff4fd26e965720dd07cbe748327e514f24591c531dec81bd934df77",
+  "limitations": [
+    "No new performance claim",
+    "No raw physical input event capture supplied",
+    "Candidate identity inferred from RC2 named in question; files locally fingerprinted"
+  ]
+}
