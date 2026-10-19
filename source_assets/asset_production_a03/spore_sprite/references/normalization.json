@@ -1,0 +1,90 @@
+[
+  {
+    "view": "front",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\spore_sprite\\references\\spore_sprite_front.png",
+    "source_sha256": "a796c31f0ffb2d190dddb0180528d6fe4c9ed4784eea9fdb3480b649c282f0c5",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\spore_sprite\\references\\front.png",
+    "output_sha256": "ab8765ce6346e390bf91ba9fa9e4cd773f7c252a4aa7d423d6fd867793c4dfcf",
+    "resized_size": [
+      549,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      164,
+      26,
+      600,
+      737
+    ]
+  },
+  {
+    "view": "left",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\spore_sprite\\references\\spore_sprite_left.png",
+    "source_sha256": "cd9e30bcb372944241b609f5355c585c427ef870c972dddb36b844d07a6068e1",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\spore_sprite\\references\\left.png",
+    "output_sha256": "690608856fc0a1efaf6bc3252da986e8275cb679c22e6887be9c862bc48c9b61",
+    "resized_size": [
+      470,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      195,
+      26,
+      567,
+      735
+    ]
+  },
+  {
+    "view": "back",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\spore_sprite\\references\\spore_sprite_back.png",
+    "source_sha256": "f9ef0bcce3b596eb8545aad1b9562653cf787184b7193f1aa848551cdb4e2481",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\spore_sprite\\references\\back.png",
+    "output_sha256": "95bf5cf3915b6057b8773e05e1d2877d39407d11acafb8f764f02942e983e721",
+    "resized_size": [
+      547,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      165,
+      26,
+      600,
+      739
+    ]
+  },
+  {
+    "view": "right",
+    "source": "D:\\RPGGAME\\source_assets\\monster_rebuild_20261019\\spore_sprite\\references\\spore_sprite_right.png",
+    "source_sha256": "2f14597c88802d8cfc92c5d8706c19eabc7e1b36687ef794d04a7b68d34335ac",
+    "output": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\enemies\\spore_sprite\\references\\right.png",
+    "output_sha256": "1e1ed48fcb0ea395e97eb9f463e998cf819e33679fefec4cd99d1ef618bebea3",
+    "resized_size": [
+      461,
+      896
+    ],
+    "baseline_y": 960,
+    "canvas": [
+      1024,
+      1024
+    ],
+    "source_box": [
+      200,
+      26,
+      567,
+      739
+    ]
+  }
+]

@@ -1,0 +1,77 @@
+{
+  "input": "source_assets\\asset_production_a03\\spore_sprite\\optimized.blend",
+  "sha256": "8ab52a6b4c05ed3c1f0ccde566a25dd815aecd477e659bfa83815f2ac9cffd5c",
+  "category": "common_enemy",
+  "maximum_triangles": 10000,
+  "bones": 7,
+  "actions": {
+    "attack": {
+      "frames": 29,
+      "maximum_triangles": 9811,
+      "max_edge_stretch": 1.2527946436188249,
+      "floor_range": [
+        0.07599999010562897,
+        0.07600001245737076
+      ]
+    },
+    "cast": {
+      "frames": 37,
+      "maximum_triangles": 9811,
+      "max_edge_stretch": 2.2838402417162524,
+      "floor_range": [
+        0.07599999755620956,
+        0.11800000816583633
+      ]
+    },
+    "death": {
+      "frames": 37,
+      "maximum_triangles": 9811,
+      "max_edge_stretch": 1.5323965831466682,
+      "floor_range": [
+        0.0040000081062316895,
+        0.07599999755620956
+      ]
+    },
+    "hit": {
+      "frames": 19,
+      "maximum_triangles": 9811,
+      "max_edge_stretch": 1.000039797011536,
+      "floor_range": [
+        0.07599998265504837,
+        0.07600000500679016
+      ]
+    },
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 9811,
+      "max_edge_stretch": 1.0000449814058696,
+      "floor_range": [
+        0.07599997520446777,
+        0.07600000500679016
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 9811,
+      "max_edge_stretch": 1.0942026745363231,
+      "floor_range": [
+        0.07599999755620956,
+        0.13600000739097595
+      ]
+    }
+  },
+  "total_frames": 196,
+  "topology_warnings": [
+    {
+      "mesh": "spore_sprite_body",
+      "boundary_edges": 5,
+      "nonmanifold_edges": 118
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

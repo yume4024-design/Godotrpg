@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "file": "assets/models/rebuilt_enemies/spore_sprite.glb",
+  "category": "common_enemy",
+  "sha256": "bd38151d3b0e8bb48063eb72914b9c99f6ba97511d72ea1ec9b13f52de56d037",
+  "maximum_triangles": 10000,
+  "triangles": 9811,
+  "headroom_triangles": 189,
+  "triangle_gate": "PASS",
+  "status": "PASS",
+  "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+  "requirements": {
+    "uv": true,
+    "rig": true
+  },
+  "max_weight_sum_error": 1.471489667892456e-07,
+  "primitives": [
+    {
+      "node": 7,
+      "mesh": 0,
+      "triangles": 9811,
+      "attributes": [
+        "JOINTS_0",
+        "NORMAL",
+        "POSITION",
+        "TEXCOORD_0",
+        "WEIGHTS_0"
+      ]
+    }
+  ],
+  "skins": [
+    7
+  ],
+  "materials": 1,
+  "animations": [
+    "attack",
+    "cast",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+  ],
+  "failures": [],
+  "warnings": [
+    "Less than 5% correction headroom; cap is still inclusive"
+  ],
+  "visual_gate": "HUMAN_REVIEW",
+  "animation_gate": "NOT_STARTED"
+}

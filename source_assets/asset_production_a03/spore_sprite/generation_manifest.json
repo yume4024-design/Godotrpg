@@ -1,0 +1,162 @@
+{
+  "asset": "spore_sprite",
+  "category": "common_enemy",
+  "status": "PASS",
+  "method": "Reuse existing Pixal3D + Blender surface candidate; no new Comfy job",
+  "generation_prompt_id": "b601bb7e-1ca0-48a0-91f6-9322963c1154",
+  "workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "shape_resolution": 1536,
+  "texture_resolution": 4096,
+  "remesh_resolution": 768,
+  "runtime_glb": "assets/models/rebuilt_enemies/spore_sprite.glb",
+  "selected_source": {
+    "file": "source_assets/monster_rebuild_20261019/spore_sprite/surface_v3/spore_sprite_animated.glb",
+    "blend": "source_assets/monster_rebuild_20261019/spore_sprite/surface_v3/spore_sprite_animated.blend",
+    "triangles": 9811,
+    "bones": 7,
+    "clips": [
+      "attack",
+      "cast",
+      "death",
+      "hit",
+      "idle",
+      "walk"
+    ],
+    "weight_sum_error": 1.7881393432617188e-07,
+    "loop_endpoint_error": 6.735557192910056e-18,
+    "max_edge_stretch": 2.2838402417162524,
+    "frames_sampled": 196,
+    "status": "rigged_candidate_offline_checks_passed"
+  },
+  "original_sources": [
+    {
+      "path": "source_assets/monster_rebuild_20261019/spore_sprite/surface_v3/spore_sprite_animated.glb",
+      "sha256": "bd38151d3b0e8bb48063eb72914b9c99f6ba97511d72ea1ec9b13f52de56d037"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/spore_sprite/surface_v3/spore_sprite_animated.blend",
+      "sha256": "8ab52a6b4c05ed3c1f0ccde566a25dd815aecd477e659bfa83815f2ac9cffd5c"
+    },
+    {
+      "path": "source_assets/monster_rebuild_20261019/spore_sprite/outputs/spore_sprite_textured_00001.glb",
+      "sha256": "a8c2a3d6762b56869d7aeb37d6454aea358cc88b8064f42a32b02a2496ba9a20"
+    }
+  ],
+  "outputs": [
+    {
+      "file": "generated_raw.glb",
+      "sha256": "a8c2a3d6762b56869d7aeb37d6454aea358cc88b8064f42a32b02a2496ba9a20"
+    },
+    {
+      "file": "optimized.blend",
+      "sha256": "8ab52a6b4c05ed3c1f0ccde566a25dd815aecd477e659bfa83815f2ac9cffd5c"
+    },
+    {
+      "file": "optimized.glb",
+      "sha256": "bd38151d3b0e8bb48063eb72914b9c99f6ba97511d72ea1ec9b13f52de56d037"
+    },
+    {
+      "file": "triangle_report.json",
+      "sha256": "a98b11885024a0d3f5259ac8ec7d5b16b66772facd0340456e897b51aef4492f"
+    }
+  ],
+  "references": {
+    "references": "source_assets/reference_library_20261020/enemies/spore_sprite/references",
+    "structural_gate": "PASS",
+    "visual_review": "agent_viewed_four_directions",
+    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "status": "PASS",
+    "ready_for_generation": true,
+    "files": [
+      {
+        "view": "front",
+        "file": "source_assets/reference_library_20261020/enemies/spore_sprite/references/front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          237,
+          64,
+          786,
+          960
+        ],
+        "sha256": "ab8765ce6346e390bf91ba9fa9e4cd773f7c252a4aa7d423d6fd867793c4dfcf"
+      },
+      {
+        "view": "left",
+        "file": "source_assets/reference_library_20261020/enemies/spore_sprite/references/left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          277,
+          64,
+          747,
+          960
+        ],
+        "sha256": "690608856fc0a1efaf6bc3252da986e8275cb679c22e6887be9c862bc48c9b61"
+      },
+      {
+        "view": "back",
+        "file": "source_assets/reference_library_20261020/enemies/spore_sprite/references/back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          238,
+          64,
+          785,
+          960
+        ],
+        "sha256": "95bf5cf3915b6057b8773e05e1d2877d39407d11acafb8f764f02942e983e721"
+      },
+      {
+        "view": "right",
+        "file": "source_assets/reference_library_20261020/enemies/spore_sprite/references/right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          281,
+          64,
+          742,
+          960
+        ],
+        "sha256": "1e1ed48fcb0ea395e97eb9f463e998cf819e33679fefec4cd99d1ef618bebea3"
+      }
+    ]
+  },
+  "limitations": [
+    "Nonmanifold intersections remain; not certified watertight",
+    "No new physical player playthrough or performance benchmark",
+    "A04 formal battle/exploration regression remains required"
+  ],
+  "high_density_master": {
+    "path": "source_assets/monster_rebuild_20261019/spore_sprite/outputs/spore_sprite_source_00001.glb",
+    "sha256": "b21e8c878b834dd06a263cf231525f60fae710446b04b01cbf31216924580f9a",
+    "bytes": 223124296,
+    "git_policy": "Original preserved locally; giant binary excluded from commit"
+  },
+  "acceptance_scope": "A03 model/rig/representative animation candidate; A04 gameplay integration pending",
+  "gates": {
+    "triangle": "PASS",
+    "structure_weights_uv": "PASS",
+    "deformation": "PASS",
+    "graphical_import_motion": "PASS",
+    "agent_visual_review": "PASS",
+    "formal_battle": "NOT_STARTED"
+  },
+  "visual_notes": "已查看四面、六動作正側面與施法／倒下近圖：帽緣、雙臂與葉披肩保持連接；腹部單一螺旋未投影到背面。沒有觀察到骨架碎裂，既有交疊拓樸仍保留警告。"
+}

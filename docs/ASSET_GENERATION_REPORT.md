@@ -1,5 +1,9 @@
 # 資產生成與整合紀錄
 
+## A03.1 — 菇靈候選 PASS（2026-10-20）
+
+重用 surface_v3，未重複生成。嚴格 GLB／Blender evaluated 9811 triangles、7 骨、6 動作；196 影格離線變形及 Godot 圖形 256 項／0 失敗，四面／動作截圖已查看。5 個邊界／118 非流形邊仍記為拓樸警告；沒有看到代表性畫面的骨架碎裂。完整來源、Blend、GLB、SHA、prompt_id、報告及真實引擎 WebP 在 `source_assets/asset_production_a03/spore_sprite/`。高密度原件 223MB 留在原目錄，不加入 Git。正式遭遇引用與 RPG 狀態未改；A04 待執行。
+
 ## A02 — IN_PROGRESS（2026-10-20）
 
 13 套／52 張獨立 RGBA 四視圖結構 PASS，12 套來源可繼續，雷恩新右視圖仍保留人工確認。四組新增 NPC 已由使用者明確採用。詳見 [來源驗收](ASSET_A02_REPORT.md)；後續單件先重用現有合格候選，不重新批次排隊。此更新不宣稱新角色 3D 模型或正式整合完成。

@@ -1,10 +1,10 @@
 # 敵人模型製作計畫
 
-2026-10-20。此檔為 A01 建立的後續工作清單；未開始 A02／A03。單件先盤點既有成果，避免重複生成。
+2026-10-20。A02 五敵來源已結構及四面檢查；A03 依次重用並驗證既有成果，避免重複生成。PASS 只代表模型／動畫候選，正式戰鬥整合屬 A04。
 
 | 任務 | 類別／上限 | 既有候選來源 | 本輪狀態 |
 |---|---|---|---|
-| A03.1 Spore Sprite | common_enemy／10000 | source_assets/monster_rebuild_20261019/spore_sprite | NOT_STARTED |
+| A03.1 Spore Sprite | common_enemy／10000 | source_assets/asset_production_a03/spore_sprite | PASS：9811 面／7 骨／6 動作；196 影格／Godot 256 項 |
 | A03.2 Ore Beetle | common_enemy／10000 | 同根目錄 ore_beetle | NOT_STARTED |
 | A03.3 Thorn Boar | common_enemy／10000 | 同根目錄 thorn_boar | NOT_STARTED |
 | A03.4 Crystal Bat | common_enemy／10000 | 同根目錄 crystal_bat | NOT_STARTED |
