@@ -1,0 +1,24 @@
+{
+  "animation_tested": false,
+  "asset": "innkeeper_apron",
+  "category": "npc",
+  "checks": 21,
+  "failures": [],
+  "formal_gameplay": false,
+  "graphical": true,
+  "height_range": [
+    0.0,
+    1.72000002861023
+  ],
+  "model": "res://assets/models/rebuilt_npc/innkeeper_apron_candidate.glb",
+  "model_sha256": "6960551fedbb0aaaa156af04783b36a6836bec53270d9286d270abd141d92c8f",
+  "physical_input": false,
+  "rigged": false,
+  "textures": [
+    "(4096, 4096)",
+    "(512, 512)"
+  ],
+  "triangles": 12785,
+  "archived_model": "source_assets/npc_rebuild_20261020/innkeeper/manual_topology_uv/innkeeper_retopology.glb",
+  "note": "Temporary unrigged runtime copy removed after review; rigged asset is the deliverable."
+}

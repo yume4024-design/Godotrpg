@@ -1,0 +1,17 @@
+{
+  "source_log": "artifacts/innkeeper_manual/preservation.log",
+  "lines": [
+    "00:02.391  blend            | Read blend: \"D:\\RPGGAME\\source_assets\\npc_rebuild_20261020\\innkeeper\\surface_diagnosis\\baseline.blend\"",
+    "00:02.813  blend            | Read blend: \"D:\\RPGGAME\\source_assets\\npc_rebuild_20261020\\innkeeper\\manual_topology_uv\\innkeeper_retopology.blend\"",
+    "INNKEEPER_PRESERVATION FAIL 10250 missing retained faces",
+    "Traceback (most recent call last):",
+    "  File \"D:\\RPGGAME\\scripts\\tools\\check_innkeeper_retopology.py\", line 54, in <module>",
+    "    raise RuntimeError(checks)",
+    "RuntimeError: {'retained_face_corner_geometry_uv_normals': False, 'original_body_albedo_identical': True, 'explicit_clipping_preserves_pants_fragments': True, 'triangle_budget': True}",
+    "",
+    "Error: script failed, file: 'scripts/tools/check_innkeeper_retopology.py', exiting.",
+    "Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)",
+    "",
+    "Blender quit"
+  ]
+}

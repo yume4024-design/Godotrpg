@@ -13,15 +13,16 @@ from mathutils.kdtree import KDTree
 p = argparse.ArgumentParser()
 p.add_argument('--input', type=Path, required=True)
 p.add_argument('--output', type=Path, required=True)
-p.add_argument('--profile', choices=['item_merchant', 'villager_female'], default='item_merchant')
+p.add_argument('--profile', choices=['item_merchant', 'villager_female', 'innkeeper'], default='item_merchant')
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
 a.output.mkdir(parents=True, exist_ok=False)
 bpy.ops.wm.open_mainfile(filepath=str(a.input.resolve()))
 body = next(obj for obj in bpy.context.scene.objects if obj.type == 'MESH')
 assert not any(obj.type == 'ARMATURE' for obj in bpy.context.scene.objects)
 before = np.array([tuple(v.co) for v in body.data.vertices], dtype=np.float32)
-assert abs(float(np.ptp(before[:, 2])) - 1.65) < .001
-body.name = 'ItemMerchantBody' if a.profile == 'item_merchant' else 'VillagerFemaleBody'
+source_height = 1.72 if a.profile == 'innkeeper' else 1.65
+assert abs(float(np.ptp(before[:, 2])) - source_height) < .001
+body.name = {'item_merchant': 'ItemMerchantBody', 'villager_female': 'VillagerFemaleBody', 'innkeeper': 'InnkeeperBody'}[a.profile]
 
 spec = {'Root': ((0, 0, 0), (0, 0, .9), None),
         'Hips': ((0, 0, .91), (0, 0, 1.02), 'Root'),
@@ -38,10 +39,25 @@ for side, sign in [('Left', 1), ('Right', -1)]:
                  'Leg' + side: ((sign*.10, 0, .92), (sign*.12, 0, .48), 'Hips'),
                  'Shin' + side: ((sign*.12, 0, .48), (sign*.12, 0, .12), 'Leg' + side),
                  'Foot' + side: ((sign*.12, 0, .12), (sign*.12, -.14, .06), 'Shin' + side)})
+if a.profile == 'innkeeper':
+    spec.update({'Hips': ((0, 0, .85), (0, 0, .96), 'Root'),
+                 'Spine': ((0, 0, .96), (0, 0, 1.10), 'Hips'),
+                 'Chest': ((0, 0, 1.10), (0, 0, 1.28), 'Spine'),
+                 'Neck': ((0, 0, 1.28), (0, 0, 1.39), 'Chest'),
+                 'Head': ((0, 0, 1.39), (0, 0, 1.69), 'Neck'),
+                 'SkirtFront': ((0, -.11, .85), (0, -.18, .35), 'Hips'),
+                 'SkirtBack': ((0, .10, .85), (0, .13, .55), 'Hips')})
+    for side, sign in [('Left', 1), ('Right', -1)]:
+        spec.update({'Arm' + side: ((sign*.22, 0, 1.26), (sign*.36, .01, 1.04), 'Chest'),
+                     'Forearm' + side: ((sign*.36, .01, 1.04), (sign*.47, .02, .80), 'Arm' + side),
+                     'Hand' + side: ((sign*.47, .02, .80), (sign*.51, .03, .66), 'Forearm' + side),
+                     'Leg' + side: ((sign*.13, 0, .85), (sign*.15, 0, .47), 'Hips'),
+                     'Shin' + side: ((sign*.15, 0, .47), (sign*.16, 0, .12), 'Leg' + side),
+                     'Foot' + side: ((sign*.16, 0, .12), (sign*.16, -.14, .05), 'Shin' + side)})
 bpy.ops.object.select_all(action='DESELECT')
 bpy.ops.object.armature_add()
 rig = bpy.context.object
-rig.name = 'ItemMerchantRig' if a.profile == 'item_merchant' else 'VillagerFemaleRig'
+rig.name = {'item_merchant': 'ItemMerchantRig', 'villager_female': 'VillagerFemaleRig', 'innkeeper': 'InnkeeperRig'}[a.profile]
 bpy.ops.object.mode_set(mode='EDIT')
 rig.data.edit_bones.remove(rig.data.edit_bones[0])
 for name, (head, tail, parent) in spec.items():
@@ -72,6 +88,9 @@ for loop in body.data.loops:
         .04 < color[0] < .6 and color[1] < .18 and color[2] < .18 and
         color[0] > color[1]*1.5 and color[0] > color[2]*1.5)
     if cloth_color: seeds.add(vertex.index)
+if a.profile == 'innkeeper':
+    # The new panel has an explicit material; do not identify it by vest colour.
+    seeds = {v for f in body.data.polygons if body.data.materials[f.material_index].name == 'InnkeeperApronCloth' for v in f.vertices}
 assert len(seeds) > 500, 'No reliable skirt colour region; inspect material before binding'
 cloth = KDTree(len(seeds))
 for index in seeds: cloth.insert(body.data.vertices[index].co, index)
@@ -103,10 +122,11 @@ for vertex in body.data.vertices:
     elif arm:
         names = arm_names if point.z < 1.17 else arm_names + ['Chest']
         weights = {name: 1/(distance(point, *spec[name][:2])+.025)**4 for name in names}
-        if a.profile == 'villager_female':
+        if a.profile in ['villager_female', 'innkeeper']:
             # Her narrower waist approaches the inner sleeve. A hard arm/body
             # cutoff tore adjacent waist vertices; blend across that boundary.
-            influence = smooth(.23, .30, abs(point.x)) if point.z < 1.14 else smooth(.18, .25, abs(point.x))
+            inner, outer = (.26, .36) if a.profile == 'innkeeper' else (.23, .30)
+            influence = smooth(inner, outer, abs(point.x)) if point.z < 1.14 else smooth(.18, .25, abs(point.x))
             if hand_region: influence = 1.
             core = {'Hips': 1.} if point.z < .99 else {
                 name: 1/(distance(point, *spec[name][:2])+.025)**4
@@ -190,7 +210,7 @@ bpy.ops.export_scene.gltf(filepath=str((a.output/(a.profile+'_npc.glb')).resolve
                          use_selection=True, export_animations=True, export_animation_mode='ACTIONS', export_frame_range=False)
 (a.output/'npc_recipe.json').write_text(json.dumps({'source': str(a.input), 'profile': a.profile,
     'source_sha256': hashlib.sha256(a.input.read_bytes()).hexdigest(), 'geometry_modified': False,
-    'height_m': 1.65, 'bones': len(spec), 'clips': ['idle', 'talk'], 'weight_sum_max_error': error,
+    'height_m': source_height, 'bones': len(spec), 'clips': ['idle', 'talk'], 'weight_sum_max_error': error,
     'skirt_color_seed_vertices': len(seeds), 'skirt_weight_check_vertices': len(skirt_vertices),
     'hand_weight_check_vertices': len(hand_vertices), 'weight_method': 'Four nearest permitted bone capsules; profile-specific cloth colour proximity and dedicated front/back skirt bones',
     'limitations': ['Stationary NPC, no walking or finger rig', 'No cloth physics or item handoff animation',

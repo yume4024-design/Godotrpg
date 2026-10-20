@@ -1,0 +1,43 @@
+{
+  "input": "source_assets\\npc_rebuild_20261020\\innkeeper\\idle_talk_manual_v1\\innkeeper_npc.blend",
+  "sha256": "03cfd4fe56100a0e1260918ed53cfff96cea903827df196cc2950aed8f430562",
+  "category": "npc",
+  "maximum_triangles": 15000,
+  "bones": 20,
+  "actions": {
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 12785,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.0411439407285472,
+      "floor_range": [
+        0.001999989151954651,
+        0.001999989151954651
+      ]
+    },
+    "talk": {
+      "frames": 49,
+      "maximum_triangles": 12785,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.7616914129006418,
+      "floor_range": [
+        0.001999989151954651,
+        0.001999989151954651
+      ]
+    }
+  },
+  "total_frames": 98,
+  "topology_warnings": [
+    {
+      "mesh": "InnkeeperBody",
+      "boundary_edges": 8955,
+      "nonmanifold_edges": 8958
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

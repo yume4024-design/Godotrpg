@@ -1,0 +1,9 @@
+{
+  "span": [
+    1.0,
+    1.0
+  ],
+  "material": "InnkeeperApronCloth",
+  "status": "PASS",
+  "reason": "actual rendered TEXCOORD_0 covers the new atlas, not a second unused UV layer"
+}

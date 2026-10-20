@@ -1,0 +1,19 @@
+{
+  "expected": "source_assets\\npc_rebuild_20261020\\item_merchant\\idle_talk_v2\\item_merchant_npc.blend",
+  "actual": "artifacts\\innkeeper_manual\\merchant_default_regression\\item_merchant_npc.blend",
+  "checks": {
+    "rest_vertices_equal": true,
+    "uv_equal": true,
+    "weights_equal": true,
+    "bones_equal": true,
+    "albedo_equal": true,
+    "clip_names_equal": true,
+    "sampled_poses_equal": true
+  },
+  "pose_maximum_difference": {
+    "talk": 0.0,
+    "idle": 0.0
+  },
+  "status": "PASS",
+  "scope": "Default-profile rebuild equality, not new visual/gameplay acceptance"
+}

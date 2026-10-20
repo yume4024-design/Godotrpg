@@ -1,0 +1,16 @@
+{
+  "source_log": "artifacts/innkeeper_manual/rebuild.log",
+  "lines": [
+    "00:06.453  blend            | Read blend: \"D:\\RPGGAME\\source_assets\\npc_rebuild_20261020\\innkeeper\\surface_diagnosis\\baseline.blend\"",
+    "Traceback (most recent call last):",
+    "  File \"D:\\RPGGAME\\scripts\\tools\\rebuild_innkeeper_apron.py\", line 35, in <module>",
+    "    assert abs(height - 1.65) < .001",
+    "           ^^^^^^^^^^^^^^^^^^^^^^^^^",
+    "AssertionError",
+    "",
+    "Error: script failed, file: 'scripts/tools/rebuild_innkeeper_apron.py', exiting.",
+    "Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)",
+    "",
+    "Blender quit"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "checks": {
+    "retained_face_corner_geometry_uv": true,
+    "normal_reencoding_error_below_0_001": true,
+    "original_body_albedo_identical": true,
+    "explicit_clipping_preserves_pants_fragments": true,
+    "triangle_budget": true
+  },
+  "status": "PASS",
+  "retained_source_faces": 10888,
+  "missing_retained_faces": 0,
+  "removed_front_cloth_faces": 2754,
+  "source_texture_sha256": "88f5978fd446068e9f2e5808c29df6ec4a228e9e3db9021af39b5c726857708a",
+  "retained_normal_max_component_error": 0.00010505318641662598,
+  "candidate_texture_sha256": "88f5978fd446068e9f2e5808c29df6ec4a228e9e3db9021af39b5c726857708a",
+  "scope": "Outside the explicitly replaced cloth region; no animation or gameplay claim"
+}

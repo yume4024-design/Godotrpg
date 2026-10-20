@@ -1,0 +1,22 @@
+{
+  "status": "PASS_INDEPENDENT_NPC_CANDIDATE",
+  "model": "assets/models/rebuilt_npc/innkeeper.glb",
+  "sha256": "3baeda38ab638039aa01e9b2a4333f118a4df277c89e683ee8b26e70ea9c111d",
+  "triangles": 12785,
+  "category": "npc",
+  "budget": 15000,
+  "bones": 20,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "working_blend": "source_assets/npc_rebuild_20261020/innkeeper/idle_talk_manual_v1/innkeeper_npc.blend",
+  "source_baseline_sha256": "f76443c999aea4840547992042c6929a001dbcf24a066734ea07ae12431c4ae0",
+  "source_baseline": "source_assets/npc_rebuild_20261020/innkeeper/manual_acceptance/source_baseline.blend",
+  "scene": "scenes/characters/npc/innkeeper_visual.tscn",
+  "formal_npc_replaced": false,
+  "story_prices_save_changed": false,
+  "physical_input_tested": false,
+  "android_ios_tested": false,
+  "visual_review": "Original black triangular slit absent in four native views and idle/talk samples; waist seams remain a small source-style limitation. Not a complete manifold/finger/cloth-simulation certificate."
+}

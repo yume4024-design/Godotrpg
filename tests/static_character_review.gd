@@ -3,6 +3,7 @@ extends SceneTree
 
 var model_path: String = "res://assets/models/rebuilt_characters/ren_static.glb"
 var asset_id: String = "ren"
+var category: String = "player_character"
 var height: float = 1.95
 var checks: int = 0
 var failures: Array[String] = []
@@ -14,7 +15,10 @@ func _initialize() -> void:
 		if argument.begins_with("--model="): model_path = argument.trim_prefix("--model=")
 		if argument.begins_with("--id="): asset_id = argument.trim_prefix("--id=")
 		if argument.begins_with("--height="): height = argument.trim_prefix("--height=").to_float()
-	output = "res://artifacts/character_rebuild_20261020/" + asset_id + "/godot_static"
+		if argument.begins_with("--category="): category = argument.trim_prefix("--category=")
+		if argument.begins_with("--output="): output = argument.trim_prefix("--output=")
+	if output.is_empty(): output = "res://artifacts/character_rebuild_20261020/" + asset_id + "/godot_static"
+	if "--portrait" in OS.get_cmdline_user_args(): root.size = Vector2i(900, 900)
 	_run.call_deferred()
 
 func _check(ok: bool, message: String) -> void:
@@ -84,7 +88,7 @@ func _run() -> void:
 				textures.append(Vector2i(material.albedo_texture.get_size()))
 				_check(not material.normal_enabled, "diagnosed normal map disabled in candidate")
 	_check(finite and absf(lowest) < 0.01 and absf(highest - height) < 0.01, "finite normalized ground/height")
-	_check(Budget.within_budget(triangles, "player_character"), "player triangle budget")
+	_check(Budget.within_budget(triangles, category), category + " triangle budget")
 	_check(model.find_children("*", "Skeleton3D", true, false).is_empty(), "no rig completion claimed")
 	for view: int in range(4):
 		pivot.rotation.y = view * PI / 2.0
@@ -103,7 +107,7 @@ func _run() -> void:
 	await process_frame
 	_check(not model.find_children("*", "MeshInstance3D", true, false).is_empty(), "reinstantiate retains model")
 	var report: Dictionary = {"asset": asset_id, "model": model_path, "model_sha256": FileAccess.get_sha256(model_path),
-		"checks": checks, "failures": failures, "triangles": triangles, "category": "player_character",
+		"checks": checks, "failures": failures, "triangles": triangles, "category": category,
 		"textures": textures, "height_range": [lowest, highest], "graphical": true,
 		"rigged": false, "animation_tested": false, "formal_gameplay": false, "physical_input": false}
 	var file := FileAccess.open(output + "/report.json", FileAccess.WRITE)

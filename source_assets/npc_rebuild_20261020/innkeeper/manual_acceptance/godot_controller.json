@@ -1,0 +1,11 @@
+{
+  "asset": "innkeeper",
+  "checks": 19,
+  "failures": [],
+  "formal_gameplay_test": false,
+  "graphical": true,
+  "model": "res://assets/models/rebuilt_npc/innkeeper.glb",
+  "model_sha256": "3baeda38ab638039aa01e9b2a4333f118a4df277c89e683ee8b26e70ea9c111d",
+  "physical_input_test": false,
+  "saves_written": false
+}

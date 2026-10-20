@@ -1,0 +1,22 @@
+{
+  "source": "source_assets\\npc_rebuild_20261020\\innkeeper\\manual_topology_uv\\innkeeper_retopology.blend",
+  "profile": "innkeeper",
+  "source_sha256": "262ad37b267dc24683a585f5807370f6109748468e87f9d3b0d2b6e59e431e30",
+  "geometry_modified": false,
+  "height_m": 1.72,
+  "bones": 20,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "weight_sum_max_error": 4.470348358154297e-08,
+  "skirt_color_seed_vertices": 850,
+  "skirt_weight_check_vertices": 1328,
+  "hand_weight_check_vertices": 881,
+  "weight_method": "Four nearest permitted bone capsules; profile-specific cloth colour proximity and dedicated front/back skirt bones",
+  "limitations": [
+    "Stationary NPC, no walking or finger rig",
+    "No cloth physics or item handoff animation",
+    "Material/geometry limitations of reviewed static source remain; formal gameplay integration not tested"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "no_new_comfy_generation": true,
+  "versions": [
+    {
+      "folder": "manual_topology_v2",
+      "glb_sha256": "9dc33acdc1840ae3b410302dc91cbc6dbbe51c3de79b5c43fe96ad74554bed0f",
+      "final": false
+    },
+    {
+      "folder": "manual_topology_v3",
+      "glb_sha256": "b47e9e9eeef1e5f5e44d5df561fc7d87d34259b6187d1f8da01b46dd7514a473",
+      "final": false
+    },
+    {
+      "folder": "manual_topology_v4",
+      "glb_sha256": "f9a2b14736a95f1cc0917aa7fbf3c2e4e6bb1db71a3637b8c5b7dc2bb8aa56d8",
+      "final": false
+    },
+    {
+      "folder": "manual_topology_final",
+      "glb_sha256": "bad6535ed22b61c76c8421248029ff9a8a9c0ae605a12eb38bb77a7264fb8968",
+      "final": false
+    },
+    {
+      "folder": "manual_topology_clipped",
+      "glb_sha256": "f51a7728a7c4ba250e6a66a1c9418004f59a6d7808a000409d72a18713b399e5",
+      "final": false
+    },
+    {
+      "folder": "manual_topology_uv",
+      "glb_sha256": "6960551fedbb0aaaa156af04783b36a6836bec53270d9286d270abd141d92c8f",
+      "final": true
+    }
+  ],
+  "sequence": [
+    "Colour-only removal left crossed dark cloth",
+    "Geometric removal reached above actual vest seam",
+    "Wrong hem selection touched trousers",
+    "Restoring hem alone was insufficient",
+    "Geometric clipping restored trousers; UV layer mismatch found",
+    "Shared TEXCOORD_0 corrected and validated before rigging"
+  ],
+  "note": "Bounded local topology recipe and its implementation defects, not six new AI generations. All failed native/source files remain local; no failed version promoted."
+}
