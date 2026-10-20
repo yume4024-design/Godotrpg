@@ -1,0 +1,800 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "scope": "Current Greystone file inventory only; no new art, collision, LOD or performance acceptance",
+  "groups": {
+    "buildings": [
+      {
+        "file": "assets/models/greystone/buildings/farm_house.glb",
+        "sha256": "c1f8d4ef60605b91997079716df02e1f224c57b4c5d28af17950936ca3478919",
+        "bytes": 288008,
+        "active_scene_triangles": 4094,
+        "material_definitions": 7,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/buildings/guild_hall.glb",
+        "sha256": "237fa4cb34049ef7467d8905a593184aa0b2e17b78bd713b243433f4423ffe7a",
+        "bytes": 633260,
+        "active_scene_triangles": 8124,
+        "material_definitions": 7,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/buildings/house_a.glb",
+        "sha256": "b048ee035fdf0a8262fb3e02794ccbd505378520997273ae641629e085c98f42",
+        "bytes": 286372,
+        "active_scene_triangles": 4070,
+        "material_definitions": 7,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/buildings/house_b.glb",
+        "sha256": "70c09246f50b955f2ca86bd42ca6edda7a51e41660784998caaf76bee1ba4538",
+        "bytes": 437280,
+        "active_scene_triangles": 5854,
+        "material_definitions": 7,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/buildings/inn.glb",
+        "sha256": "bff0c3ce0f23efd410afcdbfac99f4e99e3f32ca271b6349aeb567001b6e7f67",
+        "bytes": 648084,
+        "active_scene_triangles": 8328,
+        "material_definitions": 7,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/buildings/item_shop.glb",
+        "sha256": "d6c4ba445e93b843dd1b33f7c5c39958c98039d4ab3a8f29c0b24eb0decc7b1e",
+        "bytes": 292196,
+        "active_scene_triangles": 4154,
+        "material_definitions": 7,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/buildings/weapon_shop.glb",
+        "sha256": "0b020a0e2db84870098b79fb741c3b96d85d84636f71b827dfd871b808343ed6",
+        "bytes": 292548,
+        "active_scene_triangles": 4154,
+        "material_definitions": 7,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      }
+    ],
+    "props": [
+      {
+        "file": "assets/models/greystone/props/barrel.glb",
+        "sha256": "7298078f741e9ab29143942dc0c72eb6b32973fc2a45c2722b087ba8ab7b26ba",
+        "bytes": 8520,
+        "active_scene_triangles": 108,
+        "material_definitions": 2,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/bush_a.glb",
+        "sha256": "39c603388c6a9830d101057bd369848bd23154668d4e6a8050f8a9e7cab2008e",
+        "bytes": 7360,
+        "active_scene_triangles": 60,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/crate.glb",
+        "sha256": "49829bccc4858f3d6351ef94e8654d111657badbdf3425e77e2c586cc81e341c",
+        "bytes": 6252,
+        "active_scene_triangles": 60,
+        "material_definitions": 2,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/crystal_blue.glb",
+        "sha256": "2502715f4176c74ebef3a3de19fb059f98a261e8837d4e63c9ea477e4231dcba",
+        "bytes": 6468,
+        "active_scene_triangles": 72,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/flower_a.glb",
+        "sha256": "5d305ca2fa5badcb5a1ed336a4cee89abced49e1b4b5fd9b2f7bd4a97c61d1cd",
+        "bytes": 44928,
+        "active_scene_triangles": 444,
+        "material_definitions": 3,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/grass_a.glb",
+        "sha256": "64223aaa85762888f2e2c1973d5f3638b72ef4445375b175a709a84da5c66add",
+        "bytes": 3944,
+        "active_scene_triangles": 30,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/lamp_post.glb",
+        "sha256": "ffe7765e52e15a5fac740922cd35a7e11b309cc09d71bcc2adeb2eb9f6fee1de",
+        "bytes": 4652,
+        "active_scene_triangles": 36,
+        "material_definitions": 2,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/pine_tree_a.glb",
+        "sha256": "99b7a24ac75281d8f48d08a9a206a95ccb61b853d12aaf4a8f8ac3c36ee6027f",
+        "bytes": 4316,
+        "active_scene_triangles": 26,
+        "material_definitions": 2,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/pine_tree_b.glb",
+        "sha256": "eb1e3a653ff48806c4f0b1ef21043d0b93a199a34ede8585826a77b67ae67261",
+        "bytes": 4268,
+        "active_scene_triangles": 26,
+        "material_definitions": 2,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/rock_cliff.glb",
+        "sha256": "09b82cced03302c645ca9fdf1d9a081c68acd7d3a488dc3872f7a19f144f69c0",
+        "bytes": 2668,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/rock_medium.glb",
+        "sha256": "03f34970134ebdaf81b144179a15eeded74ef030ec600dda9a40792930bbb65e",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/rock_small.glb",
+        "sha256": "05a1d6d9a356fce52c0164199f97ed1cf0a8d05e6180eaa51183a64bf6493689",
+        "bytes": 2688,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/stone_well.glb",
+        "sha256": "dc920292d6d8fbf9676094081ccf582a559dc3e40d984e01d420622ff454c4f2",
+        "bytes": 21656,
+        "active_scene_triangles": 280,
+        "material_definitions": 3,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/wooden_bridge.glb",
+        "sha256": "45c4c974b8eef6447b0a77dde9729f84868032dd403456a8c3d179d5988b6013",
+        "bytes": 21356,
+        "active_scene_triangles": 288,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/wooden_dock.glb",
+        "sha256": "5c7f40f6db440ef0030e8c60978cfdee4ddc17d6fa849f652d51bb1bbcf615a0",
+        "bytes": 17136,
+        "active_scene_triangles": 228,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/wooden_fence.glb",
+        "sha256": "58081002d926ba2f722028d0657b6611d5101c1eda9cc88cb577fc65843ff02c",
+        "bytes": 4576,
+        "active_scene_triangles": 48,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/props/wooden_sign.glb",
+        "sha256": "91200f4de60dcecaf34361f35dd033babfaf275c9a352b7ecd973b1b3d0d46a9",
+        "bytes": 2900,
+        "active_scene_triangles": 24,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      }
+    ],
+    "terrain": [
+      {
+        "file": "assets/models/greystone/terrain/bridgeroad.glb",
+        "sha256": "030b6f71ff11adbf4c7258592d54618ff53904073a3507f887e7b9e4203a4e94",
+        "bytes": 8792,
+        "active_scene_triangles": 100,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff0.glb",
+        "sha256": "c15a06edaee77b105b936189e2084e15fb43eb0603dd7222b064bc2654da33a1",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff1.glb",
+        "sha256": "2fe8b4ba9b7c475e451f3144c469634739e04b3a586ca6cee1f64b7c23f6a9aa",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff10.glb",
+        "sha256": "2576ccd86d13761267d7c348f31c97459d846748be5a293f85630ab30a1c8d5f",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff11.glb",
+        "sha256": "0bd2d886e906f00d01fbbf8bc02011c4a95c1e6084f30c549420cb465135cafd",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff12.glb",
+        "sha256": "1782a4ea8499f77d9c65174b8c83f726f848988dc721395394fd359c1d9b8dc3",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff13.glb",
+        "sha256": "1f03b5983f1f93ee5ddff39068502931abbed7c33a99ce488fe81ed2b25d0d5a",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff14.glb",
+        "sha256": "94288c22255ef44edd352cbb53472b7ede7208a6eac57d1d3b2457659a8578bc",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff15.glb",
+        "sha256": "45b24f6a8f906f1af7fb66a16a499ab025647237c4fa953d91c20687752f23f3",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff16.glb",
+        "sha256": "783e03034165e6b04cf75b204d1d57c3ccd7db6997600e0eaae6e8028772f7f5",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff2.glb",
+        "sha256": "657459cdb2829df11e1283666a886c8053c087511f6add428f67b80caa932a14",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff3.glb",
+        "sha256": "bdcc52921c9ea6b6465db7a02dde7acdc78d407fd89f0dc01fbd4edb41043104",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff4.glb",
+        "sha256": "d1f1159d5d75883fb0e51eb9205016fc207e089a07e0674bfb72de094b9ce637",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff5.glb",
+        "sha256": "9f1fb595d1daf1424e7e65c3492ea2d717cde3ba005303a9fb868a22f081ff18",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff6.glb",
+        "sha256": "cd03f4af4f222a32e689591349515a0b116ad9df588315bddce3929882eede73",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff7.glb",
+        "sha256": "33c642bf4da8c65d9b4bc885017bb2aa9f9c8637496b0b199a0350e2f5cf5857",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff8.glb",
+        "sha256": "1445fb36673991a5e3f8964cf32aed89531443fc94b92fed94b0c8a99ff0b93a",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/cliff9.glb",
+        "sha256": "fa845cc23dd0a08f68c2f7d0b09a5d8710fd4ee23c0ce46d2f3b4beafc6ea87e",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/dockroad.glb",
+        "sha256": "7c0322a98c1511437097d8ee7b2d17349ba87b2a1708440d4be5791ad1a839f7",
+        "bytes": 2536,
+        "active_scene_triangles": 20,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastbankcliff.glb",
+        "sha256": "9b5de1018717e66c3489a75e0083fd70f48fed32e2c2d891b7eb85947020250f",
+        "bytes": 19680,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastboundary.glb",
+        "sha256": "b007dec6c607dc4e133b9ee5534a76d58e62618fce1d8de7e0dc56a49898d6af",
+        "bytes": 19712,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastground.glb",
+        "sha256": "0f980ab099e049613d1cf89d3bef63c1902a7a17b4e3306817c0d78389430fb7",
+        "bytes": 103916,
+        "active_scene_triangles": 1320,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastlink.glb",
+        "sha256": "a77ea472148242f756661f44ff3b697cb8cc693bf71ad131d68304b3cdff8737",
+        "bytes": 6440,
+        "active_scene_triangles": 70,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastoutercliff.glb",
+        "sha256": "3531dd50526c33ddbc93af1cd7dca1aea79fef9cfaea151ecffa24e618ef5a9a",
+        "bytes": 19680,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastriverrock0.glb",
+        "sha256": "c0645158ce3eb3f20fa7049ffe4fd23edfff1aa4b9f7810febadfa6a6e44cc61",
+        "bytes": 2672,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastriverrock1.glb",
+        "sha256": "c78617eeb81774d2964dccd2d62064459d30d10fdb46337429179ff6e960143d",
+        "bytes": 2656,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastriverrock2.glb",
+        "sha256": "72957cb146fe9b5f641015f09581b15f1d4f0fbf3ea30810b138517f32c872da",
+        "bytes": 2668,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastriverrock3.glb",
+        "sha256": "e8a59f5249c94845de3edc6c02c7979b6a2dd802013eb2a8c90e7f8bdd468e91",
+        "bytes": 2672,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastriverrock4.glb",
+        "sha256": "1f499fcc2690edcf3e1ca6dd2d70a62380619b6e88ba1736ae0a3ef02e6f3138",
+        "bytes": 2668,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/eastroad.glb",
+        "sha256": "3cd3515cef4610f13cf8f027faf9020b2e3c894c71ccbb0e62ca2e0552f8fec0",
+        "bytes": 17068,
+        "active_scene_triangles": 206,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/farmlink.glb",
+        "sha256": "0eb41d82caf9e6a625ae8cdff2d0e4e714fb756378ced5eec9dd8c95cc4571b4",
+        "bytes": 5824,
+        "active_scene_triangles": 62,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/farmroad.glb",
+        "sha256": "7e27da985a5e14f45268b6576e76af32feea0a0c07fe7a6fabeb55b3712912e9",
+        "bytes": 11596,
+        "active_scene_triangles": 136,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/innroad.glb",
+        "sha256": "cad9f880d89ba551e55ea376cb58411bd1647aa7d47c771909c0398d39c75731",
+        "bytes": 6596,
+        "active_scene_triangles": 72,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/mineroad.glb",
+        "sha256": "dfb90131d8b531e36a38803f3e3b46bc6ed28e6044bbebe6b03450c206129ccb",
+        "bytes": 19396,
+        "active_scene_triangles": 236,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/northboundary.glb",
+        "sha256": "759855b21f1e16c7f08f2db09300eee9e62cf40487076515efecae8f4b0e745f",
+        "bytes": 19716,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/northroad.glb",
+        "sha256": "e8c7cf4cb39354fb1544cf54899e7bb7f0c6b42160400e861ba0dbd447688395",
+        "bytes": 4104,
+        "active_scene_triangles": 40,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/northskirt.glb",
+        "sha256": "c8d72a44a89e33e5ccb67486117877ae318c162996dd08a9300f3c71ccbf0121",
+        "bytes": 18428,
+        "active_scene_triangles": 224,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/pinecontext.glb",
+        "sha256": "d435c681d91e063c9ddee62777bd01530613142bf9d8b763398c5b78839b7b15",
+        "bytes": 2100,
+        "active_scene_triangles": 14,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/plaza.glb",
+        "sha256": "8e724b6ff8b42b30fcbb341d263145480df24753adb95b067b391397b0119c40",
+        "bytes": 4720,
+        "active_scene_triangles": 48,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/river.glb",
+        "sha256": "560877a287f79040756d37b088d56e903b5064c54eb5ea7d3f35bdd0d8f1fcda",
+        "bytes": 9556,
+        "active_scene_triangles": 110,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrim30.glb",
+        "sha256": "86d54805703e89b8f45dc2805c7e1e03c5c4372b1d6bdd2f9e1a1659b936e54c",
+        "bytes": 34064,
+        "active_scene_triangles": 424,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrim38.glb",
+        "sha256": "9028482d53a0da51970c62b650b56600de1909b1fe9e835a77abe5b2443a1e90",
+        "bytes": 36560,
+        "active_scene_triangles": 456,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrock0.glb",
+        "sha256": "586f8a7cfdc3ca3a45bbe9a9554e5f9a4ec4c82d94102ba6a004a08839ab6dea",
+        "bytes": 2648,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrock1.glb",
+        "sha256": "668d61f6801d0460ba4621746a92334924da469057c5fa2f879ec5432a872989",
+        "bytes": 2664,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrock2.glb",
+        "sha256": "eb47f9ec50d331d7df250b9baa1e753050f76518bca097fb41ab7f6914ef6d69",
+        "bytes": 2664,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrock3.glb",
+        "sha256": "a5550e53fe960cbe9de793e55408ced20b2c0a73e6426f6d48ac54a0969aa2a3",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrock4.glb",
+        "sha256": "0d5bb135c214911c40e43b9c6de38c5a50f8a23bba98f9b53599bb39b2271d2a",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrock5.glb",
+        "sha256": "b62067d09f1188214482188ba31927468179903d477fba197226975f3e8357c6",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/riverrock6.glb",
+        "sha256": "89240a0f43c39e57f3d83a437b79348224e0cf749273d138fb2b57e434f24dcf",
+        "bytes": 2660,
+        "active_scene_triangles": 21,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/shoproad.glb",
+        "sha256": "1ebe24a66749567578657b0a0c940ba3b88df7df44acb206e14e0c31182b542d",
+        "bytes": 5352,
+        "active_scene_triangles": 56,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/southboundary.glb",
+        "sha256": "a629f093d1ae3d5f500f4285beb8dea63268d61873bb39b7d51cca2992e929df",
+        "bytes": 19712,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/southcross.glb",
+        "sha256": "2b3858bef53e26d83728753a9b354564c4538cbf7c4ec09467ac6129a688b73c",
+        "bytes": 15968,
+        "active_scene_triangles": 192,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/southroad.glb",
+        "sha256": "d1a2e128388c617b5b1a8751ff834cb3b53871ad346b5292704061b2e8b3b2fe",
+        "bytes": 19704,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/southskirt.glb",
+        "sha256": "952cfd25c40712ceb7ad14c01130bcb41c4c290c37ee67e6fe9240473111db31",
+        "bytes": 18424,
+        "active_scene_triangles": 224,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/westbankcliff.glb",
+        "sha256": "5d6ae628ea1723080f84fc26ac10422aeb0fd4b1744f60c6318b7090a7304a12",
+        "bytes": 19680,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/westboundary.glb",
+        "sha256": "2b686858c2ee6539cc6b98ce42a880321ed101fbf6424287b4258d1c1dac5879",
+        "bytes": 19712,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/westground.glb",
+        "sha256": "47b0eeb8754a099a882a3e29911ffef7c8c911ab52df2f0a61e2cbc7b0622a87",
+        "bytes": 422168,
+        "active_scene_triangles": 5400,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/westoutercliff.glb",
+        "sha256": "35d8f9cd14b1eacfad7b0efdf452c83adb57d28122d8a4e59d32494b107670f4",
+        "bytes": 19684,
+        "active_scene_triangles": 240,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      },
+      {
+        "file": "assets/models/greystone/terrain/westroad.glb",
+        "sha256": "d7b5c1e06ac4b20a9c72cee2ff79f7d7f54625f90278a1320fbeb4ed61550cac",
+        "bytes": 18924,
+        "active_scene_triangles": 230,
+        "material_definitions": 1,
+        "images": 0,
+        "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+      }
+    ]
+  },
+  "totals": {
+    "buildings": {
+      "files": 7,
+      "triangles_one_instance_each": 38778,
+      "bytes": 2877748
+    },
+    "props": {
+      "files": 17,
+      "triangles_one_instance_each": 1793,
+      "bytes": 166344
+    },
+    "terrain": {
+      "files": 59,
+      "triangles_one_instance_each": 12409,
+      "bytes": 1026952
+    }
+  },
+  "placeholder_scene": "scenes/world/greystone_village.tscn",
+  "placeholders": [
+    {
+      "asset": "crop",
+      "scene": "scenes/world/greystone/placeholders/crop.tscn",
+      "instances": 28
+    },
+    {
+      "asset": "waterwheel",
+      "scene": "scenes/world/greystone/placeholders/waterwheel.tscn",
+      "instances": 1
+    }
+  ],
+  "wilderness_sources": [
+    "scripts/world/expanded_wilderness.gd",
+    "assets/models/cartoon/round_tree.glb",
+    "assets/models/cartoon/moss_rock.glb"
+  ],
+  "unverified": [
+    "Current whole-map visuals, instances and draw calls",
+    "Forest/mine and item inventory completeness",
+    "Replacement geometry, collision, LOD and route regressions"
+  ]
+}
