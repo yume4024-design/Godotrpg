@@ -13,3 +13,7 @@ ren/rig_v3/*.blend
 ren/rig_v3/*.glb
 ren/crotch_repair_v2/*.blend
 ren/crotch_repair_v2/*.glb
+ren/false_cloth_repair/*.blend
+ren/false_cloth_repair/*.glb
+ren/false_cloth_below_hem/*.blend
+ren/false_cloth_below_hem/*.glb

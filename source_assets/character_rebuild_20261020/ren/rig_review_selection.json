@@ -109,16 +109,55 @@
         }
       ],
       "motion_report": "source_assets/character_rebuild_20261020/ren/crotch_repair_v2/motion_report.json"
+    },
+    {
+      "name": "false_cloth_repair",
+      "status": "FAIL",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/false_cloth_repair/ren_rigged.blend",
+          "bytes": 12185344,
+          "sha256": "02b0e1ce27eff299a017ad07a4a15b51cdfa496762ead8a6b0af68b50dcd28b1",
+          "git_policy": "Preserved locally; rejected diagnostic binary excluded"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/false_cloth_repair/ren_rigged.glb",
+          "bytes": 12169724,
+          "sha256": "fe6006e4fa8be58e64e436f1442ca126bd62876e9cbc4ce8659ae1b9b906f829",
+          "git_policy": "Preserved locally; rejected diagnostic binary excluded"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/false_cloth_repair/motion_report.json"
+    },
+    {
+      "name": "false_cloth_below_hem",
+      "status": "FAIL",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/false_cloth_below_hem/ren_rigged.blend",
+          "bytes": 12184093,
+          "sha256": "b64b4255e6956a643c9aee6b0f04e4d1e2824508a36399c49c4d1a80b2da5cc6",
+          "git_policy": "Preserved locally; rejected diagnostic binary excluded"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/false_cloth_below_hem/ren_rigged.glb",
+          "bytes": 12169724,
+          "sha256": "1316acffeed030f7d09776567a65a6a829cd71069b298b00d21cdbc4fe0d3be0",
+          "git_policy": "Preserved locally; rejected diagnostic binary excluded"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/false_cloth_below_hem/motion_report.json"
     }
   ],
-  "best_numeric_diagnostic": "crotch_repair",
-  "best_remaining_failure": "run 2.815617684442298 >= 2.5",
+  "best_numeric_diagnostic": "false_cloth_repair; visual not passed, never selected for runtime",
+  "best_remaining_failure": "run 2.7096635193278322 >= 2.5; below-hem extension regresses to 2.964476850151121",
   "preservation_audit": "crotch_repair/preservation_report.json",
   "source_runtime_static": "assets/models/rebuilt_characters/ren_static.glb",
   "limitations": [
     "No new Godot action or physical input acceptance",
     "Three rig recipes and two diagnosed seam copies retained; no weaker threshold or smaller stride",
     "Latest tabard extension worsened results; explicitly rejected",
-    "Live Blender per-pixel cloth inspection did not return; request stopped and no result was used"
+    "Live Blender per-pixel cloth inspection did not return; request stopped and no result was used",
+    "Colour/depth masks do not define garment topology; stop threshold changes and inspect actual face/layer separation"
   ]
 }
