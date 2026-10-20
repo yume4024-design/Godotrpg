@@ -1,0 +1,18 @@
+{
+  "asset": "ore_beetle",
+  "source_commit": "983382a89bfbd70ac987baef78ec598fac06ae33",
+  "dirty_files": [
+    "docs/ASSET_CREDITS.md",
+    "docs/CHANGELOG.md",
+    "docs/QUALITY_CHARACTER_GENERATION_REPORT.md",
+    "docs/TASKS.md"
+  ],
+  "exe": "D:\\RPGGAME\\builds\\asset-qa\\20261020-233643\\ProjectCrystal.exe",
+  "pck_sha256": "6AA670BC1C0C9E601424A4134548C33904D4463B67D282EB5656FCFDFBA9EBD2",
+  "pid": 29460,
+  "seconds": 33.3103709,
+  "exit_code": 0,
+  "metrics": "D:\\RPGGAME\\artifacts\\a04-performance\\20261020-233703\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\a04_enemy_perf\\metrics.json",
+  "scope": "Native Release combat fixture; not full-game soak or physical input",
+  "android_verified": false
+}

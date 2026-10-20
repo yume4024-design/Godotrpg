@@ -14,6 +14,22 @@
   "legacy_scene": "scenes/characters/legacy/ore_beetle_visual.tscn",
   "legacy_sha256": "071f50800dea85d263eca5d72d0a4fb6580ec93c42a5986fee32c590742990b7",
   "formal_rules_changed": false,
-  "release_status": "PENDING, Debug performance is separate",
-  "method": "Reuse approved A03 asset; no new generation, geometry or texture edits"
+  "release_status": "PASS: combat performance 40/0; native prologue/migration 114/0 and new-process reload 14/0; no full-game soak or physical acceptance",
+  "method": "Reuse approved A03 asset; no new generation, geometry or texture edits",
+  "controller_graphical": {
+    "checks": 61,
+    "failures": 0
+  },
+  "battle_graphical": {
+    "checks": 145,
+    "failures": 0,
+    "minimum_label_gap_pixels": 10.1857299804688
+  },
+  "g06_regression": {
+    "modes": 16,
+    "checks": 576,
+    "failures": 0,
+    "manifest": "g06_regression.json"
+  },
+  "debug_performance_scope": "Grove backdrop; preliminary only. Native Release separately uses actual X004 mine backdrop."
 }

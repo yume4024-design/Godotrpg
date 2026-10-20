@@ -1,5 +1,11 @@
 # 素材來源與修改紀錄
 
+## 2026-10-20 — A04 菇靈與礦甲蟲視覺接入
+
+- 重用 A03 已保存的使用者採用四視圖／本機 ComfyUI Pixal3D＋Blender 候選；來源與工作流、prompt_id、原始高面數檔案見 `source_assets/asset_production_a03/{spore_sprite,ore_beetle}/generation_manifest.json`，本輪沒有新下載或購買第三方角色。
+- 菇靈 GLB SHA `bd38151d3b0e8bb48063eb72914b9c99f6ba97511d72ea1ec9b13f52de56d037`；礦甲蟲 `5eb5cc52ae0ece0595baecca218eeec1621e8a43a05c375384a9b6c58512d2af`。幾何、UV、4K貼圖、骨架與原動畫均保留，只新增遊戲動畫介面、PackedScene與名牌錨點。
+- 舊 GLB 未刪、原視覺場景保存在 scenes/characters/legacy；本節記錄沿用來源，不新增模型／生成工具的授權主張。沒有付費素材或原版商業遊戲素材。
+
 ## 2026-10-20 — 原創水車固定架與場景配置
 
 水車 bank 變體新增 160 面 A 架／水下基座，仍為本專案 Blender 原創，沿用 G04 wood／iron／stone 材質；原輪體／軸 1212 面不重造，總 1372 面。無第三方模型／付費素材／大型貼圖，源檔及 SHA 見 [ENV02 整合報告](ENV02_VILLAGE_INTEGRATION_REPORT.md)。這不是 Kenney 枯木的修改內容，枯木來源仍另記。

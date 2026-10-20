@@ -1,0 +1,8 @@
+{
+  "samples": 31,
+  "peak_sampled_working_set_bytes": 367280128,
+  "peak_private_bytes": 559824896,
+  "os_peak_working_set_bytes": 436441088,
+  "sampling_seconds": 1,
+  "scope": "Whole native combat fixture process; not per-case or long-term leak verification"
+}
