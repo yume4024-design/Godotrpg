@@ -1,6 +1,3 @@
 [gd_scene format=3]
-[ext_resource type="Script" path="res://scripts/characters/cartoon_actor.gd" id="1"]
-[ext_resource type="PackedScene" path="res://assets/models/cartoon/corrupted_guardian.glb" id="2"]
-[node name="GuardianVisual" type="Node3D"]
-script = ExtResource("1")
-model = ExtResource("2")
+[ext_resource type="PackedScene" path="res://scenes/characters/rebuilt/corrupted_guardian_visual.tscn" id="Rebuilt"]
+[node name="GuardianVisual" instance=ExtResource("Rebuilt")]

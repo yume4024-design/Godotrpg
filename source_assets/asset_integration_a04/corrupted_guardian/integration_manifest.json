@@ -1,0 +1,24 @@
+{
+  "asset": "corrupted_guardian",
+  "category": "boss",
+  "triangles": 9762,
+  "budget": 15000,
+  "bones": 17,
+  "clips": [
+    "attack",
+    "cast",
+    "death",
+    "heavy_attack",
+    "hit",
+    "idle",
+    "special_attack",
+    "stagger",
+    "walk"
+  ],
+  "model": "assets/models/rebuilt_enemies/corrupted_guardian.glb",
+  "sha256": "f0b66505c8809209b9502a09000d06991bf0114a7d748c980878421255c1c8ad",
+  "legacy_scene": "scenes/characters/legacy/guardian_visual.tscn",
+  "status": "IN_PROGRESS: controller75/0 battles177/0; full regression and native release pending",
+  "formal_rules_changed": false,
+  "auxiliary_clips": "Presentation only; formal Attack/Rupture rules remain unchanged"
+}

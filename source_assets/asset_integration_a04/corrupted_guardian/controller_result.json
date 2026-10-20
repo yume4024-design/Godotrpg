@@ -1,0 +1,10 @@
+{
+	"asset": "corrupted_guardian",
+	"bones": 17,
+	"checks": 75,
+	"failures": [],
+	"formal_battle": false,
+	"graphical": true,
+	"method": "Real-clock two-instance clip switching, hit interruption, death freeze, revival and scene reload; rendered frames reviewed separately.",
+	"model_sha256": "f0b66505c8809209b9502a09000d06991bf0114a7d748c980878421255c1c8ad"
+}

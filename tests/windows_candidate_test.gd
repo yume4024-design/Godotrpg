@@ -57,6 +57,12 @@ func _manager() -> BattleManager:
 			_check(actual.model.resource_path == "res://assets/models/pixal3d/%s_rigged.glb" % ally.definition.id, "Current character model before and after reload " + str(ally.definition.id))
 			var rig: Skeleton3D = actual.get("skeleton") as Skeleton3D
 			_check(rig != null and rig.get_bone_count() == 19, "Packaged ally Pixal3D rig in battle")
+		for enemy: CombatantState in manager.enemies:
+			if enemy.definition.id==&"corrupted_guardian":
+				var actual: CartoonActor = game.battles.arena.stage.get("_appearances")[enemy.instance_id]
+				_check(actual is RiggedEnemyActor and (actual as RiggedEnemyActor).skeleton.get_bone_count()==17, "Actual packaged boss uses new seventeen-bone rig including retry")
+				_check(actual.model.resource_path=="res://assets/models/rebuilt_enemies/corrupted_guardian.glb", "Actual packaged boss uses approved A03 model")
+				_check((actual as RiggedEnemyActor).action_clips.get(&"rupture")==&"cast", "Existing boss rupture maps to imported cast")
 	return manager
 
 func _finish() -> void:

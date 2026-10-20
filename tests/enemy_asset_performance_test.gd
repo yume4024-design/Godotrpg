@@ -5,6 +5,8 @@ const OUTPUT: String = "user://a04_enemy_perf/"
 var asset: String = "spore_sprite"
 var expected_bones: int = 7
 var expected_triangles: int = 9811
+var encounter_id: String
+var observed_enemy_actions: Array[StringName] = []
 var checks: int = 0
 var failures: Array[String] = []
 var cases: Array[Dictionary] = []
@@ -12,12 +14,13 @@ var cases: Array[Dictionary] = []
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--asset="): asset = argument.trim_prefix("--asset=")
-	if asset not in ["spore_sprite", "ore_beetle", "thorn_boar"]:
+	if asset not in ["spore_sprite", "ore_beetle", "thorn_boar", "corrupted_guardian"]:
 		push_error("Unsupported integrated enemy: " + asset)
 		quit(1)
 		return
-	expected_bones = {"spore_sprite":7,"ore_beetle":15,"thorn_boar":12}[asset]
-	expected_triangles = {"spore_sprite":9811,"ore_beetle":9911,"thorn_boar":9998}[asset]
+	expected_bones = {"spore_sprite":7,"ore_beetle":15,"thorn_boar":12,"corrupted_guardian":17}[asset]
+	expected_triangles = {"spore_sprite":9811,"ore_beetle":9911,"thorn_boar":9998,"corrupted_guardian":9762}[asset]
+	encounter_id = {"spore_sprite":"X001","ore_beetle":"X004","thorn_boar":"X002","corrupted_guardian":"B002"}[asset]
 	_run.call_deferred()
 
 func _check(ok: bool, message: String) -> void:
@@ -81,6 +84,9 @@ func _check_presentation(arena: BattleArena, enemies: Array[CombatantState]) -> 
 		observations.append({"id":str(enemy.instance_id),"model":str(model_rect),"label":str(label_rect),"panels":str(panels),"clear":clear})
 	return observations
 
+func _observe_action(action: StringName, source: StringName, _target: StringName) -> void:
+	if String(source).begins_with("enemy_"): observed_enemy_actions.append(action)
+
 func _run() -> void:
 	Engine.max_fps = 60
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
@@ -90,7 +96,7 @@ func _run() -> void:
 	_check(DisplayServer.get_name()!="headless","Native graphical renderer")
 	if OS.has_feature("a04_qa"):
 		_check(not OS.is_debug_build(),"Native export uses release template")
-	for count: int in [1,3]:
+	for count: int in ([1] if asset=="corrupted_guardian" else [1,3]):
 		var party: PartyManager = PartyManager.new()
 		root.add_child(party)
 		var definitions: Array[CombatantDefinition] = [_hero("ren"),_hero("lia")]
@@ -102,7 +108,9 @@ func _run() -> void:
 		for index: int in range(count): enemies.append(CombatantState.new(definition,StringName("enemy_%02d" % index),false))
 		var arena: BattleArena = load("res://scenes/battle/battle_arena.tscn").instantiate() as BattleArena
 		root.add_child(arena)
-		arena.setup(party,inventory,enemies,{"id":"X004" if asset=="ore_beetle" else ("X002" if asset=="thorn_boar" else "X001"),"name":"A04 圖形效能驗證","tutorial":false,"escape_allowed":false,"rewards":{"gold":0,"exp":0}},true)
+		observed_enemy_actions.clear()
+		arena.manager.action_presented.connect(_observe_action)
+		arena.setup(party,inventory,enemies,{"id":encounter_id,"name":"A04 圖形效能驗證","tutorial":false,"escape_allowed":false,"rewards":{"gold":0,"exp":0}},asset!="corrupted_guardian")
 		for frame: int in range(60):
 			_advance_fixture(arena.manager)
 			await process_frame
@@ -132,6 +140,9 @@ func _run() -> void:
 		_check(times.size()==600 and _stats(times).min_ms>0.0,"Measured 600 finite native frame intervals")
 		_check(arena.manager.history.size()>actions_before,"Measured real battle actions and enemy AI")
 		var row: Dictionary = _stats(times)
+		if asset=="corrupted_guardian":
+			_check(observed_enemy_actions.has(&"attack") and observed_enemy_actions.has(&"rupture"), "Normal boss AI presented both existing physical and magical actions")
+		row.observed_enemy_actions=observed_enemy_actions.duplicate()
 		row.enemy_count=count
 		row.enemy_triangles=total_triangles
 		row.draw_min=draw_min
@@ -154,7 +165,7 @@ func _run() -> void:
 		inventory.queue_free()
 		await process_frame
 		await physics_frame
-	var report: Dictionary = {"encounter_id":"X004" if asset=="ore_beetle" else ("X002" if asset=="thorn_boar" else "X001"),"asset":asset,"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"version":ProjectSettings.get_setting_with_override("application/config/version"),"cases":cases,"cap_fps":60,"method":"One and three full imported enemy rigs with two existing heroes in production BattleArena, guard requests and normal AI; 60 warm frames then 600 measured frames each, screenshots outside sample. Isolated combat fixture without exploration/story/audio services, not a full-game endurance or physical input test."}
+	var report: Dictionary = {"encounter_id":encounter_id,"asset":asset,"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"version":ProjectSettings.get_setting_with_override("application/config/version"),"cases":cases,"cap_fps":60,"method":"Actual single-boss or one/three common-enemy full imported rigs with two existing heroes in production BattleArena, guard requests and normal AI; 60 warm frames then 600 measured frames each, screenshots outside sample. Isolated combat fixture without exploration/story/audio services, not a full-game endurance or physical input test."}
 	FileAccess.open(OUTPUT+"metrics.json",FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
 	print("A04_PERFORMANCE_RESULT checks=%d failures=%d" % [checks,failures.size()])
 	quit(0 if failures.is_empty() else 1)

@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([Parameter(Mandatory=$true)][string]$Exe, [ValidateSet("spore_sprite","ore_beetle","thorn_boar")][string]$Asset = "spore_sprite")
+param([Parameter(Mandatory=$true)][string]$Exe, [ValidateSet("spore_sprite","ore_beetle","thorn_boar","corrupted_guardian")][string]$Asset = "spore_sprite")
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $Exe = (Resolve-Path -LiteralPath $Exe).Path
@@ -40,7 +40,7 @@ try {
     $receipt | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $output 'manifest.json') -Encoding utf8
     if ($process.ExitCode -ne 0 -or $text -match '(?im)^\s*(SCRIPT ERROR:|ERROR:|Parse Error:|Failed loading resource)') { throw "A04 runtime failed: $log" }
     if ($data.asset -ne $Asset) { throw "Wrong enemy asset measured" }
-    if (-not $data.release -or $data.display -eq 'headless' -or $data.failures.Count -ne 0 -or $data.cases.Count -ne 2) { throw 'A04 Release gates failed' }
+    if (-not $data.release -or $data.display -eq 'headless' -or $data.failures.Count -ne 0 -or $data.cases.Count -ne $(if ($Asset -eq "corrupted_guardian") {1} else {2})) { throw 'A04 Release gates failed' }
     foreach ($case in $data.cases) { if ($case.frames -ne 600) { throw 'A04 frame sample count mismatch' } }
     Write-Output "A04_RELEASE_RESULT checks=$($data.checks) failures=0 seconds=$($watch.Elapsed.TotalSeconds)"
     Write-Output "A04_MANIFEST=$(Join-Path $output 'manifest.json')"

@@ -28,6 +28,8 @@ func setup(manager: BattleManager) -> void:
 			# Stagger a three-enemy row inside the fixed camera and battle panels.
 			root_actor.position.x += (index - 1.0) * 1.8
 			root_actor.position.z = (index - 1.0) * 1.3
+		if not actor.ally and count==1 and actor.definition.form==CombatantDefinition.Form.GUARDIAN:
+			root_actor.position.z += .4 # Keep tall boss and its full label between the fixed panels.
 		if actor.ally: ally_index += 1
 		else: enemy_index += 1
 		_actors[actor.instance_id] = root_actor

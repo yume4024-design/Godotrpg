@@ -1,0 +1,11 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/characters/rigged_enemy_actor.gd" id="Visual"]
+[ext_resource type="PackedScene" path="res://assets/models/rebuilt_enemies/corrupted_guardian.glb" id="Model"]
+[node name="CorruptedGuardianRebuiltVisual" type="Node3D" node_paths=PackedStringArray("nameplate_anchor")]
+script = ExtResource("Visual")
+model = ExtResource("Model")
+nameplate_anchor = NodePath("NameplateAnchor")
+procedural_fall = false
+action_clips = {&"attack": &"attack", &"hit": &"hit", &"rupture": &"cast", &"heavy_attack": &"heavy_attack", &"special_attack": &"special_attack", &"stagger": &"stagger"}
+[node name="NameplateAnchor" type="Marker3D" parent="."]
+position = Vector3(0, 3.8, 0)
