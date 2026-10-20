@@ -1,0 +1,43 @@
+{
+  "input": "source_assets\\npc_rebuild_20261020\\blacksmith\\idle_talk_v1\\blacksmith_npc.blend",
+  "sha256": "d894ff511ac7e77d7809053ff9844f35334345dbc6406b0ffb2a370386847291",
+  "category": "npc",
+  "maximum_triangles": 15000,
+  "bones": 19,
+  "actions": {
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 9937,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.0366500442887483,
+      "floor_range": [
+        0.0019999772775918245,
+        0.0019999772775918245
+      ]
+    },
+    "talk": {
+      "frames": 49,
+      "maximum_triangles": 9937,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.1649768742939477,
+      "floor_range": [
+        0.0019999772775918245,
+        0.0019999772775918245
+      ]
+    }
+  },
+  "total_frames": 98,
+  "topology_warnings": [
+    {
+      "mesh": "BlacksmithBody",
+      "boundary_edges": 10821,
+      "nonmanifold_edges": 10821
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

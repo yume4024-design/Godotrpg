@@ -1,0 +1,24 @@
+{
+	"asset": "blacksmith",
+	"category": "npc",
+	"checks": 213,
+	"clips": [
+		{
+			"length": 2.0,
+			"name": "idle"
+		},
+		{
+			"length": 2.0,
+			"name": "talk"
+		}
+	],
+	"draw_calls": 1.0,
+	"engine_memory_bytes": 36419721.0,
+	"failures": [],
+	"formal_battle_test": false,
+	"graphical": true,
+	"model": "res://assets/models/rebuilt_npc/blacksmith.glb",
+	"model_sha256": "3c3088954be0d79641976d95f2463f27c1e18a2e2fb9e3c67774be8e2696a3b5",
+	"physical_input_test": false,
+	"triangles": 9937
+}

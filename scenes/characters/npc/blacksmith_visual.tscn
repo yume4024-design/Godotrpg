@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/characters/rigged_npc_visual.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/rebuilt_npc/blacksmith.glb" id="2"]
+
+[node name="BlacksmithVisual" type="Node3D"]
+script = ExtResource("1")
+model = ExtResource("2")

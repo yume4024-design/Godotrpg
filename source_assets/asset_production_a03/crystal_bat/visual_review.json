@@ -4,5 +4,13 @@
   "numeric_gate": "PASS",
   "problem": "Detached wing membrane visible during both fly and fold",
   "attempts": 3,
-  "next": "Manual topology/rig correction; retain existing formal game visual"
+  "next": "Manual topology/rig correction; retain existing formal game visual",
+  "user_disposition": {
+    "source": "user_reply",
+    "date": "2026-10-20",
+    "question_item_id": "call_5a2b65b743b64e8bbc65844d14fbb0d9:0",
+    "response": "保留完整收翼要求，安排人工拓樸修整",
+    "decision": "Full wing fold remains required; manual topology repair pending; keep formal old visual",
+    "work_item": "docs/CRYSTAL_BAT_TOPOLOGY_REPAIR.md"
+  }
 }

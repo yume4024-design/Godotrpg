@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "id": "blacksmith",
+  "category": "npc",
+  "triangles": 9937,
+  "budget": 15000,
+  "bones": 19,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "model_sha256": "3c3088954be0d79641976d95f2463f27c1e18a2e2fb9e3c67774be8e2696a3b5",
+  "native_blend_sha256": "d894ff511ac7e77d7809053ff9844f35334345dbc6406b0ffb2a370386847291",
+  "scope": "Independent visual candidate only; no formal NPC or RPG replacement",
+  "candidate_gate": "PASS",
+  "formal_integration_gate": "NOT_STARTED",
+  "original_source": {
+    "source": "source_assets\\quality_characters_20261018\\blacksmith\\animated_10k\\blacksmith_animated.blend",
+    "source_sha256": "cb9bc3d3fadf4fb9199313abc2174a0e5664e0b7c5d4057798c225a7fb98776b",
+    "geometry_or_weight_changes": false,
+    "material": "Baked normal disconnected after controlled comparison; original source retained",
+    "clips": [
+      "idle",
+      "talk"
+    ],
+    "scope": "Static dialogue NPC; no walking, hammer grip or work acceptance",
+    "original_ten_actions": "Preserved in the untouched source Blend, not exported as unverified NPC actions"
+  },
+  "tests": {
+    "evaluated_frames": 98,
+    "godot_motion_checks": 213,
+    "controller_checks": 19,
+    "spore_regression_checks": 256
+  },
+  "limitations": [
+    "10821 boundary/nonmanifold edges in the original split mesh; not watertight certification",
+    "No hammer grip, anvil strike, locomotion, patrol or finger rig acceptance",
+    "No formal dialogue, transaction, quest, save/load or physical input acceptance"
+  ]
+}

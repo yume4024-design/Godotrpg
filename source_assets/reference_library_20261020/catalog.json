@@ -3,7 +3,8 @@
     "references": "source_assets/reference_library_20261020/characters/eryn/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -81,7 +82,8 @@
     "references": "source_assets/reference_library_20261020/characters/lia/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -159,9 +161,10 @@
     "references": "source_assets/reference_library_20261020/characters/ren/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "pending_corrected_profile_review",
-    "status": "HUMAN_REVIEW",
-    "ready_for_generation": false,
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
+    "status": "PASS",
+    "ready_for_generation": true,
     "files": [
       {
         "view": "front",
@@ -237,7 +240,8 @@
     "references": "source_assets/reference_library_20261020/enemies/corrupted_guardian/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -315,7 +319,8 @@
     "references": "source_assets/reference_library_20261020/enemies/crystal_bat/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -393,7 +398,8 @@
     "references": "source_assets/reference_library_20261020/enemies/ore_beetle/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -471,7 +477,8 @@
     "references": "source_assets/reference_library_20261020/enemies/spore_sprite/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -549,7 +556,8 @@
     "references": "source_assets/reference_library_20261020/enemies/thorn_boar/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -627,7 +635,8 @@
     "references": "source_assets/reference_library_20261020/npc/blacksmith/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "existing_user_design_and_remodel_authorization",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -705,7 +714,8 @@
     "references": "source_assets/reference_library_20261020/npc/innkeeper/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "user_adopted_four_new_npc_designs",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -783,7 +793,8 @@
     "references": "source_assets/reference_library_20261020/npc/item_merchant/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "user_adopted_four_new_npc_designs",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -861,7 +872,8 @@
     "references": "source_assets/reference_library_20261020/npc/villager_female/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "user_adopted_four_new_npc_designs",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [
@@ -939,7 +951,8 @@
     "references": "source_assets/reference_library_20261020/npc/villager_male/references",
     "structural_gate": "PASS",
     "visual_review": "agent_viewed_four_directions",
-    "approval_basis": "user_adopted_four_new_npc_designs",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
     "status": "PASS",
     "ready_for_generation": true,
     "files": [

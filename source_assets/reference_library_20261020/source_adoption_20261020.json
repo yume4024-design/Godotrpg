@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "source": "user_reply",
+  "question_item_id": "call_aae5a02d3c7d43ac9810cce6ed3c0b89:0",
+  "question": "13 套、52 張獨立透明四視圖已整理完成，檢查均通過。上方總覽已包含雷恩朝右修正、莉雅原設計、鐵匠乾淨背面、艾琳無箭袋及五敵既有設計；是否採用這些來源進入後續建模與驗收？",
+  "response": "全部採用並繼續",
+  "decision": "adopt_all_thirteen_sets",
+  "scope": "Reference design adoption only; not approval of generated geometry, rig, animation or formal integration",
+  "assets": {
+    "eryn": {
+      "front": "58ecbf06ba5b4e0d7c883529fb736d3b4c354787014a6ac429410ff6f2230b30",
+      "left": "b320aa4dbf8a5a149825a07bbadf32d5fc13698775abc2875ec409a1beb549e3",
+      "back": "d615bc5ace93ecd2cc9610cc1f4001aa8b63f9518f78a33d9e051dfb554b89f6",
+      "right": "b2f74c7dad6eabd6c98d45f11386e4a2e113c269a2133ed0652dd24950f34475"
+    },
+    "lia": {
+      "front": "bb9ca12f35a05432a29a980c254a6bd5ce9a049993ac33b0ea6eb78806611c6e",
+      "left": "41a708c90303a1ce9d3c8d4f5682a71af4a7d7d333e9f7384878621bc5dc4137",
+      "back": "ffea3a0279aaf42112a046db4cf40e66000ac3ded262df477df89a6413dd69f2",
+      "right": "a2728eacb94c8bf85e67feb2eaeafc68358366df2009e499116141e4be14500c"
+    },
+    "ren": {
+      "front": "7079233b53a07f9b45fdc8e6f456863121db7bb6d37c1d43b8db206434aeb80e",
+      "left": "3580cfd67bf95957d3a7a8a8db83e99d3b695c295af1f0edee54acde68925436",
+      "back": "5fe5e046c1cbe2457d4802eed87681d2218078c1521d4b63d6be0c1a3b6eac7f",
+      "right": "a9300546163a2439b9bc0a9b83c2d3e761260e480e2f9fa1b8b66d86114a70d5"
+    },
+    "corrupted_guardian": {
+      "front": "f61af73f4b8c447c890f6706a24781c6f157ffe29031ee7cc10911d4eb266be3",
+      "left": "946ac7504f8d0304843d2d59c8212e738b1014d1a491c0f68a824d28402ef057",
+      "back": "69a1f282ff378ad773db60ac346de9db7d97ba99e614589ee3e2fd0a6a63dd7a",
+      "right": "4b48494a51994be875a11f44410bf6e23c69860d7be4e5e2282d9e7797625203"
+    },
+    "crystal_bat": {
+      "front": "9dda98f5a1006837fcc1c9950e57359c9f41466ea6ca6b618f063a1903751695",
+      "left": "20b18e37e3a5231ec42db80f93d9d46857bbc11e8d13f0015510c5e6ffd8eebf",
+      "back": "637a379f2893af6bd12c1ca6e9c5880be1686f875755facbe927f4bf6fe36e9d",
+      "right": "f31555d7b504d5c4844aabb3a1650140757a2118e113469c026786b6aa6f12f2"
+    },
+    "ore_beetle": {
+      "front": "88650e404a50bbe2e3e987d3056000e1e0f1cbde061042a6c20a1821abc175db",
+      "left": "df837d3856bfa874ea60927b85467c4588c7355321d504a1fa1cdb7129861d22",
+      "back": "45c27d08f48e5648adb5b67c70254160d58e67a09ca62a29fedf35148e11b095",
+      "right": "58f4d691748923e128e98076be0fd1c76995c66139c68a02ad2233d3345adee8"
+    },
+    "spore_sprite": {
+      "front": "ab8765ce6346e390bf91ba9fa9e4cd773f7c252a4aa7d423d6fd867793c4dfcf",
+      "left": "690608856fc0a1efaf6bc3252da986e8275cb679c22e6887be9c862bc48c9b61",
+      "back": "95bf5cf3915b6057b8773e05e1d2877d39407d11acafb8f764f02942e983e721",
+      "right": "1e1ed48fcb0ea395e97eb9f463e998cf819e33679fefec4cd99d1ef618bebea3"
+    },
+    "thorn_boar": {
+      "front": "bd93dac099abc097fd6f2350e2accbe55bf05e9af0d0c4491d568cf394d43324",
+      "left": "9dae9ef836ef8804d85bc794d011907c0706924e5b84ca27fa0cf1b8dec65270",
+      "back": "8cb360986b58efe4ee91187c456e927086b67d6d3bb0fb82b37ff91d3b5dfc5a",
+      "right": "890810ffe992725d757f62c9de36e56ded6bd38206008d2061a9a16fa4bbbf7a"
+    },
+    "blacksmith": {
+      "front": "e60d432aa88a06ec76023035618b4fff5c9ccecd051d0ac764860b0c7199259b",
+      "left": "7d59f3710c5e82f37964be5abff9bd6c3f30098d2a812e7d9cca9c544fba3481",
+      "back": "6ed8e30d81d3092abff136fafea0e0e966e25b8fd23d31a298cc21523e695c5a",
+      "right": "ce297727e1e8cf268d86d8a3313f86e6474e8c4f8357a4cad10e55697cc31773"
+    },
+    "innkeeper": {
+      "front": "be372f72c04cb0d14afe9a13f4892eb8f899bbbf39e3c141857d93ebf342416a",
+      "left": "bd0d02cafbf9360f68cd379106363c33bc6f87dc4af4f349adcc6858bb2057eb",
+      "back": "9439850dcc3919690b279b17133b4ddad7393e7b52be405703c43c00f8271c79",
+      "right": "f5812bf95bc9856c8b956ecdea2cfda6b859d27e4e3540e752ecf6c60b3ce35d"
+    },
+    "item_merchant": {
+      "front": "8a53b78f753cf2ef8d7b17a191806f3f3346a66f3a7c8c64bfda659529e71e49",
+      "left": "5871c32dec784e35b6c12f4c8a5da2779f2d006d90623887fc60c930f5d90793",
+      "back": "2a34f92c7d63a34a9ca5c653de2cdbd1e384326ecd23ef7ae575f449676c9a60",
+      "right": "637e8f13654cda9c46155dfc74074ddfac351eac38dd532c151b0ce626073454"
+    },
+    "villager_female": {
+      "front": "6eb0e5dc31b766dd27561c434b185f076782633af45aaed7f7f7920430d62ec2",
+      "left": "e438e2070af8ea1283eb81b9ac494057b4f539c215a48aafe60910d1e5592318",
+      "back": "934bdf437d74ff4d01df4c1d464906a9797d21c31f1bb83a685ee8902d375f9c",
+      "right": "a644eac1c228c6ac9c42523a77ab58d8496d361b61e5f08cc333197521e169da"
+    },
+    "villager_male": {
+      "front": "a37e5d79cc4714df7c0077bb783e41aba19e2e3784f19ef86557f62a13ceab99",
+      "left": "ee7702a8e40771f4ee815b07385dd32e716a56e8495155734c3dcfe2f7a76f69",
+      "back": "69b19e4b430c9cd5bb84e170d21719bda3bddf30c52483cfa11a5dfb5ecf1238",
+      "right": "7389ed37a060f80785a8b77a540d3a3753118555111d8d6c66653dfc3b61a60f"
+    }
+  }
+}

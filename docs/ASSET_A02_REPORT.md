@@ -1,6 +1,6 @@
 # A02 四視圖來源驗收（2026-10-20）
 
-基線：feature/greystone-g06，8ddb5befd9802afb24673ee1bc5b0138f6b5b87c。狀態 **IN_PROGRESS**：13 套／52 張結構通過；12 套可供單件後續製作，雷恩修正右視圖仍保留人工確認，不把自動結構檢查當作設計核准。
+基線：feature/greystone-g06，8ddb5befd9802afb24673ee1bc5b0138f6b5b87c。狀態 **PASS（來源 Gate）**：13 套／52 張結構通過，2026-10-20 使用者回覆「全部採用並繼續」，包含雷恩修正右視圖。這是來源採用，並非 3D 或正式整合驗收。
 
 ## 交付及來源
 
@@ -13,7 +13,7 @@
 | 道具商／旅館／男女村民 | 4 | 內建 imagegen 新製四面圖，使用者明確回答「四組都採用」；先分成四張，再供多視角條件使用 |
 | 艾琳 | 1 | 艾琳角色圖/{正,左,背,右}.png；無箭袋、無武器，弓箭裝備後續獨立 |
 | 莉雅 | 1 | assets/source/pixal3d/references/lia_*；保留金髮紫衣、臉部和服裝設計，只去背景及標籤 |
-| 雷恩 | 1 | 主角-4面1.png 的第四格與左側同向；另存 turnaround_corrected.png，改為朝右，保留黑髮紅衣與不對稱裝備；人工採用確認待回覆 |
+| 雷恩 | 1 | 主角-4面1.png 的第四格與左側同向；另存 turnaround_corrected.png，改為朝右，保留黑髮紅衣與不對稱裝備；使用者已採用修正版 |
 
 每張 SHA256、透明度、輪廓 bounds 及尺寸在 `structural_audit.json`；原圖／中間圖 inventory.json、裁切／縮放及輸入輸出 SHA 在各 references/normalization.json。catalog.json 將來源授權／設計確認與自動結構結果分開。不得由此宣稱 3D 模型或動畫已完成。
 
@@ -38,6 +38,8 @@ ComfyUI 0.41.3／comfy-cli 1.22.0，本機 RTX 3080 12GiB。僅使用已安裝 B
 & 'D:/Comfy-Desktop/ComfyUI-Installs/ComfyUI/ComfyUI/.venv/Scripts/python.exe' -X utf8 tests/asset_reference_pack_test.py
 ```
 
-實際：13／13 結構 PASS、52 張 SHA 一致；三組測試 PASS（真實素材、合圖分離／原件保留、缺圖拒絕）。已查看全部 13 套四面總覽；左右方向、完整手腳／翼展、文字移除、鐵匠背面與艾琳無箭袋逐項檢視。自動 audit 仍回 HUMAN_REVIEW／ready=false；獨立 catalog 只依實際來源採用依據開放 12 套。
+實際：13／13 結構 PASS、52 張 SHA 一致；四組測試 PASS（真實素材、合圖分離／原件保留、缺圖拒絕、採用收據綁定四張 SHA）。已查看全部 13 套四面總覽；左右方向、完整手腳／翼展、文字移除、鐵匠背面與艾琳無箭袋逐項檢視。自動 audit 仍回 HUMAN_REVIEW／ready=false；獨立 catalog 依使用者收據開放 13 套。修改任一圖或缺一面後，舊收據不能使該來源 READY。
 
-限制：參考圖不是精確測量的正交攝影，有微小視角／配件差異；3D 生成後須重新驗證背面、手指與關節。雷恩新第四視圖待人工確認，其餘已核准來源可按 A03 → A04 → A05 順序繼續。正式 v0.6.1、RC2、遊戲數值及存檔均未修改；Android／iOS 暫停。
+使用者原始回覆、問題及 52 張 SHA 保存在 `source_assets/reference_library_20261020/source_adoption_20261020.json`。沒有因核准而重存／重畫任何來源。
+
+限制：參考圖不是精確測量的正交攝影，有微小視角／配件差異；3D 生成後須重新驗證背面、手指與關節。已核准來源可按單件計畫繼續。正式 v0.6.1、RC2、遊戲數值及存檔均未修改；Android／iOS 暫停。

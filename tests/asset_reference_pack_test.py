@@ -10,9 +10,24 @@ ROOT=Path(__file__).resolve().parents[1]
 sys.path.insert(0,str(ROOT/'scripts/tools'))
 from normalize_asset_references import normalize
 from audit_asset_references import audit_references
+from build_asset_reference_catalog import adoption_matches
 
 
 class ReferencePackTest(unittest.TestCase):
+    def test_user_adoption_is_bound_to_the_exact_four_views(self):
+        base=ROOT/'source_assets/reference_library_20261020'
+        receipt=json.loads((base/'source_adoption_20261020.json').read_text(encoding='utf8'))
+        catalog=json.loads((base/'catalog.json').read_text(encoding='utf8'))
+        self.assertEqual(len(receipt['assets']),13)
+        for name,entry in catalog.items():
+            self.assertTrue(adoption_matches(receipt,name,entry['files']),name)
+            self.assertTrue(entry['ready_for_generation'],name)
+        changed=[dict(row) for row in catalog['ren']['files']]
+        changed[-1]['sha256']='0'*64
+        self.assertFalse(adoption_matches(receipt,'ren',changed))
+        self.assertFalse(adoption_matches(receipt,'ren',changed[:3]))
+        self.assertFalse(adoption_matches({},'ren',catalog['ren']['files']))
+
     def test_actual_thirteen_reference_sets(self):
         reports=json.loads((ROOT/'source_assets/reference_library_20261020/structural_audit.json').read_text(encoding='utf8'))
         self.assertEqual(len(reports),13)

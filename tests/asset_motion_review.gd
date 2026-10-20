@@ -24,7 +24,7 @@ func _initialize() -> void:
 		if argument.begins_with("--id="): asset_id = argument.trim_prefix("--id=")
 		if argument.begins_with("--category="): category = argument.trim_prefix("--category=")
 		if argument.begins_with("--height="): height = argument.trim_prefix("--height=").to_float()
-	output = "res://artifacts/asset_a03/" + asset_id + "/godot"
+	output = ("res://artifacts/asset_a05/" if category == "npc" else "res://artifacts/asset_a03/") + asset_id + "/godot"
 	_run.call_deferred()
 
 func _check(condition: bool, message: String) -> void:
@@ -99,7 +99,7 @@ func _run() -> void:
 		if _kind(clip) == "RESET": continue
 		kinds.append(_kind(clip))
 		var animation := player.get_animation(clip)
-		var looped: bool = _kind(clip) in ["idle", "walk", "run"]
+		var looped: bool = _kind(clip) in ["idle", "walk", "run"] or (category == "npc" and _kind(clip) == "talk")
 		animation.loop_mode = Animation.LOOP_LINEAR if looped else Animation.LOOP_NONE
 		_check(animation.length > 0.1, _kind(clip) + " duration")
 		player.play(clip, 0.0)
@@ -136,7 +136,9 @@ func _run() -> void:
 		_check(player.is_playing() == looped, _kind(clip) + " loop/one-shot playback")
 		skeleton.reset_bone_poses()
 		clips.append({"name": _kind(clip), "length": animation.length})
-	for required: String in ["idle", "walk", "attack", "hit", "death"]:
+	var required_clips: Array[String] = ["idle", "walk", "attack", "hit", "death"]
+	if category == "npc": required_clips.assign(["idle", "talk"])
+	for required: String in required_clips:
 		_check(required in kinds, "required " + required)
 	var idle: StringName = &""
 	for clip: StringName in player.get_animation_list():

@@ -1,0 +1,76 @@
+{
+  "source": "D:\\RPGGAME\\assets\\models\\rebuilt_npc\\blacksmith.glb",
+  "blender_version": "5.2.2 LTS",
+  "triangle_budget": 15000,
+  "category": "npc",
+  "preflight": {
+    "schema_version": 1,
+    "file": "assets\\models\\rebuilt_npc\\blacksmith.glb",
+    "category": "npc",
+    "sha256": "3c3088954be0d79641976d95f2463f27c1e18a2e2fb9e3c67774be8e2696a3b5",
+    "maximum_triangles": 15000,
+    "triangles": 9937,
+    "headroom_triangles": 5063,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.4156103134155273e-07,
+    "primitives": [
+      {
+        "node": 19,
+        "mesh": 0,
+        "triangles": 9937,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      19
+    ],
+    "materials": 1,
+    "animations": [
+      "idle",
+      "talk"
+    ],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "exported": false,
+  "unverified": [
+    "silhouette",
+    "overlapping faces",
+    "rig deformation",
+    "animation transitions",
+    "engine functional QA"
+  ],
+  "total_triangles": 9937,
+  "objects": [
+    {
+      "name": "BlacksmithBody",
+      "triangles": 9937,
+      "vertices": 11888,
+      "uv_layers": 1,
+      "nonmanifold_edges": 10821,
+      "degenerate_faces": 0
+    }
+  ],
+  "ignored_importer_bone_helpers": [
+    "Icosphere"
+  ],
+  "failures": [],
+  "warnings": [
+    "NONMANIFOLD_OR_BOUNDARY"
+  ],
+  "basic_checks_passed": true
+}

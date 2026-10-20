@@ -74,7 +74,7 @@ for action in bpy.data.actions:
     if stretch >= 2.5:
         failures.append(action.name + ':EXCESSIVE_EDGE_STRETCH')
     loop_error = max(float(np.abs(last_points[name] - values).max()) for name, values in first_points.items())
-    if action.name in ['idle', 'walk', 'run'] and loop_error > 1e-4:
+    if action.name in ['idle', 'walk', 'run', 'talk'] and loop_error > 1e-4:
         failures.append(action.name + ':LOOP_SEAM')
     actions[action.name] = {'frames': frames, 'maximum_triangles': maximum,
                             'endpoint_vertex_difference': loop_error,

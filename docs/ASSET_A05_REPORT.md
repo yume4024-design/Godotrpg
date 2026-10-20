@@ -4,7 +4,7 @@
 
 | NPC | 實際成果 | 未完成 |
 |---|---|---|
-| 鐵匠 | 重用既有 9937 面來源，嚴格 GLB 預檢 PASS；已做同網格 normal map 開／關的 CPU 正背面對照，確認部分背帶黑痕來自烘焙法線 | 新 NPC 對話動作、必要持物、材質候選與正式整合 |
+| 鐵匠 | 重用既有 9937 面／19 骨來源，停用問題 normal map；新副本 Idle／Talk、98 影格、Godot 動作 213／0、雙實例切換 19／0 | 正式 NPC 替換、實際對話事件／交易回歸；未驗收持鎚／擊砧或巡邏 |
 | 道具商 | 新 Pixal3D 靜態候選、原件／Blend、正背顏色局部修補、12573 面 Godot 預覽及 14 項圖形檢查 | 骨架、Idle／Talk、互動動作、裙擺權重、正式整合 |
 | 旅館老闆 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
 | 男村民 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
@@ -41,4 +41,29 @@ ComfyUI 0.41.3／comfy-cli 1.22.0，本機 RTX 3080 12GiB。生成前工具量�
 
 啟動 `tools/preview_npc_assets.ps1` 可看靜態候選；PackedScene 為 scenes/tools/npc_static_preview.tscn，模型為 assets/models/rebuilt_npc/item_merchant_static.glb。正式五 NPC ID、對話、商店價格、旅館、角色數值、旗標、獎勵、存檔及 v0.6.1 入口均未改；Android／iOS 暫停。
 
-下一件繼續鐵匠及道具商必要骨架／Idle／Talk，逐件驗證後才製作其餘 NPC，正式整合仍保留 Gate。蝙蝠的失敗與人工拓樸需求不被此報告掩蓋。
+下一件為道具商骨架／Idle／Talk，逐件驗證後才製作其餘 NPC；鐵匠候選結果見下節，正式整合仍保留 Gate。蝙蝠的失敗與人工拓樸需求不被此報告掩蓋。
+
+## 鐵匠 Idle／Talk 候選
+
+使用既有 `source_assets/quality_characters_20261018/blacksmith/animated_10k/blacksmith_animated.blend`，原 10 動作／網格／權重未改。在新 `source_assets/npc_rebuild_20261020/blacksmith/idle_talk_v1/` 副本保留 Idle、新增 2 秒 Talk；上身／右臂／頭部小幅手勢，腳底校正與循環端點。現有遊戲鐵匠為對話 NPC，因此本候選只輸出這兩段；未將舊十段未驗收動作一併列為通過。
+
+材質沿同網格 CPU 法線對照的診斷結果斷開問題 normal map，保留 albedo；原材質與十段動作仍在原件。9937 triangles／19 骨／1 材質、UV 及 skin 權重 Gate PASS。Blender evaluated 檢查 98 影格、最大邊拉伸 Idle 1.03665／Talk 1.16498、兩段端點位移均 0、腳底約 0.002m；原始拆分網格 10821 條邊界／非流形邊仍為警告，未宣稱閉合拓樸或手指精修。
+
+執行命令與實際結果：
+
+```powershell
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' -b --factory-startup --python-exit-code 1 --python docs/skills/ai-3d-agent/scripts/check_export.py -- --input assets/models/rebuilt_npc/blacksmith.glb --output artifacts/asset_a05/blacksmith/blender_import --category npc --require-uv --require-rig
+./tools/review_npc_rig.ps1
+./tools/review_npc_rig.ps1 -Controller
+./tools/review_enemy_asset.ps1 -Asset spore_sprite
+```
+
+- tools/godot.ps1 -Mode Check：PASS，check-20261020-093846-148.log。
+- Blender 5.2.2 LTS 重匯入 9937、UV／骨架 PASS；未要求閉合，也未重新減面。
+- Godot 4.7.2／Windows Compatibility 圖形 213 checks、0 failures，四面與兩段正側畫面已查看；實測 Draw Calls=1、引擎記憶體 36419721 bytes，這是獨立檢查場景而非完整村莊效能數據。
+- 雙實例控制器圖形 19／0：兩份 Skeleton／AnimationLibrary 互不污染、三輪 Idle／Talk 切換、重複 Talk 不重播、混合姿勢有限、刪除／重建視覺可恢復，未寫存檔。
+- 泛用圖形腳本新增 NPC profile 後，菇靈原有 256／0 回歸通過。首次 NPC 執行遇到 typed Array 分支指派錯誤，改用明確 `Array[String]`＋`assign()` 後重跑通過；失敗日誌保存為 rig.first_array_failure.log，僅結束該次測試 PID。
+
+新增 `rigged_npc_visual.gd`、`scenes/characters/npc/blacksmith_visual.tscn` 僅負責展示；以實例私有動畫庫設定循環，沒有新增劇情／任務／交易管理器。候選 GLB SHA、原 Blend SHA、圖形／變形報告、失敗摘要與預覽封裝於同一來源目錄；原始日誌僅本機保留、不提交 Git。不得將舊測試報告套用到替換後的 GLB。
+
+尚未正式掛入灰石村或對話事件；沒有 NPC 交易／存讀檔、持鎚握把／擊砧、走路／巡邏或實體輸入完成宣稱。正式主場景、NPC ID、數值及 Schema 未改。道具商骨架與其餘三 NPC 仍未做，A05 整體 IN_PROGRESS。

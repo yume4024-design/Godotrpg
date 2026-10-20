@@ -1,0 +1,12 @@
+{
+  "source": "source_assets\\quality_characters_20261018\\blacksmith\\animated_10k\\blacksmith_animated.blend",
+  "source_sha256": "cb9bc3d3fadf4fb9199313abc2174a0e5664e0b7c5d4057798c225a7fb98776b",
+  "geometry_or_weight_changes": false,
+  "material": "Baked normal disconnected after controlled comparison; original source retained",
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "scope": "Static dialogue NPC; no walking, hammer grip or work acceptance",
+  "original_ten_actions": "Preserved in the untouched source Blend, not exported as unverified NPC actions"
+}

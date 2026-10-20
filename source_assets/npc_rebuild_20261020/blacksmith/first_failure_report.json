@@ -1,0 +1,10 @@
+{
+  "date": "2026-10-20",
+  "test": "tests/asset_motion_review.gd NPC profile",
+  "status": "FAIL",
+  "error": "Trying to assign Array to Array[String]",
+  "fix": "Use an explicitly typed required_clips and assign() for the NPC branch",
+  "rerun": "213 checks / 0 failures; representative enemy regression 256 / 0",
+  "original_local_log": "artifacts/asset_a05/blacksmith/rig.first_array_failure.log",
+  "logs_committed": false
+}
