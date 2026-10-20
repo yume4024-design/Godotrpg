@@ -55,9 +55,8 @@ func _manager() -> BattleManager:
 		for ally: CombatantState in manager.allies:
 			var actual: CartoonActor = game.battles.arena.stage.get("_appearances")[ally.instance_id]
 			_check(actual.model.resource_path == "res://assets/models/pixal3d/%s_rigged.glb" % ally.definition.id, "Current character model before and after reload " + str(ally.definition.id))
-		for actor: CartoonActor in game.battles.arena.stage.get("_appearances").values():
-			if actor.get("skeleton") is Skeleton3D:
-				_check((actor.get("skeleton") as Skeleton3D).get_bone_count() == 19, "Packaged Pixal3D rig in battle")
+			var rig: Skeleton3D = actual.get("skeleton") as Skeleton3D
+			_check(rig != null and rig.get_bone_count() == 19, "Packaged ally Pixal3D rig in battle")
 	return manager
 
 func _finish() -> void:

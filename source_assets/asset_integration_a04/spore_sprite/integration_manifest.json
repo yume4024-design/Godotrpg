@@ -1,0 +1,20 @@
+{
+  "source_model": "assets/models/rebuilt_enemies/spore_sprite.glb",
+  "source_model_sha256": "bd38151d3b0e8bb48063eb72914b9c99f6ba97511d72ea1ec9b13f52de56d037",
+  "triangles": 9811,
+  "bones": 7,
+  "clips": [
+    "attack",
+    "cast",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+  ],
+  "legacy_scene": "scenes/characters/legacy/spore_sprite_visual.tscn",
+  "legacy_sha256": "1b99fe03488d11b3f4e5ef57b1b55e0ccdf9d556919cba73287a3f18c85c9f9e",
+  "budget": 10000,
+  "formal_rules_changed": false,
+  "full_a04_complete": false,
+  "performance_measurement": "PENDING representative enemy counts; no RC3 result reused for new art"
+}

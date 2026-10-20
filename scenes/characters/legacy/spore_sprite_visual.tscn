@@ -1,0 +1,10 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/characters/cartoon_actor.gd" id="Script"]
+[ext_resource type="PackedScene" path="res://assets/models/expansion/spore_sprite.glb" id="Model"]
+[node name="MonsterVisual" type="Node3D" node_paths=PackedStringArray("nameplate_anchor")]
+script = ExtResource("Script")
+model = ExtResource("Model")
+jelly = true
+nameplate_anchor = NodePath("NameplateAnchor")
+[node name="NameplateAnchor" type="Marker3D" parent="."]
+position = Vector3(0, 3, 0)

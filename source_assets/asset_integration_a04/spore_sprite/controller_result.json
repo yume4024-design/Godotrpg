@@ -1,0 +1,8 @@
+{
+	"checks": 61,
+	"failures": [],
+	"formal_battle": false,
+	"graphical": true,
+	"method": "Real-clock two-instance clip switching, hit interruption, death freeze, revival and scene reload; rendered frames reviewed separately.",
+	"model_sha256": "bd38151d3b0e8bb48063eb72914b9c99f6ba97511d72ea1ec9b13f52de56d037"
+}

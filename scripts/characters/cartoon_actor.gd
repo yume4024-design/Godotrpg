@@ -5,6 +5,8 @@ extends Node3D
 @export var jelly: bool = false
 ## Optional authored anchor for silhouettes that differ from their combat archetype.
 @export var nameplate_anchor: Marker3D
+## Imported death clips opt out of the legacy whole-body fall in BattleStage.
+@export var procedural_fall: bool = true
 var _model_root: Node3D
 var _parts: Dictionary[StringName, Node3D] = {}
 var _rest: Dictionary[StringName, Transform3D] = {}

@@ -1,0 +1,93 @@
+{
+	"checks": 129,
+	"failures": 12,
+	"headless": false,
+	"method": "Production arena, six practice encounters and return; no mainline reward or save schema edits; graphical captures checked separately.",
+	"observations": [
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 0
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 1
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 2
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 3
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 4
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 5
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 6
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 7
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 8
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 9
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 10
+		},
+		{
+			"encounter": "X001",
+			"gap_px": -6.96231079101563,
+			"label_bottom_px": 286.73046875,
+			"model_top_px": 279.768157958984,
+			"sample": 11
+		}
+	],
+	"renderer": "Windows"
+}

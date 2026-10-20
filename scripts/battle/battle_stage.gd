@@ -71,7 +71,7 @@ func refresh() -> void:
 		var label: Label3D = _labels[actor.instance_id]
 		label.text = "%s%s\nHP %d / %d" % [actor.definition.display_name, " · 倒下" if not actor.alive() else "", actor.hp, actor.max_hp]
 		_rings[actor.instance_id].visible = actor == _manager.current and actor.alive() and _manager.phase != BattleManager.Phase.FINISHED
-		_actors[actor.instance_id].rotation.z = 0.0 if actor.alive() else 1.2
+		_actors[actor.instance_id].rotation.z = 1.2 if not actor.alive() and _appearances[actor.instance_id].procedural_fall else 0.0
 		_appearances[actor.instance_id].set_dead(not actor.alive())
 		if _appearances[actor.instance_id].has_method("set_equipment_visual"):
 			_appearances[actor.instance_id].call("set_equipment_visual", actor.equipped(&"weapon"))
