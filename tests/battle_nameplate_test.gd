@@ -38,9 +38,9 @@ func _run() -> void:
 			var label: Label3D = arena.stage.get("_labels")[actor.instance_id]
 			_check(label.text.contains(actor.definition.display_name) and label.text.contains("HP %d / %d" % [actor.hp,actor.max_hp]), "Live name and HP " + str(actor.instance_id))
 			_check(label.font == BattleStage.NAMEPLATE_FONT and label.font_size == 38, "Retains shared font and size " + str(actor.instance_id))
-			if actor.definition.id in [&"spore_sprite", &"ore_beetle"]:
+			if actor.definition.id in [&"spore_sprite", &"ore_beetle", &"thorn_boar"]:
 				var appearance: CartoonActor = arena.stage.get("_appearances")[actor.instance_id]
-				_check(appearance is RiggedEnemyActor and (appearance as RiggedEnemyActor).skeleton.get_bone_count()==(7 if actor.definition.id==&"spore_sprite" else 15),"Formal enemy uses its imported controller")
+				_check(appearance is RiggedEnemyActor and (appearance as RiggedEnemyActor).skeleton.get_bone_count()==({&"spore_sprite":7,&"ore_beetle":15,&"thorn_boar":12}[actor.definition.id]),"Formal enemy uses its imported controller")
 				_check(appearance.model.resource_path == "res://assets/models/rebuilt_enemies/%s.glb" % actor.definition.id,"Formal enemy uses approved A03 mesh")
 				for sample: int in range(12):
 					var model_rect: Rect2 = _model_rect(appearance,camera)
@@ -53,7 +53,7 @@ func _run() -> void:
 		if "--repro-only" in OS.get_cmdline_user_args(): break
 		await _auto_battle(manager)
 		_check(manager.phase == BattleManager.Phase.FINISHED,"Real practice battle finishes " + str(encounter))
-		if encounter in [&"X001", &"X004"]:
+		if encounter in [&"X001", &"X004", &"X002"]:
 			var enemy: CombatantState = manager.enemies[0]
 			if not enemy.alive():
 				await create_timer(1.6).timeout

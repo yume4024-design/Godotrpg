@@ -1,0 +1,15 @@
+{
+  "spore_sprite": {
+    "graphical": true,
+    "checks": 63,
+    "failures": 0,
+    "log": "artifacts/a04-performance/boar_spore_regression.log"
+  },
+  "ore_beetle": {
+    "graphical": true,
+    "checks": 63,
+    "failures": 0,
+    "log": "artifacts/a04-performance/boar_beetle_regression.log"
+  },
+  "scope": "After optional run control added; formal RPG data untouched"
+}

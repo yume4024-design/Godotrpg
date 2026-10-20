@@ -1,0 +1,10 @@
+{
+	"asset": "thorn_boar",
+	"bones": 12,
+	"checks": 63,
+	"failures": [],
+	"formal_battle": false,
+	"graphical": true,
+	"method": "Real-clock two-instance clip switching, hit interruption, death freeze, revival and scene reload; rendered frames reviewed separately.",
+	"model_sha256": "3b212d70f5de4321325aba30d6de338ea9f7e8b49103d8bfa3267554fae493ed"
+}

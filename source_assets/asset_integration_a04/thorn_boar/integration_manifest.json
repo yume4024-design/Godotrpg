@@ -1,0 +1,20 @@
+{
+  "source_model": "assets/models/rebuilt_enemies/thorn_boar.glb",
+  "source_sha256": "3b212d70f5de4321325aba30d6de338ea9f7e8b49103d8bfa3267554fae493ed",
+  "triangles": 9998,
+  "budget": 10000,
+  "bones": 12,
+  "clips": [
+    "attack",
+    "charge",
+    "death",
+    "hit",
+    "idle",
+    "run",
+    "walk"
+  ],
+  "legacy_scene": "scenes/characters/legacy/thorn_boar_visual.tscn",
+  "formal_rules_changed": false,
+  "status": "IN_PROGRESS: graphical controller 63/0 and battles 161/0; full regression and Release pending",
+  "unused_gameplay_clips": "Charge available through presentation interface and high-motion Run optional; formal combat remains existing Attack only"
+}

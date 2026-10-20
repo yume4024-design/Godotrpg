@@ -12,12 +12,12 @@ var cases: Array[Dictionary] = []
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--asset="): asset = argument.trim_prefix("--asset=")
-	if asset not in ["spore_sprite", "ore_beetle"]:
+	if asset not in ["spore_sprite", "ore_beetle", "thorn_boar"]:
 		push_error("Unsupported integrated enemy: " + asset)
 		quit(1)
 		return
-	expected_bones = 15 if asset=="ore_beetle" else 7
-	expected_triangles = 9911 if asset=="ore_beetle" else 9811
+	expected_bones = {"spore_sprite":7,"ore_beetle":15,"thorn_boar":12}[asset]
+	expected_triangles = {"spore_sprite":9811,"ore_beetle":9911,"thorn_boar":9998}[asset]
 	_run.call_deferred()
 
 func _check(ok: bool, message: String) -> void:
@@ -102,7 +102,7 @@ func _run() -> void:
 		for index: int in range(count): enemies.append(CombatantState.new(definition,StringName("enemy_%02d" % index),false))
 		var arena: BattleArena = load("res://scenes/battle/battle_arena.tscn").instantiate() as BattleArena
 		root.add_child(arena)
-		arena.setup(party,inventory,enemies,{"id":"X004" if asset=="ore_beetle" else "X001","name":"A04 圖形效能驗證","tutorial":false,"escape_allowed":false,"rewards":{"gold":0,"exp":0}},true)
+		arena.setup(party,inventory,enemies,{"id":"X004" if asset=="ore_beetle" else ("X002" if asset=="thorn_boar" else "X001"),"name":"A04 圖形效能驗證","tutorial":false,"escape_allowed":false,"rewards":{"gold":0,"exp":0}},true)
 		for frame: int in range(60):
 			_advance_fixture(arena.manager)
 			await process_frame
@@ -154,7 +154,7 @@ func _run() -> void:
 		inventory.queue_free()
 		await process_frame
 		await physics_frame
-	var report: Dictionary = {"encounter_id":"X004" if asset=="ore_beetle" else "X001","asset":asset,"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"version":ProjectSettings.get_setting_with_override("application/config/version"),"cases":cases,"cap_fps":60,"method":"One and three full imported enemy rigs with two existing heroes in production BattleArena, guard requests and normal AI; 60 warm frames then 600 measured frames each, screenshots outside sample. Isolated combat fixture without exploration/story/audio services, not a full-game endurance or physical input test."}
+	var report: Dictionary = {"encounter_id":"X004" if asset=="ore_beetle" else ("X002" if asset=="thorn_boar" else "X001"),"asset":asset,"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"version":ProjectSettings.get_setting_with_override("application/config/version"),"cases":cases,"cap_fps":60,"method":"One and three full imported enemy rigs with two existing heroes in production BattleArena, guard requests and normal AI; 60 warm frames then 600 measured frames each, screenshots outside sample. Isolated combat fixture without exploration/story/audio services, not a full-game endurance or physical input test."}
 	FileAccess.open(OUTPUT+"metrics.json",FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
 	print("A04_PERFORMANCE_RESULT checks=%d failures=%d" % [checks,failures.size()])
 	quit(0 if failures.is_empty() else 1)

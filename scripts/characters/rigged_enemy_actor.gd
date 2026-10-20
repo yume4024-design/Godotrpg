@@ -2,6 +2,7 @@ class_name RiggedEnemyActor
 extends CartoonActor
 ## Imported clips own this visual's bones; battle values and timing stay in BattleManager.
 @export var action_clips: Dictionary = {&"attack": &"attack", &"hit": &"hit"}
+@export_range(0.0, 1.0) var run_motion_threshold: float = 0.0
 var animation_player: AnimationPlayer
 var skeleton: Skeleton3D
 var _clips: Dictionary[StringName, StringName] = {}
@@ -28,11 +29,14 @@ func _ready() -> void:
 		var kind: StringName = text.get_slice("|", text.get_slice_count("|") - 1).get_file().to_lower()
 		if kind == &"reset": continue
 		_clips[kind] = clip
-		animation_player.get_animation(clip).loop_mode = Animation.LOOP_LINEAR if kind in [&"idle", &"walk"] else Animation.LOOP_NONE
+		animation_player.get_animation(clip).loop_mode = Animation.LOOP_LINEAR if kind in [&"idle", &"walk", &"run"] else Animation.LOOP_NONE
 	for required: StringName in [&"idle", &"walk", &"attack", &"hit", &"death"]:
 		if not _clips.has(required):
 			push_error("Rigged enemy missing clip: " + String(required))
 			return
+	if run_motion_threshold > 0.0 and not _clips.has(&"run"):
+		push_error("Run-enabled enemy requires imported run clip")
+		return
 	animation_player.animation_finished.connect(_on_animation_finished)
 	if _dead: _play(&"death", 0.0)
 	else: _locomotion()
@@ -62,7 +66,9 @@ func play_battle_action(action: StringName) -> bool:
 	return true
 
 func _locomotion() -> void:
-	_play(&"walk" if _motion > 0.1 else &"idle", 0.12)
+	var kind: StringName = &"walk" if _motion > 0.1 else &"idle"
+	if run_motion_threshold > 0.0 and _motion >= run_motion_threshold: kind = &"run"
+	_play(kind, 0.12)
 
 func _play(kind: StringName, blend: float, restart: bool = false) -> void:
 	if not _clips.has(kind): return

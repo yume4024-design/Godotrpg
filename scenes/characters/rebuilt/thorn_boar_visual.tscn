@@ -1,0 +1,12 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/characters/rigged_enemy_actor.gd" id="Visual"]
+[ext_resource type="PackedScene" path="res://assets/models/rebuilt_enemies/thorn_boar.glb" id="Model"]
+[node name="ThornBoarRebuiltVisual" type="Node3D" node_paths=PackedStringArray("nameplate_anchor")]
+script = ExtResource("Visual")
+model = ExtResource("Model")
+nameplate_anchor = NodePath("NameplateAnchor")
+procedural_fall = false
+run_motion_threshold = 0.7
+action_clips = {&"attack": &"attack", &"hit": &"hit", &"charge": &"charge"}
+[node name="NameplateAnchor" type="Marker3D" parent="."]
+position = Vector3(0, 2.6, 0)

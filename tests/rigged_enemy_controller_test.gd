@@ -4,19 +4,23 @@ var asset: String = "spore_sprite"
 var expected_bones: int = 7
 var scene: PackedScene
 var output: String
-var has_cast: bool = true
+var secondary_action: StringName
+var secondary_clip: String
+var motion_clip: String
 var checks: int = 0
 var failures: Array[String] = []
 
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--asset="): asset = argument.trim_prefix("--asset=")
-	if asset not in ["spore_sprite", "ore_beetle"]:
+	if asset not in ["spore_sprite", "ore_beetle", "thorn_boar"]:
 		push_error("Unsupported integrated enemy: " + asset)
 		quit(1)
 		return
-	expected_bones = 15 if asset=="ore_beetle" else 7
-	has_cast = asset=="spore_sprite"
+	expected_bones = {"spore_sprite":7,"ore_beetle":15,"thorn_boar":12}[asset]
+	secondary_action = {"spore_sprite":&"rupture","ore_beetle":&"attack","thorn_boar":&"charge"}[asset]
+	secondary_clip = {"spore_sprite":"cast","ore_beetle":"attack","thorn_boar":"charge"}[asset]
+	motion_clip = "run" if asset=="thorn_boar" else "walk"
 	scene = load("res://scenes/characters/rebuilt/%s_visual.tscn" % asset)
 	output = "res://artifacts/a04_%s_controller/" % asset
 	_run.call_deferred()
@@ -69,14 +73,14 @@ func _run() -> void:
 	world.add_child(light)
 	var camera: Camera3D = Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	camera.size = 5.0 if asset=="ore_beetle" else 3.6
+	camera.size = 5.0 if asset!="spore_sprite" else 3.6
 	camera.position = Vector3(0,1.3,4)
 	world.add_child(camera)
 	camera.look_at(Vector3(0,.7,0))
 	var first: RiggedEnemyActor = scene.instantiate() as RiggedEnemyActor
 	var second: RiggedEnemyActor = scene.instantiate() as RiggedEnemyActor
-	first.position.x = -1.5 if asset=="ore_beetle" else -1.1
-	second.position.x = 1.5 if asset=="ore_beetle" else 1.1
+	first.position.x = -1.5 if asset!="spore_sprite" else -1.1
+	second.position.x = 1.5 if asset!="spore_sprite" else 1.1
 	world.add_child(first)
 	world.add_child(second)
 	await process_frame
@@ -86,10 +90,14 @@ func _run() -> void:
 	_check(_kind(first)=="idle" and _kind(second)=="idle","Both begin with real idle")
 	_check(not first.procedural_fall and first.nameplate_anchor != null,"Authored death and nameplate presentation")
 	_check(not first.play_battle_action(&"unknown") and _kind(first)=="idle","Unknown actions cannot invent a clip")
+	first.set_motion(.35)
+	await create_timer(.2).timeout
+	_check(_kind(first)=="walk", "Low motion uses real walk for each imported enemy")
 	for cycle: int in range(3):
 		first.set_motion(1.0)
 		await create_timer(.15).timeout
-		_check(_kind(first)=="walk" and _kind(second)=="idle","Locomotion isolated from peer " + str(cycle))
+		_check(_kind(first)==motion_clip and _kind(second)=="idle","Locomotion isolated from peer " + str(cycle))
+		if cycle==0: await _capture("locomotion-"+motion_clip)
 		var before_attack: Array[Transform3D] = _poses(first)
 		_check(first.play_battle_action(&"attack"),"Attack uses imported clip")
 		first.set_motion(0.0)
@@ -100,11 +108,11 @@ func _run() -> void:
 		await create_timer(1.2).timeout
 		_check(_kind(first)=="idle" and first.animation_player.is_playing(),"Real-clock attack finishes into requested idle")
 		var before_cast: Array[Transform3D] = _poses(first)
-		_check(first.play_battle_action(&"rupture" if has_cast else &"attack"),"Existing action maps to authored clip")
+		_check(first.play_battle_action(secondary_action),"Existing action maps to authored clip")
 		await create_timer(.3).timeout
-		_check(_kind(first)==("cast" if has_cast else "attack"),"Secondary authored action is playing")
+		_check(_kind(first)==secondary_clip,"Secondary authored action is playing")
 		_check(_changed(first,before_cast),"Secondary action changes real bone poses")
-		if cycle==0: await _capture("cast")
+		if cycle==0: await _capture("secondary-"+secondary_clip)
 		_check(first.play_battle_action(&"hit"),"Hit can interrupt action")
 		await create_timer(.2).timeout
 		_check(first.play_battle_action(&"hit"),"Second impact accepted")

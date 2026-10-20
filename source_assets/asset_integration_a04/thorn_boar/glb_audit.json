@@ -1,0 +1,55 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "assets\\models\\rebuilt_enemies\\thorn_boar.glb",
+    "category": "common_enemy",
+    "sha256": "3b212d70f5de4321325aba30d6de338ea9f7e8b49103d8bfa3267554fae493ed",
+    "maximum_triangles": 10000,
+    "triangles": 9998,
+    "headroom_triangles": 2,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.1920928955078125e-07,
+    "primitives": [
+      {
+        "node": 12,
+        "mesh": 0,
+        "triangles": 9998,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      12
+    ],
+    "materials": 1,
+    "animations": [
+      "attack",
+      "charge",
+      "death",
+      "hit",
+      "idle",
+      "run",
+      "walk"
+    ],
+    "failures": [],
+    "warnings": [
+      "Less than 5% correction headroom; cap is still inclusive"
+    ],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 9998,
+  "status": "PASS"
+}
