@@ -1,0 +1,29 @@
+{
+  "status": "PASS",
+  "scope": "Independent decorative model/import/rotation only",
+  "glb_sha256": "4c0ad1c26449fc09d524b0b45d42af6a44bf50a0b53030d9eceb50ed0d7af495",
+  "native_sha256": "29cb17a240c52eb50c8a70f9a7a788bacade3425d4a38b860fccafcfe2ebf1cd",
+  "triangles": 1212,
+  "maximum_triangles": 2500,
+  "godot_checks": 26,
+  "uv_unwrap": "NOT_REQUIRED_TEXTURE_FREE",
+  "formal_village": "NOT_STARTED",
+  "performance": "NOT_TESTED_COMFY_RUNNING",
+  "physical_playthrough": false,
+  "visual_score": {
+    "COMP-SAFE-EDGE": 2,
+    "COMP-NEG-SPACE": 2,
+    "COMP-BALANCE": 2,
+    "COMP-DEPTH-LAYERS": 1,
+    "LIGHT-KEY-FILL": 1,
+    "LIGHT-SPEC-LOT": 2,
+    "MOT-VOL": 2
+  },
+  "visual_review": "Agent viewed actual Godot six captures; coplanar rim/spoke seam corrected in v2",
+  "recipe_sha256": "345c86a581fe921ca86d865ea79e06e84f71fe3f8166e48ace838e2d0494613a",
+  "material_sources": {
+    "wood": "b18d5afc52a5c89aeb306cdd85e102bde5e40491c61b708a2e2a600342eda2fa",
+    "iron": "45c0ed4a68f82810d0a142b8efd4b0cf9bb6ab794ebc225fd927487d5966e476",
+    "stone": "a5722ab2bfbf98bf7cbb835d1935c7992f3ea4e777540720bfe7434d0005fcfa"
+  }
+}

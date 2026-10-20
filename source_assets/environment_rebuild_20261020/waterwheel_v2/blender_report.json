@@ -1,0 +1,105 @@
+{
+  "source": "D:\\RPGGAME\\assets\\models\\greystone\\props\\waterwheel.glb",
+  "blender_version": "5.2.2 LTS",
+  "triangle_budget": 2500,
+  "category": null,
+  "preflight": {
+    "schema_version": 1,
+    "file": "assets\\models\\greystone\\props\\waterwheel.glb",
+    "category": null,
+    "sha256": "4c0ad1c26449fc09d524b0b45d42af6a44bf50a0b53030d9eceb50ed0d7af495",
+    "maximum_triangles": 2500,
+    "triangles": 1212,
+    "headroom_triangles": 1288,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": false,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 60,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 24,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 808,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 320,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 3,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "exported": false,
+  "unverified": [
+    "silhouette",
+    "overlapping faces",
+    "rig deformation",
+    "animation transitions",
+    "engine functional QA"
+  ],
+  "total_triangles": 1212,
+  "objects": [
+    {
+      "name": "FixedAxle",
+      "triangles": 84,
+      "vertices": 144,
+      "uv_layers": 1,
+      "nonmanifold_edges": 144,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "Wheel",
+      "triangles": 1128,
+      "vertices": 1968,
+      "uv_layers": 1,
+      "nonmanifold_edges": 1968,
+      "degenerate_faces": 0
+    }
+  ],
+  "ignored_importer_bone_helpers": [],
+  "failures": [],
+  "warnings": [
+    "NONMANIFOLD_OR_BOUNDARY"
+  ],
+  "basic_checks_passed": true
+}

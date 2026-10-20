@@ -1,0 +1,40 @@
+{
+  "status": "IN_PROGRESS",
+  "method": "Original Blender mesh construction; no Comfy submission or third-party assets",
+  "triangles": 1212,
+  "budget": 2500,
+  "dimensions_blender": [
+    2.049999952316284,
+    4.699999809265137,
+    4.699999809265137
+  ],
+  "origin": "Axle centre; matches original Godot placeholder origin, rotation axis X",
+  "parts": {
+    "Wheel": 1128,
+    "FixedAxle": 84
+  },
+  "palette": {
+    "wood": [
+      0.43,
+      0.29,
+      0.16
+    ],
+    "iron": [
+      0.27,
+      0.31,
+      0.33
+    ],
+    "stone": [
+      0.6,
+      0.59,
+      0.51
+    ]
+  },
+  "uv": "Not required: texture-free shared colour materials, not a UV PASS claim",
+  "collisions": "None: decorative riverside wheel; traversal/collision integration not yet tested",
+  "formal_scene_replacement": false,
+  "outputs": {
+    "waterwheel.blend": "29cb17a240c52eb50c8a70f9a7a788bacade3425d4a38b860fccafcfe2ebf1cd",
+    "waterwheel.glb": "4c0ad1c26449fc09d524b0b45d42af6a44bf50a0b53030d9eceb50ed0d7af495"
+  }
+}

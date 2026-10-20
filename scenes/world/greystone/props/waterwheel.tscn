@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/greystone_waterwheel.gd" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/props/waterwheel.glb" id="2"]
+
+[node name="Waterwheel" type="Node3D"]
+script = ExtResource("1")
+model_scene = ExtResource("2")
+metadata/stage = "ENV02 standalone candidate; village placeholder retained"

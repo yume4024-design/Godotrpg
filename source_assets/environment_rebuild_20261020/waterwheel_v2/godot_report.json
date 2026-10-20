@@ -1,0 +1,19 @@
+{
+	"budget": 2500,
+	"checks": 26,
+	"failures": [],
+	"formal_village_replacement": false,
+	"graphical": true,
+	"meshes": 2,
+	"model_sha256": "4c0ad1c26449fc09d524b0b45d42af6a44bf50a0b53030d9eceb50ed0d7af495",
+	"performance_benchmark": false,
+	"physical_input": false,
+	"rotation_simulated_seconds": 10.0,
+	"shared_materials": [
+		"res://assets/materials/greystone/props/iron.tres",
+		"res://assets/materials/greystone/props/stone.tres",
+		"res://assets/materials/greystone/props/wood.tres"
+	],
+	"surfaces": 4,
+	"triangles": 1212
+}

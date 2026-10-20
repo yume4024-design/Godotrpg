@@ -1,0 +1,6 @@
+{
+  "status": "FAIL",
+  "reason": "Coplanar spoke and rim faces produce small flickering seams in actual three-quarter view",
+  "fix": "Set spoke axial thickness from 0.14 to 0.10; preserve topology count and overall bounds",
+  "formal_replacement": false
+}
