@@ -1,0 +1,27 @@
+{
+  "source_log": "artifacts\\logs\\visualbattlenameplates-20261020-215206-382.log",
+  "non_appearance_field_count": 19,
+  "fields": [
+    "id",
+    "display_name",
+    "level",
+    "max_hp",
+    "max_mp",
+    "attack",
+    "magic",
+    "defense",
+    "ward",
+    "speed",
+    "skills",
+    "color",
+    "form",
+    "hp_growth",
+    "mp_growth",
+    "attack_growth",
+    "magic_growth",
+    "defense_growth",
+    "ward_growth"
+  ],
+  "passed": true,
+  "note": "The fresh-model-path assertion is a separate twentieth additional check; it is not a twentieth definition field."
+}

@@ -1,0 +1,198 @@
+{
+  "base_commit": "7edea4ff74eee29f1ffcaaf85ea2f214d801e414",
+  "dirty_worktree": true,
+  "platform": "Windows desktop; touch and controller events simulated",
+  "android_verified": false,
+  "results": [
+    {
+      "mode": "Check",
+      "passed": true,
+      "started": "2026-10-20T21:52:50.6909825+08:00",
+      "seconds": 4.13,
+      "log": "check-20261020-215250-718.log",
+      "result": [
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\check-20261020-215250-718.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestEnemyAI",
+      "passed": true,
+      "started": "2026-10-20T21:52:54.8455255+08:00",
+      "seconds": 0.5,
+      "log": "testenemyai-20261020-215254-854.log",
+      "result": [
+        "ENEMY_AI_RESULT checks=10 failures=0 targets=[&\"lia\", &\"ren\", &\"lia\", &\"ren\"]",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testenemyai-20261020-215254-854.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase3",
+      "passed": true,
+      "started": "2026-10-20T21:52:55.3494980+08:00",
+      "seconds": 7.25,
+      "log": "testphase3-20261020-215255-357.log",
+      "result": [
+        "PHASE3_RESULT checks=75 failures=0 renderer=headless",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testphase3-20261020-215255-357.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "Smoke",
+      "passed": true,
+      "started": "2026-10-20T21:53:02.5979378+08:00",
+      "seconds": 1.51,
+      "log": "smoke-20261020-215302-604.log",
+      "result": [
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\smoke-20261020-215302-604.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase5",
+      "passed": true,
+      "started": "2026-10-20T21:53:04.1111711+08:00",
+      "seconds": 16.11,
+      "log": "testphase5-20261020-215304-117.log",
+      "result": [
+        "PHASE5_RESULT checks=69 failures=0 renderer=headless",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testphase5-20261020-215304-117.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase5Reload",
+      "passed": true,
+      "started": "2026-10-20T21:53:20.2208102+08:00",
+      "seconds": 1.51,
+      "log": "testphase5reload-20261020-215320-229.log",
+      "result": [
+        "PHASE5_RESULT checks=7 failures=0 renderer=headless",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testphase5reload-20261020-215320-229.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase6",
+      "passed": true,
+      "started": "2026-10-20T21:53:21.7354477+08:00",
+      "seconds": 18.72,
+      "log": "testphase6-20261020-215321-742.log",
+      "result": [
+        "PHASE6_RESULT checks=85 failures=0 renderer=headless",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testphase6-20261020-215321-742.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06",
+      "passed": true,
+      "started": "2026-10-20T21:53:40.4570587+08:00",
+      "seconds": 4.84,
+      "log": "testg06-20261020-215340-463.log",
+      "result": [
+        "G06_1_RESULT checks=51 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testg06-20261020-215340-463.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06Reload",
+      "passed": true,
+      "started": "2026-10-20T21:53:45.2941626+08:00",
+      "seconds": 2.07,
+      "log": "testg06reload-20261020-215345-300.log",
+      "result": [
+        "G06_1_RESULT checks=6 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testg06reload-20261020-215345-300.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06NPC",
+      "passed": true,
+      "started": "2026-10-20T21:53:47.3628517+08:00",
+      "seconds": 43.65,
+      "log": "testg06npc-20261020-215347-369.log",
+      "result": [
+        "G06_NPC_RESULT checks=60 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testg06npc-20261020-215347-369.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06Story",
+      "passed": true,
+      "started": "2026-10-20T21:54:31.0109894+08:00",
+      "seconds": 18.05,
+      "log": "testg06story-20261020-215431-017.log",
+      "result": [
+        "G06_STORY_RESULT checks=58 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testg06story-20261020-215431-017.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06StoryReload",
+      "passed": true,
+      "started": "2026-10-20T21:54:49.0628681+08:00",
+      "seconds": 1.97,
+      "log": "testg06storyreload-20261020-215449-069.log",
+      "result": [
+        "G06_STORY_RESULT checks=7 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testg06storyreload-20261020-215449-069.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06Story",
+      "passed": true,
+      "started": "2026-10-20T21:54:51.0386427+08:00",
+      "seconds": 23.6,
+      "log": "visualg06story-20261020-215451-045.log",
+      "result": [
+        "G06_STORY_RESULT checks=68 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\visualg06story-20261020-215451-045.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06Touch",
+      "passed": true,
+      "started": "2026-10-20T21:55:14.6410864+08:00",
+      "seconds": 7.09,
+      "log": "visualg06touch-20261020-215514-648.log",
+      "result": [
+        "G06_TOUCH_RESULT checks=22 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\visualg06touch-20261020-215514-648.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06TouchCommerce",
+      "passed": true,
+      "started": "2026-10-20T21:55:21.7383893+08:00",
+      "seconds": 7.81,
+      "log": "visualg06touchcommerce-20261020-215521-745.log",
+      "result": [
+        "G06_TOUCH_COMMERCE_RESULT checks=53 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\visualg06touchcommerce-20261020-215521-745.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06CommerceReload",
+      "passed": true,
+      "started": "2026-10-20T21:55:29.5541070+08:00",
+      "seconds": 2.07,
+      "log": "testg06commercereload-20261020-215529-560.log",
+      "result": [
+        "G06_COMMERCE_RESULT checks=5 failures=0",
+        "Log: C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\logs\\testg06commercereload-20261020-215529-560.log"
+      ],
+      "error": ""
+    }
+  ]
+}

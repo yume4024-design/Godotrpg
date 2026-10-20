@@ -1,0 +1,93 @@
+{
+	"checks": 125,
+	"failures": 0,
+	"headless": false,
+	"method": "Production arena, six practice encounters and return; no mainline reward or save schema edits; graphical captures checked separately.",
+	"observations": [
+		{
+			"encounter": "X001",
+			"gap_px": 12.4791564941406,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 237.422164916992,
+			"sample": 0
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 12.646728515625,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 237.589736938477,
+			"sample": 1
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 12.8112030029297,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 237.754211425781,
+			"sample": 2
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 12.9707641601563,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 237.913772583008,
+			"sample": 3
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 13.1236877441406,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 238.066696166992,
+			"sample": 4
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 13.2682800292969,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 238.211288452148,
+			"sample": 5
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 13.4029235839844,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 238.345932006836,
+			"sample": 6
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 13.5261993408203,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 238.469207763672,
+			"sample": 7
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 13.6366577148438,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 238.579666137695,
+			"sample": 8
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 13.7331085205078,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 238.676116943359,
+			"sample": 9
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 13.8145599365234,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 238.757568359375,
+			"sample": 10
+		},
+		{
+			"encounter": "X001",
+			"gap_px": 13.8800506591797,
+			"label_bottom_px": 224.943008422852,
+			"model_top_px": 238.823059082031,
+			"sample": 11
+		}
+	],
+	"renderer": "Windows"
+}

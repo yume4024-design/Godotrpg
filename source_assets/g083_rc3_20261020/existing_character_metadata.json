@@ -1,0 +1,33 @@
+{
+  "method": "Read unchanged production GLBs; metadata only, not a new model or pose-quality claim",
+  "models": {
+    "ren": {
+      "triangles": 4815,
+      "bones": 19,
+      "animations": [
+        "attack",
+        "cast",
+        "guard",
+        "hit",
+        "potion",
+        "run",
+        "walk"
+      ],
+      "sha256": "6bb14ae0c547d4b187cf6f87548f601856580e6412770623b7a42e40543921f6"
+    },
+    "lia": {
+      "triangles": 4806,
+      "bones": 19,
+      "animations": [
+        "attack",
+        "cast",
+        "guard",
+        "hit",
+        "potion",
+        "run",
+        "walk"
+      ],
+      "sha256": "d2ebab02be6b38b6d539f8a77d50d82baaebcf4e64153ac0c36b94e9fdfc96a4"
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "scope": "Actual six practice encounters and return after RC3 presentation fixes; all six viewports inspected at short edge 512. No blanket character-art or Android approval.",
+  "checks": 125,
+  "failures": 0,
+  "scores": {
+    "TYPE-GLYPH-INTEGRITY": 2,
+    "TYPE-DISPLAY-HUD-SPLIT": 2,
+    "TYPE-OPSZ-MATCH": 2,
+    "TYPE-PLATE-TYPE": 2,
+    "CTRST-OVERLAP-LEG": 2,
+    "CTRST-SIMULTANEOUS": 2,
+    "HIER-FOVEAL-CLEAR": 2
+  },
+  "notes": [
+    "Spore name and HP now above the cap and leaf, no toolbar over Ren.",
+    "Native font sizes and dark outlines are retained; no depth-test override.",
+    "Fresh Lia now has the same blonde/purple Pixal3D appearance as the loaded party.",
+    "Other typography scores retain the prior scoped review; no new multilingual/device/contrast-ratio test.",
+    "Old stylized enemies are still the formal visuals; rebuilt enemy/NPC/hero assets remain their own unfinished work packages."
+  ]
+}

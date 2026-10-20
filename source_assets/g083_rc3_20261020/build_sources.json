@@ -1,0 +1,16 @@
+{
+  "qa_source_sha": "d03db5fa5e77aeb4a8710cd7c441e1048e355bed",
+  "main_equivalent_sha": "b609554edab7067e12943b7b2e1c2cfa1e7d4f44",
+  "artifacts": {
+    "qa": {
+      "source_path": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\builds\\g08\\qa-soak\\20261020-215826\\ProjectCrystal.pck",
+      "sha256": "0dc10ac1524728ea687c2a41a3774d281a90e437e56efbf5bdb44ff01001e6ca",
+      "bytes": 116224284
+    },
+    "candidate": {
+      "source_path": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\builds\\g08\\candidate\\20261020-215831\\ProjectCrystal.pck",
+      "sha256": "2758b063385a25e724b13a546cff9585f65557dafed2989ebad005baf276d13c",
+      "bytes": 115849372
+    }
+  }
+}

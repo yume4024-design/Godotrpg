@@ -1,0 +1,69 @@
+{
+  "scope": "Completed short-test results only; live 30-minute soak not included yet",
+  "files": {
+    "B001.webp": {
+      "sha256": "d183e1ab2169547e4a419999e4905a812d99379772c737807bed8905409390c5",
+      "normalization": "binary"
+    },
+    "B002.webp": {
+      "sha256": "774d1d0c606a12b3b543157859e4fd7a77ed81a349345ba997608af39d13d934",
+      "normalization": "binary"
+    },
+    "before-X001.webp": {
+      "sha256": "82ec9372cda34e58b5bde90196c9fce101eac8de28a2aea8aa0076cd316fd7a6",
+      "normalization": "binary"
+    },
+    "build_sources.json": {
+      "sha256": "f979b36ca5cd716676a1dc09585d4ac348f471be8f08c42fd04af2514658aac2",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "definition_preservation.json": {
+      "sha256": "adc83524ee8a2be5e84aebac4a7ac76f55cfcc727972076353863aa4b8a61aec",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "existing_character_metadata.json": {
+      "sha256": "de92c859a388c5b21a7ba386b03431dcbf1331c9566c85681b999987d40546ee",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "g06_regression.json": {
+      "sha256": "2bde081eea7e41c5fe70f2504fabe3af7a7a1750262a6304a93c4a320685d5a0",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "lia_recruit_before.json": {
+      "sha256": "c159ac7df677d30a98a78a87a0146c1461bf2934b4693bdd6be8902cb093641b",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "nameplate_after.json": {
+      "sha256": "4e7cad46189158d7f5bc7c75b00fe958decef3e6fd21a43d80fd17cd5601c248",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "nameplate_before.json": {
+      "sha256": "24090ded151e2e089a7916891441ab432319c2a989fef3393e7c269039135b1b",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "probe_contract.json": {
+      "sha256": "e1a5629915da74aeacda8f1d2ed117a61720bfd62d78b08ee6d8b84e519aab1b",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "visual_review.json": {
+      "sha256": "34a2616bc2bd2846357040d923327eab3fb7121d71845d0f7ecc2354688e5dc0",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "X001.webp": {
+      "sha256": "c18c49914643c9f61b3d08f68b0950328ce5f44b281d94ec14f90b832fba756c",
+      "normalization": "binary"
+    },
+    "X002.webp": {
+      "sha256": "5023cf60efaf2684f76d08de1b58026d475d589b50e0aab5168b8b4aa128cda3",
+      "normalization": "binary"
+    },
+    "X003.webp": {
+      "sha256": "1827b1084164b38b82a63bafb47ff4adee23eb9ef37e71918c74ed16f03727c5",
+      "normalization": "binary"
+    },
+    "X004.webp": {
+      "sha256": "b097da90458231c1829307e68c7367efe0d0260035a1d4e507f580f014c479ac",
+      "normalization": "binary"
+    }
+  }
+}
