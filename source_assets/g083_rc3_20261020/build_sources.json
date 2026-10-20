@@ -12,5 +12,12 @@
       "sha256": "2758b063385a25e724b13a546cff9585f65557dafed2989ebad005baf276d13c",
       "bytes": 115849372
     }
+  },
+  "local_candidate": "D:/RPGGAME/builds/g08/rc3-20261020/candidate",
+  "archive": {
+    "path": "D:\\RPGGAME\\builds\\g08\\rc3-20261020\\ProjectCrystal-0.6.1-g08-rc3-windows-x64.zip",
+    "sha256": "ba9f09f1b8a30cdade986ce3875ab199c879482906655f4faa5384907a29206a",
+    "bytes": 225251133,
+    "contains_user_saves": false
   }
 }

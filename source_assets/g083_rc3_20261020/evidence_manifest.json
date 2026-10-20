@@ -1,5 +1,5 @@
 {
-  "scope": "Completed short-test results only; live 30-minute soak not included yet",
+  "scope": "Evidence scoped to fixed RC3 or separately tested A04; do not transfer performance or physical acceptance between versions",
   "files": {
     "B001.webp": {
       "sha256": "d183e1ab2169547e4a419999e4905a812d99379772c737807bed8905409390c5",
@@ -14,7 +14,7 @@
       "normalization": "binary"
     },
     "build_sources.json": {
-      "sha256": "f979b36ca5cd716676a1dc09585d4ac348f471be8f08c42fd04af2514658aac2",
+      "sha256": "6db04dadbbbafd720ff66fd522a69dd80a2fb43b2a82c31da85e208f097b9cc8",
       "normalization": "utf8-no-bom-lf"
     },
     "definition_preservation.json": {
@@ -43,6 +43,54 @@
     },
     "probe_contract.json": {
       "sha256": "e1a5629915da74aeacda8f1d2ed117a61720bfd62d78b08ee6d8b84e519aab1b",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "RC3_PLAYTEST_GUIDE.md": {
+      "sha256": "64da9d9e5b040a357c374b1ff944f15a5274eedd5df36ffad5fd80731f07f607",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/background_load.jsonl": {
+      "sha256": "7b2b39c2a0732126f42bf8e89f5f360999dd70baa9623b838b12c5bd44ff1689",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/manifest.json": {
+      "sha256": "7dbaf7fea6a29f6e16f7c90f873cc5d9873abc3bfbf7661cd9adaad5dba28c26",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/metrics.json": {
+      "sha256": "c8fda1b351321731253865c09b916a742fa23e64574e26b67867a49b19cc4fb6",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/pack_audit.json": {
+      "sha256": "c4bf03afd3c01d841a7c36c82ddfc3b6b93de920498e2c02a87a7700eee0682b",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/package_manifest.json": {
+      "sha256": "c2bc2135c34549857e68e7184a197bf6594326a68e21a1159de4d5364d7b5a10",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/process.csv": {
+      "sha256": "70be0573c9e67c166c273f5ea09bca55690b4e4022b96998079e86d0bf2ab185",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/restart_receipt.json": {
+      "sha256": "d9679c4adac2a9b462560e15db1cefa905e133670259ec85f85bee4e53ac4385",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/sampling_notes.json": {
+      "sha256": "26732dff66d4a9286f66c1ece1c4721ef747cca8f9684a066d2bfa598e840c28",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/short_qa_pack_audit.json": {
+      "sha256": "c4bf03afd3c01d841a7c36c82ddfc3b6b93de920498e2c02a87a7700eee0682b",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/spike_analysis.json": {
+      "sha256": "10c3551c21a76db6051901ec9d1505a2023c61f4f0f4f553c31b9e62fab71482",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "soak/summary.json": {
+      "sha256": "30a3f3a1477e46a19094316fef59ba82a785c8a13aa6df49cb89ffca7ea93e88",
       "normalization": "utf8-no-bom-lf"
     },
     "visual_review.json": {

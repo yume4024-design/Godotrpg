@@ -1,0 +1,16 @@
+{
+  "mode": "Soak",
+  "base_commit": "d03db5fa5e77aeb4a8710cd7c441e1048e355bed",
+  "exe": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\builds\\g08\\qa-soak\\20261020-215826\\ProjectCrystal.exe",
+  "pck_sha256": "0DC10AC1524728EA687C2A41A3774D281A90E437E56EFBF5BDB44FF01001E6CA",
+  "pid": 28500,
+  "seconds": 1831.7203304,
+  "exit_code": 0,
+  "log": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g083\\20261020-215912\\release-soak.log",
+  "process_samples": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g083\\20261020-215912\\process.csv",
+  "human_playthrough": false,
+  "android_verified": false,
+  "capture_suppression": false,
+  "source_dirty_files": [],
+  "metrics": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g083\\20261020-215912\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g083\\metrics.json"
+}

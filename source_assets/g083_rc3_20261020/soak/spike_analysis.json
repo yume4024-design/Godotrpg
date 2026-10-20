@@ -1,0 +1,180 @@
+{
+  "spikes_retained": 34,
+  "spike_retention_limit": 300,
+  "capture_count": 28,
+  "top_spikes": [
+    {
+      "ms": 461.173,
+      "phase": "prologue",
+      "seconds": 0.461173,
+      "capture_overlaps": []
+    },
+    {
+      "ms": 193.868,
+      "phase": "battle",
+      "seconds": 419.319693,
+      "capture_overlaps": [
+        "g083-mine-6"
+      ]
+    },
+    {
+      "ms": 187.285,
+      "phase": "prologue",
+      "seconds": 8.435957,
+      "capture_overlaps": [
+        "g063-03-crystal-awakening"
+      ]
+    },
+    {
+      "ms": 178.506,
+      "phase": "battle",
+      "seconds": 1760.891563,
+      "capture_overlaps": [
+        "g083-mine-26"
+      ]
+    },
+    {
+      "ms": 178.333,
+      "phase": "battle",
+      "seconds": 83.902355,
+      "capture_overlaps": [
+        "g083-mine-1"
+      ]
+    },
+    {
+      "ms": 178.233,
+      "phase": "battle",
+      "seconds": 754.720931,
+      "capture_overlaps": [
+        "g083-mine-11"
+      ]
+    },
+    {
+      "ms": 175.981,
+      "phase": "battle",
+      "seconds": 1425.504245,
+      "capture_overlaps": [
+        "g083-mine-21"
+      ]
+    },
+    {
+      "ms": 175.677,
+      "phase": "battle",
+      "seconds": 1090.121492,
+      "capture_overlaps": [
+        "g083-mine-16"
+      ]
+    },
+    {
+      "ms": 173.423,
+      "phase": "battle",
+      "seconds": 62.268945,
+      "capture_overlaps": [
+        "g083-forest-1"
+      ]
+    },
+    {
+      "ms": 172.448,
+      "phase": "prologue",
+      "seconds": 6.033906,
+      "capture_overlaps": [
+        "g063-01-mine-entrance"
+      ]
+    },
+    {
+      "ms": 167.182,
+      "phase": "battle",
+      "seconds": 1068.156745,
+      "capture_overlaps": [
+        "g083-forest-16"
+      ]
+    },
+    {
+      "ms": 166.942,
+      "phase": "battle",
+      "seconds": 732.753908,
+      "capture_overlaps": [
+        "g083-forest-11"
+      ]
+    },
+    {
+      "ms": 165.279,
+      "phase": "battle",
+      "seconds": 1738.924061,
+      "capture_overlaps": [
+        "g083-forest-26"
+      ]
+    },
+    {
+      "ms": 163.643,
+      "phase": "battle",
+      "seconds": 397.336429,
+      "capture_overlaps": [
+        "g083-forest-6"
+      ]
+    },
+    {
+      "ms": 163.467,
+      "phase": "prologue",
+      "seconds": 11.549205,
+      "capture_overlaps": [
+        "g063-04-guardian-battle"
+      ]
+    },
+    {
+      "ms": 163.296,
+      "phase": "battle",
+      "seconds": 1403.538945,
+      "capture_overlaps": [
+        "g083-forest-21"
+      ]
+    },
+    {
+      "ms": 150.458,
+      "phase": "prologue",
+      "seconds": 4.699739,
+      "capture_overlaps": [
+        "g063-mine-gate"
+      ]
+    },
+    {
+      "ms": 135.708,
+      "phase": "prologue",
+      "seconds": 2.334901,
+      "capture_overlaps": [
+        "g063-guild"
+      ]
+    },
+    {
+      "ms": 131.508,
+      "phase": "prologue",
+      "seconds": 14.563873,
+      "capture_overlaps": [
+        "g063-05-chapter-preview"
+      ]
+    },
+    {
+      "ms": 126.265,
+      "phase": "npc_commerce",
+      "seconds": 375.274911,
+      "capture_overlaps": [
+        "g083-greystone_runtime-6"
+      ]
+    }
+  ],
+  "memory_window_medians_mib": {
+    "early": {
+      "working_set_bytes": 646.55859375,
+      "private_bytes": 811.78125
+    },
+    "late": {
+      "working_set_bytes": 645.68359375,
+      "private_bytes": 812.85546875
+    }
+  },
+  "capture_encode_ms": {
+    "min": 28.833,
+    "max": 175.902
+  },
+  "method": "All phase metrics retain all frames; intervals overlap suggests attribution, not a CPU/GPU function profile. First-frame startup remains separately labelled."
+}

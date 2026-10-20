@@ -1,0 +1,7 @@
+{"utc": "2026-10-20T14:00:49.911523+00:00", "gpu_percent_vram_mib": "38, 2268"}
+{"utc": "2026-10-20T14:00:54.965202+00:00", "gpu_percent_vram_mib": "39, 2273"}
+{"utc": "2026-10-20T14:01:00.019338+00:00", "gpu_percent_vram_mib": "38, 2265"}
+{"utc": "2026-10-20T14:01:05.075066+00:00", "gpu_percent_vram_mib": "37, 2260"}
+{"utc": "2026-10-20T14:01:10.126800+00:00", "gpu_percent_vram_mib": "38, 2256"}
+{"utc": "2026-10-20T14:01:15.184772+00:00", "gpu_percent_vram_mib": "42, 2266"}
+{"cpu_window_seconds": 30.606427199963946, "other_process_cpu_deltas": [{"pid": 31760, "name": "blender", "cpu_seconds": 0.172}, {"pid": 4352, "name": "python", "cpu_seconds": 0.0}, {"pid": 5700, "name": "python", "cpu_seconds": 0.0}, {"pid": 12492, "name": "python", "cpu_seconds": 0.0}, {"pid": 13532, "name": "python", "cpu_seconds": 0.016}, {"pid": 17300, "name": "python", "cpu_seconds": 0.016}, {"pid": 21208, "name": "python", "cpu_seconds": 0.0}, {"pid": 23828, "name": "python", "cpu_seconds": 0}, {"pid": 24396, "name": "python", "cpu_seconds": 0}, {"pid": 24800, "name": "python", "cpu_seconds": 0}, {"pid": 25968, "name": "python", "cpu_seconds": 0.0}, {"pid": 32408, "name": "python", "cpu_seconds": 0.047}, {"pid": 34532, "name": "python", "cpu_seconds": 0.0}]}

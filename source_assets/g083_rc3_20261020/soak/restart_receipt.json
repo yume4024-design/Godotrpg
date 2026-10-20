@@ -1,0 +1,20 @@
+{
+  "exe": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\builds\\g08\\qa\\20261020-223022\\ProjectCrystal.exe",
+  "pck_sha256": "28ae34ca585a92e227ab6da42165bf4649f745ca76cc36b7bedd9419f1e686e9",
+  "source_slot": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g083\\20261020-215912\\profile\\Godot\\app_userdata\\\u5931\u843d\u661f\u6838 \u2014 Project Crystal\\g08_tests\\prologue.json",
+  "source_slot_sha256": "5b0460e1e0ad8d994ee8751f31af696c82f206372141458d3232d67fa5380f96",
+  "copied_slot": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g083\\20261020-215912\\restart-from-soak\\profile\\Godot\\app_userdata\\\u5931\u843d\u661f\u6838 \u2014 Project Crystal\\g08_tests\\prologue.json",
+  "initial_copy_sha256": "5b0460e1e0ad8d994ee8751f31af696c82f206372141458d3232d67fa5380f96",
+  "original_preserved": true,
+  "seconds": 2.5311417000484653,
+  "exit_code": 0,
+  "result": {
+    "base_version": "0.6.1",
+    "checks": 14,
+    "display": "Windows",
+    "failures": 0,
+    "release": true,
+    "version": "0.6.1-g08-rc3"
+  },
+  "method": "Separate native Release process reads exact terminal soak save in a new isolated profile. Source discovered by actual schema; WindowsCandidate._run overrides the earlier g083 slot name. No source save edits."
+}

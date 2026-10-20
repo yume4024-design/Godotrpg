@@ -1,0 +1,49 @@
+{
+  "scope": "Evidence scoped to fixed RC3 or separately tested A04; do not transfer performance or physical acceptance between versions",
+  "files": {
+    "battle_result.json": {
+      "sha256": "8330e2c03a3ffe9588d30eca2e25ce6df5954f268412ba42907b70843497cb7e",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "controller-attack-0.webp": {
+      "sha256": "87034560ce67895c83aa62b42a6cd6599526916fcdfaa401fe233724b09decf4",
+      "normalization": "binary"
+    },
+    "controller-cast.webp": {
+      "sha256": "b83a0bd1ea75aa159e4c64ac175fddb85ab1f5dfa7bcce1893ef127f86b3a61b",
+      "normalization": "binary"
+    },
+    "controller-death.webp": {
+      "sha256": "c4730fb56cf72a32c7d6bc48b8c0ba6fff392e676c2611ac8b8094a15d57ce49",
+      "normalization": "binary"
+    },
+    "controller-reset-pair.webp": {
+      "sha256": "b042b4889dea72539ed5c8f83a74d24e40e730327f5fd53420882fb3c1d0992f",
+      "normalization": "binary"
+    },
+    "controller_result.json": {
+      "sha256": "08fa523e6eefe0b7dad316b76cf2cbef99133c974a8b19ae7cdd08a72d5684b2",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "failed_anchor_result.json": {
+      "sha256": "a7d237f463aaa95a93dc78a40edfe64c74872a77edc317086459482880352f19",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "g06_regression.json": {
+      "sha256": "25316968882a9b45c6b340b7612c8d9c746e17cc8153b8904a268cfaa09b3c23",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "integration_manifest.json": {
+      "sha256": "277369af7bece95c2f1e223ce5f48cef83c4741ca5d44728352c0e6eeae913b5",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "X001-death.webp": {
+      "sha256": "6dbc835190f7875e5cfcf85caf6b29a51c0f219056aceb55fac425a71b67d83e",
+      "normalization": "binary"
+    },
+    "X001.webp": {
+      "sha256": "5ed55b0305f552729bbc492c706d8afe696400d01ce3dd70958148a1a2f437ab",
+      "normalization": "binary"
+    }
+  }
+}

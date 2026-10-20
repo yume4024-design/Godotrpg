@@ -1,0 +1,268 @@
+{
+  "complete": true,
+  "release": true,
+  "display": "Windows",
+  "soak_seconds": 1810.753341,
+  "total_seconds": 1829.629405,
+  "checks": 1459,
+  "failures": 0,
+  "cycles": 27,
+  "cap_fps": 60,
+  "metrics": {
+    "battle": {
+      "draw_max": 373.0,
+      "draw_min": 119.0,
+      "engine_peak_bytes": null,
+      "fps": 58.5778555154109,
+      "frames": 3882,
+      "max_ms": 193.868,
+      "mean_ms": 17.0712975270479,
+      "p95_ms": 16.789,
+      "p99_ms": 19.036
+    },
+    "forest": {
+      "draw_max": 447.0,
+      "draw_min": 364.0,
+      "engine_peak_bytes": null,
+      "fps": 60.0024518040206,
+      "frames": 33630,
+      "max_ms": 19.866,
+      "mean_ms": 16.6659856378234,
+      "p95_ms": 16.775,
+      "p99_ms": 16.964
+    },
+    "greystone_runtime": {
+      "draw_max": 194.0,
+      "draw_min": 99.0,
+      "engine_peak_bytes": null,
+      "fps": 60.0025444278967,
+      "frames": 33750,
+      "max_ms": 20.947,
+      "mean_ms": 16.6659599111113,
+      "p95_ms": 16.749,
+      "p99_ms": 16.869
+    },
+    "mine": {
+      "draw_max": 206.0,
+      "draw_min": 176.0,
+      "engine_peak_bytes": null,
+      "fps": 60.0024964809813,
+      "frames": 33730,
+      "max_ms": 20.204,
+      "mean_ms": 16.66597322858,
+      "p95_ms": 16.75,
+      "p99_ms": 16.891
+    },
+    "npc_commerce": {
+      "draw_max": 358.0,
+      "draw_min": 99.0,
+      "engine_peak_bytes": null,
+      "fps": 58.9979303464257,
+      "frames": 1910,
+      "max_ms": 126.265,
+      "mean_ms": 16.9497471204188,
+      "p95_ms": 17.208,
+      "p99_ms": 26.396
+    },
+    "prologue": {
+      "draw_max": 625.0,
+      "draw_min": 0.0,
+      "engine_peak_bytes": null,
+      "fps": 55.2124822175537,
+      "frames": 1042,
+      "max_ms": 461.173,
+      "mean_ms": 18.1118464491363,
+      "p95_ms": 17.182,
+      "p99_ms": 66.842
+    },
+    "transition": {
+      "draw_max": 441.0,
+      "draw_min": 99.0,
+      "engine_peak_bytes": null,
+      "fps": 59.9975378788157,
+      "frames": 1620,
+      "max_ms": 21.199,
+      "mean_ms": 16.667350617284,
+      "p95_ms": 16.766,
+      "p99_ms": 16.876
+    }
+  },
+  "memory": {
+    "working_set_bytes": {
+      "peak_mib": 658.90625,
+      "first_mib": 309.1640625,
+      "last_mib": 645.75
+    },
+    "private_bytes": {
+      "peak_mib": 847.91796875,
+      "first_mib": 328.1171875,
+      "last_mib": 816.03515625
+    },
+    "peak_working_set_bytes": {
+      "peak_mib": 671.96875,
+      "first_mib": 309.1640625,
+      "last_mib": 671.96875
+    }
+  },
+  "transition_ms": {
+    "n": 81,
+    "mean": 328.84365432098764,
+    "p95": 331.941,
+    "p99": 332.258,
+    "max": 332.258
+  },
+  "transition_count": 81,
+  "operations_ms": {
+    "battle_launch_to_input": {
+      "n": 54,
+      "mean": 558.2740185185186,
+      "p95": 1132.984,
+      "p99": 1133.079,
+      "max": 1133.079
+    },
+    "save_validation_and_apply": {
+      "n": 162,
+      "mean": 364.86806172839505,
+      "p95": 366.854,
+      "p99": 367.027,
+      "max": 367.321
+    }
+  },
+  "spikes_top": [
+    {
+      "ms": 461.173,
+      "phase": "prologue",
+      "seconds": 0.461173
+    },
+    {
+      "ms": 193.868,
+      "phase": "battle",
+      "seconds": 419.319693
+    },
+    {
+      "ms": 187.285,
+      "phase": "prologue",
+      "seconds": 8.435957
+    },
+    {
+      "ms": 178.506,
+      "phase": "battle",
+      "seconds": 1760.891563
+    },
+    {
+      "ms": 178.333,
+      "phase": "battle",
+      "seconds": 83.902355
+    },
+    {
+      "ms": 178.233,
+      "phase": "battle",
+      "seconds": 754.720931
+    },
+    {
+      "ms": 175.981,
+      "phase": "battle",
+      "seconds": 1425.504245
+    },
+    {
+      "ms": 175.677,
+      "phase": "battle",
+      "seconds": 1090.121492
+    },
+    {
+      "ms": 173.423,
+      "phase": "battle",
+      "seconds": 62.268945
+    },
+    {
+      "ms": 172.448,
+      "phase": "prologue",
+      "seconds": 6.033906
+    },
+    {
+      "ms": 167.182,
+      "phase": "battle",
+      "seconds": 1068.156745
+    },
+    {
+      "ms": 166.942,
+      "phase": "battle",
+      "seconds": 732.753908
+    },
+    {
+      "ms": 165.279,
+      "phase": "battle",
+      "seconds": 1738.924061
+    },
+    {
+      "ms": 163.643,
+      "phase": "battle",
+      "seconds": 397.336429
+    },
+    {
+      "ms": 163.467,
+      "phase": "prologue",
+      "seconds": 11.549205
+    },
+    {
+      "ms": 163.296,
+      "phase": "battle",
+      "seconds": 1403.538945
+    },
+    {
+      "ms": 150.458,
+      "phase": "prologue",
+      "seconds": 4.699739
+    },
+    {
+      "ms": 135.708,
+      "phase": "prologue",
+      "seconds": 2.334901
+    },
+    {
+      "ms": 131.508,
+      "phase": "prologue",
+      "seconds": 14.563873
+    },
+    {
+      "ms": 126.265,
+      "phase": "npc_commerce",
+      "seconds": 375.274911
+    }
+  ],
+  "spikes_retained": 34,
+  "spike_retention_limit": 300,
+  "map_checkpoints": {
+    "greystone_runtime": {
+      "n": 27,
+      "nodes": [
+        1100.0
+      ],
+      "objects_min": 4159.0,
+      "objects_max": 4159.0
+    },
+    "forest": {
+      "n": 27,
+      "nodes": [
+        833.0
+      ],
+      "objects_min": 3913.0,
+      "objects_max": 3913.0
+    },
+    "mine": {
+      "n": 27,
+      "nodes": [
+        470.0
+      ],
+      "objects_min": 3614.0,
+      "objects_max": 3614.0
+    }
+  },
+  "unavailable_release_monitors": [
+    "MEMORY_STATIC",
+    "OBJECT_ORPHAN_NODE_COUNT"
+  ],
+  "human_playthrough": false,
+  "android_verified": false,
+  "method_notes": "60 FPS cap; all frame wall times include test work. Native OS memory includes diagnostics. Transition latency includes authored fades. Zero release-only monitor values are unavailable, not zero memory or proof of zero orphan nodes."
+}

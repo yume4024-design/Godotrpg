@@ -1,0 +1,43 @@
+{
+  "all_sampled_frames": 109564,
+  "all_sampled_mean_ms": 16.69905230732732,
+  "all_sampled_fps": 59.8836378014825,
+  "spikes_without_capture_overlap": [
+    {
+      "ms": 461.173,
+      "phase": "prologue",
+      "seconds": 0.461173
+    },
+    {
+      "ms": 96.108,
+      "phase": "prologue",
+      "seconds": 0.557281
+    },
+    {
+      "ms": 53.063,
+      "phase": "prologue",
+      "seconds": 0.610344
+    },
+    {
+      "ms": 39.078,
+      "phase": "prologue",
+      "seconds": 0.649422
+    },
+    {
+      "ms": 46.31,
+      "phase": "prologue",
+      "seconds": 4.778348
+    },
+    {
+      "ms": 41.737,
+      "phase": "prologue",
+      "seconds": 6.991751
+    }
+  ],
+  "capture_overlapping_spike_count": 28,
+  "pid": 28500,
+  "process_wall_seconds": 1831.7203304,
+  "exit_code": 0,
+  "source_dirty_files": [],
+  "timing_label_note": "Labels are sampled at process_frame; boundary-frame work can be charged to the following phase. Use capture intervals, not phase labels alone, for attribution."
+}

@@ -1,0 +1,34 @@
+{
+  "base_commit": "d03db5fa5e77aeb4a8710cd7c441e1048e355bed",
+  "candidate": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\builds\\g08\\candidate\\20261020-215831\\ProjectCrystal.exe",
+  "qa": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\builds\\g08\\qa\\20261020-223022\\ProjectCrystal.exe",
+  "profile": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g08\\20261020-223102\\profile",
+  "legacy_fixture_sha256": "03B537BC655864953DB207251AD0A175E3767D197D8C3C16BAB176830FBA270A",
+  "results": [
+    {
+      "label": "candidate-smoke",
+      "seconds": 4.3819964,
+      "exit_code": 0,
+      "log": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g08\\20261020-223102\\candidate-smoke.log",
+      "result": []
+    },
+    {
+      "label": "qa-prologue",
+      "seconds": 23.4825086,
+      "exit_code": 0,
+      "log": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g08\\20261020-223102\\qa-prologue.log",
+      "result": [
+        "G08_CANDIDATE_RESULT checks=114 failures=0"
+      ]
+    },
+    {
+      "label": "qa-restart",
+      "seconds": 2.321591,
+      "exit_code": 0,
+      "log": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME\\artifacts\\g08\\20261020-223102\\qa-restart.log",
+      "result": [
+        "G08_CANDIDATE_RESULT checks=14 failures=0"
+      ]
+    }
+  ]
+}
