@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "id": "item_merchant",
+  "category": "npc",
+  "candidate_gate": "PASS",
+  "formal_integration_gate": "NOT_STARTED",
+  "triangles": 12573,
+  "budget": 15000,
+  "bones": 20,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "model_sha256": "6cddbb0a5ca2a487de25d8a7a8838e55e99455ab02e9e0977410a98c693e8a5c",
+  "native_blend_sha256": "f5384a6008d97f6b103bc14b6a3ff0e00ebf66d2890ddc5f42a37a822fc1a9d5",
+  "source_geometry_modified": false,
+  "source_material_modified": false,
+  "attempt": 2,
+  "previous_attempt": "../idle_talk_v1/deformation_fail.json",
+  "tests": {
+    "evaluated_frames": 98,
+    "graphical_motion_checks": 223,
+    "graphical_transition_checks": 19,
+    "blacksmith_controller_regression": 19
+  },
+  "limitations": [
+    "Stationary NPC, no walking or finger rig",
+    "No cloth physics or item handoff animation",
+    "Material/geometry limitations of reviewed static source remain; formal gameplay integration not tested",
+    "11378 boundary edges /11400 nonmanifold edges in split source mesh; not closed topology certification",
+    "Existing small collar/armpit/hem colour or overlap defects retained; no watertight or individual finger claim"
+  ]
+}

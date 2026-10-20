@@ -3,3 +3,6 @@
 # Diagnostic Blender scene copies can be rebuilt from the preserved source.
 **/inspection/*_full.blend
 **/review/*_full.blend
+# Failed merchant binding remains local; keep its recipe and failure evidence.
+item_merchant/idle_talk_v1/*.blend
+item_merchant/idle_talk_v1/*.glb

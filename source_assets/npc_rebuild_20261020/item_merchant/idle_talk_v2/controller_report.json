@@ -1,0 +1,11 @@
+{
+	"asset": "item_merchant",
+	"checks": 19,
+	"failures": [],
+	"formal_gameplay_test": false,
+	"graphical": true,
+	"model": "res://assets/models/rebuilt_npc/item_merchant.glb",
+	"model_sha256": "6cddbb0a5ca2a487de25d8a7a8838e55e99455ab02e9e0977410a98c693e8a5c",
+	"physical_input_test": false,
+	"saves_written": false
+}

@@ -1,9 +1,9 @@
 [CmdletBinding()]
-param([switch]$Controller)
+param([ValidateSet('blacksmith','item_merchant')][string]$Asset = 'blacksmith', [switch]$Controller)
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
 $taskEngine = 'D:\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-stable_win64_console.exe'
-$taskOutput = Join-Path $taskRoot 'artifacts/asset_a05/blacksmith'
+$taskOutput = Join-Path $taskRoot ('artifacts/asset_a05/' + $Asset)
 $taskProfile = Join-Path $taskOutput 'profile'
 $taskLocal = Join-Path $taskOutput 'local'
 New-Item -ItemType Directory -Force $taskProfile, $taskLocal | Out-Null
@@ -13,8 +13,11 @@ try {
     $env:APPDATA = $taskProfile
     $env:LOCALAPPDATA = $taskLocal
     $taskArguments = @('--path', $taskRoot, '--log-file', (Join-Path $taskOutput $(if ($Controller) {'controller.log'} else {'rig.log'})))
-    if ($Controller) {$taskArguments += @('--script', 'res://tests/npc_visual_test.gd')}
-    else {$taskArguments += @('--script', 'res://tests/asset_motion_review.gd', '--', '--id=blacksmith', '--category=npc', '--height=1.85', '--model=res://assets/models/rebuilt_npc/blacksmith.glb')}
+    if ($Controller) {$taskArguments += @('--script', 'res://tests/npc_visual_test.gd', '--', ('--id=' + $Asset))}
+    else {
+        $taskHeight = if ($Asset -eq 'blacksmith') {'1.85'} else {'1.65'}
+        $taskArguments += @('--script', 'res://tests/asset_motion_review.gd', '--', ('--id=' + $Asset), '--category=npc', ('--height=' + $taskHeight), ('--model=res://assets/models/rebuilt_npc/' + $Asset + '.glb'))
+    }
     & $taskEngine @taskArguments
     if ($LASTEXITCODE -ne 0) {throw "NPC rig review failed ($LASTEXITCODE)"}
 } finally {

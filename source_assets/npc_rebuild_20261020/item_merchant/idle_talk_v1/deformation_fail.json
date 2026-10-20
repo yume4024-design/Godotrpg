@@ -1,0 +1,45 @@
+{
+  "input": "source_assets\\npc_rebuild_20261020\\item_merchant\\idle_talk_v1\\item_merchant_npc.blend",
+  "sha256": "7dbdba9a6826ce21aabbf04c75c761c047a5c56d66c1544f0a4548f719870a78",
+  "category": "npc",
+  "maximum_triangles": 15000,
+  "bones": 20,
+  "actions": {
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 12573,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.1865404343943469,
+      "floor_range": [
+        0.0020000264048576355,
+        0.0020000264048576355
+      ]
+    },
+    "talk": {
+      "frames": 49,
+      "maximum_triangles": 12573,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 5.1871439392402126,
+      "floor_range": [
+        0.0020000264048576355,
+        0.0020000264048576355
+      ]
+    }
+  },
+  "total_frames": 98,
+  "topology_warnings": [
+    {
+      "mesh": "ItemMerchantBody",
+      "boundary_edges": 11378,
+      "nonmanifold_edges": 11400
+    }
+  ],
+  "failures": [
+    "talk:EXCESSIVE_EDGE_STRETCH"
+  ],
+  "status": "FAIL",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

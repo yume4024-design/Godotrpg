@@ -1,0 +1,21 @@
+{
+  "source": "source_assets\\npc_rebuild_20261020\\item_merchant\\surface_v1\\item_merchant_surface.blend",
+  "source_sha256": "fc0b53f112a6cb8b88dec4d0cd8a4a3ab461015d5d3a264f21354572ba769022",
+  "geometry_modified": false,
+  "height_m": 1.65,
+  "bones": 20,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "weight_sum_max_error": 3.818422555923462e-08,
+  "skirt_color_seed_vertices": 4961,
+  "skirt_weight_check_vertices": 4890,
+  "hand_weight_check_vertices": 116,
+  "weight_method": "Four nearest permitted bone capsules; blue cloth proximity with dedicated front/back skirt bones",
+  "limitations": [
+    "Stationary NPC, no walking or finger rig",
+    "No cloth physics or item handoff animation",
+    "Material/geometry limitations of reviewed static source remain; formal gameplay integration not tested"
+  ]
+}

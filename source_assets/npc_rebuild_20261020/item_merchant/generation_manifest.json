@@ -218,8 +218,21 @@
     "static_uv_import": "PASS",
     "graphical_preview": "PASS",
     "visual_surface": "IN_PROGRESS: small collar/armpit/hem overlaps remain",
-    "rig": "NOT_STARTED",
-    "animation": "NOT_STARTED",
+    "rig": "PASS: independent candidate only",
+    "animation": "PASS: 98 evaluated frames, 223+19 graphical checks",
     "formal_gameplay": "NOT_STARTED"
+  },
+  "rig_candidate": {
+    "file": "assets/models/rebuilt_npc/item_merchant.glb",
+    "sha256": "6cddbb0a5ca2a487de25d8a7a8838e55e99455ab02e9e0977410a98c693e8a5c",
+    "native_blend_sha256": "f5384a6008d97f6b103bc14b6a3ff0e00ebf66d2890ddc5f42a37a822fc1a9d5",
+    "triangles": 12573,
+    "bones": 20,
+    "clips": [
+      "idle",
+      "talk"
+    ],
+    "report": "source_assets/npc_rebuild_20261020/item_merchant/idle_talk_v2/validation_report.md",
+    "formal_integration": false
   }
 }

@@ -5,7 +5,7 @@
 | NPC | 實際成果 | 未完成 |
 |---|---|---|
 | 鐵匠 | 重用既有 9937 面／19 骨來源，停用問題 normal map；新副本 Idle／Talk、98 影格、Godot 動作 213／0、雙實例切換 19／0 | 正式 NPC 替換、實際對話事件／交易回歸；未驗收持鎚／擊砧或巡邏 |
-| 道具商 | 新 Pixal3D 靜態候選、原件／Blend、正背顏色局部修補、12573 面 Godot 預覽及 14 項圖形檢查 | 骨架、Idle／Talk、互動動作、裙擺權重、正式整合 |
+| 道具商 | 新 Pixal3D 候選及顏色修補；12573 面、20 骨、裙擺權重、Idle／Talk，98 影格、Godot 223＋19／0 | 正式對話／商店整合；未驗收手指、物品交接或巡邏 |
 | 旅館老闆 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
 | 男村民 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
 | 女村民 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
@@ -41,7 +41,7 @@ ComfyUI 0.41.3／comfy-cli 1.22.0，本機 RTX 3080 12GiB。生成前工具量�
 
 啟動 `tools/preview_npc_assets.ps1` 可看靜態候選；PackedScene 為 scenes/tools/npc_static_preview.tscn，模型為 assets/models/rebuilt_npc/item_merchant_static.glb。正式五 NPC ID、對話、商店價格、旅館、角色數值、旗標、獎勵、存檔及 v0.6.1 入口均未改；Android／iOS 暫停。
 
-下一件為道具商骨架／Idle／Talk，逐件驗證後才製作其餘 NPC；鐵匠候選結果見下節，正式整合仍保留 Gate。蝙蝠的失敗與人工拓樸需求不被此報告掩蓋。
+鐵匠與道具商候選結果見下節。逐件驗證後才製作其餘 NPC，正式整合仍保留 Gate。蝙蝠的失敗與人工拓樸需求不被此報告掩蓋。
 
 ## 鐵匠 Idle／Talk 候選
 
@@ -66,4 +66,26 @@ ComfyUI 0.41.3／comfy-cli 1.22.0，本機 RTX 3080 12GiB。生成前工具量�
 
 新增 `rigged_npc_visual.gd`、`scenes/characters/npc/blacksmith_visual.tscn` 僅負責展示；以實例私有動畫庫設定循環，沒有新增劇情／任務／交易管理器。候選 GLB SHA、原 Blend SHA、圖形／變形報告、失敗摘要與預覽封裝於同一來源目錄；原始日誌僅本機保留、不提交 Git。不得將舊測試報告套用到替換後的 GLB。
 
-尚未正式掛入灰石村或對話事件；沒有 NPC 交易／存讀檔、持鎚握把／擊砧、走路／巡邏或實體輸入完成宣稱。正式主場景、NPC ID、數值及 Schema 未改。道具商骨架與其餘三 NPC 仍未做，A05 整體 IN_PROGRESS。
+尚未正式掛入灰石村或對話事件；沒有 NPC 交易／存讀檔、持鎚握把／擊砧、走路／巡邏或實體輸入完成宣稱。正式主場景、NPC ID、數值及 Schema 未改。A05 整體 IN_PROGRESS。
+
+## 道具商骨架／裙擺及對話動作
+
+在原 surface_v1 副本新增 20 骨，保留 12573 面、UV 及材質；沒有重新減面或覆蓋原件。以藍裙色彩 4961 種子做接縫鄰近辨識，4890 頂點主要受前／後 Skirt 骨影響；169 手部頂點檢查不含裙／骨盆權重。四個最大影響、權重和誤差 3.83e-8。Idle／Talk 各 2 秒、無水平 root motion，腳底約 0.002m。
+
+首版 Talk 最大邊拉伸 5.18714 FAIL；實際診斷邊端發現部分指尖後移超出骨膠囊，被錯分給 Hips。保留 v1 原件（僅本機）、recipe、失敗報告及逐邊權重。v2 依實際手掌位置校準腕／掌骨，補全手部輪廓分區，**未降低 Talk 手勢或拉伸驗證門檻**；98 影格 PASS，Idle 最大拉伸 1.13832、Talk 2.25157，循環端點位移 0。
+
+實際命令：
+
+```powershell
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' -b --factory-startup --python-exit-code 1 --python scripts/tools/build_merchant_npc.py -- --input source_assets/npc_rebuild_20261020/item_merchant/surface_v1/item_merchant_surface.blend --output source_assets/npc_rebuild_20261020/item_merchant/idle_talk_v2
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' -b --factory-startup --python-exit-code 1 --python scripts/tools/audit_asset_motion.py -- --input source_assets/npc_rebuild_20261020/item_merchant/idle_talk_v2/item_merchant_npc.blend --category npc --output artifacts/asset_a05/item_merchant/rig_deformation.json
+./tools/review_npc_rig.ps1 -Asset item_merchant
+./tools/review_npc_rig.ps1 -Asset item_merchant -Controller
+./tools/review_npc_rig.ps1 -Asset blacksmith -Controller
+```
+
+最後 builder 命令僅供新資料夾重現，既存輸出會拒絕覆寫；不可直接覆蓋已封裝 v2。GLB 嚴格 UV／Skin 及 Blender 重匯入均 PASS，Godot 載入 PASS（check-20261020-094557-842.log）；動作圖形 **223／0**、雙實例／重建 **19／0**，鐵匠控制器回歸 **19／0**。已查看全部四面及 Idle／Talk 正側、雙實例切換。獨立場景 Draw Calls=1、引擎記憶體 36421797 bytes，不等同村莊效能。
+
+候選：`assets/models/rebuilt_npc/item_merchant.glb`、`scenes/characters/npc/item_merchant_visual.tscn`；封裝於 source_assets/npc_rebuild_20261020/item_merchant/idle_talk_v2/，測試 SHA 與實際模型一致。靜態舊預覽仍保留，其標籤僅描述靜態檔；新骨架不是正式商店已替換的證據。
+
+限制：原拆分網格 11378 邊界／11400 非流形邊；領口、腋下、裙襬色彩或交疊、AI 手指形狀仍保留。無布料模擬、逐指骨、走動／巡邏或物品交接動作；目前既有商店為對話／UI 交易，候選只驗收必要 Idle／Talk。正式 NPC 整合與商店、序章、存讀檔回歸尚未執行。
