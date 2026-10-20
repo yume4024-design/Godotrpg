@@ -1,0 +1,9 @@
+{
+  "span": 1.815,
+  "center_z": 0.825,
+  "height": 1.65,
+  "input": "source_assets\\npc_rebuild_20261020\\villager_female\\generated_textured.glb",
+  "input_sha256": "0a9f7675492d114765cebae971469014ae143a8813d8e6ca416d20f079fd2dd0",
+  "method": "Base colour emission render, orthographic, standard colour transform; unchanged topology",
+  "back_horizontal_axis": "Back camera reverses world X"
+}

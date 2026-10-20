@@ -1,0 +1,34 @@
+[
+  {
+    "view": "front",
+    "input": "albedo_front.png",
+    "output": "front_repair.png",
+    "sha256": "55fc4db539443b5972a48d22ecfcda7ec8da1f40d21af720454a264eea313357",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "tool": "Built-in image_gen; no API key or CLI fallback"
+  },
+  {
+    "view": "back",
+    "input": "albedo_back.png",
+    "output": "back_repair.png",
+    "sha256": "aee722fe68087fb1741c48ec7d6be100051e2f2e405f37d23650361565a8d42a",
+    "size": [
+      1254,
+      1254
+    ],
+    "mode": "RGBA",
+    "alpha_range": [
+      0,
+      255
+    ],
+    "tool": "Built-in image_gen; no API key or CLI fallback"
+  }
+]

@@ -12,7 +12,20 @@ from mathutils.bvhtree import BVHTree
 p = argparse.ArgumentParser()
 p.add_argument('--source', type=Path, required=True)
 p.add_argument('--output', type=Path, required=True)
+p.add_argument('--name', default='item_merchant')
+p.add_argument('--regions', type=Path)
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
+default_regions = [(275, 230, 750, 480), (405, 830, 620, 910)]
+view_regions = {'front': default_regions, 'back': default_regions}
+if a.regions:
+    view_regions = json.loads(a.regions.read_text(encoding='utf8'))
+    if set(view_regions) != {'front', 'back'}: raise ValueError('Specify both view regions')
+    for rectangles in view_regions.values():
+        if not rectangles: raise ValueError('Missing bounded repair region')
+        for rectangle in rectangles:
+            if (len(rectangle) != 4 or not all(isinstance(value, int) for value in rectangle) or
+                not 0 <= rectangle[0] < rectangle[2] <= 1024 or not 0 <= rectangle[1] < rectangle[3] <= 1024):
+                raise ValueError('Repair rectangles must be bounded in the source 1024 canvas')
 a.output.mkdir(parents=True, exist_ok=False)
 bpy.ops.wm.open_mainfile(filepath=str((a.source / 'baseline.blend').resolve()))
 body = next(obj for obj in bpy.context.scene.objects if obj.type == 'MESH')
@@ -23,8 +36,8 @@ bm = bmesh.new()
 bm.from_mesh(body.data)
 tree = BVHTree.FromBMesh(bm)
 patches = []
-regions = [(275, 230, 750, 480), (405, 830, 620, 910)]
 for view, sign in [('front', -1), ('back', 1)]:
+    regions = view_regions[view]
     path = a.source / (view + '_repair.png')
     image = bpy.data.images.load(str(path.resolve()))
     uv = body.data.uv_layers.new(name='Patch_' + view)
@@ -50,7 +63,7 @@ for view, sign in [('front', -1), ('back', 1)]:
 bm.free()
 body.data.uv_layers.active = body.data.uv_layers[main_uv]
 body.data.uv_layers[main_uv].active_render = True
-target_image = bpy.data.images.new('ItemMerchantRepairedAlbedo', width=4096, height=4096, alpha=False)
+target_image = bpy.data.images.new(a.name + '_RepairedAlbedo', width=4096, height=4096, alpha=False)
 target_image.colorspace_settings.name = 'sRGB'
 saved = []
 for material in body.data.materials:
@@ -109,12 +122,12 @@ for view, uv_name, mask_name, image, selected, path in patches:
 for image in list(bpy.data.images):
     if image.users == 0 and image.type != 'RENDER_RESULT': bpy.data.images.remove(image)
 bpy.ops.file.pack_all()
-bpy.ops.wm.save_as_mainfile(filepath=str((a.output / 'item_merchant_surface.blend').resolve()))
-bpy.ops.export_scene.gltf(filepath=str((a.output / 'item_merchant_surface.glb').resolve()), export_format='GLB',
+bpy.ops.wm.save_as_mainfile(filepath=str((a.output / (a.name + '_surface.blend')).resolve()))
+bpy.ops.export_scene.gltf(filepath=str((a.output / (a.name + '_surface.glb')).resolve()), export_format='GLB',
                          use_selection=True, export_animations=False)
 (a.output / 'surface_report.json').write_text(json.dumps({'source': str(a.source), 'projection': projection,
     'method': 'Reviewed imagegen colour repair, bounded visible-surface UV projection and emission-only bake',
-    'regions_at_1024': regions, 'topology_modified': False, 'rigged': False,
+    'regions_at_1024': view_regions, 'topology_modified': False, 'rigged': False,
     'material_change': 'Baked normal map disabled after controlled diagnostic showed false black tears',
     'patches': [{'view': view, 'selected_polygons': selected, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
                 for view, uv, mask, image, selected, path in patches]}, indent=2), encoding='utf8')

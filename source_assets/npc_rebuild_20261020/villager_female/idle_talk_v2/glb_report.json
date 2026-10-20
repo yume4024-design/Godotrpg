@@ -1,0 +1,48 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "assets\\models\\rebuilt_npc\\villager_female.glb",
+    "category": "npc",
+    "sha256": "f7759edc8d7e8605418264dc5dfb8fb83337faecf3aef395d9473670c1323952",
+    "maximum_triangles": 15000,
+    "triangles": 13515,
+    "headroom_triangles": 1485,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.4528632164001465e-07,
+    "primitives": [
+      {
+        "node": 20,
+        "mesh": 0,
+        "triangles": 13515,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      20
+    ],
+    "materials": 1,
+    "animations": [
+      "idle",
+      "talk"
+    ],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 13515,
+  "status": "PASS"
+}

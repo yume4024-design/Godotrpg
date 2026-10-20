@@ -1,0 +1,43 @@
+{
+  "input": "source_assets\\npc_rebuild_20261020\\villager_female\\idle_talk_v2\\villager_female_npc.blend",
+  "sha256": "6c21996e15d5980095e5ae1655929eb481963afbac27f79105a65e20a2bc182c",
+  "category": "npc",
+  "maximum_triangles": 15000,
+  "bones": 20,
+  "actions": {
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 13515,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.06639706626508,
+      "floor_range": [
+        0.0020000264048576355,
+        0.0020000264048576355
+      ]
+    },
+    "talk": {
+      "frames": 49,
+      "maximum_triangles": 13515,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.323650696420006,
+      "floor_range": [
+        0.0020000264048576355,
+        0.0020000264048576355
+      ]
+    }
+  },
+  "total_frames": 98,
+  "topology_warnings": [
+    {
+      "mesh": "VillagerFemaleBody",
+      "boundary_edges": 10631,
+      "nonmanifold_edges": 10635
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

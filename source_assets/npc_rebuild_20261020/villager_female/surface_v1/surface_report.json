@@ -1,0 +1,46 @@
+{
+  "source": "source_assets\\npc_rebuild_20261020\\villager_female\\surface_baseline",
+  "projection": {
+    "span": 1.815,
+    "center_z": 0.825,
+    "height": 1.65,
+    "input": "source_assets\\npc_rebuild_20261020\\villager_female\\generated_textured.glb",
+    "input_sha256": "0a9f7675492d114765cebae971469014ae143a8813d8e6ca416d20f079fd2dd0",
+    "method": "Base colour emission render, orthographic, standard colour transform; unchanged topology",
+    "back_horizontal_axis": "Back camera reverses world X"
+  },
+  "method": "Reviewed imagegen colour repair, bounded visible-surface UV projection and emission-only bake",
+  "regions_at_1024": {
+    "front": [
+      [
+        225,
+        255,
+        800,
+        475
+      ]
+    ],
+    "back": [
+      [
+        225,
+        255,
+        800,
+        475
+      ]
+    ]
+  },
+  "topology_modified": false,
+  "rigged": false,
+  "material_change": "Baked normal map disabled after controlled diagnostic showed false black tears",
+  "patches": [
+    {
+      "view": "front",
+      "selected_polygons": 583,
+      "sha256": "55fc4db539443b5972a48d22ecfcda7ec8da1f40d21af720454a264eea313357"
+    },
+    {
+      "view": "back",
+      "selected_polygons": 607,
+      "sha256": "aee722fe68087fb1741c48ec7d6be100051e2f2e405f37d23650361565a8d42a"
+    }
+  ]
+}

@@ -1,0 +1,11 @@
+{
+	"asset": "villager_female",
+	"checks": 19,
+	"failures": [],
+	"formal_gameplay_test": false,
+	"graphical": true,
+	"model": "res://assets/models/rebuilt_npc/villager_female.glb",
+	"model_sha256": "f7759edc8d7e8605418264dc5dfb8fb83337faecf3aef395d9473670c1323952",
+	"physical_input_test": false,
+	"saves_written": false
+}

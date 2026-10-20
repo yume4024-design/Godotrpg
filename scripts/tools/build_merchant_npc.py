@@ -1,4 +1,4 @@
-"""Blender: bind the reviewed merchant copy, preserving geometry, UV and albedo."""
+"""Bind reviewed skirted NPC copies with per-profile cloth masks; preserve geometry."""
 import argparse
 import hashlib
 import json
@@ -13,6 +13,7 @@ from mathutils.kdtree import KDTree
 p = argparse.ArgumentParser()
 p.add_argument('--input', type=Path, required=True)
 p.add_argument('--output', type=Path, required=True)
+p.add_argument('--profile', choices=['item_merchant', 'villager_female'], default='item_merchant')
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
 a.output.mkdir(parents=True, exist_ok=False)
 bpy.ops.wm.open_mainfile(filepath=str(a.input.resolve()))
@@ -20,7 +21,7 @@ body = next(obj for obj in bpy.context.scene.objects if obj.type == 'MESH')
 assert not any(obj.type == 'ARMATURE' for obj in bpy.context.scene.objects)
 before = np.array([tuple(v.co) for v in body.data.vertices], dtype=np.float32)
 assert abs(float(np.ptp(before[:, 2])) - 1.65) < .001
-body.name = 'ItemMerchantBody'
+body.name = 'ItemMerchantBody' if a.profile == 'item_merchant' else 'VillagerFemaleBody'
 
 spec = {'Root': ((0, 0, 0), (0, 0, .9), None),
         'Hips': ((0, 0, .91), (0, 0, 1.02), 'Root'),
@@ -40,7 +41,7 @@ for side, sign in [('Left', 1), ('Right', -1)]:
 bpy.ops.object.select_all(action='DESELECT')
 bpy.ops.object.armature_add()
 rig = bpy.context.object
-rig.name = 'ItemMerchantRig'
+rig.name = 'ItemMerchantRig' if a.profile == 'item_merchant' else 'VillagerFemaleRig'
 bpy.ops.object.mode_set(mode='EDIT')
 rig.data.edit_bones.remove(rig.data.edit_bones[0])
 for name, (head, tail, parent) in spec.items():
@@ -52,7 +53,7 @@ bpy.ops.object.mode_set(mode='OBJECT')
 body.vertex_groups.clear()
 for name in spec: body.vertex_groups.new(name=name)
 
-# Distinguish blue cloth from skin, brown boots and the belt pouch; proximity
+# Distinguish each profile's cloth from skin, boots and the belt; proximity
 # fills small texture seams without assigning the hanging hands to the skirt.
 image = next(node.image for node in body.data.materials[0].node_tree.nodes
              if node.type == 'TEX_IMAGE' and node.image)
@@ -62,12 +63,16 @@ pixels = pixels.reshape((image.size[1], image.size[0], 4))
 seeds = set()
 for loop in body.data.loops:
     vertex = body.data.vertices[loop.vertex_index]
-    if not (.19 < vertex.co.z < .99 and abs(vertex.co.x) < .40): continue
+    lower = .19 if a.profile == 'item_merchant' else .36
+    if not (lower < vertex.co.z < .99 and abs(vertex.co.x) < .40): continue
     uv = body.data.uv_layers.active.data[loop.index].uv
     color = pixels[max(0, min(image.size[1]-1, int(uv.y*image.size[1]))),
                    max(0, min(image.size[0]-1, int(uv.x*image.size[0])))][:3]
-    if color[2] > color[0]*1.15 and color[2] > color[1]*1.03: seeds.add(vertex.index)
-assert len(seeds) > 500, 'No reliable blue skirt region; inspect material before binding'
+    cloth_color = (color[2] > color[0]*1.15 and color[2] > color[1]*1.03) if a.profile == 'item_merchant' else (
+        .04 < color[0] < .6 and color[1] < .18 and color[2] < .18 and
+        color[0] > color[1]*1.5 and color[0] > color[2]*1.5)
+    if cloth_color: seeds.add(vertex.index)
+assert len(seeds) > 500, 'No reliable skirt colour region; inspect material before binding'
 cloth = KDTree(len(seeds))
 for index in seeds: cloth.insert(body.data.vertices[index].co, index)
 cloth.balance()
@@ -98,9 +103,23 @@ for vertex in body.data.vertices:
     elif arm:
         names = arm_names if point.z < 1.17 else arm_names + ['Chest']
         weights = {name: 1/(distance(point, *spec[name][:2])+.025)**4 for name in names}
+        if a.profile == 'villager_female':
+            # Her narrower waist approaches the inner sleeve. A hard arm/body
+            # cutoff tore adjacent waist vertices; blend across that boundary.
+            influence = smooth(.23, .30, abs(point.x)) if point.z < 1.14 else smooth(.18, .25, abs(point.x))
+            if hand_region: influence = 1.
+            core = {'Hips': 1.} if point.z < .99 else {
+                name: 1/(distance(point, *spec[name][:2])+.025)**4
+                for name in ['Hips', 'Spine', 'Chest', 'Neck', 'Head']}
+            arm_total, core_total = sum(weights.values()), sum(core.values())
+            blend = {name: weight/core_total*(1-influence) for name, weight in core.items()}
+            for name, weight in weights.items(): blend[name] = blend.get(name, 0) + weight/arm_total*influence
+            weights = blend
         if point.z < .86 and abs(point.x) > .34: hand_vertices.append(vertex.index)
     elif point.z < .20:
         weights = {'Foot'+side: 1.}
+    elif a.profile == 'villager_female' and point.z < .36 and abs(point.x) < .20:
+        weights = {'Shin'+side: 1.}
     elif point.z < .99:
         _, _, nearest = cloth.find(point)
         influence = (1-smooth(.018, .045, nearest)) * (1-smooth(.88, .98, point.z))
@@ -166,14 +185,14 @@ body.select_set(True)
 rig.select_set(True)
 bpy.context.view_layer.objects.active = rig
 bpy.ops.file.pack_all()
-bpy.ops.wm.save_as_mainfile(filepath=str((a.output/'item_merchant_npc.blend').resolve()))
-bpy.ops.export_scene.gltf(filepath=str((a.output/'item_merchant_npc.glb').resolve()), export_format='GLB',
+bpy.ops.wm.save_as_mainfile(filepath=str((a.output/(a.profile+'_npc.blend')).resolve()))
+bpy.ops.export_scene.gltf(filepath=str((a.output/(a.profile+'_npc.glb')).resolve()), export_format='GLB',
                          use_selection=True, export_animations=True, export_animation_mode='ACTIONS', export_frame_range=False)
-(a.output/'npc_recipe.json').write_text(json.dumps({'source': str(a.input),
+(a.output/'npc_recipe.json').write_text(json.dumps({'source': str(a.input), 'profile': a.profile,
     'source_sha256': hashlib.sha256(a.input.read_bytes()).hexdigest(), 'geometry_modified': False,
     'height_m': 1.65, 'bones': len(spec), 'clips': ['idle', 'talk'], 'weight_sum_max_error': error,
     'skirt_color_seed_vertices': len(seeds), 'skirt_weight_check_vertices': len(skirt_vertices),
-    'hand_weight_check_vertices': len(hand_vertices), 'weight_method': 'Four nearest permitted bone capsules; blue cloth proximity with dedicated front/back skirt bones',
+    'hand_weight_check_vertices': len(hand_vertices), 'weight_method': 'Four nearest permitted bone capsules; profile-specific cloth colour proximity and dedicated front/back skirt bones',
     'limitations': ['Stationary NPC, no walking or finger rig', 'No cloth physics or item handoff animation',
                     'Material/geometry limitations of reviewed static source remain; formal gameplay integration not tested']}, indent=2), encoding='utf8')
-print('MERCHANT_NPC_READY', len(spec), 'bones; source geometry unchanged', flush=True)
+print('SKIRTED_NPC_READY', a.profile, len(spec), 'bones; source geometry unchanged', flush=True)

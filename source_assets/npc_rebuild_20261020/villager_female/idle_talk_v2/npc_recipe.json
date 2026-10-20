@@ -1,0 +1,22 @@
+{
+  "source": "source_assets\\npc_rebuild_20261020\\villager_female\\surface_v1\\villager_female_surface.blend",
+  "profile": "villager_female",
+  "source_sha256": "32dd37062671b06e045edfb02a110ebc2a2da645895ce4d0e8065bc4a720e86f",
+  "geometry_modified": false,
+  "height_m": 1.65,
+  "bones": 20,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "weight_sum_max_error": 4.842877388000488e-08,
+  "skirt_color_seed_vertices": 1699,
+  "skirt_weight_check_vertices": 1358,
+  "hand_weight_check_vertices": 256,
+  "weight_method": "Four nearest permitted bone capsules; profile-specific cloth colour proximity and dedicated front/back skirt bones",
+  "limitations": [
+    "Stationary NPC, no walking or finger rig",
+    "No cloth physics or item handoff animation",
+    "Material/geometry limitations of reviewed static source remain; formal gameplay integration not tested"
+  ]
+}

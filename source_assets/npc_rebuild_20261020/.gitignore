@@ -10,3 +10,7 @@ item_merchant/idle_talk_v1/*.glb
 innkeeper/surface_diagnosis/baseline.blend
 innkeeper/surface_v*/*.blend
 innkeeper/surface_v*/*.glb
+# Female villager failed binding and rebuildable preparation scene stay local.
+villager_female/idle_talk_v1/*.blend
+villager_female/idle_talk_v1/*.glb
+villager_female/surface_baseline/baseline.blend

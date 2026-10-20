@@ -8,7 +8,7 @@
 | 道具商 | 新 Pixal3D 候選及顏色修補；12573 面、20 骨、裙擺權重、Idle／Talk，98 影格、Godot 223＋19／0 | 正式對話／商店整合；未驗收手指、物品交接或巡邏 |
 | 旅館老闆 | 單件生成完成，原貼圖 13651 面；圍裙黑縫及兩版修整失敗均保存 | HUMAN_REVIEW：人工重拓樸，骨架／Idle／Talk／正式整合未開始 |
 | 男村民 | 新生成原件及 13701 面／18 骨 Idle／Talk 候選；98 影格、Godot 203＋19／0 | 正式對話／場景整合；走動／巡邏未驗收 |
-| 女村民 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
+| 女村民 | 新生成及衣料回烘；13515 面／20 骨、Idle／Talk／裙擺權重，98 影格、Godot 223＋19／0 | 正式對話／場景整合；走動／巡邏及裙子物理未驗收 |
 
 ## 道具商實際生成
 
@@ -121,3 +121,27 @@ ComfyUI 0.41.3／comfy-cli 1.22.0，本機 RTX 3080 12GiB。生成前工具量�
 builder 僅可輸出至新資料夾，既存輸出拒絕覆寫。嚴格 GLB UV／Skin、Blender 重匯入及 Godot Check 均 PASS（check-20261020-101205-377.log）。Godot Windows 圖形動作 **203／0**、雙實例切換／重建 **19／0**，道具商控制器回歸 **19／0**；已查看四面、Idle／Talk 正側與雙實例畫面，未見明顯幾何碎片。獨立場景 Draw Calls=1、引擎記憶體 36420935 bytes，不是整村 FPS／效能驗收。
 
 `assets/models/rebuilt_npc/villager_male.glb`、`scenes/characters/npc/villager_male_visual.tscn` 與來源 idle_talk_v1 下的 Blend／報告／九張實際截圖已封裝，GLB／Blend SHA 均與測試一致。沒有逐指骨、走動／巡邏、物品握把或正式對話／故事／存檔及實體輸入完成宣稱。正式村民 ID、互動範圍與劇情不變。
+
+## 女村民 — 衣料修補／Idle／Talk 候選 PASS
+
+四路條件預覽 1479588d-25ef-40c4-8925-fc4cee8dd53c、完整模型 3fe0da55-11a3-4ef0-b5df-5dd09250b8a1 均 completed／已取回，條件四面已檢視。最新工作流 SHA、固定 seed 與 1536／4096／768／13800 目標沿用，兩份 API validate 0 errors／warnings、無 partner nodes，重工作前實測 VRAM 可用 11041703030 bytes。
+
+原始形狀 10156728 面／181555336 bytes 留本機 outputs；貼圖 GLB 13516 面／18318056 bytes，SHA 0a9f7675492d114765cebae971469014ae143a8813d8e6ca416d20f079fd2dd0。Blender 匯入 13515（丟棄 1 個不可表示面），未再減面。
+
+同網格 CPU 正背 normal map 對照後，白袖仍有膚色色斑。以內建 imagegen 修補正背上半身顏色，保留原圖與提示詞；BVH 可見面、1024 畫布限定區域／Alpha 投影回原 UV、4096² emission-only 烘焙及 24px 邊距。幾何與 UV 不變，停用問題 baked normal；非修補區沿用原 UV 顏色。實際矩形與生成 PNG SHA 見 surface_baseline/regions.json、imagegen_prompts.json 與 surface_v1/surface_report.json。
+
+共用裙裝 builder 加入明確 villager_female profile；以紅裙辨識 1699 種子／1358 裙擺主要權重頂點、256 手部頂點不含骨盆／裙權重，露出小腿另分區。1.65m、20 骨、Idle／Talk 各 2 秒。首版腰部靠袖子的頂點因硬切分界產生 Talk 拉伸 3.18014 FAIL；逐邊診斷後改為連續手臂／軀幹混合，未縮小手勢或放寬門檻。v2 98 影格 PASS：Idle 1.06640／Talk 1.32365、循環端點 0、腳底約 0.002m。
+
+```powershell
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' -b --factory-startup --python-exit-code 1 --python scripts/tools/apply_npc_surface_patch.py -- --source source_assets/npc_rebuild_20261020/villager_female/surface_baseline --output source_assets/npc_rebuild_20261020/villager_female/surface_v1 --name villager_female --regions source_assets/npc_rebuild_20261020/villager_female/surface_baseline/regions.json
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' -b --factory-startup --python-exit-code 1 --python scripts/tools/build_merchant_npc.py -- --input source_assets/npc_rebuild_20261020/villager_female/surface_v1/villager_female_surface.blend --output source_assets/npc_rebuild_20261020/villager_female/idle_talk_v2 --profile villager_female
+./tools/review_npc_rig.ps1 -Asset villager_female
+./tools/review_npc_rig.ps1 -Asset villager_female -Controller
+./tools/review_npc_rig.ps1 -Asset item_merchant -Controller
+```
+
+輸出須指定新資料夾，既存檔案不覆蓋。原 GLB／候選嚴格 UV／Skin、Blender 重匯入與 Godot Check PASS（check-20261020-103907-273.log）；Godot 圖形 **223／0**、雙實例切換 **19／0**、道具商控制器回歸 **19／0**。已查看四面及 Idle／Talk 正側／雙實例；白袖色斑已清除，未見明顯碎片或腰／袖分離。獨立場景 Draw Calls=1、引擎記憶體 36425138 bytes，不是整村效能。
+
+另以共用 builder 預設 profile 重建道具商至 artifacts/asset_a05/item_merchant/profile_regression_20261020，再由 compare_npc_rig_rebuild.py 比對核准原件：頂點、UV、權重、骨架、albedo、clip 名稱及兩段五取樣姿勢 **7 組完全一致**，最大姿勢差 0。原道具商候選未重寫；報告封裝於女村民 idle_talk_v2/merchant_default_profile_comparison.json。
+
+候選 GLB／Blend／PackedScene、失敗報告／逐邊權重、實際畫面與 SHA 已封裝。原拆分網格 10631 邊界／10635 非流形邊仍為警告；AI 手指、袖口／裙襬小交疊與背部衣紋細節仍有生成限制。沒有逐指骨、裙子物理、走動／巡邏、正式 NPC／故事／存檔或人類實體輸入通過宣稱。五 NPC 目前四件獨立候選通過，旅館待拓樸，正式整合全部保留 Gate，A05 整體 IN_PROGRESS。

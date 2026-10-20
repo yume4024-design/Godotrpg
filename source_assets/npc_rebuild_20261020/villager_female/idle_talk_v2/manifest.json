@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "id": "villager_female",
+  "category": "npc",
+  "candidate_gate": "PASS",
+  "formal_integration_gate": "NOT_STARTED",
+  "triangles": 13515,
+  "original_glb_triangles": 13516,
+  "blender_import_dropped_triangles": 1,
+  "budget": 15000,
+  "bones": 20,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "model_sha256": "f7759edc8d7e8605418264dc5dfb8fb83337faecf3aef395d9473670c1323952",
+  "native_blend_sha256": "6c21996e15d5980095e5ae1655929eb481963afbac27f79105a65e20a2bc182c",
+  "tests": {
+    "evaluated_frames": 98,
+    "graphical_motion_checks": 223,
+    "graphical_controller_checks": 19,
+    "merchant_controller_regression": 19,
+    "merchant_default_rebuild_semantic_checks": 7
+  },
+  "limitations": [
+    "10631 boundary edges/10635 nonmanifold edges in split source mesh; no watertight claim",
+    "Stationary dialogue only, no walking, cloth simulation or finger rig",
+    "No formal NPC/story/save or physical input acceptance"
+  ]
+}

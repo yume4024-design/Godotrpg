@@ -1,0 +1,205 @@
+{
+  "asset": "villager_female",
+  "category": "npc",
+  "maximum_triangles": 15000,
+  "candidate_target": 13800,
+  "status": "CANDIDATE_PASS_FORMAL_INTEGRATION_PENDING",
+  "generation_submitted": true,
+  "source_workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "changes": [
+    {
+      "node": "186",
+      "field": "target_face_count",
+      "before": 30000,
+      "after": 13800,
+      "reason": "8% candidate headroom; final mesh still audited"
+    },
+    {
+      "node": "94",
+      "field": "target_resolution",
+      "before": "1536",
+      "after": 1536,
+      "reason": "INT correction from current UI"
+    },
+    {
+      "node": "241",
+      "field": "smooth_iters",
+      "before": 20,
+      "after": 0,
+      "reason": "Preserve small fingers/hair/clothing facets"
+    },
+    {
+      "node": "241",
+      "field": "drop_small_components",
+      "before": 0.01,
+      "after": 0.0,
+      "reason": "Do not delete small garment/hand/accessory components"
+    }
+  ],
+  "views": {
+    "front": {
+      "load_node": "364",
+      "server_image": "crystal_villager_female_front.png",
+      "preview_node": "340",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "left": {
+      "load_node": "377",
+      "server_image": "crystal_villager_female_left.png",
+      "preview_node": "344",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "back": {
+      "load_node": "378",
+      "server_image": "crystal_villager_female_back.png",
+      "preview_node": "343",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "right": {
+      "load_node": "379",
+      "server_image": "crystal_villager_female_right.png",
+      "preview_node": "346",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    }
+  },
+  "references": {
+    "references": "source_assets/reference_library_20261020/npc/villager_female/references",
+    "structural_gate": "PASS",
+    "visual_review": "agent_viewed_four_directions",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
+    "status": "PASS",
+    "ready_for_generation": true,
+    "files": [
+      {
+        "view": "front",
+        "file": "source_assets/reference_library_20261020/npc/villager_female/references/front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          297,
+          64,
+          727,
+          960
+        ],
+        "sha256": "6eb0e5dc31b766dd27561c434b185f076782633af45aaed7f7f7920430d62ec2"
+      },
+      {
+        "view": "left",
+        "file": "source_assets/reference_library_20261020/npc/villager_female/references/left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          366,
+          64,
+          657,
+          960
+        ],
+        "sha256": "e438e2070af8ea1283eb81b9ac494057b4f539c215a48aafe60910d1e5592318"
+      },
+      {
+        "view": "back",
+        "file": "source_assets/reference_library_20261020/npc/villager_female/references/back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          298,
+          64,
+          726,
+          960
+        ],
+        "sha256": "934bdf437d74ff4d01df4c1d464906a9797d21c31f1bb83a685ee8902d375f9c"
+      },
+      {
+        "view": "right",
+        "file": "source_assets/reference_library_20261020/npc/villager_female/references/right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          367,
+          64,
+          656,
+          960
+        ],
+        "sha256": "a644eac1c228c6ac9c42523a77ab58d8496d361b61e5f08cc333197521e169da"
+      }
+    ]
+  },
+  "seeds": {
+    "12.seed": 43,
+    "18.seed": 42,
+    "3.seed": 56,
+    "23.seed": 42
+  },
+  "unverified": [
+    "Actual conditioning outputs",
+    "GPU generation",
+    "Final GLB/rig/animation/visual gates"
+  ],
+  "input_prompt_id": "1479588d-25ef-40c4-8925-fc4cee8dd53c",
+  "prompt_id": "3fe0da55-11a3-4ef0-b5df-5dd09250b8a1",
+  "conditioning_visual_gate": "PASS: actual four previews viewed, full silhouettes and correct directions",
+  "outputs": [
+    {
+      "file": "outputs/3fe0da55_004.glb",
+      "sha256": "9fced6f7a5600d5426be60c749e1e33f85da4265b013ddadf3f2d13d0753ba96",
+      "bytes": 181555336,
+      "triangles": 10156728,
+      "images": 0,
+      "skins": 0,
+      "animations": 0
+    },
+    {
+      "file": "generated_textured.glb",
+      "sha256": "0a9f7675492d114765cebae971469014ae143a8813d8e6ca416d20f079fd2dd0",
+      "bytes": 18318056,
+      "triangles": 13516,
+      "images": 3,
+      "skins": 0,
+      "animations": 0
+    }
+  ],
+  "candidate_report": "idle_talk_v2/validation_report.md",
+  "candidate_model_sha256": "f7759edc8d7e8605418264dc5dfb8fb83337faecf3aef395d9473670c1323952",
+  "surface_repairs": "surface_baseline/imagegen_prompts.json; surface_v1/surface_report.json"
+}
