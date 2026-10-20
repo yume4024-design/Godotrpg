@@ -22,92 +22,127 @@
     {
       "path": "blender_import/report.json",
       "bytes": 2839,
-      "sha256": "da39cd01e68a7ba779faed8a328c43a5b653efa04b65c9101b0cb305f7dd5bf7"
+      "sha256": "a97114e9e2db317dd8960bed0f79f59137696bc2cd2c4f082a85f278f6bb2514",
+      "raw_sha256": "da39cd01e68a7ba779faed8a328c43a5b653efa04b65c9101b0cb305f7dd5bf7",
+      "hash_mode": "canonical_utf8_lf"
     },
     {
       "path": "closeups/cast_8_front.png",
       "bytes": 543982,
-      "sha256": "a087cf9c07385c1f64aec82ba71db26328ec6ccf2e49cf09e09a40781c54c20b"
+      "sha256": "a087cf9c07385c1f64aec82ba71db26328ec6ccf2e49cf09e09a40781c54c20b",
+      "raw_sha256": "a087cf9c07385c1f64aec82ba71db26328ec6ccf2e49cf09e09a40781c54c20b",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "closeups/cast_8_front.webp",
       "bytes": 22234,
-      "sha256": "6034f57f2b0eb65f1a18bc013db5d41f64c53abce695b8f6231f7926264991ff"
+      "sha256": "6034f57f2b0eb65f1a18bc013db5d41f64c53abce695b8f6231f7926264991ff",
+      "raw_sha256": "6034f57f2b0eb65f1a18bc013db5d41f64c53abce695b8f6231f7926264991ff",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "closeups/cast_8_right.png",
       "bytes": 483582,
-      "sha256": "dbd396ee8b94006e0fc101fef7110367e22408c0dc0ac013430e06ecf08bf9f8"
+      "sha256": "dbd396ee8b94006e0fc101fef7110367e22408c0dc0ac013430e06ecf08bf9f8",
+      "raw_sha256": "dbd396ee8b94006e0fc101fef7110367e22408c0dc0ac013430e06ecf08bf9f8",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "closeups/cast_8_right.webp",
       "bytes": 12420,
-      "sha256": "6fc8c31db4692c0bc6213b43665c73a9536d18221afa3e4a25da1adcb0cefa7b"
+      "sha256": "6fc8c31db4692c0bc6213b43665c73a9536d18221afa3e4a25da1adcb0cefa7b",
+      "raw_sha256": "6fc8c31db4692c0bc6213b43665c73a9536d18221afa3e4a25da1adcb0cefa7b",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "closeups/render_report.json",
       "bytes": 776,
-      "sha256": "5c321ef1116fc1c11174d2345cc419dc50344c8d126ea37f0ae03b9bb42f89f8"
+      "sha256": "d45722f23fb3351d19a42c94b699f8d1a17bcd58004d486bb6625b8ccd3379b5",
+      "raw_sha256": "5c321ef1116fc1c11174d2345cc419dc50344c8d126ea37f0ae03b9bb42f89f8",
+      "hash_mode": "canonical_utf8_lf"
     },
     {
       "path": "closeups/run_12_right.png",
       "bytes": 508054,
-      "sha256": "107799cfb957990ed916457781af335bddf7d66f72fb34555643301ad8ef356b"
+      "sha256": "107799cfb957990ed916457781af335bddf7d66f72fb34555643301ad8ef356b",
+      "raw_sha256": "107799cfb957990ed916457781af335bddf7d66f72fb34555643301ad8ef356b",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "closeups/run_12_right.webp",
       "bytes": 14108,
-      "sha256": "79d64b38ae0c802d436d44b7cfe3686591e2728b7ff901187b194cc3ec71bf6e"
+      "sha256": "79d64b38ae0c802d436d44b7cfe3686591e2728b7ff901187b194cc3ec71bf6e",
+      "raw_sha256": "79d64b38ae0c802d436d44b7cfe3686591e2728b7ff901187b194cc3ec71bf6e",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "closeups/run_4_front.png",
       "bytes": 567585,
-      "sha256": "7359896b55a11367a45acfdfa5dbfa5d998d49f383d3a89c4abd74b391526d9c"
+      "sha256": "7359896b55a11367a45acfdfa5dbfa5d998d49f383d3a89c4abd74b391526d9c",
+      "raw_sha256": "7359896b55a11367a45acfdfa5dbfa5d998d49f383d3a89c4abd74b391526d9c",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "closeups/run_4_front.webp",
       "bytes": 24086,
-      "sha256": "543b414973908edc29e29f49586d2b285026d41461aff44e13615438f9a6046b"
+      "sha256": "543b414973908edc29e29f49586d2b285026d41461aff44e13615438f9a6046b",
+      "raw_sha256": "543b414973908edc29e29f49586d2b285026d41461aff44e13615438f9a6046b",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "glb_audit.json",
       "bytes": 1753,
-      "sha256": "f2ed72ce61300787e03179934fd7271ec87b5a6200e9693d2df671325f447fef"
+      "sha256": "8147c1d5c866db169233c791b87e1260c603d5ee6eeadb585517c22d7dd01b84",
+      "raw_sha256": "f2ed72ce61300787e03179934fd7271ec87b5a6200e9693d2df671325f447fef",
+      "hash_mode": "canonical_utf8_lf"
     },
     {
       "path": "layer_build.json",
       "bytes": 8538,
-      "sha256": "84490eceb7b4b0dafc2f7510b2cd573e9f953ca7e7330b791871f53aae3b2c7f"
+      "sha256": "9228f2249bfcf69f5e9637959eb0dc922450e9c1c84b77f1352b7c5240e4369e",
+      "raw_sha256": "84490eceb7b4b0dafc2f7510b2cd573e9f953ca7e7330b791871f53aae3b2c7f",
+      "hash_mode": "canonical_utf8_lf"
     },
     {
       "path": "motion.json",
       "bytes": 2748,
-      "sha256": "0ed1369df7b426c727b01cc3330e36b3405d73b835c2faf699c1b9071fb3a2a1"
+      "sha256": "8060bacc43c3a3548ed98a47d2aaa9716b20e3f85855f1696daca677c851f123",
+      "raw_sha256": "0ed1369df7b426c727b01cc3330e36b3405d73b835c2faf699c1b9071fb3a2a1",
+      "hash_mode": "canonical_utf8_lf"
     },
     {
       "path": "preservation.json",
       "bytes": 4156,
-      "sha256": "2a49cde0c3652182bbd3aafdac1e014edd0763ca7ba12c629966faa8f9fcbacd"
+      "sha256": "9a20c7d5041a84e3431c35b02526c74ef5009d756a0fde1aaf4498b4b3cef41c",
+      "raw_sha256": "2a49cde0c3652182bbd3aafdac1e014edd0763ca7ba12c629966faa8f9fcbacd",
+      "hash_mode": "canonical_utf8_lf"
     },
     {
       "path": "preservation_attempt_1.invalid_json.txt",
       "bytes": 4003,
-      "sha256": "365ed1a6bc80a1e5e0b2b187ed97fee71269ae8019aa45eaafd475ea584494bb"
+      "sha256": "41aca7edeb287765e30c29dfcc8da95e87c8ff3f24096852ca2bae3479af3325",
+      "raw_sha256": "365ed1a6bc80a1e5e0b2b187ed97fee71269ae8019aa45eaafd475ea584494bb",
+      "hash_mode": "canonical_utf8_lf"
     },
     {
       "path": "ren_rigged.blend",
       "bytes": 12526300,
-      "sha256": "7e87c2764b721997851f3885c0e4570a943352d2e41f180a62f081c7abd0fe8f"
+      "sha256": "7e87c2764b721997851f3885c0e4570a943352d2e41f180a62f081c7abd0fe8f",
+      "raw_sha256": "7e87c2764b721997851f3885c0e4570a943352d2e41f180a62f081c7abd0fe8f",
+      "hash_mode": "binary_exact"
     },
     {
       "path": "ren_rigged.glb",
       "bytes": 13681904,
-      "sha256": "a2c258c9382ddef8d819613324e75ad51d56790ddaeb19090064973f3c10ce8c"
+      "sha256": "a2c258c9382ddef8d819613324e75ad51d56790ddaeb19090064973f3c10ce8c",
+      "raw_sha256": "a2c258c9382ddef8d819613324e75ad51d56790ddaeb19090064973f3c10ce8c",
+      "hash_mode": "binary_exact"
     }
   ],
   "limitations": [
     "No animation amplitude or 2.5 gate changes",
     "No formal model, story, stats, save, release package or chapter edits",
     "Reject these diagnostic copies; complete garment retopology is still required"
-  ]
+  ],
+  "text_hash_policy": "UTF-8 without BOM, CRLF normalized to LF; raw SHA also retained. Binary files remain exact."
 }
