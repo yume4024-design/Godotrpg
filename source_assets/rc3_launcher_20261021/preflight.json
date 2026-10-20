@@ -1,0 +1,9 @@
+{
+  "original_launcher_sha256": "83fd3030d0d57fd56bf69c59d8d251afde4627b88ec008b9ad816330633e4419",
+  "fixed_launcher_sha256": "43388d9ae2d55d6e84d55008871fe84a81cc280c76399f01a6cf9882953925a1",
+  "exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+  "pck_sha256": "2758b063385a25e724b13a546cff9585f65557dafed2989ebad005baf276d13c",
+  "reproduced_error": "Windows PowerShell: running scripts is disabled; UnauthorizedAccess; launcher exit1; no game process or new game log",
+  "execution_policy_changed": false,
+  "preserved_original_launcher": "artifacts\\rc3-launcher-fix\\20261021-0004\\original_start_rc3.cmd"
+}

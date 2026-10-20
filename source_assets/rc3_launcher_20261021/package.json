@@ -1,0 +1,10 @@
+{
+  "zip": "builds\\g08\\rc3-20261020\\ProjectCrystal-0.6.1-g08-rc3-launcher-fix-windows-x64.zip",
+  "bytes": 225251759,
+  "sha256": "e9ce1ce6f298a6417f78aa9de325bf800d5356c6a6feba23f698ffd298c06a2c",
+  "entries": 8,
+  "user_test_included": false,
+  "pck_unchanged": true,
+  "portable": "artifacts\\rc3-launcher-fix\\20261021-0413\\portable folder 測試",
+  "original_zip_preserved": true
+}

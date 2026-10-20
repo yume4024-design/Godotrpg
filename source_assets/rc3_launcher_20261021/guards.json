@@ -1,0 +1,8 @@
+{
+  "original_policy": "Restricted",
+  "original_launcher_exit": 1,
+  "missing_exe_exit": 2,
+  "missing_pck_exit": 3,
+  "execution_policy_changed": false,
+  "policy_error": "original-policy-error.json"
+}

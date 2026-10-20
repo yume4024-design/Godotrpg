@@ -1,0 +1,17 @@
+{
+  "launcher": "D:\\RPGGAME\\builds\\g08\\rc3-20261020\\candidate\\start_rc3.cmd",
+  "launcher_pid": 5520,
+  "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+  "physical_input": false,
+  "passed": false,
+  "game_pid": 8592,
+  "window_handle": 265230,
+  "window_title": "失落星核 — Project Crystal",
+  "responding": true,
+  "observed_seconds": 8.1344076,
+  "game_exit_code": null,
+  "launcher_exit_code": 0,
+  "stdout": "Starting Project Crystal RC3...\r\n",
+  "stderr": "",
+  "error": "Nonzero normal-close exit code"
+}

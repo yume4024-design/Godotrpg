@@ -1,0 +1,6 @@
+{
+  "hex": "406563686f206f66660d0d0a706f7765727368656c6c2e657865202d4e6f50726f66696c65202d46696c652022257e647030706c61795f7263332e707331220d0d0a",
+  "bytes": 66,
+  "sha256": "83fd3030d0d57fd56bf69c59d8d251afde4627b88ec008b9ad816330633e4419",
+  "reason": "Exact original CMD bytes retained as hex to prevent Git CRCRLF normalization; original executable text remains under ignored artifacts"
+}

@@ -1,5 +1,11 @@
 # 任務與進度
 
+## 2026-10-21 — RC3 雙擊入口修復
+
+- [x] 使用者回報啟動即關閉；重現Windows PowerShell Restricted／exit1。改CMD直接啟動EXE，保留Windows原則與獨立測試存檔。
+- [x] 一般原生視窗保持8秒＋正常退出、含空格／中文ZIP解壓後同測通過；缺EXE／PCK負向測試通過。EXE／PCK不變、舊ZIP保留，新ZIP8檔與SHA／CRC核對。
+- [ ] 使用者修正後重試及完整鍵鼠／Xbox驗收仍待，不把8秒自動探測當通關。[修復報告](G083_RC3_LAUNCHER_REPORT.md)。完整A01～A05／角色環境／G08／C1目標持續。
+
 ## 2026-10-20 — A04 荊棘野豬接入與回歸
 
 - [x] 同一9998面／12骨／七段來源接入，舊場景完整保留；低motion Walk／選用Run／Charge呈現，正式技能與數值不變。

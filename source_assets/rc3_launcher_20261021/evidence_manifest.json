@@ -1,0 +1,14 @@
+{
+  "normalization": "utf8-no-bom-lf",
+  "files": {
+    "failed_probe_cim.json": "c8e3d512b505d7a1c529bac836dc7c2204040ce32192b0dcf46877951a12188e",
+    "failed_probe_exit_handle.json": "9a02ad83282439c40b04aae5bad8829c69eaf1aab91114c5ac354cb84c9a3d64",
+    "guards.json": "e48b3e0dbcc56eb30666fcd65c50fd154f8999f3facb0ae9a0a46372f514b94e",
+    "normal_launch.json": "4ef1648a1f84dcda02ad595467304688e4c50c0d85264d94fbe096187f52199c",
+    "original-policy-error.json": "cbd3c5c98156875c456638b3457da856492de28248411840ae568ade9a37b7ba",
+    "original_launcher_bytes.json": "324ce89a7566baf71a7e36efc83e65e35205147c6ffb3e9c062990b7d5cfe780",
+    "package.json": "f0760a5aa34de10ca35f1a5381f2a266c0b0f92966299d7d1332e5040d3e7123",
+    "portable_launch.json": "64158e32f0c93b1abb4038af0338c28e9ba88dbbf006f81ac7a074cd5ff515a2",
+    "preflight.json": "3f734013fc266661bfa30d87f1d35aa171bb83891572d020e4aa35f76d12ba98"
+  }
+}

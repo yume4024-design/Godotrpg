@@ -1,0 +1,5 @@
+{
+  "raw_sha256": "26609d7af78466a12a9eed2b2a19e66253bab363e8ff8acfcbec54ed90f97aea",
+  "utf8_text": "File D:\\RPGGAME\\builds\\g08\\rc3-20261020\\candidate\\play_rc3.ps1 cannot be loaded because running scripts is disabled on \r\nthis system. For more information, see about_Execution_Policies at https:/go.microsoft.com/fwlink/?LinkID=135170.\r\n    + CategoryInfo          : SecurityError: (:) [], ParentContainsErrorRecordException\r\n    + FullyQualifiedErrorId : UnauthorizedAccess\r\n",
+  "raw_file_preserved": "artifacts/rc3-launcher-fix/20261021-0413/original-policy-error.txt"
+}

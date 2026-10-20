@@ -1,0 +1,8 @@
+{
+  "launcher": "D:\\RPGGAME\\builds\\g08\\rc3-20261020\\candidate\\start_rc3.cmd",
+  "launcher_pid": 26272,
+  "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+  "physical_input": false,
+  "passed": false,
+  "error": "用戶端無法存取 CIM 資源。"
+}
