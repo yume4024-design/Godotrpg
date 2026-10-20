@@ -1,0 +1,44 @@
+{
+  "source": "assets\\models\\rebuilt_characters\\ren_static.glb",
+  "source_sha256": "f94a54b6eec3875f137e6dd87b79d501ef0d90b7a240f09061a80c857f14a0f0",
+  "geometry_and_uv_exact": true,
+  "triangles": 12808,
+  "bones": 19,
+  "clips": [
+    "attack",
+    "cast",
+    "guard",
+    "hit",
+    "potion",
+    "walk",
+    "run"
+  ],
+  "cycle_distances": {
+    "walk": 1.1458418667316437,
+    "run": 1.7960049510002136
+  },
+  "floor_samples": {
+    "walk": [
+      0.001999921165406704,
+      0.0020000480581074953
+    ],
+    "run": [
+      0.0019998957868665457,
+      0.0020000773947685957
+    ]
+  },
+  "weight_sum_max_error": 4.470348358154297e-08,
+  "maximum_vertex_weights": 4,
+  "hand_weight_check_vertices": 688,
+  "coat_check_vertices": 614,
+  "hip_weight_check_vertices": 2638,
+  "outputs": {
+    "ren_rigged.blend": "e8d6121dec946e7f2ffd8fc53da3869bac724443a67de9b5704b8b2c41b7bcac",
+    "ren_rigged.glb": "9fa4644f9c40b69058d97b033190b7f20db25239f27ff08eebbf7a56ef93d358"
+  },
+  "limitations": [
+    "Single finger group per hand; not independent fingers or a validated sword grip",
+    "No eyelid/mouth morphs, terrain IK, gameplay integration or performance acceptance",
+    "Regional weights and cloth require evaluated motion and actual visual acceptance"
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\character_rebuild_20261020\\ren\\crotch_repair\\ren_rigged.glb",
+    "category": "player_character",
+    "sha256": "40cfc07b1327de882ed76b0d30d628ef1b8cd314e6faffa1834229ffc4134e43",
+    "maximum_triangles": 15000,
+    "triangles": 12808,
+    "headroom_triangles": 2192,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.327134668827057e-07,
+    "primitives": [
+      {
+        "node": 19,
+        "mesh": 0,
+        "triangles": 12808,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      19
+    ],
+    "materials": 1,
+    "animations": [
+      "attack",
+      "cast",
+      "guard",
+      "hit",
+      "potion",
+      "run",
+      "walk"
+    ],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 12808,
+  "status": "PASS"
+}

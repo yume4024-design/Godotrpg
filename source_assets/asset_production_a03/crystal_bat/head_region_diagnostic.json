@@ -1,0 +1,25 @@
+{
+  "status": "FAIL",
+  "source_glb": "assets/models/rebuilt_enemies/crystal_bat_topology.glb",
+  "source_sha256": "2f283ca6984048765332929e1b7b088e8e544d9398853d977812a08da26e3ed0",
+  "triangles": 8712,
+  "method": "Read-only source import into separate live Blender scene; bounded temporary weight rebind and pose review",
+  "head_mask": "smoothstep(0.65,0.79,z) * (1-smoothstep(0.32,0.40,abs(x)))",
+  "weights": "Remove mask fraction of Wing/WingTip influence; proportionally redistribute to existing non-wing groups, Head only if none exists",
+  "pose_world_z_radians": {
+    "WingLeft": 1.7,
+    "WingRight": -1.7,
+    "WingTipLeft": -2.5,
+    "WingTipRight": 2.5
+  },
+  "observations": [
+    "High ear vertex around (-0.29826,-0.12219,0.88224) originally carried roughly 42.3 percent combined wing influence",
+    "Temporary head-region isolation improved ear silhouette in actual front/right/back/left Blender views",
+    "Folded membrane still overlaps and protrudes behind body; full fold remains rejected"
+  ],
+  "evidence": "Four inline Blender MCP angle images in this chat; not a saved GLB or offline image package",
+  "persistence": "Parameters and observations only; temporary live scene was not exported or selected",
+  "geometry_modified": false,
+  "formal_scene_modified": false,
+  "full_fold_gate": "FAIL"
+}

@@ -1,0 +1,31 @@
+{
+  "input": "source_assets\\character_rebuild_20261020\\ren\\crotch_repair\\ren_rigged.blend",
+  "sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850",
+  "captures": [
+    {
+      "clip": "run",
+      "frame": 4,
+      "view": "front",
+      "file": "run_4_front.png"
+    },
+    {
+      "clip": "run",
+      "frame": 12,
+      "view": "right",
+      "file": "run_12_right.png"
+    },
+    {
+      "clip": "cast",
+      "frame": 8,
+      "view": "front",
+      "file": "cast_8_front.png"
+    },
+    {
+      "clip": "cast",
+      "frame": 8,
+      "view": "right",
+      "file": "cast_8_right.png"
+    }
+  ],
+  "purpose": "Failure evidence only; does not certify animation or production integration"
+}

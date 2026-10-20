@@ -1,0 +1,124 @@
+{
+  "status": "IN_PROGRESS",
+  "runtime_selection": null,
+  "production_approved": false,
+  "category": "player_character",
+  "budget": 15000,
+  "triangles": 12808,
+  "bones": 19,
+  "clips": 7,
+  "gates": {
+    "triangle": "PASS",
+    "structure": "PASS",
+    "motion": "FAIL",
+    "full_visual": "NOT_PASSED",
+    "formal_gameplay": "NOT_STARTED"
+  },
+  "copies": [
+    {
+      "name": "rig_v1",
+      "status": "FAIL",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/rig_v1/ren_rigged.blend",
+          "bytes": 12183860,
+          "sha256": "7cead910ac1b4ae1d9ce764917a146b846419bb81ce766dbc9579d82e4419d52",
+          "git_policy": "Preserved locally; large rejected rig binary excluded"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/rig_v1/ren_rigged.glb",
+          "bytes": 12169724,
+          "sha256": "87d6577c4b7b62e1ba55b3922e384947e161e240b5ec21f19a641a126ae2059c",
+          "git_policy": "Preserved locally; large rejected rig binary excluded"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/rig_v1/motion_report.json"
+    },
+    {
+      "name": "rig_v2",
+      "status": "FAIL",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/rig_v2/ren_rigged.blend",
+          "bytes": 12183627,
+          "sha256": "c3a309c4dad292c34389d34c768d97104284cae546419a4537ae933215db7d3c",
+          "git_policy": "Preserved locally; large rejected rig binary excluded"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/rig_v2/ren_rigged.glb",
+          "bytes": 12169724,
+          "sha256": "7578a7f163af9b8fd6e69ae0489a87981f4707c1d30118927b25737bd3c49335",
+          "git_policy": "Preserved locally; large rejected rig binary excluded"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/rig_v2/motion_report.json"
+    },
+    {
+      "name": "rig_v3",
+      "status": "FAIL",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/rig_v3/ren_rigged.blend",
+          "bytes": 12183518,
+          "sha256": "e8d6121dec946e7f2ffd8fc53da3869bac724443a67de9b5704b8b2c41b7bcac",
+          "git_policy": "Preserved locally; large rejected rig binary excluded"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/rig_v3/ren_rigged.glb",
+          "bytes": 12169724,
+          "sha256": "9fa4644f9c40b69058d97b033190b7f20db25239f27ff08eebbf7a56ef93d358",
+          "git_policy": "Preserved locally; large rejected rig binary excluded"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/rig_v3/motion_report.json"
+    },
+    {
+      "name": "crotch_repair",
+      "status": "FAIL",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/crotch_repair/ren_rigged.blend",
+          "bytes": 12185161,
+          "sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850",
+          "git_policy": "Committed diagnostic copy; not runtime"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/crotch_repair/ren_rigged.glb",
+          "bytes": 12169724,
+          "sha256": "40cfc07b1327de882ed76b0d30d628ef1b8cd314e6faffa1834229ffc4134e43",
+          "git_policy": "Committed diagnostic copy; not runtime"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/crotch_repair/motion_report.json"
+    },
+    {
+      "name": "crotch_repair_v2",
+      "status": "FAIL",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/crotch_repair_v2/ren_rigged.blend",
+          "bytes": 12188042,
+          "sha256": "46e7510fb34dc59e5516c82c67b5e66865899d902a45b33800d1036f63f3db95",
+          "git_policy": "Preserved locally; large rejected rig binary excluded"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/crotch_repair_v2/ren_rigged.glb",
+          "bytes": 12169724,
+          "sha256": "0a8cac3d0538bea3cafcdf31e05ad1de6994e455c558c6fbe8962252c156ddb0",
+          "git_policy": "Preserved locally; large rejected rig binary excluded"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/crotch_repair_v2/motion_report.json"
+    }
+  ],
+  "best_numeric_diagnostic": "crotch_repair",
+  "best_remaining_failure": "run 2.815617684442298 >= 2.5",
+  "preservation_audit": "crotch_repair/preservation_report.json",
+  "source_runtime_static": "assets/models/rebuilt_characters/ren_static.glb",
+  "limitations": [
+    "No new Godot action or physical input acceptance",
+    "Three rig recipes and two diagnosed seam copies retained; no weaker threshold or smaller stride",
+    "Latest tabard extension worsened results; explicitly rejected",
+    "Live Blender per-pixel cloth inspection did not return; request stopped and no result was used"
+  ]
+}

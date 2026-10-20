@@ -1,0 +1,27 @@
+{
+  "before": "source_assets\\character_rebuild_20261020\\ren\\rig_v3\\ren_rigged.blend",
+  "after": "source_assets\\character_rebuild_20261020\\ren\\crotch_repair\\ren_rigged.blend",
+  "checks": {
+    "vertices_exact": true,
+    "uv_exact": true,
+    "face_indices_exact": true,
+    "bones_exact": true,
+    "packed_albedo_exact": true,
+    "weights_only_within_listed_vertices": true,
+    "clip_names_exact": true,
+    "all_127_frame_bone_poses_exact": true
+  },
+  "changed_vertices": 439,
+  "listed_vertices": 439,
+  "clip_pose_max_difference": {
+    "attack": 0.0,
+    "cast": 0.0,
+    "guard": 0.0,
+    "hit": 0.0,
+    "potion": 0.0,
+    "run": 0.0,
+    "walk": 0.0
+  },
+  "status": "PASS",
+  "scope": "Bounded repair preservation only; overall motion remains FAIL until separate quality gate passes"
+}

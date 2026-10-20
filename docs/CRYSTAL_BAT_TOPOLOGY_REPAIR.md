@@ -17,6 +17,8 @@
 
 ## 已知失敗與保留檔案
 
+補充區域診斷：於獨立 live Blender 場景，將高頭／耳區的翼骨影響有界移除，正／兩側／背面實際檢視耳形改善，但反折翼膜仍交疊並向身後突出，完整收翼仍 FAIL。參數與觀察存 `head_region_diagnostic.json`；僅聊天內四面證據，未匯出新 GLB／未保存新的合格副本，不假裝完成完整拓樸或正式替換。
+
 - 候選目錄：`source_assets/asset_production_a03/crystal_bat/`；9686 triangles、11 骨，來源與失敗紀錄保留。
 - 原五動作及第三版收翼在側面均有脫離翼膜；`failed_baseline_walk_side.webp`、`failed_fold_side.webp`、`failed_fold_front.webp` 是實際 Godot 畫面。
 - 第一／二版拉伸數值失敗；第三版數值通過仍畫面失敗。不得把五動作版當作合格替代品，也不得以減少收翼幅度取消完整收翼需求。
