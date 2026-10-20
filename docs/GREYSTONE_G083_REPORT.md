@@ -4,6 +4,10 @@
 
 **狀態：受控 Release 自動長測及重啟通過；效能尖峰、人工／實體輸入與原失敗來源仍待驗收，G08.3／整體 G08 不宣稱全部完成。**
 
+## 2026-10-20 後續診斷
+
+[戰鬥字型重用與短版 Release 診斷](G083_BATTLE_FONT_REPORT.md)：同快取 733 資源一致，暖機 arena CPU 約 27ms→6ms；172／0。新匯入與歷史 RC2 的編譯資源 byte equality 失敗，以下 2026-10-18 的 610 相同及 30 分鐘證據只屬當時固定包，不能轉用新修正版。啟動尖峰與新固定 SHA 長測仍待。
+
 ## 最終受控長測
 
 證據：`artifacts/g083/20261018-111013/manifest.json`、`summary.json`、`process.csv`及 profile 下 `g083/metrics.json`。使用 `builds/g08/qa-soak/20261018-110852/ProjectCrystal.exe`，PCK SHA256 `CF7CA697A5063497C25FDE691A22902FAEED7A0B07842D451D81E713D21D7A20`。

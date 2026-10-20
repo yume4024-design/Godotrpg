@@ -1,0 +1,165 @@
+{
+	"checks": 143,
+	"display": "Windows",
+	"failures": 0,
+	"method": "Five warm map instantiation / isolated World3D registration probes after full prologue; includes original _ready work, not a cold-start or GPU profiler.",
+	"release": true,
+	"rows": [
+		{
+			"attempt": 0,
+			"instantiate_ms": 1.828,
+			"map": "greystone_runtime",
+			"physics_wait_ms": 27.459,
+			"ready_ms": 3.551,
+			"world_create_ms": 0.448
+		},
+		{
+			"attempt": 1,
+			"instantiate_ms": 1.774,
+			"map": "greystone_runtime",
+			"physics_wait_ms": 27.558,
+			"ready_ms": 3.349,
+			"world_create_ms": 0.645
+		},
+		{
+			"attempt": 2,
+			"instantiate_ms": 1.364,
+			"map": "greystone_runtime",
+			"physics_wait_ms": 28.528,
+			"ready_ms": 3.176,
+			"world_create_ms": 0.417
+		},
+		{
+			"attempt": 3,
+			"instantiate_ms": 1.259,
+			"map": "greystone_runtime",
+			"physics_wait_ms": 28.688,
+			"ready_ms": 2.976,
+			"world_create_ms": 0.406
+		},
+		{
+			"attempt": 4,
+			"instantiate_ms": 1.36,
+			"map": "greystone_runtime",
+			"physics_wait_ms": 28.248,
+			"ready_ms": 3.302,
+			"world_create_ms": 0.425
+		},
+		{
+			"attempt": 0,
+			"instantiate_ms": 0.865,
+			"map": "forest",
+			"physics_wait_ms": 30.885,
+			"ready_ms": 1.171,
+			"world_create_ms": 0.435
+		},
+		{
+			"attempt": 1,
+			"instantiate_ms": 0.951,
+			"map": "forest",
+			"physics_wait_ms": 30.502,
+			"ready_ms": 1.389,
+			"world_create_ms": 0.492
+		},
+		{
+			"attempt": 2,
+			"instantiate_ms": 0.943,
+			"map": "forest",
+			"physics_wait_ms": 30.778,
+			"ready_ms": 1.158,
+			"world_create_ms": 0.452
+		},
+		{
+			"attempt": 3,
+			"instantiate_ms": 0.836,
+			"map": "forest",
+			"physics_wait_ms": 31.009,
+			"ready_ms": 1.061,
+			"world_create_ms": 0.428
+		},
+		{
+			"attempt": 4,
+			"instantiate_ms": 0.84,
+			"map": "forest",
+			"physics_wait_ms": 30.623,
+			"ready_ms": 1.24,
+			"world_create_ms": 0.629
+		},
+		{
+			"attempt": 0,
+			"instantiate_ms": 0.37,
+			"map": "mine",
+			"physics_wait_ms": 30.75,
+			"ready_ms": 1.734,
+			"world_create_ms": 0.47
+		},
+		{
+			"attempt": 1,
+			"instantiate_ms": 0.343,
+			"map": "mine",
+			"physics_wait_ms": 30.97,
+			"ready_ms": 1.612,
+			"world_create_ms": 0.411
+		},
+		{
+			"attempt": 2,
+			"instantiate_ms": 0.346,
+			"map": "mine",
+			"physics_wait_ms": 31.025,
+			"ready_ms": 1.546,
+			"world_create_ms": 0.415
+		},
+		{
+			"attempt": 3,
+			"instantiate_ms": 0.33,
+			"map": "mine",
+			"physics_wait_ms": 31.008,
+			"ready_ms": 1.57,
+			"world_create_ms": 0.427
+		},
+		{
+			"attempt": 4,
+			"instantiate_ms": 0.333,
+			"map": "mine",
+			"physics_wait_ms": 31.027,
+			"ready_ms": 1.576,
+			"world_create_ms": 0.395
+		},
+		{
+			"arena_to_input_ms": 14.009,
+			"attempt": 0,
+			"encounter": "X001",
+			"launch_to_arena_ms": 27.907
+		},
+		{
+			"arena_to_input_ms": 12.789,
+			"attempt": 1,
+			"encounter": "X001",
+			"launch_to_arena_ms": 27.077
+		},
+		{
+			"arena_to_input_ms": 13.196,
+			"attempt": 2,
+			"encounter": "X001",
+			"launch_to_arena_ms": 27.078
+		},
+		{
+			"arena_to_input_ms": 1544.498,
+			"attempt": 0,
+			"encounter": "X003",
+			"launch_to_arena_ms": 27.003
+		},
+		{
+			"arena_to_input_ms": 1111.553,
+			"attempt": 1,
+			"encounter": "X003",
+			"launch_to_arena_ms": 27.163
+		},
+		{
+			"arena_to_input_ms": 1094.192,
+			"attempt": 2,
+			"encounter": "X003",
+			"launch_to_arena_ms": 27.094
+		}
+	]
+}

@@ -1,0 +1,21 @@
+{
+  "baseline_qa_pck_sha256": "215c19027b0e68e00913b70d70df46ec0574686e74b66bd00c571a75900e1b29",
+  "after_qa_pck_sha256": "9c4cf67c507c1a18fc2ef946d6772e67346d5cddfc922a6199cdebcf320c0c83",
+  "changed": [
+    "res://.godot/global_script_class_cache.cfg",
+    "res://.godot/uid_cache.bin",
+    "res://scripts/battle/battle_stage.gdc",
+    "res://scripts/ui/battle_interface.gdc",
+    "res://tests/g083_detail/source_methods.json",
+    "res://tests/g083_detail/stage.gdc",
+    "res://tests/windows_release_stability_test.gdc"
+  ],
+  "added": [
+    "res://.godot/exported/133200997/export-0615f3a65c3df1efde72b3b513bb33ff-battle_nameplate_font.res",
+    "res://.godot/exported/133200997/export-282c26787d7e96dcafd632fed1f47418-battle_interface_font.res",
+    "res://assets/ui/fonts/battle_interface_font.tres.remap",
+    "res://assets/ui/fonts/battle_nameplate_font.tres.remap"
+  ],
+  "removed": [],
+  "matched": 733
+}

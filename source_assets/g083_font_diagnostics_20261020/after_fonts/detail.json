@@ -1,0 +1,625 @@
+{
+	"checks": 146,
+	"display": "Windows",
+	"failures": 0,
+	"flow": [
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.012,
+					"appearance_ready_ms": 2.383,
+					"label_ms": 0.018,
+					"root_and_ring_ms": 0.081
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.006,
+					"appearance_ready_ms": 0.041,
+					"label_ms": 0.01,
+					"root_and_ring_ms": 0.062
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.004,
+					"appearance_ready_ms": 0.011,
+					"label_ms": 0.009,
+					"root_and_ring_ms": 0.062
+				},
+				{
+					"actor": "enemy_01",
+					"ally": false,
+					"appearance_instantiate_ms": 0.004,
+					"appearance_ready_ms": 0.009,
+					"label_ms": 0.007,
+					"root_and_ring_ms": 0.048
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.002,
+				"connect_and_start_ms": 0.008,
+				"interface_bind_ms": 0.031,
+				"manager_setup_ms": 0.008,
+				"stage_setup_ms": 2.828
+			},
+			"battle": "B001",
+			"deferred_wait_ms": 0.373,
+			"instantiate_ms": 0.43,
+			"ready_ms": 0.828,
+			"setup_ms": 2.907,
+			"signals_ms": 0.051
+		},
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.013,
+					"appearance_ready_ms": 2.401,
+					"label_ms": 0.019,
+					"root_and_ring_ms": 0.078
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.014,
+					"appearance_ready_ms": 2.171,
+					"label_ms": 0.014,
+					"root_and_ring_ms": 0.068
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.006,
+					"appearance_ready_ms": 0.044,
+					"label_ms": 0.01,
+					"root_and_ring_ms": 0.065
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.311,
+				"connect_and_start_ms": 0.009,
+				"interface_bind_ms": 0.026,
+				"manager_setup_ms": 0.01,
+				"stage_setup_ms": 4.981
+			},
+			"battle": "B002",
+			"deferred_wait_ms": 0.272,
+			"instantiate_ms": 0.229,
+			"ready_ms": 0.666,
+			"setup_ms": 5.366,
+			"signals_ms": 0.048
+		},
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.011,
+					"appearance_ready_ms": 2.245,
+					"label_ms": 0.015,
+					"root_and_ring_ms": 0.066
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.009,
+					"appearance_ready_ms": 2.099,
+					"label_ms": 0.013,
+					"root_and_ring_ms": 0.059
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.006,
+					"appearance_ready_ms": 0.037,
+					"label_ms": 0.009,
+					"root_and_ring_ms": 0.058
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.071,
+				"connect_and_start_ms": 0.008,
+				"interface_bind_ms": 0.018,
+				"manager_setup_ms": 0.007,
+				"stage_setup_ms": 4.69
+			},
+			"battle": "B002",
+			"deferred_wait_ms": 344.289,
+			"instantiate_ms": 0.178,
+			"ready_ms": 0.545,
+			"setup_ms": 4.817,
+			"signals_ms": 0.006
+		},
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.01,
+					"appearance_ready_ms": 2.303,
+					"label_ms": 0.017,
+					"root_and_ring_ms": 0.09
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.009,
+					"appearance_ready_ms": 2.118,
+					"label_ms": 0.013,
+					"root_and_ring_ms": 0.066
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.006,
+					"appearance_ready_ms": 0.05,
+					"label_ms": 0.01,
+					"root_and_ring_ms": 0.063
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.001,
+				"connect_and_start_ms": 0.008,
+				"interface_bind_ms": 0.025,
+				"manager_setup_ms": 0.008,
+				"stage_setup_ms": 4.83
+			},
+			"battle": "X001",
+			"deferred_wait_ms": 0.49,
+			"instantiate_ms": 0.234,
+			"ready_ms": 0.661,
+			"setup_ms": 4.898,
+			"signals_ms": 0.049
+		},
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.013,
+					"appearance_ready_ms": 2.482,
+					"label_ms": 0.018,
+					"root_and_ring_ms": 0.095
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.011,
+					"appearance_ready_ms": 2.19,
+					"label_ms": 0.014,
+					"root_and_ring_ms": 0.07
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.006,
+					"appearance_ready_ms": 0.051,
+					"label_ms": 0.01,
+					"root_and_ring_ms": 0.063
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.002,
+				"connect_and_start_ms": 0.008,
+				"interface_bind_ms": 0.024,
+				"manager_setup_ms": 0.007,
+				"stage_setup_ms": 5.1
+			},
+			"battle": "X001",
+			"deferred_wait_ms": 0.47,
+			"instantiate_ms": 0.249,
+			"ready_ms": 0.694,
+			"setup_ms": 5.168,
+			"signals_ms": 0.047
+		},
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.012,
+					"appearance_ready_ms": 2.379,
+					"label_ms": 0.019,
+					"root_and_ring_ms": 0.096
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.011,
+					"appearance_ready_ms": 2.121,
+					"label_ms": 0.014,
+					"root_and_ring_ms": 0.066
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.007,
+					"appearance_ready_ms": 0.051,
+					"label_ms": 0.01,
+					"root_and_ring_ms": 0.063
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.002,
+				"connect_and_start_ms": 0.009,
+				"interface_bind_ms": 0.023,
+				"manager_setup_ms": 0.008,
+				"stage_setup_ms": 4.924
+			},
+			"battle": "X001",
+			"deferred_wait_ms": 0.507,
+			"instantiate_ms": 0.22,
+			"ready_ms": 0.691,
+			"setup_ms": 4.992,
+			"signals_ms": 0.047
+		},
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.012,
+					"appearance_ready_ms": 2.391,
+					"label_ms": 0.02,
+					"root_and_ring_ms": 0.095
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.011,
+					"appearance_ready_ms": 2.118,
+					"label_ms": 0.015,
+					"root_and_ring_ms": 0.07
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.006,
+					"appearance_ready_ms": 0.048,
+					"label_ms": 0.009,
+					"root_and_ring_ms": 0.062
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.095,
+				"connect_and_start_ms": 0.008,
+				"interface_bind_ms": 0.024,
+				"manager_setup_ms": 0.007,
+				"stage_setup_ms": 4.935
+			},
+			"battle": "X003",
+			"deferred_wait_ms": 0.598,
+			"instantiate_ms": 0.228,
+			"ready_ms": 0.691,
+			"setup_ms": 5.095,
+			"signals_ms": 0.048
+		},
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.013,
+					"appearance_ready_ms": 2.323,
+					"label_ms": 0.018,
+					"root_and_ring_ms": 0.254
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.011,
+					"appearance_ready_ms": 2.13,
+					"label_ms": 0.014,
+					"root_and_ring_ms": 0.063
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.007,
+					"appearance_ready_ms": 0.047,
+					"label_ms": 0.01,
+					"root_and_ring_ms": 0.06
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.092,
+				"connect_and_start_ms": 0.009,
+				"interface_bind_ms": 0.024,
+				"manager_setup_ms": 0.008,
+				"stage_setup_ms": 5.026
+			},
+			"battle": "X003",
+			"deferred_wait_ms": 0.554,
+			"instantiate_ms": 0.247,
+			"ready_ms": 0.727,
+			"setup_ms": 5.184,
+			"signals_ms": 0.046
+		},
+		{
+			"actors": [
+				{
+					"actor": "ren",
+					"ally": true,
+					"appearance_instantiate_ms": 0.011,
+					"appearance_ready_ms": 2.465,
+					"label_ms": 0.018,
+					"root_and_ring_ms": 0.089
+				},
+				{
+					"actor": "lia",
+					"ally": true,
+					"appearance_instantiate_ms": 0.01,
+					"appearance_ready_ms": 2.107,
+					"label_ms": 0.014,
+					"root_and_ring_ms": 0.067
+				},
+				{
+					"actor": "enemy_00",
+					"ally": false,
+					"appearance_instantiate_ms": 0.006,
+					"appearance_ready_ms": 0.047,
+					"label_ms": 0.01,
+					"root_and_ring_ms": 0.063
+				}
+			],
+			"arena": {
+				"backdrop_ms": 0.097,
+				"connect_and_start_ms": 0.008,
+				"interface_bind_ms": 0.025,
+				"manager_setup_ms": 0.008,
+				"stage_setup_ms": 4.982
+			},
+			"battle": "X003",
+			"deferred_wait_ms": 0.592,
+			"instantiate_ms": 0.251,
+			"ready_ms": 0.744,
+			"setup_ms": 5.15,
+			"signals_ms": 0.047
+		}
+	],
+	"frames": {
+		"probe_X001": {
+			"draw_max": 363.0,
+			"draw_min": 121.0,
+			"engine_peak_bytes": null,
+			"fps": 60.0075565071157,
+			"frames": 81,
+			"max_ms": 26.201,
+			"mean_ms": 16.6645679012346,
+			"p95_ms": 19.606,
+			"p99_ms": 26.201
+		},
+		"probe_X003": {
+			"draw_max": 338.0,
+			"draw_min": 121.0,
+			"engine_peak_bytes": null,
+			"fps": 60.000093950325,
+			"frames": 281,
+			"max_ms": 33.508,
+			"mean_ms": 16.666640569395,
+			"p95_ms": 16.738,
+			"p99_ms": 25.919
+		},
+		"probe_forest": {
+			"draw_max": 340.0,
+			"draw_min": 340.0,
+			"engine_peak_bytes": null,
+			"fps": 59.9943005414486,
+			"frames": 20,
+			"max_ms": 20.875,
+			"mean_ms": 16.66825,
+			"p95_ms": 20.698,
+			"p99_ms": 20.875
+		},
+		"probe_greystone_runtime": {
+			"draw_max": 340.0,
+			"draw_min": 340.0,
+			"engine_peak_bytes": null,
+			"fps": 60.0321171826927,
+			"frames": 20,
+			"max_ms": 25.747,
+			"mean_ms": 16.65775,
+			"p95_ms": 24.69,
+			"p99_ms": 25.747
+		},
+		"probe_mine": {
+			"draw_max": 340.0,
+			"draw_min": 340.0,
+			"engine_peak_bytes": null,
+			"fps": 60.0079810614812,
+			"frames": 20,
+			"max_ms": 20.86,
+			"mean_ms": 16.66445,
+			"p95_ms": 20.336,
+			"p99_ms": 20.86
+		},
+		"prologue": {
+			"draw_max": 625.0,
+			"draw_min": 0.0,
+			"engine_peak_bytes": null,
+			"fps": 55.9643857174402,
+			"frames": 1048,
+			"max_ms": 246.818,
+			"mean_ms": 17.8685066793893,
+			"p95_ms": 17.213,
+			"p99_ms": 68.768
+		}
+	},
+	"method": "QA-only inherited subclasses copy exact RC2 method bodies with timestamps; scene resource bytes unchanged. CPU wall times, deferred dispatch and physics waits; not GPU/function profiler or a 30-minute test.",
+	"operations": {
+		"save_validation_and_apply": [
+			366.912,
+			366.916,
+			366.933,
+			366.923,
+			366.905,
+			366.933
+		]
+	},
+	"release": true,
+	"spikes": [
+		{
+			"ms": 246.818,
+			"phase": "prologue",
+			"seconds": 0.246818
+		},
+		{
+			"ms": 91.927,
+			"phase": "prologue",
+			"seconds": 0.338745
+		},
+		{
+			"ms": 54.827,
+			"phase": "prologue",
+			"seconds": 0.393572
+		},
+		{
+			"ms": 37.34,
+			"phase": "prologue",
+			"seconds": 0.430912
+		},
+		{
+			"ms": 132.603,
+			"phase": "prologue",
+			"seconds": 2.113392
+		},
+		{
+			"ms": 146.68,
+			"phase": "prologue",
+			"seconds": 4.474471
+		},
+		{
+			"ms": 45.727,
+			"phase": "prologue",
+			"seconds": 4.56901
+		},
+		{
+			"ms": 167.022,
+			"phase": "prologue",
+			"seconds": 5.819151
+		},
+		{
+			"ms": 38.888,
+			"phase": "prologue",
+			"seconds": 6.774231
+		},
+		{
+			"ms": 111.446,
+			"phase": "prologue",
+			"seconds": 6.896606
+		},
+		{
+			"ms": 183.833,
+			"phase": "prologue",
+			"seconds": 8.196334
+		},
+		{
+			"ms": 158.274,
+			"phase": "prologue",
+			"seconds": 11.30389
+		},
+		{
+			"ms": 127.163,
+			"phase": "prologue",
+			"seconds": 14.297408
+		},
+		{
+			"ms": 57.794,
+			"phase": "prologue",
+			"seconds": 17.970991
+		},
+		{
+			"ms": 68.768,
+			"phase": "prologue",
+			"seconds": 18.039759
+		},
+		{
+			"ms": 74.379,
+			"phase": "prologue",
+			"seconds": 18.180342
+		},
+		{
+			"ms": 33.508,
+			"phase": "probe_X003",
+			"seconds": 21.492745
+		}
+	],
+	"validation": [
+		{
+			"accepted": true,
+			"dynamic_and_physics_wait_ms": 26.176,
+			"instantiate_ms": 0.521,
+			"map": "mine",
+			"query_and_free_ms": 0.048,
+			"ready_ms": 1.893,
+			"world_and_select_ms": 0.744
+		},
+		{
+			"accepted": true,
+			"dynamic_and_physics_wait_ms": 26.735,
+			"instantiate_ms": 1.892,
+			"map": "greystone_runtime",
+			"query_and_free_ms": 0.044,
+			"ready_ms": 3.305,
+			"world_and_select_ms": 0.499
+		},
+		{
+			"accepted": true,
+			"dynamic_and_physics_wait_ms": 27.491,
+			"instantiate_ms": 1.623,
+			"map": "greystone_runtime",
+			"query_and_free_ms": 0.023,
+			"ready_ms": 3.133,
+			"world_and_select_ms": 0.437
+		},
+		{
+			"accepted": true,
+			"dynamic_and_physics_wait_ms": 27.543,
+			"instantiate_ms": 1.661,
+			"map": "greystone_runtime",
+			"query_and_free_ms": 0.029,
+			"ready_ms": 3.083,
+			"world_and_select_ms": 0.432
+		},
+		{
+			"accepted": true,
+			"dynamic_and_physics_wait_ms": 27.088,
+			"instantiate_ms": 1.766,
+			"map": "greystone_runtime",
+			"query_and_free_ms": 0.029,
+			"ready_ms": 3.361,
+			"world_and_select_ms": 0.448
+		},
+		{
+			"accepted": true,
+			"dynamic_and_physics_wait_ms": 27.437,
+			"instantiate_ms": 1.686,
+			"map": "greystone_runtime",
+			"query_and_free_ms": 0.026,
+			"ready_ms": 3.17,
+			"world_and_select_ms": 0.451
+		},
+		{
+			"accepted": true,
+			"dynamic_and_physics_wait_ms": 26.594,
+			"instantiate_ms": 1.977,
+			"map": "greystone_runtime",
+			"query_and_free_ms": 0.032,
+			"ready_ms": 3.422,
+			"world_and_select_ms": 0.52
+		},
+		{
+			"accepted": true,
+			"dynamic_and_physics_wait_ms": 27.289,
+			"instantiate_ms": 1.745,
+			"map": "greystone_runtime",
+			"query_and_free_ms": 0.026,
+			"ready_ms": 3.224,
+			"world_and_select_ms": 0.447
+		}
+	]
+}

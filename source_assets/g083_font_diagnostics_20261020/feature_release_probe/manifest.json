@@ -1,0 +1,24 @@
+{
+  "mode": "Probe",
+  "base_commit": "c2c4ebdddd06489a812e940ed46a0829450d7d83",
+  "exe": "D:\\RPGGAME\\builds\\g08\\qa-soak\\20261020-195302\\ProjectCrystal.exe",
+  "pck_sha256": "5EDA02629CAD5BB2AB1FC1FB361551FB0DCF9B3A04E9C1BBC467242BEBA6F641",
+  "pid": 26552,
+  "seconds": 35.3002922,
+  "exit_code": 0,
+  "log": "D:\\RPGGAME\\artifacts\\g083\\20261020-195400\\release-soak.log",
+  "process_samples": "D:\\RPGGAME\\artifacts\\g083\\20261020-195400\\process.csv",
+  "human_playthrough": false,
+  "android_verified": false,
+  "capture_suppression": false,
+  "source_dirty_files": [
+    "docs/ASSET_CREDITS.md",
+    "docs/CHANGELOG.md",
+    "docs/CONTINUOUS_DEVELOPMENT_LOG.md",
+    "docs/GREYSTONE_BUILD_TASKS.md",
+    "docs/GREYSTONE_G083_REPORT.md",
+    "docs/QUALITY_CHARACTER_GENERATION_REPORT.md",
+    "docs/TASKS.md"
+  ],
+  "metrics": "D:\\RPGGAME\\artifacts\\g083\\20261020-195400\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g083\\load_probe.json"
+}
