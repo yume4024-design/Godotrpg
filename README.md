@@ -4,6 +4,8 @@
 
 2026-10-17 雷恩／莉雅已改用 ComfyUI Pixal3D 重製模型，見 [重製報告](docs/PIXAL3D_CHARACTER_REPORT.md)。以 `tools/godot.ps1 -Mode PreviewCharacters` 檢視兩人，`-Mode RunG06` 遊玩新版灰石村；正式 v0.6.1 入口與既有匯出保留。
 
+2026-10-21 G06 探索比例與步態已修整：兩位主角約 1.95m，與村民／門面統一尺度。WASD／方向鍵或左搖桿走路，按住 **Shift／Xbox LS（左搖桿按鍵）** 跑步；鬆開恢復走路。見 [比例與走跑報告](docs/EXPLORATION_LOCOMOTION_REPORT.md)。
+
 2026-10-17 功能分支已提供新版灰石村 Windows 預覽與角色更新，見 [預覽說明](docs/GREYSTONE_PREVIEW_GUIDE.md) 及 [角色修整紀錄](docs/CHARACTER_POLISH_REPORT.md)。用 `tools/godot.ps1 -Mode ExportGreystonePreview` 產生獨立預覽；正式 v0.6.1 輸出保留。
 
 > **2026-10-14 正文合併更新（優先於本檔較早條款）**：新企劃已由使用者貼文取得，不再待正文。灰石村採 120×120m、Q 版低面數切面、北側公會/西北農田/東北礦坑/東河/南入口/西出口；平台 Windows + Android，iOS 預留。執行以 [docs/GREYSTONE_VILLAGE_SPEC.md](docs/GREYSTONE_VILLAGE_SPEC.md) 與 [docs/GREYSTONE_BUILD_TASKS.md](docs/GREYSTONE_BUILD_TASKS.md) 為準。G01 獨立佔位預覽，不替換正式0.6.1存檔；G06再遷移位置及串接劇情/觸控。本檔舊「待正文」、PC限定、圖片未列公會、固定舊碰撞等描述保留為歷史，不是目前限制。

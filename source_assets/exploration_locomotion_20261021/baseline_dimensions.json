@@ -1,0 +1,54 @@
+{
+  "buildings": {
+    "FarmHouse": {
+      "door_width_m": 2.09708640575409,
+      "size_m": "(7.0, 6.0, 6.0)"
+    },
+    "GuildHall": {
+      "door_width_m": 1.8,
+      "size_m": "(15.0, 11.0, 11.0)"
+    },
+    "HouseA": {
+      "door_width_m": 2.09708640575409,
+      "size_m": "(7.0, 6.0, 6.0)"
+    },
+    "HouseB": {
+      "door_width_m": 1.8,
+      "size_m": "(7.0, 8.0, 6.0)"
+    },
+    "Inn": {
+      "door_width_m": 1.87525935173035,
+      "size_m": "(12.0, 9.0, 9.0)"
+    },
+    "ItemShop": {
+      "door_width_m": 2.1271363735199,
+      "size_m": "(8.0, 7.0, 7.0)"
+    },
+    "WeaponShop": {
+      "door_width_m": 2.1271363735199,
+      "size_m": "(8.0, 7.0, 7.0)"
+    }
+  },
+  "hero_height_m": 1.59899997711182,
+  "hero_size_m": "(0.721043, 1.599, 0.302423)",
+  "npcs": {
+    "Blacksmith": {
+      "height_m": 2.02500009536743
+    },
+    "Guildmaster": {
+      "height_m": 1.97100019454956
+    },
+    "Innkeeper": {
+      "height_m": 1.97099995613098
+    },
+    "ItemMerchant": {
+      "height_m": 1.97100019454956
+    },
+    "Lia": {
+      "height_m": 1.59899997711182
+    },
+    "Villager": {
+      "height_m": 2.02500009536743
+    }
+  }
+}

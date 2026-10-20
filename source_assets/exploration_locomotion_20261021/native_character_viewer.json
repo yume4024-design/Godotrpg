@@ -1,0 +1,27 @@
+{
+  "summary": {
+    "checks": 12,
+    "failures": 0,
+    "source_log": "artifacts\\locomotion\\character-preview.log",
+    "sha256": "c12303b5b075691a701b0b241a9842ef03dd400a3ab38650ab5598e41136b5e1"
+  },
+  "lines": [
+    "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080",
+    "",
+    "PASS New Lia resources and exact mesh budget load",
+    "PASS Mouse toggles staff and exact combined budget",
+    "PASS Mouse starts imported cast",
+    "PASS Mouse opens face view",
+    "PASS Angle control rotates actor",
+    "PASS Mouse selects current Ren locomotion asset",
+    "PASS New Ren has imported action controls",
+    "PASS Ren exact mesh budget loads",
+    "PASS Mouse selects running intensity",
+    "PASS Viewer has no game save or party services",
+    "PASS Mouse saves a new preview image",
+    "PASS Save result shown to user",
+    "CHARACTER_PREVIEW_RESULT checks=12 failures=0",
+    "Log: D:\\RPGGAME\\artifacts\\logs\\testcharacterpreview-20261021-044336-907.log"
+  ]
+}

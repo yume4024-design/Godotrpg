@@ -1,0 +1,38 @@
+[
+  {
+    "character": "ren",
+    "triangles": 4815,
+    "bones": 19,
+    "clips": [
+      "attack",
+      "cast",
+      "guard",
+      "hit",
+      "potion",
+      "run",
+      "walk"
+    ],
+    "geometry_uv_skin_identical": true,
+    "five_battle_clips_identical": true,
+    "source_sha256": "6bb14ae0c547d4b187cf6f87548f601856580e6412770623b7a42e40543921f6",
+    "output_sha256": "7a89ddf2792327f8ce817c03562f7de98f660c702627b10b0d83c9882e1237eb"
+  },
+  {
+    "character": "lia",
+    "triangles": 4806,
+    "bones": 19,
+    "clips": [
+      "attack",
+      "cast",
+      "guard",
+      "hit",
+      "potion",
+      "run",
+      "walk"
+    ],
+    "geometry_uv_skin_identical": true,
+    "five_battle_clips_identical": true,
+    "source_sha256": "d2ebab02be6b38b6d539f8a77d50d82baaebcf4e64153ac0c36b94e9fdfc96a4",
+    "output_sha256": "8436c96f94e8091fdb836ac09b6c83439b3c6856626db637597cd32b960c7f24"
+  }
+]

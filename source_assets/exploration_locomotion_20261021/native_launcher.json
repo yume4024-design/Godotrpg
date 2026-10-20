@@ -1,0 +1,19 @@
+{
+  "launcher": "D:\\RPGGAME\\builds\\g08\\candidate\\20261021-044504\\start_walk_run.cmd",
+  "launcher_pid": 20576,
+  "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+  "physical_input": false,
+  "passed": true,
+  "log": "D:\\RPGGAME\\builds\\g08\\candidate\\20261021-044504\\user_test\\play-4386-10380.log",
+  "game_pid": 36980,
+  "window_handle": 9243208,
+  "window_title": "失落星核 — Project Crystal",
+  "responding": true,
+  "observed_seconds": 8.1284256,
+  "game_exit_code": 0,
+  "launcher_exit_code": 0,
+  "stdout": "Starting Project Crystal RC3...\r\n",
+  "stderr": "",
+  "exe_sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+  "pck_sha256": "97A635AEFBA60A6ACB48B4EF2791C442F4E1E0ADA82E753BA3778198D5BCC527"
+}

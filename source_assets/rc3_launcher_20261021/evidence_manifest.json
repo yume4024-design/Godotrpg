@@ -9,6 +9,7 @@
     "original_launcher_bytes.json": "324ce89a7566baf71a7e36efc83e65e35205147c6ffb3e9c062990b7d5cfe780",
     "package.json": "f0760a5aa34de10ca35f1a5381f2a266c0b0f92966299d7d1332e5040d3e7123",
     "portable_launch.json": "64158e32f0c93b1abb4038af0338c28e9ba88dbbf006f81ac7a074cd5ff515a2",
-    "preflight.json": "3f734013fc266661bfa30d87f1d35aa171bb83891572d020e4aa35f76d12ba98"
+    "preflight.json": "3f734013fc266661bfa30d87f1d35aa171bb83891572d020e4aa35f76d12ba98",
+    "human_acceptance.json": "406222d1913d14559be54011b542fe9601dfb4357f3f50fed0715d2e271db9e5"
   }
 }

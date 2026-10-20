@@ -12,6 +12,10 @@ func read_direction() -> Vector2:
 	return Input.get_vector(&"move_left", &"move_right", &"move_forward", &"move_back")
 
 
+func read_run() -> bool:
+	return enabled and _window_focused and Input.is_action_pressed(&"move_run")
+
+
 func _notification(what: int) -> void:
 	if what == NOTIFICATION_APPLICATION_FOCUS_OUT:
 		_window_focused = false

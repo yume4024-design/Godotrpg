@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-21 — 既有主角的探索步態衍生資產
+
+沿用已記錄的使用者角色設計／本機Pixal3D來源，不新增外部模型或購買。Blender5.2.2在保留的ren_rigged.blend／lia_rigged.blend副本只改Walk／Run，輸出ren_locomotion.glb／lia_locomotion.glb與周期profile。POSITION／NORMAL／UV／索引／權重及五段戰鬥片段均與原GLB逐緩衝相同；4815／4806面、19骨／七段。來源SHA及輸出SHA見source_assets/exploration_locomotion_20261021/glb_preservation.json，原GLB／blend保留；本輪沒有新增第三方授權主張。
+
 ## 2026-10-20 — A04 荊棘野豬接入
 
 沿用使用者核准四視圖、A03 本機 Pixal3D／Blender 來源；generation_manifest、舊高面數來源與既有粗糙接面限制保留。GLB SHA `3b212d70f5de4321325aba30d6de338ea9f7e8b49103d8bfa3267554fae493ed`，9998面／12骨／七段，未再生成或改貼圖、UV、網格與權重。只新增遊戲視覺PackedScene、名牌與選用Run／Charge播放；沒有新增技能、付費或第三方下載素材。舊場景在scenes/characters/legacy保留。

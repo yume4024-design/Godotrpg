@@ -1,0 +1,35 @@
+{
+  "summary": {
+    "checks": 18,
+    "failures": 0,
+    "source_log": "artifacts\\locomotion\\accessibility.log",
+    "sha256": "2adabd8041180244baef151f62d71601365dd7965ae05551e0e48b8170903f44"
+  },
+  "lines": [
+    "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org",
+    "OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080",
+    "",
+    "STAIRS ren top=(0.0, 0.360451, -0.629448)",
+    "PASS ren climbs three 12cm solid risers",
+    "PASS ren stops without drifting",
+    "PASS ren descends to floor",
+    "STAIRS lia top=(0.0, 0.360451, -0.629448)",
+    "PASS lia climbs three 12cm solid risers",
+    "PASS lia stops without drifting",
+    "PASS lia descends to floor",
+    "PASS 1m obstacle cannot be climbed",
+    "PASS low ceiling blocks step without penetration",
+    "PASS 22cm riser exceeds 18cm limit",
+    "PASS legacy disabled setting preserves previous collision",
+    "PASS diagonal stair ascent",
+    "PASS flat-ground speed stays 4.5m/s",
+    "PASS three authored and eight expanded mine beams registered",
+    "PASS foreground beam removed from character silhouette; shadow retained",
+    "PASS battle-hidden exploration player restores beam",
+    "PASS disabling component restores beam",
+    "PASS unblocked beam restored",
+    "PASS map switch restores original rendering",
+    "G082_RESULT checks=18 failures=0",
+    "Log: D:\\RPGGAME\\artifacts\\logs\\testg08accessibility-20261021-044324-956.log"
+  ]
+}

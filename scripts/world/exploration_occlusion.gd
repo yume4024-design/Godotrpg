@@ -4,6 +4,7 @@ extends Node
 var target: Node3D
 var camera: Camera3D
 var enabled: bool = false
+var target_height: float = 1.6
 var _meshes: Array[MeshInstance3D] = []
 var _original: Array[int] = []
 var _blocked: Array[bool] = []
@@ -30,7 +31,7 @@ func _process(_delta: float) -> void:
 			# Mesh-local segment handles rotated/scaled timbers without physics proxies.
 			var inverse: Transform3D = mesh.global_transform.affine_inverse()
 			var bounds: AABB = mesh.get_aabb().grow(.12 if _blocked[index] else .06)
-			for height: float in [.4, 1.0, 1.6]:
+			for height: float in [target_height * .25, target_height * .625, target_height]:
 				var point: Vector3 = target.global_position + Vector3.UP*height
 				# Orthographic rays are parallel, not rays from the camera center.
 				var screen: Vector2 = camera.unproject_position(point)

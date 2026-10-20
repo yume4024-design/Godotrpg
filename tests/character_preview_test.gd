@@ -35,7 +35,7 @@ func _run() -> void:
 	await _click(choices[0])
 	await create_timer(.1).timeout
 	actor = viewer.get("actor")
-	_check(choices[0].button_pressed and actor.model.resource_path.ends_with("pixal3d/ren_rigged.glb"),"Mouse selects new Ren")
+	_check(choices[0].button_pressed and actor.model.resource_path.ends_with("pixal3d/ren_locomotion.glb"),"Mouse selects current Ren locomotion asset")
 	_check(staff.disabled and not actions[&"mend"].disabled,"New Ren has imported action controls")
 	_check(info.text.contains("4815"),"Ren exact mesh budget loads")
 	var motions: Array = viewer.get("motion_buttons")

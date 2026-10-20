@@ -19,7 +19,8 @@ func _run() -> void:
 	await _drag(0,Vector2(185,570))
 	game.player.input_component.notification(Node.NOTIFICATION_APPLICATION_FOCUS_IN)
 	await create_timer(.3).timeout
-	_check(game.player.position.distance_to(start)>.6,"Touch stick moves existing Player via InputMap")
+	var walk_distance: float = game.player.position.distance_to(start)
+	_check(absf(walk_distance - game.player.movement.speed * .3) < .12,"Touch stick matches configured walking speed via InputMap")
 	_check(Input.get_action_strength("move_right")>.5,"Stick drives shared move_right action")
 	await _screen(0,Vector2(185,570),false)
 	_check(Input.get_vector("move_left","move_right","move_forward","move_back").length()<.01,"Lift releases movement")
@@ -59,7 +60,8 @@ func _run() -> void:
 	_key(KEY_W,true)
 	await create_timer(.2).timeout
 	_key(KEY_W,false)
-	_check(game.player.position.distance_to(start)>.4,"Keyboard works after touch")
+	var keyboard_distance: float = game.player.position.distance_to(start)
+	_check(absf(keyboard_distance - game.player.movement.speed * .2) < .10,"Keyboard retains configured walking speed after touch")
 	_check(game.battles.launch(&"B001")>0,"Existing practice battle starts")
 	var manager: BattleManager=await _manager()
 	if manager==null: _finish(); return

@@ -13,7 +13,7 @@ func _run() -> void:
 	var npcs: Node3D = load("res://scenes/world/greystone_npcs.tscn").instantiate()
 	stage.add_child(npcs)
 	var npc_visual: CartoonActor = npcs.get_node("Lia/Appearance")
-	if npc_visual.model.resource_path != "res://assets/models/pixal3d/lia_rigged.glb": failures += 1
+	if npc_visual.model.resource_path != "res://assets/models/pixal3d/lia_locomotion.glb": failures += 1
 	npcs.queue_free()
 	var camera: Camera3D = Camera3D.new()
 	stage.add_child(camera)

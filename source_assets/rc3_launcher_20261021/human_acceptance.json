@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-21",
+  "source": "Direct human replies in this chat; user-reported physical test, not agent hardware verification",
+  "package": "builds/g08/rc3-20261020/ProjectCrystal-0.6.1-g08-rc3-launcher-fix-windows-x64.zip",
+  "package_sha256": "e9ce1ce6f298a6417f78aa9de325bf800d5356c6a6feba23f698ffd298c06a2c",
+  "candidate_pck_sha256": "2758b063385a25e724b13a546cff9585f65557dafed2989ebad005baf276d13c",
+  "startup_answer": "可以正常進入並保持開啟",
+  "playthrough_prompt": "請用目前這份包完成序章教學戰、Boss、回村交付、商店／旅館，以及存檔後關閉重開讀取，再回報鍵鼠與 Xbox 的結果",
+  "playthrough_answer": "鍵鼠與 Xbox 全部通過",
+  "does_not_certify": [
+    "This turn newer locomotion package",
+    "Android/iOS",
+    "manual defeat/retry was not explicitly asked in this reply",
+    "overall G08 or first chapter completion"
+  ]
+}

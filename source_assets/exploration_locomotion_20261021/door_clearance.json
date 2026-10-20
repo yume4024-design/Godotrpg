@@ -1,0 +1,51 @@
+[
+  {
+    "building": "farm_house",
+    "door_width_m": 2.0970864057540894,
+    "door_height_m": 2.4,
+    "hero_height_m": 1.95,
+    "head_clearance_m": 0.44999999999999996
+  },
+  {
+    "building": "guild_hall",
+    "door_width_m": 1.8,
+    "door_height_m": 2.4,
+    "hero_height_m": 1.95,
+    "head_clearance_m": 0.44999999999999996
+  },
+  {
+    "building": "house_a",
+    "door_width_m": 2.0970864057540894,
+    "door_height_m": 2.4,
+    "hero_height_m": 1.95,
+    "head_clearance_m": 0.44999999999999996
+  },
+  {
+    "building": "house_b",
+    "door_width_m": 1.8,
+    "door_height_m": 2.4000002861022947,
+    "hero_height_m": 1.95,
+    "head_clearance_m": 0.4500002861022947
+  },
+  {
+    "building": "inn",
+    "door_width_m": 1.8752593517303466,
+    "door_height_m": 2.4,
+    "hero_height_m": 1.95,
+    "head_clearance_m": 0.44999999999999996
+  },
+  {
+    "building": "item_shop",
+    "door_width_m": 2.1271363735198974,
+    "door_height_m": 2.4,
+    "hero_height_m": 1.95,
+    "head_clearance_m": 0.44999999999999996
+  },
+  {
+    "building": "weapon_shop",
+    "door_width_m": 2.1271363735198974,
+    "door_height_m": 2.4,
+    "hero_height_m": 1.95,
+    "head_clearance_m": 0.44999999999999996
+  }
+]

@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" path="res://scenes/characters/ren_visual.tscn" id="Ren"]
 [sub_resource type="CapsuleShape3D" id="Body"]
 radius = 0.3
-height = 1.6
+height = 1.95
 [sub_resource type="SystemFont" id="Font"]
 font_names = PackedStringArray("Microsoft JhengHei")
 [node name="GreystoneNPCs" type="Node3D"]
@@ -19,7 +19,7 @@ kind = "npc"
 label = "公會長瑪爾克"
 [node name="Appearance" parent="Guildmaster" instance=ExtResource("Guild")]
 [node name="Body" type="StaticBody3D" parent="Guildmaster"]
-position = Vector3(0,0.8,0)
+position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="Guildmaster/Body"]
 shape = SubResource("Body")
 [node name="Name" type="Label3D" parent="Guildmaster"]
@@ -39,9 +39,9 @@ ambient_only = false
 kind = "npc"
 label = "莉雅"
 [node name="Appearance" parent="Lia" instance=ExtResource("Lia")]
-scale = Vector3(0.82, 0.82, 0.82)
+scale = Vector3(1, 1, 1)
 [node name="Body" type="StaticBody3D" parent="Lia"]
-position = Vector3(0,0.8,0)
+position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="Lia/Body"]
 shape = SubResource("Body")
 [node name="Name" type="Label3D" parent="Lia"]
@@ -62,7 +62,7 @@ kind = "npc"
 label = "旅館老闆"
 [node name="Appearance" parent="Innkeeper" instance=ExtResource("Guild")]
 [node name="Body" type="StaticBody3D" parent="Innkeeper"]
-position = Vector3(0,0.8,0)
+position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="Innkeeper/Body"]
 shape = SubResource("Body")
 [node name="Name" type="Label3D" parent="Innkeeper"]
@@ -83,7 +83,7 @@ kind = "npc"
 label = "道具商人"
 [node name="Appearance" parent="ItemMerchant" instance=ExtResource("Guild")]
 [node name="Body" type="StaticBody3D" parent="ItemMerchant"]
-position = Vector3(0,0.8,0)
+position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="ItemMerchant/Body"]
 shape = SubResource("Body")
 [node name="Name" type="Label3D" parent="ItemMerchant"]
@@ -104,7 +104,7 @@ kind = "npc"
 label = "鐵匠"
 [node name="Appearance" parent="Blacksmith" instance=ExtResource("Ren")]
 [node name="Body" type="StaticBody3D" parent="Blacksmith"]
-position = Vector3(0,0.8,0)
+position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="Blacksmith/Body"]
 shape = SubResource("Body")
 [node name="Name" type="Label3D" parent="Blacksmith"]
@@ -125,7 +125,7 @@ kind = "npc"
 label = "村民"
 [node name="Appearance" parent="Villager" instance=ExtResource("Ren")]
 [node name="Body" type="StaticBody3D" parent="Villager"]
-position = Vector3(0,0.8,0)
+position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="Villager/Body"]
 shape = SubResource("Body")
 [node name="Name" type="Label3D" parent="Villager"]

@@ -1,0 +1,162 @@
+[
+  {
+    "file": "baseline_dimensions.json",
+    "bytes": 1154,
+    "sha256": "c740a9be0dae8c745b47a435a9251c098dcad783ed112d0c488ff6d84625370c"
+  },
+  {
+    "file": "baseline_village.webp",
+    "bytes": 23608,
+    "sha256": "56bb49f16a0cf21fe4e0ef3dd9c89e177d1ae739f9bbd166e9ca560f0a68d208"
+  },
+  {
+    "file": "door_clearance.json",
+    "bytes": 1206,
+    "sha256": "1911d0ea872c2c386292e8508698a332161a97a2befe9608ee4ade7318ef4bc1"
+  },
+  {
+    "file": "failed_attempts/fixture_1.json",
+    "bytes": 1983,
+    "sha256": "f522d8c489f360ff9fecce16a055cbacbe5581678553356e132cadd37b4931bc"
+  },
+  {
+    "file": "failed_attempts/fixture_2.json",
+    "bytes": 2306,
+    "sha256": "a724d386b24c29b62b5d2ad2ceed41171acef156286449a224dcf872caeeba34"
+  },
+  {
+    "file": "failed_attempts/fixture_3.json",
+    "bytes": 2305,
+    "sha256": "bd13c007c7469685b925045c111deba82ac398e4063e698cdcc99065e6aa22ca"
+  },
+  {
+    "file": "failed_attempts/riser_22cm.json",
+    "bytes": 1209,
+    "sha256": "91e43d42e560cacfa95715435dd3dfbd37a918c9338bdc0d91ab194ffd9d280f"
+  },
+  {
+    "file": "farm_run.webp",
+    "bytes": 30112,
+    "sha256": "70878999878965207dbebbc047f614f9eb8dec243e21092a1db49542e87a99df"
+  },
+  {
+    "file": "g06_regression.json",
+    "bytes": 6409,
+    "sha256": "c25a2441647cedcf261a5c2454bbc22682af5da942ed6217b74e8990eef4d55a"
+  },
+  {
+    "file": "glb_preservation.json",
+    "bytes": 909,
+    "sha256": "dbf6549faacdd7e0bf5824eea1429e067722c8ad96ab87d6b1f22668ee8bdf1a"
+  },
+  {
+    "file": "inn_walk.webp",
+    "bytes": 19926,
+    "sha256": "68579dbe043ea0906c5e184c43efc8734bc0835bbdf4c583d35bac2cb5c98f68"
+  },
+  {
+    "file": "lia_authoring.json",
+    "bytes": 781,
+    "sha256": "ad5b1ee80626b9cc5ef48233db1717cf601f0e18c4847c8a799005c4993822e8"
+  },
+  {
+    "file": "mine_walk_run.webp",
+    "bytes": 25144,
+    "sha256": "8f47a394fa4b5a4751f6ff28528c1cbb4c5d8697843938cf787b1ddb537b53ae"
+  },
+  {
+    "file": "movement_measurements.json",
+    "bytes": 2305,
+    "sha256": "bd287bab781b9e65ca339d22c222cb73b8f60be3f31f117bece6a710ba22c52e"
+  },
+  {
+    "file": "native_character_viewer.json",
+    "bytes": 1106,
+    "sha256": "a8288d33c12327c78de5d65dcec49c51397437565245edcd2a2d7ca8e9e266fe"
+  },
+  {
+    "file": "native_characters.json",
+    "bytes": 4052,
+    "sha256": "afa0237d360fa4c658ead205e7ac2b6737e3b1f2768c8b8fb3606213714fe5a3"
+  },
+  {
+    "file": "native_collision_occlusion.json",
+    "bytes": 1496,
+    "sha256": "ff670fdc2bee17067aebac75764fb1af6c95501f797565233e9ed464c9f2dd2e"
+  },
+  {
+    "file": "native_exploration.json",
+    "bytes": 3790,
+    "sha256": "91f4bd5621e2e4586381f92d7cc6f8b48bd33b3bc2cd0b75de27b537597c49c6"
+  },
+  {
+    "file": "native_launcher.json",
+    "bytes": 818,
+    "sha256": "78d688763a9ee117a1d31300efd7d734199eee71958f8747f2c365791b2a68fd"
+  },
+  {
+    "file": "native_release.json",
+    "bytes": 1466,
+    "sha256": "ca5b80b56410f3b8046616ae8cb45603798f0a366ae6fb3125782cd1618cc5c8"
+  },
+  {
+    "file": "README.md",
+    "bytes": 2440,
+    "sha256": "a25abb3371d1d242fca713240fb7859ae8ac4c136485171339ef613e22a47e76"
+  },
+  {
+    "file": "ren_authoring.json",
+    "bytes": 779,
+    "sha256": "83ea94338ef372b07bf4cc40c1b4d31318c52b5bf6ac46ffb0abfd6311568ba4"
+  },
+  {
+    "file": "revised_dimensions.json",
+    "bytes": 1153,
+    "sha256": "cb4fd5b0c293fba712d9e26c0f94bc5016ba75ed31fe77d0fa50ad89e9186223"
+  },
+  {
+    "file": "revised_village.webp",
+    "bytes": 23622,
+    "sha256": "817eddf374ef6ba8a148d990c30ae862526ff39442df222eb19b67cfa05d3c63"
+  },
+  {
+    "file": "run.gif",
+    "bytes": 678735,
+    "sha256": "899755fd8a642b07c9f9262cc6c6daea653af676513fa2eb822a468620a629f5"
+  },
+  {
+    "file": "run_05.webp",
+    "bytes": 11960,
+    "sha256": "239f8d485f63a4dd471da00a4525d48f5c131631683ff6e383f59677b429bc81"
+  },
+  {
+    "file": "run_15.webp",
+    "bytes": 10708,
+    "sha256": "cdb7667ec03b55266ce67f14ba4b8e50237a3d098776d216e1022ae4e21a7c77"
+  },
+  {
+    "file": "validation.json",
+    "bytes": 1520,
+    "sha256": "1267077a18bdb02dc18eebfc6fdbd8be7c800863c3e9cc89073298b6e8528c9a"
+  },
+  {
+    "file": "village_gameplay.webp",
+    "bytes": 22178,
+    "sha256": "3639a91d89752eca89347b5bb873896d10228cef3d7ba749d5961116605ff8d8"
+  },
+  {
+    "file": "walk.gif",
+    "bytes": 666723,
+    "sha256": "be5d2152ff82b04af5bc9cd0cc17386db26273c0686c1cbf5a3db2b48d2f8888"
+  },
+  {
+    "file": "walk_05.webp",
+    "bytes": 11862,
+    "sha256": "1811537a6fc3430845c674b7e45341c3ffa752f74e552338d55db22351c7f802"
+  },
+  {
+    "file": "walk_15.webp",
+    "bytes": 11752,
+    "sha256": "167cbad4e24033b054f8a623f52b8bacf1ff7a3b1740f771cd251607b4ed620e"
+  }
+]

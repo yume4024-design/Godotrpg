@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-21",
+  "platform": "Windows graphical Godot 4.7.2",
+  "checks": {
+    "native_exploration": {
+      "checks": 60,
+      "failures": 0,
+      "source_log": "artifacts\\locomotion\\height-guard-acceptance.log",
+      "sha256": "4bf94c2565b67cef9960467b0ba7401ca4b0f618da5f223d688980f94a8008e2"
+    },
+    "native_characters": {
+      "checks": 88,
+      "failures": 0,
+      "source_log": "artifacts\\locomotion\\pixal.log",
+      "sha256": "705e5f52af28686beda2f9916d00c39c88aa61655e1b6a1dd6cb7c68cd386636"
+    },
+    "native_collision_occlusion": {
+      "checks": 18,
+      "failures": 0,
+      "source_log": "artifacts\\locomotion\\accessibility.log",
+      "sha256": "2adabd8041180244baef151f62d71601365dd7965ae05551e0e48b8170903f44"
+    },
+    "native_character_viewer": {
+      "checks": 12,
+      "failures": 0,
+      "source_log": "artifacts\\locomotion\\character-preview.log",
+      "sha256": "c12303b5b075691a701b0b241a9842ef03dd400a3ab38650ab5598e41136b5e1"
+    },
+    "g06_incremental_regression": {
+      "modes": 16,
+      "checks": 576,
+      "failures": 0,
+      "note": "13 passing modes retained from partial regression; touch travel expectations changed from old 4.5 m/s thresholds to configured 1.8 m/s distances; final three modes rerun. Failed originals retained."
+    },
+    "native_release": {
+      "prologue_checks": 120,
+      "restart_checks": 14,
+      "failures": 0
+    }
+  },
+  "hardware_input_certified": false,
+  "android_ios_tested": false,
+  "ik_enabled": false
+}

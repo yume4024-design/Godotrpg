@@ -1,0 +1,102 @@
+{
+  "checks": 59,
+  "engine": "4.7.2-stable (official)",
+  "failures": 1,
+  "gaits": {
+    "lia_run": {
+      "foot_span_max_m": 0.273165181279182,
+      "foot_span_min_m": 0.266587659716606,
+      "rate": 1.70853960400292
+    },
+    "lia_walk": {
+      "foot_span_max_m": 0.269584752619267,
+      "foot_span_min_m": 0.266492590308189,
+      "rate": 2.2
+    },
+    "ren_run": {
+      "foot_span_max_m": 0.273165181279182,
+      "foot_span_min_m": 0.266587659716606,
+      "rate": 1.70853960400292
+    },
+    "ren_walk": {
+      "foot_span_max_m": 0.269584752619267,
+      "foot_span_min_m": 0.266492590308189,
+      "rate": 2.2
+    }
+  },
+  "renderer": "Windows",
+  "routes": [
+    {
+      "end": "(-19.82431, 1.520994, -10.96457)",
+      "frames": 344,
+      "grounded": 344,
+      "run": false,
+      "target": "(-20.0, -11.0)"
+    },
+    {
+      "end": "(-10.15728, 0.049925, -10.01544)",
+      "frames": 323,
+      "grounded": 323,
+      "run": false,
+      "target": "(-10.0, -10.0)"
+    },
+    {
+      "end": "(-27.87113, 2.000341, -27.0)",
+      "frames": 219,
+      "grounded": 219,
+      "run": true,
+      "target": "(-28.0, -27.0)"
+    },
+    {
+      "end": "(-41.8814, 4.000812, -28.9826)",
+      "frames": 198,
+      "grounded": 198,
+      "run": true,
+      "target": "(-42.0, -29.0)"
+    },
+    {
+      "end": "(-28.13877, 2.00069, -27.01982)",
+      "frames": 185,
+      "grounded": 185,
+      "run": true,
+      "target": "(-28.0, -27.0)"
+    },
+    {
+      "end": "(24.0, 4.260799, -43.87405)",
+      "frames": 237,
+      "grounded": 237,
+      "run": true,
+      "target": "(24.0, -44.0)"
+    },
+    {
+      "end": "(24.0, 6.000157, -51.82902)",
+      "frames": 116,
+      "grounded": 116,
+      "run": true,
+      "target": "(24.0, -52.0)"
+    },
+    {
+      "end": "(24.0, 4.388096, -44.17276)",
+      "frames": 102,
+      "grounded": 102,
+      "run": true,
+      "target": "(24.0, -44.0)"
+    },
+    {
+      "end": "(200.0, 0.360778, -1.822465)",
+      "frames": 133,
+      "grounded": 129,
+      "run": false,
+      "target": "(200.0, -2.0)"
+    },
+    {
+      "end": "(200.0, 0.35977, -1.879383)",
+      "frames": 55,
+      "grounded": 55,
+      "run": true,
+      "target": "(200.0, -2.0)"
+    }
+  ],
+  "run_distance_m": 4.42498779296875,
+  "walk_distance_m": 1.77001237869263
+}

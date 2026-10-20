@@ -15,10 +15,20 @@ var _inn_service: bool = false
 func _ready() -> void:
 	greystone_enabled = true
 	player.movement.max_step_height = .18
+	player.movement.speed = 1.8
+	player.movement.run_speed = 4.5
+	player.movement.running_enabled = true
+	ui.running_enabled = true
+	# Match the 1.95 m Pixal actors to the village's ~2 m NPCs and 2.4 m doors.
+	var body_shape: CollisionShape3D = player.get_node("CollisionShape3D")
+	body_shape.shape = body_shape.shape.duplicate()
+	(body_shape.shape as CapsuleShape3D).height = 1.95
+	body_shape.position.y = .975
 	occlusion = ExplorationOcclusion.new()
 	occlusion.target = player
 	occlusion.camera = camera
 	occlusion.enabled = true
+	occlusion.target_height = 1.95
 	add_child(occlusion)
 	var hero_visual: PackedScene = load("res://scenes/characters/ren_pixal_visual.tscn")
 	starting_character = starting_character.duplicate()
@@ -39,7 +49,7 @@ func _ready() -> void:
 	player.visual.remove_child(old_appearance)
 	old_appearance.queue_free()
 	player.appearance = hero_visual.instantiate()
-	player.appearance.scale = Vector3.ONE * .82
+	player.appearance.scale = Vector3.ONE
 	player.visual.add_child(player.appearance)
 	battles_path = "res://data/battles/expanded_battles.json"
 	for id: String in ["spore_sprite", "thorn_boar", "crystal_bat", "ore_beetle"]:

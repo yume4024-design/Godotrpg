@@ -2,6 +2,8 @@
 
 2026-10-14；分支 `feature/greystone-g06`。本輪僅 G06.1，G06.2～G06.6 尚未開始。正式 main.tscn、village.tscn、project.godot 啟動入口與 v0.6.1 存檔欄位均保留。
 
+2026-10-21 追加：G06 探索主角／NPC 尺度與碰撞統一至約1.95m，加入走路1.8m/s、Shift／Xbox LS跑步4.5m/s及較窄的步態。原存檔欄位／數值／事件不變；新版探索60／0、角色88／0、碰撞18／0、角色檢視12／0，G06增量回歸16模式576／0；原生測試包序章120／0、重啟14／0。見 [本輪範圍與限制](EXPLORATION_LOCOMOTION_REPORT.md)。下方依日期保留歷史成果。
+
 ## 架構與進入方式
 
 `scenes/main/greystone_integration.tscn` 繼承正式 Main，重用同一 Player、Camera、Interface、SceneManager、DialogueManager、StoryManager、QuestManager、Party/Inventory/RewardManager。沒有新增第二套劇情服務。
