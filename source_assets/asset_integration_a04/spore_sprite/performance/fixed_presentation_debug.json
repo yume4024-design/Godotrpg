@@ -1,0 +1,77 @@
+{
+	"adapter": "NVIDIA GeForce RTX 3080",
+	"cap_fps": 60,
+	"cases": [
+		{
+			"actions_during_measurement": 13,
+			"draw_max": 321.0,
+			"draw_min": 302.0,
+			"enemy_count": 1,
+			"enemy_triangles": 9811,
+			"engine_peak_bytes": 101043890.0,
+			"fps": 60.0026281151112,
+			"frames": 600,
+			"max_ms": 16.775,
+			"mean_ms": 16.6659366666667,
+			"min_ms": 16.554,
+			"nodes": 208.0,
+			"p95_ms": 16.679,
+			"p99_ms": 16.698,
+			"presentation": [
+				{
+					"clear": true,
+					"id": "enemy_00",
+					"label": "[P: (801.8286, 216.7336), S: (101.4857, 55.95427)]",
+					"model": "[P: (822.4236, 279.7682), S: (60.29572, 104.0135)]",
+					"panels": "[[P: (24.0, 22.0), S: (1232.0, 109.0)], [P: (24.0, 462.0), S: (1232.0, 236.0)]]"
+				}
+			]
+		},
+		{
+			"actions_during_measurement": 11,
+			"draw_max": 329.0,
+			"draw_min": 310.0,
+			"enemy_count": 3,
+			"enemy_triangles": 29433,
+			"engine_peak_bytes": 101349672.0,
+			"fps": 60.00267011882,
+			"frames": 600,
+			"max_ms": 16.706,
+			"mean_ms": 16.6659250000001,
+			"min_ms": 16.625,
+			"nodes": 230.0,
+			"p95_ms": 16.671,
+			"p99_ms": 16.686,
+			"presentation": [
+				{
+					"clear": true,
+					"id": "enemy_00",
+					"label": "[P: (678.4, 165.6033), S: (101.4857, 55.9543)]",
+					"model": "[P: (698.995, 228.6379), S: (60.29572, 104.0135)]",
+					"panels": "[[P: (24.0, 22.0), S: (1232.0, 109.0)], [P: (24.0, 462.0), S: (1232.0, 236.0)]]"
+				},
+				{
+					"clear": true,
+					"id": "enemy_01",
+					"label": "[P: (801.8286, 216.7336), S: (101.4857, 55.95427)]",
+					"model": "[P: (822.4236, 279.7682), S: (60.29572, 104.0135)]",
+					"panels": "[[P: (24.0, 22.0), S: (1232.0, 109.0)], [P: (24.0, 462.0), S: (1232.0, 236.0)]]"
+				},
+				{
+					"clear": true,
+					"id": "enemy_02",
+					"label": "[P: (925.2571, 267.8638), S: (101.4858, 55.95428)]",
+					"model": "[P: (945.8522, 330.8983), S: (60.29572, 104.0136)]",
+					"panels": "[[P: (24.0, 22.0), S: (1232.0, 109.0)], [P: (24.0, 462.0), S: (1232.0, 236.0)]]"
+				}
+			]
+		}
+	],
+	"checks": 39,
+	"display": "Windows",
+	"engine": "4.7.2-stable (official)",
+	"failures": [],
+	"method": "One and three full spore rigs with two existing heroes in production BattleArena, guard requests and normal AI; 60 warm frames then 600 measured frames each, screenshots outside sample. Isolated combat fixture without exploration/story/audio services, not a full-game endurance or physical input test.",
+	"release": false,
+	"version": "0.6.1"
+}

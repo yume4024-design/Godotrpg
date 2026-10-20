@@ -40,6 +40,36 @@ func _advance_fixture(manager: BattleManager) -> void:
 	if manager.phase == BattleManager.Phase.WAITING and manager.current.ally:
 		_check(manager.submit(&"guard",manager.current.instance_id,manager.turn_token),"Real guarded turn accepted")
 
+func _screen_rect(points: PackedVector2Array) -> Rect2:
+	var bounds: Rect2 = Rect2(points[0], Vector2.ZERO)
+	for point: Vector2 in points: bounds = bounds.expand(point)
+	return bounds
+
+func _check_presentation(arena: BattleArena, enemies: Array[CombatantState]) -> Array[Dictionary]:
+	var camera: Camera3D = arena.get_node("BattleCamera")
+	var panels: Array[Rect2] = []
+	for panel: PanelContainer in (arena.get_node("BattleInterface") as BattleInterface).find_children("*", "PanelContainer", true, false):
+		panels.append(panel.get_global_rect())
+	var observations: Array[Dictionary] = []
+	for enemy: CombatantState in enemies:
+		var appearance: Node3D = arena.stage.get("_appearances")[enemy.instance_id]
+		var points: PackedVector2Array = []
+		for mesh: MeshInstance3D in appearance.find_children("*", "MeshInstance3D", true, false):
+			if not mesh.is_visible_in_tree(): continue
+			for corner: int in range(8): points.append(camera.unproject_position(mesh.global_transform * mesh.get_aabb().get_endpoint(corner)))
+		var model_rect: Rect2 = _screen_rect(points)
+		var label: Label3D = arena.stage.get("_labels")[enemy.instance_id]
+		points.clear()
+		for vertex: Vector3 in label.generate_triangle_mesh().get_faces():
+			points.append(camera.unproject_position(label.global_position + camera.global_basis * vertex))
+		var label_rect: Rect2 = _screen_rect(points)
+		var clear: bool = root.get_visible_rect().encloses(model_rect) and root.get_visible_rect().encloses(label_rect)
+		for panel: Rect2 in panels:
+			clear = clear and not panel.intersects(model_rect) and not panel.intersects(label_rect)
+		_check(clear, "Complete enemy and nameplate clear actual battle UI: " + str(enemies.size()) + "/" + str(enemy.instance_id))
+		observations.append({"id":str(enemy.instance_id),"model":str(model_rect),"label":str(label_rect),"panels":str(panels),"clear":clear})
+	return observations
+
 func _run() -> void:
 	Engine.max_fps = 60
 	DisplayServer.window_set_vsync_mode(DisplayServer.VSYNC_DISABLED)
@@ -98,6 +128,7 @@ func _run() -> void:
 		row.engine_peak_bytes=engine_peak if engine_peak>0 else null
 		row.actions_during_measurement=arena.manager.history.size()-actions_before
 		row.nodes=Performance.get_monitor(Performance.OBJECT_NODE_COUNT)
+		row.presentation=_check_presentation(arena,enemies)
 		cases.append(row)
 		# Capture after the timing block; never remove a long measured frame.
 		await RenderingServer.frame_post_draw

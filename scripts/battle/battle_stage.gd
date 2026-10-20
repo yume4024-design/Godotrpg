@@ -24,6 +24,10 @@ func setup(manager: BattleManager) -> void:
 			root_actor.position.z = (index - (count - 1) * 0.5) * 2.0
 		if not actor.ally and count == 2:
 			root_actor.position.x += (index - 0.5) * 1.6
+		elif not actor.ally and count == 3:
+			# Stagger a three-enemy row inside the fixed camera and battle panels.
+			root_actor.position.x += (index - 1.0) * 1.8
+			root_actor.position.z = (index - 1.0) * 1.3
 		if actor.ally: ally_index += 1
 		else: enemy_index += 1
 		_actors[actor.instance_id] = root_actor
