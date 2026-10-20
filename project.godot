@@ -20,13 +20,13 @@ run/main_loop_type.character_qa="CharacterDeliveryTestTree"
 run/main_scene.greystone_preview="res://scenes/main/greystone_preview.tscn"
 config/version.greystone_preview="0.6.1-g06-preview"
 run/main_scene.g08_candidate="res://scenes/main/greystone_preview.tscn"
-config/version.g08_candidate="0.6.1-g08-rc2"
+config/version.g08_candidate="0.6.1-g08-rc3"
 run/main_scene.g08_qa="res://tests/qa_entry.tscn"
 run/main_loop_type.g08_qa="WindowsCandidateTestTree"
-config/version.g08_qa="0.6.1-g08-rc2"
+config/version.g08_qa="0.6.1-g08-rc3"
 run/main_scene.g083_qa="res://tests/qa_entry.tscn"
 run/main_loop_type.g083_qa="WindowsReleaseStabilityTestTree"
-config/version.g083_qa="0.6.1-g08-rc2"
+config/version.g083_qa="0.6.1-g08-rc3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [debug]

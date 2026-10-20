@@ -3,6 +3,8 @@ extends Node3D
 ## Presentation only: articulated mesh joints, independent of physics and combat state.
 @export var model: PackedScene
 @export var jelly: bool = false
+## Optional authored anchor for silhouettes that differ from their combat archetype.
+@export var nameplate_anchor: Marker3D
 var _model_root: Node3D
 var _parts: Dictionary[StringName, Node3D] = {}
 var _rest: Dictionary[StringName, Transform3D] = {}

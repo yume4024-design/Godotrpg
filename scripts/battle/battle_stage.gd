@@ -43,6 +43,8 @@ func setup(manager: BattleManager) -> void:
 		var label: Label3D = Label3D.new()
 		var label_height: float = 3.0 if form == CombatantDefinition.Form.GUARDIAN else (1.65 if form == CombatantDefinition.Form.SLIME else 2.4)
 		label.position = root_actor.position + Vector3(0, label_height, 0)
+		if appearance.nameplate_anchor != null:
+			label.position = to_local(appearance.nameplate_anchor.global_position)
 		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
 		label.font = NAMEPLATE_FONT
 		label.font_size = 38

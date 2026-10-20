@@ -29,6 +29,12 @@ func _ready() -> void:
 			var lia_definition: CombatantDefinition = battles.definitions[index].duplicate()
 			lia_definition.appearance = load("res://scenes/characters/lia_pixal_visual.tscn")
 			battles.definitions[index] = lia_definition
+	# Recruitment and save decoding must select the same presentation resource.
+	for index: int in range(party.recruit_definitions.size()):
+		if party.recruit_definitions[index].id == &"lia":
+			var recruit_definition: CombatantDefinition = party.recruit_definitions[index].duplicate()
+			recruit_definition.appearance = load("res://scenes/characters/lia_pixal_visual.tscn")
+			party.recruit_definitions[index] = recruit_definition
 	var old_appearance: CartoonActor = player.appearance
 	player.visual.remove_child(old_appearance)
 	old_appearance.queue_free()
@@ -55,6 +61,8 @@ func _ready() -> void:
 	theme.default_font_size = 18
 	row.theme = theme
 	layer.add_child(row)
+	row.visible = not battles.active
+	battles.active_changed.connect(func(active: bool) -> void: row.visible = not active)
 	bridge_button = Button.new()
 	bridge_button.text = "G06 新舊村莊往返"
 	row.add_child(bridge_button)
