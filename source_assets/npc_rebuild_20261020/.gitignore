@@ -10,6 +10,10 @@ item_merchant/idle_talk_v1/*.glb
 innkeeper/surface_diagnosis/baseline.blend
 innkeeper/surface_v*/*.blend
 innkeeper/surface_v*/*.glb
+# Rebuildable apron preparation / rejected versions stay local; acceptance and
+# the final rigged working Blend are tracked, with only one runtime GLB copy.
+innkeeper/manual_topology_*/
+innkeeper/idle_talk_manual_v1/innkeeper_npc.glb
 # Female villager failed binding and rebuildable preparation scene stay local.
 villager_female/idle_talk_v1/*.blend
 villager_female/idle_talk_v1/*.glb
