@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "reason": "Importer display sphere was included by native audit",
+  "reported_native_triangles": 8792,
+  "actual_character_triangles": 8712,
+  "fixed_in": "topology_v2",
+  "geometry_revision": false
+}

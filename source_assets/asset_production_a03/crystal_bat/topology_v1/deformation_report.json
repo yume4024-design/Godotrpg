@@ -1,0 +1,88 @@
+{
+  "input": "source_assets\\asset_production_a03\\crystal_bat\\topology_v1\\crystal_bat_topology.blend",
+  "sha256": "a7e53ecf7cc9f3fe4de02a7c3c0bea76824a26695f0bd56b078e6a52800b34e1",
+  "category": "common_enemy",
+  "maximum_triangles": 10000,
+  "bones": 11,
+  "actions": {
+    "attack": {
+      "frames": 29,
+      "maximum_triangles": 8792,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.362467995745243,
+      "floor_range": [
+        -1.0,
+        0.14700031280517578
+      ]
+    },
+    "death": {
+      "frames": 37,
+      "maximum_triangles": 8792,
+      "endpoint_vertex_difference": 0.5111702680587769,
+      "max_edge_stretch": 2.0032698509065745,
+      "floor_range": [
+        -1.0,
+        0.14700010418891907
+      ]
+    },
+    "fold_wings": {
+      "frames": 37,
+      "maximum_triangles": 8792,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.9244449717256862,
+      "floor_range": [
+        -1.0,
+        0.14700010418891907
+      ]
+    },
+    "hit": {
+      "frames": 19,
+      "maximum_triangles": 8792,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.0000317126058373,
+      "floor_range": [
+        -1.0,
+        0.14700014889240265
+      ]
+    },
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 8792,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.3563176530888497,
+      "floor_range": [
+        -1.0,
+        0.1470002979040146
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 8792,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.6656169682721091,
+      "floor_range": [
+        -1.0,
+        0.14700010418891907
+      ]
+    }
+  },
+  "total_frames": 196,
+  "topology_warnings": [
+    {
+      "mesh": "crystal_bat_body",
+      "boundary_edges": 12978,
+      "nonmanifold_edges": 12978
+    },
+    {
+      "mesh": "Icosphere",
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

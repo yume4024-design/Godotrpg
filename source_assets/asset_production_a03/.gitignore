@@ -1,3 +1,6 @@
 # Keep failed/intermediate native copies locally; optimized outputs and reports are tracked.
 **/action_extension_v*/*.blend
 **/action_extension_v*/*.glb
+# Initial topology package retained a glTF display sphere; keep failure local.
+crystal_bat/topology_v1/*.blend
+crystal_bat/topology_v1/*.glb

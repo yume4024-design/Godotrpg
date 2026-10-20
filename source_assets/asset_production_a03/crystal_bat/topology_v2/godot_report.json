@@ -1,0 +1,40 @@
+{
+	"asset": "crystal_bat_topology",
+	"category": "common_enemy",
+	"checks": 376,
+	"clips": [
+		{
+			"length": 1.16666662693024,
+			"name": "attack"
+		},
+		{
+			"length": 1.5,
+			"name": "death"
+		},
+		{
+			"length": 1.5,
+			"name": "fold_wings"
+		},
+		{
+			"length": 0.75,
+			"name": "hit"
+		},
+		{
+			"length": 2.0,
+			"name": "idle"
+		},
+		{
+			"length": 1.0,
+			"name": "walk"
+		}
+	],
+	"draw_calls": 1.0,
+	"engine_memory_bytes": 36448626.0,
+	"failures": [],
+	"formal_battle_test": false,
+	"graphical": true,
+	"model": "res://assets/models/rebuilt_enemies/crystal_bat_topology.glb",
+	"model_sha256": "2f283ca6984048765332929e1b7b088e8e544d9398853d977812a08da26e3ed0",
+	"physical_input_test": false,
+	"triangles": 8712
+}

@@ -1,0 +1,52 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\asset_production_a03\\crystal_bat\\topology_v1\\crystal_bat_topology.glb",
+    "category": "common_enemy",
+    "sha256": "2f283ca6984048765332929e1b7b088e8e544d9398853d977812a08da26e3ed0",
+    "maximum_triangles": 10000,
+    "triangles": 8712,
+    "headroom_triangles": 1288,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 9.406358003616333e-08,
+    "primitives": [
+      {
+        "node": 11,
+        "mesh": 0,
+        "triangles": 8712,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      11
+    ],
+    "materials": 1,
+    "animations": [
+      "attack",
+      "death",
+      "fold_wings",
+      "hit",
+      "idle",
+      "walk"
+    ],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 8712,
+  "status": "PASS"
+}
