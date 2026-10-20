@@ -1,0 +1,43 @@
+{
+  "input": "source_assets\\npc_rebuild_20261020\\villager_male\\idle_talk_v1\\villager_male_npc.blend",
+  "sha256": "26997e23c42a5f67ac8f8c2ca46808fa746931113c7deedc419c384e6858f2df",
+  "category": "npc",
+  "maximum_triangles": 15000,
+  "bones": 18,
+  "actions": {
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 13701,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.0317805351075808,
+      "floor_range": [
+        0.0019999761134386063,
+        0.0019999761134386063
+      ]
+    },
+    "talk": {
+      "frames": 49,
+      "maximum_triangles": 13701,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.4137319840907752,
+      "floor_range": [
+        0.0019999761134386063,
+        0.0019999761134386063
+      ]
+    }
+  },
+  "total_frames": 98,
+  "topology_warnings": [
+    {
+      "mesh": "VillagerMaleBody",
+      "boundary_edges": 10178,
+      "nonmanifold_edges": 10179
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

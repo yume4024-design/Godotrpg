@@ -1,0 +1,24 @@
+{
+	"asset": "villager_male",
+	"category": "npc",
+	"checks": 203,
+	"clips": [
+		{
+			"length": 2.0,
+			"name": "idle"
+		},
+		{
+			"length": 2.0,
+			"name": "talk"
+		}
+	],
+	"draw_calls": 1.0,
+	"engine_memory_bytes": 36420935.0,
+	"failures": [],
+	"formal_battle_test": false,
+	"graphical": true,
+	"model": "res://assets/models/rebuilt_npc/villager_male.glb",
+	"model_sha256": "da28cde2a38b16656107a264f0c762d71633bc81843e37c328c9106319b21fa7",
+	"physical_input_test": false,
+	"triangles": 13701
+}

@@ -11,7 +11,7 @@ var failures: Array[String] = []
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--id="): asset_id = argument.trim_prefix("--id=")
-	if asset_id not in ["blacksmith", "item_merchant"]:
+	if asset_id not in ["blacksmith", "item_merchant", "villager_male"]:
 		push_error("Unknown NPC review asset")
 		quit(1)
 		return

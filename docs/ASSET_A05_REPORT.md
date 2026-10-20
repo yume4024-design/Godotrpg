@@ -7,7 +7,7 @@
 | 鐵匠 | 重用既有 9937 面／19 骨來源，停用問題 normal map；新副本 Idle／Talk、98 影格、Godot 動作 213／0、雙實例切換 19／0 | 正式 NPC 替換、實際對話事件／交易回歸；未驗收持鎚／擊砧或巡邏 |
 | 道具商 | 新 Pixal3D 候選及顏色修補；12573 面、20 骨、裙擺權重、Idle／Talk，98 影格、Godot 223＋19／0 | 正式對話／商店整合；未驗收手指、物品交接或巡邏 |
 | 旅館老闆 | 單件生成完成，原貼圖 13651 面；圍裙黑縫及兩版修整失敗均保存 | HUMAN_REVIEW：人工重拓樸，骨架／Idle／Talk／正式整合未開始 |
-| 男村民 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
+| 男村民 | 新生成原件及 13701 面／18 骨 Idle／Talk 候選；98 影格、Godot 203＋19／0 | 正式對話／場景整合；走動／巡邏未驗收 |
 | 女村民 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
 
 ## 道具商實際生成
@@ -101,3 +101,23 @@ ComfyUI 0.41.3／comfy-cli 1.22.0，本機 RTX 3080 12GiB。生成前工具量�
 三份視覺結果及參數／SHA 見來源目錄 generation_manifest.json、inspection、surface_diagnosis、surface_v1/visual_review.json、surface_v2/visual_review.json、review 與 review_v2。失敗工作 Blend／GLB 僅本機保留，Git 排除重複二進位；原始貼圖 GLB、實際失敗畫面與修整重現腳本保留。Blender 寫縮圖快取警告未影響匯出，但沒有把匯出 exit 0 當作視覺 PASS。
 
 依 ai-3d-agent 三次明確生成／修整後回報，停止此缺陷的自動重試，轉 [人工圍裙拓樸工作單](INNKEEPER_TOPOLOGY_REPAIR.md)。需要移除交叉／重複布片、重建前圍裙及邊界後再做骨架與動作。正式旅館 NPC／費用／恢復規則、故事及存檔未改；A05 整體未完成。其他核准來源可以繼續獨立素材工作，不能因這一件失敗而取消完整角色需求。
+
+## 男村民 — Idle／Talk 獨立候選 PASS
+
+四路條件預覽 27183ba6-ad71-40ff-b0dd-d9f33c1dba27、完整模型 3412cd78-428e-4255-ac77-80c989c1c9c8 均 completed，輸出已取回並查看條件四面。沿同一最新工作流 SHA、固定 seed、1536／4096／768／13800 目標；兩份 validate 0 errors／warnings、無 partner nodes，重工作前實測 VRAM 可用 11041703030 bytes。
+
+原始形狀 5669346 面／102005548 bytes 本機保留；貼圖 GLB 13702 面／17097712 bytes，SHA a22ff88e079c2879967c6d53c8283e0ce0b904cb0e5d8fa05cc85170a041d7f3。Blender 匯入 13701（丟棄 1 個不可表示面）。正背 CPU 對照確認停用問題 baked normal 後皮膚／衣料較乾淨，沒有旅館的黑色裂縫；不重畫 albedo、不再減面。
+
+新副本規整 1.75m、18 骨、Idle／Talk 各 2 秒，逆距離骨膠囊權重最多四影響；390 手部頂點排除骨盆／腿部，權重和誤差 4.47e-8。98 影格 evaluated PASS：Idle 最大邊拉伸 1.03178／Talk 1.41373、循環端點 0、腳底約 0.002m。原拆分網格 10178 邊界／10179 非流形邊保留警告，無閉合拓樸宣稱。
+
+```powershell
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' -b --factory-startup --python-exit-code 1 --python scripts/tools/build_villager_male_npc.py -- --input source_assets/npc_rebuild_20261020/villager_male/generated_textured.glb --output source_assets/npc_rebuild_20261020/villager_male/idle_talk_v1
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' -b --factory-startup --python-exit-code 1 --python scripts/tools/audit_asset_motion.py -- --input source_assets/npc_rebuild_20261020/villager_male/idle_talk_v1/villager_male_npc.blend --category npc --output artifacts/asset_a05/villager_male/deformation.json
+./tools/review_npc_rig.ps1 -Asset villager_male
+./tools/review_npc_rig.ps1 -Asset villager_male -Controller
+./tools/review_npc_rig.ps1 -Asset item_merchant -Controller
+```
+
+builder 僅可輸出至新資料夾，既存輸出拒絕覆寫。嚴格 GLB UV／Skin、Blender 重匯入及 Godot Check 均 PASS（check-20261020-101205-377.log）。Godot Windows 圖形動作 **203／0**、雙實例切換／重建 **19／0**，道具商控制器回歸 **19／0**；已查看四面、Idle／Talk 正側與雙實例畫面，未見明顯幾何碎片。獨立場景 Draw Calls=1、引擎記憶體 36420935 bytes，不是整村 FPS／效能驗收。
+
+`assets/models/rebuilt_npc/villager_male.glb`、`scenes/characters/npc/villager_male_visual.tscn` 與來源 idle_talk_v1 下的 Blend／報告／九張實際截圖已封裝，GLB／Blend SHA 均與測試一致。沒有逐指骨、走動／巡邏、物品握把或正式對話／故事／存檔及實體輸入完成宣稱。正式村民 ID、互動範圍與劇情不變。

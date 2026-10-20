@@ -7,7 +7,7 @@
 | N01 | Blacksmith | reference_library_20261020/npc/blacksmith/references | 候選 Idle／Talk PASS：9937 面、19 骨、98 影格、Godot 213＋19／0；正式整合未開始 |
 | N02 | Item Merchant | 同庫 npc/item_merchant/references | 候選 Idle／Talk PASS：12573 面、20 骨、裙擺權重、98 影格、Godot 223＋19／0；正式整合未開始 |
 | N03 | Innkeeper | 同庫 npc/innkeeper/references | HUMAN_REVIEW：13651 面生成完成但圍裙缺陷，三份視覺拒用；人工拓樸待辦，未綁骨架／正式整合 |
-| N04 | Village Citizen Male | 同庫 npc/villager_male/references | 來源 PASS；A05 NOT_STARTED |
+| N04 | Village Citizen Male | 同庫 npc/villager_male/references | 候選 Idle／Talk PASS：13701 面／18 骨、98 影格、Godot 203＋19／0；正式整合未開始 |
 | N05 | Village Citizen Female | 同庫 npc/villager_female/references | 來源 PASS；A05 NOT_STARTED |
 
 上次四類缺圖已補製並核准，不能再列為阻擋。來源庫前綴為 source_assets/；詳見 [A02 報告](ASSET_A02_REPORT.md)。

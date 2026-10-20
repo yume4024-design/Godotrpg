@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-20",
+  "id": "villager_male",
+  "category": "npc",
+  "candidate_gate": "PASS",
+  "formal_integration_gate": "NOT_STARTED",
+  "triangles": 13701,
+  "original_glb_triangles": 13702,
+  "blender_import_dropped_triangles": 1,
+  "budget": 15000,
+  "bones": 18,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "model_sha256": "da28cde2a38b16656107a264f0c762d71633bc81843e37c328c9106319b21fa7",
+  "native_blend_sha256": "26997e23c42a5f67ac8f8c2ca46808fa746931113c7deedc419c384e6858f2df",
+  "tests": {
+    "evaluated_frames": 98,
+    "graphical_motion_checks": 203,
+    "graphical_controller_checks": 19,
+    "merchant_controller_regression": 19
+  },
+  "limitations": [
+    "10178 boundary edges/10179 nonmanifold edges in split source mesh; no watertight claim",
+    "Stationary dialogue, no patrol or finger rig",
+    "No formal NPC/story/save or physical input acceptance"
+  ]
+}

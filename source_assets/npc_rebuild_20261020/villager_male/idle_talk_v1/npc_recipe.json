@@ -1,0 +1,18 @@
+{
+  "source": "source_assets\\npc_rebuild_20261020\\villager_male\\generated_textured.glb",
+  "source_sha256": "a22ff88e079c2879967c6d53c8283e0ce0b904cb0e5d8fa05cc85170a041d7f3",
+  "height_m": 1.75,
+  "geometry": "Uniform normalization only; no decimation or topology repair",
+  "material": "Baked normal disconnected after paired CPU review; neutral rough non-metal material",
+  "bones": 18,
+  "clips": [
+    "idle",
+    "talk"
+  ],
+  "hand_weight_check_vertices": 390,
+  "weight_sum_max_error": 4.470348358154297e-08,
+  "limitations": [
+    "Stationary dialogue only; no walk/patrol or finger rig",
+    "No formal NPC/story/save integration"
+  ]
+}
