@@ -2,11 +2,22 @@ class_name EnemyAssetPerformanceTestTree
 extends SceneTree
 ## Real BattleArena fixtures, fixed enemy counts, guard requests and normal enemy AI.
 const OUTPUT: String = "user://a04_enemy_perf/"
+var asset: String = "spore_sprite"
+var expected_bones: int = 7
+var expected_triangles: int = 9811
 var checks: int = 0
 var failures: Array[String] = []
 var cases: Array[Dictionary] = []
 
 func _initialize() -> void:
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--asset="): asset = argument.trim_prefix("--asset=")
+	if asset not in ["spore_sprite", "ore_beetle"]:
+		push_error("Unsupported integrated enemy: " + asset)
+		quit(1)
+		return
+	expected_bones = 15 if asset=="ore_beetle" else 7
+	expected_triangles = 9911 if asset=="ore_beetle" else 9811
 	_run.call_deferred()
 
 func _check(ok: bool, message: String) -> void:
@@ -87,20 +98,20 @@ func _run() -> void:
 		var inventory: InventoryManager = InventoryManager.new()
 		root.add_child(inventory)
 		var enemies: Array[CombatantState] = []
-		var definition: CombatantDefinition = load("res://data/enemies/spore_sprite.tres")
+		var definition: CombatantDefinition = load("res://data/enemies/%s.tres" % asset)
 		for index: int in range(count): enemies.append(CombatantState.new(definition,StringName("enemy_%02d" % index),false))
 		var arena: BattleArena = load("res://scenes/battle/battle_arena.tscn").instantiate() as BattleArena
 		root.add_child(arena)
-		arena.setup(party,inventory,enemies,{"id":"X001","name":"A04 圖形效能驗證","tutorial":false,"escape_allowed":false,"rewards":{"gold":0,"exp":0}},true)
+		arena.setup(party,inventory,enemies,{"id":"X004" if asset=="ore_beetle" else "X001","name":"A04 圖形效能驗證","tutorial":false,"escape_allowed":false,"rewards":{"gold":0,"exp":0}},true)
 		for frame: int in range(60):
 			_advance_fixture(arena.manager)
 			await process_frame
 		var total_triangles: int = 0
 		for enemy: CombatantState in enemies:
 			var appearance: RiggedEnemyActor = arena.stage.get("_appearances")[enemy.instance_id] as RiggedEnemyActor
-			_check(appearance != null and appearance.skeleton.get_bone_count()==7,"Actual integrated seven-bone spore")
+			_check(appearance != null and appearance.skeleton.get_bone_count()==expected_bones,"Actual integrated imported enemy skeleton")
 			var triangles: int = _triangles(appearance)
-			_check(triangles==9811,"Full approved enemy geometry")
+			_check(triangles==expected_triangles,"Full approved enemy geometry")
 			total_triangles += triangles
 		var times: PackedFloat64Array = []
 		var previous: int = Time.get_ticks_usec()
@@ -132,7 +143,7 @@ func _run() -> void:
 		cases.append(row)
 		# Capture after the timing block; never remove a long measured frame.
 		await RenderingServer.frame_post_draw
-		_check(root.get_texture().get_image().save_webp(OUTPUT+"spore_%d.webp" % count)==OK,"Real fixed-camera battle capture")
+		_check(root.get_texture().get_image().save_webp(OUTPUT+"%s_%d.webp" % [asset,count])==OK,"Real fixed-camera battle capture")
 		# Let normal action continuations settle at an allied input turn before freeing.
 		var deadline: int = Time.get_ticks_usec()+5000000
 		while arena.manager.phase==BattleManager.Phase.RESOLVING and Time.get_ticks_usec()<deadline:
@@ -143,7 +154,7 @@ func _run() -> void:
 		inventory.queue_free()
 		await process_frame
 		await physics_frame
-	var report: Dictionary = {"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"version":ProjectSettings.get_setting_with_override("application/config/version"),"cases":cases,"cap_fps":60,"method":"One and three full spore rigs with two existing heroes in production BattleArena, guard requests and normal AI; 60 warm frames then 600 measured frames each, screenshots outside sample. Isolated combat fixture without exploration/story/audio services, not a full-game endurance or physical input test."}
+	var report: Dictionary = {"encounter_id":"X004" if asset=="ore_beetle" else "X001","asset":asset,"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"version":ProjectSettings.get_setting_with_override("application/config/version"),"cases":cases,"cap_fps":60,"method":"One and three full imported enemy rigs with two existing heroes in production BattleArena, guard requests and normal AI; 60 warm frames then 600 measured frames each, screenshots outside sample. Isolated combat fixture without exploration/story/audio services, not a full-game endurance or physical input test."}
 	FileAccess.open(OUTPUT+"metrics.json",FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
 	print("A04_PERFORMANCE_RESULT checks=%d failures=%d" % [checks,failures.size()])
 	quit(0 if failures.is_empty() else 1)

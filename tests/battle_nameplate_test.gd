@@ -38,27 +38,27 @@ func _run() -> void:
 			var label: Label3D = arena.stage.get("_labels")[actor.instance_id]
 			_check(label.text.contains(actor.definition.display_name) and label.text.contains("HP %d / %d" % [actor.hp,actor.max_hp]), "Live name and HP " + str(actor.instance_id))
 			_check(label.font == BattleStage.NAMEPLATE_FONT and label.font_size == 38, "Retains shared font and size " + str(actor.instance_id))
-			if actor.definition.id == &"spore_sprite":
+			if actor.definition.id in [&"spore_sprite", &"ore_beetle"]:
 				var appearance: CartoonActor = arena.stage.get("_appearances")[actor.instance_id]
-				_check(appearance is RiggedEnemyActor and (appearance as RiggedEnemyActor).skeleton.get_bone_count()==7,"Formal spore uses imported seven-bone controller")
-				_check(appearance.model.resource_path == "res://assets/models/rebuilt_enemies/spore_sprite.glb","Formal spore uses approved A03 mesh")
+				_check(appearance is RiggedEnemyActor and (appearance as RiggedEnemyActor).skeleton.get_bone_count()==(7 if actor.definition.id==&"spore_sprite" else 15),"Formal enemy uses its imported controller")
+				_check(appearance.model.resource_path == "res://assets/models/rebuilt_enemies/%s.glb" % actor.definition.id,"Formal enemy uses approved A03 mesh")
 				for sample: int in range(12):
 					var model_rect: Rect2 = _model_rect(appearance,camera)
 					var label_rect: Rect2 = _label_rect(label,camera)
 					var gap: float = model_rect.position.y - label_rect.end.y
 					observations.append({"encounter":str(encounter),"sample":sample,"label_bottom_px":label_rect.end.y,"model_top_px":model_rect.position.y,"gap_px":gap})
-					_check(gap >= 4.0,"Spore full label clears visible model by four pixels")
+					_check(gap >= 4.0,"Imported enemy full label clears visible model by four pixels")
 					await create_timer(.04).timeout
 		await _capture_nameplate(str(encounter))
 		if "--repro-only" in OS.get_cmdline_user_args(): break
 		await _auto_battle(manager)
 		_check(manager.phase == BattleManager.Phase.FINISHED,"Real practice battle finishes " + str(encounter))
-		if encounter == &"X001":
+		if encounter in [&"X001", &"X004"]:
 			var enemy: CombatantState = manager.enemies[0]
 			if not enemy.alive():
 				await create_timer(1.6).timeout
 				_check(is_zero_approx((arena.stage.get("_actors")[enemy.instance_id] as Node3D).rotation.z),"Imported death does not double-apply legacy fall")
-				await _capture_nameplate("X001-death")
+				await _capture_nameplate(str(encounter)+"-death")
 		_check(game.battles.return_to_world(),"Returns to exploration " + str(encounter))
 		await process_frame
 		_check(toolbar.is_visible_in_tree(),"Exploration toolbar restores " + str(encounter))

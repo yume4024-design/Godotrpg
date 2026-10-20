@@ -1,0 +1,19 @@
+{
+  "source_model": "assets/models/rebuilt_enemies/ore_beetle.glb",
+  "source_model_sha256": "5eb5cc52ae0ece0595baecca218eeec1621e8a43a05c375384a9b6c58512d2af",
+  "triangles": 9911,
+  "bones": 15,
+  "clips": [
+    "attack",
+    "death",
+    "hit",
+    "idle",
+    "walk"
+  ],
+  "budget": 10000,
+  "legacy_scene": "scenes/characters/legacy/ore_beetle_visual.tscn",
+  "legacy_sha256": "071f50800dea85d263eca5d72d0a4fb6580ec93c42a5986fee32c590742990b7",
+  "formal_rules_changed": false,
+  "release_status": "PENDING, Debug performance is separate",
+  "method": "Reuse approved A03 asset; no new generation, geometry or texture edits"
+}

@@ -1,7 +1,3 @@
 [gd_scene format=3]
-[ext_resource type="Script" path="res://scripts/characters/cartoon_actor.gd" id="Script"]
-[ext_resource type="PackedScene" path="res://assets/models/expansion/ore_beetle.glb" id="Model"]
-[node name="MonsterVisual" type="Node3D"]
-script = ExtResource("Script")
-model = ExtResource("Model")
-jelly = true
+[ext_resource type="PackedScene" path="res://scenes/characters/rebuilt/ore_beetle_visual.tscn" id="Rebuilt"]
+[node name="OreBeetleVisual" instance=ExtResource("Rebuilt")]

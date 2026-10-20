@@ -1,0 +1,10 @@
+{
+	"asset": "ore_beetle",
+	"bones": 15,
+	"checks": 61,
+	"failures": [],
+	"formal_battle": false,
+	"graphical": true,
+	"method": "Real-clock two-instance clip switching, hit interruption, death freeze, revival and scene reload; rendered frames reviewed separately.",
+	"model_sha256": "5eb5cc52ae0ece0595baecca218eeec1621e8a43a05c375384a9b6c58512d2af"
+}

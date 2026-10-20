@@ -9,8 +9,9 @@ ROOT = Path(__file__).resolve().parents[1]
 SHELL = shutil.which("pwsh") or shutil.which("powershell")
 
 
-def describe(mode):
-    result = subprocess.run([SHELL,"-NoProfile","-File",str(ROOT/"tools/godot.ps1"),"-Mode",mode,"-Describe"],cwd=ROOT,capture_output=True,text=True,encoding="utf-8",timeout=15)
+def describe(mode, asset=None):
+    extra = ["-Asset",asset] if asset else []
+    result = subprocess.run([SHELL,"-NoProfile","-File",str(ROOT/"tools/godot.ps1"),"-Mode",mode,"-Describe"]+extra,cwd=ROOT,capture_output=True,text=True,encoding="utf-8",timeout=15)
     if result.returncode:
         raise AssertionError(result.stdout + result.stderr)
     return json.loads(result.stdout[result.stdout.index("{"):])
@@ -32,6 +33,12 @@ class GodotCommandRoutes(unittest.TestCase):
                 self.assertNotIn("--headless",args)
                 self.assertNotIn("--export-release",args)
                 self.assertIn("--script",args)
+
+    def test_asset_selector_reaches_real_script(self):
+        for mode in ["TestEnemyController","VisualEnemyController","ProfileEnemyAssets"]:
+            args=describe(mode,"ore_beetle")["arguments"]
+            self.assertEqual(args[args.index("--")+1],"--asset=ore_beetle")
+            self.assertNotIn("--export-release",args)
 
     def test_export_routes_are_separate(self):
         for mode,preset in [("ExportG083QA","Windows G083 Soak QA"),("ExportEnemyAssetQA","Windows A04 Enemy QA")]:

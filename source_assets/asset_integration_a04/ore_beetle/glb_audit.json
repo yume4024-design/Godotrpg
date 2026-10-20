@@ -1,0 +1,53 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "assets\\models\\rebuilt_enemies\\ore_beetle.glb",
+    "category": "common_enemy",
+    "sha256": "5eb5cc52ae0ece0595baecca218eeec1621e8a43a05c375384a9b6c58512d2af",
+    "maximum_triangles": 10000,
+    "triangles": 9911,
+    "headroom_triangles": 89,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.2665987014770508e-07,
+    "primitives": [
+      {
+        "node": 15,
+        "mesh": 0,
+        "triangles": 9911,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      15
+    ],
+    "materials": 1,
+    "animations": [
+      "attack",
+      "death",
+      "hit",
+      "idle",
+      "walk"
+    ],
+    "failures": [],
+    "warnings": [
+      "Less than 5% correction headroom; cap is still inclusive"
+    ],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 9911,
+  "status": "PASS"
+}

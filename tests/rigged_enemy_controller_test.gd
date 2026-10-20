@@ -1,11 +1,24 @@
 extends SceneTree
 ## Independent visual-controller integration; no RPG state, save or reward owner is instantiated.
-const SCENE: PackedScene = preload("res://scenes/characters/rebuilt/spore_sprite_visual.tscn")
-const OUTPUT: String = "res://artifacts/a04_spore_controller/"
+var asset: String = "spore_sprite"
+var expected_bones: int = 7
+var scene: PackedScene
+var output: String
+var has_cast: bool = true
 var checks: int = 0
 var failures: Array[String] = []
 
 func _initialize() -> void:
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--asset="): asset = argument.trim_prefix("--asset=")
+	if asset not in ["spore_sprite", "ore_beetle"]:
+		push_error("Unsupported integrated enemy: " + asset)
+		quit(1)
+		return
+	expected_bones = 15 if asset=="ore_beetle" else 7
+	has_cast = asset=="spore_sprite"
+	scene = load("res://scenes/characters/rebuilt/%s_visual.tscn" % asset)
+	output = "res://artifacts/a04_%s_controller/" % asset
 	_run.call_deferred()
 
 func _check(ok: bool, message: String) -> void:
@@ -36,12 +49,12 @@ func _changed(actor: RiggedEnemyActor, poses: Array[Transform3D]) -> bool:
 func _capture(label: String) -> void:
 	if DisplayServer.get_name() == "headless": return
 	await RenderingServer.frame_post_draw
-	_check(root.get_texture().get_image().save_webp(OUTPUT+label+".webp") == OK,"Actual controller frame " + label)
+	_check(root.get_texture().get_image().save_webp(output+label+".webp") == OK,"Actual controller frame " + label)
 
 func _run() -> void:
 	Engine.max_fps = 60
 	root.size = Vector2i(1100,700)
-	DirAccess.make_dir_recursive_absolute(OUTPUT)
+	DirAccess.make_dir_recursive_absolute(output)
 	var world: Node3D = Node3D.new()
 	root.add_child(world)
 	var environment: WorldEnvironment = WorldEnvironment.new()
@@ -56,19 +69,19 @@ func _run() -> void:
 	world.add_child(light)
 	var camera: Camera3D = Camera3D.new()
 	camera.projection = Camera3D.PROJECTION_ORTHOGONAL
-	camera.size = 3.6
+	camera.size = 5.0 if asset=="ore_beetle" else 3.6
 	camera.position = Vector3(0,1.3,4)
 	world.add_child(camera)
 	camera.look_at(Vector3(0,.7,0))
-	var first: RiggedEnemyActor = SCENE.instantiate() as RiggedEnemyActor
-	var second: RiggedEnemyActor = SCENE.instantiate() as RiggedEnemyActor
-	first.position.x = -1.1
-	second.position.x = 1.1
+	var first: RiggedEnemyActor = scene.instantiate() as RiggedEnemyActor
+	var second: RiggedEnemyActor = scene.instantiate() as RiggedEnemyActor
+	first.position.x = -1.5 if asset=="ore_beetle" else -1.1
+	second.position.x = 1.5 if asset=="ore_beetle" else 1.1
 	world.add_child(first)
 	world.add_child(second)
 	await process_frame
 	_check(first.animation_player != null and second.animation_player != null,"Two real animation players")
-	_check(first.skeleton != second.skeleton and first.skeleton.get_bone_count()==7,"Independent seven-bone rigs")
+	_check(first.skeleton != second.skeleton and first.skeleton.get_bone_count()==expected_bones,"Independent imported rigs")
 	_check(first.animation_player.get_animation_library("") != second.animation_player.get_animation_library(""),"Instance-owned loop metadata")
 	_check(_kind(first)=="idle" and _kind(second)=="idle","Both begin with real idle")
 	_check(not first.procedural_fall and first.nameplate_anchor != null,"Authored death and nameplate presentation")
@@ -87,10 +100,10 @@ func _run() -> void:
 		await create_timer(1.2).timeout
 		_check(_kind(first)=="idle" and first.animation_player.is_playing(),"Real-clock attack finishes into requested idle")
 		var before_cast: Array[Transform3D] = _poses(first)
-		_check(first.play_battle_action(&"rupture"),"Existing rupture maps to cast")
+		_check(first.play_battle_action(&"rupture" if has_cast else &"attack"),"Existing action maps to authored clip")
 		await create_timer(.3).timeout
-		_check(_kind(first)=="cast","Cast is playing")
-		_check(_changed(first,before_cast),"Imported cast changes real bone poses")
+		_check(_kind(first)==("cast" if has_cast else "attack"),"Secondary authored action is playing")
+		_check(_changed(first,before_cast),"Secondary action changes real bone poses")
 		if cycle==0: await _capture("cast")
 		_check(first.play_battle_action(&"hit"),"Hit can interrupt action")
 		await create_timer(.2).timeout
@@ -114,12 +127,12 @@ func _run() -> void:
 	await _capture("reset-pair")
 	first.queue_free()
 	await process_frame
-	var replacement: RiggedEnemyActor = SCENE.instantiate() as RiggedEnemyActor
+	var replacement: RiggedEnemyActor = scene.instantiate() as RiggedEnemyActor
 	world.add_child(replacement)
 	await process_frame
 	_check(_kind(replacement)=="idle" and _kind(second)=="idle","Reload frees prior actor and retains peer")
-	var report: Dictionary = {"checks":checks,"failures":failures,"graphical":DisplayServer.get_name()!="headless","model_sha256":FileAccess.get_sha256(second.model.resource_path),"formal_battle":false,"method":"Real-clock two-instance clip switching, hit interruption, death freeze, revival and scene reload; rendered frames reviewed separately."}
-	FileAccess.open(OUTPUT+"result.json",FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
+	var report: Dictionary = {"checks":checks,"failures":failures,"graphical":DisplayServer.get_name()!="headless","asset":asset,"bones":expected_bones,"model_sha256":FileAccess.get_sha256(second.model.resource_path),"formal_battle":false,"method":"Real-clock two-instance clip switching, hit interruption, death freeze, revival and scene reload; rendered frames reviewed separately."}
+	FileAccess.open(output+"result.json",FileAccess.WRITE).store_string(JSON.stringify(report,"\t"))
 	print("ENEMY_CONTROLLER_RESULT checks=%d failures=%d" % [checks,failures.size()])
 	world.queue_free()
 	await process_frame
