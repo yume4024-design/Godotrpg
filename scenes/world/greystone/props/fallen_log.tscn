@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/environment/fallen_log.glb" id="1"]
+
+[sub_resource type="CapsuleShape3D" id="TrunkShape"]
+radius = 0.40
+height = 2.92
+
+[node name="FallenLog" type="Node3D"]
+metadata/source = "Kenney Nature Kit, CC0, modified palette/scale/chamfer"
+metadata/stage = "ENV02 standalone prop; formal forest placement not accepted"
+
+[node name="Model" parent="." instance=ExtResource("1")]
+
+[node name="TrunkCollision" type="StaticBody3D" parent="."]
+collision_layer = 1
+collision_mask = 0
+
+[node name="Shape" type="CollisionShape3D" parent="TrunkCollision"]
+position = Vector3(0, 0.44, 0)
+rotation = Vector3(0, 0, 1.5707963)
+shape = SubResource("TrunkShape")

@@ -1,0 +1,22 @@
+{
+	"bounds": [
+		"(-1.5, 0.0, -0.822204)",
+		"(1.5, 1.243152, 0.822204)"
+	],
+	"budget": 1000,
+	"checks": 566,
+	"collision": "single capsule; rays and actual CharacterBody3D motion",
+	"failures": [],
+	"formal_forest_placement": false,
+	"graphical": true,
+	"instances": 3,
+	"materials": [
+		"res://assets/materials/greystone/props/wood.tres",
+		"res://assets/materials/greystone/props/wood_cut.tres"
+	],
+	"model_sha256": "180b55fe66bb75206b543c9ea7057ab62e74ee3335798abe3665076ce268ec48",
+	"performance_benchmark": false,
+	"physical_input": false,
+	"shared_mesh": true,
+	"triangles_each": 268
+}

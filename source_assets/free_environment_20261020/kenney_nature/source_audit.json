@@ -1,0 +1,51 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\free_environment_20261020\\kenney_nature\\log_large.glb",
+    "category": null,
+    "sha256": "e7a92369062d491e5a31a163d390e07db04ee573605bbfa84c00660d18896b4c",
+    "maximum_triangles": 1000,
+    "triangles": 96,
+    "headroom_triangles": 904,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": false,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 1,
+        "mesh": 0,
+        "triangles": 88,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 0,
+        "triangles": 8,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 2,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 96,
+  "status": "PASS"
+}

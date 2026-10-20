@@ -2,7 +2,7 @@
 
 **後續進度：** 新增水車獨立模組 1212／2500 triangles、Blender／Godot 26／0；見 [ENV02 水車報告](ENV02_WATERWHEEL_REPORT.md)。正式村莊仍保留水車及作物佔位，未宣稱整村替換或效能通過。以下 83 檔是建模前快照，不含這件新候選。
 
-追加葉菜獨立候選 144／300 面、28 株共用 Mesh／材質、Godot 204／0，見 [作物報告](ENV02_CROP_REPORT.md)。使用者允許網上免費模型修改；已核對三個作者官方 CC0 來源，採用狀態見 [來源清單](FREE_ENVIRONMENT_ASSET_SOURCES.md)，尚未下載新包。
+追加葉菜獨立候選 144／300 面、28 株共用 Mesh／材質、Godot 204／0，見 [作物報告](ENV02_CROP_REPORT.md)。使用者允許網上免費模型修改；已核對三個作者官方 CC0 來源，採用狀態見 [來源清單](FREE_ENVIRONMENT_ASSET_SOURCES.md)。Kenney 枯木已獨立適配 268 面／Godot 566／0，正式森林放置待做；見 [報告](ENV02_FREE_LOG_REPORT.md)。
 
 這是追加 ENV01／ENV02／ITEM01 的來源盤點，**不是新一輪造景或效能驗收**。依檔案重新量測，未修改任何模型、場景或碰撞；已合格模型先保留，不因追加需求全部重造。
 

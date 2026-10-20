@@ -1,0 +1,38 @@
+{
+  "author": "Kenney",
+  "asset_page": "https://kenney.nl/assets/nature-kit",
+  "download_url": "https://kenney.nl/media/pages/assets/nature-kit/37ac38a37b-1677698939/kenney_nature-kit.zip",
+  "archive": "source_assets/free_environment_20261020/kenney_nature-kit.zip",
+  "archive_bytes": 10537521,
+  "archive_sha256": "fa7974a0d342bfe63c38664ba9f8ec1a4aab8ea25f099bdc56870e33588c4d9d",
+  "web_version": "1.0, released 2020",
+  "license_file_version": "Nature Kit (2.1), 29-04-2020",
+  "license": "CC0 1.0, unmodified License.txt retained",
+  "attribution_required": false,
+  "extracted_entries": [
+    "License.txt",
+    "Models/GLTF format/log_large.glb"
+  ],
+  "runtime": "assets/models/environment/fallen_log.glb",
+  "formal_forest_placement": false,
+  "files": {
+    "License.txt": "cb96b75e3560ac78d7a53ce6f083f4cdb5c53faea6141b62d63458dcfe1e4b9d",
+    "log_large.glb": "e7a92369062d491e5a31a163d390e07db04ee573605bbfa84c00660d18896b4c",
+    "source_audit.json": "c728c91ab369e9e33110957a3d68b0b009cb32b167403b0f4584519854e5478e",
+    "fallen_log/adaptation.json": "3cf0ef5d891eff7cfec3f18f1eeb8bb0106e06d357df0c95c864a89d425696ec",
+    "fallen_log/failed_blender_report.json": "6568cc8131e37a6e579ba093eccdc02a9314bce9c2a2ff623795dd69f3edb95c",
+    "fallen_log/fallen_log.blend": "cb378c79833d3c56c3e5b416a4cde19af44e61d60e92dc90e5c3617bd9dbe445",
+    "fallen_log/fallen_log.glb": "0163d7697ba5d781f1aa791e6a1148208da5a280f5a4f70eb455c46f555dd691",
+    "fallen_log/glb_report.json": "c0ecf0f9bc12c11b709cc9ddd7a362fc64bec43281a13bd5e0ad1a638d20dcd1",
+    "fallen_log_v2/adaptation.json": "64b170a2d9c32433f631c9b4abed9d69b4e2ffbc7efecbf517099b3103cc36b3",
+    "fallen_log_v2/blender_report.json": "e3e5e1f12a586542ab91f22c4d6b4856ec49ba5e5d87e0c88be5c580821dfced",
+    "fallen_log_v2/cut_end.webp": "3245db8b54893f5e7a15abd07b884a60b73b235285b216d6aee364ce5bbb72e0",
+    "fallen_log_v2/fallen_log.blend": "8f87ccddc1639750968d8b00bda44d86e280d849aad2dcb03affbe4f3d19da1f",
+    "fallen_log_v2/fallen_log.glb": "180b55fe66bb75206b543c9ea7057ab62e74ee3335798abe3665076ce268ec48",
+    "fallen_log_v2/front.webp": "b5bdb4d987f4059f4a394b61c5e74705d2d8690043f2cb805dc4bad0b94eb3f3",
+    "fallen_log_v2/glb_report.json": "275398a8a13073458b06bf9585113fbd873371437cae4a7b10d29e35502a098e",
+    "fallen_log_v2/godot_report.json": "7a5c0a9188149b882729508f626fa3483357490d8bca42cca6725abd3e9f717c",
+    "fallen_log_v2/three_instances.webp": "9a007a4812f61dc1d6d0bb5ccef8cb8517953674e3632bc67bffb3fd93f7e31e",
+    "fallen_log_v2/three_quarter.webp": "1cae87ace2e451f093c35f93d514f1c676eb27f3da2edce0b85ce932e6bec558"
+  }
+}

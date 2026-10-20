@@ -1,5 +1,11 @@
 # 素材來源與修改紀錄
 
+## 2026-10-20 — Kenney 免費枯木（已下載並修改）
+
+Kenney [Nature Kit](https://kenney.nl/assets/nature-kit)，內附 License.txt 為 CC0 1.0／Nature Kit (2.1)，署名非必須，本專案保留作者。官網仍列 1.0／2020，版本差異及 ZIP／原 log_large／修改後 GLB 的 SHA 均記錄於 [單件報告](ENV02_FREE_LOG_REPORT.md) 與 source_manifest.json。
+
+只取 log_large.glb：3m 比例／貼地原點、單段倒角、G04 木色與新共用切口色、修除退化面；268 面、無貼圖、獨立碰撞候選。原包本機保留，原模型與完整授權提交；沒有購買、捐款或整包匯入，正式森林尚未採用。
+
 ## 2026-10-20 — 新雷恩原創來源及臉部修補
 
 使用者已核准雷恩原創四視圖與修正右側面，本機目前 Pixal3D 工作流生成新幾何／UV／貼圖；沒有使用第三方人物、購買素材或付費 Comfy API。內建 imagegen 用原頭部渲染與核准設計修補臉部，完整提示詞／原生成圖／透明 Alpha／SHA 保存，Blender 有界正面投影至原 UV。失敗第一版與高密度來源保留；來源及範圍見 [主角重製報告](CHARACTER_REBUILD_20261020_REPORT.md)。

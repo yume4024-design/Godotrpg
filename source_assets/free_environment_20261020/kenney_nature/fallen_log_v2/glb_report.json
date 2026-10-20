@@ -1,0 +1,51 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "assets\\models\\environment\\fallen_log.glb",
+    "category": null,
+    "sha256": "180b55fe66bb75206b543c9ea7057ab62e74ee3335798abe3665076ce268ec48",
+    "maximum_triangles": 1000,
+    "triangles": 268,
+    "headroom_triangles": 732,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": false,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 250,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 18,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 2,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 268,
+  "status": "PASS"
+}
