@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-20 — A04 荊棘野豬接入
+
+沿用使用者核准四視圖、A03 本機 Pixal3D／Blender 來源；generation_manifest、舊高面數來源與既有粗糙接面限制保留。GLB SHA `3b212d70f5de4321325aba30d6de338ea9f7e8b49103d8bfa3267554fae493ed`，9998面／12骨／七段，未再生成或改貼圖、UV、網格與權重。只新增遊戲視覺PackedScene、名牌與選用Run／Charge播放；沒有新增技能、付費或第三方下載素材。舊場景在scenes/characters/legacy保留。
+
 ## 2026-10-20 — A04 菇靈與礦甲蟲視覺接入
 
 - 重用 A03 已保存的使用者採用四視圖／本機 ComfyUI Pixal3D＋Blender 候選；來源與工作流、prompt_id、原始高面數檔案見 `source_assets/asset_production_a03/{spore_sprite,ore_beetle}/generation_manifest.json`，本輪沒有新下載或購買第三方角色。

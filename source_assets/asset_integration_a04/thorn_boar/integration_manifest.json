@@ -15,6 +15,6 @@
   ],
   "legacy_scene": "scenes/characters/legacy/thorn_boar_visual.tscn",
   "formal_rules_changed": false,
-  "status": "IN_PROGRESS: graphical controller 63/0 and battles 161/0; full regression and Release pending",
+  "status": "PASS for A04 single asset: graphical controller63/0, battle161/0, G06 576/0, native performance40/0, native prologue114/0 and reload14/0; full batch incomplete",
   "unused_gameplay_clips": "Charge available through presentation interface and high-motion Run optional; formal combat remains existing Attack only"
 }
