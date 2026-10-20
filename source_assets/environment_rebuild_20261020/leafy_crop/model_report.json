@@ -1,0 +1,34 @@
+{
+  "status": "IN_PROGRESS",
+  "method": "Original Blender mesh construction; no generative API or third-party model",
+  "triangles": 144,
+  "budget": 300,
+  "28_instance_triangles": 4032,
+  "bounds_blender": [
+    [
+      -0.3499999940395355,
+      0.3499999940395355
+    ],
+    [
+      -0.3499999940395355,
+      0.3499999940395355
+    ],
+    [
+      0.025000005960464478,
+      0.5900000333786011
+    ]
+  ],
+  "origin": "Ground centre, Godot Y up after glTF conversion",
+  "materials": [
+    "G04_leaf",
+    "G04_leaf_light"
+  ],
+  "textures": 0,
+  "uv": "No texture UV requirement; not certified UV-unwrapped",
+  "collisions": "None; decorative farmland plant, no new pickup or economy logic",
+  "formal_scene_replacement": false,
+  "outputs": {
+    "leafy_crop.blend": "70506bae0a34c0d2d8acafd8cce9f11e0c70669206c11bb8c4ffe00affeef8ea",
+    "leafy_crop.glb": "fc83affd95d284732dddf16a07005af9a1f6582a485b7694c8a46879c458df23"
+  }
+}

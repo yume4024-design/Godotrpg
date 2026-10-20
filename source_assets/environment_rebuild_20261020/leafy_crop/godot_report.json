@@ -1,0 +1,17 @@
+{
+	"checks": 204,
+	"failures": [],
+	"formal_village_replacement": false,
+	"graphical": true,
+	"instances": 28,
+	"model_sha256": "fc83affd95d284732dddf16a07005af9a1f6582a485b7694c8a46879c458df23",
+	"performance_benchmark": false,
+	"physical_input": false,
+	"shared_materials": [
+		"res://assets/materials/greystone/props/leaf_light.tres",
+		"res://assets/materials/greystone/props/leaf.tres"
+	],
+	"shared_mesh": true,
+	"total_visible_triangles": 4032,
+	"triangles_each": 144
+}

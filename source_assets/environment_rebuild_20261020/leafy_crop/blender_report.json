@@ -1,0 +1,77 @@
+{
+  "source": "D:\\RPGGAME\\assets\\models\\greystone\\props\\leafy_crop.glb",
+  "blender_version": "5.2.2 LTS",
+  "triangle_budget": 300,
+  "category": null,
+  "preflight": {
+    "schema_version": 1,
+    "file": "assets\\models\\greystone\\props\\leafy_crop.glb",
+    "category": null,
+    "sha256": "fc83affd95d284732dddf16a07005af9a1f6582a485b7694c8a46879c458df23",
+    "maximum_triangles": 300,
+    "triangles": 144,
+    "headroom_triangles": 156,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": false,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 112,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 32,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 2,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "exported": false,
+  "unverified": [
+    "silhouette",
+    "overlapping faces",
+    "rig deformation",
+    "animation transitions",
+    "engine functional QA"
+  ],
+  "total_triangles": 144,
+  "objects": [
+    {
+      "name": "LeafyCrop",
+      "triangles": 144,
+      "vertices": 432,
+      "uv_layers": 1,
+      "nonmanifold_edges": 432,
+      "degenerate_faces": 0
+    }
+  ],
+  "ignored_importer_bone_helpers": [],
+  "failures": [],
+  "warnings": [
+    "NONMANIFOLD_OR_BOUNDARY"
+  ],
+  "basic_checks_passed": true
+}

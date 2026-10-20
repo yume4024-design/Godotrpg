@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "scope": "Independent decorative crop model only",
+  "glb_sha256": "fc83affd95d284732dddf16a07005af9a1f6582a485b7694c8a46879c458df23",
+  "native_sha256": "70506bae0a34c0d2d8acafd8cce9f11e0c70669206c11bb8c4ffe00affeef8ea",
+  "triangles": 144,
+  "budget": 300,
+  "godot_checks": 204,
+  "28_instances_triangles": 4032,
+  "shared_mesh": true,
+  "formal_village": "NOT_STARTED",
+  "performance": "NOT_TESTED",
+  "physical_playthrough": false,
+  "visual_score": {
+    "COMP-SAFE-EDGE": 2,
+    "COMP-NEG-SPACE": 2,
+    "COMP-BALANCE": 2,
+    "COMP-DEPTH-LAYERS": 1,
+    "LIGHT-KEY-FILL": 2,
+    "LIGHT-SPEC-LOT": 2
+  },
+  "visual_notes": "Actual close, front, top and 28-instance views checked; faceted leaf silhouette retained",
+  "uv_unwrap": "NOT_REQUIRED_TEXTURE_FREE"
+}

@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-20 — 原創葉菜與免費來源核對
+
+葉菜為本專案 Blender 原創模型，沿用 G04 葉色共享材質，無第三方模型／貼圖／付費 API。使用者追加允許網上免費場景模型修改；官方 Kenney Nature Kit、Quaternius Ultimate Nature／Ultimate Stylized Nature 均標示 CC0，版本快照、連結、用途與尚未下載狀態見 [來源表](FREE_ENVIRONMENT_ASSET_SOURCES.md)。採用後逐件保存原包授權、SHA 與修改內容，不以候選清單冒稱已匯入。
+
 ## 2026-10-20 — ENV02 原創水車
 
 本專案 Blender 腳本原創輪框、輻條、水斗、軸承模型，沿用本專案 G04 木／鐵／石色盤及共享材質；未下載第三方水車、購買素材或送出付費 API。Native／GLB／SHA／首版閃線及最終預覽保存，範圍見 [水車報告](ENV02_WATERWHEEL_REPORT.md)。
