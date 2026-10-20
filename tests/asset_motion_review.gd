@@ -17,6 +17,7 @@ var height: float = 1.2
 var output: String
 var clips: Array[Dictionary] = []
 var triangles: int = 0
+var require_full_fold: bool = false
 
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
@@ -24,6 +25,7 @@ func _initialize() -> void:
 		if argument.begins_with("--id="): asset_id = argument.trim_prefix("--id=")
 		if argument.begins_with("--category="): category = argument.trim_prefix("--category=")
 		if argument.begins_with("--height="): height = argument.trim_prefix("--height=").to_float()
+		if argument == "--require-full-fold": require_full_fold = true
 	output = ("res://artifacts/asset_a05/" if category == "npc" else "res://artifacts/asset_a03/") + asset_id + "/godot"
 	_run.call_deferred()
 
@@ -41,6 +43,50 @@ func _capture(label: String) -> void:
 	await RenderingServer.frame_post_draw
 	var picture: Image = root.get_texture().get_image()
 	_check(picture.save_webp(output + "/" + label + ".webp", true, 0.92) == OK, label + " captured")
+
+func _review_bat_fold(animation: Animation) -> void:
+	_check(skeleton.get_bone_count() == 17, "manual bat has six articulated panel joints")
+	var initial_rotations: Array[Quaternion] = []
+	for fraction: float in [0.0, 0.2, 0.4, 0.5, 0.8, 0.999]:
+		player.seek(animation.length * fraction, true)
+		await process_frame
+		for bone: int in range(skeleton.get_bone_count()):
+			if fraction == 0.0: initial_rotations.append(skeleton.get_bone_pose_rotation(bone))
+			_check(skeleton.get_bone_pose_scale(bone).is_equal_approx(Vector3.ONE), "fold rotates joints without scaling the wing")
+		if fraction == 0.5:
+			for side: String in ["Left", "Right"]:
+				for panel: int in range(3):
+					var index: int = skeleton.find_bone("WingPanel" + str(panel) + side)
+					_check(index >= 0, "fold panel exists")
+					if index >= 0:
+						_check(skeleton.get_bone_pose_rotation(index).angle_to(initial_rotations[index]) > 1.4, "full fold retains authored joint amplitude")
+			for name: String in ["Head", "EarLeft", "EarRight"]:
+				var index: int = skeleton.find_bone(name)
+				_check(index >= 0 and skeleton.get_bone_pose_rotation(index).angle_to(initial_rotations[index]) < 0.00001, "fold leaves head and ears stable relative to imported rest")
+		for view: int in range(4):
+			pivot.rotation.y = view * PI / 2.0
+			await _capture("full_fold_" + str(int(fraction * 1000.0)) + "_view_" + str(view))
+	pivot.rotation.y = 0.0
+	# Interrupt before reopening. Merely resetting the Skeleton between clips
+	# would hide a missing neutral track on the added deformation joints.
+	player.seek(animation.length * 0.5, true)
+	for clip: StringName in player.get_animation_list():
+		if _kind(clip) == "idle":
+			player.play(clip, 0.0)
+			player.advance(0.0)
+			player.pause()
+			break
+	await process_frame
+	for side: String in ["Left", "Right"]:
+		for panel: int in range(3):
+			var index: int = skeleton.find_bone("WingPanel" + str(panel) + side)
+			_check(index >= 0 and skeleton.get_bone_pose_rotation(index).angle_to(initial_rotations[index]) < 0.00001, "interrupted fold restores panel in idle")
+	await _capture("fold_interrupted_to_idle")
+	for clip: StringName in player.get_animation_list():
+		if _kind(clip) == "fold_wings":
+			player.play(clip, 0.0)
+			player.advance(0.0)
+			break
 
 func _run() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(output))
@@ -130,6 +176,15 @@ func _run() -> void:
 		if _kind(clip) == "heavy_attack":
 			player.seek(animation.length * 0.62, true)
 			await _capture("heavy_attack_impact")
+		if require_full_fold and _kind(clip) == "fold_wings":
+			await _review_bat_fold(animation)
+		if require_full_fold and _kind(clip) in ["idle", "walk"]:
+			for fraction: float in [0.125, 0.375, 0.625, 0.875]:
+				player.seek(animation.length * fraction, true)
+				for view: int in range(4):
+					pivot.rotation.y = view * PI / 2.0
+					await _capture(_kind(clip) + "_stroke_" + str(int(fraction * 1000.0)) + "_view_" + str(view))
+			pivot.rotation.y = 0.0
 		player.play(clip, 0.0)
 		player.advance(0.0)
 		player.advance(animation.length * 2.0 + 0.1)
@@ -138,6 +193,7 @@ func _run() -> void:
 		clips.append({"name": _kind(clip), "length": animation.length})
 	var required_clips: Array[String] = ["idle", "walk", "attack", "hit", "death"]
 	if category == "npc": required_clips.assign(["idle", "talk"])
+	if require_full_fold: required_clips.append("fold_wings")
 	for required: String in required_clips:
 		_check(required in kinds, "required " + required)
 	var idle: StringName = &""
@@ -157,6 +213,7 @@ func _run() -> void:
 	var report: Dictionary = {"asset": asset_id, "model": model_path, "model_sha256": FileAccess.get_sha256(model_path), "checks": checks, "failures": failures,
 		"triangles": triangles, "category": category, "clips": clips, "graphical": true,
 		"physical_input_test": false, "formal_battle_test": false,
+		"extended_bat_fold_review": require_full_fold,
 		"draw_calls": Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME),
 		"engine_memory_bytes": Performance.get_monitor(Performance.MEMORY_STATIC)}
 	var file := FileAccess.open(output + "/report.json", FileAccess.WRITE)

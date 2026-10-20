@@ -4,3 +4,10 @@
 # Initial topology package retained a glTF display sphere; keep failure local.
 crystal_bat/topology_v1/*.blend
 crystal_bat/topology_v1/*.glb
+# Reproducible failed manual-fold intermediates remain local; reports, hashes
+# and reviewed frames are packaged in crystal_bat/manual_fold_acceptance/.
+crystal_bat/anatomical_fold_v*/
+crystal_bat/manual_panels_v1/
+crystal_bat/manual_panels_v2/
+# Single runtime GLB is assets/models/rebuilt_enemies/crystal_bat_manual.glb.
+crystal_bat/manual_panels_v3/bat_manual_wings.glb

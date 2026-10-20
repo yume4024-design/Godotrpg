@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-21 — 蝙蝠人工局部翼部重建
+
+沿用已核准原創蝙蝠與本機Pixal3D來源，Codex以Blender Python保留頭身耳腳並局部建立薄膜、翼骨與六顆立體藍晶、64²共用色盤及完整摺翼骨架。未新送Comfy工作、未下載商店或付費API素材，也不宣稱第三方美術師交件。原始圖／模型與失敗副本保留；來源SHA、修改範圍、獨立候選驗收及正式接入限制見[完整收翼報告](../source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/README.md)。既有Pixal3D權重／來源授權記錄不變。
+
 ## 2026-10-21 — 旅館老闆圍裙重拓樸與獨立動作
 
 沿用使用者採用的酒紅背心／米白圍裙設計及既有本機Pixal3D原件（原GLB83493fd0fe0078fc18a7d0b5d9831f668b7eab4823773bb2be7263f5c7482fdc）。Codex在Blender5.2.2以原來源副本作局部前布片重拓樸、4mm厚度、原albedo UV回烘、20骨Idle／Talk；沒有新Comfy生成、下載／購買第三方模型或更動外觀授權。最終GLB3baeda38ab638039aa01e9b2a4333f118a4df277c89e683ee8b26e70ea9c111d，12785面；10888保留面位置／UV與原貼圖保存，法線有微小重新編碼差。來源／工作Blend／失敗及實際圖見source_assets/npc_rebuild_20261020/innkeeper/manual_acceptance/；屬獨立候選，正式NPC替換未完成。

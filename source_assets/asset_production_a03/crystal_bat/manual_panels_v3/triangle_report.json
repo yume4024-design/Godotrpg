@@ -1,0 +1,64 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\asset_production_a03\\crystal_bat\\manual_panels_v3\\bat_manual_wings.glb",
+    "category": "common_enemy",
+    "sha256": "ab487b6c94b32e9aac451348e739635684e2577f996245d3a90feb8759f7ebf7",
+    "maximum_triangles": 10000,
+    "triangles": 6249,
+    "headroom_triangles": 3751,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.1199153959751129e-07,
+    "primitives": [
+      {
+        "node": 17,
+        "mesh": 0,
+        "triangles": 1476,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 18,
+        "mesh": 1,
+        "triangles": 4773,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      17
+    ],
+    "materials": 2,
+    "animations": [
+      "attack",
+      "death",
+      "fold_wings",
+      "hit",
+      "idle",
+      "walk"
+    ],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 6249,
+  "status": "PASS"
+}

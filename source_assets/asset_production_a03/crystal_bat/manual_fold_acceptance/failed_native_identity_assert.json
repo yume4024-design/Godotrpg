@@ -1,0 +1,44 @@
+{
+  "asset": "crystal_bat_manual_v3",
+  "category": "common_enemy",
+  "checks": 734,
+  "clips": [
+    {
+      "length": 1.16666662693024,
+      "name": "attack"
+    },
+    {
+      "length": 1.5,
+      "name": "death"
+    },
+    {
+      "length": 2.5,
+      "name": "fold_wings"
+    },
+    {
+      "length": 0.75,
+      "name": "hit"
+    },
+    {
+      "length": 2.0,
+      "name": "idle"
+    },
+    {
+      "length": 1.0,
+      "name": "walk"
+    }
+  ],
+  "draw_calls": 2.0,
+  "engine_memory_bytes": 36538022.0,
+  "extended_bat_fold_review": true,
+  "failures": [
+    "fold leaves head and ears stable",
+    "fold leaves head and ears stable"
+  ],
+  "formal_battle_test": false,
+  "graphical": true,
+  "model": "res://assets/models/rebuilt_enemies/crystal_bat_manual.glb",
+  "model_sha256": "ab487b6c94b32e9aac451348e739635684e2577f996245d3a90feb8759f7ebf7",
+  "physical_input_test": false,
+  "triangles": 6249
+}

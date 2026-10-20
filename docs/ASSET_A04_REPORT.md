@@ -1,5 +1,9 @@
 # A04 敵人視覺整合
 
+## 2026-10-21 — 蝙蝠完整收翼候選就緒，正式接入待做
+
+局部人工重建6249面／17骨／六段已通過220影格、嚴格GLB／Blender重讀、Godot圖形741／0及獨立共用控制器67／0，完整摺翼與打斷恢復已檢視。候選 `crystal_bat_manual_visual.tscn` 不接正式遭遇，原 `crystal_bat_visual.tscn` 保留。A04仍只有四敵正式接入；下一件為蝙蝠戰鬥取景／名牌、單及多敵、G06與原生Release回歸。詳細證據見 [候選報告](../source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/README.md)。下方完整收翼FAIL是舊候選歷史，沒有把本次獨立模型測試算作正式遊玩。
+
 ## 2026-10-21 — 腐化守衛接入終態
 
 第四件守衛已完成：9762面／17骨／九段，動作75／0、六戰鬥177／0、G06 576／0，原生實際單Boss21／0；P99 16.713ms、Draw Calls92～111，新的完整序章120／0及另程序14／0。首次名牌177／12失敗保留後修正；源GLB未改，舊場景／RPG規則與存檔保留。見[單件來源與限制](../source_assets/asset_integration_a04/corrupted_guardian/README.md)。A04目前四件接入，蝙蝠完整收翼仍FAIL；下文依日期保留歷史結果。

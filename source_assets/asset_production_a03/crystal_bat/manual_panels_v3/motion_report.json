@@ -1,0 +1,88 @@
+{
+  "input": "source_assets\\asset_production_a03\\crystal_bat\\manual_panels_v3\\bat_manual_wings.blend",
+  "sha256": "f7b58eb116b84808b3c4ce181cf50c864bdd4a427462784a76e0aed848a1ffa8",
+  "category": "common_enemy",
+  "maximum_triangles": 10000,
+  "bones": 17,
+  "actions": {
+    "attack": {
+      "frames": 29,
+      "maximum_triangles": 6249,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.6523739876691332,
+      "floor_range": [
+        0.14699940383434296,
+        0.45693814754486084
+      ]
+    },
+    "death": {
+      "frames": 37,
+      "maximum_triangles": 6249,
+      "endpoint_vertex_difference": 0.5111702680587769,
+      "max_edge_stretch": 1.000045654934403,
+      "floor_range": [
+        0.003998987376689911,
+        0.41700008511543274
+      ]
+    },
+    "fold_wings": {
+      "frames": 61,
+      "maximum_triangles": 6249,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 2.2945487416741797,
+      "floor_range": [
+        0.14699998497962952,
+        0.4169999659061432
+      ]
+    },
+    "hit": {
+      "frames": 19,
+      "maximum_triangles": 6249,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.0000303472360494,
+      "floor_range": [
+        0.14700007438659668,
+        0.4172940254211426
+      ]
+    },
+    "idle": {
+      "frames": 49,
+      "maximum_triangles": 6249,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.0000426602541936,
+      "floor_range": [
+        0.14699938893318176,
+        0.4603932499885559
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 6249,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.000017217748308,
+      "floor_range": [
+        0.14700010418891907,
+        0.4819888472557068
+      ]
+    }
+  },
+  "total_frames": 220,
+  "topology_warnings": [
+    {
+      "mesh": "BatManualWings",
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    {
+      "mesh": "crystal_bat_body",
+      "boundary_edges": 6917,
+      "nonmanifold_edges": 6917
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

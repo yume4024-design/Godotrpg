@@ -1,0 +1,11 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/characters/rigged_enemy_actor.gd" id="Visual"]
+[ext_resource type="PackedScene" path="res://assets/models/rebuilt_enemies/crystal_bat_manual.glb" id="Model"]
+[node name="CrystalBatManualCandidate" type="Node3D" node_paths=PackedStringArray("nameplate_anchor")]
+script = ExtResource("Visual")
+model = ExtResource("Model")
+action_clips = {&"attack": &"attack", &"hit": &"hit", &"fold_wings": &"fold_wings"}
+nameplate_anchor = NodePath("NameplateAnchor")
+procedural_fall = false
+[node name="NameplateAnchor" type="Marker3D" parent="."]
+position = Vector3(0, 1.6, 0)

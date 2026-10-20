@@ -1,0 +1,504 @@
+{
+  "files": [
+    {
+      "path": "assets/models/rebuilt_enemies/crystal_bat_manual.glb",
+      "bytes": 5873436,
+      "sha256": "ab487b6c94b32e9aac451348e739635684e2577f996245d3a90feb8759f7ebf7"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/topology_v2/crystal_bat_topology.blend",
+      "bytes": 5917027,
+      "sha256": "6f2a43b1cb59ebc4b41525bdf1245e3d66eb1e9b79f8111ee0a3312d0c847026"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v3/bat_manual_wings.blend",
+      "bytes": 5693235,
+      "sha256": "f7b58eb116b84808b3c4ce181cf50c864bdd4a427462784a76e0aed848a1ffa8"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v3/motion_report.json",
+      "bytes": 2264,
+      "sha256": "b530a4f1ff500ba3356a2bafa0a584bb3d4df474c0b96ab9f73b7fc74b9199a8"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v3/preservation_report.json",
+      "bytes": 24174,
+      "sha256": "b8535920a0c4cabf4fd5a1ba84851b5fea568e794379ec7ae3f6870cda8cc9cd"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v3/repair_report.json",
+      "bytes": 39238,
+      "sha256": "372ab8fd2251b9fa619eaae2cd7208380bbe1f6e8800d6b26197297eaf0f41bc"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v3/triangle_report.json",
+      "bytes": 1444,
+      "sha256": "6c98773405007f50053680c411c29853fa03d68cd3b86d9594e79200c70fc1b9"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/blender_reimport.json",
+      "bytes": 2308,
+      "sha256": "eea21d859399a3df4f992146788caa2e137cd8413705855f1beb5d4c127502bc"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/controller_death.webp",
+      "bytes": 7562,
+      "sha256": "ce80b05afe153b1fc3914c6f22b3e70a316fcfb3252e4b1aace4672a00e3e7ca"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/controller_full-fold-hold.webp",
+      "bytes": 7514,
+      "sha256": "84674a09952b7ec474ab22dc66d74721f1b72122a5704a92c2225d6c8151bf38"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/controller_reset-pair.webp",
+      "bytes": 8472,
+      "sha256": "fcbfb601ad641032218c5e82b5e0b61a9251bc76889c61fe09f429fcd17fa71f"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/controller_secondary-fold_wings.webp",
+      "bytes": 8282,
+      "sha256": "2da4e34776ee6209bf4ec885b9aa0481105b3daf1fcf3b241b39207d2195a812"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/degenerate_corner_diagnosis.txt",
+      "bytes": 2741,
+      "sha256": "8812e48a356a435d5925525064095dcdd1f9019ae6a55160444e954df81bc299"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/failed_hinge_fold_30_front.webp",
+      "bytes": 12760,
+      "sha256": "c92c60fd1dc28256f3ffad689ef6e9e3f0aadd1f0fe7cf3748910589f852839d"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/failed_hinge_fold_30_right.webp",
+      "bytes": 9024,
+      "sha256": "7461442a68f9b9eb1b39623a91d1ece9db2ebd4a03f9bfb91394c1f793f65be2"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/failed_hinge_motion.json",
+      "bytes": 2205,
+      "sha256": "625fb076c7d8bfb7a07223eefe0f96ccd1cd4963a532bf044b02d70de59240dd"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/failed_hinge_recipe.json",
+      "bytes": 770,
+      "sha256": "f9f53be186c10f18ce592228f4f385b319eacc3d113228a7b5feb78e20816b34"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/failed_native_identity_assert.json",
+      "bytes": 913,
+      "sha256": "f39f4602e9f2d517cf4f71ecff14fe2e6cbeddbd91bdf8998dc313170b2ec97b"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/failed_preservation_serialization.txt",
+      "bytes": 1442,
+      "sha256": "73936343203cd5bbf915c24ba66909cd8af3b883b5f1103407b2441e587a5bc9"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/failed_reimport_v1.json",
+      "bytes": 2334,
+      "sha256": "e88b6d7935f322d02551dd608dd46e3e4f190b8d074407c9c1d30865ba6e0fb6"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/attack.webp",
+      "bytes": 14422,
+      "sha256": "ba6f8a27bf7652a39c747cb7e9194dfa1fcad8283720e8cefa51a86a6ed4e826"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/attack_side.webp",
+      "bytes": 9564,
+      "sha256": "3e15a4412024fe944b8573dbcaef20d0473d59c7511c2610a3312d160a95a49a"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/death.webp",
+      "bytes": 12838,
+      "sha256": "64929a64bb2a78c9a527f54c07dcc1227a6fbead30584de3121de8bc6262b10f"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/death_side.webp",
+      "bytes": 9394,
+      "sha256": "057a01646dc8d07c9839f66f61246a949a4e38ddfa38ddb74f299e2d9b2df795"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/fold_interrupted_to_idle.webp",
+      "bytes": 14776,
+      "sha256": "f79083dd7f8966b108dfb2769f011fdf6ad61d6d0644f0fe6730a1ebf612b8c6"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/fold_wings.webp",
+      "bytes": 11896,
+      "sha256": "3791eb0a26972ea2b0bcc79b226b3add9c9b1c76ec5ceea988f811e0371b3f57"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/fold_wings_side.webp",
+      "bytes": 9776,
+      "sha256": "0b277e55b02eff48d87aec4620a1f18f3d07d3d63e30e97b2a657e63d2173744"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_0_view_0.webp",
+      "bytes": 14762,
+      "sha256": "a33aa796290890b9540fd1e7124d8892e2be115e6952fefb8423c31a6bb1621c"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_0_view_1.webp",
+      "bytes": 9324,
+      "sha256": "a3a48b23ee0caae6ad0558715d475e4f00fc20e77c9b45d123f51e1b44970819"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_0_view_2.webp",
+      "bytes": 12752,
+      "sha256": "442c3067c9877a723fcae61e2480a1caf7ee0b370c8e3c4c4531999c5193f5c9"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_0_view_3.webp",
+      "bytes": 9656,
+      "sha256": "e9f5f9bb1ffed5ad21889fffbd29a4a0900e48e1343a625e1e6ae5094de199db"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_200_view_0.webp",
+      "bytes": 14174,
+      "sha256": "bc5f3daaadccb2e5e5e8b9e489c5fb49a9fd82c95a3df29f1b1647716106682e"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_200_view_1.webp",
+      "bytes": 9698,
+      "sha256": "55a0d373225026885e90eaee2798ba7268837b8ed4577bd37cfee534d7d256d6"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_200_view_2.webp",
+      "bytes": 12410,
+      "sha256": "93297a36342ff7fa4fa3728cf5bf880e8bd2affc3de7c74ac2f4331e1ed9205d"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_200_view_3.webp",
+      "bytes": 10038,
+      "sha256": "0f2ff487855e5da08eaf06f07d4d08d2d72026b1c0da249c897980232992c0d0"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_400_view_0.webp",
+      "bytes": 11896,
+      "sha256": "3791eb0a26972ea2b0bcc79b226b3add9c9b1c76ec5ceea988f811e0371b3f57"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_400_view_1.webp",
+      "bytes": 9776,
+      "sha256": "0b277e55b02eff48d87aec4620a1f18f3d07d3d63e30e97b2a657e63d2173744"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_400_view_2.webp",
+      "bytes": 10090,
+      "sha256": "7693ffe4618107b09d354c452ef5a8faefc6826b31df521f81cbc3aed9e09040"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_400_view_3.webp",
+      "bytes": 10056,
+      "sha256": "dd6e06ae97e107e21565e74b36fc94202767e90f95a24103fd93077d969f29da"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_500_view_0.webp",
+      "bytes": 11896,
+      "sha256": "3791eb0a26972ea2b0bcc79b226b3add9c9b1c76ec5ceea988f811e0371b3f57"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_500_view_1.webp",
+      "bytes": 9776,
+      "sha256": "0b277e55b02eff48d87aec4620a1f18f3d07d3d63e30e97b2a657e63d2173744"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_500_view_2.webp",
+      "bytes": 10090,
+      "sha256": "7693ffe4618107b09d354c452ef5a8faefc6826b31df521f81cbc3aed9e09040"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_500_view_3.webp",
+      "bytes": 10056,
+      "sha256": "dd6e06ae97e107e21565e74b36fc94202767e90f95a24103fd93077d969f29da"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_800_view_0.webp",
+      "bytes": 14182,
+      "sha256": "09227a272d65f2a5afca520c030da0b376219748c507b3a87b90f715e54efcfb"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_800_view_1.webp",
+      "bytes": 9698,
+      "sha256": "55a0d373225026885e90eaee2798ba7268837b8ed4577bd37cfee534d7d256d6"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_800_view_2.webp",
+      "bytes": 12410,
+      "sha256": "93297a36342ff7fa4fa3728cf5bf880e8bd2affc3de7c74ac2f4331e1ed9205d"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_800_view_3.webp",
+      "bytes": 10022,
+      "sha256": "00f573c6047ed1c282362e26717ebc3202a49de43a1df04edbc5eceae8b6354d"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_999_view_0.webp",
+      "bytes": 14848,
+      "sha256": "a8892047ec00254dbf13e0565b15d245975a27b7b686e8c581bd4753bfa77fc5"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_999_view_1.webp",
+      "bytes": 9352,
+      "sha256": "37899b5fb804ba20d2cd67f4f0d34aa16a90f46e578ab8e0e7fdc08fd5a40589"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_999_view_2.webp",
+      "bytes": 12816,
+      "sha256": "488d0a176ec12a6049124e04e65e850544da519194d34c006dbcf50322c274ec"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/full_fold_999_view_3.webp",
+      "bytes": 9642,
+      "sha256": "88fbbc2d549bf5550ace0adc0d8ffa5131f553355c7ba8aee84596b86485bf1d"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/hit.webp",
+      "bytes": 15110,
+      "sha256": "12be87b031b3aa932a84c7383274ce39ddc31198af194b55aa047f6650e6d537"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/hit_side.webp",
+      "bytes": 9374,
+      "sha256": "46d9ed5f80e798dd428d81178481a227d4d2db4e86d1159d4258366f9a0f58df"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle.webp",
+      "bytes": 14846,
+      "sha256": "ba615cf1cb178e2e8e550b63e78154ff0e3edb944a5506cf03c23baadbe50fcf"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_side.webp",
+      "bytes": 9256,
+      "sha256": "2da9ea1c95cd2eede1a7f87102059466f1d8e063a376c2a4158bff73efadc5f1"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_125_view_0.webp",
+      "bytes": 15028,
+      "sha256": "f679f0e910650391a2fc01f4c7fae553b89bbb59e0955253219068aa6991e60d"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_125_view_1.webp",
+      "bytes": 9192,
+      "sha256": "8a67ae33d7111b6f16d3cc20befc060377dbc9034ff8d076149942ce8806f366"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_125_view_2.webp",
+      "bytes": 12984,
+      "sha256": "34b566ecba571ce3c41455c01543ea85917be39fb9d09f2c9fc65242b7074dc3"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_125_view_3.webp",
+      "bytes": 9692,
+      "sha256": "d9a8f2501e9a26ea3da9048c8837462c18350bd40ee10fe6dd423a656084bf11"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_375_view_0.webp",
+      "bytes": 15028,
+      "sha256": "f679f0e910650391a2fc01f4c7fae553b89bbb59e0955253219068aa6991e60d"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_375_view_1.webp",
+      "bytes": 9192,
+      "sha256": "8a67ae33d7111b6f16d3cc20befc060377dbc9034ff8d076149942ce8806f366"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_375_view_2.webp",
+      "bytes": 12992,
+      "sha256": "e09f304db14424841010336cf4f09dd66b67d66265e20121d84bff4b202f1ec6"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_375_view_3.webp",
+      "bytes": 9692,
+      "sha256": "d9a8f2501e9a26ea3da9048c8837462c18350bd40ee10fe6dd423a656084bf11"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_625_view_0.webp",
+      "bytes": 15144,
+      "sha256": "f3ed47a535efbaa644fe9a7f8ac1b8c69639fa307a7b1ddaf4807a0a0dbea9b5"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_625_view_1.webp",
+      "bytes": 9296,
+      "sha256": "e9f96fe8276dc98634b7e96911e6f29e0649e5f0d24ae5944ea92902e690c23f"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_625_view_2.webp",
+      "bytes": 13266,
+      "sha256": "031b6c9df4466a4bd9ec13c5fd9e8a2d5f5408ba8802292cf2718ba99c4a2567"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_625_view_3.webp",
+      "bytes": 9640,
+      "sha256": "d5ec3ee57decfbbc2fa74e0087070a35754050a10bb0db6d8bd90e48079035b4"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_875_view_0.webp",
+      "bytes": 15144,
+      "sha256": "f3ed47a535efbaa644fe9a7f8ac1b8c69639fa307a7b1ddaf4807a0a0dbea9b5"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_875_view_1.webp",
+      "bytes": 9296,
+      "sha256": "e9f96fe8276dc98634b7e96911e6f29e0649e5f0d24ae5944ea92902e690c23f"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_875_view_2.webp",
+      "bytes": 13266,
+      "sha256": "031b6c9df4466a4bd9ec13c5fd9e8a2d5f5408ba8802292cf2718ba99c4a2567"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/idle_stroke_875_view_3.webp",
+      "bytes": 9640,
+      "sha256": "d5ec3ee57decfbbc2fa74e0087070a35754050a10bb0db6d8bd90e48079035b4"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/view_0.webp",
+      "bytes": 14776,
+      "sha256": "f79083dd7f8966b108dfb2769f011fdf6ad61d6d0644f0fe6730a1ebf612b8c6"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/view_1.webp",
+      "bytes": 9328,
+      "sha256": "c1ca9f30858c9ee7cc8bb72c5f20f26a955b8dd868dc17dcb8d499f4877884d7"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/view_2.webp",
+      "bytes": 12748,
+      "sha256": "3a03f646749b160f1230af20a628367b96b3b258f6b0c42b3bbe9f6070d947e3"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/view_3.webp",
+      "bytes": 9652,
+      "sha256": "85496993a73a776e7d363d06e689061f2ca5d5100981d526ee4ba74bd84f9c2e"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk.webp",
+      "bytes": 14776,
+      "sha256": "f79083dd7f8966b108dfb2769f011fdf6ad61d6d0644f0fe6730a1ebf612b8c6"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_side.webp",
+      "bytes": 9324,
+      "sha256": "a3a48b23ee0caae6ad0558715d475e4f00fc20e77c9b45d123f51e1b44970819"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_125_view_0.webp",
+      "bytes": 15082,
+      "sha256": "60c481074461e1668cd77f7e95159554f792c4428ed9e03295be320572a97911"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_125_view_1.webp",
+      "bytes": 9194,
+      "sha256": "89a6d3066217d48b6845c2289349c401819aa2f0684b4fe0ff58a840350604b0"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_125_view_2.webp",
+      "bytes": 13206,
+      "sha256": "fc0a20e10ececcf7b8c48af8b31dff8a3e1362c1a2ed53f5bfe01e85efd3b63b"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_125_view_3.webp",
+      "bytes": 9694,
+      "sha256": "3616cca069004065e2d81ab3c148c3e89c4b569fa783fb276e9bf700c76d318c"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_375_view_0.webp",
+      "bytes": 15408,
+      "sha256": "9cd35e28dafdb01ef0770e613936fceb50910335f45f5d32c41588b10b56f288"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_375_view_1.webp",
+      "bytes": 9448,
+      "sha256": "6aba7407feff5ab7ccba070129838054598444ae104a8c53eca8dd92106b77a1"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_375_view_2.webp",
+      "bytes": 13256,
+      "sha256": "7f1f52978d2bdfda2e5d677fdd388ef6cf888ed6ec94d520724776ea22d31cb8"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_375_view_3.webp",
+      "bytes": 9904,
+      "sha256": "79cc196387e618fdb380de4e132f7e617ecb2c6685f8b9500b240acdce2fabe2"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_625_view_0.webp",
+      "bytes": 15084,
+      "sha256": "208e65135fbc25b61cb8f15ed77baeb73e8a10c7d97967620db2e358fdca7858"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_625_view_1.webp",
+      "bytes": 9188,
+      "sha256": "be6a1531632c33e9089c4d154fba44ee544724ee75c9e029323fd898f41cf3f2"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_625_view_2.webp",
+      "bytes": 13206,
+      "sha256": "fc0a20e10ececcf7b8c48af8b31dff8a3e1362c1a2ed53f5bfe01e85efd3b63b"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_625_view_3.webp",
+      "bytes": 9694,
+      "sha256": "3616cca069004065e2d81ab3c148c3e89c4b569fa783fb276e9bf700c76d318c"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_875_view_0.webp",
+      "bytes": 15358,
+      "sha256": "7ac947080e26128c45871997fa3ff18ec0b7d32b9bb43d562981ffc240209a58"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_875_view_1.webp",
+      "bytes": 9448,
+      "sha256": "6aba7407feff5ab7ccba070129838054598444ae104a8c53eca8dd92106b77a1"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_875_view_2.webp",
+      "bytes": 13258,
+      "sha256": "8dee6468846995f509b7cd12336b0406c49c702e737214480e77c5b39e493b25"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/frames/walk_stroke_875_view_3.webp",
+      "bytes": 9904,
+      "sha256": "79cc196387e618fdb380de4e132f7e617ecb2c6685f8b9500b240acdce2fabe2"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/godot_controller.json",
+      "bytes": 368,
+      "sha256": "753351e3fedf374fbaf58d72cf98939d1597e64fb82f10da2c7c7005a6ee9a69"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/godot_controller.txt",
+      "bytes": 214,
+      "sha256": "81009e2f9e3c3f2d9f0848b7aadc7a6548127667c7ba13937db398df2c202ba9"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/godot_motion.json",
+      "bytes": 831,
+      "sha256": "546542c13fae9812cc2b5fd90ed79e1cf8f4bd392d31a076adebc73741418279"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/godot_motion.txt",
+      "bytes": 234,
+      "sha256": "0a0351f6c3cc2263999f5e50573dcc64633ca97e69e13c426c33efe128a5f201"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/intermediate_hashes.json",
+      "bytes": 1551,
+      "sha256": "1cf0a1f9d31670ade934ea1fde8b1a9e2e16f5d957b3cae1e2ebdaf8d21224b9"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/README.md",
+      "bytes": 5960,
+      "sha256": "b02c18c6bcd3409b39529116a8d23faf496d6068eed06c1bea5b2b973de6c1b9"
+    },
+    {
+      "path": "source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/source_anatomy.json",
+      "bytes": 7240,
+      "sha256": "a14867cf832c279255c37d1bf02869afb963faab8f63cd5c679d830871a23d69"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "input": "source_assets\\asset_production_a03\\crystal_bat\\topology_v2\\crystal_bat_topology.blend",
+  "source_sha256": "6f2a43b1cb59ebc4b41525bdf1245e3d66eb1e9b79f8111ee0a3312d0c847026",
+  "triangles": 8712,
+  "bones": 11,
+  "head_mask_vertices": 2467,
+  "wing_rebind_vertices": 6574,
+  "fully_isolated_head_max_wing_weight": 2.5777264670626985e-05,
+  "weight_sum_error": 2.220446049250313e-16,
+  "geometry_uv_material_edits": false,
+  "preserved_clips": [
+    "idle",
+    "walk",
+    "attack",
+    "hit",
+    "death"
+  ],
+  "fold": {
+    "axis": "world Y (vertical tuck)",
+    "root_radians": 1.15,
+    "tip_radians": -2.35,
+    "frames": 61,
+    "hold": [
+      24,
+      36
+    ]
+  },
+  "full_fold_gate": "HUMAN_REVIEW",
+  "formal_integration": "NOT_STARTED"
+}

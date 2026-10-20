@@ -1,0 +1,10 @@
+{
+  "asset": "crystal_bat_manual",
+  "bones": 17,
+  "checks": 67,
+  "failures": [],
+  "formal_battle": false,
+  "graphical": true,
+  "method": "Real-clock two-instance clip switching, hit interruption, death freeze, revival and scene reload; rendered frames reviewed separately.",
+  "model_sha256": "ab487b6c94b32e9aac451348e739635684e2577f996245d3a90feb8759f7ebf7"
+}

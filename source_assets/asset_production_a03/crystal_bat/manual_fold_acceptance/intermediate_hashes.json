@@ -1,0 +1,44 @@
+[
+  {
+    "path": "source_assets/asset_production_a03/crystal_bat/anatomical_fold_v1/bat_fold.blend",
+    "sha256": "22dc825a4bfdb2e2a940b7b43d10dff968810279b0d11315bdc1f3eb25592954",
+    "bytes": 5899760,
+    "tracked": false,
+    "rebuildable": true
+  },
+  {
+    "path": "source_assets/asset_production_a03/crystal_bat/anatomical_fold_v1/bat_fold.glb",
+    "sha256": "359e94225c534797a5fb6fa2f7956a66bf8248686db3ec120686dfbbfc14c9e0",
+    "bytes": 6029496,
+    "tracked": false,
+    "rebuildable": true
+  },
+  {
+    "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v1/bat_manual_wings.blend",
+    "sha256": "872a6eae59d3b58eea608d747ce370b8487bd229e330bb02d85b262a317ab791",
+    "bytes": 5693132,
+    "tracked": false,
+    "rebuildable": true
+  },
+  {
+    "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v1/bat_manual_wings.glb",
+    "sha256": "248d2827c696a7bc1d12a6cdd5949bb69457153e74ea8102f5760d551b951b20",
+    "bytes": 5874420,
+    "tracked": false,
+    "rebuildable": true
+  },
+  {
+    "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v2/bat_manual_wings.blend",
+    "sha256": "b39b037e36c7f17806dc73b390cc2c77fdb7030f3c134afa7ea3f0826bb99dd2",
+    "bytes": 5693135,
+    "tracked": false,
+    "rebuildable": true
+  },
+  {
+    "path": "source_assets/asset_production_a03/crystal_bat/manual_panels_v2/bat_manual_wings.glb",
+    "sha256": "248d2827c696a7bc1d12a6cdd5949bb69457153e74ea8102f5760d551b951b20",
+    "bytes": 5874420,
+    "tracked": false,
+    "rebuildable": true
+  }
+]
