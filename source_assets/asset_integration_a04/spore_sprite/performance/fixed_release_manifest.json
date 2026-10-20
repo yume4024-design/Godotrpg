@@ -1,0 +1,18 @@
+{
+  "source_commit": "0db9518b11a602056e1f3db02267b572d73fe9a3",
+  "dirty_files": [
+    "docs/ASSET_CREDITS.md",
+    "docs/CHANGELOG.md",
+    "docs/QUALITY_CHARACTER_GENERATION_REPORT.md",
+    "docs/TASKS.md",
+    "source_assets/asset_integration_a04/spore_sprite/performance/route_validation.json"
+  ],
+  "exe": "D:\\RPGGAME\\builds\\asset-qa\\20261020-232541\\ProjectCrystal.exe",
+  "pck_sha256": "060901AE5AA6B49583BA3B689198ACBA46D408CDFF9F285EB8AE79AF0EF28347",
+  "pid": 17788,
+  "seconds": 32.4611926,
+  "exit_code": 0,
+  "metrics": "D:\\RPGGAME\\artifacts\\a04-performance\\20261020-232615\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\a04_enemy_perf\\metrics.json",
+  "scope": "Native Release combat fixture; not full-game soak or physical input",
+  "android_verified": false
+}

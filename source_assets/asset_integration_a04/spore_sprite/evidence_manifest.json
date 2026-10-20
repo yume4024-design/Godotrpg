@@ -1,5 +1,5 @@
 {
-  "scope": "Evidence scoped to fixed RC3 or separately tested A04; do not transfer performance or physical acceptance between versions",
+  "scope": "Evidence scoped to A04 spore revision; fixed RC3 long soak not reused",
   "files": {
     "battle_result.json": {
       "sha256": "8330e2c03a3ffe9588d30eca2e25ce6df5954f268412ba42907b70843497cb7e",
@@ -34,7 +34,83 @@
       "normalization": "utf8-no-bom-lf"
     },
     "integration_manifest.json": {
-      "sha256": "277369af7bece95c2f1e223ce5f48cef83c4741ca5d44728352c0e6eeae913b5",
+      "sha256": "bfd194dba30ad465929ac6ddbbf44055dc406d622dc9b917f4df2d76e14e3bde",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/debug_metrics.json": {
+      "sha256": "9ed4f1fc57674663c57829c0f0d395a5363beca6f5a030c55cc8e25e68444443",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/failed_presentation_metrics.json": {
+      "sha256": "2618311cd0c3e8f80dc4fd54596e1c6f2b9eddd5720643a8d1225b1df2b8c594",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/fixed_memory_summary.json": {
+      "sha256": "fa9f866a995478330762267d6e940a3a37144dea114d3a75dc64add8e1f92e0e",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/fixed_presentation_debug.json": {
+      "sha256": "2830dea5ae103f01d03997e4b885cc0b975600e90c4c288b6481e711dd620f1c",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/fixed_process.csv": {
+      "sha256": "3c894f3978c4e5c75f131053f6a1776751e369d12ad1ed2054aa65ddd945d1ad",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/fixed_release_manifest.json": {
+      "sha256": "f0315d0f041f186e7f7ac9d3e09f207c8ce4c62742e7253c36ede18f219d5a64",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/fixed_release_metrics.json": {
+      "sha256": "6160368557e6392de33514a5858d4d415daea9adb4905f7993708cd4978d1bcf",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/fixed_release_spore_1.webp": {
+      "sha256": "bba974d7e3d1949c49e89df01555f9a4034600117cad6e0d089cc8f301554b6e",
+      "normalization": "binary"
+    },
+    "performance/fixed_release_spore_3.webp": {
+      "sha256": "8ae86239851b3775835b5396513bf61bb74f6145c284fe6368584ef06e627769",
+      "normalization": "binary"
+    },
+    "performance/full_release_regression.json": {
+      "sha256": "08b3c5ad114b39dfc552041e4dadde41c9e063635fae6936d30fb816b6872c74",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/memory_summary.json": {
+      "sha256": "a57a383de43438cec890ee1d19b974c17f5e72041bc7f7567707ef70307d7dd1",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/process.csv": {
+      "sha256": "879ac91fefa6d70e1c8ca167e4f8a59f4090a0931fde087d9aa3c50dbc4f87e1",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/README.md": {
+      "sha256": "8ef45bbc8697e47bc61cdfdf5135c99a9b90697416eaafd7acf21c345c01997c",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/release_manifest.json": {
+      "sha256": "d6ff53d99bcc8d536444a11a5a063d1327ab3a9995e7623d80c77ec7b422fb4d",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/release_metrics.json": {
+      "sha256": "f7534b30e4e554d18d6f4d1e475dc2da91706548cb0cc5c6523eab353a2ef5d3",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/release_spore_1.webp": {
+      "sha256": "a92ee1ccd4c70822e4afae3495963760cfc210ee91b96fa174ae2b9278df860d",
+      "normalization": "binary"
+    },
+    "performance/release_spore_3.webp": {
+      "sha256": "a3a75272bf551507a4f175440ff03b27b6aef0fd95245bb20fbaeb083fbf4136",
+      "normalization": "binary"
+    },
+    "performance/route_validation.json": {
+      "sha256": "abead95c98d22fa6919c2477cbf55ebb3a1c9e026d22dc017efd2d288cfa7579",
+      "normalization": "utf8-no-bom-lf"
+    },
+    "performance/routing_before.json": {
+      "sha256": "77ca791f12af170c9440809df36159f0233abb9afc8738dd21ab6e41ac1570f8",
       "normalization": "utf8-no-bom-lf"
     },
     "X001-death.webp": {

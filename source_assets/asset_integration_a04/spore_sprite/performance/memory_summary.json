@@ -1,0 +1,8 @@
+{
+  "samples": 30,
+  "peak_sampled_working_set_bytes": 349802496,
+  "peak_private_bytes": 552542208,
+  "os_peak_working_set_bytes": 435843072,
+  "sampling_seconds": 1,
+  "scope": "Whole fixture process, not per-case; no long-term leak conclusion"
+}

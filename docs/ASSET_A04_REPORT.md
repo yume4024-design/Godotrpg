@@ -4,7 +4,7 @@
 
 | 敵人 | 目前結果 | 未完成 |
 |---|---|---|
-| 孢子菇靈 | 9811／10000、7骨／六片段；動作控制器圖形61／0、真實六種戰鬥129／0、G06回歸576／0 | 代表性敵人數量的幀時間／Draw Calls／記憶體、正式Release重新匯出 |
+| 孢子菇靈 | 9811／10000、7骨／六片段；動作控制器圖形61／0、真實六種戰鬥129／0、G06回歸576／0 | 1／3隻原生Release效能40／0、完整Release序章114／0及重啟14／0；新長測／實體輸入未做 |
 | 礦甲蟲／荊棘野豬／腐化守衛 | 重用A03已通過來源 | 逐件動作／場景／戰鬥整合及效能 |
 | 星晶蝙蝠 | 正式舊模型保留 | 完整收翼拓樸／視覺Gate未通過，不採用失敗候選 |
 
@@ -28,4 +28,4 @@ Godot 4.7.2／Windows Compatibility。
 
 [實際資料與畫面](../source_assets/asset_integration_a04/spore_sprite/)。命令：`tools/godot.ps1 -Mode VisualEnemyController`、`-Mode VisualBattleNameplates`、`tools/test_g06.ps1`。新敵人未放進固定RC3 PCK；[RC3長測](G083_RC3_REPORT.md)是另一個已封存版本，不沿用其FPS／記憶體或人工結果證明新模型效能。
 
-下一項完成代表性數量效能及Release匯入，再依序處理礦甲蟲、野豬、守衛；保留蝙蝠、旅館、雷恩衣擺與莉雅重製等未完成事項，完整第一章目標持續。
+菇靈代表性數量效能與Release已完成，詳細方法／首次三敵遮擋失敗／修正／記憶體見[效能證據](../source_assets/asset_integration_a04/spore_sprite/performance/README.md)。接著依序處理礦甲蟲、野豬、守衛；保留蝙蝠、旅館、雷恩衣擺與莉雅重製等未完成事項，完整第一章目標持續。

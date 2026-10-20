@@ -18,5 +18,11 @@
     "failures": [],
     "sample_frames_per_count": 600
   },
-  "release_result": "PENDING; no Debug metric promoted to native Release"
+  "release_result": {
+    "checks": 40,
+    "failures": 0,
+    "source": "fixed_release_metrics.json",
+    "presentation_repro": "failed_presentation_metrics.json (39 checks, 2 failures)",
+    "source_commit": "0db9518b11a602056e1f3db02267b572d73fe9a3"
+  }
 }
