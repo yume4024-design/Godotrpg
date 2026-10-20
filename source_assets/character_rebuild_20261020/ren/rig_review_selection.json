@@ -12,7 +12,10 @@
     "structure": "PASS",
     "motion": "FAIL",
     "full_visual": "NOT_PASSED",
-    "formal_gameplay": "NOT_STARTED"
+    "formal_gameplay": "NOT_STARTED",
+    "numeric_layer_motion": "PASS",
+    "layer_visual": "FAIL",
+    "layer_corner_normals": "FAIL"
   },
   "copies": [
     {
@@ -147,6 +150,78 @@
         }
       ],
       "motion_report": "source_assets/character_rebuild_20261020/ren/false_cloth_below_hem/motion_report.json"
+    },
+    {
+      "name": "garment_layers_v1",
+      "status": "FAIL",
+      "triangle_count": 14040,
+      "numeric_motion": "FAIL",
+      "maximum_run_stretch": 2.7112732953394136,
+      "visual": "FAIL",
+      "reason": "Actual run poses show split white hem and coat/trouser intersections",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/garment_layers_v1/ren_rigged.blend",
+          "bytes": 12375774,
+          "sha256": "e21927f1eb7dc8c5005986f2229b8b3a752ce9faee47a325d0c7573a2c5fe590",
+          "git_policy": "Rejected native/GLB retained locally; reports and review WebP committed"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/garment_layers_v1/ren_rigged.glb",
+          "bytes": 13676392,
+          "sha256": "d81f14103a681530094f6bd3d738be459a41384644432290960e672774eb0b44",
+          "git_policy": "Rejected native/GLB retained locally; reports and review WebP committed"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/garment_layers_v1/motion.json"
+    },
+    {
+      "name": "garment_layers_v2",
+      "status": "FAIL",
+      "triangle_count": 14040,
+      "numeric_motion": "PASS",
+      "maximum_run_stretch": 2.3250449915446056,
+      "visual": "FAIL",
+      "reason": "Actual run poses show split white hem and coat/trouser intersections",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/garment_layers_v2/ren_rigged.blend",
+          "bytes": 12525296,
+          "sha256": "2ad4cadde984da136b1d1261f2f0af8109bccec3270fb96dd6c5e66beb5b845d",
+          "git_policy": "Rejected native/GLB retained locally; reports and review WebP committed"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/garment_layers_v2/ren_rigged.glb",
+          "bytes": 13676392,
+          "sha256": "81f2a4416024d39a479be575e744309b37be192eacf63b4b769ac345e18efc8a",
+          "git_policy": "Rejected native/GLB retained locally; reports and review WebP committed"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/garment_layers_v2/motion.json"
+    },
+    {
+      "name": "garment_layers_v3",
+      "status": "FAIL",
+      "triangle_count": 14074,
+      "numeric_motion": "PASS",
+      "maximum_run_stretch": 2.3250449915446056,
+      "visual": "FAIL",
+      "reason": "Actual run poses show split white hem and coat/trouser intersections",
+      "files": [
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/garment_layers_v3/ren_rigged.blend",
+          "bytes": 12526300,
+          "sha256": "7e87c2764b721997851f3885c0e4570a943352d2e41f180a62f081c7abd0fe8f",
+          "git_policy": "Rejected native/GLB retained locally; reports and review WebP committed"
+        },
+        {
+          "path": "source_assets/character_rebuild_20261020/ren/garment_layers_v3/ren_rigged.glb",
+          "bytes": 13681904,
+          "sha256": "a2c258c9382ddef8d819613324e75ad51d56790ddaeb19090064973f3c10ce8c",
+          "git_policy": "Rejected native/GLB retained locally; reports and review WebP committed"
+        }
+      ],
+      "motion_report": "source_assets/character_rebuild_20261020/ren/garment_layers_v3/motion.json"
     }
   ],
   "best_numeric_diagnostic": "false_cloth_repair; visual not passed, never selected for runtime",
@@ -159,5 +234,7 @@
     "Latest tabard extension worsened results; explicitly rejected",
     "Live Blender per-pixel cloth inspection did not return; request stopped and no result was used",
     "Colour/depth masks do not define garment topology; stop threshold changes and inspect actual face/layer separation"
-  ]
+  ],
+  "latest_layer_diagnostic": "garment_layers_v3",
+  "notes": "Original 12808-surface diagnostics remain historical. New topology 14074/15000 passes numeric motion only; all candidates are rejected for production."
 }

@@ -1,0 +1,103 @@
+{
+  "input": "source_assets\\character_rebuild_20261020\\ren\\garment_layers_v2\\ren_rigged.blend",
+  "sha256": "2ad4cadde984da136b1d1261f2f0af8109bccec3270fb96dd6c5e66beb5b845d",
+  "category": "player_character",
+  "maximum_triangles": 15000,
+  "bones": 19,
+  "actions": {
+    "attack": {
+      "frames": 17,
+      "maximum_triangles": 14040,
+      "endpoint_vertex_difference": 1.734723475976807e-18,
+      "max_edge_stretch": 1.744355425695935,
+      "floor_range": [
+        0.00199996680021286,
+        0.9040032625198364
+      ]
+    },
+    "cast": {
+      "frames": 17,
+      "maximum_triangles": 14040,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.629400817269436,
+      "floor_range": [
+        0.00199996680021286,
+        0.9040032625198364
+      ]
+    },
+    "guard": {
+      "frames": 17,
+      "maximum_triangles": 14040,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.3398248916538922,
+      "floor_range": [
+        0.00199996680021286,
+        0.9040032625198364
+      ]
+    },
+    "hit": {
+      "frames": 17,
+      "maximum_triangles": 14040,
+      "endpoint_vertex_difference": 1.734723475976807e-18,
+      "max_edge_stretch": 1.2599064462974139,
+      "floor_range": [
+        0.0019999444484710693,
+        0.919773519039154
+      ]
+    },
+    "potion": {
+      "frames": 17,
+      "maximum_triangles": 14040,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.4000121431596666,
+      "floor_range": [
+        0.00199996680021286,
+        0.9040032625198364
+      ]
+    },
+    "run": {
+      "frames": 17,
+      "maximum_triangles": 14040,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 2.3250449915446056,
+      "floor_range": [
+        0.0019998804200440645,
+        0.9040032625198364
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 14040,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.7846901348363622,
+      "floor_range": [
+        0.001999936066567898,
+        0.9040032625198364
+      ]
+    }
+  },
+  "total_frames": 127,
+  "topology_warnings": [
+    {
+      "mesh": "RenRetainedBody",
+      "boundary_edges": 30870,
+      "nonmanifold_edges": 30870
+    },
+    {
+      "mesh": "RenSeparatedCoat",
+      "boundary_edges": 10866,
+      "nonmanifold_edges": 10866
+    },
+    {
+      "mesh": "RenInnerTrousers",
+      "boundary_edges": 384,
+      "nonmanifold_edges": 384
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

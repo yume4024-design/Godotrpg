@@ -1,0 +1,202 @@
+{
+  "source_sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850",
+  "candidate_sha256": "7e87c2764b721997851f3885c0e4570a943352d2e41f180a62f081c7abd0fe8f",
+  "status": "FAIL",
+  "failures": [
+    "CORNER_NORMAL_MISMATCH"
+  ],
+  "bones": 19,
+  "clips": 7,
+  "sampled_frames": 127,
+  "maximum_bone_pose_error": 0.0,
+  "packed_images": [
+    [
+      [
+        4096,
+        4096
+      ],
+      "6935a674cfcde60c2d2ac62712feba1c350d47fd685c1772a620a0c04374b876"
+    ]
+  ],
+  "outer_triangles_checked": 13946,
+  "outer_surface_area_error": 1.671595128982517e-08,
+  "maximum_uv_error": 1.3328003749250113e-07,
+  "maximum_corner_normal_error": 1.996755307450458,
+  "bad_faces": [
+    {
+      "mesh": "RenRetainedBody",
+      "face": 1698,
+      "best": null
+    },
+    {
+      "mesh": "RenSeparatedCoat",
+      "face": 964,
+      "best": [
+        0.0,
+        1.996755307450458
+      ]
+    },
+    {
+      "mesh": "RenSeparatedCoat",
+      "face": 632,
+      "best": [
+        0.0,
+        1.990621727487099
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 9315,
+      "best": [
+        0.0,
+        0.013203925753994096
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 4207,
+      "best": [
+        0.0,
+        0.012480170544367494
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 2594,
+      "best": [
+        6.664001874625056e-08,
+        0.011522443533352791
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 1369,
+      "best": [
+        0.0,
+        0.010981742890591244
+      ]
+    },
+    {
+      "mesh": "RenSeparatedCoat",
+      "face": 2542,
+      "best": [
+        0.0,
+        0.01068665160658906
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 10060,
+      "best": [
+        0.0,
+        0.01012377522984001
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 3350,
+      "best": [
+        6.664001874625056e-08,
+        0.010113020444258797
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 8512,
+      "best": [
+        0.0,
+        0.009586021150777429
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 5590,
+      "best": [
+        0.0,
+        0.009452240332890018
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 580,
+      "best": [
+        0.0,
+        0.009402951388543291
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 56,
+      "best": [
+        0.0,
+        0.009166862478258472
+      ]
+    },
+    {
+      "mesh": "RenSeparatedCoat",
+      "face": 3352,
+      "best": [
+        5.978626700380457e-08,
+        0.008938331170463625
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 9099,
+      "best": [
+        0.0,
+        0.008786358664861231
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 5079,
+      "best": [
+        0.0,
+        0.008738811928586325
+      ]
+    },
+    {
+      "mesh": "RenSeparatedCoat",
+      "face": 557,
+      "best": [
+        6.143906154658885e-08,
+        0.00796471792216859
+      ]
+    },
+    {
+      "mesh": "RenSeparatedCoat",
+      "face": 2771,
+      "best": [
+        0.0,
+        0.007586159450619446
+      ]
+    },
+    {
+      "mesh": "RenSeparatedCoat",
+      "face": 3588,
+      "best": [
+        0.0,
+        0.007316282630234462
+      ]
+    }
+  ],
+  "bad_face_count": 68,
+  "maximum_weight_sum_error": 3.958120942115784e-08,
+  "maximum_influences": 4,
+  "checks": {
+    "bone_rest": true,
+    "clip_names": true,
+    "all_frame_bone_poses": true,
+    "packed_images": true,
+    "outer_surface_area": true,
+    "outer_uv": true,
+    "corner_normals": false,
+    "weight_contract": true
+  },
+  "limitations": [
+    "Surface/UV/action preservation does not certify deformation or intersections",
+    "New inner trouser shell uses a separate plain fabric material",
+    "Old coat bones are preserved in actions but no longer weight this layer"
+  ]
+}

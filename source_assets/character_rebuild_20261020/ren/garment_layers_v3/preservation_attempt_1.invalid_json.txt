@@ -1,0 +1,195 @@
+{
+  "source_sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850",
+  "candidate_sha256": "7e87c2764b721997851f3885c0e4570a943352d2e41f180a62f081c7abd0fe8f",
+  "status": "FAIL",
+  "failures": [
+    "OUTER_SURFACE_UV_NORMAL_MISMATCH"
+  ],
+  "bones": 19,
+  "clips": 7,
+  "sampled_frames": 127,
+  "maximum_bone_pose_error": 0.0,
+  "packed_images": [
+    [
+      [
+        4096,
+        4096
+      ],
+      "6935a674cfcde60c2d2ac62712feba1c350d47fd685c1772a620a0c04374b876"
+    ]
+  ],
+  "outer_triangles_checked": 13946,
+  "outer_surface_area_error": 1.671595128982517e-08,
+  "maximum_uv_error": 6.038924234736444e-06,
+  "maximum_corner_normal_error": 0.0019819009289630714,
+  "bad_faces": [
+    {
+      "mesh": "RenRetainedBody",
+      "face": 2,
+      "best": [
+        Infinity,
+        3.822682565889504e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 8,
+      "best": [
+        Infinity,
+        8.945318017393575e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 9,
+      "best": [
+        Infinity,
+        4.699671509701701e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 10,
+      "best": [
+        Infinity,
+        6.83052065269168e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 12,
+      "best": [
+        Infinity,
+        2.4493810625115902e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 20,
+      "best": [
+        Infinity,
+        7.081087615735571e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 21,
+      "best": [
+        Infinity,
+        5.295764722955241e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 22,
+      "best": [
+        Infinity,
+        6.613349719019506e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 24,
+      "best": [
+        Infinity,
+        6.768707764655422e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 28,
+      "best": [
+        Infinity,
+        3.622751480686254e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 30,
+      "best": [
+        Infinity,
+        0.00011395742886898787
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 33,
+      "best": [
+        Infinity,
+        2.0418680087769995e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 34,
+      "best": [
+        Infinity,
+        5.1823267312037856e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 36,
+      "best": [
+        Infinity,
+        2.1543607279164242e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 41,
+      "best": [
+        Infinity,
+        4.2508936154895025e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 42,
+      "best": [
+        Infinity,
+        8.188011131292517e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 43,
+      "best": [
+        Infinity,
+        8.151242997425913e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 46,
+      "best": [
+        Infinity,
+        6.020895453019476e-05
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 56,
+      "best": [
+        1.999200562387517e-07,
+        0.009166862478258472
+      ]
+    },
+    {
+      "mesh": "RenRetainedBody",
+      "face": 63,
+      "best": [
+        Infinity,
+        5.6786776912933524e-05
+      ]
+    }
+  ],
+  "bad_face_count": 4788,
+  "maximum_weight_sum_error": 3.958120942115784e-08,
+  "maximum_influences": 4,
+  "limitations": [
+    "Surface/UV/action preservation does not certify deformation or intersections",
+    "New inner trouser shell uses a separate plain fabric material",
+    "Old coat bones are preserved in actions but no longer weight this layer"
+  ]
+}

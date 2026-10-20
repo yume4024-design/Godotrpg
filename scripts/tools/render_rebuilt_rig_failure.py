@@ -10,6 +10,7 @@ from mathutils import Vector
 p = argparse.ArgumentParser()
 p.add_argument('--input', type=Path, required=True)
 p.add_argument('--output', type=Path, required=True)
+p.add_argument('--closeup', action='store_true')
 a = p.parse_args(sys.argv[sys.argv.index('--')+1:])
 root = Path(__file__).resolve().parents[2]
 assert a.input.resolve().is_relative_to(root/'source_assets/character_rebuild_20261020/ren')
@@ -33,7 +34,7 @@ camera_data = bpy.data.cameras.new('DiagnosticCamera')
 camera = bpy.data.objects.new('DiagnosticCamera',camera_data)
 scene.collection.objects.link(camera)
 camera_data.type = 'ORTHO'
-camera_data.ortho_scale = 2.4
+camera_data.ortho_scale = .74 if a.closeup else 2.4
 scene.camera = camera
 for index,(position,energy,size) in enumerate([((3,-4,5),550,4),((-3,-1,3),250,3)]):
     data = bpy.data.lights.new('DiagnosticLight'+str(index),'AREA')
@@ -58,4 +59,5 @@ for clip,frame,view in plan:
     rows.append({'clip':clip,'frame':frame,'view':view,'file':path.name})
 (a.output/'render_report.json').write_text(json.dumps({'input':str(a.input),
     'sha256':hashlib.sha256(a.input.read_bytes()).hexdigest(),'captures':rows,
+    'closeup':a.closeup,
     'purpose':'Failure evidence only; does not certify animation or production integration'},indent=2),encoding='utf8')

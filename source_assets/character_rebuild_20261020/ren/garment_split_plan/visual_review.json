@@ -1,0 +1,10 @@
+{
+  "status": "FAIL",
+  "reviewed_views": [
+    "front",
+    "back",
+    "left"
+  ],
+  "reason": "Explicit face plan cuts white hem/pouch; no approved garment layer extracted",
+  "production_approved": false
+}

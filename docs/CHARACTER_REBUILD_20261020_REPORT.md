@@ -28,7 +28,7 @@
 | 工具預設投影回歸 | 預設 span／center／來源資料相同，正背 render pixels 逐像素相同 |
 | 工具預設道具商回烘回歸 | 4096² albedo pixels 與已核准 surface_v1 完全相同；舊資產未寫入 |
 | 既有雷恩／莉雅 | TestPixalCharacters **88／0**，仍為 4815／4806 面、七段動作與原法杖，非本輪新角色動作通過 |
-| 新骨架／動作 | 19 骨／七段、127 影格；中央接縫版六段數值通過、run 2.8156 超過 2.5，整體 FAIL；[詳見](REN_RIG_SEAM_REPAIR.md) |
+| 新骨架／動作 | 19 骨／七段；原 12808 面接縫版 run FAIL。後續 14074 面分層副本的 127 影格數值 PASS，但真實跑步穿插／角法線保存 FAIL，仍拒用；[最新分層報告](REN_GARMENT_LAYER_REPORT.md) |
 | 新掛點／正式行走／戰鬥／存讀檔／效能 | **NOT_STARTED**，未提前替換正式引用 |
 
 Godot 4.7.2.stable.official.ed1daf0bf，Blender 5.2.2 LTS。日誌：check-20261020-114938-826、testpixalcharacters-20261020-115330-027；新候選獨立 APPDATA 日誌在 artifacts/character_rebuild_20261020/ren/godot_static。沒有新增實體鍵鼠／手把或 Android 驗收。

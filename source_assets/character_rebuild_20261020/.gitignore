@@ -17,3 +17,11 @@ ren/false_cloth_repair/*.blend
 ren/false_cloth_repair/*.glb
 ren/false_cloth_below_hem/*.blend
 ren/false_cloth_below_hem/*.glb
+# Rejected layer candidates and original full-size renders remain local.
+ren/garment_layers_v*/*.blend
+ren/garment_layers_v*/*.glb
+ren/garment*/**/*.png
+ren/garment*/*.png
+# Superseded raw UV-index connectivity inventory is not physical topology.
+ren/garment_topology/
+ren/garment_topology_geometric/topology.json

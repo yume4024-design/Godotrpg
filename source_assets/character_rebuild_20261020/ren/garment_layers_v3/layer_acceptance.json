@@ -1,0 +1,113 @@
+{
+  "status": "FAIL",
+  "production_approved": false,
+  "runtime_selection": null,
+  "candidate_triangles": 14074,
+  "category": "player_character",
+  "budget": 15000,
+  "blender": "5.2.2 LTS",
+  "source_sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850",
+  "checks": {
+    "strict_glb": "PASS",
+    "blender_import": "PASS",
+    "numeric_motion_127_frames": "PASS",
+    "bone_poses_and_packed_4k_albedo": "PASS",
+    "outer_uv_and_surface_area": "PASS",
+    "corner_normals": "FAIL",
+    "actual_run_closeup": "FAIL",
+    "godot_new_candidate": "NOT_RUN",
+    "formal_gameplay": "NOT_STARTED"
+  },
+  "files": [
+    {
+      "path": "blender_import/report.json",
+      "bytes": 2839,
+      "sha256": "da39cd01e68a7ba779faed8a328c43a5b653efa04b65c9101b0cb305f7dd5bf7"
+    },
+    {
+      "path": "closeups/cast_8_front.png",
+      "bytes": 543982,
+      "sha256": "a087cf9c07385c1f64aec82ba71db26328ec6ccf2e49cf09e09a40781c54c20b"
+    },
+    {
+      "path": "closeups/cast_8_front.webp",
+      "bytes": 22234,
+      "sha256": "6034f57f2b0eb65f1a18bc013db5d41f64c53abce695b8f6231f7926264991ff"
+    },
+    {
+      "path": "closeups/cast_8_right.png",
+      "bytes": 483582,
+      "sha256": "dbd396ee8b94006e0fc101fef7110367e22408c0dc0ac013430e06ecf08bf9f8"
+    },
+    {
+      "path": "closeups/cast_8_right.webp",
+      "bytes": 12420,
+      "sha256": "6fc8c31db4692c0bc6213b43665c73a9536d18221afa3e4a25da1adcb0cefa7b"
+    },
+    {
+      "path": "closeups/render_report.json",
+      "bytes": 776,
+      "sha256": "5c321ef1116fc1c11174d2345cc419dc50344c8d126ea37f0ae03b9bb42f89f8"
+    },
+    {
+      "path": "closeups/run_12_right.png",
+      "bytes": 508054,
+      "sha256": "107799cfb957990ed916457781af335bddf7d66f72fb34555643301ad8ef356b"
+    },
+    {
+      "path": "closeups/run_12_right.webp",
+      "bytes": 14108,
+      "sha256": "79d64b38ae0c802d436d44b7cfe3686591e2728b7ff901187b194cc3ec71bf6e"
+    },
+    {
+      "path": "closeups/run_4_front.png",
+      "bytes": 567585,
+      "sha256": "7359896b55a11367a45acfdfa5dbfa5d998d49f383d3a89c4abd74b391526d9c"
+    },
+    {
+      "path": "closeups/run_4_front.webp",
+      "bytes": 24086,
+      "sha256": "543b414973908edc29e29f49586d2b285026d41461aff44e13615438f9a6046b"
+    },
+    {
+      "path": "glb_audit.json",
+      "bytes": 1753,
+      "sha256": "f2ed72ce61300787e03179934fd7271ec87b5a6200e9693d2df671325f447fef"
+    },
+    {
+      "path": "layer_build.json",
+      "bytes": 8538,
+      "sha256": "84490eceb7b4b0dafc2f7510b2cd573e9f953ca7e7330b791871f53aae3b2c7f"
+    },
+    {
+      "path": "motion.json",
+      "bytes": 2748,
+      "sha256": "0ed1369df7b426c727b01cc3330e36b3405d73b835c2faf699c1b9071fb3a2a1"
+    },
+    {
+      "path": "preservation.json",
+      "bytes": 4156,
+      "sha256": "2a49cde0c3652182bbd3aafdac1e014edd0763ca7ba12c629966faa8f9fcbacd"
+    },
+    {
+      "path": "preservation_attempt_1.invalid_json.txt",
+      "bytes": 4003,
+      "sha256": "365ed1a6bc80a1e5e0b2b187ed97fee71269ae8019aa45eaafd475ea584494bb"
+    },
+    {
+      "path": "ren_rigged.blend",
+      "bytes": 12526300,
+      "sha256": "7e87c2764b721997851f3885c0e4570a943352d2e41f180a62f081c7abd0fe8f"
+    },
+    {
+      "path": "ren_rigged.glb",
+      "bytes": 13681904,
+      "sha256": "a2c258c9382ddef8d819613324e75ad51d56790ddaeb19090064973f3c10ce8c"
+    }
+  ],
+  "limitations": [
+    "No animation amplitude or 2.5 gate changes",
+    "No formal model, story, stats, save, release package or chapter edits",
+    "Reject these diagnostic copies; complete garment retopology is still required"
+  ]
+}
