@@ -1,0 +1,22 @@
+{
+  "command": "python tests/test_godot_command_routes.py",
+  "test_groups": 3,
+  "resolved_modes": 8,
+  "headless_engine_checks": {
+    "TestEnemyController": {
+      "checks": 55,
+      "failures": 0
+    },
+    "TestBattleNameplates": {
+      "checks": 122,
+      "failures": 0
+    }
+  },
+  "original_failure": "Headless test modes incorrectly added --export-release instead of --headless; Visual modes and previously executed RC3 exports were unaffected",
+  "debug_fixture": {
+    "checks": 35,
+    "failures": [],
+    "sample_frames_per_count": 600
+  },
+  "release_result": "PENDING; no Debug metric promoted to native Release"
+}

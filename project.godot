@@ -27,6 +27,9 @@ config/version.g08_qa="0.6.1-g08-rc3"
 run/main_scene.g083_qa="res://tests/qa_entry.tscn"
 run/main_loop_type.g083_qa="WindowsReleaseStabilityTestTree"
 config/version.g083_qa="0.6.1-g08-rc3"
+run/main_scene.a04_qa="res://tests/qa_entry.tscn"
+run/main_loop_type.a04_qa="EnemyAssetPerformanceTestTree"
+config/version.a04_qa="0.6.1-a04-qa"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [debug]

@@ -1,0 +1,37 @@
+{
+  "method": "Actual -Describe output before route repair; engine was not started",
+  "routes": {
+    "enemy": {
+      "mode": "TestEnemyController",
+      "engine": "D:\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe",
+      "arguments": [
+        "--path",
+        "D:\\RPGGAME",
+        "--log-file",
+        "D:\\RPGGAME\\artifacts\\logs\\testenemycontroller-20261020-230653-375.log",
+        "--export-release",
+        "Windows G08 QA",
+        "D:\\RPGGAME\\builds\\g08\\qa\\20261020-230653\\ProjectCrystal.exe",
+        "--script",
+        "res://tests/rigged_enemy_controller_test.gd"
+      ],
+      "project": "D:\\RPGGAME"
+    },
+    "nameplates": {
+      "mode": "TestBattleNameplates",
+      "engine": "D:\\Godot_v4.7.2-stable_win64.exe\\Godot_v4.7.2-stable_win64_console.exe",
+      "arguments": [
+        "--path",
+        "D:\\RPGGAME",
+        "--log-file",
+        "D:\\RPGGAME\\artifacts\\logs\\testbattlenameplates-20261020-230653-405.log",
+        "--export-release",
+        "Windows G08 QA",
+        "D:\\RPGGAME\\builds\\g08\\qa\\20261020-230653\\ProjectCrystal.exe",
+        "--script",
+        "res://tests/battle_nameplate_test.gd"
+      ],
+      "project": "D:\\RPGGAME"
+    }
+  }
+}

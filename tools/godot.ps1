@@ -1,8 +1,9 @@
 [CmdletBinding()]
 param(
-    [ValidateSet('TestEnemyController', 'VisualEnemyController', 'TestBattleNameplates', 'VisualBattleNameplates', 'TestAssetBudget', 'ExportG083QA', 'TestG08Routes', 'TestG08Accessibility', 'ExportG08Candidate', 'ExportG08QA', 'TestPixalAttachments', 'TestWindowsStability', 'TestPixalCharacters', 'TestCharacterSteps', 'TestLiaVillageInn', 'TestLiaVillageFarm', 'TestLiaVillageMine', 'TestFemalePlatform', 'TestFemaleSlope25', 'TestFemaleRamp25', 'TestFemaleFootBoundary', 'ProfileLiaFootPlacement', 'ExportGreystonePreview', 'TestFemaleRamp30', 'TestFemaleRamp120', 'TestFemaleRampTransitions', 'TestFemaleSlopeMovement', 'TestFemaleSlope', 'TestCharacterLifecycle', 'TestFemaleMotionBoundary', 'ExportCharacterQA', 'ProfileCharacters', 'PreviewLiaMovement', 'TestLiaMovement', 'VisualFemaleHand', 'PreviewCharacters', 'TestCharacterPreview', 'VisualFemaleFace', 'TestFemaleGrounding', 'VisualFemaleAnimation', 'PreviewFemale', 'PreviewUserHero', 'ProfileGreystoneEndurance', 'ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet('ExportEnemyAssetQA', 'ProfileEnemyAssets', 'TestEnemyController', 'VisualEnemyController', 'TestBattleNameplates', 'VisualBattleNameplates', 'TestAssetBudget', 'ExportG083QA', 'TestG08Routes', 'TestG08Accessibility', 'ExportG08Candidate', 'ExportG08QA', 'TestPixalAttachments', 'TestWindowsStability', 'TestPixalCharacters', 'TestCharacterSteps', 'TestLiaVillageInn', 'TestLiaVillageFarm', 'TestLiaVillageMine', 'TestFemalePlatform', 'TestFemaleSlope25', 'TestFemaleRamp25', 'TestFemaleFootBoundary', 'ProfileLiaFootPlacement', 'ExportGreystonePreview', 'TestFemaleRamp30', 'TestFemaleRamp120', 'TestFemaleRampTransitions', 'TestFemaleSlopeMovement', 'TestFemaleSlope', 'TestCharacterLifecycle', 'TestFemaleMotionBoundary', 'ExportCharacterQA', 'ProfileCharacters', 'PreviewLiaMovement', 'TestLiaMovement', 'VisualFemaleHand', 'PreviewCharacters', 'TestCharacterPreview', 'VisualFemaleFace', 'TestFemaleGrounding', 'VisualFemaleAnimation', 'PreviewFemale', 'PreviewUserHero', 'ProfileGreystoneEndurance', 'ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
-    [string]$GodotPath = $env:GODOT_PATH
+    [string]$GodotPath = $env:GODOT_PATH,
+    [switch]$Describe
 )
 
 $ErrorActionPreference = 'Stop'
@@ -28,9 +29,9 @@ if ($Mode -ne 'Version') {
     New-Item -ItemType Directory -Path $logRoot -Force | Out-Null
     $logPath = Join-Path $logRoot ('{0}-{1}.log' -f $Mode.ToLowerInvariant(), (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
     $engineArgs = @('--path', $projectRoot, '--log-file', $logPath)
-    if ($Mode -in @('TestAssetBudget', 'ExportG083QA', 'ExportG08Candidate', 'ExportG08QA', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'PrepareGreystoneMaterials', 'TestEnemyAI', 'TestG06TouchCommerce', 'TestG06Touch', 'TestG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'TestG06StoryReload', 'TestG06NPC', 'TestG06', 'TestG06Reload', 'TestGreystoneProps', 'TestGreystoneBuildings', 'TestGreystone', 'TestVillage', 'TestFemaleMotionBoundary', 'ExportCharacterQA', 'ExportGreystonePreview', 'Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
+    if ($Mode -in @('ExportEnemyAssetQA', 'TestEnemyController', 'TestBattleNameplates', 'TestAssetBudget', 'ExportG083QA', 'ExportG08Candidate', 'ExportG08QA', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'PrepareGreystoneMaterials', 'TestEnemyAI', 'TestG06TouchCommerce', 'TestG06Touch', 'TestG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'TestG06StoryReload', 'TestG06NPC', 'TestG06', 'TestG06Reload', 'TestGreystoneProps', 'TestGreystoneBuildings', 'TestGreystone', 'TestVillage', 'TestFemaleMotionBoundary', 'ExportCharacterQA', 'ExportGreystonePreview', 'Check', 'Smoke', 'Test', 'TestPhase2', 'TestPhase3', 'TestArt', 'TestPhase4', 'TestPhase5', 'TestPhase5Reload', 'TestPhase6', 'ExportWindows', 'ExportQA')) { $engineArgs += '--headless' }
 
-    if ($Mode -in @('TestEnemyController', 'TestBattleNameplates', 'ExportG083QA','ExportG08Candidate','ExportG08QA')) {
+    if ($Mode -in @('ExportG083QA','ExportG08Candidate','ExportG08QA')) {
         $role = if ($Mode -eq 'ExportG083QA') { 'qa-soak' } elseif ($Mode -eq 'ExportG08Candidate') { 'candidate' } else { 'qa' }
         $preset = if ($Mode -eq 'ExportG083QA') { 'Windows G083 Soak QA' } elseif ($Mode -eq 'ExportG08Candidate') { 'Windows G08 Candidate' } else { 'Windows G08 QA' }
         $candidateRoot = Join-Path $projectRoot ('builds/g08/' + $role + '/' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
@@ -39,6 +40,14 @@ if ($Mode -ne 'Version') {
         $engineArgs += @('--export-release', $preset, $candidateExe)
         Write-Output "G08_EXPORT_PATH=$candidateExe"
     }
+    if ($Mode -eq 'ExportEnemyAssetQA') {
+        $assetFolder = Join-Path $projectRoot ('builds/asset-qa/' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
+        New-Item -ItemType Directory -Force $assetFolder | Out-Null
+        $assetExe = Join-Path $assetFolder 'ProjectCrystal.exe'
+        $engineArgs += @('--export-release','Windows A04 Enemy QA',$assetExe)
+        Write-Output "A04_EXPORT_PATH=$assetExe"
+    }
+    if ($Mode -eq 'ProfileEnemyAssets') { $engineArgs += @('--script','res://tests/enemy_asset_performance_test.gd') }
     if ($Mode -eq 'ExportGreystonePreview') {
         $previewBuildRoot = Join-Path $projectRoot ('builds/greystone-preview/' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
         New-Item -ItemType Directory -Path $previewBuildRoot -Force | Out-Null
@@ -135,6 +144,11 @@ if ($Mode -ne 'Version') {
     if ($Mode -in @('TestArt', 'VisualArt', 'PreviewArt')) { $engineArgs += @('--script', 'res://tests/cartoon_asset_test.gd') }
     if ($Mode -eq 'PreviewArt') { $engineArgs += @('--', '--manual') }
     if ($Mode -eq 'Editor') { $engineArgs += '--editor' }
+}
+
+if ($Describe) {
+    [ordered]@{mode=$Mode;engine=$GodotPath;arguments=$engineArgs;project=$projectRoot} | ConvertTo-Json -Depth 5 | Write-Output
+    return
 }
 
 # Quote each argument independently for Windows PowerShell and PowerShell 7.
