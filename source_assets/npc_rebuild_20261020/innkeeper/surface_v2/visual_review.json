@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "visual_gate": "FAIL",
+  "problem": "Flattened layers produce severe overlapping black fragments",
+  "native_blend_sha256": "959d955faae593d0c2d0035d1387af7407cc3e44721f8c61626b963441b7761f",
+  "glb_sha256": "5f4261d056a4d453cfb60e73a344c8499f89ca3c3b995a4a115891d482bafac1",
+  "promoted": false
+}

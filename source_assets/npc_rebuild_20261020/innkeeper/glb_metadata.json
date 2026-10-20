@@ -1,0 +1,20 @@
+[
+  {
+    "file": "outputs/bfc56eea_004.glb",
+    "sha256": "e0b1968abbdf86f835c49c6c81b648c3be957421fb7db0daae33a8220769c1d3",
+    "bytes": 190217656,
+    "triangles": 10578566,
+    "images": 0,
+    "skins": 0,
+    "animations": 0
+  },
+  {
+    "file": "generated_textured.glb",
+    "sha256": "83493fd0fe0078fc18a7d0b5d9831f668b7eab4823773bb2be7263f5c7482fdc",
+    "bytes": 20403316,
+    "triangles": 13651,
+    "images": 3,
+    "skins": 0,
+    "animations": 0
+  }
+]

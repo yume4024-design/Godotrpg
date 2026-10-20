@@ -1,0 +1,14 @@
+{
+  "devices": [
+    {
+      "name": "cuda:0 NVIDIA GeForce RTX 3080 : cudaMallocAsync",
+      "type": "cuda",
+      "index": 0,
+      "vram_total": 12884377600,
+      "vram_free": 7302985783,
+      "torch_vram_total": 134217728,
+      "torch_vram_free": 122382392
+    }
+  ],
+  "ram_free": 16017018880
+}

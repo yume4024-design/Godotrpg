@@ -6,3 +6,7 @@
 # Failed merchant binding remains local; keep its recipe and failure evidence.
 item_merchant/idle_talk_v1/*.blend
 item_merchant/idle_talk_v1/*.glb
+# Rejected innkeeper surfaces remain local; original and failure evidence tracked.
+innkeeper/surface_diagnosis/baseline.blend
+innkeeper/surface_v*/*.blend
+innkeeper/surface_v*/*.glb

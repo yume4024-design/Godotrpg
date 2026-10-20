@@ -6,7 +6,7 @@
 |---|---|---|
 | 鐵匠 | 重用既有 9937 面／19 骨來源，停用問題 normal map；新副本 Idle／Talk、98 影格、Godot 動作 213／0、雙實例切換 19／0 | 正式 NPC 替換、實際對話事件／交易回歸；未驗收持鎚／擊砧或巡邏 |
 | 道具商 | 新 Pixal3D 候選及顏色修補；12573 面、20 骨、裙擺權重、Idle／Talk，98 影格、Godot 223＋19／0 | 正式對話／商店整合；未驗收手指、物品交接或巡邏 |
-| 旅館老闆 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
+| 旅館老闆 | 單件生成完成，原貼圖 13651 面；圍裙黑縫及兩版修整失敗均保存 | HUMAN_REVIEW：人工重拓樸，骨架／Idle／Talk／正式整合未開始 |
 | 男村民 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
 | 女村民 | 核准的四視圖來源 READY | 尚未送出 3D 工作 |
 
@@ -89,3 +89,15 @@ ComfyUI 0.41.3／comfy-cli 1.22.0，本機 RTX 3080 12GiB。生成前工具量�
 候選：`assets/models/rebuilt_npc/item_merchant.glb`、`scenes/characters/npc/item_merchant_visual.tscn`；封裝於 source_assets/npc_rebuild_20261020/item_merchant/idle_talk_v2/，測試 SHA 與實際模型一致。靜態舊預覽仍保留，其標籤僅描述靜態檔；新骨架不是正式商店已替換的證據。
 
 限制：原拆分網格 11378 邊界／11400 非流形邊；領口、腋下、裙襬色彩或交疊、AI 手指形狀仍保留。無布料模擬、逐指骨、走動／巡邏或物品交接動作；目前既有商店為對話／UI 交易，候選只驗收必要 Idle／Talk。正式 NPC 整合與商店、序章、存讀檔回歸尚未執行。
+
+## 旅館老闆 — 視覺 FAIL／人工拓樸待辦
+
+四路實際條件圖 completed（d3c8954d-4df2-4477-9d16-2d01fd9fafdc），正／左／背／右完整、方向正確，已查看。逐件完整生成 bfc56eea-084b-4dc6-b0bb-b782d63787fc completed；初始可用 VRAM 7302985783 bytes，請求卸載／重置空閒 Comfy 快取後、形狀開始前實測 11045897334 bytes。沒有停止其他程式、購買 API、下載模型或升級節點。
+
+使用最新工作流同一 SHA、固定 seed、1536／4096／768 及 13800 候選目標；兩份 API validate 0 errors／warnings、無 partner nodes。原始形狀 10578566 triangles／190217656 bytes（本機 outputs 保留／Git 排除），貼圖 GLB 13651／20403316 bytes；Blender 匯入 13642，9 面被匯入器丟棄。原始 GLB 嚴格 npc／allow-static／UV PASS，**沒有骨架或動作**。
+
+實際正背面 CPU 渲染發現前圍裙黑色三角縫。相同網格 normal map 關閉後仍有黑縫；emission-only albedo 乾淨，法線診斷顯示互相反向的角落法線與深折疊區。surface_v1 調整角落法線／中性材質後仍失敗；surface_v2 局部攤平 2164 頂點後出現大片重疊碎片，**拒用**。未將修改後結果拷到 runtime 模型資料夾，也未綁定失敗網格。
+
+三份視覺結果及參數／SHA 見來源目錄 generation_manifest.json、inspection、surface_diagnosis、surface_v1/visual_review.json、surface_v2/visual_review.json、review 與 review_v2。失敗工作 Blend／GLB 僅本機保留，Git 排除重複二進位；原始貼圖 GLB、實際失敗畫面與修整重現腳本保留。Blender 寫縮圖快取警告未影響匯出，但沒有把匯出 exit 0 當作視覺 PASS。
+
+依 ai-3d-agent 三次明確生成／修整後回報，停止此缺陷的自動重試，轉 [人工圍裙拓樸工作單](INNKEEPER_TOPOLOGY_REPAIR.md)。需要移除交叉／重複布片、重建前圍裙及邊界後再做骨架與動作。正式旅館 NPC／費用／恢復規則、故事及存檔未改；A05 整體未完成。其他核准來源可以繼續獨立素材工作，不能因這一件失敗而取消完整角色需求。

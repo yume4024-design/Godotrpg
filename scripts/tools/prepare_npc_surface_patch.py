@@ -11,6 +11,7 @@ p = argparse.ArgumentParser()
 p.add_argument('--input', type=Path, required=True)
 p.add_argument('--output', type=Path, required=True)
 p.add_argument('--height', type=float, default=1.65)
+p.add_argument('--name', default='ItemMerchantBody')
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
 a.output.mkdir(parents=True, exist_ok=False)
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -24,7 +25,7 @@ for vertex, point in zip(body.data.vertices, points):
     vertex.co = ((point.x-(high.x+low.x)*.5)*scale,
                  (point.y-(high.y+low.y)*.5)*scale, (point.z-low.z)*scale)
 body.matrix_world = Matrix.Identity(4)
-body.name = 'ItemMerchantBody'
+body.name = a.name
 body.data.update()
 scene = bpy.context.scene
 scene.render.engine = 'CYCLES'

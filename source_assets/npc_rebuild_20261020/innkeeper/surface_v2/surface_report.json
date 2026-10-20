@@ -1,0 +1,14 @@
+{
+  "source": "source_assets\\npc_rebuild_20261020\\innkeeper\\surface_diagnosis\\baseline.blend",
+  "source_sha256": "f76443c999aea4840547992042c6929a001dbcf24a066734ea07ae12431c4ae0",
+  "geometry_modified": true,
+  "apron_vertices_adjusted": 2164,
+  "maximum_apron_displacement_m": 0.1350833773612976,
+  "uv_or_albedo_modified": false,
+  "changed_apron_corner_normals": 6954,
+  "normal_method": "Locally consistent radial front-cloth normals; preserve other imported corner normals",
+  "material": "Neutral rough non-metal cloth; broken baked normal disconnected",
+  "unverified": [
+    "Topology closure, cloth intersections and animated deformation"
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "status": "FAIL",
+  "visual_gate": "FAIL",
+  "problem": "Normal repair did not remove front apron black slit",
+  "native_blend_sha256": "518be1533d467f30d739848535c57c44878700e4871fef6944638aa6b530020a",
+  "glb_sha256": "6110aaae7a14b5ee4f9973eb1d52a1619a240530e5d4586a8f6b8c09c6f28ecb",
+  "promoted": false
+}

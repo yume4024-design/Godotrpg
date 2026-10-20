@@ -1,0 +1,9 @@
+{
+  "span": 1.8920000000000001,
+  "center_z": 0.86,
+  "height": 1.72,
+  "input": "source_assets\\npc_rebuild_20261020\\innkeeper\\generated_textured.glb",
+  "input_sha256": "83493fd0fe0078fc18a7d0b5d9831f668b7eab4823773bb2be7263f5c7482fdc",
+  "method": "Base colour emission render, orthographic, standard colour transform; unchanged topology",
+  "back_horizontal_axis": "Back camera reverses world X"
+}
