@@ -1,0 +1,122 @@
+[
+  {
+    "file": "attack-0.webp",
+    "bytes": 9370,
+    "sha256": "181ca72adb0efb36e62f5a45ec5b7377ba4d1ff68755ee6f54a05f465ef4e44d"
+  },
+  {
+    "file": "B002-death.webp",
+    "bytes": 33474,
+    "sha256": "68de8d212a873df224b80f0e978e599c8044dbf6e1464de6c742322719bd2188"
+  },
+  {
+    "file": "B002.webp",
+    "bytes": 32458,
+    "sha256": "b630ea4944a30f3d540af62137827cef39a20c27afad6d5ce5aec16b18c51198"
+  },
+  {
+    "file": "battle_result.json",
+    "bytes": 7732,
+    "sha256": "b9a392d5ff7730b0c7b3958f9261cf84dfdfd15f36b39efb2b1ed6119234d7ae"
+  },
+  {
+    "file": "controller_result.json",
+    "bytes": 359,
+    "sha256": "4c08921571aa6749ee71006010eb1740881a2a088a87d320915f180a37ab985f"
+  },
+  {
+    "file": "death.webp",
+    "bytes": 7484,
+    "sha256": "7fe5304438edad190d27bb9fafbbddadd022a7461ce5ca66ab7b67158e340ea7"
+  },
+  {
+    "file": "debug_performance.json",
+    "bytes": 1388,
+    "sha256": "0c67a415cefe7e333c60758b063377a026f3a7332b3d65d8d31a38af1cf51beb"
+  },
+  {
+    "file": "failed_anchor.webp",
+    "bytes": 234038,
+    "sha256": "e2b48966503893460db5288606cb3df4907939598a3c56fca1b7da4a0779c3e7"
+  },
+  {
+    "file": "failed_anchor_result.json",
+    "bytes": 7745,
+    "sha256": "46adf256d64104e1aa2c275d5a8a6667895797207d88aed00d0f400a35803ccc"
+  },
+  {
+    "file": "full_release_regression.json",
+    "bytes": 1113,
+    "sha256": "6ed029ceb20a8a1d1511c1b19dfe4e92684e0dde0abbcc4fcf40e8864a33db39"
+  },
+  {
+    "file": "g06_regression.json",
+    "bytes": 6175,
+    "sha256": "bf89ad80157a3ab6ce410e5dd9b11609ff5dd44e1e434f0241089052a3ee58d7"
+  },
+  {
+    "file": "glb_audit.json",
+    "bytes": 1231,
+    "sha256": "409e168dec414db8f5444f09aee07b7972706671a067f17f0dfecf67d0cf4be7"
+  },
+  {
+    "file": "heavy_attack.webp",
+    "bytes": 9420,
+    "sha256": "b9b93be36f6627ad1b6c0ae6317c8021aee0b5f64a5bac54aa4be7274eccb3a6"
+  },
+  {
+    "file": "integration_manifest.json",
+    "bytes": 941,
+    "sha256": "d76ec9d630496b7a78b4f97fc6c9089db07696c3418c743572f132ecdf299ab6"
+  },
+  {
+    "file": "native-mainline-boss.webp",
+    "bytes": 21700,
+    "sha256": "e95b4ff6bd5cb62601301d4a34a054fa7aaa7cf81585ca153b84a1c69bedeaf8"
+  },
+  {
+    "file": "performance/corrupted_guardian_1.webp",
+    "bytes": 24690,
+    "sha256": "9a98ae3cd83c3ec455f6e8d866d6d3c9d7c6dab80993cc2cc61d5aa0cfb2bf9b"
+  },
+  {
+    "file": "performance/memory_summary.json",
+    "bytes": 250,
+    "sha256": "1616d97ffe208ca083d8a4108f32a73cca91dab9c8316ad512062582a5f3cd5a"
+  },
+  {
+    "file": "performance/process.csv",
+    "bytes": 729,
+    "sha256": "5e42052f945bf6c10ece7cf865f1739b6edb7b4f18947e9e02c3f77aa3a66675"
+  },
+  {
+    "file": "performance/release_manifest.json",
+    "bytes": 747,
+    "sha256": "fc365b99e2b67434896c027659782b82d1c0d8f3441f03878d5e76b04df300cf"
+  },
+  {
+    "file": "performance/release_metrics.json",
+    "bytes": 1387,
+    "sha256": "93e89812b09d2609de0f78b0fa5f5f2002f2e8e5883c42f13886f8b370af94b4"
+  },
+  {
+    "file": "README.md",
+    "bytes": 2722,
+    "sha256": "529efb9e3494bed2892f0e390324a0ad4a9974e45667dfd1aa7470817901ed1e"
+  },
+  {
+    "file": "secondary-cast.webp",
+    "bytes": 9364,
+    "sha256": "ebd0b8fd0832ce2affe68ce15d9b64b67a449f2b28461423c234ab9490e65d75"
+  },
+  {
+    "file": "special_attack.webp",
+    "bytes": 9368,
+    "sha256": "b905ba11c19cd90a17d386a3082b2e0b57c4962e6fa03f1a7e2d5dad35278c04"
+  },
+  {
+    "file": "stagger.webp",
+    "bytes": 9398,
+    "sha256": "02928a0a7324f62c6835c308efb387a58c2f2fafcee55eaa8dc48bdf33eaa82f"
+  }
+]

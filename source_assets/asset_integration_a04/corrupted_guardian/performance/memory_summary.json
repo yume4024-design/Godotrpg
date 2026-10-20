@@ -1,0 +1,8 @@
+{
+  "samples": 18,
+  "peak_sampled_working_set_bytes": 346341376,
+  "peak_private_bytes": 553340928,
+  "os_peak_working_set_bytes": 436670464,
+  "sampling_seconds": 1,
+  "scope": "Whole single-boss combat fixture; not per-phase or leak acceptance"
+}
