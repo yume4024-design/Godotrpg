@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-20 — 原創水車固定架與場景配置
+
+水車 bank 變體新增 160 面 A 架／水下基座，仍為本專案 Blender 原創，沿用 G04 wood／iron／stone 材質；原輪體／軸 1212 面不重造，總 1372 面。無第三方模型／付費素材／大型貼圖，源檔及 SHA 見 [ENV02 整合報告](ENV02_VILLAGE_INTEGRATION_REPORT.md)。這不是 Kenney 枯木的修改內容，枯木來源仍另記。
+
 ## 2026-10-20 — Kenney 免費枯木（已下載並修改）
 
 Kenney [Nature Kit](https://kenney.nl/assets/nature-kit)，內附 License.txt 為 CC0 1.0／Nature Kit (2.1)，署名非必須，本專案保留作者。官網仍列 1.0／2020，版本差異及 ZIP／原 log_large／修改後 GLB 的 SHA 均記錄於 [單件報告](ENV02_FREE_LOG_REPORT.md) 與 source_manifest.json。

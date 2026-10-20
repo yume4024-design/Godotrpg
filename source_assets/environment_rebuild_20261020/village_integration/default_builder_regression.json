@@ -1,0 +1,8 @@
+{
+  "before": "assets/models/greystone/props/waterwheel.glb",
+  "rebuilt_local": "artifacts/env02_village_integration/default_wheel_rebuild/waterwheel.glb",
+  "before_sha256": "4c0ad1c26449fc09d524b0b45d42af6a44bf50a0b53030d9eceb50ed0d7af495",
+  "rebuilt_sha256": "4c0ad1c26449fc09d524b0b45d42af6a44bf50a0b53030d9eceb50ed0d7af495",
+  "exact_bytes_equal": true,
+  "status": "PASS"
+}

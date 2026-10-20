@@ -6,4 +6,4 @@
 [node name="Waterwheel" type="Node3D"]
 script = ExtResource("1")
 model_scene = ExtResource("2")
-metadata/stage = "ENV02 standalone candidate; village placeholder retained"
+metadata/stage = "ENV02 decorative river wheel; fixed axle and animated wheel"

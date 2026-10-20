@@ -1,5 +1,7 @@
 # ENV02 葉菜作物 — 獨立模型候選
 
+後續：28 株已接入 G06 灰石村，原位置不變、4032 面；場景 153／0／G06 576／0，見 [整合報告](ENV02_VILLAGE_INTEGRATION_REPORT.md)。以下保留獨立模組階段的原始結果。
+
 2026-10-20，**PASS（僅獨立模組）**，正式農田配置及效能未驗收。Blender 5.2.2 LTS／Godot 4.7.2.stable.official.ed1daf0bf／Windows。
 
 - 原創 Blender 模型：144／300 triangles，80 面菜心＋八片有厚度折葉，單 Mesh／兩 surfaces；0.70m 寬、約 0.59m 高，地面中心原點，符合舊作物佔位約 0.70m 寬／0.60m 高的尺度。

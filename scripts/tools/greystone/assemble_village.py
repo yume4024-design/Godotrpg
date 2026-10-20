@@ -1,7 +1,8 @@
-"""G05 assembly of existing buildings and replaceable G04 prop placeholders.
+"""G05/ENV02 assembly using qualified modules and replaceable missing props.
 
-Called by build_layout.py; static PackedScenes remain editable in Godot.
-No production map, gameplay state, or save resource is touched.
+Called by the offline build_layout.py baseline generator. G06 now consumes the
+Greystone scene: inspect the full generated diff before replacing that scene.
+This helper never edits the old village/Main, gameplay state or save resources.
 """
 import math
 
@@ -28,7 +29,7 @@ def assemble(world, scene_type, out, height_at):
         s.nodes.append(f'[node name="{name}" type="MeshInstance3D" parent="."]\nposition = Vector3({pos[0]}, {pos[1]}, {pos[2]})\nmesh = SubResource("G{i}")')
 
     def register(name, s):
-        replacements={'well':'stone_well','bridge_deck':'wooden_bridge','dock_deck':'wooden_dock','fence':'wooden_fence','lamp':'lamp_post','sign':'wooden_sign'}
+        replacements={'well':'stone_well','bridge_deck':'wooden_bridge','dock_deck':'wooden_dock','fence':'wooden_fence','lamp':'lamp_post','sign':'wooden_sign','crop':'leafy_crop','waterwheel':'waterwheel_bank'}
         model=replacements.get(name)
         if model and (out/'props'/(model+'.tscn')).exists():
             # Bridge/dock keep the already tested G02 supporting bodies/rails.
@@ -118,7 +119,8 @@ def assemble(world, scene_type, out, height_at):
     s.box('VerticalSpoke','.',(0,0,0),(.28,4.7,.25),wood,False)
     s.box('HorizontalSpoke','.',(0,0,0),(.28,.25,4.7),wood,False)
     register('waterwheel',s)
-    place('RiverWaterwheel','waterwheel',31.0,-.8,-4)
+    # Outside RiverRock3; paddles dip 0.10m into the y=-3.6m river surface.
+    place('RiverWaterwheel','waterwheel',33.6,-1.35,-4)
 
     # Reuse standalone assets away from roads and reserved door approaches.
     placements={'pine_tree_a':[(-34,37),(-42,20)],'pine_tree_b':[(46,-18),(49,30)],
@@ -139,7 +141,8 @@ def assemble(world, scene_type, out, height_at):
         ('WestHousingApproach',(-19,.05,27),(4,.02,5)),
         ('EastHousingApproach',(19,.05,27),(4,.02,5)),
         ('FarmCourtyard',(-39,4.05,-30),(10,.02,4)),
-        ('FarmBedAccess',(-36,4.05,-40),(3,.02,18))]:
+        # East of the existing farmhouse wall (east edge about x=-35.9).
+        ('FarmBedAccess',(-34,4.05,-40),(3,.02,18))]:
         world.box(name,'Roads',pos,size,'0.72, 0.62, 0.43',False)
 
     for name,x,y,z in [('Inn',-20,2,-11),('Guild',0,0,-22),('Items',-23,0,6),('Weapons',20,0,-8),('HouseA',-19,0,28),('HouseB',19,0,28),('Farm',-39,4,-30)]:

@@ -3,4 +3,4 @@
 [ext_resource type="PackedScene" path="res://assets/models/greystone/props/leafy_crop.glb" id="1"]
 
 [node name="LeafyCrop" instance=ExtResource("1")]
-metadata/stage = "ENV02 standalone crop; village placeholder retained"
+metadata/stage = "ENV02 reusable decorative farm crop"

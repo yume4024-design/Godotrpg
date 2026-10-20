@@ -1,0 +1,33 @@
+{
+	"checks": 153,
+	"failures": [
+		"A-frame timbers stay outside rotating wheel width"
+	],
+	"full_prologue": false,
+	"graphical": true,
+	"measurements": {
+		"collision_shapes": 136,
+		"crop_instances": 28,
+		"crop_triangles": 4032,
+		"fixed_support_clearance_x": 0.069976806640625,
+		"wheel_bounds": "[P: (32.56, -4.15, -6.349307), S: (2.080002, 5.149307, 4.698614)]",
+		"wheel_shared_materials": [
+			"res://assets/materials/greystone/props/wood.tres",
+			"res://assets/materials/greystone/props/stone.tres",
+			"res://assets/materials/greystone/props/iron.tres"
+		],
+		"wheel_triangles": 1372
+	},
+	"movement": "Actual InputMap / ExplorationPlayer at normal physics rate; synthetic input",
+	"performance_benchmark": false,
+	"physical_input": false,
+	"protected_files": {
+		"res://data/story/prologue_events.json": "f7efb5926b1e628bae0f00d7881cee60a73a681d49b6a39680dabf4a93ed3f67",
+		"res://project.godot": "fa0cfce3789099c87817c8927fd360d360288b3fb7332705f0ec6486d195a0aa",
+		"res://scenes/main/main.tscn": "9d722364c4960b2735c5fc426c8f21bab12ed4d58ac9a3a119879a60f40505ec",
+		"res://scenes/world/greystone_runtime.tscn": "ea10cb820ead2c55f779a2d5cfa2c1fa09391eac64d062b278c39a7f1f209c54",
+		"res://scripts/save/save_codec.gd": "3e2cc75a7f615a1dee7ea17465ca787d03e99e3f01039bd938d6fa361d3016fe"
+	},
+	"scene_after_sha256": "4ad707a22e616dfbb1ddbac45e8744a691aed08a781ba02271341a83c0b34c43",
+	"scene_before_sha256": "a99b1c25d15aa93aa9828d004b1094f9cff9671f5c5d240dee62d316c33913fd"
+}

@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "G06 environment prop integration only; no G08 certification or chapter completion",
+  "base_commit": "b5a70eb0154a773f94b79c6df3f77145dbff0e88",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "graphical_checks": 153,
+  "g06_modes": 16,
+  "g06_assertions": 576,
+  "physical_input": false,
+  "performance_benchmark": false,
+  "hash_method": "GLB/Blend/WebP bytes exact; text UTF8 BOM stripped and CRLF normalized to LF",
+  "collision_shapes_before_and_after": 136,
+  "new_waterwheel_triangles": 1372,
+  "crops": 28,
+  "crop_triangles": 4032,
+  "visual_transform_changes": {
+    "wheel": {
+      "before": [
+        31,
+        -0.8,
+        -4
+      ],
+      "after": [
+        33.6,
+        -1.35,
+        -4
+      ],
+      "reason": "clear river rock, dip into water, add fixed support"
+    },
+    "FarmBedAccess": {
+      "before": [
+        -36,
+        4.05,
+        -40
+      ],
+      "after": [
+        -34,
+        4.05,
+        -40
+      ],
+      "reason": "east of existing farmhouse wall"
+    }
+  },
+  "sha256": {
+    "scenes/world/greystone_village.tscn": "aee1919530fb3e2105f0577e871805ae13e7714fa4a1c9bbdeb8f835f3d32c7a",
+    "scenes/world/greystone/props/waterwheel_bank.tscn": "8c44a769cfb954ffc83a3234ed0b2b1f0b20714de65dd202f5a049e49216b03e",
+    "assets/models/greystone/props/waterwheel_bank.glb": "24f86701d9bc2c53a46a97fd05140b2a54d9115fa142bb7e669c71d8b33ad0f0",
+    "assets/models/greystone/props/leafy_crop.glb": "fc83affd95d284732dddf16a07005af9a1f6582a485b7694c8a46879c458df23",
+    "scripts/tools/greystone/build_waterwheel.py": "7ed452494bc4594a4176bdae2fd9dc2df97c2bd41153c371d6b434f194b51fa0",
+    "scripts/tools/greystone/assemble_village.py": "ac884ee71fea4fb244f9a7b60e93a816c3104ab265259f5b6ba733e79c386e04",
+    "tests/greystone_environment_integration_test.gd": "24ae9e42064396e379ef1d3e7dbe486b68e23d05953ef966794ae93c65e0bade"
+  },
+  "evidence_sha256": {
+    "after_farm.webp": "dd25e2acc1dcee0564a45a360aaea748b65085c413582e995bd5c4b988de99fe",
+    "after_waterwheel_a.webp": "549eb9ffefc3445f3b839f55f5f3475fee5faed6c3589913585d5458012c2ad5",
+    "after_waterwheel_b.webp": "d92c28d69e841f673f01c8b1de98ade0a2571b76e1d35e90c51ffdf65a4529e3",
+    "baseline.json": "e0a68e18c28bf6852d0d37345d21be183cbe17a84dfec750a05f2cfb610a26fb",
+    "before_farm.webp": "fc3142268cfd1f16010630394c42e3934cb8b8986793cbc73a970b357844eabb",
+    "before_waterwheel.webp": "c6e95b2386e27e2f8582b50076a9bc00218cfeb0f2d850150377ce38442c6cde",
+    "default_builder_regression.json": "b3510b66ab4e78a1f89116e09d4cda26db00aba88c049a729aedb1b9e67828a5",
+    "failed_farm_route_report.json": "2d338db113d6332d5b6159d2b21d368404d98ff5ff7517dff6f922c104a4c1be",
+    "failed_foundation_scope_report.json": "43461dfab03212a64ff3e6b9d1d454c6ffd636462a22ba05a890544db7d485ed",
+    "failed_visual_rock.webp": "f57454779c529ba4be7f54a668a82733b4568c367f8f9d56829580dc6684dca3",
+    "failed_visual_rock_report.json": "a69c9d97bf14e5c8dda96297f8e14766d431a938023761d1c56131f26d8efb7f",
+    "g06_regression.json": "13bd9d9b2f13c981fba4eb0a93465607dfc6d333c2f40ab2efd8ab7476e9673c",
+    "report.json": "6bf3cfe3e78cb116e5e8019003f7a2664835ee585f5963ef259dfed1654e6f0c"
+  },
+  "limitations": [
+    "Synthetic actual InputMap movement; not a new physical keyboard/controller or Android certification",
+    "Original v0.6.1/Main and RC2 package kept; new package/performance acceptance not performed",
+    "Existing rear farm fence crosses planting rows; its collision was deliberately not relocated without a location-layout audit",
+    "Enemy/hero/NPC pending work and full C1 remain incomplete"
+  ]
+}

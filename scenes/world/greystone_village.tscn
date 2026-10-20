@@ -70,9 +70,9 @@
 [ext_resource type="PackedScene" path="res://assets/models/greystone/props/wooden_dock.glb" id="Prop_dock_deck"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone/props/wooden_fence.tscn" id="Prop_fence"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone/props/lamp_post.tscn" id="Prop_lamp"]
-[ext_resource type="PackedScene" path="res://scenes/world/greystone/placeholders/crop.tscn" id="Prop_crop"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/leafy_crop.tscn" id="Prop_crop"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone/props/wooden_sign.tscn" id="Prop_sign"]
-[ext_resource type="PackedScene" path="res://scenes/world/greystone/placeholders/waterwheel.tscn" id="Prop_waterwheel"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/waterwheel_bank.tscn" id="Prop_waterwheel"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone/props/pine_tree_a.tscn" id="Prop_pine_tree_a"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone/props/pine_tree_b.tscn" id="Prop_pine_tree_b"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone/props/bush_a.tscn" id="Prop_bush_a"]
@@ -1342,7 +1342,7 @@ font_size = 48
 pixel_size = 0.025
 outline_size = 8
 [node name="RiverWaterwheel" parent="Props" instance=ExtResource("Prop_waterwheel")]
-position = Vector3(31.0, -0.8, -4)
+position = Vector3(33.6, -1.35, -4)
 rotation = Vector3(0, 0, 0)
 [node name="Pine_Tree_A0" parent="Props" instance=ExtResource("Prop_pine_tree_a")]
 position = Vector3(-34, 0, 37)
@@ -1428,7 +1428,7 @@ position = Vector3(-39, 4.05, -30)
 [node name="Mesh" type="MeshInstance3D" parent="Roads/FarmCourtyard"]
 mesh = SubResource("G109")
 [node name="FarmBedAccess" type="Node3D" parent="Roads"]
-position = Vector3(-36, 4.05, -40)
+position = Vector3(-34, 4.05, -40)
 [node name="Mesh" type="MeshInstance3D" parent="Roads/FarmBedAccess"]
 mesh = SubResource("G110")
 [node name="Inn" type="Marker3D" parent="ActivitySpaces"]

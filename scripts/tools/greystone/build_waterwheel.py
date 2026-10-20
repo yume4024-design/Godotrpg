@@ -11,6 +11,7 @@ from mathutils import Vector
 
 p = argparse.ArgumentParser()
 p.add_argument('--output', required=True, type=Path)
+p.add_argument('--bank-mount', action='store_true', help='Fixed A-frames continue below river level; wheel/axle geometry unchanged')
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
 if a.output.exists():
     raise FileExistsError('Output must be a new directory')
@@ -99,25 +100,49 @@ def join_parts(parts, name):
 
 wheel = join_parts(moving, 'Wheel')
 axle = join_parts(fixed, 'FixedAxle')
+objects = [wheel, axle]
+if a.bank_mount:
+    supports = []
+    for side in [-1, 1]:
+        for foot_side in [-1, 1]:
+            head = Vector((side*.88, 0, -.56))
+            foot = Vector((side*.88, foot_side*.62, -2.65))
+            delta = head-foot
+            bpy.ops.mesh.primitive_cylinder_add(vertices=8, radius=.105, depth=delta.length, location=(head+foot)*.5)
+            part = bpy.context.object
+            part.rotation_euler = delta.to_track_quat('Z', 'Y').to_euler()
+            part.data.materials.append(materials['wood'])
+            supports.append(part)
+        for center, size, material in [((side*.88,0,-1.85),(.16,1.2,.14),'wood'),
+                                        ((side*.88,0,-2.69),(.32,1.56,.22),'stone')]:
+            bpy.ops.mesh.primitive_cube_add(size=1, location=center)
+            part = bpy.context.object
+            part.scale = size
+            bpy.ops.object.transform_apply(location=False, rotation=False, scale=True)
+            part.data.materials.append(materials[material])
+            supports.append(part)
+    objects.append(join_parts(supports, 'BankSupport'))
 assembly = bpy.data.objects.new('WaterwheelAssembly', None)
 bpy.context.scene.collection.objects.link(assembly)
-for obj in [wheel, axle]:
+for obj in objects:
     obj.parent = assembly
     obj.data.calc_loop_triangles()
-triangles = sum(len(obj.data.loop_triangles) for obj in [wheel, axle])
+triangles = sum(len(obj.data.loop_triangles) for obj in objects)
 if triangles > 2500:
     raise ValueError('Waterwheel explicit 2500-triangle budget exceeded')
-all_points = [obj.matrix_world @ v.co for obj in [wheel, axle] for v in obj.data.vertices]
+all_points = [obj.matrix_world @ v.co for obj in objects for v in obj.data.vertices]
 report = {'status': 'IN_PROGRESS', 'method': 'Original Blender mesh construction; no Comfy submission or third-party assets',
           'triangles': triangles, 'budget': 2500, 'dimensions_blender': [max(v[i] for v in all_points) - min(v[i] for v in all_points) for i in range(3)],
           'origin': 'Axle centre; matches original Godot placeholder origin, rotation axis X',
-          'parts': {'Wheel': len(wheel.data.loop_triangles), 'FixedAxle': len(axle.data.loop_triangles)},
+          'parts': {obj.name: len(obj.data.loop_triangles) for obj in objects},
+          'bank_mount': a.bank_mount,
           'palette': palette, 'uv': 'Not required: texture-free shared colour materials, not a UV PASS claim',
           'collisions': 'None: decorative riverside wheel; traversal/collision integration not yet tested',
           'formal_scene_replacement': False}
 a.output.mkdir(parents=True)
 bpy.ops.object.select_all(action='SELECT')
-native, glb = a.output / 'waterwheel.blend', a.output / 'waterwheel.glb'
+basename = 'waterwheel_bank' if a.bank_mount else 'waterwheel'
+native, glb = a.output / (basename+'.blend'), a.output / (basename+'.glb')
 bpy.ops.wm.save_as_mainfile(filepath=str(native.resolve()))
 bpy.ops.export_scene.gltf(filepath=str(glb.resolve()), export_format='GLB', use_selection=True, export_animations=False)
 report['outputs'] = {path.name: hashlib.sha256(path.read_bytes()).hexdigest() for path in [native, glb]}

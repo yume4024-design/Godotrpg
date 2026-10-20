@@ -1,0 +1,29 @@
+{
+	"checks": 133,
+	"failures": [
+		"Actual InputMap walk reaches (-36.0, -40.0) at (-36.3046, 4.000846, -32.79309)",
+		"Actual InputMap walk reaches (-36.0, -46.0) at (-36.3046, 4.000846, -32.79309)",
+		"Actual InputMap walk reaches (-36.0, -40.0) at (-36.3046, 4.000846, -32.79309)"
+	],
+	"full_prologue": false,
+	"graphical": true,
+	"measurements": {
+		"collision_shapes": 136,
+		"crop_instances": 28,
+		"crop_triangles": 4032,
+		"wheel_bounds": "[P: (29.975, -3.644301, -6.844301), S: (2.050001, 5.688601, 5.688601)]",
+		"wheel_triangles": 1212
+	},
+	"movement": "Actual InputMap / ExplorationPlayer at normal physics rate; synthetic input",
+	"performance_benchmark": false,
+	"physical_input": false,
+	"protected_files": {
+		"res://data/story/prologue_events.json": "f7efb5926b1e628bae0f00d7881cee60a73a681d49b6a39680dabf4a93ed3f67",
+		"res://project.godot": "fa0cfce3789099c87817c8927fd360d360288b3fb7332705f0ec6486d195a0aa",
+		"res://scenes/main/main.tscn": "9d722364c4960b2735c5fc426c8f21bab12ed4d58ac9a3a119879a60f40505ec",
+		"res://scenes/world/greystone_runtime.tscn": "ea10cb820ead2c55f779a2d5cfa2c1fa09391eac64d062b278c39a7f1f209c54",
+		"res://scripts/save/save_codec.gd": "3e2cc75a7f615a1dee7ea17465ca787d03e99e3f01039bd938d6fa361d3016fe"
+	},
+	"scene_after_sha256": "55680dd2c0270d8e1d3b53160a94934ae22964508a5463350363c0069ed5d5e7",
+	"scene_before_sha256": "a99b1c25d15aa93aa9828d004b1094f9cff9671f5c5d240dee62d316c33913fd"
+}
