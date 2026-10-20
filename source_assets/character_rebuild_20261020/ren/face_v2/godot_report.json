@@ -1,0 +1,21 @@
+{
+	"animation_tested": false,
+	"asset": "ren",
+	"category": "player_character",
+	"checks": 18,
+	"failures": [],
+	"formal_gameplay": false,
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.95000004768372
+	],
+	"model": "res://assets/models/rebuilt_characters/ren_static.glb",
+	"model_sha256": "f94a54b6eec3875f137e6dd87b79d501ef0d90b7a240f09061a80c857f14a0f0",
+	"physical_input": false,
+	"rigged": false,
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 12808
+}

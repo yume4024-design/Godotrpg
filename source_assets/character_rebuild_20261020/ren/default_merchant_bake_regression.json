@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "default_merchant_bake_pixels_equal": true,
+  "size": [
+    4096,
+    4096
+  ],
+  "accepted_source_unchanged": true
+}

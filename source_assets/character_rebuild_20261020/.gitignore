@@ -1,0 +1,6 @@
+**/outputs/
+# Rebuildable projection work copies and first rejected face bake stay local.
+**/baseline.blend
+ren/face_v1/*.blend
+ren/face_v1/*.glb
+ren/face_v1/albedo.png

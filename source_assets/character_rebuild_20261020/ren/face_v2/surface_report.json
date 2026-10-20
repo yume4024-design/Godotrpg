@@ -1,0 +1,35 @@
+{
+  "source": "source_assets\\character_rebuild_20261020\\ren\\head_projection",
+  "projection": {
+    "span": 0.6,
+    "center_z": 1.7,
+    "height": 1.95,
+    "input": "source_assets\\character_rebuild_20261020\\ren\\generated_textured.glb",
+    "input_sha256": "45ffffe43cc8ebf197616a6cbc517ebefdf4d32619d7adfbbb272493b622c361",
+    "method": "Base colour emission render, orthographic, standard colour transform; unchanged topology",
+    "back_horizontal_axis": "Back camera reverses world X"
+  },
+  "method": "Reviewed imagegen colour repair, bounded visible-surface UV projection and emission-only bake",
+  "regions_at_1024": {
+    "front": [
+      [
+        290,
+        360,
+        750,
+        810
+      ]
+    ],
+    "back": []
+  },
+  "projection_visibility": "front_facing",
+  "topology_modified": false,
+  "rigged": false,
+  "material_change": "Baked normal map disabled after controlled diagnostic showed false black tears",
+  "patches": [
+    {
+      "view": "front",
+      "selected_polygons": 795,
+      "sha256": "18fa9635a979ba2a3d74de708a575b98fc3b985d084b77b53e5358e348d4155f"
+    }
+  ]
+}

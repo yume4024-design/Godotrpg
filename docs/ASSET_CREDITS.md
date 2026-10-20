@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-20 — 新雷恩原創來源及臉部修補
+
+使用者已核准雷恩原創四視圖與修正右側面，本機目前 Pixal3D 工作流生成新幾何／UV／貼圖；沒有使用第三方人物、購買素材或付費 Comfy API。內建 imagegen 用原頭部渲染與核准設計修補臉部，完整提示詞／原生成圖／透明 Alpha／SHA 保存，Blender 有界正面投影至原 UV。失敗第一版與高密度來源保留；來源及範圍見 [主角重製報告](CHARACTER_REBUILD_20261020_REPORT.md)。
+
 ## 2026-10-20 — 原創葉菜與免費來源核對
 
 葉菜為本專案 Blender 原創模型，沿用 G04 葉色共享材質，無第三方模型／貼圖／付費 API。使用者追加允許網上免費場景模型修改；官方 Kenney Nature Kit、Quaternius Ultimate Nature／Ultimate Stylized Nature 均標示 CC0，版本快照、連結、用途與尚未下載狀態見 [來源表](FREE_ENVIRONMENT_ASSET_SOURCES.md)。採用後逐件保存原包授權、SHA 與修改內容，不以候選清單冒稱已匯入。

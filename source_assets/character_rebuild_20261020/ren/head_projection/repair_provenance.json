@@ -1,0 +1,9 @@
+{
+  "tool": "builtin imagegen",
+  "intent": "bounded front-face albedo repair",
+  "source_generated_file": "C:/Users/yume4/.codex/generated_images/01a12ed0-ff14-7c63-a203-41ad0fb14478/exec-f2e494e3-fa47-4b26-b3a7-94ad25d5fe78.png",
+  "sha256": "18fa9635a979ba2a3d74de708a575b98fc3b985d084b77b53e5358e348d4155f",
+  "geometry_edit": false,
+  "back_view_edited": false,
+  "status": "UNVERIFIED_PROJECTION"
+}

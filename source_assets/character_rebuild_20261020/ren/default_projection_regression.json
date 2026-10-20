@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "projection_equal": true,
+  "render_pixels_equal": {
+    "albedo_front.png": true,
+    "albedo_back.png": true
+  }
+}

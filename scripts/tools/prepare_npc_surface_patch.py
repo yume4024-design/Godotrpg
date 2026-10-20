@@ -2,6 +2,7 @@
 import argparse
 import hashlib
 import json
+import math
 from pathlib import Path
 import sys
 import bpy
@@ -12,6 +13,8 @@ p.add_argument('--input', type=Path, required=True)
 p.add_argument('--output', type=Path, required=True)
 p.add_argument('--height', type=float, default=1.65)
 p.add_argument('--name', default='ItemMerchantBody')
+p.add_argument('--span', type=float, help='Optional orthographic patch width; default keeps the full-body projection')
+p.add_argument('--center-z', type=float, help='Optional patch centre; default is half the normalized height')
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
 a.output.mkdir(parents=True, exist_ok=False)
 bpy.ops.wm.read_factory_settings(use_empty=True)
@@ -37,7 +40,10 @@ scene.render.resolution_percentage = 100
 scene.render.film_transparent = True
 scene.view_settings.view_transform = 'Standard'
 scene.view_settings.look = 'None'
-span = a.height * 1.1
+span = a.height * 1.1 if a.span is None else a.span
+center_z = a.height * .5 if a.center_z is None else a.center_z
+if not math.isfinite(span) or span <= 0 or not math.isfinite(center_z) or not 0 <= center_z <= a.height:
+    raise ValueError('Projection span/centre must be finite and inside the normalized character')
 camera = bpy.data.objects.new('PatchCamera', bpy.data.cameras.new('PatchCamera'))
 scene.collection.objects.link(camera)
 scene.camera = camera
@@ -55,15 +61,15 @@ for material in body.data.materials:
     links.new(emission.outputs[0], output.inputs['Surface'])
     materials.append((links, shader, output))
 for name, sign in [('front', -1), ('back', 1)]:
-    camera.location = (0, sign*a.height*4, a.height*.5)
-    camera.rotation_euler = (Vector((0, 0, a.height*.5))-camera.location).to_track_quat('-Z', 'Y').to_euler()
+    camera.location = (0, sign*a.height*4, center_z)
+    camera.rotation_euler = (Vector((0, 0, center_z))-camera.location).to_track_quat('-Z', 'Y').to_euler()
     scene.render.filepath = str((a.output / ('albedo_' + name + '.png')).resolve())
     bpy.ops.render.render(write_still=True)
 for links, shader, output in materials:
     links.new(shader.outputs[0], output.inputs['Surface'])
 bpy.ops.file.pack_all()
 bpy.ops.wm.save_as_mainfile(filepath=str((a.output / 'baseline.blend').resolve()))
-(a.output / 'projection.json').write_text(json.dumps({'span': span, 'center_z': a.height*.5,
+(a.output / 'projection.json').write_text(json.dumps({'span': span, 'center_z': center_z,
     'height': a.height, 'input': str(a.input), 'input_sha256': hashlib.sha256(a.input.read_bytes()).hexdigest(),
     'method': 'Base colour emission render, orthographic, standard colour transform; unchanged topology',
     'back_horizontal_axis': 'Back camera reverses world X'}, indent=2), encoding='utf8')

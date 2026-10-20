@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "scope": "Static surface candidate; not a rigged gameplay character",
+  "model_sha256": "f94a54b6eec3875f137e6dd87b79d501ef0d90b7a240f09061a80c857f14a0f0",
+  "native_sha256": "d78a76fff0ab9b17fb430cd2d15492fc9ee290549f8783fc8cdce32d2e1b88c9",
+  "triangles": 12808,
+  "maximum_triangles": 15000,
+  "godot_checks": 18,
+  "uv_static_structure": "PASS",
+  "rig": "NOT_STARTED",
+  "animation": "NOT_STARTED",
+  "formal_gameplay": "NOT_STARTED",
+  "visual_notes": "Agent viewed actual Blender front/side/three-quarter and nine Godot body/head captures; eye smears improved",
+  "limitations": [
+    "Minor under-eye transition and clothing texture artefacts remain",
+    "AI hands are not certified for finger-level grip",
+    "No locomotion, sockets or skinning yet",
+    "4096 albedo has not passed whole-scene performance QA"
+  ],
+  "legacy_character_regression": {
+    "checks": 88,
+    "failures": 0,
+    "ren_triangles": 4815,
+    "lia_triangles": 4806,
+    "log": "artifacts/logs/testpixalcharacters-20261020-115330-027.log"
+  }
+}

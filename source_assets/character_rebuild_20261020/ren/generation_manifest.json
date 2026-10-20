@@ -1,0 +1,228 @@
+{
+  "asset": "ren",
+  "category": "player_character",
+  "maximum_triangles": 15000,
+  "candidate_target": 13800,
+  "status": "IN_PROGRESS",
+  "generation_submitted": true,
+  "source_workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "changes": [
+    {
+      "node": "186",
+      "field": "target_face_count",
+      "before": 30000,
+      "after": 13800,
+      "reason": "8% candidate headroom; final mesh still audited"
+    },
+    {
+      "node": "94",
+      "field": "target_resolution",
+      "before": "1536",
+      "after": 1536,
+      "reason": "INT correction from current UI"
+    },
+    {
+      "node": "241",
+      "field": "smooth_iters",
+      "before": 20,
+      "after": 0,
+      "reason": "Preserve small fingers/hair/clothing facets"
+    },
+    {
+      "node": "241",
+      "field": "drop_small_components",
+      "before": 0.01,
+      "after": 0.0,
+      "reason": "Do not delete small garment/hand/accessory components"
+    }
+  ],
+  "views": {
+    "front": {
+      "load_node": "364",
+      "server_image": "crystal_ren_front.png",
+      "preview_node": "340",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "left": {
+      "load_node": "377",
+      "server_image": "crystal_ren_left.png",
+      "preview_node": "344",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "back": {
+      "load_node": "378",
+      "server_image": "crystal_ren_back.png",
+      "preview_node": "343",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    },
+    "right": {
+      "load_node": "379",
+      "server_image": "crystal_ren_right.png",
+      "preview_node": "346",
+      "chain_classes": [
+        "SaveImageAdvanced",
+        "ImageCropToMask",
+        "LoadImage",
+        "RemoveBackground",
+        "LoadBackgroundRemovalModel"
+      ]
+    }
+  },
+  "references": {
+    "references": "source_assets/reference_library_20261020/characters/ren/references",
+    "structural_gate": "PASS",
+    "visual_review": "agent_viewed_four_directions",
+    "approval_basis": "user_adopted_thirteen_sets_20261020",
+    "approval_record": "source_assets/reference_library_20261020/source_adoption_20261020.json",
+    "status": "PASS",
+    "ready_for_generation": true,
+    "files": [
+      {
+        "view": "front",
+        "file": "source_assets/reference_library_20261020/characters/ren/references/front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          304,
+          64,
+          719,
+          960
+        ],
+        "sha256": "7079233b53a07f9b45fdc8e6f456863121db7bb6d37c1d43b8db206434aeb80e"
+      },
+      {
+        "view": "left",
+        "file": "source_assets/reference_library_20261020/characters/ren/references/left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          422,
+          64,
+          601,
+          960
+        ],
+        "sha256": "3580cfd67bf95957d3a7a8a8db83e99d3b695c295af1f0edee54acde68925436"
+      },
+      {
+        "view": "back",
+        "file": "source_assets/reference_library_20261020/characters/ren/references/back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          305,
+          64,
+          719,
+          960
+        ],
+        "sha256": "5fe5e046c1cbe2457d4802eed87681d2218078c1521d4b63d6be0c1a3b6eac7f"
+      },
+      {
+        "view": "right",
+        "file": "source_assets/reference_library_20261020/characters/ren/references/right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          425,
+          64,
+          600,
+          960
+        ],
+        "sha256": "a9300546163a2439b9bc0a9b83c2d3e761260e480e2f9fa1b8b66d86114a70d5"
+      }
+    ]
+  },
+  "seeds": {
+    "12.seed": 43,
+    "18.seed": 42,
+    "3.seed": 56,
+    "23.seed": 42
+  },
+  "unverified": [
+    "New skeleton and skinning",
+    "Seven gameplay clips and locomotion",
+    "Hands/weapon sockets and intersections",
+    "Formal RPG/save/load/performance regression",
+    "Lia remake"
+  ],
+  "inputs_prompt_id": "d770e973-042b-48c0-8826-ba582cd43212",
+  "generation_prompt_id": "ee346813-4b08-4d96-bae8-236190aee72a",
+  "job_status": "completed",
+  "conditioning_review": {
+    "status": "PASS",
+    "reviewer": "Codex agent actual four images",
+    "notes": "Full body, no labels, front/left/back/right distinct; corrected right profile faces right",
+    "files": [
+      {
+        "file": "conditioning/d770e973_000.png",
+        "sha256": "828ad53ea4316863374004c4828e08f1d88230afeed0bdebe34beb98516f47fb"
+      },
+      {
+        "file": "conditioning/d770e973_001.png",
+        "sha256": "9337b9b9e4692f7e1823c7dac051da7ee0a13b639f51c522a853475159104575"
+      },
+      {
+        "file": "conditioning/d770e973_002.png",
+        "sha256": "4d22f95fbc4e2ce9e65bb16ba2f2e4a2c71dfad630233f5e5ecb9e45b78a98b3"
+      },
+      {
+        "file": "conditioning/d770e973_003.png",
+        "sha256": "e151e00f2220e7df24eaed8a0f860bccdad7665146775fa4d8f9c60d0071953c"
+      }
+    ]
+  },
+  "pre_run_resources": {
+    "vram_free_bytes": 11039605878,
+    "ram_free_bytes": 11480346624,
+    "gpu": "RTX 3080 12GiB",
+    "measured_before_submission": true
+  },
+  "acceptance_scope": "Static character surface only; rig/actions/formal integration remain unverified",
+  "high_density_master": {
+    "path": "source_assets/character_rebuild_20261020/ren/outputs/ee346813_004.glb",
+    "sha256": "18dcc0c9af767a7963b38c9bb9b558f1edd6fa3f94123cd41fd4a1b7de88c99a",
+    "bytes": 148837672,
+    "triangles": 8294120,
+    "git_policy": "Preserved locally; giant raw output excluded"
+  },
+  "generated_textured": {
+    "path": "source_assets/character_rebuild_20261020/ren/generated_textured.glb",
+    "sha256": "45ffffe43cc8ebf197616a6cbc517ebefdf4d32619d7adfbbb272493b622c361",
+    "triangles": 12824
+  },
+  "blender_static_triangles": 12808,
+  "import_dropped_degenerate_faces": 16
+}

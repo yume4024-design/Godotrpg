@@ -14,6 +14,9 @@ p.add_argument('--source', type=Path, required=True)
 p.add_argument('--output', type=Path, required=True)
 p.add_argument('--name', default='item_merchant')
 p.add_argument('--regions', type=Path)
+p.add_argument('--allow-unedited-view', action='store_true', help='Allow an explicit empty rectangle list to leave one projection untouched')
+p.add_argument('--visibility', choices=['centroid_depth', 'front_facing'], default='centroid_depth',
+               help='Default depth mask; front_facing also paints partially occluded front faces and requires side-view review')
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
 default_regions = [(275, 230, 750, 480), (405, 830, 620, 910)]
 view_regions = {'front': default_regions, 'back': default_regions}
@@ -21,11 +24,12 @@ if a.regions:
     view_regions = json.loads(a.regions.read_text(encoding='utf8'))
     if set(view_regions) != {'front', 'back'}: raise ValueError('Specify both view regions')
     for rectangles in view_regions.values():
-        if not rectangles: raise ValueError('Missing bounded repair region')
+        if not rectangles and not a.allow_unedited_view: raise ValueError('Missing bounded repair region')
         for rectangle in rectangles:
             if (len(rectangle) != 4 or not all(isinstance(value, int) for value in rectangle) or
                 not 0 <= rectangle[0] < rectangle[2] <= 1024 or not 0 <= rectangle[1] < rectangle[3] <= 1024):
                 raise ValueError('Repair rectangles must be bounded in the source 1024 canvas')
+    if not any(view_regions.values()): raise ValueError('At least one bounded repair region is required')
 a.output.mkdir(parents=True, exist_ok=False)
 bpy.ops.wm.open_mainfile(filepath=str((a.source / 'baseline.blend').resolve()))
 body = next(obj for obj in bpy.context.scene.objects if obj.type == 'MESH')
@@ -38,6 +42,8 @@ tree = BVHTree.FromBMesh(bm)
 patches = []
 for view, sign in [('front', -1), ('back', 1)]:
     regions = view_regions[view]
+    if not regions:
+        continue
     path = a.source / (view + '_repair.png')
     image = bpy.data.images.load(str(path.resolve()))
     uv = body.data.uv_layers.new(name='Patch_' + view)
@@ -46,7 +52,7 @@ for view, sign in [('front', -1), ('back', 1)]:
     for polygon in body.data.polygons:
         point = polygon.center
         hit, normal, index, distance = tree.ray_cast(Vector((point.x, sign*height*4, point.z)), Vector((0, -sign, 0)))
-        visible = hit is not None and abs(hit.y-point.y) < height*.003
+        visible = (hit is not None and abs(hit.y-point.y) < height*.003) if a.visibility == 'centroid_depth' else polygon.normal.y*sign > .35
         touched = False
         for loop in polygon.loop_indices:
             vertex = body.data.vertices[body.data.loops[loop].vertex_index].co
@@ -127,7 +133,7 @@ bpy.ops.export_scene.gltf(filepath=str((a.output / (a.name + '_surface.glb')).re
                          use_selection=True, export_animations=False)
 (a.output / 'surface_report.json').write_text(json.dumps({'source': str(a.source), 'projection': projection,
     'method': 'Reviewed imagegen colour repair, bounded visible-surface UV projection and emission-only bake',
-    'regions_at_1024': view_regions, 'topology_modified': False, 'rigged': False,
+    'regions_at_1024': view_regions, 'projection_visibility': a.visibility, 'topology_modified': False, 'rigged': False,
     'material_change': 'Baked normal map disabled after controlled diagnostic showed false black tears',
     'patches': [{'view': view, 'selected_polygons': selected, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
                 for view, uv, mask, image, selected, path in patches]}, indent=2), encoding='utf8')

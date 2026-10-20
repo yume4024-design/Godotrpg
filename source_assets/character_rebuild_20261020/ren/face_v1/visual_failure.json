@@ -1,0 +1,6 @@
+{
+  "status": "FAIL",
+  "reason": "Centroid depth selection leaves black stripes on partly occluded eye faces",
+  "evidence": "../face_v1_head_review/albedo_front.png",
+  "next": "Explicit front-facing head projection, plus actual side review; no second image generation"
+}

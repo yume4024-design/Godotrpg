@@ -1,0 +1,9 @@
+{
+  "span": 0.6,
+  "center_z": 1.7,
+  "height": 1.95,
+  "input": "source_assets\\character_rebuild_20261020\\ren\\face_v1\\ren_surface.glb",
+  "input_sha256": "e28dd62c2a5d919567451d315bdb0be95cf5d9d09feb11f66aef45f42866c6df",
+  "method": "Base colour emission render, orthographic, standard colour transform; unchanged topology",
+  "back_horizontal_axis": "Back camera reverses world X"
+}
