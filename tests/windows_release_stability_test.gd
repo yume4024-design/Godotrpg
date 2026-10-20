@@ -14,10 +14,17 @@ var cycle: int = 0
 var soaking: bool = false
 var input_trace: Node
 var observed_map: StringName
+var detail_scripts: Dictionary = {}
+var qa_capture_spans: Array[Dictionary] = []
 var map_trace: Array[Dictionary] = []
 const OUTPUT: String = "user://g083/metrics.json"
 
 func _initialize() -> void:
+	if "--probe-detail" in OS.get_cmdline_user_args():
+		for pair: Array in [["flow","scripts/core/battle_flow.gd"],["arena","scripts/battle/battle_arena.gd"],["stage","scripts/battle/battle_stage.gd"],["game","scripts/core/greystone_integration.gd"]]:
+			var probe: Script = load("res://tests/g083_detail/%s.gd" % pair[0])
+			probe.take_over_path("res://"+pair[1])
+			detail_scripts[pair[0]] = probe
 	super._initialize()
 	slot = "user://g083/soak.json"
 	visual_slot = slot
@@ -63,7 +70,7 @@ func _finish() -> void:
 		_check(false, "Rendered story prerequisite must pass")
 		await _end()
 		return
-	if "--probe-loads" in OS.get_cmdline_user_args():
+	if "--probe-loads" in OS.get_cmdline_user_args() or not detail_scripts.is_empty():
 		await _probe_loads()
 		await _end()
 		return
@@ -212,6 +219,8 @@ func _check(ok: bool, title: String) -> void:
 		if DisplayServer.get_name() != "headless": root.get_texture().get_image().save_webp("user://g083/failure.webp")
 
 func _probe_loads() -> void:
+	if not detail_scripts.is_empty():
+		_check(game.get_script() == detail_scripts.game and game.battles.get_script() == detail_scripts.flow,"QA cached probes bound to actual game and battle nodes")
 	# A short, separately labelled post-warmup CPU probe, never a soak substitute.
 	var rows: Array[Dictionary] = []
 	await process_frame
@@ -231,6 +240,7 @@ func _probe_loads() -> void:
 	_check(game.menu.visible,"QA isolation permits injected menu request")
 	await _tap(KEY_ESCAPE)
 	for map_id: StringName in [&"greystone_runtime", &"forest", &"mine"]:
+		phase_label = "probe_"+str(map_id)
 		var selected: PackedScene
 		for scene: PackedScene in game.travel.maps:
 			if scene.resource_path.get_file().get_basename() == str(map_id): selected = scene
@@ -255,6 +265,7 @@ func _probe_loads() -> void:
 			await physics_frame
 			await physics_frame
 	for encounter: StringName in [&"X001", &"X003"]:
+		phase_label = "probe_"+str(encounter)
 		for attempt: int in range(3):
 			_check(await _timed_load(), "Probe restores prebattle save")
 			var arena_stamp: Array[int] = [0]
@@ -266,8 +277,42 @@ func _probe_loads() -> void:
 			_check(arena_stamp[0] > started and manager != null, "Arena ready and first player input observed")
 			rows.append({"encounter":str(encounter),"attempt":attempt,"launch_to_arena_ms":(arena_stamp[0]-started)/1000.0,"arena_to_input_ms":(input_ready-arena_stamp[0])/1000.0})
 			if manager == null: break
+			if not detail_scripts.is_empty():
+				var expected_font: SystemFont = load("res://assets/ui/fonts/battle_nameplate_font.tres")
+				for label: Label3D in game.battles.arena.stage.get("_labels").values():
+					_check(label.font == expected_font and label.font_size == 38 and is_equal_approx(label.pixel_size,.008) and label.outline_size == 8,"Shared unchanged nameplate font and sizing")
+				var interface_root: Control = game.battles.arena.interface.get_child(0)
+				_check(interface_root.theme.default_font == load("res://assets/ui/fonts/battle_interface_font.tres"),"Shared battle interface font")
+				if attempt == 0: await _capture("g083-font-"+str(encounter))
 			await _auto_battle(manager)
 			_check(game.battles.return_to_world(), "Probe battle returns")
 			await physics_frame
 	var file: FileAccess = FileAccess.open("user://g083/load_probe.json",FileAccess.WRITE)
 	file.store_string(JSON.stringify({"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"checks":checks,"failures":failures,"rows":rows,"method":"Five warm map instantiation / isolated World3D registration probes after full prologue; includes original _ready work, not a cold-start or GPU profiler."},"\t"))
+
+	if not detail_scripts.is_empty():
+		var flow_samples: Array = game.battles.get("qa_samples")
+		_check(flow_samples.size() >= 9,"QA timed actual story/retry and six warm battles")
+		_check(flow_samples.all(func(row: Dictionary) -> bool: return row.arena is Dictionary and row.actors is Array),"QA arena and actor timings were collected from actual nodes")
+		var frame_metrics: Dictionary = {}
+		for label: String in samples:
+			frame_metrics[label] = _stats(samples[label].frames)
+			frame_metrics[label].draw_min = samples[label].draw_min
+			frame_metrics[label].draw_max = samples[label].draw_max
+			frame_metrics[label].engine_peak_bytes = samples[label].engine_peak if samples[label].engine_peak > 0 else null
+		var detail: Dictionary = {"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"checks":checks,"failures":failures,"flow":flow_samples,"validation":game.get("qa_validation_samples"),"frames":frame_metrics,"spikes":spikes,"operations":operations,"captures":qa_capture_spans,"capture_suppression":"--probe-skip-captures" in OS.get_cmdline_user_args(),"method":"QA-only inherited subclasses preserve current production method bodies with timestamps. CPU wall times, deferred dispatch and physics waits; excludes probe install before sampling; not process-startup/GPU profiler or a 30-minute test."}
+		var detail_file: FileAccess = FileAccess.open("user://g083/detail.json",FileAccess.WRITE)
+		detail_file.store_string(JSON.stringify(detail,"\t"))
+
+func _capture(label: String) -> void:
+	if "--probe-skip-captures" in OS.get_cmdline_user_args():
+		print("G083_CAPTURE_SKIPPED ",label)
+		return
+	await RenderingServer.frame_post_draw
+	var began: int = Time.get_ticks_usec()
+	var image: Image = root.get_texture().get_image()
+	var read: int = Time.get_ticks_usec()
+	var result: Error = image.save_webp("user://g08_tests/evidence/"+label+".webp")
+	var ended: int = Time.get_ticks_usec()
+	_check(result == OK,"Packaged evidence "+label)
+	qa_capture_spans.append({"label":label,"start_seconds":(began-started_usec)/1000000.0,"end_seconds":(ended-started_usec)/1000000.0,"readback_ms":(read-began)/1000.0,"encode_write_ms":(ended-read)/1000.0,"width":image.get_width(),"height":image.get_height()})

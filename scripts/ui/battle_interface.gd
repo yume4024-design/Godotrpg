@@ -1,5 +1,6 @@
 class_name BattleInterface
 extends CanvasLayer
+const INTERFACE_FONT: SystemFont = preload("res://assets/ui/fonts/battle_interface_font.tres")
 signal action_requested(action: StringName, target_id: StringName, token: int)
 signal return_requested
 signal retry_requested
@@ -21,9 +22,7 @@ func _ready() -> void:
 	root_control.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	var theme: Theme = Theme.new()
-	var font: SystemFont = SystemFont.new()
-	font.font_names = PackedStringArray(["Microsoft JhengHei", "Noto Sans CJK TC"])
-	theme.default_font = font
+	theme.default_font = INTERFACE_FONT
 	theme.default_font_size = 19
 	theme.set_color("font_color", "Label", Color("#e3e9df"))
 	theme.set_color("font_color", "Button", Color("#e3e9df"))

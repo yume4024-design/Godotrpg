@@ -1,6 +1,7 @@
 [CmdletBinding()]
-param([Parameter(Mandatory=$true)][string]$QaExe, [ValidateSet('Soak','Probe')][string]$Mode = 'Soak')
+param([Parameter(Mandatory=$true)][string]$QaExe, [ValidateSet('Soak','Probe','Detail')][string]$Mode = 'Soak', [switch]$SkipCaptures)
 $ErrorActionPreference = 'Stop'
+if ($SkipCaptures -and $Mode -ne 'Detail') { throw 'Capture suppression is diagnostic Detail-only; never Soak acceptance.' }
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $QaExe = (Resolve-Path -LiteralPath $QaExe).Path
 $evidenceRoot = Join-Path $projectRoot ('artifacts/g083/' + (Get-Date -Format 'yyyyMMdd-HHmmss'))
@@ -14,6 +15,7 @@ $info = [Diagnostics.ProcessStartInfo]::new()
 $info.FileName = $QaExe
 $info.Arguments = '--log-file "' + $logPath + '"'
 if ($Mode -eq 'Probe') { $info.Arguments += ' -- --probe-loads' }
+if ($Mode -eq 'Detail') { $info.Arguments += ' -- --probe-detail'; if ($SkipCaptures) { $info.Arguments += ' --probe-skip-captures' } }
 $info.WorkingDirectory = Split-Path -Parent $QaExe
 $info.UseShellExecute = $false
 $info.CreateNoWindow = $true
@@ -27,7 +29,7 @@ $process = [Diagnostics.Process]::Start($info)
 Write-Output "G083_EVIDENCE=$evidenceRoot PID=$($process.Id)"
 try {
     while (-not $process.WaitForExit(1000)) {
-        $limit = if ($Mode -eq 'Probe') { 120 } else { 1950 }
+        $limit = if ($Mode -in @('Probe','Detail')) { 120 } else { 1950 }
         if ($watch.Elapsed.TotalSeconds -gt $limit) { $process.Kill(); throw "Release $Mode exceeded $limit seconds" }
         $process.Refresh()
         if (-not $process.HasExited) {
@@ -35,9 +37,9 @@ try {
         }
     }
     $log = Get-Content $logPath -Raw
-    $result = [ordered]@{mode=$Mode;base_commit=(git -C $projectRoot rev-parse HEAD);exe=$QaExe;pck_sha256=(Get-FileHash ([IO.Path]::ChangeExtension($QaExe,'.pck'))).Hash;pid=$process.Id;seconds=$watch.Elapsed.TotalSeconds;exit_code=$process.ExitCode;log=$logPath;process_samples=$rssPath;human_playthrough=$false;android_verified=$false}
+    $result = [ordered]@{mode=$Mode;base_commit=(git -C $projectRoot rev-parse HEAD);exe=$QaExe;pck_sha256=(Get-FileHash ([IO.Path]::ChangeExtension($QaExe,'.pck'))).Hash;pid=$process.Id;seconds=$watch.Elapsed.TotalSeconds;exit_code=$process.ExitCode;log=$logPath;process_samples=$rssPath;human_playthrough=$false;android_verified=$false;capture_suppression=[bool]$SkipCaptures;source_dirty_files=@(git -c core.safecrlf=false -C $projectRoot diff --name-only)}
     $result | ConvertTo-Json -Depth 5 | Set-Content (Join-Path $evidenceRoot 'manifest.json') -Encoding utf8
-    $reportName = if ($Mode -eq 'Probe') { 'load_probe.json' } else { 'metrics.json' }
+    $reportName = if ($Mode -eq 'Detail') { 'detail.json' } elseif ($Mode -eq 'Probe') { 'load_probe.json' } else { 'metrics.json' }
     $metricsFile = @(Get-ChildItem $profileRoot -Recurse -Filter $reportName | Where-Object {$_.Directory.Name -eq 'g083'})
     if ($metricsFile.Count -ne 1) { throw 'Missing unique native release metrics' }
     $metrics = Get-Content $metricsFile[0].FullName -Raw | ConvertFrom-Json

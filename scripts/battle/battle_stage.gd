@@ -1,5 +1,6 @@
 class_name BattleStage
 extends Node3D
+const NAMEPLATE_FONT: SystemFont = preload("res://assets/ui/fonts/battle_nameplate_font.tres")
 var _actors: Dictionary[StringName, Node3D] = {}
 var _labels: Dictionary[StringName, Label3D] = {}
 var _rings: Dictionary[StringName, MeshInstance3D] = {}
@@ -43,9 +44,7 @@ func setup(manager: BattleManager) -> void:
 		var label_height: float = 3.0 if form == CombatantDefinition.Form.GUARDIAN else (1.65 if form == CombatantDefinition.Form.SLIME else 2.4)
 		label.position = root_actor.position + Vector3(0, label_height, 0)
 		label.billboard = BaseMaterial3D.BILLBOARD_ENABLED
-		var font: SystemFont = SystemFont.new()
-		font.font_names = PackedStringArray(["Microsoft JhengHei"])
-		label.font = font
+		label.font = NAMEPLATE_FONT
 		label.font_size = 38
 		label.pixel_size = 0.008
 		label.outline_size = 8

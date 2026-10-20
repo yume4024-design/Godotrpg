@@ -1,0 +1,10 @@
+{
+  "method": "Exact original method bodies with timestamp-only inserts; inherited state and contracts unchanged",
+  "sources": {
+    "scripts/core/battle_flow.gd": "a08d2b64ff52b64a8d227e6ef187a5ca3b49f8064426e9d6aaf2214022b4309b",
+    "scripts/battle/battle_arena.gd": "72e01f82a3fb71597c470212335ed96e703cc487ca1dfa89e92c9b0058c9a949",
+    "scripts/battle/battle_stage.gd": "ff4cfa2816227bb324b5b6de4c1068bc7e59463e2db1288738096daa3ffccdd7",
+    "scripts/core/exploration_game.gd": "1eaaa2537a2d692a78f157895f9631a483e9d52f8146c2dec9468f756b87cb25",
+    "scripts/core/greystone_integration.gd": "edce749dfd50b4160b4ebf2ae037cc69ba0731da71462f59f14d507f21033b1f"
+  }
+}
