@@ -13,13 +13,13 @@ var failures: Array[String] = []
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--asset="): asset = argument.trim_prefix("--asset=")
-	if asset not in ["spore_sprite", "ore_beetle", "thorn_boar", "corrupted_guardian", "crystal_bat_manual"]:
+	if asset not in ["spore_sprite", "ore_beetle", "thorn_boar", "corrupted_guardian", "crystal_bat_manual", "crystal_bat"]:
 		push_error("Unsupported integrated enemy: " + asset)
 		quit(1)
 		return
-	expected_bones = {"spore_sprite":7,"ore_beetle":15,"thorn_boar":12,"corrupted_guardian":17,"crystal_bat_manual":17}[asset]
-	secondary_action = {"spore_sprite":&"rupture","ore_beetle":&"attack","thorn_boar":&"charge","corrupted_guardian":&"rupture","crystal_bat_manual":&"fold_wings"}[asset]
-	secondary_clip = {"spore_sprite":"cast","ore_beetle":"attack","thorn_boar":"charge","corrupted_guardian":"cast","crystal_bat_manual":"fold_wings"}[asset]
+	expected_bones = {"spore_sprite":7,"ore_beetle":15,"thorn_boar":12,"corrupted_guardian":17,"crystal_bat_manual":17,"crystal_bat":17}[asset]
+	secondary_action = {"spore_sprite":&"rupture","ore_beetle":&"attack","thorn_boar":&"charge","corrupted_guardian":&"rupture","crystal_bat_manual":&"fold_wings","crystal_bat":&"rupture"}[asset]
+	secondary_clip = {"spore_sprite":"cast","ore_beetle":"attack","thorn_boar":"charge","corrupted_guardian":"cast","crystal_bat_manual":"fold_wings","crystal_bat":"fold_wings"}[asset]
 	motion_clip = "run" if asset=="thorn_boar" else "walk"
 	scene = load("res://scenes/characters/rebuilt/%s_visual.tscn" % asset)
 	output = "res://artifacts/a04_%s_controller/" % asset
@@ -141,7 +141,7 @@ func _run() -> void:
 			await _capture(str(action))
 			await create_timer(2.1).timeout
 			_check(_kind(first)=="idle" and _finite(first), "Auxiliary clip returns idle " + str(action))
-	if asset=="crystal_bat_manual":
+	if asset in ["crystal_bat_manual", "crystal_bat"]:
 		_check(first.play_battle_action(&"fold_wings"), "Candidate full fold is a visual auxiliary action")
 		await create_timer(1.25).timeout
 		_check(_kind(first)=="fold_wings" and _kind(second)=="idle", "Full-fold hold does not mutate peer")

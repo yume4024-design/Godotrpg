@@ -58,6 +58,11 @@ func _manager() -> BattleManager:
 			var rig: Skeleton3D = actual.get("skeleton") as Skeleton3D
 			_check(rig != null and rig.get_bone_count() == 19, "Packaged ally Pixal3D rig in battle")
 		for enemy: CombatantState in manager.enemies:
+			if enemy.definition.id==&"crystal_bat":
+				var actual: CartoonActor = game.battles.arena.stage.get("_appearances")[enemy.instance_id]
+				_check(actual is RiggedEnemyActor and (actual as RiggedEnemyActor).skeleton.get_bone_count()==17, "Packaged bat uses seventeen-bone approved rig")
+				_check(actual.model.resource_path=="res://assets/models/rebuilt_enemies/crystal_bat_manual.glb", "Packaged bat uses approved manual wing geometry")
+				_check((actual as RiggedEnemyActor).action_clips.get(&"rupture")==&"fold_wings", "Existing bat magic maps to full fold presentation")
 			if enemy.definition.id==&"corrupted_guardian":
 				var actual: CartoonActor = game.battles.arena.stage.get("_appearances")[enemy.instance_id]
 				_check(actual is RiggedEnemyActor and (actual as RiggedEnemyActor).skeleton.get_bone_count()==17, "Actual packaged boss uses new seventeen-bone rig including retry")
@@ -66,6 +71,7 @@ func _manager() -> BattleManager:
 	return manager
 
 func _finish() -> void:
+	if failures == 0: await _verify_bat_round_trip()
 	if "--reload" not in OS.get_cmdline_user_args() and failures == 0:
 		var panel: CommercePanel = game.get("commerce")
 		for npc: String in ["ItemMerchant", "Innkeeper"]:
@@ -121,3 +127,23 @@ func _finish() -> void:
 	game.queue_free()
 	await process_frame
 	quit(0 if failures == 0 else 1)
+
+func _verify_bat_round_trip() -> void:
+	var before: Dictionary = game.capture_state()
+	var save_bytes: String = FileAccess.get_file_as_string(slot)
+	game.party.rest()
+	_check(game.battles.launch(&"X003") > 0, "Packaged bat encounter launches after save or fresh-process reload")
+	var manager: BattleManager = await _manager()
+	if manager == null: return
+	await _auto_battle(manager)
+	_check(manager.phase == BattleManager.Phase.FINISHED, "Packaged bat encounter finishes through existing combat")
+	_check(game.battles.return_to_world(), "Packaged bat returns to exploration")
+	await process_frame
+	var after: Dictionary = game.capture_state()
+	for field: String in ["flags", "quests", "rewards"]:
+		_check(after[field] == before[field], "Bat practice preserves progression " + field)
+	_check(FileAccess.get_file_as_string(slot) == save_bytes, "Bat practice does not rewrite the completed save")
+	_check(await game.saves.request_load(), "Reload completed save after bat battle")
+	after = game.capture_state()
+	for field: String in ["party", "inventory", "flags", "quests", "rewards"]:
+		_check(after[field] == before[field], "Post-bat reload preserves " + field)

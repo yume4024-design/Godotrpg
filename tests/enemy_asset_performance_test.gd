@@ -14,13 +14,13 @@ var cases: Array[Dictionary] = []
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
 		if argument.begins_with("--asset="): asset = argument.trim_prefix("--asset=")
-	if asset not in ["spore_sprite", "ore_beetle", "thorn_boar", "corrupted_guardian"]:
+	if asset not in ["spore_sprite", "ore_beetle", "thorn_boar", "corrupted_guardian", "crystal_bat"]:
 		push_error("Unsupported integrated enemy: " + asset)
 		quit(1)
 		return
-	expected_bones = {"spore_sprite":7,"ore_beetle":15,"thorn_boar":12,"corrupted_guardian":17}[asset]
-	expected_triangles = {"spore_sprite":9811,"ore_beetle":9911,"thorn_boar":9998,"corrupted_guardian":9762}[asset]
-	encounter_id = {"spore_sprite":"X001","ore_beetle":"X004","thorn_boar":"X002","corrupted_guardian":"B002"}[asset]
+	expected_bones = {"spore_sprite":7,"ore_beetle":15,"thorn_boar":12,"corrupted_guardian":17,"crystal_bat":17}[asset]
+	expected_triangles = {"spore_sprite":9811,"ore_beetle":9911,"thorn_boar":9998,"corrupted_guardian":9762,"crystal_bat":6249}[asset]
+	encounter_id = {"spore_sprite":"X001","ore_beetle":"X004","thorn_boar":"X002","corrupted_guardian":"B002","crystal_bat":"X003"}[asset]
 	_run.call_deferred()
 
 func _check(ok: bool, message: String) -> void:
@@ -140,8 +140,8 @@ func _run() -> void:
 		_check(times.size()==600 and _stats(times).min_ms>0.0,"Measured 600 finite native frame intervals")
 		_check(arena.manager.history.size()>actions_before,"Measured real battle actions and enemy AI")
 		var row: Dictionary = _stats(times)
-		if asset=="corrupted_guardian":
-			_check(observed_enemy_actions.has(&"attack") and observed_enemy_actions.has(&"rupture"), "Normal boss AI presented both existing physical and magical actions")
+		if asset in ["corrupted_guardian", "crystal_bat"]:
+			_check(observed_enemy_actions.has(&"attack") and observed_enemy_actions.has(&"rupture"), "Normal enemy AI presented both existing physical and magical actions")
 		row.observed_enemy_actions=observed_enemy_actions.duplicate()
 		row.enemy_count=count
 		row.enemy_triangles=total_triangles

@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([Parameter(Mandatory=$true)][string]$Exe, [ValidateSet("spore_sprite","ore_beetle","thorn_boar","corrupted_guardian")][string]$Asset = "spore_sprite")
+param([Parameter(Mandatory=$true)][string]$Exe, [ValidateSet("spore_sprite","ore_beetle","thorn_boar","corrupted_guardian","crystal_bat")][string]$Asset = "spore_sprite")
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 $Exe = (Resolve-Path -LiteralPath $Exe).Path

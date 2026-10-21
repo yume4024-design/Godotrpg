@@ -1,0 +1,6 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/characters/rebuilt/crystal_bat_manual_visual.tscn" id="Candidate"]
+[node name="CrystalBatRebuiltVisual" instance=ExtResource("Candidate")]
+action_clips = {&"attack": &"attack", &"hit": &"hit", &"rupture": &"fold_wings", &"fold_wings": &"fold_wings"}
+[node name="NameplateAnchor" parent="." index="0"]
+position = Vector3(0, 2.1, 0)
