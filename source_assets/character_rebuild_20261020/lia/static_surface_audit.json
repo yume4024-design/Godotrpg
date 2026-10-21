@@ -1,0 +1,41 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "assets\\models\\rebuilt_characters\\lia_static.glb",
+    "category": "player_character",
+    "sha256": "2ba736c720568dc5125eae6a88e785e93b5b8e2509e179116142eb7027a0c198",
+    "maximum_triangles": 15000,
+    "triangles": 12442,
+    "headroom_triangles": 2558,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 12442,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 1,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 12442,
+  "status": "PASS"
+}

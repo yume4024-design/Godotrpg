@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"workflow\": \"D:\\\\RPGGAME\\\\source_assets\\\\character_rebuild_20261020\\\\lia\\\\inputs.api.json\",\n  \"valid\": true,\n  \"error_count\": 0,\n  \"warning_count\": 0,\n  \"errors\": [],\n  \"warnings\": [],\n  \"partner_nodes\": [],\n  \"spends_credits\": false,\n  \"object_info_source\": {\n    \"mode\": \"local\",\n    \"host\": \"127.0.0.1\",\n    \"port\": 8188\n  }\n}"
+    }
+  ],
+  "isError": false
+}

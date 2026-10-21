@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"workflow\": \"D:\\\\RPGGAME\\\\source_assets\\\\character_rebuild_20261020\\\\lia\\\\inputs.api.json\",\n  \"status\": \"queued\",\n  \"prompt_id\": \"1e256b7e-39ff-4f8c-bb81-7dc760d42119\",\n  \"client_id\": \"f16d4d80-02ed-41f1-8c4c-01e933bbb457\",\n  \"outputs\": [],\n  \"elapsed_seconds\": null,\n  \"host\": \"127.0.0.1\",\n  \"port\": 8188,\n  \"state_file\": \"C:\\\\Users\\\\yume4\\\\AppData\\\\Local\\\\comfy-cli\\\\jobs\\\\1e256b7e-39ff-4f8c-bb81-7dc760d42119.json\",\n  \"watcher_spawned\": false\n}"
+    }
+  ],
+  "isError": false
+}

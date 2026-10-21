@@ -1,0 +1,82 @@
+{
+  "files": [
+    {
+      "view": "front",
+      "file": "source_assets\\reference_library_20261020\\characters\\lia\\references\\front.png",
+      "width": 1024,
+      "height": 1024,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "visible_bounds": [
+        271,
+        64,
+        752,
+        960
+      ],
+      "sha256": "bb9ca12f35a05432a29a980c254a6bd5ce9a049993ac33b0ea6eb78806611c6e"
+    },
+    {
+      "view": "left",
+      "file": "source_assets\\reference_library_20261020\\characters\\lia\\references\\left.png",
+      "width": 1024,
+      "height": 1024,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "visible_bounds": [
+        418,
+        64,
+        606,
+        960
+      ],
+      "sha256": "41a708c90303a1ce9d3c8d4f5682a71af4a7d7d333e9f7384878621bc5dc4137"
+    },
+    {
+      "view": "back",
+      "file": "source_assets\\reference_library_20261020\\characters\\lia\\references\\back.png",
+      "width": 1024,
+      "height": 1024,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "visible_bounds": [
+        273,
+        64,
+        751,
+        960
+      ],
+      "sha256": "ffea3a0279aaf42112a046db4cf40e66000ac3ded262df477df89a6413dd69f2"
+    },
+    {
+      "view": "right",
+      "file": "source_assets\\reference_library_20261020\\characters\\lia\\references\\right.png",
+      "width": 1024,
+      "height": 1024,
+      "alpha_range": [
+        0,
+        255
+      ],
+      "visible_bounds": [
+        421,
+        64,
+        603,
+        960
+      ],
+      "sha256": "a2728eacb94c8bf85e67feb2eaeafc68358366df2009e499116141e4be14500c"
+    }
+  ],
+  "structural_gate": "PASS",
+  "status": "HUMAN_REVIEW",
+  "failures": [],
+  "requires_review": [
+    "orthographic direction",
+    "complete limbs/hair/wings",
+    "matching scale/anatomy/equipment",
+    "text or drawn annotations"
+  ],
+  "ready_for_generation": false
+}

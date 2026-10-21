@@ -1,0 +1,35 @@
+{
+  "source": "D:\\RPGGAME\\source_assets\\character_rebuild_20261020\\lia\\head_projection",
+  "projection": {
+    "span": 0.64,
+    "center_z": 1.7,
+    "height": 1.95,
+    "input": "D:\\RPGGAME\\source_assets\\character_rebuild_20261020\\lia\\outputs\\5a7e6c0e_010.glb",
+    "input_sha256": "ddc4146477c8184b3e885ed907772210daad04eab9978c3245e53ec81aba0059",
+    "method": "Base colour emission render, orthographic, standard colour transform; unchanged topology",
+    "back_horizontal_axis": "Back camera reverses world X"
+  },
+  "method": "Reviewed imagegen colour repair, bounded visible-surface UV projection and emission-only bake",
+  "regions_at_1024": {
+    "front": [
+      [
+        200,
+        100,
+        840,
+        810
+      ]
+    ],
+    "back": []
+  },
+  "projection_visibility": "front_facing",
+  "topology_modified": false,
+  "rigged": false,
+  "material_change": "Original normal map disabled for the simple colour-material style; emission inspection confirmed wire artifacts already baked into the original albedo.",
+  "patches": [
+    {
+      "view": "front",
+      "selected_polygons": 598,
+      "sha256": "d2eb62f6e5673474352ea1d63e51039a9814fc2357311ce085b988f7e133a56f"
+    }
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "input": "D:/RPGGAME/source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_010.glb",
+  "topology_modified": false,
+  "rigged": false,
+  "objects": [
+    {
+      "name": "Mesh_0",
+      "vertices": 13075,
+      "triangles": 12442,
+      "uv_layers": 1,
+      "boundary_edges": 11188,
+      "nonmanifold_edges_more_than_two_faces": 16,
+      "zero_area_faces_epsilon_1e_16": 0,
+      "materials": [
+        "Material_0"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "Image_0",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Image_1",
+      "size": [
+        4096,
+        4096
+      ]
+    },
+    {
+      "name": "Image_2",
+      "size": [
+        2048,
+        2048
+      ]
+    }
+  ],
+  "triangles": 12442,
+  "bounds_min": [
+    -0.2606900632381439,
+    -0.09762082248926163,
+    -0.5003675818443298
+  ],
+  "bounds_max": [
+    0.2607592046260834,
+    0.08797667175531387,
+    0.4946795403957367
+  ]
+}

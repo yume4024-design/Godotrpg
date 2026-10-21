@@ -1,0 +1,39 @@
+{
+  "input": "D:/RPGGAME/source_assets/character_rebuild_20261020/lia/face_v2/lia_surface.glb",
+  "topology_modified": false,
+  "rigged": false,
+  "objects": [
+    {
+      "name": "LiaRebuiltBody",
+      "vertices": 13234,
+      "triangles": 12442,
+      "uv_layers": 1,
+      "boundary_edges": 11251,
+      "nonmanifold_edges_more_than_two_faces": 1,
+      "zero_area_faces_epsilon_1e_16": 0,
+      "materials": [
+        "Material_0"
+      ]
+    }
+  ],
+  "images": [
+    {
+      "name": "albedo",
+      "size": [
+        4096,
+        4096
+      ]
+    }
+  ],
+  "triangles": 12442,
+  "bounds_min": [
+    -0.5109436511993408,
+    -0.18185827136039734,
+    0.0
+  ],
+  "bounds_max": [
+    0.5109436511993408,
+    0.18185827136039734,
+    1.9500000476837158
+  ]
+}

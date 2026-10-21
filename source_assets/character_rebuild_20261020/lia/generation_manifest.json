@@ -1,0 +1,306 @@
+{
+  "asset": "lia",
+  "category": "player_character",
+  "maximum_triangles": 15000,
+  "candidate_target": 13800,
+  "status": "IN_PROGRESS",
+  "generation_submitted": true,
+  "source_workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "changes": [
+    {
+      "node": "94",
+      "field": "target_resolution",
+      "before": "1536",
+      "after": 1536,
+      "reason": "Correct current string widget to INT"
+    },
+    {
+      "node": "186",
+      "field": "target_face_count",
+      "before": 30000,
+      "after": 13800,
+      "reason": "8% candidate headroom, final audited separately"
+    },
+    {
+      "node": "241",
+      "field": "smooth_iters",
+      "before": 20,
+      "after": 0,
+      "reason": "Preserve small fingers/hair/clothing facets"
+    },
+    {
+      "node": "241",
+      "field": "drop_small_components",
+      "before": 0.01,
+      "after": 0.0,
+      "reason": "Do not delete small hands or accessories"
+    }
+  ],
+  "references": {
+    "files": [
+      {
+        "view": "front",
+        "file": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\lia\\references\\front.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          271,
+          64,
+          752,
+          960
+        ],
+        "sha256": "bb9ca12f35a05432a29a980c254a6bd5ce9a049993ac33b0ea6eb78806611c6e"
+      },
+      {
+        "view": "left",
+        "file": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\lia\\references\\left.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          418,
+          64,
+          606,
+          960
+        ],
+        "sha256": "41a708c90303a1ce9d3c8d4f5682a71af4a7d7d333e9f7384878621bc5dc4137"
+      },
+      {
+        "view": "back",
+        "file": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\lia\\references\\back.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          273,
+          64,
+          751,
+          960
+        ],
+        "sha256": "ffea3a0279aaf42112a046db4cf40e66000ac3ded262df477df89a6413dd69f2"
+      },
+      {
+        "view": "right",
+        "file": "D:\\RPGGAME\\source_assets\\reference_library_20261020\\characters\\lia\\references\\right.png",
+        "width": 1024,
+        "height": 1024,
+        "alpha_range": [
+          0,
+          255
+        ],
+        "visible_bounds": [
+          421,
+          64,
+          603,
+          960
+        ],
+        "sha256": "a2728eacb94c8bf85e67feb2eaeafc68358366df2009e499116141e4be14500c"
+      }
+    ],
+    "structural_gate": "PASS",
+    "status": "HUMAN_REVIEW",
+    "failures": [],
+    "requires_review": [
+      "orthographic direction",
+      "complete limbs/hair/wings",
+      "matching scale/anatomy/equipment",
+      "text or drawn annotations"
+    ],
+    "ready_for_generation": false
+  },
+  "reference_approval": "source_adoption_20261020.json:adopt_all_thirteen_sets",
+  "views": {
+    "front": {
+      "load_node": "364",
+      "conditioning_node": "340",
+      "preview_node": "340",
+      "server_image": "crystal_20261022_lia_front.png",
+      "chain_classes": [
+        "ImageCropToMask",
+        "LoadBackgroundRemovalModel",
+        "LoadImage",
+        "RemoveBackground",
+        "SaveImageAdvanced"
+      ]
+    },
+    "left": {
+      "load_node": "377",
+      "conditioning_node": "344",
+      "preview_node": "344",
+      "server_image": "crystal_20261022_lia_left.png",
+      "chain_classes": [
+        "ImageCropToMask",
+        "LoadBackgroundRemovalModel",
+        "LoadImage",
+        "RemoveBackground",
+        "SaveImageAdvanced"
+      ]
+    },
+    "back": {
+      "load_node": "378",
+      "conditioning_node": "343",
+      "preview_node": "343",
+      "server_image": "crystal_20261022_lia_back.png",
+      "chain_classes": [
+        "ImageCropToMask",
+        "LoadBackgroundRemovalModel",
+        "LoadImage",
+        "RemoveBackground",
+        "SaveImageAdvanced"
+      ]
+    },
+    "right": {
+      "load_node": "379",
+      "conditioning_node": "346",
+      "preview_node": "346",
+      "server_image": "crystal_20261022_lia_right.png",
+      "chain_classes": [
+        "ImageCropToMask",
+        "LoadBackgroundRemovalModel",
+        "LoadImage",
+        "RemoveBackground",
+        "SaveImageAdvanced"
+      ]
+    }
+  },
+  "nodes": {
+    "preview": 17,
+    "full": 58
+  },
+  "shape_resolution": 1536,
+  "texture_resolution": 4096,
+  "remesh_resolution": 768,
+  "gates": {
+    "workflow_validation": "PASS",
+    "conditioning_visual": "PASS",
+    "mesh": "STATIC_GLTF_AND_BLENDER_PASS",
+    "rig": "NOT_STARTED",
+    "game": "NOT_STARTED",
+    "surface_preservation": "PASS",
+    "static_godot": "18_CHECKS_PASS",
+    "visual": "IN_PROGRESS_NECK_COLLAR_HAIR_BODY_ISSUES"
+  },
+  "inputs_prompt_id": "1e256b7e-39ff-4f8c-bb81-7dc760d42119",
+  "full_prompt_id": "5a7e6c0e-7cf5-4ad1-8844-bb9838777e58",
+  "inputs_status": "completed",
+  "full_status": "completed",
+  "generated_outputs": [
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_000.png",
+      "bytes": 351036,
+      "sha256": "7c235dacbcfa4860882dd3b63e5ae3fa10453a55b47a575619e255e674d8964c"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_001.png",
+      "bytes": 231239,
+      "sha256": "9ed75e30bac6f10fe0cc0cf51f9e74fd4784dd58557cd8f9c795a8f4d487bd5c"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_002.png",
+      "bytes": 371716,
+      "sha256": "f3825e04c959831749154d222b2f379ca8d77e5ffbb450369bbae9354187e9d1"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_003.png",
+      "bytes": 246632,
+      "sha256": "f64dbf5f73661067fd320967d164a830e7858f1137953bfbafbdf60c1b41dc2d"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_004.glb",
+      "bytes": 130845700,
+      "sha256": "e4483143eaac43d0c10f0574104fab5bd5f312307d624c65cc5506a6a55f0a4c",
+      "triangles": 7285716
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_005.png",
+      "bytes": 2033633,
+      "sha256": "cb86b5c3902cfdef77a2af7e443336a3bd6bb11344e3188c5296f2d98269942c"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_006.png",
+      "bytes": 491999,
+      "sha256": "5203b624fa44fb28de6fff8fb8820aa342780efb5096273b7e298ef3c2cd9d5e"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_007.png",
+      "bytes": 18082642,
+      "sha256": "ce252da95f83e29a7a1463e449bd514d4743ffbf63380f91398d3fceebe31e73"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_008.png",
+      "bytes": 6941676,
+      "sha256": "336e9fc8abe96daddf4bfe35762f49a7f99584e15da0b204122d1a90e413611a"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_009.png",
+      "bytes": 807095,
+      "sha256": "ca3b424704d25a1f5fd7ac946b6e42fc381de06053715e808423be052d1f1516"
+    },
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/outputs/5a7e6c0e_010.glb",
+      "bytes": 24227580,
+      "sha256": "ddc4146477c8184b3e885ed907772210daad04eab9978c3245e53ec81aba0059",
+      "triangles": 12454
+    }
+  ],
+  "generation_seconds": 232.45,
+  "preflight": {
+    "host": "127.0.0.1",
+    "port": 8188,
+    "vram_free_bytes": 11123491958,
+    "ram_free_bytes": 16467132416,
+    "spends_credits": false
+  },
+  "preparation_regression": {
+    "tool": "scripts/tools/prepare_reference_asset.py",
+    "tag": "20261022",
+    "lia_api_equivalent": true,
+    "legacy_ren_default_api_equivalent": true
+  },
+  "seeds": {
+    "23.seed": 42,
+    "3.seed": 56,
+    "18.seed": 42,
+    "12.seed": 43
+  },
+  "models": {
+    "319.unet_name": "pixal3d_multiview_int8_convrot.safetensors",
+    "15.clip_name": "dino_v3_L_naf_fp32.safetensors",
+    "193.bg_removal_name": "birefnet.safetensors",
+    "117.vae_name": "trellis_2_shape_vae_bf16.safetensors",
+    "118.vae_name": "trellis_2_texture_vae_bf16.safetensors"
+  },
+  "selected_surface": {
+    "native": "source_assets/character_rebuild_20261020/lia/face_v2/lia_surface.blend",
+    "runtime_preview": "assets/models/rebuilt_characters/lia_static.glb",
+    "triangles": 12442,
+    "bones": 0,
+    "animations": 0,
+    "height_m": 1.95,
+    "formal_replacement": false
+  },
+  "unresolved": [
+    "Neck/high collar false surfaces and jagged colour transitions",
+    "Remaining hair/body baked wire lines",
+    "101 physical boundary edges and 638 edges incident to more than two faces: inspect locally before weighting",
+    "No rig, deformation, staff grip, locomotion, combat, save or runtime performance acceptance"
+  ],
+  "local_originals_policy": "All raw Comfy outputs retained locally under ignored outputs; original high-density GLB is not a game asset or Git upload",
+  "import_cleanup": {
+    "raw_triangles": 12454,
+    "blender_triangles": 12442,
+    "duplicate_index_faces_removed": 12,
+    "raw_zero_area_faces": 0,
+    "diagnostic": "raw_degenerate_diagnostic.json"
+  }
+}

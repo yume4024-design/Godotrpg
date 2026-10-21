@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"uploads\": [\n    {\n      \"local_path\": \"D:\\\\RPGGAME\\\\source_assets\\\\character_rebuild_20261020\\\\lia\\\\uploads\\\\crystal_20261022_lia_front.png\",\n      \"cloud_name\": \"crystal_20261022_lia_front.png\",\n      \"subfolder\": \"\",\n      \"type\": \"input\"\n    },\n    {\n      \"local_path\": \"D:\\\\RPGGAME\\\\source_assets\\\\character_rebuild_20261020\\\\lia\\\\uploads\\\\crystal_20261022_lia_left.png\",\n      \"cloud_name\": \"crystal_20261022_lia_left.png\",\n      \"subfolder\": \"\",\n      \"type\": \"input\"\n    },\n    {\n      \"local_path\": \"D:\\\\RPGGAME\\\\source_assets\\\\character_rebuild_20261020\\\\lia\\\\uploads\\\\crystal_20261022_lia_back.png\",\n      \"cloud_name\": \"crystal_20261022_lia_back.png\",\n      \"subfolder\": \"\",\n      \"type\": \"input\"\n    },\n    {\n      \"local_path\": \"D:\\\\RPGGAME\\\\source_assets\\\\character_rebuild_20261020\\\\lia\\\\uploads\\\\crystal_20261022_lia_right.png\",\n      \"cloud_name\": \"crystal_20261022_lia_right.png\",\n      \"subfolder\": \"\",\n      \"type\": \"input\"\n    }\n  ]\n}"
+    }
+  ],
+  "isError": false
+}

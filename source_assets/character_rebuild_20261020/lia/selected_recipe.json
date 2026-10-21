@@ -1,0 +1,23 @@
+{
+  "source_generated_glb": "outputs/5a7e6c0e_010.glb",
+  "normalization_tool": "scripts/tools/prepare_npc_surface_patch.py",
+  "normalization": {
+    "height_m": 1.95,
+    "name": "LiaRebuiltBody",
+    "span_m": 0.64,
+    "center_z_m": 1.7
+  },
+  "repair_tool": "scripts/tools/apply_npc_surface_patch.py",
+  "selected_visibility": "centroid_depth",
+  "regions": "head_projection/repair_regions.json",
+  "front_image": "head_projection/front_repair.png",
+  "back_image": null,
+  "allow_unedited_view": true,
+  "material_note": "Original normal map disabled for the simple colour-material style; emission inspection confirmed wire artifacts already baked into the original albedo.",
+  "shader": "single 4096 albedo, metallic0, roughness0.8",
+  "original_user_files_modified": false,
+  "rejected": [
+    "face_v1: front_facing chose back-side folded surfaces"
+  ],
+  "first_render_failure": "Relative output was resolved by Blender to C:/artifacts; rerun with absolute D:/RPGGAME output succeeded"
+}

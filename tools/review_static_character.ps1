@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([ValidateSet('ren')][string]$Character = 'ren')
+param([ValidateSet('ren','lia')][string]$Character = 'ren')
 $ErrorActionPreference = 'Stop'
 $taskRoot = Split-Path -Parent $PSScriptRoot
 $taskOut = Join-Path $taskRoot ('artifacts/character_rebuild_20261020/' + $Character + '/godot_static')

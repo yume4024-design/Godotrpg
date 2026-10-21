@@ -1,0 +1,116 @@
+{
+  "input": "source_assets\\character_rebuild_20261020\\lia\\outputs\\5a7e6c0e_010.glb",
+  "primitives": [
+    {
+      "triangles": 12454,
+      "repeated_index_faces": [],
+      "zero_area_face_indices": [],
+      "nearly_zero_area_faces_1e_12": 0
+    }
+  ],
+  "imported_triangles": 12442,
+  "removed_count": 12,
+  "scope": "Raw generation diagnostic, original retained. Does not validate closed manifold topology.",
+  "duplicate_index_faces": [
+    [
+      1575,
+      1576
+    ],
+    [
+      2693,
+      2694
+    ],
+    [
+      2756,
+      2759
+    ],
+    [
+      2861,
+      2862
+    ],
+    [
+      2905,
+      2906
+    ],
+    [
+      4093,
+      4094
+    ],
+    [
+      5034,
+      5035
+    ],
+    [
+      6654,
+      7072
+    ],
+    [
+      8907,
+      8908
+    ],
+    [
+      9247,
+      9248
+    ],
+    [
+      9645,
+      9688
+    ],
+    [
+      9676,
+      9677
+    ]
+  ],
+  "duplicate_geometry_faces": [
+    [
+      1575,
+      1576
+    ],
+    [
+      2693,
+      2694
+    ],
+    [
+      2756,
+      2759
+    ],
+    [
+      2861,
+      2862
+    ],
+    [
+      2905,
+      2906
+    ],
+    [
+      4093,
+      4094
+    ],
+    [
+      5034,
+      5035
+    ],
+    [
+      6654,
+      7072
+    ],
+    [
+      8907,
+      8908
+    ],
+    [
+      9247,
+      9248
+    ],
+    [
+      9645,
+      9688
+    ],
+    [
+      9676,
+      9677
+    ]
+  ],
+  "duplicate_index_excess": 12,
+  "duplicate_geometry_excess": 12
+}

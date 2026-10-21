@@ -17,6 +17,8 @@ p.add_argument('--regions', type=Path)
 p.add_argument('--allow-unedited-view', action='store_true', help='Allow an explicit empty rectangle list to leave one projection untouched')
 p.add_argument('--visibility', choices=['centroid_depth', 'front_facing'], default='centroid_depth',
                help='Default depth mask; front_facing also paints partially occluded front faces and requires side-view review')
+p.add_argument('--material-note', default='Baked normal map disabled after controlled diagnostic showed false black tears',
+               help='Record the actual diagnostic for this asset; does not change rendering')
 a = p.parse_args(sys.argv[sys.argv.index('--') + 1:])
 default_regions = [(275, 230, 750, 480), (405, 830, 620, 910)]
 view_regions = {'front': default_regions, 'back': default_regions}
@@ -134,7 +136,7 @@ bpy.ops.export_scene.gltf(filepath=str((a.output / (a.name + '_surface.glb')).re
 (a.output / 'surface_report.json').write_text(json.dumps({'source': str(a.source), 'projection': projection,
     'method': 'Reviewed imagegen colour repair, bounded visible-surface UV projection and emission-only bake',
     'regions_at_1024': view_regions, 'projection_visibility': a.visibility, 'topology_modified': False, 'rigged': False,
-    'material_change': 'Baked normal map disabled after controlled diagnostic showed false black tears',
+    'material_change': a.material_note,
     'patches': [{'view': view, 'selected_polygons': selected, 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}
                 for view, uv, mask, image, selected, path in patches]}, indent=2), encoding='utf8')
 print('NPC_SURFACE_PATCH_APPLIED', a.output, flush=True)

@@ -30,7 +30,10 @@ func _check(ok: bool, message: String) -> void:
 func _capture(name: String) -> void:
 	await process_frame
 	await RenderingServer.frame_post_draw
-	_check(root.get_texture().get_image().save_webp(output + "/" + name + ".webp", true, 0.92) == OK, name + " captured")
+	var image: Image = root.get_texture().get_image()
+	var factor: float = 512.0 / mini(image.get_width(), image.get_height())
+	image.resize(roundi(image.get_width() * factor), roundi(image.get_height() * factor), Image.INTERPOLATE_LANCZOS)
+	_check(image.save_webp(output + "/" + name + ".webp", true, 0.92) == OK, name + " captured")
 
 func _run() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(output))

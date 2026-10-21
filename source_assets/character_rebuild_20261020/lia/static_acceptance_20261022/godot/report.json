@@ -1,0 +1,21 @@
+{
+	"animation_tested": false,
+	"asset": "lia",
+	"category": "player_character",
+	"checks": 18,
+	"failures": [],
+	"formal_gameplay": false,
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.95000004768372
+	],
+	"model": "res://assets/models/rebuilt_characters/lia_static.glb",
+	"model_sha256": "2ba736c720568dc5125eae6a88e785e93b5b8e2509e179116142eb7027a0c198",
+	"physical_input": false,
+	"rigged": false,
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 12442
+}

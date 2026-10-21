@@ -1,0 +1,88 @@
+{
+  "base_commit": "bf0a3b192f124ae5ccdacd28259e06b84a9318cf",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "blender": "5.2.2 LTS",
+  "static_review": {
+    "animation_tested": false,
+    "asset": "lia",
+    "category": "player_character",
+    "checks": 18,
+    "failures": [],
+    "formal_gameplay": false,
+    "graphical": true,
+    "height_range": [
+      0.0,
+      1.95000004768372
+    ],
+    "model": "res://assets/models/rebuilt_characters/lia_static.glb",
+    "model_sha256": "2ba736c720568dc5125eae6a88e785e93b5b8e2509e179116142eb7027a0c198",
+    "physical_input": false,
+    "rigged": false,
+    "textures": [
+      "(4096, 4096)"
+    ],
+    "triangles": 12442
+  },
+  "old_ren_static": {
+    "checks": 18,
+    "failures": 0
+  },
+  "legacy_pixal": {
+    "checks": 88,
+    "failures": 0
+  },
+  "formal_baseline": [
+    {
+      "path": "scenes/main/main.tscn",
+      "unchanged_from_base": true,
+      "sha256": "56e3abb80522610dcf278b0cbaef58396b19ef6f3a66583da408ded2b258f875"
+    },
+    {
+      "path": "scenes/characters/lia_pixal_visual.tscn",
+      "unchanged_from_base": true,
+      "sha256": "ec2b04573f303234d000b1239936adb21cb1c81b55c835f8099f08c3c485a3ba"
+    },
+    {
+      "path": "assets/models/pixal3d/lia_locomotion.glb",
+      "unchanged_from_base": true,
+      "sha256": "8436c96f94e8091fdb836ac09b6c83439b3c6856626db637597cd32b960c7f24"
+    },
+    {
+      "path": "scripts/save/save_codec.gd",
+      "unchanged_from_base": true,
+      "sha256": "39bce7df525d552919699315f38e056e26c65e8c27cf851737a98917f48f4272"
+    }
+  ],
+  "preparation_regression": {
+    "tool": "scripts/tools/prepare_reference_asset.py",
+    "tag": "20261022",
+    "lia_api_equivalent": true,
+    "legacy_ren_default_api_equivalent": true
+  },
+  "source_prompt_id": "5a7e6c0e-7cf5-4ad1-8844-bb9838777e58",
+  "overall_status": "IN_PROGRESS",
+  "no_completed_rig_or_gameplay_claim": true,
+  "logs": [
+    {
+      "path": "artifacts/character_rebuild_20261020/lia/godot_static/godot.log",
+      "sha256": "dcdce11f83279ff859e1e47f65d09f4e2abbb84c266e853b6bdd28189eb56169",
+      "result": [
+        "STATIC_CHARACTER_REVIEW lia 18 checks; 0 failures"
+      ]
+    },
+    {
+      "path": "artifacts/character_rebuild_20261020/ren/godot_static/godot.log",
+      "sha256": "74c9fa6ccb933dfa02687d4d49d02b23041d0c59b744be207362680c48e0a80d",
+      "result": [
+        "STATIC_CHARACTER_REVIEW ren 18 checks; 0 failures"
+      ]
+    },
+    {
+      "path": "artifacts/logs/testpixalcharacters-20261022-050048-375.log",
+      "sha256": "b79c305a5b136ba3651c541439a2cca580627510da90b546e7c40598d1f4ae5d",
+      "result": [
+        "PIXAL_CHARACTER_RESULT checks=88 failures=0"
+      ]
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-22 — 莉雅新生成與頭部底色衍生
+
+沿用使用者已核准金髮藍眼紫衣四視圖與既有本機Pixal3D權重／工作流；單件prompt 5a7e6c0e-7cf5-4ad1-8844-bb9838777e58，沒有付費partner節點或第三方商店下載。本輪內建imagegen依實際頭部emission投影與原設計修整底色，正面區域回烘既有UV，原圖／模型保留，沒有新增髮型或造型授權主張。新1254²真Alpha修整圖已存入專案，完整提示詞、來源SHA、工作原件與限制見[莉雅報告](LIA_REBUILD_20261022_REPORT.md)及source_assets/character_rebuild_20261020/lia/head_projection/repair_provenance.json。靜態候選未宣稱綁定或正式可用。
+
 ## 2026-10-22 — 雷恩動作衍生與原創青銅短劍
 
 沿用使用者已核准黑髮紅衣設計、本機Pixal3D及前輪衣褲拓樸原件；本輪以Blender Python新增七個動作片段及330面青銅短劍，沒有新下載／購買外部模型或付費API。短劍具UV、三個原創色彩材質，與角色分開統計。原角色圖／模型／貼圖保留；生成權重及來源的既有授權紀錄不變。[來源、修改與限制](REN_RUNTIME_INTEGRATION_REPORT.md)／[凍結證據](../source_assets/character_rebuild_20261020/ren/runtime_acceptance_20261022/README.md)。

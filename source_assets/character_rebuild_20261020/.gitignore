@@ -45,3 +45,11 @@ ren/runtime_narrow_20261021/*.blend
 ren/runtime_narrow_20261021/*.glb
 # Runtime GLB is tracked once under assets; retain the final native work file.
 ren/runtime_narrow_motion_20261022/*.glb
+# Lia raw and rejected projection work stays local; retain final packed native.
+lia/uploads/
+lia/head_projection/baseline.blend
+lia/face_v1/*.blend
+lia/face_v1/*.glb
+lia/face_v1/*.png
+lia/face_v2/*.glb
+lia/face_v2/*.png

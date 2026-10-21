@@ -1,0 +1,12 @@
+{
+  "prompt_id": "5a7e6c0e-7cf5-4ad1-8844-bb9838777e58",
+  "local_log": "D:\\Comfy-Desktop\\ComfyUI-Installs\\ComfyUI\\ComfyUI\\user\\comfyui.log",
+  "log_sha256": "cbf21360e2e535468d894ff44a04acf78eabf5faa99996240dd6a4297e29dcd8",
+  "engine_reported_seconds": 232.45,
+  "matching_lines": [
+    "Bake texture: 100%|██████████| 5/5 [00:28<00:00,  4.85s/it, finalize]",
+    "                                                                     ",
+    "Prompt executed in 232.45 seconds"
+  ],
+  "limit": "Timing from local engine log; not a gameplay performance measurement"
+}

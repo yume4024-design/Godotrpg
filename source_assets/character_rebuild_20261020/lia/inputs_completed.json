@@ -1,0 +1,9 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\n  \"prompt_id\": \"1e256b7e-39ff-4f8c-bb81-7dc760d42119\",\n  \"status\": \"completed\",\n  \"workflow_size\": null,\n  \"outputs\": [\n    \"http://127.0.0.1:8188/view?filename=front_00001.png&subfolder=character_rebuild%5C20261022%5Clia&type=output\",\n    \"http://127.0.0.1:8188/view?filename=back_00001.png&subfolder=character_rebuild%5C20261022%5Clia&type=output\",\n    \"http://127.0.0.1:8188/view?filename=right_00001.png&subfolder=character_rebuild%5C20261022%5Clia&type=output\",\n    \"http://127.0.0.1:8188/view?filename=left_00001.png&subfolder=character_rebuild%5C20261022%5Clia&type=output\"\n  ],\n  \"outputs_by_node\": {\n    \"340\": [\n      \"http://127.0.0.1:8188/view?filename=front_00001.png&subfolder=character_rebuild%5C20261022%5Clia&type=output\"\n    ],\n    \"343\": [\n      \"http://127.0.0.1:8188/view?filename=back_00001.png&subfolder=character_rebuild%5C20261022%5Clia&type=output\"\n    ],\n    \"346\": [\n      \"http://127.0.0.1:8188/view?filename=right_00001.png&subfolder=character_rebuild%5C20261022%5Clia&type=output\"\n    ],\n    \"344\": [\n      \"http://127.0.0.1:8188/view?filename=left_00001.png&subfolder=character_rebuild%5C20261022%5Clia&type=output\"\n    ]\n  },\n  \"outputs_by_item\": {},\n  \"text_outputs\": {},\n  \"error\": null,\n  \"host\": \"127.0.0.1\",\n  \"port\": 8188\n}"
+    }
+  ],
+  "isError": false
+}

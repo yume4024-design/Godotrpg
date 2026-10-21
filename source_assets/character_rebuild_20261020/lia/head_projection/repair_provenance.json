@@ -1,0 +1,23 @@
+{
+  "method": "built-in imagegen, not CLI or paid partner workflow",
+  "input_edit_target": "head_projection/albedo_front.png",
+  "identity_reference": "source_assets/reference_library_20261020/characters/lia/references/front.png",
+  "generated_original": "C:/Users/yume4/.codex/generated_images/01a12ed0-ff14-7c63-a203-41ad0fb14478/exec-ea73976f-0b40-462a-abf3-4339bdaa6894.png",
+  "project_copy": "head_projection/front_repair.png",
+  "sha256": "d2eb62f6e5673474352ea1d63e51039a9814fc2357311ce085b988f7e133a56f",
+  "output_size": [
+    1254,
+    1254
+  ],
+  "alpha_range": [
+    0,
+    255
+  ],
+  "projection_canvas": [
+    1024,
+    1024
+  ],
+  "sampling": "Normalized UV sampling of the square generated image; no pixel resizing/editing",
+  "prompt_file": "head_projection/repair_prompt.txt",
+  "scope": "Bounded front-head colour only; source geometry and UV remain exact; full artistic acceptance incomplete"
+}
