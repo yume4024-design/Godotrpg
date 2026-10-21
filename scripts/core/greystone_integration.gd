@@ -1,5 +1,6 @@
 extends ExplorationGame
 ## Opt-in integration entry; production main and its slot remain unchanged.
+const NpcVisual = preload("res://scripts/characters/rigged_npc_visual.gd")
 @export var force_touch_controls: bool = false
 @export var legacy_slot_path: String = "user://crystal_slot_01.json"
 var bridge_button: Button
@@ -11,6 +12,7 @@ var quality_button: Button
 var occlusion: ExplorationOcclusion
 var _merchant: WorldInteractable
 var _inn_service: bool = false
+var _speaking_npc: NpcVisual
 
 func _ready() -> void:
 	greystone_enabled = true
@@ -60,6 +62,7 @@ func _ready() -> void:
 			travel.maps[index] = load("res://scenes/world/expanded/%s.tscn" % id)
 	travel.maps.append(preload("res://scenes/world/greystone_runtime.tscn"))
 	super._ready()
+	dialogue.active_changed.connect(_on_npc_dialogue_changed)
 	var layer: CanvasLayer = CanvasLayer.new()
 	add_child(layer)
 	var row: HBoxContainer = HBoxContainer.new()
@@ -128,6 +131,7 @@ func import_legacy() -> bool:
 	return result
 
 func _on_map_changed(map: ExplorationMap) -> void:
+	_set_speaking_npc(null)
 	if is_instance_valid(occlusion): occlusion.set_map(map)
 	# Integration-only routing; old production scene and forest resource stay intact.
 	if map.map_id == &"forest":
@@ -154,17 +158,33 @@ func _unhandled_input(event: InputEvent) -> void:
 
 func interact() -> bool:
 	if locked() or not is_instance_valid(nearest) or not nearest.in_reach(player): return false
+	var target: WorldInteractable = nearest
 	if travel.current_map.map_id == &"greystone_runtime" and nearest.interaction_id in [&"npc_item_merchant", &"npc_innkeeper"]:
 		_merchant = nearest
 		_inn_service = nearest.interaction_id == &"npc_innkeeper"
+		_set_speaking_npc(target)
 		commerce.open(_inn_service, inventory.gold, inventory.count(&"potion"))
 		_update_lock()
 		return true
-	return super.interact()
+	if target.kind == "npc": _set_speaking_npc(target)
+	var accepted: bool = super.interact()
+	if not dialogue.active: _set_speaking_npc(null)
+	return accepted
+
+func _set_speaking_npc(target: WorldInteractable) -> void:
+	if is_instance_valid(_speaking_npc): _speaking_npc.set_talking(false)
+	_speaking_npc = null
+	if is_instance_valid(target):
+		_speaking_npc = target.get_node_or_null("Appearance") as NpcVisual
+		if is_instance_valid(_speaking_npc): _speaking_npc.set_talking(true)
+
+func _on_npc_dialogue_changed(active: bool) -> void:
+	if not active: _set_speaking_npc(null)
 
 func close_commerce() -> void:
 	commerce.hide()
 	_merchant = null
+	_set_speaking_npc(null)
 	_update_lock()
 
 func confirm_commerce(quantity: int) -> void:
@@ -173,6 +193,7 @@ func confirm_commerce(quantity: int) -> void:
 		close_commerce()
 		return
 	var inn: bool = _inn_service
+	var speaker: WorldInteractable = _merchant
 	# Consume this confirmation before emitting any state notifications.
 	close_commerce()
 	var success: bool = false
@@ -187,7 +208,9 @@ func confirm_commerce(quantity: int) -> void:
 	else:
 		success = inventory.buy_potions(quantity)
 		message = "購買成功：恢復藥 ×%d，花費 %d 金幣。" % [quantity,quantity*InventoryManager.POTION_PRICE] if success else "購買失敗：請檢查金幣、數量及背包上限。沒有扣款。"
-	dialogue.start([{"speaker":"innkeeper" if inn else "item_merchant","text":message}])
+	_set_speaking_npc(speaker)
+	if not dialogue.start([{"speaker":"innkeeper" if inn else "item_merchant","text":message}]):
+		_set_speaking_npc(null)
 
 func _restore_inn_party() -> void:
 	# Make every party observer see the completed whole-party restoration.

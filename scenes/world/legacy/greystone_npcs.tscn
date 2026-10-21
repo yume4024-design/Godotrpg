@@ -1,0 +1,138 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
+[ext_resource type="PackedScene" path="res://scenes/characters/guildmaster_visual.tscn" id="Guild"]
+[ext_resource type="PackedScene" path="res://scenes/characters/lia_pixal_visual.tscn" id="Lia"]
+[ext_resource type="PackedScene" path="res://scenes/characters/ren_visual.tscn" id="Ren"]
+[sub_resource type="CapsuleShape3D" id="Body"]
+radius = 0.3
+height = 1.95
+[sub_resource type="SystemFont" id="Font"]
+font_names = PackedStringArray("Microsoft JhengHei")
+[node name="GreystoneNPCs" type="Node3D"]
+
+[node name="Guildmaster" type="Node3D" parent="."]
+position = Vector3(-2, 0, -22)
+script = ExtResource("Interact")
+interaction_id = &"npc_guildmaster"
+ambient_only = false
+kind = "npc"
+label = "公會長瑪爾克"
+[node name="Appearance" parent="Guildmaster" instance=ExtResource("Guild")]
+[node name="Body" type="StaticBody3D" parent="Guildmaster"]
+position = Vector3(0,0.975,0)
+[node name="Collision" type="CollisionShape3D" parent="Guildmaster/Body"]
+shape = SubResource("Body")
+[node name="Name" type="Label3D" parent="Guildmaster"]
+position = Vector3(0,2.2,0)
+billboard = 1
+font = SubResource("Font")
+text = "公會長瑪爾克"
+font_size = 42
+pixel_size = 0.011
+outline_size = 8
+
+[node name="Lia" type="Node3D" parent="."]
+position = Vector3(3, 0, -22)
+script = ExtResource("Interact")
+interaction_id = &"npc_lia"
+ambient_only = false
+kind = "npc"
+label = "莉雅"
+[node name="Appearance" parent="Lia" instance=ExtResource("Lia")]
+scale = Vector3(1, 1, 1)
+[node name="Body" type="StaticBody3D" parent="Lia"]
+position = Vector3(0,0.975,0)
+[node name="Collision" type="CollisionShape3D" parent="Lia/Body"]
+shape = SubResource("Body")
+[node name="Name" type="Label3D" parent="Lia"]
+position = Vector3(0,2.2,0)
+billboard = 1
+font = SubResource("Font")
+text = "莉雅"
+font_size = 42
+pixel_size = 0.011
+outline_size = 8
+
+[node name="Innkeeper" type="Node3D" parent="."]
+position = Vector3(-23, 2, -12.5)
+script = ExtResource("Interact")
+interaction_id = &"npc_innkeeper"
+ambient_only = true
+kind = "npc"
+label = "旅館老闆"
+[node name="Appearance" parent="Innkeeper" instance=ExtResource("Guild")]
+[node name="Body" type="StaticBody3D" parent="Innkeeper"]
+position = Vector3(0,0.975,0)
+[node name="Collision" type="CollisionShape3D" parent="Innkeeper/Body"]
+shape = SubResource("Body")
+[node name="Name" type="Label3D" parent="Innkeeper"]
+position = Vector3(0,2.2,0)
+billboard = 1
+font = SubResource("Font")
+text = "旅館老闆"
+font_size = 42
+pixel_size = 0.011
+outline_size = 8
+
+[node name="ItemMerchant" type="Node3D" parent="."]
+position = Vector3(-25, 0, 5)
+script = ExtResource("Interact")
+interaction_id = &"npc_item_merchant"
+ambient_only = true
+kind = "npc"
+label = "道具商人"
+[node name="Appearance" parent="ItemMerchant" instance=ExtResource("Guild")]
+[node name="Body" type="StaticBody3D" parent="ItemMerchant"]
+position = Vector3(0,0.975,0)
+[node name="Collision" type="CollisionShape3D" parent="ItemMerchant/Body"]
+shape = SubResource("Body")
+[node name="Name" type="Label3D" parent="ItemMerchant"]
+position = Vector3(0,2.2,0)
+billboard = 1
+font = SubResource("Font")
+text = "道具商人"
+font_size = 42
+pixel_size = 0.011
+outline_size = 8
+
+[node name="Blacksmith" type="Node3D" parent="."]
+position = Vector3(18, 0, -8)
+script = ExtResource("Interact")
+interaction_id = &"npc_blacksmith"
+ambient_only = true
+kind = "npc"
+label = "鐵匠"
+[node name="Appearance" parent="Blacksmith" instance=ExtResource("Ren")]
+[node name="Body" type="StaticBody3D" parent="Blacksmith"]
+position = Vector3(0,0.975,0)
+[node name="Collision" type="CollisionShape3D" parent="Blacksmith/Body"]
+shape = SubResource("Body")
+[node name="Name" type="Label3D" parent="Blacksmith"]
+position = Vector3(0,2.2,0)
+billboard = 1
+font = SubResource("Font")
+text = "鐵匠"
+font_size = 42
+pixel_size = 0.011
+outline_size = 8
+
+[node name="Villager" type="Node3D" parent="."]
+position = Vector3(-17, 0, 28)
+script = ExtResource("Interact")
+interaction_id = &"npc_villager"
+ambient_only = true
+kind = "npc"
+label = "村民"
+[node name="Appearance" parent="Villager" instance=ExtResource("Ren")]
+[node name="Body" type="StaticBody3D" parent="Villager"]
+position = Vector3(0,0.975,0)
+[node name="Collision" type="CollisionShape3D" parent="Villager/Body"]
+shape = SubResource("Body")
+[node name="Name" type="Label3D" parent="Villager"]
+position = Vector3(0,2.2,0)
+billboard = 1
+font = SubResource("Font")
+text = "村民"
+font_size = 42
+pixel_size = 0.011
+outline_size = 8

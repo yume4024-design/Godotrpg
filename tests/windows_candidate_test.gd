@@ -3,6 +3,7 @@ extends "res://tests/greystone_story_test.gd"
 ## Packaged release-template test. Writes evidence only beneath user://.
 var held_movement: Dictionary = {}
 const MOVE_KEYS: Dictionary = {KEY_A: &"move_left", KEY_D: &"move_right", KEY_W: &"move_forward", KEY_S: &"move_back"}
+const NpcVisual = preload("res://scripts/characters/rigged_npc_visual.gd")
 
 func _initialize() -> void:
 	super._initialize()
@@ -72,13 +73,24 @@ func _manager() -> BattleManager:
 
 func _finish() -> void:
 	if failures == 0: await _verify_bat_round_trip()
+	if failures == 0: _verify_npc_visuals()
 	if "--reload" not in OS.get_cmdline_user_args() and failures == 0:
+		for npc: String in ["Blacksmith", "Villager"]:
+			var target: WorldInteractable = game.travel.current_map.get_node("NPCs/" + npc)
+			var visual: NpcVisual = target.get_node("Appearance") as NpcVisual
+			await _place(target.position + Vector3(0,.1,1.4))
+			await _tap(KEY_E)
+			_check(game.dialogue.active and visual.is_talking(), "Packaged ambient dialogue starts Talk: " + npc)
+			await _finish_dialogue()
+			_check(not visual.is_talking(), "Packaged ambient dialogue restores Idle: " + npc)
 		var panel: CommercePanel = game.get("commerce")
 		for npc: String in ["ItemMerchant", "Innkeeper"]:
 			var target: WorldInteractable = game.travel.current_map.get_node("NPCs/" + npc)
 			await _place(target.position + Vector3(0,.1,1.4))
 			await _tap(KEY_E)
 			_check(panel.visible, "Packaged service opens " + npc)
+			var visual: NpcVisual = target.get_node("Appearance") as NpcVisual
+			_check(visual.is_talking(), "Packaged commerce retains NPC Talk: " + npc)
 			if npc == "Innkeeper": game.party.member(&"ren").damage(10)
 			var before: int = game.inventory.gold
 			var point: Vector2 = root.get_final_transform() * panel.confirm_button.get_global_transform_with_canvas() * (panel.confirm_button.size*.5)
@@ -90,7 +102,9 @@ func _finish() -> void:
 				event.pressed = pressed
 				Input.parse_input_event(event)
 				await process_frame
+			_check(game.dialogue.active and visual.is_talking(), "Packaged transaction feedback retains NPC Talk: " + npc)
 			await _finish_dialogue()
+			_check(not visual.is_talking(), "Packaged transaction feedback restores Idle: " + npc)
 			_check(game.inventory.gold == before - (InventoryManager.INN_PRICE if npc == "Innkeeper" else InventoryManager.POTION_PRICE), "Packaged exact transaction debit")
 			if npc == "Innkeeper":
 				_check(game.party.members().all(func(a: CombatantState) -> bool: return a.hp == a.max_hp and a.mp == a.max_mp), "Packaged inn restores party")
@@ -147,3 +161,11 @@ func _verify_bat_round_trip() -> void:
 	after = game.capture_state()
 	for field: String in ["party", "inventory", "flags", "quests", "rewards"]:
 		_check(after[field] == before[field], "Post-bat reload preserves " + field)
+
+func _verify_npc_visuals() -> void:
+	_check(game.travel.current_map.targets.filter(func(t: WorldInteractable) -> bool: return t.kind == "npc").size() == 6, "Packaged six original NPC slots; no female placement")
+	var expected: Dictionary = {"Blacksmith": ["blacksmith", 19], "ItemMerchant": ["item_merchant", 20], "Innkeeper": ["innkeeper", 20], "Villager": ["villager_male", 18]}
+	for name: String in expected:
+		var visual: NpcVisual = game.travel.current_map.get_node("NPCs/" + name + "/Appearance") as NpcVisual
+		_check(visual != null and visual.model.resource_path == "res://assets/models/rebuilt_npc/%s.glb" % expected[name][0] and visual.skeleton.get_bone_count() == expected[name][1], "Packaged accepted NPC model survives reload: " + name)
+		_check(not visual.is_talking() and visual.animation_player.is_playing(), "Packaged NPC resumes Idle: " + name)

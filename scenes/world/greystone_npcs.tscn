@@ -2,7 +2,10 @@
 [ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
 [ext_resource type="PackedScene" path="res://scenes/characters/guildmaster_visual.tscn" id="Guild"]
 [ext_resource type="PackedScene" path="res://scenes/characters/lia_pixal_visual.tscn" id="Lia"]
-[ext_resource type="PackedScene" path="res://scenes/characters/ren_visual.tscn" id="Ren"]
+[ext_resource type="PackedScene" path="res://scenes/characters/npc/innkeeper_visual.tscn" id="Innkeeper"]
+[ext_resource type="PackedScene" path="res://scenes/characters/npc/item_merchant_visual.tscn" id="Merchant"]
+[ext_resource type="PackedScene" path="res://scenes/characters/npc/blacksmith_visual.tscn" id="Blacksmith"]
+[ext_resource type="PackedScene" path="res://scenes/characters/npc/villager_male_visual.tscn" id="Villager"]
 [sub_resource type="CapsuleShape3D" id="Body"]
 radius = 0.3
 height = 1.95
@@ -60,7 +63,8 @@ interaction_id = &"npc_innkeeper"
 ambient_only = true
 kind = "npc"
 label = "旅館老闆"
-[node name="Appearance" parent="Innkeeper" instance=ExtResource("Guild")]
+[node name="Appearance" parent="Innkeeper" instance=ExtResource("Innkeeper")]
+scale = Vector3(1.13372093, 1.13372093, 1.13372093)
 [node name="Body" type="StaticBody3D" parent="Innkeeper"]
 position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="Innkeeper/Body"]
@@ -81,7 +85,8 @@ interaction_id = &"npc_item_merchant"
 ambient_only = true
 kind = "npc"
 label = "道具商人"
-[node name="Appearance" parent="ItemMerchant" instance=ExtResource("Guild")]
+[node name="Appearance" parent="ItemMerchant" instance=ExtResource("Merchant")]
+scale = Vector3(1.18181818, 1.18181818, 1.18181818)
 [node name="Body" type="StaticBody3D" parent="ItemMerchant"]
 position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="ItemMerchant/Body"]
@@ -102,7 +107,8 @@ interaction_id = &"npc_blacksmith"
 ambient_only = true
 kind = "npc"
 label = "鐵匠"
-[node name="Appearance" parent="Blacksmith" instance=ExtResource("Ren")]
+[node name="Appearance" parent="Blacksmith" instance=ExtResource("Blacksmith")]
+scale = Vector3(1.05405405, 1.05405405, 1.05405405)
 [node name="Body" type="StaticBody3D" parent="Blacksmith"]
 position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="Blacksmith/Body"]
@@ -123,7 +129,8 @@ interaction_id = &"npc_villager"
 ambient_only = true
 kind = "npc"
 label = "村民"
-[node name="Appearance" parent="Villager" instance=ExtResource("Ren")]
+[node name="Appearance" parent="Villager" instance=ExtResource("Villager")]
+scale = Vector3(1.11428571, 1.11428571, 1.11428571)
 [node name="Body" type="StaticBody3D" parent="Villager"]
 position = Vector3(0,0.975,0)
 [node name="Collision" type="CollisionShape3D" parent="Villager/Body"]
