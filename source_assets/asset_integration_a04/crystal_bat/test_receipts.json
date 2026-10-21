@@ -1,0 +1,77 @@
+[
+  {
+    "file": "artifacts\\a04_crystal_bat_integration\\expansion_final.log",
+    "sha256": "ca90e7e1eb64a38eefd0269cc098528bcdd2d22ebd7e6d4a0ad48e596e57a605",
+    "results": [
+      "EXPANSION_RESULT checks=60 failures=0"
+    ],
+    "errors": 0
+  },
+  {
+    "file": "artifacts\\a04-performance\\20261021-122159\\release.log",
+    "sha256": "3f184ddbe4bd6acde498f67a3a3ef350d015fa75d55461a15c488808dc9a3f07",
+    "results": [
+      "A04_PERFORMANCE_RESULT checks=40 failures=0"
+    ],
+    "errors": 0
+  },
+  {
+    "file": "D:\\RPGGAME\\artifacts\\g08\\20261021-122339\\candidate-smoke.log",
+    "sha256": "e7aa6979bdede2f7d985e3b9904003feaa3889dbcb1c8872188f264ae9035b8a",
+    "results": [],
+    "errors": 0,
+    "bat_assertions": []
+  },
+  {
+    "file": "D:\\RPGGAME\\artifacts\\g08\\20261021-122339\\qa-prologue.log",
+    "sha256": "9b1c44455a80abd7fd34fa1548accd6e3db725b8438e504d9d9d30be7a8e46e0",
+    "results": [
+      "G08_CANDIDATE_RESULT checks=141 failures=0"
+    ],
+    "errors": 0,
+    "bat_assertions": [
+      "PASS Packaged bat encounter launches after save or fresh-process reload",
+      "PASS Packaged bat uses seventeen-bone approved rig",
+      "PASS Packaged bat uses approved manual wing geometry",
+      "PASS Existing bat magic maps to full fold presentation",
+      "PASS Packaged bat encounter finishes through existing combat",
+      "PASS Packaged bat returns to exploration",
+      "PASS Bat practice preserves progression flags",
+      "PASS Bat practice preserves progression quests",
+      "PASS Bat practice preserves progression rewards",
+      "PASS Bat practice does not rewrite the completed save",
+      "PASS Reload completed save after bat battle",
+      "PASS Post-bat reload preserves party",
+      "PASS Post-bat reload preserves inventory",
+      "PASS Post-bat reload preserves flags",
+      "PASS Post-bat reload preserves quests",
+      "PASS Post-bat reload preserves rewards"
+    ]
+  },
+  {
+    "file": "D:\\RPGGAME\\artifacts\\g08\\20261021-122339\\qa-restart.log",
+    "sha256": "575650adcbe1ba78f98550568c1e5c7e2eeedceb4205a670f9bd5ac84fe765b9",
+    "results": [
+      "G08_CANDIDATE_RESULT checks=35 failures=0"
+    ],
+    "errors": 0,
+    "bat_assertions": [
+      "PASS Packaged bat encounter launches after save or fresh-process reload",
+      "PASS Packaged bat uses seventeen-bone approved rig",
+      "PASS Packaged bat uses approved manual wing geometry",
+      "PASS Existing bat magic maps to full fold presentation",
+      "PASS Packaged bat encounter finishes through existing combat",
+      "PASS Packaged bat returns to exploration",
+      "PASS Bat practice preserves progression flags",
+      "PASS Bat practice preserves progression quests",
+      "PASS Bat practice preserves progression rewards",
+      "PASS Bat practice does not rewrite the completed save",
+      "PASS Reload completed save after bat battle",
+      "PASS Post-bat reload preserves party",
+      "PASS Post-bat reload preserves inventory",
+      "PASS Post-bat reload preserves flags",
+      "PASS Post-bat reload preserves quests",
+      "PASS Post-bat reload preserves rewards"
+    ]
+  }
+]

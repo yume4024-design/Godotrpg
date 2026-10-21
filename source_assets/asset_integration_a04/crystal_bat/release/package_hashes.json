@@ -1,0 +1,26 @@
+[
+  {
+    "role": "candidate",
+    "file": "ProjectCrystal.exe",
+    "bytes": 109268480,
+    "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+  },
+  {
+    "role": "candidate",
+    "file": "ProjectCrystal.pck",
+    "bytes": 149908136,
+    "sha256": "d674a4be697f6dcd25a0c3815d75b5e26bbe03bbfca938637b29522cf40d010c"
+  },
+  {
+    "role": "qa",
+    "file": "ProjectCrystal.exe",
+    "bytes": 109268480,
+    "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+  },
+  {
+    "role": "qa",
+    "file": "ProjectCrystal.pck",
+    "bytes": 150326168,
+    "sha256": "00097407deb9b7e7f861daddcc37a8661799d4a9911ce02b6fe38921f2a2be97"
+  }
+]

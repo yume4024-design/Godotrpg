@@ -1,0 +1,34 @@
+{
+  "base_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+  "candidate": "D:\\RPGGAME\\builds\\g08\\candidate\\20261021-122343\\ProjectCrystal.exe",
+  "qa": "D:\\RPGGAME\\builds\\g08\\qa\\20261021-122349\\ProjectCrystal.exe",
+  "profile": "D:\\RPGGAME\\artifacts\\g08\\20261021-122339\\profile",
+  "legacy_fixture_sha256": "03B537BC655864953DB207251AD0A175E3767D197D8C3C16BAB176830FBA270A",
+  "results": [
+    {
+      "label": "candidate-smoke",
+      "seconds": 10.3304639,
+      "exit_code": 0,
+      "log": "D:\\RPGGAME\\artifacts\\g08\\20261021-122339\\candidate-smoke.log",
+      "result": []
+    },
+    {
+      "label": "qa-prologue",
+      "seconds": 28.0856657,
+      "exit_code": 0,
+      "log": "D:\\RPGGAME\\artifacts\\g08\\20261021-122339\\qa-prologue.log",
+      "result": [
+        "G08_CANDIDATE_RESULT checks=141 failures=0"
+      ]
+    },
+    {
+      "label": "qa-restart",
+      "seconds": 4.9917313,
+      "exit_code": 0,
+      "log": "D:\\RPGGAME\\artifacts\\g08\\20261021-122339\\qa-restart.log",
+      "result": [
+        "G08_CANDIDATE_RESULT checks=35 failures=0"
+      ]
+    }
+  ]
+}

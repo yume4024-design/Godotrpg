@@ -1,0 +1,18 @@
+{
+  "asset": "crystal_bat",
+  "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+  "dirty_files": [
+    "docs/ASSET_CREDITS.md",
+    "docs/CHANGELOG.md",
+    "docs/QUALITY_CHARACTER_GENERATION_REPORT.md",
+    "docs/TASKS.md"
+  ],
+  "exe": "D:\\RPGGAME\\builds\\asset-qa\\20261021-122150\\ProjectCrystal.exe",
+  "pck_sha256": "B5C9B6B5CFD43F2DE73F7BDB4E2A330171982BBC450FE08DEF32BDBB068609F6",
+  "pid": 24932,
+  "seconds": 33.8370133,
+  "exit_code": 0,
+  "metrics": "D:\\RPGGAME\\artifacts\\a04-performance\\20261021-122159\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\a04_enemy_perf\\metrics.json",
+  "scope": "Native Release combat fixture; not full-game soak or physical input",
+  "android_verified": false
+}

@@ -1,0 +1,96 @@
+{
+  "adapter": "NVIDIA GeForce RTX 3080",
+  "asset": "crystal_bat",
+  "cap_fps": 60,
+  "cases": [
+    {
+      "actions_during_measurement": 13,
+      "draw_max": 113.0,
+      "draw_min": 94.0,
+      "enemy_count": 1,
+      "enemy_triangles": 6249,
+      "engine_peak_bytes": null,
+      "fps": 60.0026461166935,
+      "frames": 600,
+      "max_ms": 16.85,
+      "mean_ms": 16.6659316666667,
+      "min_ms": 16.48,
+      "nodes": 227.0,
+      "observed_enemy_actions": [
+        "attack",
+        "rupture",
+        "attack",
+        "rupture",
+        "attack"
+      ],
+      "p95_ms": 16.683,
+      "p99_ms": 16.698,
+      "presentation": [
+        {
+          "clear": true,
+          "id": "enemy_00",
+          "label": "[P: (801.8286, 219.5421), S: (101.4857, 55.95422)]",
+          "model": "[P: (806.6785, 288.8658), S: (71.10437, 97.69241)]",
+          "panels": "[[P: (24.0, 22.0), S: (1232.0, 109.0)], [P: (24.0, 462.0), S: (1232.0, 236.0)]]"
+        }
+      ]
+    },
+    {
+      "actions_during_measurement": 11,
+      "draw_max": 125.0,
+      "draw_min": 106.0,
+      "enemy_count": 3,
+      "enemy_triangles": 18747,
+      "engine_peak_bytes": null,
+      "fps": 60.0026401161649,
+      "frames": 600,
+      "max_ms": 17.577,
+      "mean_ms": 16.6659333333334,
+      "min_ms": 15.735,
+      "nodes": 252.0,
+      "observed_enemy_actions": [
+        "attack",
+        "attack",
+        "attack",
+        "rupture",
+        "rupture",
+        "rupture",
+        "attack",
+        "attack"
+      ],
+      "p95_ms": 16.678,
+      "p99_ms": 16.696,
+      "presentation": [
+        {
+          "clear": true,
+          "id": "enemy_00",
+          "label": "[P: (678.4, 168.4119), S: (101.4857, 55.95427)]",
+          "model": "[P: (683.2499, 237.7355), S: (71.10437, 97.6925)]",
+          "panels": "[[P: (24.0, 22.0), S: (1232.0, 109.0)], [P: (24.0, 462.0), S: (1232.0, 236.0)]]"
+        },
+        {
+          "clear": true,
+          "id": "enemy_01",
+          "label": "[P: (801.8286, 219.5421), S: (101.4857, 55.95422)]",
+          "model": "[P: (801.015, 288.4207), S: (71.10437, 97.69244)]",
+          "panels": "[[P: (24.0, 22.0), S: (1232.0, 109.0)], [P: (24.0, 462.0), S: (1232.0, 236.0)]]"
+        },
+        {
+          "clear": true,
+          "id": "enemy_02",
+          "label": "[P: (925.2571, 270.6724), S: (101.4858, 55.95425)]",
+          "model": "[P: (930.1071, 339.996), S: (71.10437, 97.69238)]",
+          "panels": "[[P: (24.0, 22.0), S: (1232.0, 109.0)], [P: (24.0, 462.0), S: (1232.0, 236.0)]]"
+        }
+      ]
+    }
+  ],
+  "checks": 40,
+  "display": "Windows",
+  "encounter_id": "X003",
+  "engine": "4.7.2-stable (official)",
+  "failures": [],
+  "method": "Actual single-boss or one/three common-enemy full imported rigs with two existing heroes in production BattleArena, guard requests and normal AI; 60 warm frames then 600 measured frames each, screenshots outside sample. Isolated combat fixture without exploration/story/audio services, not a full-game endurance or physical input test.",
+  "release": true,
+  "version": "0.6.1-a04-qa"
+}

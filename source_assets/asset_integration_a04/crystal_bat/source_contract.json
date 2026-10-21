@@ -1,0 +1,67 @@
+{
+  "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+  "model_sha256": "ab487b6c94b32e9aac451348e739635684e2577f996245d3a90feb8759f7ebf7",
+  "triangles": 6249,
+  "bones": 17,
+  "legacy_scene_exact": true,
+  "implementation": [
+    {
+      "path": "scenes/characters/crystal_bat_visual.tscn",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "91d7c1a9def066f1d8b5342033fa4079b8feaa414c1da8deab46c97590f6b651"
+    },
+    {
+      "path": "scenes/characters/legacy/crystal_bat_visual.tscn",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "4f8697008f0adca492a9f8f73ed1c542d15832e86fe9668875867537ee1985b3"
+    },
+    {
+      "path": "scenes/characters/rebuilt/crystal_bat_visual.tscn",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "3b8ab497688b598d2eec4e07c439eabf40c62fda965e7daf9c986afea13f7a86"
+    },
+    {
+      "path": "tests/battle_nameplate_test.gd",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "2915ee101eacfc972b587bf28875b61daa909e6317bf1f5913909fa74cf876ea"
+    },
+    {
+      "path": "tests/enemy_asset_performance_test.gd",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "720bf99735bc963506e14895a89fc7539f94e75146ef7925ca38309d5788bf9b"
+    },
+    {
+      "path": "tests/rigged_enemy_controller_test.gd",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "52e779de22c653afccd5c1593477a9bb342574a3f1c4b699213518c82b17e249"
+    },
+    {
+      "path": "tests/windows_candidate_test.gd",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "86b6a9f67200e608932533a9be1562cdffbc8dba69795122df879c59de914623"
+    },
+    {
+      "path": "tools/godot.ps1",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "a77caca2a1ea8e88b56ca69c3e0dbbf4015ee529247a2ebdc83989570b50a687"
+    },
+    {
+      "path": "tools/profile_enemy_assets.ps1",
+      "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+      "sha256_lf": "6a0c0e0c913acea7391c8d8fa4e935d80acc523b52fcad6c3d7f46fae38ad79a"
+    }
+  ],
+  "runtime_data_schema_main_entry_changed": false,
+  "implementation_changed_paths": [
+    "scenes/characters/crystal_bat_visual.tscn",
+    "scenes/characters/legacy/crystal_bat_visual.tscn",
+    "scenes/characters/rebuilt/crystal_bat_visual.tscn",
+    "tests/battle_nameplate_test.gd",
+    "tests/enemy_asset_performance_test.gd",
+    "tests/rigged_enemy_controller_test.gd",
+    "tests/windows_candidate_test.gd",
+    "tools/godot.ps1",
+    "tools/profile_enemy_assets.ps1"
+  ],
+  "scope": "Implementation fixed before native exports; report and exploration assertions follow separately"
+}

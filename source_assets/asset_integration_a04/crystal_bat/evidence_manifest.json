@@ -1,0 +1,135 @@
+{
+  "source_commit": "b4e2106cb951416b236b3e7cef2520fd23ba6ead",
+  "files": [
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/controller.json",
+      "bytes": 361,
+      "sha256": "8c700cb9a28c1207ef973bc6b3de89f5b61ec1a225a48241826f86472e95dbd0"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/failed_anchor_1_6m.json",
+      "bytes": 10731,
+      "sha256": "8523770992c031ceb7bdac8d6666c7736a68f8cc598d46a617326f488756c8f4"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/frames/battle.webp",
+      "bytes": 29072,
+      "sha256": "7a49dd6b379249792d4cec5fe1056b2155b8552148df14094083620a504759de"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/frames/controller_full_fold.webp",
+      "bytes": 7474,
+      "sha256": "1899d2e135901abee1673b23cbd473dc396a1bda804258617455ec05cf3589d5"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/frames/controller_pair.webp",
+      "bytes": 8424,
+      "sha256": "13833a42f430fd4a5c50cca7a49ef00235e731edcb7f8f238df6858ef701eee0"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/frames/death.webp",
+      "bytes": 28788,
+      "sha256": "242a5f9720887cda8e0adc74ded265bd3cd004082726310ff9a10ac001963637"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/frames/exploration.webp",
+      "bytes": 35558,
+      "sha256": "3f746a7493ceb0bebefecb502ab60b177f444025af5697b5326a7991b91a78b7"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/frames/failed_anchor.webp",
+      "bytes": 29054,
+      "sha256": "cc146a54780fef852e2228b2fcc6e6ed3fc2436d7f7d61778af6b3baf0fc761c"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/frames/release_single.webp",
+      "bytes": 30378,
+      "sha256": "38b00d990fb83fdfb11604191d5f869b6833bb37837dbbe31cc0a04b9f80b310"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/frames/release_three.webp",
+      "bytes": 35126,
+      "sha256": "fe94eec4256d8e9c1c7f37e0932a0619e286ada6716d61eead9575b5b7ddc693"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/g06_regression.json",
+      "bytes": 6174,
+      "sha256": "4ed4462088e16c7b6a48020824e42c773fcbd528af860258062d9392b31f9dcb"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/nameplates.json",
+      "bytes": 10742,
+      "sha256": "3f61ce92ac34b1da24b327a76c28610f02dfd8f94924e702efef4a76472debd0"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/performance/manifest.json",
+      "bytes": 741,
+      "sha256": "1642ce9cd0b03517c42dfcc893f782c2f293f4b3b939981d3ac52baec4a93266"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/performance/metrics.json",
+      "bytes": 3082,
+      "sha256": "99fb529481a76c9958b7e909e67f0d504a4b04f3568324f981825efa4059224f"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/performance/process.csv",
+      "bytes": 1210,
+      "sha256": "84f4f1cfd32dc71523022e886dcc931eb5f5ff06f5dda236c09e9de0991a0ef5"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/performance/process_summary.json",
+      "bytes": 123,
+      "sha256": "7ff1e79e9106d204a1a3faf27553cf5594932d28068b1434e667130adf2390fb"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/README.md",
+      "bytes": 5190,
+      "sha256": "fa738288569e0319d6437793f8f75beb237e1d01ba4759187c23d08525117db7"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/release/package_hashes.json",
+      "bytes": 681,
+      "sha256": "1e961f848f7831f7b0e89e5b4115c9bc940d4923eab69443b1019e8e160b972e"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/release/packages.json",
+      "bytes": 1113,
+      "sha256": "b44eb6f5931d394cfc23b54dfe26888e7d126e06e293c52637b64b32c505b95d"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/release/prologue_result.json",
+      "bytes": 137,
+      "sha256": "22e7969330617d444b80e87f49c913c48412ad0e70624c819808ea172abc3bbd"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/release/reload_result.json",
+      "bytes": 136,
+      "sha256": "6dfda2afe3f97eb04c46e32345f7f7dd0323c856d44f43179432e95346f2b872"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/source_contract.json",
+      "bytes": 2809,
+      "sha256": "868e88a38acb0fa420242e65e8db39ededeab78d5dcec9d6f3fa8b059dea23f7"
+    },
+    {
+      "path": "source_assets/asset_integration_a04/crystal_bat/test_receipts.json",
+      "bytes": 3135,
+      "sha256": "f3368bc8613e9b2f2c363c63e8f36a673591617877181183c7bea34db64f5004"
+    },
+    {
+      "path": "assets/models/rebuilt_enemies/crystal_bat_manual.glb",
+      "bytes": 5873436,
+      "sha256": "ab487b6c94b32e9aac451348e739635684e2577f996245d3a90feb8759f7ebf7"
+    },
+    {
+      "path": "tests/wilderness_expansion_test.gd",
+      "bytes": 4041,
+      "sha256": "b76360b07e9fd49a65e198320a269a8cdde7ed894a32262227cc88b378d1b253"
+    },
+    {
+      "path": "scripts/tools/package_bat_integration.py",
+      "bytes": 7367,
+      "sha256": "e43c39d3806268668af0831411c418b90983fe3b02a2e98723af87ac76edb4b5"
+    }
+  ]
+}

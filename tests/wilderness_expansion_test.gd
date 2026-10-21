@@ -26,6 +26,15 @@ func _run() -> void:
 				if candidate.interaction_id == id: target = candidate
 			_check(target != null, "Visible encounter registered: " + String(id))
 			await _place(target.position + Vector3(0,.1,1.5))
+			if id == &"wild_crystal_bat":
+				var bat: RiggedEnemyActor
+				for child: Node in target.get_children():
+					if child is RiggedEnemyActor: bat = child as RiggedEnemyActor
+				_check(bat != null, "Exploration bat uses the same imported visual controller")
+				if bat != null:
+					_check(bat.skeleton.get_bone_count() == 17, "Exploration bat retains full skeleton")
+					_check(bat.model.resource_path == "res://assets/models/rebuilt_enemies/crystal_bat_manual.glb", "Exploration bat retains the approved wing geometry")
+				await _capture("expansion-wild_crystal_bat-world")
 			await _tap(KEY_E)
 			var manager: BattleManager = await _manager()
 			_check(manager != null and manager.enemies.size() == 1, "Real monster battle starts")
