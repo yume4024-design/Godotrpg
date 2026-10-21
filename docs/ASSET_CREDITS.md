@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-22 — 雷恩動作衍生與原創青銅短劍
+
+沿用使用者已核准黑髮紅衣設計、本機Pixal3D及前輪衣褲拓樸原件；本輪以Blender Python新增七個動作片段及330面青銅短劍，沒有新下載／購買外部模型或付費API。短劍具UV、三個原創色彩材質，與角色分開統計。原角色圖／模型／貼圖保留；生成權重及來源的既有授權紀錄不變。[來源、修改與限制](REN_RUNTIME_INTEGRATION_REPORT.md)／[凍結證據](../source_assets/character_rebuild_20261020/ren/runtime_acceptance_20261022/README.md)。
+
 ## 2026-10-21 — 蝙蝠人工局部翼部重建
 
 沿用已核准原創蝙蝠與本機Pixal3D來源，Codex以Blender Python保留頭身耳腳並局部建立薄膜、翼骨與六顆立體藍晶、64²共用色盤及完整摺翼骨架。未新送Comfy工作、未下載商店或付費API素材，也不宣稱第三方美術師交件。原始圖／模型與失敗副本保留；來源SHA、修改範圍、獨立候選驗收及正式接入限制見[完整收翼報告](../source_assets/asset_production_a03/crystal_bat/manual_fold_acceptance/README.md)。既有Pixal3D權重／來源授權記錄不變。

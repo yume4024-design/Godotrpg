@@ -1,0 +1,27 @@
+{
+	"body_triangles": 10655,
+	"checks": 93,
+	"clips": [
+		"attack",
+		"cast",
+		"guard",
+		"hit",
+		"potion",
+		"walk",
+		"run",
+		"idle",
+		"sword_idle",
+		"sword_attack",
+		"sword_guard",
+		"death",
+		"walk_narrow",
+		"run_narrow"
+	],
+	"failures": [],
+	"limits": [
+		"Native automated controller test; not human input acceptance",
+		"No independent fingers, terrain IK or formal model promotion"
+	],
+	"renderer": "Windows",
+	"weapon_triangles": 330
+}

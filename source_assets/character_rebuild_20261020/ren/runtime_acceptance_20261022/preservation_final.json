@@ -1,0 +1,31 @@
+{
+  "source_sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850",
+  "candidate_sha256": "9fe5c47105962f36ce18eadca540e2a5920d783524282d976fe4e2507c11a673",
+  "status": "PASS",
+  "failures": [],
+  "original_source_faces_retained": 8902,
+  "retained_triangles": 9023,
+  "protected_pouch_faces_retained": 964,
+  "maximum_bone_rest_error": 0.0,
+  "maximum_all_frame_pose_error": 0.0,
+  "sampled_pose_frames": 127,
+  "additional_clips": [
+    "death",
+    "idle",
+    "run_narrow",
+    "sword_attack",
+    "sword_guard",
+    "sword_idle",
+    "walk_narrow"
+  ],
+  "original_packed_albedo_preserved": true,
+  "maximum_retained_position_error": 1.229048109637929e-07,
+  "maximum_retained_uv_error": 1.6858739404357614e-07,
+  "maximum_retained_corner_normal_error": 0.0019594635660376354,
+  "bad_normal_loops": [],
+  "sharp_fan_diagnostic": null,
+  "limits": [
+    "New trouser/coat/strap topology and its atlas intentionally differ",
+    "This does not certify visual fidelity, collisions or formal gameplay"
+  ]
+}

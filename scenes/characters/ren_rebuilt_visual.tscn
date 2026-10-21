@@ -1,0 +1,22 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/characters/female_actor.gd" id="Actor"]
+[ext_resource type="PackedScene" path="res://assets/models/rebuilt_characters/ren_runtime.glb" id="Model"]
+[ext_resource type="Resource" path="res://assets/models/rebuilt_characters/ren_motion_profile.tres" id="Motion"]
+[ext_resource type="Script" path="res://scripts/characters/hand_equipment_visual.gd" id="Equipment"]
+[ext_resource type="PackedScene" path="res://assets/models/equipment/bronze_sword.glb" id="Sword"]
+[node name="RenRebuiltVisual" type="Node3D" node_paths=PackedStringArray("equipment_visual")]
+script = ExtResource("Actor")
+model = ExtResource("Model")
+motion_profile = ExtResource("Motion")
+create_staff_attachment = false
+equipment_visual = NodePath("Equipment")
+idle_animation = &"idle"
+death_animation = &"death"
+walk_animation = &"walk_narrow"
+run_animation = &"run_narrow"
+looping_clips = Array[StringName]([&"walk", &"run", &"walk_narrow", &"run_narrow", &"idle", &"sword_idle"])
+palm_rest_origin = Vector3(-0.43, 0.94, -0.01)
+procedural_fall = false
+[node name="Equipment" type="Node" parent="."]
+script = ExtResource("Equipment")
+equipment_model = ExtResource("Sword")

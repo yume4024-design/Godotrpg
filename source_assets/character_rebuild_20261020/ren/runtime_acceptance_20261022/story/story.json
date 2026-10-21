@@ -1,0 +1,15 @@
+{
+	"checks": 84,
+	"failures": 0,
+	"normal_action_seconds": 0.55,
+	"observed_clips": [
+		"sword_idle",
+		"sword_attack",
+		"",
+		"hit",
+		"sword_guard",
+		"death"
+	],
+	"reload_only": false,
+	"renderer": "Windows"
+}

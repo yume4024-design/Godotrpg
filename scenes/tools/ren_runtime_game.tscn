@@ -1,0 +1,7 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/main/greystone_integration.tscn" id="Game"]
+[ext_resource type="PackedScene" path="res://scenes/characters/ren_rebuilt_visual.tscn" id="Ren"]
+[node name="RenRuntimeGame" instance=ExtResource("Game")]
+hero_appearance = ExtResource("Ren")
+[node name="Saves" parent="."]
+slot_path = "user://ren_runtime_slot_01.json"

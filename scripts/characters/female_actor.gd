@@ -1,6 +1,14 @@
 extends "res://scripts/characters/user_hero_actor.gd"
 @export var staff_rest_origin: Vector3 = Vector3(-.67,.955,.085)
 @export var palm_rest_origin: Vector3 = Vector3(-.66,.95,.08)
+## Optional authored presentation; existing actors retain their default behavior.
+@export var create_staff_attachment: bool = true
+@export var equipment_visual: HandEquipmentVisual
+@export var idle_animation: StringName = &""
+@export var death_animation: StringName = &""
+@export var walk_animation: StringName = &"walk"
+@export var run_animation: StringName = &"run"
+@export var looping_clips: Array[StringName] = [&"walk", &"run"]
 ## Imported clips own the skeleton during battle; idle resumes after explicit reset.
 var battle_pose: StringName = &""
 var animation_player: AnimationPlayer
@@ -36,14 +44,14 @@ func _ready() -> void:
 	if animation_player != null:
 		for library_name: StringName in animation_player.get_animation_library_list():
 			var library: AnimationLibrary = animation_player.get_animation_library(library_name).duplicate(true)
-			for clip: StringName in [&"walk", &"run"]:
+			for clip: StringName in looping_clips:
 				if library.has_animation(clip): library.get_animation(clip).loop_mode = Animation.LOOP_LINEAR
 			animation_player.remove_animation_library(library_name)
 			animation_player.add_animation_library(library_name, library)
 		animation_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 		animation_player.animation_finished.connect(_finished)
 	var hand: int = skeleton.find_bone("HandRight")
-	if hand >= 0:
+	if hand >= 0 and create_staff_attachment:
 		var socket: BoneAttachment3D = BoneAttachment3D.new()
 		socket.bone_name = "HandRight"
 		skeleton.add_child(socket)
@@ -62,6 +70,7 @@ func _ready() -> void:
 		palm_focus = Marker3D.new()
 		socket.add_child(palm_focus)
 		palm_focus.transform = skeleton.get_bone_global_rest(casting_hand).affine_inverse()*Transform3D(Basis.IDENTITY,palm_rest_origin)
+	if equipment_visual != null: equipment_visual.setup(skeleton)
 
 func get_spell_focus() -> Node3D:
 	return staff_focus if staff_visual != null and staff_visual.visible else palm_focus
@@ -78,6 +87,7 @@ func _physics_process(delta: float) -> void:
 	if _animation_physics: _process(delta)
 
 func set_equipment_visual(weapon: ItemDefinition) -> void:
+	if equipment_visual != null: equipment_visual.set_equipment(weapon)
 	if staff_visual != null:
 		staff_visual.visible = weapon != null and weapon.id == &"willow_staff"
 		if not staff_visual.visible:
@@ -86,6 +96,7 @@ func set_equipment_visual(weapon: ItemDefinition) -> void:
 				if _clip_rest.has(finger): skeleton.set_bone_pose_rotation(finger,_clip_rest[finger])
 
 func _apply_grip() -> void:
+	if equipment_visual != null: equipment_visual.apply_grip()
 	if staff_visual == null or not staff_visual.visible: return
 	_curl_bone("FingersRight",.45)
 	for name: String in ["IndexRight","MiddleRight","RingRight","PinkyRight"]:
@@ -107,6 +118,7 @@ func _curl_bone(name: String,angle: float) -> void:
 func play_battle_action(action: StringName) -> void:
 	if _dead or animation_player == null: return
 	var clip: StringName = &"cast" if action in [&"mend", &"star_spark"] else action
+	if equipment_visual != null: clip = equipment_visual.clip_for(clip)
 	if not animation_player.has_animation(clip): return
 	_capture_blend()
 	_reset_clip()
@@ -116,7 +128,13 @@ func play_battle_action(action: StringName) -> void:
 
 func _process(delta: float) -> void:
 	_update_face(delta)
-	if _dead: return
+	if _dead:
+		if death_animation != &"" and animation_player != null and animation_player.is_playing():
+			_restore_pose()
+			animation_player.advance(delta)
+			_apply_blend(delta)
+			_apply_grip()
+		return
 	if animation_player != null and battle_pose != &"":
 		_restore_pose()
 		animation_player.advance(delta)
@@ -124,11 +142,11 @@ func _process(delta: float) -> void:
 		_apply_grip()
 		return
 	if animation_player != null and _motion > .01:
-		var clip: StringName = &"run" if _motion >= (.58 if _running else .72) else &"walk"
-		_running = clip == &"run"
+		var clip: StringName = run_animation if _motion >= (.58 if _running else .72) else walk_animation
+		_running = clip == run_animation
 		if animation_player.current_animation != clip:
 			var phase: float = 0.0
-			if animation_player.current_animation in [&"walk",&"run"]:
+			if animation_player.current_animation in [walk_animation,run_animation]:
 				phase = animation_player.current_animation_position / animation_player.current_animation_length
 			_capture_blend()
 			_reset_clip()
@@ -144,6 +162,19 @@ func _process(delta: float) -> void:
 		_apply_blend(delta)
 		_apply_grip()
 		return
+	if animation_player != null and idle_animation != &"":
+		var idle_clip: StringName = equipment_visual.clip_for(idle_animation) if equipment_visual != null else idle_animation
+		if animation_player.has_animation(idle_clip):
+			if animation_player.current_animation != idle_clip:
+				_capture_blend(STOP_BLEND_SECONDS)
+				_reset_clip()
+				animation_player.play(idle_clip)
+			_running = false
+			_restore_pose()
+			animation_player.advance(delta)
+			_apply_blend(delta)
+			_apply_grip()
+			return
 	if animation_player != null and animation_player.is_playing():
 		_capture_blend(STOP_BLEND_SECONDS)
 		_reset_clip()
@@ -161,6 +192,7 @@ func _update_face(delta: float) -> void:
 		mesh.set_blend_shape_value(mesh.find_blend_shape_by_name("Blink"),closure)
 
 func _finished(_clip: StringName) -> void:
+	if _dead and _clip == death_animation: return
 	_capture_blend()
 	_reset_clip()
 
@@ -193,6 +225,16 @@ func _restore_pose() -> void:
 		skeleton.set_bone_pose_position(index, _clip_positions[index])
 
 func set_dead(value: bool) -> void:
+	if death_animation != &"" and value == _dead: return
+	if death_animation != &"" and animation_player != null and animation_player.has_animation(death_animation):
+		_capture_blend()
+		_reset_clip()
+		super.set_dead(value)
+		if value:
+			animation_player.play(death_animation)
+			animation_player.advance(0)
+		_update_face(0)
+		return
 	if value:
 		_reset_clip()
 		_blend_rotations.clear()

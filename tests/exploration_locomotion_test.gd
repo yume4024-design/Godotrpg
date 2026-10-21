@@ -2,9 +2,22 @@ extends "res://tests/phase5_prologue_test.gd"
 ## Native rendered input + imported animation + real village collision acceptance.
 var measurements: Dictionary = {"routes": [], "gaits": {}}
 const OUT: String = "res://artifacts/locomotion/acceptance"
+var output_path: String = OUT
+
+func _create_game() -> ExplorationGame:
+	return load("res://scenes/main/greystone_integration.tscn").instantiate()
+
+func _gait_actor(character: String) -> CartoonActor:
+	return load("res://scenes/characters/%s_pixal_visual.tscn" % character).instantiate()
+
+func _idle_restored() -> bool:
+	return not game.player.appearance.get("animation_player").is_playing()
+
+func _gait_clip(_character: String, base: StringName) -> StringName:
+	return base
 
 func _run() -> void:
-	DirAccess.make_dir_recursive_absolute(OUT)
+	DirAccess.make_dir_recursive_absolute(output_path)
 	root.size = Vector2i(1280, 720)
 	root.content_scale_size = Vector2i(1280, 720)
 	Engine.max_fps = 60
@@ -13,7 +26,7 @@ func _run() -> void:
 	_check(not legacy.movement.running_enabled and legacy.movement.speed == 4.5, "Legacy controller retains original movement")
 	_check(is_equal_approx((legacy.get_node("CollisionShape3D").shape as CapsuleShape3D).height, 1.6), "Legacy collision resource remains 1.6 m")
 	legacy.queue_free()
-	game = load("res://scenes/main/greystone_integration.tscn").instantiate()
+	game = _create_game()
 	DirAccess.make_dir_recursive_absolute("user://locomotion")
 	(game.get_node("Saves") as SaveManager).slot_path = "user://locomotion/acceptance_%d.json" % Time.get_ticks_usec()
 	root.add_child(game)
@@ -66,7 +79,7 @@ func _run() -> void:
 		_check(absf(travel - expected) < .18, "One-second %s travels %.3f m (target %.1f)" % ["run" if running else "walk", travel, expected])
 		measurements["run_distance_m" if running else "walk_distance_m"] = travel
 		await create_timer(.3).timeout
-		_check(game.player.velocity.length() < .01 and not game.player.appearance.get("animation_player").is_playing(), "Release stops movement and restores idle")
+		_check(game.player.velocity.length() < .01 and _idle_restored(), "Release stops movement and restores idle")
 	await _place(Vector3(4, .1, 18))
 	_direction(Vector2(1, 1).normalized(), true)
 	await create_timer(.2).timeout
@@ -105,7 +118,7 @@ func _run() -> void:
 	measurements["failures"] = failures
 	measurements["renderer"] = DisplayServer.get_name()
 	measurements["engine"] = Engine.get_version_info().string
-	FileAccess.open(OUT + "/result.json", FileAccess.WRITE).store_string(JSON.stringify(measurements, "\t"))
+	FileAccess.open(output_path + "/result.json", FileAccess.WRITE).store_string(JSON.stringify(measurements, "\t"))
 	print("EXPLORATION_LOCOMOTION_RESULT checks=%d failures=%d" % [checks, failures])
 	game.queue_free()
 	await process_frame
@@ -155,7 +168,7 @@ func _walk_to(target: Vector2, running: bool) -> bool:
 	return Vector2(game.player.position.x, game.player.position.z).distance_to(target) < .2
 
 func _gaits(character: String) -> void:
-	var actor: CartoonActor = load("res://scenes/characters/%s_pixal_visual.tscn" % character).instantiate()
+	var actor: CartoonActor = _gait_actor(character)
 	game.add_child(actor)
 	actor.position = Vector3(4, 0, 18)
 	actor.set_process(false)
@@ -164,6 +177,8 @@ func _gaits(character: String) -> void:
 	for clip: StringName in [&"walk", &"run"]:
 		var minimum: float = INF
 		var maximum: float = -INF
+		var forward_min: float = INF
+		var forward_max: float = -INF
 		actor.set_motion(.4 if clip == &"walk" else 1)
 		actor.call("set_travel_speed", 1.8 if clip == &"walk" else 4.5)
 		for frame: int in range(90):
@@ -173,9 +188,12 @@ func _gaits(character: String) -> void:
 			if frame > 20:
 				minimum = minf(minimum, absf(left.x - right.x))
 				maximum = maxf(maximum, absf(left.x - right.x))
-		_check(clips.current_animation == clip, character + " selects actual " + clip)
+				forward_min = minf(forward_min, left.z)
+				forward_max = maxf(forward_max, left.z)
+		_check(clips.current_animation == _gait_clip(character, clip), character + " selects actual " + clip)
 		_check(minimum > .23 and maximum < .29, character + " narrows foot track without crossing: " + clip)
-		measurements.gaits[character + "_" + clip] = {"foot_span_min_m": minimum, "foot_span_max_m": maximum, "rate": actor.get("last_motion_rate")}
+		_check(forward_max - forward_min > (.3 if clip == &"walk" else .6), character + " real fore-aft leg motion: " + clip)
+		measurements.gaits[character + "_" + clip] = {"foot_span_min_m": minimum, "foot_span_max_m": maximum, "forward_stride_m": forward_max - forward_min, "rate": actor.get("last_motion_rate")}
 	actor.queue_free()
 	await process_frame
 
@@ -219,4 +237,6 @@ func _stairs() -> void:
 func _capture_at(label: String) -> void:
 	await create_timer(.4).timeout
 	await RenderingServer.frame_post_draw
-	root.get_texture().get_image().save_webp(OUT + "/" + label + ".webp")
+	var image: Image = root.get_texture().get_image()
+	image.resize(910, 512, Image.INTERPOLATE_LANCZOS)
+	image.save_webp(output_path + "/" + label + ".webp")

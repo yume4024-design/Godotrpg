@@ -1,5 +1,8 @@
 extends "res://tests/phase5_prologue_test.gd"
 
+func _create_game() -> ExplorationGame:
+	return load("res://scenes/main/greystone_integration.tscn").instantiate() as ExplorationGame
+
 func _run() -> void:
 	root.size = Vector2i(1280, 720)
 	root.content_scale_size = Vector2i(1280, 720)
@@ -9,7 +12,7 @@ func _run() -> void:
 	if not reload_only:
 		for suffix: String in ["", ".bak", ".tmp"]:
 			if FileAccess.file_exists(slot + suffix): DirAccess.remove_absolute(slot + suffix)
-	game = load("res://scenes/main/greystone_integration.tscn").instantiate() as ExplorationGame
+	game = _create_game()
 	(game.get_node("Saves") as SaveManager).slot_path = slot
 	(game.get_node("Audio") as AdventureAudio).settings_path = "user://g06_story_tests/audio.cfg"
 	root.add_child(game)

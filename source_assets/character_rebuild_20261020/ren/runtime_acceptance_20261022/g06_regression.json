@@ -1,0 +1,198 @@
+{
+  "base_commit": "252808c03b32250e3683c0bb5eabad471712c802",
+  "dirty_worktree": true,
+  "platform": "Windows desktop; touch and controller events simulated",
+  "android_verified": false,
+  "results": [
+    {
+      "mode": "Check",
+      "passed": true,
+      "started": "2026-10-22T04:23:27.6937766+08:00",
+      "seconds": 5.81,
+      "log": "check-20261022-042327-730.log",
+      "result": [
+        "Log: D:\\RPGGAME\\artifacts\\logs\\check-20261022-042327-730.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestEnemyAI",
+      "passed": true,
+      "started": "2026-10-22T04:23:33.5545231+08:00",
+      "seconds": 0.59,
+      "log": "testenemyai-20261022-042333-562.log",
+      "result": [
+        "ENEMY_AI_RESULT checks=10 failures=0 targets=[&\"lia\", &\"ren\", &\"lia\", &\"ren\"]",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testenemyai-20261022-042333-562.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase3",
+      "passed": true,
+      "started": "2026-10-22T04:23:34.1492554+08:00",
+      "seconds": 7.63,
+      "log": "testphase3-20261022-042334-156.log",
+      "result": [
+        "PHASE3_RESULT checks=75 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase3-20261022-042334-156.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "Smoke",
+      "passed": true,
+      "started": "2026-10-22T04:23:41.7861481+08:00",
+      "seconds": 1.7,
+      "log": "smoke-20261022-042341-792.log",
+      "result": [
+        "Log: D:\\RPGGAME\\artifacts\\logs\\smoke-20261022-042341-792.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase5",
+      "passed": true,
+      "started": "2026-10-22T04:23:43.4909936+08:00",
+      "seconds": 16.46,
+      "log": "testphase5-20261022-042343-497.log",
+      "result": [
+        "PHASE5_RESULT checks=69 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase5-20261022-042343-497.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase5Reload",
+      "passed": true,
+      "started": "2026-10-22T04:23:59.9543675+08:00",
+      "seconds": 1.8,
+      "log": "testphase5reload-20261022-042359-960.log",
+      "result": [
+        "PHASE5_RESULT checks=7 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase5reload-20261022-042359-960.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase6",
+      "passed": true,
+      "started": "2026-10-22T04:24:01.7564091+08:00",
+      "seconds": 19.1,
+      "log": "testphase6-20261022-042401-763.log",
+      "result": [
+        "PHASE6_RESULT checks=85 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase6-20261022-042401-763.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06",
+      "passed": true,
+      "started": "2026-10-22T04:24:20.8599583+08:00",
+      "seconds": 7.04,
+      "log": "testg06-20261022-042420-866.log",
+      "result": [
+        "G06_1_RESULT checks=51 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06-20261022-042420-866.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06Reload",
+      "passed": true,
+      "started": "2026-10-22T04:24:27.9065647+08:00",
+      "seconds": 4.26,
+      "log": "testg06reload-20261022-042427-915.log",
+      "result": [
+        "G06_1_RESULT checks=6 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06reload-20261022-042427-915.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06NPC",
+      "passed": true,
+      "started": "2026-10-22T04:24:32.1668465+08:00",
+      "seconds": 74.03,
+      "log": "testg06npc-20261022-042432-173.log",
+      "result": [
+        "G06_NPC_RESULT checks=60 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06npc-20261022-042432-173.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06Story",
+      "passed": true,
+      "started": "2026-10-22T04:25:46.1954405+08:00",
+      "seconds": 20.39,
+      "log": "testg06story-20261022-042546-229.log",
+      "result": [
+        "G06_STORY_RESULT checks=58 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06story-20261022-042546-229.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06StoryReload",
+      "passed": true,
+      "started": "2026-10-22T04:26:06.5850924+08:00",
+      "seconds": 4.34,
+      "log": "testg06storyreload-20261022-042606-591.log",
+      "result": [
+        "G06_STORY_RESULT checks=7 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06storyreload-20261022-042606-591.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06Story",
+      "passed": true,
+      "started": "2026-10-22T04:26:10.9233742+08:00",
+      "seconds": 26.62,
+      "log": "visualg06story-20261022-042610-929.log",
+      "result": [
+        "G06_STORY_RESULT checks=68 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06story-20261022-042610-929.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06Touch",
+      "passed": true,
+      "started": "2026-10-22T04:26:37.5493514+08:00",
+      "seconds": 10.06,
+      "log": "visualg06touch-20261022-042637-555.log",
+      "result": [
+        "G06_TOUCH_RESULT checks=22 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06touch-20261022-042637-555.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06TouchCommerce",
+      "passed": true,
+      "started": "2026-10-22T04:26:47.6157315+08:00",
+      "seconds": 10.91,
+      "log": "visualg06touchcommerce-20261022-042647-624.log",
+      "result": [
+        "G06_TOUCH_COMMERCE_RESULT checks=53 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06touchcommerce-20261022-042647-624.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06CommerceReload",
+      "passed": true,
+      "started": "2026-10-22T04:26:58.5288605+08:00",
+      "seconds": 4.32,
+      "log": "testg06commercereload-20261022-042658-535.log",
+      "result": [
+        "G06_COMMERCE_RESULT checks=5 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06commercereload-20261022-042658-535.log"
+      ],
+      "error": ""
+    }
+  ]
+}

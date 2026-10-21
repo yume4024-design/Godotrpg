@@ -1,0 +1,655 @@
+{
+  "status": "PASS",
+  "failures": [],
+  "source": "source_assets\\character_rebuild_20261020\\ren\\stitched_waist_20261021\\ren_rigged.blend",
+  "input": "source_assets\\character_rebuild_20261020\\ren\\runtime_narrow_motion_20261022\\ren_runtime.blend",
+  "body_mesh_digests_unchanged": true,
+  "runtime_finger_curl_rad": 0.45,
+  "total_sampled_frames": 270,
+  "actions": {
+    "attack": {
+      "maximum_stretch": 1.7575264277183722,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 8,
+        "edge": 4274,
+        "vertices": [
+          746,
+          750
+        ],
+        "rest_length": 0.03800148443931431,
+        "rest_points": [
+          [
+            -0.28171461820602417,
+            0.11715973168611526,
+            1.2855806350708008
+          ],
+          [
+            -0.251087486743927,
+            0.12274803966283798,
+            1.307371973991394
+          ]
+        ],
+        "weights": [
+          {
+            "ArmRight": 0.6243546009063721,
+            "ForearmRight": 0.34887197613716125,
+            "HandRight": 0.019350500777363777,
+            "FingersRight": 0.007422946393489838
+          },
+          {
+            "Torso": 0.47476473450660706,
+            "ArmRight": 0.3721984028816223,
+            "ForearmRight": 0.14315685629844666,
+            "HandRight": 0.009880024939775467
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 17,
+      "whole_body_floor_range": [
+        0.00199996680021286,
+        0.00199996680021286
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "cast": {
+      "maximum_stretch": 1.629400817269436,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 8,
+        "edge": 16612,
+        "vertices": [
+          8016,
+          8017
+        ],
+        "rest_length": 0.057963828069621165,
+        "rest_points": [
+          [
+            0.24216681718826294,
+            0.10382292419672012,
+            1.439739465713501
+          ],
+          [
+            0.27086105942726135,
+            0.1289365440607071,
+            1.3960845470428467
+          ]
+        ],
+        "weights": [
+          {
+            "Torso": 0.6919101476669312,
+            "ArmLeft": 0.29225051403045654,
+            "ForearmLeft": 0.014263358898460865,
+            "HandLeft": 0.001575975795276463
+          },
+          {
+            "ArmLeft": 0.7955698370933533,
+            "ForearmLeft": 0.12880678474903107,
+            "Torso": 0.06290122866630554,
+            "HandLeft": 0.01272215973585844
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 17,
+      "whole_body_floor_range": [
+        0.00199996680021286,
+        0.00199996680021286
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "death": {
+      "maximum_stretch": 1.2134864557679688,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 11,
+        "edge": 2087,
+        "vertices": [
+          153,
+          154
+        ],
+        "rest_length": 0.025876518571933852,
+        "rest_points": [
+          [
+            -0.4063246548175812,
+            0.042960043996572495,
+            0.8347799181938171
+          ],
+          [
+            -0.4043568968772888,
+            0.06331568211317062,
+            0.8506345748901367
+          ]
+        ],
+        "weights": [
+          {
+            "FingersRight": 0.8578011989593506,
+            "HandRight": 0.12587353587150574,
+            "ForearmRight": 0.01529240794479847,
+            "ArmRight": 0.0010328853968530893
+          },
+          {
+            "FingersRight": 0.7171345949172974,
+            "HandRight": 0.24684154987335205,
+            "ForearmRight": 0.033855143934488297,
+            "ArmRight": 0.0021687254775315523
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 25,
+      "whole_body_floor_range": [
+        0.001999959349632263,
+        0.0020000487565994263
+      ],
+      "endpoint_vertex_difference": 2.00118425488472
+    },
+    "guard": {
+      "maximum_stretch": 1.3398248916538922,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 8,
+        "edge": 6524,
+        "vertices": [
+          867,
+          869
+        ],
+        "rest_length": 0.04491497724182888,
+        "rest_points": [
+          [
+            -0.2703973948955536,
+            0.12406299263238907,
+            1.2770582437515259
+          ],
+          [
+            -0.24813981354236603,
+            0.1284622848033905,
+            1.315821647644043
+          ]
+        ],
+        "weights": [
+          {
+            "ArmRight": 0.5633985996246338,
+            "ForearmRight": 0.34546005725860596,
+            "Torso": 0.06922732293605804,
+            "HandRight": 0.021914059296250343
+          },
+          {
+            "Torso": 0.548514187335968,
+            "ArmRight": 0.3250233829021454,
+            "ForearmRight": 0.11754798144102097,
+            "HandRight": 0.00891445204615593
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 17,
+      "whole_body_floor_range": [
+        0.00199996680021286,
+        0.00199996680021286
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "hit": {
+      "maximum_stretch": 1.2134825662005888,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 5,
+        "edge": 2087,
+        "vertices": [
+          153,
+          154
+        ],
+        "rest_length": 0.025876518571933852,
+        "rest_points": [
+          [
+            -0.4063246548175812,
+            0.042960043996572495,
+            0.8347799181938171
+          ],
+          [
+            -0.4043568968772888,
+            0.06331568211317062,
+            0.8506345748901367
+          ]
+        ],
+        "weights": [
+          {
+            "FingersRight": 0.8578011989593506,
+            "HandRight": 0.12587353587150574,
+            "ForearmRight": 0.01529240794479847,
+            "ArmRight": 0.0010328853968530893
+          },
+          {
+            "FingersRight": 0.7171345949172974,
+            "HandRight": 0.24684154987335205,
+            "ForearmRight": 0.033855143934488297,
+            "ArmRight": 0.0021687254775315523
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 17,
+      "whole_body_floor_range": [
+        0.0019999444484710693,
+        0.0020000524818897247
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "idle": {
+      "maximum_stretch": 1.2141191514368723,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 0,
+        "edge": 2087,
+        "vertices": [
+          153,
+          154
+        ],
+        "rest_length": 0.025876518571933852,
+        "rest_points": [
+          [
+            -0.4063246548175812,
+            0.042960043996572495,
+            0.8347799181938171
+          ],
+          [
+            -0.4043568968772888,
+            0.06331568211317062,
+            0.8506345748901367
+          ]
+        ],
+        "weights": [
+          {
+            "FingersRight": 0.8578011989593506,
+            "HandRight": 0.12587353587150574,
+            "ForearmRight": 0.01529240794479847,
+            "ArmRight": 0.0010328853968530893
+          },
+          {
+            "FingersRight": 0.7171345949172974,
+            "HandRight": 0.24684154987335205,
+            "ForearmRight": 0.033855143934488297,
+            "ArmRight": 0.0021687254775315523
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 25,
+      "whole_body_floor_range": [
+        0.00199996680021286,
+        0.00199996680021286
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "potion": {
+      "maximum_stretch": 1.4000121431596666,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 8,
+        "edge": 16612,
+        "vertices": [
+          8016,
+          8017
+        ],
+        "rest_length": 0.057963828069621165,
+        "rest_points": [
+          [
+            0.24216681718826294,
+            0.10382292419672012,
+            1.439739465713501
+          ],
+          [
+            0.27086105942726135,
+            0.1289365440607071,
+            1.3960845470428467
+          ]
+        ],
+        "weights": [
+          {
+            "Torso": 0.6919101476669312,
+            "ArmLeft": 0.29225051403045654,
+            "ForearmLeft": 0.014263358898460865,
+            "HandLeft": 0.001575975795276463
+          },
+          {
+            "ArmLeft": 0.7955698370933533,
+            "ForearmLeft": 0.12880678474903107,
+            "Torso": 0.06290122866630554,
+            "HandLeft": 0.01272215973585844
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 17,
+      "whole_body_floor_range": [
+        0.00199996680021286,
+        0.00199996680021286
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "run": {
+      "maximum_stretch": 2.15124191220068,
+      "worst_edge": {
+        "mesh": "RenAuthoredCoatLeft",
+        "frame": 4,
+        "edge": 59,
+        "vertices": [
+          39,
+          40
+        ],
+        "rest_length": 0.05734499256773774,
+        "rest_points": [
+          [
+            0.025385025888681412,
+            -0.16537265479564667,
+            1.0437859296798706
+          ],
+          [
+            0.05266699194908142,
+            -0.16248567402362823,
+            0.9934291243553162
+          ]
+        ],
+        "weights": [
+          {
+            "Torso": 0.595111072063446,
+            "LegLeft": 0.29816776514053345,
+            "LegRight": 0.10672116279602051
+          },
+          {
+            "Torso": 0.08328793942928314,
+            "LegLeft": 0.8585509657859802,
+            "LegRight": 0.05816108360886574
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 17,
+      "whole_body_floor_range": [
+        0.0019998804200440645,
+        0.002000071806833148
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "run_narrow": {
+      "maximum_stretch": 2.14665065266423,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 12,
+        "edge": 10385,
+        "vertices": [
+          8210,
+          8212
+        ],
+        "rest_length": 0.021085523865238116,
+        "rest_points": [
+          [
+            0.2437373697757721,
+            -0.025118723511695862,
+            1.2576324939727783
+          ],
+          [
+            0.2638559341430664,
+            -0.01903180405497551,
+            1.2593034505844116
+          ]
+        ],
+        "weights": [
+          {
+            "Torso": 0.6546017527580261,
+            "ArmLeft": 0.2671618163585663,
+            "ForearmLeft": 0.07687506824731827,
+            "HandLeft": 0.0013613540213555098
+          },
+          {
+            "ArmLeft": 0.6877461671829224,
+            "Torso": 0.17831358313560486,
+            "ForearmLeft": 0.1325788050889969,
+            "HandLeft": 0.0013614831259474158
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 17,
+      "whole_body_floor_range": [
+        0.0019996636547148228,
+        0.0019998964853584766
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "sword_attack": {
+      "maximum_stretch": 2.0768156824484536,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 3,
+        "edge": 4274,
+        "vertices": [
+          746,
+          750
+        ],
+        "rest_length": 0.03800148443931431,
+        "rest_points": [
+          [
+            -0.28171461820602417,
+            0.11715973168611526,
+            1.2855806350708008
+          ],
+          [
+            -0.251087486743927,
+            0.12274803966283798,
+            1.307371973991394
+          ]
+        ],
+        "weights": [
+          {
+            "ArmRight": 0.6243546009063721,
+            "ForearmRight": 0.34887197613716125,
+            "HandRight": 0.019350500777363777,
+            "FingersRight": 0.007422946393489838
+          },
+          {
+            "Torso": 0.47476473450660706,
+            "ArmRight": 0.3721984028816223,
+            "ForearmRight": 0.14315685629844666,
+            "HandRight": 0.009880024939775467
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 13,
+      "whole_body_floor_range": [
+        0.00199996680021286,
+        0.00199996680021286
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "sword_guard": {
+      "maximum_stretch": 2.0255889329254906,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 4,
+        "edge": 4274,
+        "vertices": [
+          746,
+          750
+        ],
+        "rest_length": 0.03800148443931431,
+        "rest_points": [
+          [
+            -0.28171461820602417,
+            0.11715973168611526,
+            1.2855806350708008
+          ],
+          [
+            -0.251087486743927,
+            0.12274803966283798,
+            1.307371973991394
+          ]
+        ],
+        "weights": [
+          {
+            "ArmRight": 0.6243546009063721,
+            "ForearmRight": 0.34887197613716125,
+            "HandRight": 0.019350500777363777,
+            "FingersRight": 0.007422946393489838
+          },
+          {
+            "Torso": 0.47476473450660706,
+            "ArmRight": 0.3721984028816223,
+            "ForearmRight": 0.14315685629844666,
+            "HandRight": 0.009880024939775467
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 13,
+      "whole_body_floor_range": [
+        0.00199996680021286,
+        0.00199996680021286
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "sword_idle": {
+      "maximum_stretch": 1.2284686822071582,
+      "worst_edge": {
+        "mesh": "RenRetainedSource",
+        "frame": 0,
+        "edge": 2087,
+        "vertices": [
+          153,
+          154
+        ],
+        "rest_length": 0.025876518571933852,
+        "rest_points": [
+          [
+            -0.4063246548175812,
+            0.042960043996572495,
+            0.8347799181938171
+          ],
+          [
+            -0.4043568968772888,
+            0.06331568211317062,
+            0.8506345748901367
+          ]
+        ],
+        "weights": [
+          {
+            "FingersRight": 0.8578011989593506,
+            "HandRight": 0.12587353587150574,
+            "ForearmRight": 0.01529240794479847,
+            "ArmRight": 0.0010328853968530893
+          },
+          {
+            "FingersRight": 0.7171345949172974,
+            "HandRight": 0.24684154987335205,
+            "ForearmRight": 0.033855143934488297,
+            "ArmRight": 0.0021687254775315523
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 25,
+      "whole_body_floor_range": [
+        0.00199996680021286,
+        0.00199996680021286
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "walk": {
+      "maximum_stretch": 1.726146142006095,
+      "worst_edge": {
+        "mesh": "RenAuthoredCoatLeft",
+        "frame": 6,
+        "edge": 59,
+        "vertices": [
+          39,
+          40
+        ],
+        "rest_length": 0.05734499256773774,
+        "rest_points": [
+          [
+            0.025385025888681412,
+            -0.16537265479564667,
+            1.0437859296798706
+          ],
+          [
+            0.05266699194908142,
+            -0.16248567402362823,
+            0.9934291243553162
+          ]
+        ],
+        "weights": [
+          {
+            "Torso": 0.595111072063446,
+            "LegLeft": 0.29816776514053345,
+            "LegRight": 0.10672116279602051
+          },
+          {
+            "Torso": 0.08328793942928314,
+            "LegLeft": 0.8585509657859802,
+            "LegRight": 0.05816108360886574
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 25,
+      "whole_body_floor_range": [
+        0.001999936066567898,
+        0.002000065054744482
+      ],
+      "endpoint_vertex_difference": 0.0
+    },
+    "walk_narrow": {
+      "maximum_stretch": 1.6906331058734978,
+      "worst_edge": {
+        "mesh": "RenAuthoredTrousers",
+        "frame": 18,
+        "edge": 93,
+        "vertices": [
+          54,
+          55
+        ],
+        "rest_length": 0.055347234315204205,
+        "rest_points": [
+          [
+            -0.06919743865728378,
+            0.1346518099308014,
+            0.6000000238418579
+          ],
+          [
+            -0.04166730120778084,
+            0.08663714677095413,
+            0.6000000238418579
+          ]
+        ],
+        "weights": [
+          {
+            "LegLeft": 0.003606373444199562,
+            "LegRight": 0.8209863901138306,
+            "ShinLeft": 0.0007671471103094518,
+            "ShinRight": 0.17464007437229156
+          },
+          {
+            "LegLeft": 0.10406021773815155,
+            "LegRight": 0.7205325365066528,
+            "ShinLeft": 0.022135669365525246,
+            "ShinRight": 0.15327155590057373
+          }
+        ]
+      },
+      "distal_intersections": [],
+      "sampled_frames": 25,
+      "whole_body_floor_range": [
+        0.0019997574854642153,
+        0.0020001120865345
+      ],
+      "endpoint_vertex_difference": 0.0
+    }
+  },
+  "limits": [
+    "Excludes intentional hilt/hand contact",
+    "Not an artistic or individual-finger grip certification"
+  ]
+}

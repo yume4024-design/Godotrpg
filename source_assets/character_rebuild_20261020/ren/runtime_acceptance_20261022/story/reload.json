@@ -1,0 +1,8 @@
+{
+	"checks": 9,
+	"failures": 0,
+	"normal_action_seconds": 0.55,
+	"observed_clips": [],
+	"reload_only": true,
+	"renderer": "Windows"
+}

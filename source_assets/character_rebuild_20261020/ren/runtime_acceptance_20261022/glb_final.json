@@ -1,0 +1,189 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "assets\\models\\rebuilt_characters\\ren_runtime.glb",
+    "category": "player_character",
+    "sha256": "b70dcd417ffaf4722dc24e0da16e7d83fef7aaea1f374d53205f01b9ec500efe",
+    "maximum_triangles": 15000,
+    "triangles": 10655,
+    "headroom_triangles": 4345,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.327134668827057e-07,
+    "primitives": [
+      {
+        "node": 19,
+        "mesh": 0,
+        "triangles": 352,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 19,
+        "mesh": 0,
+        "triangles": 176,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 20,
+        "mesh": 1,
+        "triangles": 352,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 20,
+        "mesh": 1,
+        "triangles": 176,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 21,
+        "mesh": 2,
+        "triangles": 128,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 22,
+        "mesh": 3,
+        "triangles": 448,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 23,
+        "mesh": 4,
+        "triangles": 9023,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      19
+    ],
+    "materials": 5,
+    "animations": [
+      "attack",
+      "cast",
+      "death",
+      "guard",
+      "hit",
+      "idle",
+      "potion",
+      "run",
+      "run_narrow",
+      "sword_attack",
+      "sword_guard",
+      "sword_idle",
+      "walk",
+      "walk_narrow"
+    ],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [
+    {
+      "schema_version": 1,
+      "file": "assets\\models\\equipment\\bronze_sword.glb",
+      "category": null,
+      "sha256": "00a1d8f0a7651e39a7a5d9ce8552f706e672925db551b0b3e133b9cb99c012b6",
+      "maximum_triangles": 1000,
+      "triangles": 330,
+      "headroom_triangles": 670,
+      "triangle_gate": "PASS",
+      "status": "PASS",
+      "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+      "requirements": {
+        "uv": true,
+        "rig": false
+      },
+      "max_weight_sum_error": 0.0,
+      "primitives": [
+        {
+          "node": 1,
+          "mesh": 0,
+          "triangles": 100,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 1,
+          "mesh": 0,
+          "triangles": 10,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 1,
+          "mesh": 0,
+          "triangles": 220,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "skins": [],
+      "materials": 3,
+      "animations": [],
+      "failures": [],
+      "warnings": [],
+      "visual_gate": "HUMAN_REVIEW",
+      "animation_gate": "NOT_STARTED"
+    }
+  ],
+  "combined_visible_triangles": 10985,
+  "status": "PASS"
+}

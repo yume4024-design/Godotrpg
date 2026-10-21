@@ -1,6 +1,6 @@
 [CmdletBinding()]
 param(
-    [ValidateSet("VisualRenAuthored","VisualNPCIntegration",'TestExplorationLocomotion', 'ExportEnemyAssetQA', 'ProfileEnemyAssets', 'TestEnemyController', 'VisualEnemyController', 'TestBattleNameplates', 'VisualBattleNameplates', 'TestAssetBudget', 'ExportG083QA', 'TestG08Routes', 'TestG08Accessibility', 'ExportG08Candidate', 'ExportG08QA', 'TestPixalAttachments', 'TestWindowsStability', 'TestPixalCharacters', 'TestCharacterSteps', 'TestLiaVillageInn', 'TestLiaVillageFarm', 'TestLiaVillageMine', 'TestFemalePlatform', 'TestFemaleSlope25', 'TestFemaleRamp25', 'TestFemaleFootBoundary', 'ProfileLiaFootPlacement', 'ExportGreystonePreview', 'TestFemaleRamp30', 'TestFemaleRamp120', 'TestFemaleRampTransitions', 'TestFemaleSlopeMovement', 'TestFemaleSlope', 'TestCharacterLifecycle', 'TestFemaleMotionBoundary', 'ExportCharacterQA', 'ProfileCharacters', 'PreviewLiaMovement', 'TestLiaMovement', 'VisualFemaleHand', 'PreviewCharacters', 'TestCharacterPreview', 'VisualFemaleFace', 'TestFemaleGrounding', 'VisualFemaleAnimation', 'PreviewFemale', 'PreviewUserHero', 'ProfileGreystoneEndurance', 'ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
+    [ValidateSet("PreviewRenRuntime","VisualRenMovement","VisualRenStory","TestRenStoryReload","VisualRenRuntime","VisualRenAuthored","VisualNPCIntegration",'TestExplorationLocomotion', 'ExportEnemyAssetQA', 'ProfileEnemyAssets', 'TestEnemyController', 'VisualEnemyController', 'TestBattleNameplates', 'VisualBattleNameplates', 'TestAssetBudget', 'ExportG083QA', 'TestG08Routes', 'TestG08Accessibility', 'ExportG08Candidate', 'ExportG08QA', 'TestPixalAttachments', 'TestWindowsStability', 'TestPixalCharacters', 'TestCharacterSteps', 'TestLiaVillageInn', 'TestLiaVillageFarm', 'TestLiaVillageMine', 'TestFemalePlatform', 'TestFemaleSlope25', 'TestFemaleRamp25', 'TestFemaleFootBoundary', 'ProfileLiaFootPlacement', 'ExportGreystonePreview', 'TestFemaleRamp30', 'TestFemaleRamp120', 'TestFemaleRampTransitions', 'TestFemaleSlopeMovement', 'TestFemaleSlope', 'TestCharacterLifecycle', 'TestFemaleMotionBoundary', 'ExportCharacterQA', 'ProfileCharacters', 'PreviewLiaMovement', 'TestLiaMovement', 'VisualFemaleHand', 'PreviewCharacters', 'TestCharacterPreview', 'VisualFemaleFace', 'TestFemaleGrounding', 'VisualFemaleAnimation', 'PreviewFemale', 'PreviewUserHero', 'ProfileGreystoneEndurance', 'ProfileGreystoneDynamic', 'VisualActionEffects', 'PrepareWildernessRestart', 'TestForestRestart', 'TestMineRestart', 'TestWildernessEndurance', 'TestWildernessBalance', 'VisualExpansion', 'VisualGreystoneQuality', 'PrepareGreystoneMaterials', 'ProfileGreystone', 'TestEnemyAI', 'TestG06TouchCommerce', 'VisualG06TouchCommerce', 'TestG06Touch', 'VisualG06Touch', 'TestG06Commerce', 'VisualG06Commerce', 'TestG06CommerceReload', 'TestG06Story', 'VisualG06Story', 'TestG06StoryReload', 'VisualG06NPC', 'TestG06NPC', 'TestG06', 'VisualG06', 'TestG06Reload', 'RunG06', 'VisualGreystoneProps', 'TestGreystoneProps', 'TestGreystoneBuildings', 'VisualGreystoneBuildings', 'TestGreystone', 'VisualGreystone', 'PreviewGreystone', 'TestVillage', 'VisualVillage', 'Version', 'Check', 'Smoke', 'Test', 'TestPhase2', 'VisualPhase2', 'TestPhase3', 'VisualPhase3', 'PreviewBattle', 'TestPhase4', 'VisualPhase4', 'TestPhase5', 'VisualPhase5', 'TestPhase5Reload', 'TestPhase6', 'VisualPhase6', 'ExportWindows', 'ExportQA', 'ControllerProbe', 'TestArt', 'VisualArt', 'PreviewArt', 'Editor', 'Run')]
     [string]$Mode = 'Version',
     [string]$GodotPath = $env:GODOT_PATH,
     [ValidateSet("spore_sprite","ore_beetle","thorn_boar","corrupted_guardian","crystal_bat")]
@@ -77,6 +77,11 @@ if ($Mode -ne 'Version') {
     if ($Mode -eq 'TestG06Reload') { $engineArgs += @('--','--reload') }
     if ($Mode -in @('VisualG06NPC','TestG06NPC')) { $engineArgs += @('--script','res://tests/greystone_npc_test.gd') }
     if ($Mode -eq 'VisualNPCIntegration') { $engineArgs += @('--script','res://tests/npc_integration_test.gd') }
+    if ($Mode -eq 'PreviewRenRuntime') { $engineArgs += 'res://scenes/tools/ren_runtime_game.tscn' }
+    if ($Mode -eq 'VisualRenMovement') { $engineArgs += @('--script','res://tests/ren_runtime_movement_test.gd') }
+    if ($Mode -in @('VisualRenStory','TestRenStoryReload')) { $engineArgs += @('--script','res://tests/ren_runtime_story_test.gd') }
+    if ($Mode -eq 'TestRenStoryReload') { $engineArgs += @('--','--reload') }
+    if ($Mode -eq 'VisualRenRuntime') { $engineArgs += @('--script','res://tests/ren_runtime_test.gd') }
     if ($Mode -eq 'VisualRenAuthored') {
         $engineArgs += @('--script','res://tests/ren_authored_review.gd')
         if ($ReviewModel) { $engineArgs += @('--', ('--model=' + $ReviewModel)) }
@@ -172,7 +177,7 @@ $startInfo.EnvironmentVariables['APPDATA'] = $profileRoot
 $startInfo.EnvironmentVariables['LOCALAPPDATA'] = $cacheRoot
 $startInfo.EnvironmentVariables['TEMP'] = $tempRoot
 $startInfo.EnvironmentVariables['TMP'] = $tempRoot
-if ($Mode -in @('PreviewLiaMovement', 'PreviewCharacters', 'RunG06', 'PreviewGreystone', 'Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
+if ($Mode -in @('PreviewRenRuntime', 'PreviewLiaMovement', 'PreviewCharacters', 'RunG06', 'PreviewGreystone', 'Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
     # Use the graphical binary for detached windows. The console wrapper inherits
     # the caller's pipe handles and can stall after a short-lived tool shell exits.
     $graphicalPath = $GodotPath -replace '_console\.exe$', '.exe'
@@ -197,7 +202,7 @@ try {
     if (-not $process.Start()) { throw 'Godot process did not start.' }
     $stdoutTask = $process.StandardOutput.ReadToEndAsync()
     $stderrTask = $process.StandardError.ReadToEndAsync()
-    $timeoutMs = if ($Mode -eq 'TestWindowsStability') { 1950000 } elseif ($Mode -in @('ProfileGreystoneEndurance','TestExplorationLocomotion')) { 180000 } elseif ($Mode -in @('TestLiaVillageFarm','TestLiaVillageMine','TestG06NPC')) { 120000 } else { 60000 }
+    $timeoutMs = if ($Mode -eq 'TestWindowsStability') { 1950000 } elseif ($Mode -in @('VisualRenMovement','VisualRenStory','ProfileGreystoneEndurance','TestExplorationLocomotion')) { 180000 } elseif ($Mode -in @('TestLiaVillageFarm','TestLiaVillageMine','TestG06NPC')) { 120000 } else { 60000 }
     if ($Mode -eq 'TestWindowsStability') {
         $rssPath = Join-Path $projectRoot 'artifacts/performance/g075-process.csv'
         'elapsed_seconds,working_set_bytes,private_bytes,peak_working_set_bytes' | Set-Content $rssPath

@@ -19,6 +19,8 @@ parser.add_argument('--candidate', type=Path, required=True)
 parser.add_argument('--plan', type=Path, required=True)
 parser.add_argument('--output', type=Path, required=True)
 parser.add_argument('--diagnose-sharp-fans', action='store_true')
+parser.add_argument('--additional-clip', action='append', default=[],
+                    help='Exact explicitly authorized additive action; original poses remain mandatory')
 args = parser.parse_args(sys.argv[sys.argv.index('--') + 1:])
 assert hashlib.sha256(args.source.read_bytes()).hexdigest() == '93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850'
 
@@ -56,12 +58,12 @@ plan = json.loads(args.plan.read_text(encoding='utf-8'))
 failures = []
 rest_error = max(float(np.abs(rest[name]-new_rest[name]).max()) for name in rest) if set(rest) == set(new_rest) else float('inf')
 pose_error = 0.
-if set(poses) != set(new_poses): failures.append('CLIP_NAMES_CHANGED')
-else:
-    for name, frames in poses.items():
-        if len(frames) != len(new_poses[name]): failures.append(name+':FRAME_COUNT_CHANGED'); continue
-        for frame, other in zip(frames, new_poses[name]):
-            for bone in frame: pose_error = max(pose_error, float(np.abs(frame[bone]-other[bone]).max()))
+if set(new_poses) != set(poses) | set(args.additional_clip): failures.append('CLIP_NAMES_CHANGED')
+for name, frames in poses.items():
+    if name not in new_poses: failures.append(name+':ORIGINAL_CLIP_MISSING'); continue
+    if len(frames) != len(new_poses[name]): failures.append(name+':FRAME_COUNT_CHANGED'); continue
+    for frame, other in zip(frames, new_poses[name]):
+        for bone in frame: pose_error = max(pose_error, float(np.abs(frame[bone]-other[bone]).max()))
 if rest_error > 1e-7: failures.append('BONE_REST_CHANGED')
 if pose_error > 1e-7: failures.append('ACTION_POSES_CHANGED')
 if not set(images).issubset(new_images): failures.append('ORIGINAL_ALBEDO_CHANGED')
@@ -130,6 +132,7 @@ report = {'source_sha256': hashlib.sha256(args.source.read_bytes()).hexdigest(),
           'protected_pouch_faces_retained': len(set(plan['protected_pouch_faces']) & source_ids),
           'maximum_bone_rest_error': rest_error, 'maximum_all_frame_pose_error': pose_error,
           'sampled_pose_frames': sum(len(frames) for frames in poses.values()),
+          'additional_clips': sorted(args.additional_clip),
           'original_packed_albedo_preserved': set(images).issubset(new_images),
           'maximum_retained_position_error': position_error, 'maximum_retained_uv_error': uv_error,
           'maximum_retained_corner_normal_error': normal_error, 'bad_normal_loops': bad,

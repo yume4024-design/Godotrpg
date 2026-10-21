@@ -1,0 +1,24 @@
+{
+  "source": "Original project Blender geometry; no third-party asset",
+  "triangles": 330,
+  "explicit_budget": 1000,
+  "units": "metres",
+  "godot_up_axis": "Y",
+  "grip_origin": [
+    0,
+    0,
+    0
+  ],
+  "tip_blender": [
+    0,
+    0,
+    0.535
+  ],
+  "textures": 0,
+  "uv_present": true,
+  "distal_blade_face_attribute": "DistalBlade",
+  "outputs": {
+    "bronze_sword.blend": "9601a89b5f07c1c25ec25336db87f1cda32c2c6e526f42c925275d38888ddffa",
+    "bronze_sword.glb": "00a1d8f0a7651e39a7a5d9ce8552f706e672925db551b0b3e133b9cb99c012b6"
+  }
+}

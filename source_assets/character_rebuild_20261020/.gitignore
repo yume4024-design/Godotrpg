@@ -38,3 +38,10 @@ ren/authored_garment_*/closeups/*.png
 ren/stitched_waist_20261021/closeups/*.png
 ren/authored_*plan*/*.png
 ren/accessory_diagnosis_20261021/*.png
+# Rebuildable/rejected action work copies stay local; keep reports and evidence.
+ren/runtime_actions_v*/*.blend
+ren/runtime_actions_v*/*.glb
+ren/runtime_narrow_20261021/*.blend
+ren/runtime_narrow_20261021/*.glb
+# Runtime GLB is tracked once under assets; retain the final native work file.
+ren/runtime_narrow_motion_20261022/*.glb

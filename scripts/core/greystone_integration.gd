@@ -3,6 +3,8 @@ extends ExplorationGame
 const NpcVisual = preload("res://scripts/characters/rigged_npc_visual.gd")
 @export var force_touch_controls: bool = false
 @export var legacy_slot_path: String = "user://crystal_slot_01.json"
+## Isolated candidates can inject appearance without changing IDs or RPG data.
+@export var hero_appearance: PackedScene = preload("res://scenes/characters/ren_pixal_visual.tscn")
 var bridge_button: Button
 var import_button: Button
 var mobile_input: MobileInputLayer
@@ -32,7 +34,7 @@ func _ready() -> void:
 	occlusion.enabled = true
 	occlusion.target_height = 1.95
 	add_child(occlusion)
-	var hero_visual: PackedScene = load("res://scenes/characters/ren_pixal_visual.tscn")
+	var hero_visual: PackedScene = hero_appearance
 	starting_character = starting_character.duplicate()
 	starting_character.appearance = hero_visual
 	for index: int in range(battles.definitions.size()):
@@ -116,6 +118,12 @@ func _process(_delta: float) -> void:
 	bridge_button.disabled = locked() or not flags.has_flag(&"e001_done") or travel.current_map.map_id not in [&"village", &"greystone_runtime"]
 	import_button.disabled = not safe_to_load()
 	quality_button.disabled = locked() or battles.active
+
+func _refresh_party() -> void:
+	super._refresh_party()
+	var ren: CombatantState = party.member(&"ren")
+	if ren != null and player.appearance.has_method("set_equipment_visual"):
+		player.appearance.call("set_equipment_visual", ren.equipped(&"weapon"))
 
 func visit_other_village() -> bool:
 	if locked() or not flags.has_flag(&"e001_done"): return false

@@ -1,0 +1,132 @@
+{
+  "base_commit": "252808c03b32250e3683c0bb5eabad471712c802",
+  "branch": "feature/greystone-g06",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "blender": "5.2.2 LTS",
+  "platform": "Windows Compatibility / RTX 3080",
+  "checks": {
+    "controller": {
+      "checks": 93,
+      "failures": 0,
+      "source": "artifacts/ren_runtime/controller/report.json"
+    },
+    "movement": {
+      "checks": 64,
+      "failures": 0,
+      "source": "artifacts/ren_runtime/movement/result.json"
+    },
+    "story": {
+      "checks": 84,
+      "failures": 0,
+      "source": "artifacts/ren_runtime/story/story.json"
+    },
+    "restart": {
+      "checks": 9,
+      "failures": 0,
+      "source": "artifacts/ren_runtime/story/reload.json"
+    }
+  },
+  "g06": {
+    "modes": 16,
+    "checks": 576,
+    "failures": 0
+  },
+  "legacy_pixal": {
+    "checks": 88,
+    "failures": 0
+  },
+  "logs": [
+    {
+      "mode": "visualrenruntime",
+      "local_log": "visualrenruntime-20261022-042832-278.log",
+      "sha256": "0e3fc561f8bfd384a91e28a2775cefb2cbe2b20c322e3f4777793285253804fa",
+      "result_lines": [
+        "REN_RUNTIME_RESULT: checks=93 failures=0"
+      ]
+    },
+    {
+      "mode": "visualrenmovement",
+      "local_log": "visualrenmovement-20261022-042843-692.log",
+      "sha256": "72a1ea9fc253768d08f8df9e2445e3eddb57f9743db182d474d06c2c4990701d",
+      "result_lines": [
+        "EXPLORATION_LOCOMOTION_RESULT checks=64 failures=0"
+      ]
+    },
+    {
+      "mode": "visualrenstory",
+      "local_log": "visualrenstory-20261022-042930-782.log",
+      "sha256": "42650011e2f2c18abb596e741ec5bfc9e778cfe30e07da843856e68625349f2b",
+      "result_lines": [
+        "REN_RUNTIME_STORY checks=84 failures=0",
+        "G06_STORY_RESULT checks=84 failures=0"
+      ]
+    },
+    {
+      "mode": "testrenstoryreload",
+      "local_log": "testrenstoryreload-20261022-043024-256.log",
+      "sha256": "b045d17f4d29c9d6df0b3ecbdd9d733672038f0d2c12fcd50a493d2ec744fa72",
+      "result_lines": [
+        "REN_RUNTIME_STORY checks=9 failures=0",
+        "G06_STORY_RESULT checks=9 failures=0"
+      ]
+    },
+    {
+      "mode": "testpixalcharacters",
+      "local_log": "testpixalcharacters-20261022-042325-676.log",
+      "sha256": "b79c305a5b136ba3651c541439a2cca580627510da90b546e7c40598d1f4ae5d",
+      "result_lines": [
+        "PIXAL_CHARACTER_RESULT checks=88 failures=0"
+      ]
+    },
+    {
+      "mode": "check",
+      "local_log": "check-20261022-042747-302.log",
+      "sha256": "a42e0d04e3e5e7e7f8c75ec6708b0ff1261b9a83d1feb8de099c677162fe0a91",
+      "result_lines": []
+    }
+  ],
+  "formal_baseline": [
+    {
+      "path": "scenes/main/main.tscn",
+      "sha256": "56e3abb80522610dcf278b0cbaef58396b19ef6f3a66583da408ded2b258f875",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "scenes/characters/ren_pixal_visual.tscn",
+      "sha256": "29af266d6713ede187d22f7374b7b847b5aeead68d67eae7776ff9047bab2e2d",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "scenes/characters/lia_pixal_visual.tscn",
+      "sha256": "ec2b04573f303234d000b1239936adb21cb1c81b55c835f8099f08c3c485a3ba",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "assets/models/pixal3d/ren_locomotion.glb",
+      "sha256": "7a89ddf2792327f8ce817c03562f7de98f660c702627b10b0d83c9882e1237eb",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "assets/models/pixal3d/lia_locomotion.glb",
+      "sha256": "8436c96f94e8091fdb836ac09b6c83439b3c6856626db637597cd32b960c7f24",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "scripts/save/save_codec.gd",
+      "sha256": "39bce7df525d552919699315f38e056e26c65e8c27cf851737a98917f48f4272",
+      "unchanged_from_base": true
+    },
+    {
+      "path": "data/story/prologue_events.json",
+      "sha256": "27926913b6ca584bc56fa22e173eb5f00741dbac5abf5f670ce09d70fd05e640",
+      "unchanged_from_base": true
+    }
+  ],
+  "formal_replacement": false,
+  "limits": [
+    "No new packaged or endurance performance acceptance",
+    "No new physical Xbox/human acceptance",
+    "No independent finger rig, eyelid/mouth morphs or terrain IK",
+    "Android/iOS paused; chapter one incomplete"
+  ]
+}
