@@ -1,0 +1,87 @@
+{
+  "status": "IN_PROGRESS",
+  "bounded_neck_recipe_gate": "FAIL",
+  "source_preservation": [
+    {
+      "path": "source_assets/character_rebuild_20261020/lia/face_v2/lia_surface.blend",
+      "sha256": "935c47d37706c711cafbb8f1156b6efb6fba1cdbc1edd341fcb3b7da4ec01281",
+      "matches_head": true
+    },
+    {
+      "path": "assets/models/rebuilt_characters/lia_static.glb",
+      "sha256": "2ba736c720568dc5125eae6a88e785e93b5b8e2509e179116142eb7027a0c198",
+      "matches_head": true
+    },
+    {
+      "path": "assets/models/pixal3d/ren_rigged.glb",
+      "sha256": "6bb14ae0c547d4b187cf6f87548f601856580e6412770623b7a42e40543921f6",
+      "matches_head": true
+    },
+    {
+      "path": "assets/models/pixal3d/lia_rigged.glb",
+      "sha256": "d2ebab02be6b38b6d539f8a77d50d82baaebcf4e64153ac0c36b94e9fdfc96a4",
+      "matches_head": true
+    },
+    {
+      "path": "scenes/main/main.tscn",
+      "sha256": "9d722364c4960b2735c5fc426c8f21bab12ed4d58ac9a3a119879a60f40505ec",
+      "matches_head": true
+    },
+    {
+      "path": "scripts/save/save_codec.gd",
+      "sha256": "3e2cc75a7f615a1dee7ea17465ca787d03e99e3f01039bd938d6fa361d3016fe",
+      "matches_head": true
+    },
+    {
+      "path": "data/story/prologue_events.json",
+      "sha256": "f7efb5926b1e628bae0f00d7881cee60a73a681d49b6a39680dabf4a93ed3f67",
+      "matches_head": true
+    }
+  ],
+  "versions": [
+    {
+      "recipe": "v1",
+      "visual_gate": "NOT_REACHED",
+      "reason": "Normal calibration rejected three pre-existing zero vectors; no model output",
+      "triangles": null,
+      "outputs": {},
+      "glb_gate": "NOT_REACHED"
+    },
+    {
+      "recipe": "v2",
+      "visual_gate": "FAIL",
+      "reason": "FAIL: rectangular cut gaps around the closed neck tube",
+      "triangles": 12487,
+      "outputs": {
+        "lia_neck.blend": "1b08ede92ec57dea72e6963d0be085a062ca120e34052639ec76b5302e1aaf20",
+        "lia_neck.glb": "0674072ab2ed6b6ffbb137a5a5eb5c79e66e497deaf6af9b2f50c5889a527aa7"
+      },
+      "glb_gate": "PASS"
+    },
+    {
+      "recipe": "v3",
+      "visual_gate": "FAIL",
+      "reason": "FAIL: strips cover some gaps but form unnatural flat rectangular skin flaps",
+      "triangles": 12957,
+      "outputs": {
+        "lia_neck.blend": "7320e3dc8b891938a6023dedfd593154366d864e9623c5680b31e31fa3aec13d",
+        "lia_neck.glb": "bb83427d54536e3773fbc6a35a4d584f0b67603a1abf23e717d065bdb7225495"
+      },
+      "glb_gate": "PASS"
+    }
+  ],
+  "adopted": null,
+  "attempts": 3,
+  "further_automatic_recipes": "STOPPED",
+  "manual_work": [
+    "Rebuild continuous neck/decolletage and collar boundary loops from the approved source",
+    "Preserve outer purple collar, head, hair, hands, boots and original body atlas",
+    "Re-unwrap/sew local UV boundaries, then validate head turns and bends before rig adoption"
+  ],
+  "limits": [
+    "Not a new rig or motion gate",
+    "No production scene or character alias changed",
+    "Candidate GLB structural PASS is not visual PASS",
+    "No Android/iOS testing"
+  ]
+}

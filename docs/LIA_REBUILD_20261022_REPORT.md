@@ -24,7 +24,7 @@
 | 尺度 | 1.95m、原點地面中心、Godot Y-up |
 | 執行預覽 | `assets/models/rebuilt_characters/lia_static.glb` |
 | 預覽SHA256 | **2ba736c720568dc5125eae6a88e785e93b5b8e2509e179116142eb7027a0c198** |
-| 工作原件 | `lia/face_v2/lia_surface.blend`，SHA **935c47d37706c711cafbb8f1156b6efbf6ba1cdbc1edd341fcb3b7da4ec01281** |
+| 工作原件 | `lia/face_v2/lia_surface.blend`，SHA **935c47d37706c711cafbb8f1156b6efb6fba1cdbc1edd341fcb3b7da4ec01281** |
 
 原生成正面有黑色眼塊、灰色眼周裂線及繪製的拓樸線。純底色emission檢視確認這些已在albedo，不能全歸因於法線。使用內建imagegen，以實際頭部投影為編輯目標、核准莉雅正面為身分參考，修整既有臉／髮顏色，未改頭部幾何。生成PNG為1254²真Alpha，透過正規化UV取樣回投影1024²畫布，不修改原始使用者圖片。
 
@@ -50,6 +50,20 @@ Godot **4.7.2.stable.official.ed1daf0bf**、Windows Compatibility／RTX3080；Bl
 18張原生WebP、初版失敗／選定版、匯入／保留／來源SHA與正式檔案未改證明見 [凍結資料](../source_assets/character_rebuild_20261020/lia/static_acceptance_20261022/README.md)。首次渲染使用相對輸出路徑被Blender解析至C盤，失敗紀錄保留；改用專案絕對路徑完成，不改系統權限。縮圖快取OpenImageIO警告仍存在，實際工作檔保存與重讀成功。
 
 ## 下一項
+
+### 2026-10-22 頸部定位與三版拒用紀錄
+
+新增 `inspect_lia_neck.py` 以原生前／側／背／斜側近景、1146 個局部面及十個高度切面定位假高領；原工作檔 SHA 未變。`rebuild_lia_neck.py` 為明確標記 **EXPERIMENTAL / REJECTED** 的可重現試作，不能當正式修好工具。
+
+| 配方 | 實際結果 | 採用 |
+|---|---|---|
+| v1 | 角法線 Gate 失敗；原件腰部同一頂點有三個零向量，獨立檢查精確記錄 face／loop，不放寬 .002 容差 | 否，未輸出模型 |
+| v2 | 只修正這三個未定義法線；局部裁切462面，加128面閉合頸部，合計12487／15000；GLB結構PASS，但領口周圍矩形缺口明顯 | 否，visual FAIL |
+| v3 | 根據235條實際切邊加470面過渡，合計12957／15000；GLB結構PASS，但皮膚成為方形平片，接縫仍不自然 | 否，visual FAIL |
+
+三版後停止這組配方，沒有繼續重試或將數值PASS等同美術PASS。需沿原紫色領口建立連續頸部／鎖骨表面與對應邊界，再處理局部UV、下巴／髮接縫；不是把失敗補片啟用後交給動畫掩蓋。外側領片、臉髮、手靴與原色圖須保留。失敗Blend／GLB留本機並由精確規則忽略；收據、面ID／切面座標、12張512²原生WebP及SHA均保留在 [頸部紀錄](../source_assets/character_rebuild_20261020/lia/neck_acceptance_20261022/README.md)。
+
+本輪實際 Godot 4.7.2 圖形 `TestPixalCharacters` **88／0**；只驗證仍在使用的正式4815／4806面模型。新莉雅靜態預覽、正式兩人GLB、主入口、SaveCodec與序章JSON逐檔對HEAD一致；沒有新莉雅動作、戰鬥、存讀檔或效能通過聲明。另修正文內前輪手動誤抄的工作檔SHA，檔案本身與既有machine JSON／Git一致。
 
 先定位修整頸部／高領假表面及身體關節、衣擺／襠部的重疊拓樸，保留臉髮手靴與核准造型；依新網格量測骨架與掛點，不直接套用雷恩骨架座標。再建立待機、走、跑、持杖／施法、受擊、道具、防禦與倒地，驗證變形後接既有角色控制器及RPG系統。
 

@@ -53,3 +53,7 @@ lia/face_v1/*.glb
 lia/face_v1/*.png
 lia/face_v2/*.glb
 lia/face_v2/*.png
+# Failed bounded-neck recipes: retain receipts and native WebP diagnostics,
+# not duplicate packed 4K atlases in rejected GLB/Blend work files.
+lia/neck_v*_20261022/*.blend
+lia/neck_v*_20261022/*.glb

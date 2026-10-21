@@ -1,0 +1,51 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\character_rebuild_20261020\\lia\\neck_v2_20261022\\lia_neck.glb",
+    "category": "player_character",
+    "sha256": "0674072ab2ed6b6ffbb137a5a5eb5c79e66e497deaf6af9b2f50c5889a527aa7",
+    "maximum_triangles": 15000,
+    "triangles": 12487,
+    "headroom_triangles": 2513,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 128,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 12359,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 2,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 12487,
+  "status": "PASS"
+}

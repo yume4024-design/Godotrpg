@@ -1,0 +1,94 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren material imported
+PASS ren actual Godot mesh budget
+PASS ren generated UV texture preserved
+PASS ren fresh humanoid rig imports
+PASS ren eight new eyelid morph surfaces
+PASS ren imported clip attack
+PASS ren imported clip cast
+PASS ren imported clip guard
+PASS ren imported clip hit
+PASS ren imported clip potion
+PASS ren imported clip walk
+PASS ren imported clip run
+PASS ren walking cycle starts
+PASS ren running cycle starts
+PASS ren stops and restores locomotion
+PASS ren action active attack
+PASS ren finite deformed skeleton attack
+PASS ren action recovers attack
+PASS ren action active mend
+PASS ren finite deformed skeleton mend
+PASS ren action recovers mend
+PASS ren action active guard
+PASS ren finite deformed skeleton guard
+PASS ren action recovers guard
+PASS ren action active potion
+PASS ren finite deformed skeleton potion
+PASS ren action recovers potion
+PASS ren action active hit
+PASS ren finite deformed skeleton hit
+PASS ren action recovers hit
+PASS ren death clears action
+PASS ren death closes new eyes
+PASS ren revived action recovers
+PIXAL_MODEL character=ren triangles=4815 bones=19 textured_surfaces=1
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia material imported
+PASS lia actual Godot mesh budget
+PASS lia generated UV texture preserved
+PASS lia fresh humanoid rig imports
+PASS lia eight new eyelid morph surfaces
+PASS lia imported clip attack
+PASS lia imported clip cast
+PASS lia imported clip guard
+PASS lia imported clip hit
+PASS lia imported clip potion
+PASS lia imported clip walk
+PASS lia imported clip run
+PASS lia walking cycle starts
+PASS lia running cycle starts
+PASS lia stops and restores locomotion
+PASS lia action active attack
+PASS lia finite deformed skeleton attack
+PASS lia action recovers attack
+PASS lia action active mend
+PASS lia finite deformed skeleton mend
+PASS lia action recovers mend
+PASS lia action active guard
+PASS lia finite deformed skeleton guard
+PASS lia action recovers guard
+PASS lia action active potion
+PASS lia finite deformed skeleton potion
+PASS lia action recovers potion
+PASS lia action active hit
+PASS lia finite deformed skeleton hit
+PASS lia action recovers hit
+PASS New Lia holds existing equipped staff
+PASS New Lia unequips staff
+PASS lia death clears action
+PASS lia death closes new eyes
+PASS lia revived action recovers
+PIXAL_MODEL character=lia triangles=4806 bones=19 textured_surfaces=1
+PIXAL_CHARACTER_RESULT checks=88 failures=0
