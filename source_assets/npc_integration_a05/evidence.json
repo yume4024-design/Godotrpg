@@ -1,0 +1,474 @@
+{
+  "source_commit": "e82ee2dd2be44efa80d6afc62ca60e11b49c8780",
+  "baseline": "84394889912b91cac03d480472240f0b8d638537",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "scope": "Four original NPC appearance slots only; female remains candidate by user instruction",
+  "source_contract": {
+    "scenes/world/greystone_npcs.tscn": {
+      "sha256": "36049cdf68a2628b18896432f1491b90c560004b1d67ebe34679b480d39393f9",
+      "git_blob_sha256": "dd693c6be715f9859742f2a7a25e6817f18f3c9fed076e2a373b9fb99eb32587"
+    },
+    "scenes/world/legacy/greystone_npcs.tscn": {
+      "sha256": "ffa8d57ea6ccfd72f010c71fdd5d69c15166e59bcbb25bea98a5ba6800702ff5",
+      "git_blob_sha256": "ffa8d57ea6ccfd72f010c71fdd5d69c15166e59bcbb25bea98a5ba6800702ff5"
+    },
+    "scripts/core/greystone_integration.gd": {
+      "sha256": "bbd869cb5865102b5eb878e9265dfd1c58d4e7d068db6bf06332a51b82878135",
+      "git_blob_sha256": "bbd869cb5865102b5eb878e9265dfd1c58d4e7d068db6bf06332a51b82878135"
+    },
+    "tests/npc_integration_test.gd": {
+      "sha256": "16e89ad19de5895d3ba2d1b187b40adab15d1ee436ec4c593c20ff67eb70b7ac",
+      "git_blob_sha256": "16e89ad19de5895d3ba2d1b187b40adab15d1ee436ec4c593c20ff67eb70b7ac"
+    },
+    "tests/windows_candidate_test.gd": {
+      "sha256": "ed305fded2c6bea7012b30bcdc5c5a5b0ce6f01874a8297af45cce6ef1403c3d",
+      "git_blob_sha256": "4a0810eb13a776ee842d88ae4a8ac1e73cd8ec94a253895ea07731ce2ce56b50"
+    },
+    "tools/godot.ps1": {
+      "sha256": "d5ceb04a98ccd5eb6574c460c9b4feeb3384288f83edf33e56ad44b8868abc59",
+      "git_blob_sha256": "d5ceb04a98ccd5eb6574c460c9b4feeb3384288f83edf33e56ad44b8868abc59"
+    },
+    "assets/models/rebuilt_npc/blacksmith.glb": {
+      "sha256": "3c3088954be0d79641976d95f2463f27c1e18a2e2fb9e3c67774be8e2696a3b5",
+      "git_blob_sha256": "3c3088954be0d79641976d95f2463f27c1e18a2e2fb9e3c67774be8e2696a3b5"
+    },
+    "assets/models/rebuilt_npc/item_merchant.glb": {
+      "sha256": "6cddbb0a5ca2a487de25d8a7a8838e55e99455ab02e9e0977410a98c693e8a5c",
+      "git_blob_sha256": "6cddbb0a5ca2a487de25d8a7a8838e55e99455ab02e9e0977410a98c693e8a5c"
+    },
+    "assets/models/rebuilt_npc/innkeeper.glb": {
+      "sha256": "3baeda38ab638039aa01e9b2a4333f118a4df277c89e683ee8b26e70ea9c111d",
+      "git_blob_sha256": "3baeda38ab638039aa01e9b2a4333f118a4df277c89e683ee8b26e70ea9c111d"
+    },
+    "assets/models/rebuilt_npc/villager_male.glb": {
+      "sha256": "da28cde2a38b16656107a264f0c762d71633bc81843e37c328c9106319b21fa7",
+      "git_blob_sha256": "da28cde2a38b16656107a264f0c762d71633bc81843e37c328c9106319b21fa7"
+    },
+    "assets/models/rebuilt_npc/villager_female.glb": {
+      "sha256": "f7759edc8d7e8605418264dc5dfb8fb83337faecf3aef395d9473670c1323952",
+      "git_blob_sha256": "f7759edc8d7e8605418264dc5dfb8fb83337faecf3aef395d9473670c1323952"
+    }
+  },
+  "npc_gameplay_sections_exact": true,
+  "native": {
+    "path": "artifacts/logs/visualnpcintegration-20261021-124719-261.log",
+    "sha256": "54afba00346478c61d51812a7b9839ba4d9c1f21c68c9b13633aac7a8ee44e25",
+    "results": [
+      "A05_NPC_INTEGRATION_RESULT checks=214 failures=0 renderer=Windows"
+    ],
+    "errors": []
+  },
+  "regression": {
+    "base_commit": "84394889912b91cac03d480472240f0b8d638537",
+    "dirty_worktree": true,
+    "platform": "Windows desktop; touch and controller events simulated",
+    "android_verified": false,
+    "results": [
+      {
+        "mode": "Check",
+        "passed": true,
+        "started": "2026-10-21T12:43:35.4751083+08:00",
+        "seconds": 4.47,
+        "log": "check-20261021-124335-528.log",
+        "result": [
+          "Log: D:\\RPGGAME\\artifacts\\logs\\check-20261021-124335-528.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestEnemyAI",
+        "passed": true,
+        "started": "2026-10-21T12:43:39.9916257+08:00",
+        "seconds": 0.5,
+        "log": "testenemyai-20261021-124340-000.log",
+        "result": [
+          "ENEMY_AI_RESULT checks=10 failures=0 targets=[&\"lia\", &\"ren\", &\"lia\", &\"ren\"]",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testenemyai-20261021-124340-000.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestPhase3",
+        "passed": true,
+        "started": "2026-10-21T12:43:40.4961314+08:00",
+        "seconds": 7.56,
+        "log": "testphase3-20261021-124340-503.log",
+        "result": [
+          "PHASE3_RESULT checks=75 failures=0 renderer=headless",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testphase3-20261021-124340-503.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "Smoke",
+        "passed": true,
+        "started": "2026-10-21T12:43:48.0622489+08:00",
+        "seconds": 1.7,
+        "log": "smoke-20261021-124348-069.log",
+        "result": [
+          "Log: D:\\RPGGAME\\artifacts\\logs\\smoke-20261021-124348-069.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestPhase5",
+        "passed": true,
+        "started": "2026-10-21T12:43:49.7652581+08:00",
+        "seconds": 16.47,
+        "log": "testphase5-20261021-124349-771.log",
+        "result": [
+          "PHASE5_RESULT checks=69 failures=0 renderer=headless",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testphase5-20261021-124349-771.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestPhase5Reload",
+        "passed": true,
+        "started": "2026-10-21T12:44:06.2329064+08:00",
+        "seconds": 1.8,
+        "log": "testphase5reload-20261021-124406-239.log",
+        "result": [
+          "PHASE5_RESULT checks=7 failures=0 renderer=headless",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testphase5reload-20261021-124406-239.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestPhase6",
+        "passed": true,
+        "started": "2026-10-21T12:44:08.0315529+08:00",
+        "seconds": 19.13,
+        "log": "testphase6-20261021-124408-037.log",
+        "result": [
+          "PHASE6_RESULT checks=85 failures=0 renderer=headless",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testphase6-20261021-124408-037.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestG06",
+        "passed": true,
+        "started": "2026-10-21T12:44:27.1636005+08:00",
+        "seconds": 7.04,
+        "log": "testg06-20261021-124427-170.log",
+        "result": [
+          "G06_1_RESULT checks=51 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testg06-20261021-124427-170.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestG06Reload",
+        "passed": true,
+        "started": "2026-10-21T12:44:34.2094727+08:00",
+        "seconds": 4.32,
+        "log": "testg06reload-20261021-124434-218.log",
+        "result": [
+          "G06_1_RESULT checks=6 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testg06reload-20261021-124434-218.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestG06NPC",
+        "passed": true,
+        "started": "2026-10-21T12:44:38.5302228+08:00",
+        "seconds": 73.87,
+        "log": "testg06npc-20261021-124438-536.log",
+        "result": [
+          "G06_NPC_RESULT checks=60 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testg06npc-20261021-124438-536.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestG06Story",
+        "passed": true,
+        "started": "2026-10-21T12:45:52.3989687+08:00",
+        "seconds": 20.34,
+        "log": "testg06story-20261021-124552-408.log",
+        "result": [
+          "G06_STORY_RESULT checks=58 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testg06story-20261021-124552-408.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestG06StoryReload",
+        "passed": true,
+        "started": "2026-10-21T12:46:12.7425064+08:00",
+        "seconds": 4.24,
+        "log": "testg06storyreload-20261021-124612-749.log",
+        "result": [
+          "G06_STORY_RESULT checks=7 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testg06storyreload-20261021-124612-749.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "VisualG06Story",
+        "passed": true,
+        "started": "2026-10-21T12:46:16.9882509+08:00",
+        "seconds": 26.58,
+        "log": "visualg06story-20261021-124616-995.log",
+        "result": [
+          "G06_STORY_RESULT checks=68 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06story-20261021-124616-995.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "VisualG06Touch",
+        "passed": true,
+        "started": "2026-10-21T12:46:43.5708276+08:00",
+        "seconds": 10.14,
+        "log": "visualg06touch-20261021-124643-578.log",
+        "result": [
+          "G06_TOUCH_RESULT checks=22 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06touch-20261021-124643-578.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "VisualG06TouchCommerce",
+        "passed": true,
+        "started": "2026-10-21T12:46:53.7315666+08:00",
+        "seconds": 10.84,
+        "log": "visualg06touchcommerce-20261021-124653-740.log",
+        "result": [
+          "G06_TOUCH_COMMERCE_RESULT checks=53 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06touchcommerce-20261021-124653-740.log"
+        ],
+        "error": ""
+      },
+      {
+        "mode": "TestG06CommerceReload",
+        "passed": true,
+        "started": "2026-10-21T12:47:04.5792326+08:00",
+        "seconds": 4.29,
+        "log": "testg06commercereload-20261021-124704-586.log",
+        "result": [
+          "G06_COMMERCE_RESULT checks=5 failures=0",
+          "Log: D:\\RPGGAME\\artifacts\\logs\\testg06commercereload-20261021-124704-586.log"
+        ],
+        "error": ""
+      }
+    ]
+  },
+  "packages": {
+    "base_commit": "e82ee2dd2be44efa80d6afc62ca60e11b49c8780",
+    "candidate": "D:\\RPGGAME\\builds\\g08\\candidate\\20261021-124838\\ProjectCrystal.exe",
+    "qa": "D:\\RPGGAME\\builds\\g08\\qa\\20261021-124845\\ProjectCrystal.exe",
+    "profile": "D:\\RPGGAME\\artifacts\\g08\\20261021-124834\\profile",
+    "legacy_fixture_sha256": "03B537BC655864953DB207251AD0A175E3767D197D8C3C16BAB176830FBA270A",
+    "results": [
+      {
+        "label": "candidate-smoke",
+        "seconds": 12.8980485,
+        "exit_code": 0,
+        "log": "D:\\RPGGAME\\artifacts\\g08\\20261021-124834\\candidate-smoke.log",
+        "result": []
+      },
+      {
+        "label": "qa-prologue",
+        "seconds": 30.3197182,
+        "exit_code": 0,
+        "log": "D:\\RPGGAME\\artifacts\\g08\\20261021-124834\\qa-prologue.log",
+        "result": [
+          "G08_CANDIDATE_RESULT checks=160 failures=0"
+        ]
+      },
+      {
+        "label": "qa-restart",
+        "seconds": 6.7419856,
+        "exit_code": 0,
+        "log": "D:\\RPGGAME\\artifacts\\g08\\20261021-124834\\qa-restart.log",
+        "result": [
+          "G08_CANDIDATE_RESULT checks=44 failures=0"
+        ]
+      }
+    ]
+  },
+  "export_hashes": {
+    "candidate": {
+      "exe": "D:/RPGGAME/builds/g08/candidate/20261021-124838/ProjectCrystal.exe",
+      "exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+      "pck_sha256": "89eeceb906116213390b48dbefa3ac616adff252a43867c01a3ea8377d03e2c0"
+    },
+    "qa": {
+      "exe": "D:/RPGGAME/builds/g08/qa/20261021-124845/ProjectCrystal.exe",
+      "exe_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+      "pck_sha256": "dbda6de3715566a33c59a5e9e3e878233b01599f6bf3ffe2ef30b7edaf64f329"
+    }
+  },
+  "log_receipts": [
+    {
+      "path": "artifacts/logs/check-20261021-124335-528.log",
+      "sha256": "120e7a91978c4494d26fadbfb9746863dd1ffdf38473635e90d95e7231183cc7",
+      "results": [],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testenemyai-20261021-124340-000.log",
+      "sha256": "a3337fa137824e00b10084d334c68440aed7ef6a69e60b2eef8e955f1c722a49",
+      "results": [
+        "ENEMY_AI_RESULT checks=10 failures=0 targets=[&\"lia\", &\"ren\", &\"lia\", &\"ren\"]"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testphase3-20261021-124340-503.log",
+      "sha256": "b4b70f77aea9c34bb8b77db507a243b4dcc3779c34e1f6d0bf633bd634ff4ed4",
+      "results": [
+        "PHASE3_RESULT checks=75 failures=0 renderer=headless"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/smoke-20261021-124348-069.log",
+      "sha256": "6d1c065383a27c36804949b6ffa4b09714470b112e5dacc0bd5aeb7b9c147c4e",
+      "results": [],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testphase5-20261021-124349-771.log",
+      "sha256": "ab4fd32630dfb8d3fd64a4c30aa7e364491005db04424da725ea6ef8290c5a3a",
+      "results": [
+        "PHASE5_RESULT checks=69 failures=0 renderer=headless"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testphase5reload-20261021-124406-239.log",
+      "sha256": "9baee545a8574003edd5c0ea3e9829efacad924562be8af4d71e25e70b8537ad",
+      "results": [
+        "PHASE5_RESULT checks=7 failures=0 renderer=headless"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testphase6-20261021-124408-037.log",
+      "sha256": "198bd0a68ffdb378a4927800b73a5c869d30fd2a6c0a64b974dc4e025bd8181b",
+      "results": [
+        "PHASE6_RESULT checks=85 failures=0 renderer=headless"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testg06-20261021-124427-170.log",
+      "sha256": "8ecf0ca34c62a2e0da358ee5cfb767500eee01d90a7223428517e6085808ee9b",
+      "results": [
+        "G06_1_RESULT checks=51 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testg06reload-20261021-124434-218.log",
+      "sha256": "7d5403d8457375d59ed581a48dc166c681be490da212cba32e48bc1409be068b",
+      "results": [
+        "G06_1_RESULT checks=6 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testg06npc-20261021-124438-536.log",
+      "sha256": "643588492251dcaa0f0c0a50d75cdc157567581a83cd4773d33d2e2d83a88b55",
+      "results": [
+        "G06_NPC_RESULT checks=60 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testg06story-20261021-124552-408.log",
+      "sha256": "f8a283fdd5255def7ea795662e10c3434db8c3df3d5e88be0313fe32edd2c297",
+      "results": [
+        "G06_STORY_RESULT checks=58 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testg06storyreload-20261021-124612-749.log",
+      "sha256": "a6971f1ba24bd79f10f288e312a6ebcbcfae0fc47632df3805bd1c4853656b59",
+      "results": [
+        "G06_STORY_RESULT checks=7 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/visualg06story-20261021-124616-995.log",
+      "sha256": "5c2f16b3770ed10ecf6728ad5c02a6376efd6bff22fa900e4f6d06cc7124c273",
+      "results": [
+        "G06_STORY_RESULT checks=68 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/visualg06touch-20261021-124643-578.log",
+      "sha256": "e5d641d72114ac4f5b4b224ac743349a3c894db742aec6cd7807a4053da8df16",
+      "results": [
+        "G06_TOUCH_RESULT checks=22 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/visualg06touchcommerce-20261021-124653-740.log",
+      "sha256": "1a8083ebdcab9b9622ccb5d3060cf93e22c2f6b1680f2d99e8b3793155f1542d",
+      "results": [
+        "G06_TOUCH_COMMERCE_RESULT checks=53 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/logs/testg06commercereload-20261021-124704-586.log",
+      "sha256": "6cf323faf0e883225b8765f743a9aa324e22ca196ebafc1e6b5f0de00d3d91e1",
+      "results": [
+        "G06_COMMERCE_RESULT checks=5 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/g08/20261021-124834/candidate-smoke.log",
+      "sha256": "e7aa6979bdede2f7d985e3b9904003feaa3889dbcb1c8872188f264ae9035b8a",
+      "results": [],
+      "errors": []
+    },
+    {
+      "path": "artifacts/g08/20261021-124834/qa-prologue.log",
+      "sha256": "028cbedeae16fd99368ead5a4c18af5152e2da98ba5c936ef7405269dee7efab",
+      "results": [
+        "G08_CANDIDATE_RESULT checks=160 failures=0"
+      ],
+      "errors": []
+    },
+    {
+      "path": "artifacts/g08/20261021-124834/qa-restart.log",
+      "sha256": "8379d266f5871609dd46f954b963948a560717fcb0e4d3f167507d58221e4bf7",
+      "results": [
+        "G08_CANDIDATE_RESULT checks=44 failures=0"
+      ],
+      "errors": []
+    }
+  ],
+  "failed_test_receipt": {
+    "path": "artifacts/logs/visualnpcintegration-20261021-124208-725.log",
+    "sha256": "8a293723f7cf6636229f0e41aba4ab9116caea232f7b5f5d2baf8de5bdd70b76",
+    "results": [
+      "A05_NPC_INTEGRATION_RESULT checks=190 failures=3 renderer=Windows"
+    ],
+    "errors": [
+      "FAIL Existing SaveCodec accepts session after NPC services",
+      "FAIL Existing saved village reloads all NPC appearances",
+      "ERROR: Node not found: \"NPCs/Blacksmith\" (relative to \"/root/GreystoneIntegration/MapContainer/Village\").",
+      "SCRIPT ERROR: Cannot call method 'get_node' on a null value.",
+      "FAIL Six original NPC IDs; female remains candidate",
+      "ERROR: Node not found: \"NPCs/Blacksmith\" (relative to \"/root/GreystoneIntegration/MapContainer/Village\").",
+      "SCRIPT ERROR: Cannot call method 'get_node' on a null value."
+    ]
+  },
+  "limits": [
+    "Automated native graphics and injected input; no new human hardware acceptance",
+    "No patrol, item handoff, hammer work, finger rig or cloth simulation acceptance",
+    "Not a new 30-minute whole-game soak; Android/iOS paused"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "captures/detail-idle-Blacksmith.webp": "0aab221fa0bb4267f4e0d1fe5ff3ea8fc56de84e473cbd479e6d568a0b912736",
+  "captures/detail-idle-Innkeeper.webp": "06b797d446ca8abdc2bfa100f1987a1305bbf4f62a3845ea343329089211725f",
+  "captures/detail-idle-ItemMerchant.webp": "76848bfd6a34d97f02348ce59e1b41dbc48844ad2cd78b064ca953e659a8fb20",
+  "captures/detail-idle-Villager.webp": "81678b641b30b1a7cfc044c98d7b8ed5b72ac8acb1376928f808d7026c4ed0fc",
+  "captures/idle-Blacksmith.webp": "45db277a6db603d92dfc3d5a1ee01a13f081154f40304d6e33c31273c0e2b5e4",
+  "captures/idle-Innkeeper.webp": "b84e5965694622573c50df3f16063094bf33812f8b318b4dd0d6d356bb06010d",
+  "captures/idle-ItemMerchant.webp": "572dba072725f9a457b18b93128b5faadedac5ed65d837f265c9449dae4b4694",
+  "captures/idle-Villager.webp": "151db62a1050ad505b6b3825b53cd55645518ae0665e27ee9cdbbfad292a9731",
+  "captures/inn-feedback.webp": "f28b3a47587b7f4ed5bc010461f8c2c1d7d5b896fe0db180c87934f65358db0b",
+  "captures/purchase-feedback.webp": "5f1075bce7317fbe84e9ab2a263f88dab41876747026b5b9a8b5ba511ed4a148",
+  "captures/talk-Blacksmith.webp": "c7ace979c8dae226f4357e7ae87ef8f712b4e68d7b92bb069fe24d44dfdaefea",
+  "captures/talk-Innkeeper.webp": "553a82e0d0dcfbfb5728068f90ceaf408e2feb8060ea2b08c6568ec7c3df0160",
+  "captures/talk-ItemMerchant.webp": "3fe2b178624e8ad3612cd206c881fe4efc2a95b952d30314a521c07dd6e53d48",
+  "captures/talk-Villager.webp": "44da8d32d568571e5fe27b230b11e6d46567996769461724b50ac7359c784f66",
+  "evidence.json": "4a00a50a3e0507e75083c8c3691e69966c31a7004c0c2f9c9dc92c6fd949bba3",
+  "README.md": "49e706f87b7016c8332f937cd42e48fb007b1dfece24c64d034b337f178040d3"
+}
