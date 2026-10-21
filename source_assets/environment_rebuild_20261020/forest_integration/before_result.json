@@ -1,0 +1,17 @@
+{
+	"checks": 9,
+	"engine": "4.7.2-stable (official)",
+	"failures": 0,
+	"profile": {
+		"camera": "fixed whole map",
+		"draw_calls_max": 1580.0,
+		"draw_calls_min": 1580.0,
+		"engine_static_bytes_max": 342206550.0,
+		"fps_limit": 60,
+		"frames": 300,
+		"mean_ms": 16.6658666666667,
+		"p95_ms": 16.695,
+		"p99_ms": 16.73
+	},
+	"renderer": "Windows"
+}

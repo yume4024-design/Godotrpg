@@ -1,0 +1,30 @@
+[
+  {
+    "path": "scenes/world/expanded/forest.tscn",
+    "sha256": "030dd99e736564ec84b9ef735b4547b8542eab06b3184f7f29d3dc2e78fb3cca"
+  },
+  {
+    "path": "scenes/world/expanded/forest_scenery.tscn",
+    "sha256": "647bddf17f42ccb0db50bbc9eb60ad38abe5e8db74aa6042059e2766f0e414a0"
+  },
+  {
+    "path": "assets/models/environment/fallen_log.glb",
+    "sha256": "180b55fe66bb75206b543c9ea7057ab62e74ee3335798abe3665076ce268ec48"
+  },
+  {
+    "path": "scenes/world/greystone/props/fallen_log.tscn",
+    "sha256": "80adf73681afd3872f37cde185b2e5a4b88df73cd4292a1e47e387309eba365a"
+  },
+  {
+    "path": "scripts/world/expanded_wilderness.gd",
+    "sha256": "757db42c674f9484e6731b2adefefbf388d37befc0208c15a9dc3dd9b15c7547"
+  },
+  {
+    "path": "scripts/save/save_codec.gd",
+    "sha256": "39bce7df525d552919699315f38e056e26c65e8c27cf851737a98917f48f4272"
+  },
+  {
+    "path": "scenes/main/main.tscn",
+    "sha256": "56e3abb80522610dcf278b0cbaef58396b19ef6f3a66583da408ded2b258f875"
+  }
+]

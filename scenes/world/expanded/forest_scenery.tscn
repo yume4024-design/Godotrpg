@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/props/fallen_log.tscn" id="Log"]
+
+[sub_resource type="StandardMaterial3D" id="GroundPalette"]
+albedo_color = Color(0.29, 0.47, 0.36, 1)
+roughness = 0.95
+
+[sub_resource type="BoxMesh" id="SideGround"]
+material = SubResource("GroundPalette")
+size = Vector3(3.8, 0.6, 56.6)
+
+[sub_resource type="BoxMesh" id="EndGround"]
+material = SubResource("GroundPalette")
+size = Vector3(49, 0.6, 3.8)
+
+[node name="ForestScenery" type="Node3D"]
+metadata/purpose = "ENV02 perimeter scenery; original walkable bounds and all event/save locations retained"
+
+[node name="EdgeGround" type="Node3D" parent="."]
+metadata/collision = "Visual continuation only, beyond the unchanged solid outer walls"
+
+[node name="West" type="MeshInstance3D" parent="EdgeGround"]
+position = Vector3(-26.4, -0.3, 0)
+cast_shadow = 0
+mesh = SubResource("SideGround")
+
+[node name="East" type="MeshInstance3D" parent="EdgeGround"]
+position = Vector3(26.4, -0.3, 0)
+cast_shadow = 0
+mesh = SubResource("SideGround")
+
+[node name="North" type="MeshInstance3D" parent="EdgeGround"]
+position = Vector3(0, -0.3, -26.4)
+cast_shadow = 0
+mesh = SubResource("EndGround")
+
+[node name="South" type="MeshInstance3D" parent="EdgeGround"]
+position = Vector3(0, -0.3, 26.4)
+cast_shadow = 0
+mesh = SubResource("EndGround")
+
+[node name="Logs" type="Node3D" parent="."]
+
+[node name="WestLog" parent="Logs" instance=ExtResource("Log")]
+position = Vector3(-26.65, 0, -14)
+rotation = Vector3(0, 0.35, 0)
+
+[node name="EastLog" parent="Logs" instance=ExtResource("Log")]
+position = Vector3(26.65, 0, 9)
+rotation = Vector3(0, -0.4, 0)
+
+[node name="SouthLog" parent="Logs" instance=ExtResource("Log")]
+position = Vector3(8, 0, 26.7)
+rotation = Vector3(0, 0.12, 0)

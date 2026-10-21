@@ -6,10 +6,10 @@
 
 | 候選來源／作者 | 官方授權／版本快照 | 優先用途 | 現況 |
 |---|---|---|---|
-| [Nature Kit — Kenney](https://kenney.nl/assets/nature-kit) | CC0；頁面 1.0／2020，內附 License 標 2.1，差異保留 | 森林枯木、樹樁、岩石、灌木缺件 | log_large 已適配，268 面／Godot 566／0；[報告](ENV02_FREE_LOG_REPORT.md)，正式配置待做 |
+| [Nature Kit — Kenney](https://kenney.nl/assets/nature-kit) | CC0；頁面 1.0／2020，內附 License 標 2.1，差異保留 | 森林枯木、樹樁、岩石、灌木缺件 | log_large 已適配268面／獨立566／0；三件森林外緣配置52／0，[配置報告](ENV02_FOREST_INTEGRATION_REPORT.md)，其他素材待逐件適配 |
 | [Ultimate Nature Pack — Quaternius](https://quaternius.com/packs/ultimatenature.html) | CC0；June 2019，150 models，未列語義版本號 | 簡單切面植被／岩石，統一調色 | NOT_DOWNLOADED |
 | [Ultimate Stylized Nature Pack — Quaternius](https://quaternius.com/packs/ultimatestylizednature.html) | CC0；May 2022，63 models，未列語義版本號 | 需要較完整輪廓的森林物件 | NOT_DOWNLOADED |
 
 採用單件時保存下載網址、原包及內附授權、作者、實際版本／SHA；記錄原模型名、選取理由及修改內容到 ASSET_CREDITS。再檢查實測面數、單件預算、共用材質、比例／方向／原點、簡化碰撞、必要 LOD 及 Godot 畫面。原件保留，新版獨立輸出 GLB／PackedScene，符合道路和 NPC 預留空間後才替換。
 
-現有七棟 G03 建築與十七件 G04 合格資產不因素材來源增加而重造。水車、葉菜仍為本專案 Blender 原創模型，不能歸為 Kenney／Quaternius 成果。枯木僅獨立模型／碰撞驗收，沒有把單件通過當作整張森林完成。
+現有七棟 G03 建築與十七件 G04 合格資產不因素材來源增加而重造。水車、葉菜仍為本專案 Blender 原創模型，不能歸為 Kenney／Quaternius 成果。枯木已完成三件外緣配置，沒有把這個小項當作整張森林完成。

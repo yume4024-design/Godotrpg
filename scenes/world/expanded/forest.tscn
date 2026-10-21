@@ -1,5 +1,8 @@
 [gd_scene format=3]
 [ext_resource type="PackedScene" path="res://scenes/world/forest.tscn" id="Base"]
 [ext_resource type="Script" path="res://scripts/world/expanded_wilderness.gd" id="Expanded"]
+[ext_resource type="PackedScene" path="res://scenes/world/expanded/forest_scenery.tscn" id="Scenery"]
 [node name="Forest" instance=ExtResource("Base")]
 script = ExtResource("Expanded")
+
+[node name="Scenery" parent="." instance=ExtResource("Scenery")]

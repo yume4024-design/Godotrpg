@@ -8,6 +8,7 @@
 - `acceptance.json`：三版結構／視覺分層結果、輸出SHA與未完成事項。
 - `preserved_files.json`：正式角色、主入口、SaveCodec、序章與靜態來源對當時HEAD一致。
 - `formal_character_regression.txt`：Godot4.7.2圖形88／0，測舊正式模型，不表示新模型已能用。
+- `sha256.json`：圖片按原始bytes；文字按UTF-8、LF、無BOM計算SHA及bytes，與Git儲存內容一致，避免Windows換行造成假差異。原Native／GLB來源SHA仍是原始二進位檔雜湊。
 
 重現來源為已提交的 `../face_v2/lia_surface.blend`。從專案根目錄使用獨立Blender背景程序，不操作使用者正在編輯的場景：
 

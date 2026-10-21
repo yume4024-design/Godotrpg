@@ -1,0 +1,56 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS Real completed G06 prologue fixture loads
+PASS Fixture has exact completed progression and both characters
+PASS Existing SceneManager enters expanded forest
+PASS Additive scenery preserves collisions
+PASS Additive scenery preserves targets
+PASS Additive scenery preserves markers
+PASS Additive scenery preserves protected
+PASS Additive scenery preserves occupancy
+PASS 576 pre-existing capsule occupancy samples are unchanged
+PASS Full visible log stays outside original walkable walls: WestLog
+PASS Entire model has visual ground beneath it
+PASS Log placements share the same imported Mesh
+PASS Each placement retains the accepted 268 triangles
+PASS Placement retains simplified unscaled trunk capsule
+PASS Actual trunk collision remains active behind the traversal boundary
+PASS Full visible log stays outside original walkable walls: EastLog
+PASS Entire model has visual ground beneath it
+PASS Log placements share the same imported Mesh
+PASS Each placement retains the accepted 268 triangles
+PASS Placement retains simplified unscaled trunk capsule
+PASS Actual trunk collision remains active behind the traversal boundary
+PASS Full visible log stays outside original walkable walls: SouthLog
+PASS Entire model has visual ground beneath it
+PASS Log placements share the same imported Mesh
+PASS Each placement retains the accepted 268 triangles
+PASS Placement retains simplified unscaled trunk capsule
+PASS Actual trunk collision remains active behind the traversal boundary
+PASS Three instances cost 804 visible triangles, without duplicate models
+PASS Actual InputMap route reaches (-21.0, -18.0)
+PASS Route ends grounded and stopped
+PASS Actual InputMap route reaches (21.0, 11.0)
+PASS Route ends grounded and stopped
+PASS Actual InputMap route reaches (10.0, 21.0)
+PASS Route ends grounded and stopped
+PASS Actual InputMap route reaches (7.0, 0.0)
+PASS Route ends grounded and stopped
+PASS Safe original forest position saves
+PASS Same strict codec reloads forest with new scenery
+PASS Save/load preserves party
+PASS Save/load preserves inventory
+PASS Save/load preserves flags
+PASS Save/load preserves quests
+PASS Save/load preserves rewards
+PASS Save/load preserves story
+PASS Scenery behind boundary does not expand valid save coordinates
+PASS Forest returns through existing SceneManager
+PASS Forest reinstantiates after roundtrip
+PASS Placed models survive scene recreation
+PASS after_west_edge captured from native viewport
+PASS after_east_edge captured from native viewport
+PASS after_south_edge captured from native viewport
+PASS after_map captured from native viewport
+ENV02_FOREST_RESULT checks=52 failures=0 baseline=false

@@ -1,0 +1,45 @@
+{
+	"checks": 52,
+	"engine": "4.7.2-stable (official)",
+	"failures": 0,
+	"hidden_scenery_profile": {
+		"camera": "fixed whole map",
+		"draw_calls_max": 1759.0,
+		"draw_calls_min": 1759.0,
+		"engine_static_bytes_max": 342632113.0,
+		"fps_limit": 60,
+		"frames": 300,
+		"mean_ms": 16.66608,
+		"p95_ms": 16.706,
+		"p99_ms": 16.755
+	},
+	"placements": [
+		{
+			"bounds": "[P: (-28.23736, 0.0, -14.97424), S: (3.103006, 1.243152, 2.009874)]",
+			"name": "WestLog",
+			"triangles": 268
+		},
+		{
+			"bounds": "[P: (25.11713, 0.0, 7.89326), S: (3.086729, 1.243152, 2.019113)]",
+			"name": "EastLog",
+			"triangles": 268
+		},
+		{
+			"bounds": "[P: (6.448537, 0.0, 25.91397), S: (3.077885, 1.243152, 1.694237)]",
+			"name": "SouthLog",
+			"triangles": 268
+		}
+	],
+	"profile": {
+		"camera": "fixed whole map",
+		"draw_calls_max": 1775.0,
+		"draw_calls_min": 1775.0,
+		"engine_static_bytes_max": 342631045.0,
+		"fps_limit": 60,
+		"frames": 300,
+		"mean_ms": 16.66606,
+		"p95_ms": 16.696,
+		"p99_ms": 16.706
+	},
+	"renderer": "Windows"
+}

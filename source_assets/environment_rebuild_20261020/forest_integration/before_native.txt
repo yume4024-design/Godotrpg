@@ -1,0 +1,13 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS Real completed G06 prologue fixture loads
+PASS Fixture has exact completed progression and both characters
+PASS Existing SceneManager enters expanded forest
+PASS Refuse to overwrite pre-change baseline
+PASS Pre-change map has no added log scenery
+PASS before_west_edge captured from native viewport
+PASS before_east_edge captured from native viewport
+PASS before_south_edge captured from native viewport
+PASS before_map captured from native viewport
+ENV02_FOREST_RESULT checks=9 failures=0 baseline=true
