@@ -1,0 +1,144 @@
+{
+  "base_commit": "c18d56c3976e2819e10f9a1747fe7cde4dd4048f",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "blender": "5.2.2 LTS",
+  "source": {
+    "path": "source_assets/character_rebuild_20261020/ren/crotch_repair/ren_rigged.blend",
+    "sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850"
+  },
+  "final": {
+    "triangles": 10655,
+    "bones": 19,
+    "glb_sha256": "43a6c8cf732498a0bd9fdebbba4ad73c80b7db94de382d7d756f9087ae90eab0",
+    "blend_sha256": "e42d45233fc8a1e8d598a29cd95a2def37b131c7a23926bba0f72bb90fcf5301",
+    "model_scope": "Independent candidate only"
+  },
+  "gates": {
+    "triangle": "PASS",
+    "motion": "PASS",
+    "source_preservation": "PASS",
+    "waist_attachment": "PASS",
+    "native_graphical_import": "PASS",
+    "representative_visual_review": "PASS",
+    "formal_rpg_integration": "NOT_STARTED",
+    "physical_input": "NOT_TESTED"
+  },
+  "final_reports": {
+    "motion.json": {
+      "path": "source_assets/character_rebuild_20261020/ren/stitched_waist_20261021/motion.json",
+      "sha256": "49e3bcacc14804c6a3bffefcbc2dace4b8f2138d727748a6d34afd05db501c4a"
+    },
+    "preservation.json": {
+      "path": "source_assets/character_rebuild_20261020/ren/stitched_waist_20261021/preservation.json",
+      "sha256": "099061335f0bd02b02cd6e7d9f76c88b2f093f07bf2e45c4c9d2583b9b1613a3"
+    },
+    "waist_attachment.json": {
+      "path": "source_assets/character_rebuild_20261020/ren/stitched_waist_20261021/waist_attachment.json",
+      "sha256": "bd21980f222a10088d9bb4365b0349d8e97a653fbf0e0cd1cdc418ad0b933ce0"
+    },
+    "glb_audit.json": {
+      "path": "source_assets/character_rebuild_20261020/ren/stitched_waist_20261021/glb_audit.json",
+      "sha256": "c278a5f2b6d522b88f28f6d7052a5893109e61611ea55eb77d2c3349ab6da99c"
+    },
+    "stitch_report.json": {
+      "path": "source_assets/character_rebuild_20261020/ren/stitched_waist_20261021/stitch_report.json",
+      "sha256": "319c99f2d95b7cdadd84e612ee1ae58412000b254a180628d1d225e08baef7de"
+    },
+    "blender_import/report.json": {
+      "path": "source_assets/character_rebuild_20261020/ren/stitched_waist_20261021/blender_import/report.json",
+      "sha256": "d2bfc273cf00d67cfde885635c039d8bb957023f2c4bdb50e0b3745e8ea12dd9"
+    }
+  },
+  "tool_sources": {
+    "scripts/tools/plan_ren_hem_retopology.py": "c81994af604e87167d6a8aedbd47a671aedcdae0262fa2f52c032a98061eccb9",
+    "scripts/tools/rebuild_ren_lower_garment.py": "6a0be4d3798d7865be0e1297ee07dc8d448172b6285ef263c26538798d1a59ea",
+    "scripts/tools/calibrate_corner_normal_codes.py": "ba0dca6e055117fdf67cabb94aa4083fe5f4a08e9bb5b2e73ca8bb5fc7324093",
+    "scripts/tools/audit_ren_authored_preservation.py": "9818179587ca442db7e65d968781559efb2fa49afba632da291f140cc0120847",
+    "scripts/tools/audit_ren_waist_attachment.py": "c0371f4b1597a976176a2cd9a52231c53ebae96caeaec0347ab0fbac22666e53",
+    "scripts/tools/stitch_ren_waist.py": "53a20d3d364052f229aadaeef8051aa8ea3bd1076abc745a0c44e8748c96f631",
+    "tests/ren_authored_review.gd": "3f1bc65bd1f057b9df70a225a21648ad1fafeed50eb29d224751dc9f265b06cd",
+    "tools/godot.ps1": "f3c9280d723f4833a7ad36da7dc72a3c49c75e9828699d5bfa7d4cc0c12395aa"
+  },
+  "unchanged_formal_assets": {
+    "assets/models/pixal3d/ren_locomotion.glb": {
+      "sha256": "7a89ddf2792327f8ce817c03562f7de98f660c702627b10b0d83c9882e1237eb",
+      "unchanged": true
+    },
+    "assets/models/pixal3d/lia_locomotion.glb": {
+      "sha256": "8436c96f94e8091fdb836ac09b6c83439b3c6856626db637597cd32b960c7f24",
+      "unchanged": true
+    },
+    "scenes/characters/ren_pixal_visual.tscn": {
+      "sha256": "29af266d6713ede187d22f7374b7b847b5aeead68d67eae7776ff9047bab2e2d",
+      "unchanged": true
+    },
+    "scripts/core/greystone_integration.gd": {
+      "sha256": "bbd869cb5865102b5eb878e9265dfd1c58d4e7d068db6bf06332a51b82878135",
+      "unchanged": true
+    },
+    "project.godot": {
+      "sha256": "6e865951346dc7fd6870b08474547cd7c98083bdb9fd943cccac646c473b9303",
+      "unchanged": true
+    }
+  },
+  "log_receipts": [
+    {
+      "path": "artifacts/logs/visualrenauthored-20261021-132616-265.log",
+      "sha256": "a003366cf689e4f0256244e02cf9fc6a9c3a11ae25d11ce81423897ab32f5df9",
+      "results": [
+        "REN_AUTHORED_REVIEW_RESULT checks=68 failures=7 triangles=10655"
+      ],
+      "error_lines": [
+        "ERROR: Stop/reset restores all bone poses: attack",
+        "ERROR: Stop/reset restores all bone poses: cast",
+        "ERROR: Stop/reset restores all bone poses: guard",
+        "ERROR: Stop/reset restores all bone poses: hit",
+        "ERROR: Stop/reset restores all bone poses: potion",
+        "ERROR: Stop/reset restores all bone poses: run",
+        "ERROR: Stop/reset restores all bone poses: walk"
+      ]
+    },
+    {
+      "path": "artifacts/logs/visualrenauthored-20261021-132653-600.log",
+      "sha256": "9437309a558d4ec251f8799833349f7c6a0f4a135c403e0d5ab159def3f32ca3",
+      "results": [
+        "REN_AUTHORED_REVIEW_RESULT checks=68 failures=0 triangles=10655"
+      ],
+      "error_lines": []
+    },
+    {
+      "path": "artifacts/logs/visualrenauthored-20261021-134016-734.log",
+      "sha256": "412eb066c9731bd88c735d08cca1b7f45ef990245c0d978c828f310d057cbee1",
+      "results": [
+        "REN_AUTHORED_REVIEW_RESULT checks=72 failures=0 triangles=10655"
+      ],
+      "error_lines": []
+    },
+    {
+      "path": "artifacts/logs/testpixalcharacters-20261021-132908-292.log",
+      "sha256": "b79c305a5b136ba3651c541439a2cca580627510da90b546e7c40598d1f4ae5d",
+      "results": [
+        "PIXAL_CHARACTER_RESULT checks=88 failures=0"
+      ],
+      "error_lines": []
+    },
+    {
+      "path": "artifacts/logs/check-20261021-132902-174.log",
+      "sha256": "120e7a91978c4494d26fadbfb9746863dd1ffdf38473635e90d95e7231183cc7",
+      "results": [],
+      "error_lines": []
+    }
+  ],
+  "reproducibility": {
+    "v3_glb_byte_equal": true,
+    "sha256": "446505990a35effaaaa9bdfb20cfea3d16bc476c226ab4e5e498eb28b113f7c7",
+    "original_native_sha256": "340c1bd2cfc3990aacc1820b04db835f454e0e5ba08d9d95a0000c1a7cf5a804",
+    "repeated_native_sha256": "a2e7af6b25fc864388266da3ef952c50bd754be833581af64c84ee6d0d997a33",
+    "native_byte_equality_required": false
+  },
+  "limits": [
+    "Representative visual sampling, not all frames collision-free",
+    "No sword/socket, production controller, village/combat/save or new hardware acceptance",
+    "No new 30-minute soak; Android/iOS paused; full chapter one remains incomplete"
+  ]
+}

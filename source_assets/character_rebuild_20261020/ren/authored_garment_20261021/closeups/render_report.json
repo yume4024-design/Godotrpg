@@ -1,0 +1,32 @@
+{
+  "input": "source_assets\\character_rebuild_20261020\\ren\\authored_garment_20261021\\ren_rigged.blend",
+  "sha256": "755151216e09f1d2ac412462c3dd2d89f5ef6755bb97dded86d445a546a727b9",
+  "captures": [
+    {
+      "clip": "run",
+      "frame": 4,
+      "view": "front",
+      "file": "run_4_front.png"
+    },
+    {
+      "clip": "run",
+      "frame": 12,
+      "view": "right",
+      "file": "run_12_right.png"
+    },
+    {
+      "clip": "cast",
+      "frame": 8,
+      "view": "front",
+      "file": "cast_8_front.png"
+    },
+    {
+      "clip": "cast",
+      "frame": 8,
+      "view": "right",
+      "file": "cast_8_right.png"
+    }
+  ],
+  "closeup": true,
+  "purpose": "Failure evidence only; does not certify animation or production integration"
+}

@@ -25,3 +25,16 @@ ren/garment*/*.png
 # Superseded raw UV-index connectivity inventory is not physical topology.
 ren/garment_topology/
 ren/garment_topology_geometric/topology.json
+# Authored repair failures stay local; receipts and budgeted WebP evidence are retained.
+ren/authored_garment_20261021/*.blend
+ren/authored_garment_20261021/*.glb
+ren/authored_garment_20261021/*.png
+ren/authored_garment_20261021_v2/*.blend
+ren/authored_garment_20261021_v2/*.glb
+ren/authored_garment_20261021_v2/*.png
+ren/authored_garment_20261021_v3/*.glb
+ren/authored_garment_20261021_v3/*.png
+ren/authored_garment_*/closeups/*.png
+ren/stitched_waist_20261021/closeups/*.png
+ren/authored_*plan*/*.png
+ren/accessory_diagnosis_20261021/*.png

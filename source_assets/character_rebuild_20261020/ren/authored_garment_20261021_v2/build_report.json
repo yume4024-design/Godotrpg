@@ -1,0 +1,43 @@
+{
+  "source_sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850",
+  "plan_sha256": "21e2f14417a2a27c0ea172e604e798c9963a1c5d1d716be06bc13cf41873e209",
+  "recipe_sha256": "3408c6b6cdafdaf6b8b0ff2360a26a1ae0ed49fa592c6c17d0476813a7f2394c",
+  "method": "Authored continuous trousers with shared crotch seam, two split side-wrap panels and true thickness",
+  "triangles": 10655,
+  "bones": 19,
+  "clips": [
+    "attack",
+    "cast",
+    "guard",
+    "hit",
+    "potion",
+    "run",
+    "walk"
+  ],
+  "retained_original_face_count": 8666,
+  "replaced_source_faces": 4142,
+  "protected_pouch_faces": 964,
+  "retained_boundary_fragments": 236,
+  "retained_normal_reencoding_max_error": 0.01301928653196987,
+  "retained_normal_reencoding_over_002": 4,
+  "maximum_weight_sum_error": 4.1676685214042664e-08,
+  "waist_pouch_weight_vertices": 430,
+  "thigh_pouch_weight_vertices": 664,
+  "new_coat_atlas": [
+    1024,
+    512
+  ],
+  "nearest_sample_fallbacks": 0,
+  "old_hem_atlas_pixels_replaced": 67440,
+  "source_albedo_changed": false,
+  "action_keyframes_changed": false,
+  "gates": {
+    "motion": "NOT_TESTED",
+    "visual": "NOT_TESTED",
+    "formal_gameplay": "NOT_STARTED"
+  },
+  "outputs": {
+    "ren_rigged.blend": "6b8edf23d47e6bfa1b4451bb53130a9c286215b9127dd97b5fe4cfa6322c1289",
+    "ren_rigged.glb": "223c3f5ad99876381ff12b2c7f60b4c510e4a45bccd1c53c5f0416fc351fe08b"
+  }
+}

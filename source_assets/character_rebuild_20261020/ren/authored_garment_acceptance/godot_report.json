@@ -1,0 +1,22 @@
+{
+	"bones": 19,
+	"checks": 72,
+	"clips": [
+		"attack",
+		"cast",
+		"guard",
+		"hit",
+		"potion",
+		"run",
+		"walk"
+	],
+	"failures": [],
+	"formal_gameplay": false,
+	"graphical": true,
+	"import_method": "Runtime GLTFDocument in isolated review; not production cached-resource import",
+	"model": "res://source_assets/character_rebuild_20261020/ren/stitched_waist_20261021/ren_rigged.glb",
+	"physical_input": false,
+	"sha256": "43a6c8cf732498a0bd9fdebbba4ad73c80b7db94de382d7d756f9087ae90eab0",
+	"triangles": 10655,
+	"visual_acceptance": "HUMAN_REVIEW"
+}

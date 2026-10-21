@@ -1,0 +1,125 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\character_rebuild_20261020\\ren\\stitched_waist_20261021\\ren_rigged.glb",
+    "category": "player_character",
+    "sha256": "43a6c8cf732498a0bd9fdebbba4ad73c80b7db94de382d7d756f9087ae90eab0",
+    "maximum_triangles": 15000,
+    "triangles": 10655,
+    "headroom_triangles": 4345,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.327134668827057e-07,
+    "primitives": [
+      {
+        "node": 19,
+        "mesh": 0,
+        "triangles": 352,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 19,
+        "mesh": 0,
+        "triangles": 176,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 20,
+        "mesh": 1,
+        "triangles": 352,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 20,
+        "mesh": 1,
+        "triangles": 176,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 21,
+        "mesh": 2,
+        "triangles": 128,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 22,
+        "mesh": 3,
+        "triangles": 448,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 23,
+        "mesh": 4,
+        "triangles": 9023,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      19
+    ],
+    "materials": 5,
+    "animations": [
+      "attack",
+      "cast",
+      "guard",
+      "hit",
+      "potion",
+      "run",
+      "walk"
+    ],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 10655,
+  "status": "PASS"
+}

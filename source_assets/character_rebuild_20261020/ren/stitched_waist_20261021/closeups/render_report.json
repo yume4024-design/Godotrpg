@@ -1,0 +1,32 @@
+{
+  "input": "source_assets\\character_rebuild_20261020\\ren\\stitched_waist_20261021\\ren_rigged.blend",
+  "sha256": "e42d45233fc8a1e8d598a29cd95a2def37b131c7a23926bba0f72bb90fcf5301",
+  "captures": [
+    {
+      "clip": "run",
+      "frame": 4,
+      "view": "front",
+      "file": "run_4_front.png"
+    },
+    {
+      "clip": "run",
+      "frame": 12,
+      "view": "right",
+      "file": "run_12_right.png"
+    },
+    {
+      "clip": "cast",
+      "frame": 8,
+      "view": "front",
+      "file": "cast_8_front.png"
+    },
+    {
+      "clip": "cast",
+      "frame": 8,
+      "view": "right",
+      "file": "cast_8_right.png"
+    }
+  ],
+  "closeup": true,
+  "purpose": "Failure evidence only; does not certify animation or production integration"
+}

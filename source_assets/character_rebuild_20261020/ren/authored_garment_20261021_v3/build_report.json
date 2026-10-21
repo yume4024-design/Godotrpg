@@ -1,0 +1,104 @@
+{
+  "source_sha256": "93e7f80ada44f2ce8e00205f88e59f61c125c78772881bd4cd92b9740a65c850",
+  "plan_sha256": "21e2f14417a2a27c0ea172e604e798c9963a1c5d1d716be06bc13cf41873e209",
+  "recipe_sha256": "6a0be4d3798d7865be0e1297ee07dc8d448172b6285ef263c26538798d1a59ea",
+  "method": "Authored continuous trousers with shared crotch seam, two split side-wrap panels and true thickness",
+  "triangles": 10655,
+  "bones": 19,
+  "clips": [
+    "attack",
+    "cast",
+    "guard",
+    "hit",
+    "potion",
+    "run",
+    "walk"
+  ],
+  "retained_original_face_count": 8666,
+  "replaced_source_faces": 4142,
+  "protected_pouch_faces": 964,
+  "retained_boundary_fragments": 236,
+  "retained_normal_reencoding_max_error": 0.001959993664439394,
+  "retained_normal_reencoding_over_002": 0,
+  "normal_code_calibration": {
+    "storage": "Blender custom_normal INT16_2D",
+    "target_vectors_changed": false,
+    "tolerance": 0.002,
+    "before_maximum": 0.01301928653196987,
+    "after_maximum": 0.001959993664439394,
+    "corrected_loops": [
+      {
+        "loop": 20402,
+        "before_code": [
+          18789,
+          0
+        ],
+        "after_code": [
+          18788.0,
+          786.0
+        ],
+        "before_error": 0.007583942624659681,
+        "after_error": 2.4243346649818935e-05
+      },
+      {
+        "loop": 22520,
+        "before_code": [
+          19315,
+          0
+        ],
+        "after_code": [
+          19315.0,
+          -16.0
+        ],
+        "before_error": 0.0023348105642877833,
+        "after_error": 0.00025523218396439026
+      },
+      {
+        "loop": 24263,
+        "before_code": [
+          6987,
+          0
+        ],
+        "after_code": [
+          6988.0,
+          288.0
+        ],
+        "before_error": 0.004555066172158766,
+        "after_error": 1.0222935093818944e-05
+      },
+      {
+        "loop": 24549,
+        "before_code": [
+          -32487,
+          0
+        ],
+        "after_code": [
+          -32486.0,
+          -84.0
+        ],
+        "before_error": 0.01301928653196987,
+        "after_error": 7.468122008998268e-05
+      }
+    ]
+  },
+  "maximum_weight_sum_error": 4.1676685214042664e-08,
+  "waist_pouch_weight_vertices": 430,
+  "thigh_pouch_weight_vertices": 664,
+  "new_coat_atlas": [
+    1024,
+    512
+  ],
+  "nearest_sample_fallbacks": 0,
+  "old_hem_atlas_pixels_replaced": 149635,
+  "source_albedo_changed": false,
+  "action_keyframes_changed": false,
+  "gates": {
+    "motion": "NOT_TESTED",
+    "visual": "NOT_TESTED",
+    "formal_gameplay": "NOT_STARTED"
+  },
+  "outputs": {
+    "ren_rigged.blend": "340c1bd2cfc3990aacc1820b04db835f454e0e5ba08d9d95a0000c1a7cf5a804",
+    "ren_rigged.glb": "446505990a35effaaaa9bdfb20cfea3d16bc476c226ab4e5e498eb28b113f7c7"
+  }
+}

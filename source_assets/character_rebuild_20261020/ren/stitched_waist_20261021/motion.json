@@ -1,0 +1,113 @@
+{
+  "input": "source_assets\\character_rebuild_20261020\\ren\\stitched_waist_20261021\\ren_rigged.blend",
+  "sha256": "e42d45233fc8a1e8d598a29cd95a2def37b131c7a23926bba0f72bb90fcf5301",
+  "category": "player_character",
+  "maximum_triangles": 15000,
+  "bones": 19,
+  "actions": {
+    "attack": {
+      "frames": 17,
+      "maximum_triangles": 10655,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.744355425695935,
+      "floor_range": [
+        0.00199996680021286,
+        0.9267202615737915
+      ]
+    },
+    "cast": {
+      "frames": 17,
+      "maximum_triangles": 10655,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.629400817269436,
+      "floor_range": [
+        0.00199996680021286,
+        0.9267202615737915
+      ]
+    },
+    "guard": {
+      "frames": 17,
+      "maximum_triangles": 10655,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.3398248916538922,
+      "floor_range": [
+        0.00199996680021286,
+        0.9267202615737915
+      ]
+    },
+    "hit": {
+      "frames": 17,
+      "maximum_triangles": 10655,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.1528759014108747,
+      "floor_range": [
+        0.0019999444484710693,
+        0.9375078678131104
+      ]
+    },
+    "potion": {
+      "frames": 17,
+      "maximum_triangles": 10655,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.4000121431596666,
+      "floor_range": [
+        0.00199996680021286,
+        0.9267202615737915
+      ]
+    },
+    "run": {
+      "frames": 17,
+      "maximum_triangles": 10655,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 2.15124191220068,
+      "floor_range": [
+        0.0019998804200440645,
+        0.9267202615737915
+      ]
+    },
+    "walk": {
+      "frames": 25,
+      "maximum_triangles": 10655,
+      "endpoint_vertex_difference": 0.0,
+      "max_edge_stretch": 1.726146142006095,
+      "floor_range": [
+        0.001999936066567898,
+        0.9267202615737915
+      ]
+    }
+  },
+  "total_frames": 127,
+  "topology_warnings": [
+    {
+      "mesh": "RenRetainedSource",
+      "boundary_edges": 8893,
+      "nonmanifold_edges": 8918
+    },
+    {
+      "mesh": "RenAuthoredTrousers",
+      "boundary_edges": 48,
+      "nonmanifold_edges": 48
+    },
+    {
+      "mesh": "RenAuthoredThighStrap",
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    {
+      "mesh": "RenAuthoredCoatRight",
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    },
+    {
+      "mesh": "RenAuthoredCoatLeft",
+      "boundary_edges": 0,
+      "nonmanifold_edges": 0
+    }
+  ],
+  "failures": [],
+  "status": "PASS",
+  "limitations": [
+    "Numeric screening does not certify intersections or artistic fidelity",
+    "Nonmanifold counts are warnings; visual review remains separate"
+  ]
+}

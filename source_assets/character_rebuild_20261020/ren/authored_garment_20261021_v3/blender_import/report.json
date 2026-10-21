@@ -1,0 +1,185 @@
+{
+  "source": "D:\\RPGGAME\\source_assets\\character_rebuild_20261020\\ren\\authored_garment_20261021_v3\\ren_rigged.glb",
+  "blender_version": "5.2.2 LTS",
+  "triangle_budget": 15000,
+  "category": "player_character",
+  "preflight": {
+    "schema_version": 1,
+    "file": "source_assets\\character_rebuild_20261020\\ren\\authored_garment_20261021_v3\\ren_rigged.glb",
+    "category": "player_character",
+    "sha256": "446505990a35effaaaa9bdfb20cfea3d16bc476c226ab4e5e498eb28b113f7c7",
+    "maximum_triangles": 15000,
+    "triangles": 10655,
+    "headroom_triangles": 4345,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": true
+    },
+    "max_weight_sum_error": 1.327134668827057e-07,
+    "primitives": [
+      {
+        "node": 19,
+        "mesh": 0,
+        "triangles": 352,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 19,
+        "mesh": 0,
+        "triangles": 176,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 20,
+        "mesh": 1,
+        "triangles": 352,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 20,
+        "mesh": 1,
+        "triangles": 176,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 21,
+        "mesh": 2,
+        "triangles": 128,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 22,
+        "mesh": 3,
+        "triangles": 448,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      },
+      {
+        "node": 23,
+        "mesh": 4,
+        "triangles": 9023,
+        "attributes": [
+          "JOINTS_0",
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0",
+          "WEIGHTS_0"
+        ]
+      }
+    ],
+    "skins": [
+      19
+    ],
+    "materials": 5,
+    "animations": [
+      "attack",
+      "cast",
+      "guard",
+      "hit",
+      "potion",
+      "run",
+      "walk"
+    ],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "exported": false,
+  "unverified": [
+    "silhouette",
+    "overlapping faces",
+    "rig deformation",
+    "animation transitions",
+    "engine functional QA"
+  ],
+  "total_triangles": 10655,
+  "objects": [
+    {
+      "name": "RenAuthoredCoatLeft",
+      "triangles": 528,
+      "vertices": 320,
+      "uv_layers": 1,
+      "nonmanifold_edges": 108,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "RenAuthoredCoatRight",
+      "triangles": 528,
+      "vertices": 320,
+      "uv_layers": 1,
+      "nonmanifold_edges": 108,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "RenAuthoredThighStrap",
+      "triangles": 128,
+      "vertices": 64,
+      "uv_layers": 1,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "RenAuthoredTrousers",
+      "triangles": 448,
+      "vertices": 896,
+      "uv_layers": 1,
+      "nonmanifold_edges": 896,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "RenRetainedSource",
+      "triangles": 9023,
+      "vertices": 10189,
+      "uv_layers": 1,
+      "nonmanifold_edges": 8897,
+      "degenerate_faces": 0
+    }
+  ],
+  "ignored_importer_bone_helpers": [
+    "Icosphere"
+  ],
+  "failures": [],
+  "warnings": [
+    "NONMANIFOLD_OR_BOUNDARY"
+  ],
+  "basic_checks_passed": true
+}
