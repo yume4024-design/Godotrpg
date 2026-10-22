@@ -1,0 +1,8 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+ERROR: Stable visual-only beam path for later visibility integration
+   at: push_error (core/variant/variant_utility.cpp:1023)
+   GDScript backtrace (most recent call first):
+       [0] _check (res://tests/mine_support_test.gd:19)
+       [1] _run (res://tests/mine_support_test.gd:90)
+MINE_SUPPORT_RESULT checks=53 failures=1 graphical=false

@@ -1,0 +1,85 @@
+{
+  "author": "Project Crystal; original procedural mesh",
+  "blender": "5.2.2 LTS",
+  "triangles": 804,
+  "budget": 1200,
+  "parts": [
+    {
+      "node": "PostLeft",
+      "triangles": 268,
+      "godot_bounds": [
+        [
+          -2.325000047683716,
+          0.0,
+          -0.125
+        ],
+        [
+          -2.075000047683716,
+          2.4000000953674316,
+          0.125
+        ]
+      ],
+      "boundary_or_nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "intentional_closed_overlapping_components": true,
+      "self_intersection_union_tested": false
+    },
+    {
+      "node": "PostRight",
+      "triangles": 268,
+      "godot_bounds": [
+        [
+          2.075000047683716,
+          0.0,
+          -0.125
+        ],
+        [
+          2.325000047683716,
+          2.4000000953674316,
+          0.125
+        ]
+      ],
+      "boundary_or_nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "intentional_closed_overlapping_components": true,
+      "self_intersection_union_tested": false
+    },
+    {
+      "node": "Beam",
+      "triangles": 268,
+      "godot_bounds": [
+        [
+          -2.3499999046325684,
+          2.375,
+          -0.15000000596046448
+        ],
+        [
+          2.3499999046325684,
+          2.625,
+          0.15000000596046448
+        ]
+      ],
+      "boundary_or_nonmanifold_edges": 0,
+      "zero_area_faces": 0,
+      "intentional_closed_overlapping_components": true,
+      "self_intersection_union_tested": false
+    }
+  ],
+  "palette": "existing G04 wood / wood_cut / iron; shared post-import resources",
+  "textures": 0,
+  "materials": 3,
+  "rigid_meshes": 3,
+  "scale": "1 unit = 1 metre; Y-up glTF; ground-centre root",
+  "original_collision_boxes_unchanged": true,
+  "formal_map_integrated": false,
+  "outputs": {
+    "mine_support_frame.blend": {
+      "sha256": "484767ba21facc87758f2a5180c1c091889fee2afcd70e40ca3aefa34abceb46",
+      "bytes": 93934
+    },
+    "mine_support_frame.glb": {
+      "sha256": "06604313fd9273a75b258cc13263dec7d1989ad4173de0f81cb72c16d35f3abb",
+      "bytes": 41476
+    }
+  }
+}

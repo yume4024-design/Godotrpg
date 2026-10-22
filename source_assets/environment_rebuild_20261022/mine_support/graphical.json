@@ -1,0 +1,50 @@
+{
+	"budget": 1200,
+	"captures": [
+		"eight_instances",
+		"three_quarter",
+		"front_scale",
+		"strap_detail"
+	],
+	"checks": 58,
+	"failures": [],
+	"formal_map_integrated": false,
+	"graphical": true,
+	"instances": 8,
+	"materials": [
+		"res://assets/materials/greystone/props/wood.tres",
+		"res://assets/materials/greystone/props/wood_cut.tres",
+		"res://assets/materials/greystone/props/iron.tres"
+	],
+	"method": "Standalone actual imported mesh bounds, shared resource checks and CharacterBody3D capsule motion; not the full Player/InputMap, a formal map route or a performance benchmark.",
+	"movement": [
+		{
+			"case": "Walk through centre",
+			"frames": 180,
+			"position": "(0.0, 0.000839, -2.799998)",
+			"speed": 1.8
+		},
+		{
+			"case": "Run back through centre",
+			"frames": 75,
+			"position": "(0.0, 0.000839, 3.025002)",
+			"speed": 4.5
+		},
+		{
+			"case": "Post blocks at x=-2.2",
+			"frames": 60,
+			"position": "(-2.2, 0.000085, 0.44594)",
+			"speed": 4.5
+		},
+		{
+			"case": "Post blocks at x=2.2",
+			"frames": 60,
+			"position": "(2.2, 0.000122, 0.445935)",
+			"speed": 4.5
+		}
+	],
+	"no_focus_window": true,
+	"physical_input": false,
+	"triangle_instances": 6432,
+	"triangles": 804
+}

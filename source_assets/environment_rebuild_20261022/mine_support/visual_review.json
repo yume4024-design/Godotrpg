@@ -1,0 +1,34 @@
+{
+  "captures": "Actual Godot 4.7.2 Windows native viewport; 910x512 WebP; no focus requested",
+  "scope": "Standalone rigid prop only, not hero art, formal mine lighting, performance, player input or whole-game certification",
+  "scores": [
+    {
+      "id": "COMP-FRAME",
+      "score": 2,
+      "evidence": "Single-frame front and three-quarter views include both feet and beam ends without clipping."
+    },
+    {
+      "id": "COMP-NEG-SPACE",
+      "score": 2,
+      "evidence": "Opening silhouette is unobstructed; no decorative diagonal braces narrow the passage."
+    },
+    {
+      "id": "LIGHT-KEY-FILL",
+      "score": 2,
+      "evidence": "Three-quarter and strap views show chamfer faces and band depth without crushed timber shadows."
+    },
+    {
+      "id": "COLOR-COUNT",
+      "score": 2,
+      "evidence": "Wood, cut-wood and muted iron remain a restrained neutral structural palette."
+    }
+  ],
+  "notes": [
+    "Rivet heads share the matte iron surface and read mainly at close range; they are decorative, not an interaction signal.",
+    "Existing Ren is a scale reference only; its close-up face or animations are not newly certified by this prop review."
+  ],
+  "not_applicable": [
+    "TYPE/ICON/HUD",
+    "Combat FX and motion"
+  ]
+}

@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-22 — 原創礦坑支架模組
+
+Project Crystal原創Blender參數化木架，804 triangles、三個剛性Mesh；沿用本專案G04木材／端木／鐵材配色與共用材質，沒有下載商店模型、付費生成或外部貼圖。來源scripts/tools/greystone/build_mine_support.py、source_assets/environment_rebuild_20261022/mine_support/mine_support_frame.blend，遊戲GLB assets/models/environment/mine_support_frame.glb；來源／輸出SHA、失敗輪次及獨立驗收見[報告](ENV02_MINE_SUPPORT_REPORT.md)。目前是已驗證的獨立素材，正式礦坑未替換；不將原生幾何佔位當作這次新製模型。
+
 ## 2026-10-22 — 莉雅新生成與頭部底色衍生
 
 沿用使用者已核准金髮藍眼紫衣四視圖與既有本機Pixal3D權重／工作流；單件prompt 5a7e6c0e-7cf5-4ad1-8844-bb9838777e58，沒有付費partner節點或第三方商店下載。本輪內建imagegen依實際頭部emission投影與原設計修整底色，正面區域回烘既有UV，原圖／模型保留，沒有新增髮型或造型授權主張。新1254²真Alpha修整圖已存入專案，完整提示詞、來源SHA、工作原件與限制見[莉雅報告](LIA_REBUILD_20261022_REPORT.md)及source_assets/character_rebuild_20261020/lia/head_projection/repair_provenance.json。靜態候選未宣稱綁定或正式可用。

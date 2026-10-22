@@ -1,0 +1,20 @@
+00:02.484  image.write      | ERROR OpenImageIO write failed: Could not open file "C:\Users\yume4\.thumbnails\large\blender_11504_38533dd420a314d33b0e902b5ba8146d.png.png"
+Info: Saved as "mine_support_frame.blend"
+INFO Draco is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_draco_bridge.dll
+INFO MeshOptimizer is available, use library at C:\Program Files\Blender Foundation\Blender 5.2\5.2\scripts\addons_core\io_scene_gltf2\bf_intern_meshopt_bridge.dll
+13:25:55 | INFO: Starting glTF 2.0 export
+13:25:55 | INFO: Extracting primitive: Beam
+13:25:55 | INFO: Primitives created: 3
+13:25:55 | INFO: Extracting primitive: PostLeft
+13:25:55 | INFO: Primitives created: 3
+13:25:55 | INFO: Extracting primitive: PostRight
+13:25:55 | INFO: Primitives created: 3
+13:25:55 | INFO: Finished glTF 2.0 export in 0.06790018081665039 s
+
+MINE_SUPPORT_BUILT 804 triangles
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit
+
+D:\RPGGAME\scripts\tools\greystone\build_mine_support.py:143: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material.use_nodes = True

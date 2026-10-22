@@ -1,0 +1,85 @@
+{
+  "base_commit": "0b267985157f8c9109fca200d0909bce5fa82454",
+  "builder_sha256": "a5b17732bad59bc391c778a4e19bad2efc427412f1c17db53492e0fc1cd41c42",
+  "game_glb_sha256": "06604313fd9273a75b258cc13263dec7d1989ad4173de0f81cb72c16d35f3abb",
+  "unchanged_production_files": [
+    {
+      "path": "project.godot",
+      "normalized_lf_sha256": "306c1e670e6022d8bb7bcd82f71fd33af8b39b924654ba5e149bb198a7bbc181"
+    },
+    {
+      "path": "scenes/main/main.tscn",
+      "normalized_lf_sha256": "56e3abb80522610dcf278b0cbaef58396b19ef6f3a66583da408ded2b258f875"
+    },
+    {
+      "path": "scenes/world/expanded/forest.tscn",
+      "normalized_lf_sha256": "030dd99e736564ec84b9ef735b4547b8542eab06b3184f7f29d3dc2e78fb3cca"
+    },
+    {
+      "path": "scenes/world/expanded/mine.tscn",
+      "normalized_lf_sha256": "bc19cd4df246dc9552537bef53da786f681e54b60f92b9ff67efc149001a5fa3"
+    },
+    {
+      "path": "scripts/core/greystone_integration.gd",
+      "normalized_lf_sha256": "b80efb12075518022cd68c16f71d857da03901af9ed6b5053cf9fbf856e2e817"
+    },
+    {
+      "path": "scripts/world/expanded_wilderness.gd",
+      "normalized_lf_sha256": "757db42c674f9484e6731b2adefefbf388d37befc0208c15a9dc3dd9b15c7547"
+    },
+    {
+      "path": "data/battles/expanded_battles.json",
+      "normalized_lf_sha256": "02eea916b859bd7c2411c07fd2d55ea102eabf07c1e5a8e4fbd003d2cf82092b"
+    },
+    {
+      "path": "data/battles/prologue_battles.json",
+      "normalized_lf_sha256": "5ef6d851381c4652051e4130a76237dfb0a8382de696578a1f17cc9508e3bd1f"
+    },
+    {
+      "path": "data/quests/q001.json",
+      "normalized_lf_sha256": "0f6ce113859ddc65a3d2f9fb9d837f8ae418587e0babcd4308a038d8339ca2bc"
+    },
+    {
+      "path": "data/story/exploration_dialogue.json",
+      "normalized_lf_sha256": "d0558968064b8d05001549978500346506a6ae5d0d0b2b46e9d3460d23d0a493"
+    },
+    {
+      "path": "data/story/prologue_events.json",
+      "normalized_lf_sha256": "27926913b6ca584bc56fa22e173eb5f00741dbac5abf5f670ce09d70fd05e640"
+    },
+    {
+      "path": "scripts/save/.gitkeep",
+      "normalized_lf_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "scripts/save/greystone_migration.gd",
+      "normalized_lf_sha256": "ddd6f6449f6339ae3027d41ca04fef2da43402238846119a097426cd6a106517"
+    },
+    {
+      "path": "scripts/save/greystone_migration.gd.uid",
+      "normalized_lf_sha256": "50f7e15f7d0680c627d3a0736416ea6eff75abda55939a9ab3a71248414364cd"
+    },
+    {
+      "path": "scripts/save/save_codec.gd",
+      "normalized_lf_sha256": "39bce7df525d552919699315f38e056e26c65e8c27cf851737a98917f48f4272"
+    },
+    {
+      "path": "scripts/save/save_codec.gd.uid",
+      "normalized_lf_sha256": "781c50259f550dcf50d70679aafd5d6e86a51af7b4baa3e409f805dbf14f5029"
+    },
+    {
+      "path": "scripts/save/save_manager.gd",
+      "normalized_lf_sha256": "a41d66813ffc212ce9c1d9da0710e4607e8562e5143426206c199e8116a4ee96"
+    },
+    {
+      "path": "scripts/save/save_manager.gd.uid",
+      "normalized_lf_sha256": "73272b3844c8683692c796638d8ea5b7ff1bf6bb02be4ddcfc09b4b7b4377c85"
+    }
+  ],
+  "live_blender": "Read-only status before/after: unsaved Scene, Cube/Light/Camera, frame1, Object mode; all authoring used a separate background process.",
+  "temporary_no_focus_override_removed": true,
+  "formal_mine_integrated": false,
+  "hardware_gate": "New RC4 keyboard/mouse and Xbox acceptance is still pending; old fixed PCK is unchanged.",
+  "test_normalized_lf_sha256": "a535a023437234f10cb1d4f4bbba2d139ce1da9b3cca730648ac17b00311486a",
+  "runner_normalized_lf_sha256": "d6e6edfe1c6bea2afb8ce2153faeb8ecb1bac76b7d2370d9e5b829c6a69d3b52"
+}
