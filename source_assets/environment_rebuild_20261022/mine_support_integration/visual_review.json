@@ -1,0 +1,35 @@
+{
+  "scope": "Native integrated mine-support replacement only, not whole-map art or physical input acceptance",
+  "captures": [
+    "after_frame.webp",
+    "after_map.webp",
+    "occlusion_active.webp"
+  ],
+  "scores": [
+    {
+      "id": "COMP-NEG-SPACE",
+      "score": 2,
+      "evidence": "Opening remains traversable; the production ray hides only the beam, retaining both posts."
+    },
+    {
+      "id": "COLOR-COUNT",
+      "score": 2,
+      "evidence": "Muted wood, cut wood and iron remain subordinate to the existing blue crystals."
+    },
+    {
+      "id": "LIGHT-KEY-FILL",
+      "score": 2,
+      "evidence": "Chamfer and metal straps remain visible in the existing mine light."
+    },
+    {
+      "id": "COMP-DEPTH-LAYERS",
+      "score": 0,
+      "evidence": "Whole map remains a flat exposed layout with repetitive legacy sphere rocks; this prop does not solve the mine environment."
+    }
+  ],
+  "known_limits": [
+    "Existing long world labels can clip at the viewport edge; not changed here.",
+    "The after captures retain the expected status message from the deliberately rejected occupied-position save.",
+    "Rivet detail is mostly close-range decoration."
+  ]
+}

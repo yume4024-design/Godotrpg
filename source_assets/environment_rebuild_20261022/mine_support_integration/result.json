@@ -1,0 +1,241 @@
+{
+	"baseline": false,
+	"checks": 84,
+	"connected_controller_snapshot": [
+		{
+			"device": 0,
+			"left_x": -0.0131379961967468,
+			"left_y": 0.00834667682647705,
+			"name": "XInput Controller"
+		}
+	],
+	"engine": "4.7.2-stable (official)",
+	"failures": 0,
+	"imported_triangles": 6432,
+	"input_method": "InputMap actions with joypad-motion bindings removed in this QA process; not physical input acceptance",
+	"profile": {
+		"camera": "fixed whole mine; short diagnostic only",
+		"draw_calls_max": 671.0,
+		"draw_calls_min": 671.0,
+		"engine_static_bytes_max": 342662794.0,
+		"fps": 60.0035282074586,
+		"fps_limit": 60,
+		"frames": 300,
+		"max_ms": 17.099,
+		"mean_ms": 16.6656866666667,
+		"p95_ms": 16.788,
+		"p99_ms": 17.077
+	},
+	"renderer": "Windows",
+	"routes": [
+		{
+			"actual": "(-10.8, 0.000391, -17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": false,
+			"target": "(-10.8, -18.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(-10.8, 0.000391, -14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": true,
+			"target": "(-10.8, -14.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(-10.8, 0.000391, 17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": false,
+			"target": "(-10.8, 18.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(-10.8, 0.000391, 14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": true,
+			"target": "(-10.8, 14.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(-2.8, 0.000391, -17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": false,
+			"target": "(-2.8, -18.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(-2.8, 0.000391, -14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": true,
+			"target": "(-2.8, -14.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(-2.8, 0.000391, 17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": false,
+			"target": "(-2.8, 18.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(-2.8, 0.000391, 14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": true,
+			"target": "(-2.8, 14.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(2.8, 0.000391, -17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": false,
+			"target": "(2.8, -18.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(2.8, 0.000391, -14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": true,
+			"target": "(2.8, -14.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(2.8, 0.000391, 17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": false,
+			"target": "(2.8, 18.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(2.8, 0.000391, 14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": true,
+			"target": "(2.8, 14.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(10.8, 0.000391, -17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": false,
+			"target": "(10.8, -18.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(10.8, 0.000391, -14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": true,
+			"target": "(10.8, -14.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(10.8, 0.000391, 17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": false,
+			"target": "(10.8, 18.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		},
+		{
+			"actual": "(10.8, 0.000391, 14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"input_after_release": "(0.0, 0.0)",
+			"locked": false,
+			"on_floor": true,
+			"reached": true,
+			"running": true,
+			"target": "(10.8, 14.0)",
+			"velocity": "(0.0, 0.0, 0.0)"
+		}
+	],
+	"shared_meshes": 3
+}

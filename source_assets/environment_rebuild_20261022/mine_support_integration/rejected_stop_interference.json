@@ -1,0 +1,184 @@
+{
+	"baseline": false,
+	"checks": 84,
+	"engine": "4.7.2-stable (official)",
+	"failures": 1,
+	"imported_triangles": 6432,
+	"profile": {
+		"camera": "fixed whole mine; short diagnostic only",
+		"draw_calls_max": 674.0,
+		"draw_calls_min": 674.0,
+		"engine_static_bytes_max": 342644455.0,
+		"fps": 60.003912255079,
+		"fps_limit": 60,
+		"frames": 300,
+		"max_ms": 17.03,
+		"mean_ms": 16.66558,
+		"p95_ms": 16.822,
+		"p99_ms": 16.946
+	},
+	"renderer": "Windows",
+	"routes": [
+		{
+			"actual": "(-10.8, 0.000391, -17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": false,
+			"target": "(-10.8, -18.0)"
+		},
+		{
+			"actual": "(-10.8, 0.000391, -14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": true,
+			"target": "(-10.8, -14.0)"
+		},
+		{
+			"actual": "(-10.8, 0.000391, 17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": false,
+			"target": "(-10.8, 18.0)"
+		},
+		{
+			"actual": "(-10.8, 0.000391, 14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": true,
+			"target": "(-10.8, 14.0)"
+		},
+		{
+			"actual": "(-2.8, 0.000391, -17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": false,
+			"target": "(-2.8, -18.0)"
+		},
+		{
+			"actual": "(-2.8, 0.000391, -14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": true,
+			"target": "(-2.8, -14.0)"
+		},
+		{
+			"actual": "(-2.8, 0.000391, 17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": false,
+			"target": "(-2.8, 18.0)"
+		},
+		{
+			"actual": "(-2.8, 0.000391, 14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": true,
+			"target": "(-2.8, 14.0)"
+		},
+		{
+			"actual": "(2.8, 0.000391, -17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": false,
+			"target": "(2.8, -18.0)"
+		},
+		{
+			"actual": "(2.8, 0.000391, -14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": true,
+			"target": "(2.8, -14.0)"
+		},
+		{
+			"actual": "(2.8, 0.000391, 17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": false,
+			"target": "(2.8, 18.0)"
+		},
+		{
+			"actual": "(2.601737, 0.000391, 14.0508)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": true,
+			"target": "(2.8, 14.0)"
+		},
+		{
+			"actual": "(10.79296, 0.000391, -17.8788)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": false,
+			"target": "(10.8, -18.0)"
+		},
+		{
+			"actual": "(10.79977, 0.000391, -14.12878)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": true,
+			"target": "(10.8, -14.0)"
+		},
+		{
+			"actual": "(10.8, 0.000391, 17.87003)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": false,
+			"target": "(10.8, 18.0)"
+		},
+		{
+			"actual": "(10.8, 0.000391, 14.12001)",
+			"contacts": [
+				"(0.0, -0.3, 0.0)"
+			],
+			"locked": false,
+			"reached": true,
+			"running": true,
+			"target": "(10.8, 14.0)"
+		}
+	],
+	"shared_meshes": 3
+}

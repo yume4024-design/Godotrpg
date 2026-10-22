@@ -1,6 +1,6 @@
 # ENV02 礦坑支架獨立素材
 
-日期：2026-10-22；起點 `0b267985157f8c9109fca200d0909bce5fa82454`，分支 `feature/greystone-g06`。**獨立 GLB／碰撞／原生預覽已驗證，正式礦坑尚未替換。** G08.3 的新 RC4 實體鍵鼠／Xbox 問題仍待回覆；本素材不改固定候選 EXE／PCK。
+日期：2026-10-22；起點 `0b267985157f8c9109fca200d0909bce5fa82454`，分支 `feature/greystone-g06`。**本頁保存獨立素材階段；後續已接入新版G06礦坑八組位置，原生84／0，見[整合報告](ENV02_MINE_SUPPORT_INTEGRATION_REPORT.md)。** 原正式v0.6.1仍保留。G08.3 的新 RC4 實體鍵鼠／Xbox 問題仍待回覆；本素材不改固定候選 EXE／PCK。
 
 ## 交付與比例
 
@@ -57,4 +57,4 @@ Visual runner只在未存在使用者override.cfg時，暫建自己擁有的no-f
 2. 首次Godot結構53項中1項失敗：匯入多了一層`MineSupportFrame`根節點。修正視覺metadata為`Model/MineSupportFrame/Beam`並確認它指向實際Mesh；沒有放寬路徑斷言。
 3. 一次路徑診斷未隔離預設日誌而出現log寫入錯誤，未列成功；改為隔離APPDATA／LOCALAPPDATA及明確本機log後重新確認。
 
-下一項為將純視覺模組替換正式礦坑八組原生柱／樑外觀，保留原碰撞與layout；只將實際Beam加入既有遮擋群組。需真實礦坑Player探索、遮擋、往返、存讀檔、序章及效能對照通過後才勾選整合完成。本輪不開始G08.4／G08.5或第一章。
+以上為獨立製作階段的原始紀錄。其後八組純視覺支架已替換新版G06礦坑原生外觀，原生Player走跑、遮擋、往返及嚴格存讀通過；保留原碰撞與layout。後續測試、已知Draw Calls成本及其餘未完成項目見[整合報告](ENV02_MINE_SUPPORT_INTEGRATION_REPORT.md)，不將本件進度視為G08或第一章完成。

@@ -2,7 +2,7 @@
 
 ## 2026-10-22 — 原創礦坑支架模組
 
-Project Crystal原創Blender參數化木架，804 triangles、三個剛性Mesh；沿用本專案G04木材／端木／鐵材配色與共用材質，沒有下載商店模型、付費生成或外部貼圖。來源scripts/tools/greystone/build_mine_support.py、source_assets/environment_rebuild_20261022/mine_support/mine_support_frame.blend，遊戲GLB assets/models/environment/mine_support_frame.glb；來源／輸出SHA、失敗輪次及獨立驗收見[報告](ENV02_MINE_SUPPORT_REPORT.md)。目前是已驗證的獨立素材，正式礦坑未替換；不將原生幾何佔位當作這次新製模型。
+Project Crystal原創Blender參數化木架，804 triangles、三個剛性Mesh；沿用本專案G04木材／端木／鐵材配色與共用材質，沒有下載商店模型、付費生成或外部貼圖。來源scripts/tools/greystone/build_mine_support.py、source_assets/environment_rebuild_20261022/mine_support/mine_support_frame.blend，遊戲GLB assets/models/environment/mine_support_frame.glb；來源／輸出SHA、失敗輪次及獨立驗收見[報告](ENV02_MINE_SUPPORT_REPORT.md)。後續已以八份純視覺PackedScene接入新版G06礦坑，原碰撞及正式v0.6.1保留，見[整合報告](ENV02_MINE_SUPPORT_INTEGRATION_REPORT.md)；不將原生幾何佔位當作這次新製模型。
 
 ## 2026-10-22 — 莉雅新生成與頭部底色衍生
 

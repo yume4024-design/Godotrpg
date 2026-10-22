@@ -1,0 +1,87 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS Native test window does not request user focus
+PASS Existing completed isolated fixture offers Continue
+PASS Strict codec loads real completed G08 fixture
+PASS Unaltered completed progression loaded
+PASS Existing SceneManager enters expanded mine
+PASS Protected source exists: res://scenes/main/main.tscn
+PASS Protected source exists: res://scenes/world/mine.tscn
+PASS Protected source exists: res://scripts/world/expanded_wilderness.gd
+PASS Protected source exists: res://scripts/world/scene_manager.gd
+PASS Protected source exists: res://scripts/world/exploration_occlusion.gd
+PASS Protected source exists: res://scripts/core/greystone_integration.gd
+PASS Protected source exists: res://scripts/save/save_codec.gd
+PASS Protected source exists: res://data/story/prologue_events.json
+PASS Protected source exists: res://data/quests/q001.json
+PASS Frozen scope includes 34 colliders, four interactions and 475 capsule probes
+PASS Visual replacement preserves collisions
+PASS Visual replacement preserves targets
+PASS Visual replacement preserves markers
+PASS Visual replacement preserves protected
+PASS Visual replacement preserves occupancy
+PASS Eight imported supports replace primitive renderers
+PASS Exactly eight support PackedScene instances
+PASS Visual adapter adds no second collision set
+PASS Imported beam registered: Support0
+PASS Imported beam registered: Support1
+PASS Imported beam registered: Support2
+PASS Imported beam registered: Support3
+PASS Imported beam registered: Support4
+PASS Imported beam registered: Support5
+PASS Imported beam registered: Support6
+PASS Imported beam registered: Support7
+PASS Eight assemblies share three Mesh resources; 6432 triangles
+PASS All placements share the existing three G04 materials
+PASS Existing three fixed and eight imported beams are the only occluders
+PASS Actual InputMap walk reaches (-10.8, -18.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap run reaches (-10.8, -14.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap walk reaches (-10.8, 18.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap run reaches (-10.8, 14.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap walk reaches (-2.8, -18.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap run reaches (-2.8, -14.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap walk reaches (-2.8, 18.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap run reaches (-2.8, 14.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap walk reaches (2.8, -18.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap run reaches (2.8, -14.0)
+PASS Actual controller stops grounded
+FAIL Actual InputMap walk reaches (2.8, 18.0)
+PASS Actual controller stops grounded
+FAIL Actual InputMap run reaches (2.8, 14.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap walk reaches (10.8, -18.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap run reaches (10.8, -14.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap walk reaches (10.8, 18.0)
+PASS Actual controller stops grounded
+PASS Actual InputMap run reaches (10.8, 14.0)
+PASS Actual controller stops grounded
+FAIL Original post stops actual player at capsule contact
+PASS Imported beam hides when the production camera ray crosses the hero
+PASS Actual follow-camera occlusion captured
+PASS Imported beam returns when player clears its camera ray
+PASS Existing safe mine lane saves through the unchanged codec
+PASS Strict save reload reconstructs the imported supports
+PASS Save/load preserves party
+PASS Save/load preserves inventory
+PASS Save/load preserves flags
+PASS Save/load preserves quests
+PASS Save/load preserves rewards
+PASS Save/load preserves story
+FAIL Retained timber collision still rejects an occupied save position
+PASS Real E interaction exits mine into existing forest
+PASS Forest entrance recreates imported mine supports
+PASS after_frame native viewport captured
+PASS after_map native viewport captured
+ENV02_MINE_INTEGRATION_RESULT checks=83 failures=4 baseline=false

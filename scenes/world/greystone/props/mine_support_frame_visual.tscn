@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" path="res://assets/models/environment/mine_support_frame.glb" id="Model"]
 
 [node name="MineSupportFrameVisual" type="Node3D"]
-metadata/stage = "ENV02 standalone candidate; formal mine is unchanged"
+metadata/stage = "ENV02 shared visual; expanded mine retains original collision bodies"
 metadata/triangle_budget = 1200
 metadata/beam_node = "Model/MineSupportFrame/Beam"
 

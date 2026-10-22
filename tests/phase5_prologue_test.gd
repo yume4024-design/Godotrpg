@@ -6,6 +6,9 @@ var slot: String = "user://p5_tests/restart.json"
 var visual_slot: String = "user://p5_tests/visual.json"
 
 func _initialize() -> void:
+	if OS.get_environment("CRYSTAL_QA_ISOLATE_JOYPAD_MOTION") == "1":
+		var hardware: Array[Dictionary] = preload("res://tests/qa_input_isolation.gd").isolate_joypad_motion()
+		print("QA_JOYPAD_MOTION_ISOLATED ", JSON.stringify(hardware))
 	_run.call_deferred()
 
 func _run() -> void:

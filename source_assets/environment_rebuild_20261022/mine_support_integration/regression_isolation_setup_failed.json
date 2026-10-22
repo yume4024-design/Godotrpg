@@ -1,0 +1,88 @@
+{
+  "base_commit": "bb1ac68c6ed804117c3b49406e9481dde663bef5",
+  "dirty_worktree": true,
+  "platform": "Windows desktop; touch and controller events simulated",
+  "joypad_motion_isolation_requested": true,
+  "android_verified": false,
+  "results": [
+    {
+      "mode": "Check",
+      "passed": true,
+      "started": "2026-10-22T14:41:15.0057197+08:00",
+      "seconds": 5.47,
+      "log": "check-20261022-144115-041.log",
+      "result": [
+        "Log: D:\\RPGGAME\\artifacts\\logs\\check-20261022-144115-041.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestEnemyAI",
+      "passed": true,
+      "started": "2026-10-22T14:41:20.5461321+08:00",
+      "seconds": 0.66,
+      "log": "testenemyai-20261022-144120-555.log",
+      "result": [
+        "ENEMY_AI_RESULT checks=10 failures=0 targets=[&\"lia\", &\"ren\", &\"lia\", &\"ren\"]",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testenemyai-20261022-144120-555.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase3",
+      "passed": true,
+      "started": "2026-10-22T14:41:21.2058738+08:00",
+      "seconds": 7.86,
+      "log": "testphase3-20261022-144121-213.log",
+      "result": [
+        "PHASE3_RESULT checks=75 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase3-20261022-144121-213.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "Smoke",
+      "passed": true,
+      "started": "2026-10-22T14:41:29.0734984+08:00",
+      "seconds": 1.86,
+      "log": "smoke-20261022-144129-083.log",
+      "result": [
+        "Log: D:\\RPGGAME\\artifacts\\logs\\smoke-20261022-144129-083.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase5",
+      "passed": true,
+      "started": "2026-10-22T14:41:30.9362210+08:00",
+      "seconds": 16.66,
+      "log": "testphase5-20261022-144130-942.log",
+      "result": [
+        "PHASE5_RESULT checks=69 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase5-20261022-144130-942.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase5Reload",
+      "passed": true,
+      "started": "2026-10-22T14:41:47.5989876+08:00",
+      "seconds": 1.95,
+      "log": "testphase5reload-20261022-144147-606.log",
+      "result": [
+        "PHASE5_RESULT checks=7 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase5reload-20261022-144147-606.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase6",
+      "passed": false,
+      "started": "2026-10-22T14:41:49.5499905+08:00",
+      "seconds": 19.47,
+      "log": "testphase6-20261022-144149-557.log",
+      "result": [],
+      "error": "Godot exited with code 1."
+    }
+  ]
+}

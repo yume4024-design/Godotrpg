@@ -1,0 +1,91 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+QA_JOYPAD_MOTION_ISOLATED []
+JOYPADS []
+PASS Production P5 scene loads
+PASS Missing save rejected without changing session
+PASS Equipment ready through normal menu service
+PASS Xbox B cancels target without spending turn
+PASS First story battle won with real commands
+PASS E004 reaches mine prerequisite
+PASS Forest mine entrance traversed with E
+PASS Walking into inner mine triggers E005
+PASS Save during dialogue deferred, no partial file
+PASS E005 commits two potions and objective once
+PASS Pending save writes at safe point
+PASS Current snapshot validates before any load
+PASS E005 cannot refill reward
+PASS Missing item rejects event before dialogue or flags
+PASS Missing sequence cannot fake completion
+PASS E005 potion can be consumed without refilling
+PASS Save records consumed reward and receipt
+PASS Valid save restores all owners
+PASS HP is restored from disk
+PASS Position and map restored
+PASS Loading inside E005 area does not replace consumed potion
+PASS Load does not replay completed events
+PASS Crystal starts E006 without revealing Aster
+PASS Crystal animation must finish before flag or item
+PASS Save waits for animated sequence
+PASS Completed animation grants exactly one star seal
+PASS Already inside boss area reevaluates E006 prerequisite
+PASS B002 spawns level three guardian
+PASS Battle save remains pending and leaves existing slot intact
+PASS Xbox B cancels target without spending turn
+PASS Guardian defeat grants nothing and cannot complete E007
+PASS Guardian retry starts another real battle
+PASS Retry restores vitals without replaying crystal reward
+PASS Xbox B cancels target without spending turn
+PASS Two battles grant 62 gold total
+PASS B002 return completes event and total 100 EXP
+PASS Battle pending save commits after result acknowledgment
+PASS Mine exit returns to forest
+PASS Guildmaster routes to return quest
+PASS E008 completes quest and chapter unlock atomically
+PASS Reward observers see completed quest and flags together
+PASS Exact full-prologue rewards: 212 gold and 300 EXP each
+PASS E008 and reward replay rejected
+PASS Investigation/departure epilogue finishes without extra rewards
+PASS Journal projects all five completed flags
+PASS Repeated guild interaction gives no extra quest reward
+PASS Save menu writes final progress
+PASS Corrupt case 0 rejected
+PASS Corrupt case 0 leaves current session unchanged
+PASS Corrupt case 1 rejected
+PASS Corrupt case 1 leaves current session unchanged
+PASS Corrupt case 2 rejected
+PASS Corrupt case 2 leaves current session unchanged
+PASS Corrupt case 3 rejected
+PASS Corrupt case 3 leaves current session unchanged
+PASS Corrupt case 4 rejected
+PASS Corrupt case 4 leaves current session unchanged
+PASS Corrupt case 5 rejected
+PASS Corrupt case 5 leaves current session unchanged
+PASS Corrupt case 6 rejected
+PASS Corrupt case 6 leaves current session unchanged
+PASS Corrupt case 7 rejected
+PASS Corrupt case 7 leaves current session unchanged
+PASS Corrupt case 8 rejected
+PASS Corrupt case 8 leaves current session unchanged
+PASS Corrupt case 9 rejected
+PASS Corrupt case 9 leaves current session unchanged
+PASS Corrupt case 10 rejected
+PASS Corrupt case 10 leaves current session unchanged
+PASS Previous valid slot backed up
+PASS Explicit backup load recovers last valid session
+PASS Final save re-established for fresh process test
+PASS Xbox Menu opens and locks exploration
+PASS Volume change keeps focus in the same channel
+PASS Mute persists outside gameplay save
+PASS Audio preferences written to disk
+PASS Audio has bounded six voices and two music decks
+PASS Loop imported: village
+PASS Loop imported: forest
+PASS Loop imported: mine
+PASS Loop imported: battle
+PASS Xbox B closes menu and restores movement
+PASS Stick drift inside radial deadzone does not move
+FAIL Analog stick moves character through physics and switches prompts
+PASS Keyboard M still works and restores keyboard hints
+P6_AUTOMATED_ROUTE_SECONDS 18.654 (accelerated test, not playtime acceptance)
+PHASE6_RESULT checks=85 failures=1 renderer=headless

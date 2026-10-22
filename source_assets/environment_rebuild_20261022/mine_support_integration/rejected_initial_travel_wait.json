@@ -1,0 +1,20 @@
+{
+	"baseline": true,
+	"checks": 55,
+	"engine": "4.7.2-stable (official)",
+	"failures": 43,
+	"profile": {
+		"camera": "fixed whole mine; short diagnostic only",
+		"draw_calls_max": 843.0,
+		"draw_calls_min": 812.0,
+		"engine_static_bytes_max": 339898295.0,
+		"fps": 60.0001920006144,
+		"fps_limit": 60,
+		"frames": 300,
+		"max_ms": 18.681,
+		"mean_ms": 16.6666133333333,
+		"p95_ms": 16.912,
+		"p99_ms": 17.254
+	},
+	"renderer": "Windows"
+}

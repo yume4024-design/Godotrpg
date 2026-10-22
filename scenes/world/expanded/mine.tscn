@@ -1,5 +1,5 @@
 [gd_scene format=3]
 [ext_resource type="PackedScene" path="res://scenes/world/mine.tscn" id="Base"]
-[ext_resource type="Script" path="res://scripts/world/expanded_wilderness.gd" id="Expanded"]
+[ext_resource type="Script" path="res://scripts/world/mine_environment.gd" id="Expanded"]
 [node name="Mine" instance=ExtResource("Base")]
 script = ExtResource("Expanded")

@@ -1,0 +1,59 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS Native test window does not request user focus
+FAIL Existing completed isolated fixture offers Continue
+FAIL Strict codec loads real completed G08 fixture
+FAIL Unaltered completed progression loaded
+FAIL Existing SceneManager enters expanded mine
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+FAIL Unhandled original shape: ConcavePolygonShape3D
+PASS Protected source exists: res://scenes/main/main.tscn
+PASS Protected source exists: res://scenes/world/mine.tscn
+PASS Protected source exists: res://scripts/world/expanded_wilderness.gd
+PASS Protected source exists: res://scripts/world/scene_manager.gd
+PASS Protected source exists: res://scripts/world/exploration_occlusion.gd
+PASS Protected source exists: res://scripts/core/greystone_integration.gd
+PASS Protected source exists: res://scripts/save/save_codec.gd
+PASS Protected source exists: res://data/story/prologue_events.json
+FAIL Protected source exists: res://data/quests/prologue_quests.json
+FAIL Frozen scope includes 34 colliders, four interactions and 475 capsule probes
+PASS Refuse to overwrite original pre-replacement baseline
+PASS before_frame native viewport captured
+PASS before_map native viewport captured
+ENV02_MINE_INTEGRATION_RESULT checks=55 failures=43 baseline=true

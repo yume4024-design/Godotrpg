@@ -1,0 +1,22 @@
+{
+	"baseline": false,
+	"checks": 83,
+	"engine": "4.7.2-stable (official)",
+	"failures": 4,
+	"imported_triangles": 6432,
+	"profile": {
+		"camera": "fixed whole mine; short diagnostic only",
+		"draw_calls_max": 674.0,
+		"draw_calls_min": 671.0,
+		"engine_static_bytes_max": 342723691.0,
+		"fps": 59.9991720114262,
+		"fps_limit": 60,
+		"frames": 300,
+		"max_ms": 17.206,
+		"mean_ms": 16.6668966666667,
+		"p95_ms": 16.941,
+		"p99_ms": 17.161
+	},
+	"renderer": "Windows",
+	"shared_meshes": 3
+}
