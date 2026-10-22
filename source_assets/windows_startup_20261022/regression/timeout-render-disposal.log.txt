@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS Deliberate timeout failure shows error state
+PASS Failure message is actionable and contains no internal path
+PASS Error exit is visible and focused
+PASS Native failure screen captured at 960x540
+PASS Focused error exit received actual keyboard input
+BOOTSTRAP_FAILURE_RESULT checks=5 failures=0 case=timeout

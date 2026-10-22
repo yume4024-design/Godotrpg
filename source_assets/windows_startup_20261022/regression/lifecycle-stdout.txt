@@ -1,0 +1,790 @@
+WorkerThreadPool: 12 threads, 3 max low-priority.
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+TextServer: Added interface "Dummy"
+TextServer: Added interface "ICU / HarfBuzz / Graphite (Built-in)"
+Accessibility: AccessKit driver loaded.
+Native OpenGL API detected: 3.3: NVIDIA - NVIDIA GeForce RTX 3080
+NVAPI: Init OK!
+NVAPI: Application not found in profile, creating...
+NVAPI: Error creating application: NVAPI_EXECUTABLE_ALREADY_IN_USE(code -167)
+Accessibility: window 0 adapter created.
+SDL: Init OK!
+Using "winink" pen tablet driver...
+Shader 'CanvasSdfShaderGLES3' SHA256: f8d737771bf05c8369340f64b82953a33f60ab007837ea9350c179579d504ef4
+Shader 'SkeletonShaderGLES3' SHA256: 8ee121ea3091049340ef2319383511b9640ce92135690828aa54ebb2a1c52207
+Shader 'ParticlesShaderGLES3' SHA256: 7c388af35cc74e10455a0f5bb483539b1aeb2e821650294f2dfa3e9cc804fc7b
+Shader 'ParticlesCopyShaderGLES3' SHA256: f17a8e9d885bc6a96bccf28ac166d9e4255de022a02e65d4787932e2e27a6e28
+Shader 'CopyShaderGLES3' SHA256: cb6d040493dde831b283b5661fdae6fca7bc085d199fcd4df16de8e308d873f2
+Shader 'CubemapFilterShaderGLES3' SHA256: 04cced7dd35d7c22cd08792143c87e5770f7971654e7d34d25b8bdd4b500e091
+Shader 'GlowShaderGLES3' SHA256: ee91c8ddab2d74020d6a040b09ec48b249654ea58439fe31f520935c0a506b46
+Shader 'PostShaderGLES3' SHA256: c0fc9aa811bf0eb4cff0acbb8902f17d9db965a34d7f09f1b370814a6ea9fdcb
+Shader 'FeedShaderGLES3' SHA256: 6689f5bfcb29991b2660b2695642a0322a60c1215a25e3e90da45cccb37ee5e7
+Shader 'CanvasShaderGLES3' SHA256: 220c16c8c40530c2ee99705c025487c2d24385ce1145dcf81085e0a09425a5a2
+Shader 'CanvasOcclusionShaderGLES3' SHA256: 1910f23bb9b73b59ad0ad827b6b250944c35ff793606a3dac88f6310b8a4e169
+Shader 'SceneShaderGLES3' SHA256: f162635cc3bb7b3dd06cdaa7bc027304add15b7f60e052b191e66427880dc00f
+Shader 'SkyShaderGLES3' SHA256: fcf90e2386c00960a414d4f8234b16ca2d29d165154304708f606004892ab03f
+Shader 'TexBlitShaderGLES3' SHA256: 5fb8faa497f3977e04a2cd4784baa6f943b3e5aeba4e22c0a6f619888d625069
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+WASAPI: Activated output_device using IAudioClient3 interface
+WASAPI: wFormatTag = 65534
+WASAPI: nChannels = 2
+WASAPI: nSamplesPerSec = 48000
+WASAPI: nAvgBytesPerSec = 384000
+WASAPI: nBlockAlign = 8
+WASAPI: wBitsPerSample = 32
+WASAPI: cbSize = 22
+WASAPI: mix_rate = 48000
+WASAPI: fundamental_period_frames = 480
+WASAPI: min_period_frames = 480
+WASAPI: max_period_frames = 480
+WASAPI: selected a period frame size of 480
+WASAPI: detected 2 channels
+WASAPI: audio buffer frames: 480 calculated latency: 10ms
+
+TextServer: Primary interface set to: "ICU / HarfBuzz / Graphite (Built-in)".
+Loading resource: res://default_bus_layout.tres remapped: res://default_bus_layout.tres
+Completed load for: 'res://default_bus_layout.tres' remapped 'res://default_bus_layout.tres' at thread -1
+CORE API HASH: 2004498165
+EDITOR API HASH: 1696660745
+Loading resource: res://artifacts/windows_bootstrap/lifecycle.gd remapped: res://artifacts/windows_bootstrap/lifecycle.gd
+Completed load for: 'res://artifacts/windows_bootstrap/lifecycle.gd' remapped 'res://artifacts/windows_bootstrap/lifecycle.gd' at thread -1
+SceneTreeFTI: traversal method DEFAULT
+Loaded system CA certificates
+Loading resource: res://scenes/main/windows_candidate_bootstrap.tscn remapped: res://scenes/main/windows_candidate_bootstrap.tscn
+Loading resource: res://assets/ui/fonts/battle_interface_font.tres remapped: res://assets/ui/fonts/battle_interface_font.tres
+Completed load for: 'res://assets/ui/fonts/battle_interface_font.tres' remapped 'res://assets/ui/fonts/battle_interface_font.tres' at thread -1
+Completed load for: 'res://scenes/main/windows_candidate_bootstrap.tscn' remapped 'res://scenes/main/windows_candidate_bootstrap.tscn' at thread -1
+Loading resource: res://scenes/main/greystone_preview.tscn remapped: res://scenes/main/greystone_preview.tscn
+Loading resource: res://scenes/main/greystone_integration.tscn remapped: res://scenes/main/greystone_integration.tscn
+Loading resource: res://scenes/main/main.tscn remapped: res://scenes/main/main.tscn
+Loading resource: res://scenes/main/adventure_audio.tscn remapped: res://scenes/main/adventure_audio.tscn
+Loading resource: res://scripts/audio/adventure_audio.gd remapped: res://scripts/audio/adventure_audio.gd
+Loading resource: res://assets/ui/fonts/battle_nameplate_font.tres remapped: res://assets/ui/fonts/battle_nameplate_font.tres
+Completed load for: 'res://assets/ui/fonts/battle_nameplate_font.tres' remapped 'res://assets/ui/fonts/battle_nameplate_font.tres' at thread 0
+Completed load for: 'res://scripts/audio/adventure_audio.gd' remapped 'res://scripts/audio/adventure_audio.gd' at thread 0
+Loading resource: res://assets/audio/original/village.wav remapped: res://assets/audio/original/village.wav
+Loading resource: res://.godot/imported/village.wav-8ed368363f3df154c61188c18343ec4d.sample remapped: res://.godot/imported/village.wav-8ed368363f3df154c61188c18343ec4d.sample
+Completed load for: 'res://assets/audio/original/village.wav' remapped 'res://assets/audio/original/village.wav' at thread 0
+Loading resource: res://assets/audio/original/forest.wav remapped: res://assets/audio/original/forest.wav
+Loading resource: res://.godot/imported/forest.wav-dff1c4229c91a490bf099bddfc9e12ae.sample remapped: res://.godot/imported/forest.wav-dff1c4229c91a490bf099bddfc9e12ae.sample
+Completed load for: 'res://assets/audio/original/forest.wav' remapped 'res://assets/audio/original/forest.wav' at thread 0
+Loading resource: res://assets/audio/original/mine.wav remapped: res://assets/audio/original/mine.wav
+Loading resource: res://.godot/imported/mine.wav-9d32b58f8bfb4a507d3616bb34d8c825.sample remapped: res://.godot/imported/mine.wav-9d32b58f8bfb4a507d3616bb34d8c825.sample
+Completed load for: 'res://assets/audio/original/mine.wav' remapped 'res://assets/audio/original/mine.wav' at thread 0
+Loading resource: res://assets/audio/original/battle.wav remapped: res://assets/audio/original/battle.wav
+Loading resource: res://.godot/imported/battle.wav-8d1a7736547266b01fc156cecf3436ad.sample remapped: res://.godot/imported/battle.wav-8d1a7736547266b01fc156cecf3436ad.sample
+Completed load for: 'res://assets/audio/original/battle.wav' remapped 'res://assets/audio/original/battle.wav' at thread 0
+Loading resource: res://assets/audio/original/confirm.wav remapped: res://assets/audio/original/confirm.wav
+Loading resource: res://.godot/imported/confirm.wav-81de99c7c076cdbe9664b6a2d6b9cf4f.sample remapped: res://.godot/imported/confirm.wav-81de99c7c076cdbe9664b6a2d6b9cf4f.sample
+Completed load for: 'res://assets/audio/original/confirm.wav' remapped 'res://assets/audio/original/confirm.wav' at thread 0
+Loading resource: res://assets/audio/original/hit.wav remapped: res://assets/audio/original/hit.wav
+Loading resource: res://.godot/imported/hit.wav-c89e45870784521c06bcf7e5e7f043f0.sample remapped: res://.godot/imported/hit.wav-c89e45870784521c06bcf7e5e7f043f0.sample
+Completed load for: 'res://assets/audio/original/hit.wav' remapped 'res://assets/audio/original/hit.wav' at thread 0
+Loading resource: res://assets/audio/original/heal.wav remapped: res://assets/audio/original/heal.wav
+Loading resource: res://.godot/imported/heal.wav-fd3be7b419855ac6fea3efc58706f96a.sample remapped: res://.godot/imported/heal.wav-fd3be7b419855ac6fea3efc58706f96a.sample
+Completed load for: 'res://assets/audio/original/heal.wav' remapped 'res://assets/audio/original/heal.wav' at thread 0
+Loading resource: res://assets/audio/original/guard.wav remapped: res://assets/audio/original/guard.wav
+Loading resource: res://.godot/imported/guard.wav-ce0c3fd580c7b01f1ac089efbe616d31.sample remapped: res://.godot/imported/guard.wav-ce0c3fd580c7b01f1ac089efbe616d31.sample
+Completed load for: 'res://assets/audio/original/guard.wav' remapped 'res://assets/audio/original/guard.wav' at thread 0
+Loading resource: res://assets/audio/original/victory.wav remapped: res://assets/audio/original/victory.wav
+Loading resource: res://.godot/imported/victory.wav-448be27a5b6c96d57f31cd9083cca457.sample remapped: res://.godot/imported/victory.wav-448be27a5b6c96d57f31cd9083cca457.sample
+Completed load for: 'res://assets/audio/original/victory.wav' remapped 'res://assets/audio/original/victory.wav' at thread 0
+Loading resource: res://assets/audio/original/defeat.wav remapped: res://assets/audio/original/defeat.wav
+Loading resource: res://.godot/imported/defeat.wav-e54659a4f7a5ec5710c78d2a521e91bf.sample remapped: res://.godot/imported/defeat.wav-e54659a4f7a5ec5710c78d2a521e91bf.sample
+Completed load for: 'res://assets/audio/original/defeat.wav' remapped 'res://assets/audio/original/defeat.wav' at thread 0
+Loading resource: res://assets/audio/original/crystal.wav remapped: res://assets/audio/original/crystal.wav
+Loading resource: res://.godot/imported/crystal.wav-da165eff832cb38a6947966c47757218.sample remapped: res://.godot/imported/crystal.wav-da165eff832cb38a6947966c47757218.sample
+Completed load for: 'res://assets/audio/original/crystal.wav' remapped 'res://assets/audio/original/crystal.wav' at thread 0
+Completed load for: 'res://scenes/main/adventure_audio.tscn' remapped 'res://scenes/main/adventure_audio.tscn' at thread 0
+Loading resource: res://scenes/world/mine.tscn remapped: res://scenes/world/mine.tscn
+Loading resource: res://scripts/world/exploration_map.gd remapped: res://scripts/world/exploration_map.gd
+Completed load for: 'res://scripts/world/exploration_map.gd' remapped 'res://scripts/world/exploration_map.gd' at thread 0
+Loading resource: res://assets/models/cartoon/moss_rock.glb remapped: res://assets/models/cartoon/moss_rock.glb
+Loading resource: res://.godot/imported/moss_rock.glb-241845050f5035ceb9790a62177c10ee.scn remapped: res://.godot/imported/moss_rock.glb-241845050f5035ceb9790a62177c10ee.scn
+Completed load for: 'res://assets/models/cartoon/moss_rock.glb' remapped 'res://assets/models/cartoon/moss_rock.glb' at thread 0
+Loading resource: res://assets/models/cartoon/path_strip.glb remapped: res://assets/models/cartoon/path_strip.glb
+Loading resource: res://.godot/imported/path_strip.glb-23eaf8a7c606286346576387e1355cb2.scn remapped: res://.godot/imported/path_strip.glb-23eaf8a7c606286346576387e1355cb2.scn
+Completed load for: 'res://assets/models/cartoon/path_strip.glb' remapped 'res://assets/models/cartoon/path_strip.glb' at thread 0
+Completed load for: 'res://scenes/world/mine.tscn' remapped 'res://scenes/world/mine.tscn' at thread 0
+Loading resource: res://scripts/save/save_manager.gd remapped: res://scripts/save/save_manager.gd
+Completed load for: 'res://scripts/save/save_manager.gd' remapped 'res://scripts/save/save_manager.gd' at thread 0
+Loading resource: res://data/items/star_seal_01.tres remapped: res://data/items/star_seal_01.tres
+Completed load for: 'res://data/items/star_seal_01.tres' remapped 'res://data/items/star_seal_01.tres' at thread 0
+Loading resource: res://data/items/bronze_sword.tres remapped: res://data/items/bronze_sword.tres
+Completed load for: 'res://data/items/bronze_sword.tres' remapped 'res://data/items/bronze_sword.tres' at thread 0
+Loading resource: res://data/items/willow_staff.tres remapped: res://data/items/willow_staff.tres
+Completed load for: 'res://data/items/willow_staff.tres' remapped 'res://data/items/willow_staff.tres' at thread 0
+Loading resource: res://data/items/travel_vest.tres remapped: res://data/items/travel_vest.tres
+Completed load for: 'res://data/items/travel_vest.tres' remapped 'res://data/items/travel_vest.tres' at thread 0
+Loading resource: res://scenes/world/village.tscn remapped: res://scenes/world/village.tscn
+Loading resource: res://assets/models/cartoon/round_tree.glb remapped: res://assets/models/cartoon/round_tree.glb
+Loading resource: res://.godot/imported/round_tree.glb-411ad1067d6af8c5c9ec8e7108713972.scn remapped: res://.godot/imported/round_tree.glb-411ad1067d6af8c5c9ec8e7108713972.scn
+Completed load for: 'res://assets/models/cartoon/round_tree.glb' remapped 'res://assets/models/cartoon/round_tree.glb' at thread 0
+Loading resource: res://assets/models/cartoon/chest_base.glb remapped: res://assets/models/cartoon/chest_base.glb
+Loading resource: res://.godot/imported/chest_base.glb-9feeb9453d6606f9ce4e1a0ad1e8e5b0.scn remapped: res://.godot/imported/chest_base.glb-9feeb9453d6606f9ce4e1a0ad1e8e5b0.scn
+Completed load for: 'res://assets/models/cartoon/chest_base.glb' remapped 'res://assets/models/cartoon/chest_base.glb' at thread 0
+Loading resource: res://assets/models/cartoon/chest_lid.glb remapped: res://assets/models/cartoon/chest_lid.glb
+Loading resource: res://.godot/imported/chest_lid.glb-5847768fca9302a68519f688f9ad04b2.scn remapped: res://.godot/imported/chest_lid.glb-5847768fca9302a68519f688f9ad04b2.scn
+Completed load for: 'res://assets/models/cartoon/chest_lid.glb' remapped 'res://assets/models/cartoon/chest_lid.glb' at thread 0
+Loading resource: res://scenes/characters/lia_visual.tscn remapped: res://scenes/characters/lia_visual.tscn
+Loading resource: res://assets/models/cartoon/lia.glb remapped: res://assets/models/cartoon/lia.glb
+Loading resource: res://.godot/imported/lia.glb-181eaca3f2262b324a42a9578a0d76e4.scn remapped: res://.godot/imported/lia.glb-181eaca3f2262b324a42a9578a0d76e4.scn
+Completed load for: 'res://assets/models/cartoon/lia.glb' remapped 'res://assets/models/cartoon/lia.glb' at thread 0
+Completed load for: 'res://scenes/characters/lia_visual.tscn' remapped 'res://scenes/characters/lia_visual.tscn' at thread 0
+Loading resource: res://scenes/characters/guildmaster_visual.tscn remapped: res://scenes/characters/guildmaster_visual.tscn
+Loading resource: res://assets/models/cartoon/guildmaster.glb remapped: res://assets/models/cartoon/guildmaster.glb
+Loading resource: res://.godot/imported/guildmaster.glb-7cd2592d0607250e245880bbaa1329f1.scn remapped: res://.godot/imported/guildmaster.glb-7cd2592d0607250e245880bbaa1329f1.scn
+Completed load for: 'res://assets/models/cartoon/guildmaster.glb' remapped 'res://assets/models/cartoon/guildmaster.glb' at thread 0
+Completed load for: 'res://scenes/characters/guildmaster_visual.tscn' remapped 'res://scenes/characters/guildmaster_visual.tscn' at thread 0
+Loading resource: res://assets/models/cartoon/village_guild.glb remapped: res://assets/models/cartoon/village_guild.glb
+Loading resource: res://.godot/imported/village_guild.glb-cc92b73db2a23f4d85be867163dcf87c.scn remapped: res://.godot/imported/village_guild.glb-cc92b73db2a23f4d85be867163dcf87c.scn
+Completed load for: 'res://assets/models/cartoon/village_guild.glb' remapped 'res://assets/models/cartoon/village_guild.glb' at thread 0
+Loading resource: res://assets/models/cartoon/village_shop.glb remapped: res://assets/models/cartoon/village_shop.glb
+Loading resource: res://.godot/imported/village_shop.glb-db6d6a9f19af2a8715358091ef7de333.scn remapped: res://.godot/imported/village_shop.glb-db6d6a9f19af2a8715358091ef7de333.scn
+Completed load for: 'res://assets/models/cartoon/village_shop.glb' remapped 'res://assets/models/cartoon/village_shop.glb' at thread 0
+Loading resource: res://assets/models/cartoon/village_plaza.glb remapped: res://assets/models/cartoon/village_plaza.glb
+Loading resource: res://.godot/imported/village_plaza.glb-f25ac88cfeb3f8144930d5ca2704329d.scn remapped: res://.godot/imported/village_plaza.glb-f25ac88cfeb3f8144930d5ca2704329d.scn
+Completed load for: 'res://assets/models/cartoon/village_plaza.glb' remapped 'res://assets/models/cartoon/village_plaza.glb' at thread 0
+Loading resource: res://assets/models/cartoon/village_borders.glb remapped: res://assets/models/cartoon/village_borders.glb
+Loading resource: res://.godot/imported/village_borders.glb-99e39900ab5e357545949e1217274f4b.scn remapped: res://.godot/imported/village_borders.glb-99e39900ab5e357545949e1217274f4b.scn
+Completed load for: 'res://assets/models/cartoon/village_borders.glb' remapped 'res://assets/models/cartoon/village_borders.glb' at thread 0
+Loading resource: res://assets/models/cartoon/village_valley.glb remapped: res://assets/models/cartoon/village_valley.glb
+Loading resource: res://.godot/imported/village_valley.glb-ab88aad9af9bb226396e39a0522bef5c.scn remapped: res://.godot/imported/village_valley.glb-ab88aad9af9bb226396e39a0522bef5c.scn
+Completed load for: 'res://assets/models/cartoon/village_valley.glb' remapped 'res://assets/models/cartoon/village_valley.glb' at thread 0
+Completed load for: 'res://scenes/world/village.tscn' remapped 'res://scenes/world/village.tscn' at thread 0
+Loading resource: res://scenes/world/forest.tscn remapped: res://scenes/world/forest.tscn
+Loading resource: res://assets/models/cartoon/path_strip.glb remapped: res://assets/models/cartoon/path_strip.glb
+Loading resource: res://.godot/imported/path_strip.glb-23eaf8a7c606286346576387e1355cb2.scn remapped: res://.godot/imported/path_strip.glb-23eaf8a7c606286346576387e1355cb2.scn
+Completed load for: 'res://assets/models/cartoon/path_strip.glb' remapped 'res://assets/models/cartoon/path_strip.glb' at thread 0
+Loading resource: res://assets/models/cartoon/flower_patch.glb remapped: res://assets/models/cartoon/flower_patch.glb
+Loading resource: res://.godot/imported/flower_patch.glb-0e9bd04e2a90e9358d63407c193cdc50.scn remapped: res://.godot/imported/flower_patch.glb-0e9bd04e2a90e9358d63407c193cdc50.scn
+Completed load for: 'res://assets/models/cartoon/flower_patch.glb' remapped 'res://assets/models/cartoon/flower_patch.glb' at thread 0
+Loading resource: res://assets/models/cartoon/campfire.glb remapped: res://assets/models/cartoon/campfire.glb
+Loading resource: res://.godot/imported/campfire.glb-160a6f63d57d08dacd582561c8ebebc4.scn remapped: res://.godot/imported/campfire.glb-160a6f63d57d08dacd582561c8ebebc4.scn
+Completed load for: 'res://assets/models/cartoon/campfire.glb' remapped 'res://assets/models/cartoon/campfire.glb' at thread 0
+Loading resource: res://assets/models/cartoon/signpost.glb remapped: res://assets/models/cartoon/signpost.glb
+Loading resource: res://.godot/imported/signpost.glb-e538e84fdf9762947ea38e547458b8cf.scn remapped: res://.godot/imported/signpost.glb-e538e84fdf9762947ea38e547458b8cf.scn
+Completed load for: 'res://assets/models/cartoon/signpost.glb' remapped 'res://assets/models/cartoon/signpost.glb' at thread 0
+Loading resource: res://scenes/characters/slime_visual.tscn remapped: res://scenes/characters/slime_visual.tscn
+Loading resource: res://assets/models/cartoon/forest_slime.glb remapped: res://assets/models/cartoon/forest_slime.glb
+Loading resource: res://.godot/imported/forest_slime.glb-5b1e86fdc9e77bc11cb74dc0774b9dc5.scn remapped: res://.godot/imported/forest_slime.glb-5b1e86fdc9e77bc11cb74dc0774b9dc5.scn
+Completed load for: 'res://assets/models/cartoon/forest_slime.glb' remapped 'res://assets/models/cartoon/forest_slime.glb' at thread 0
+Completed load for: 'res://scenes/characters/slime_visual.tscn' remapped 'res://scenes/characters/slime_visual.tscn' at thread 0
+Loading resource: res://scenes/characters/guardian_visual.tscn remapped: res://scenes/characters/guardian_visual.tscn
+Loading resource: res://scenes/characters/rebuilt/corrupted_guardian_visual.tscn remapped: res://scenes/characters/rebuilt/corrupted_guardian_visual.tscn
+Loading resource: res://scripts/characters/rigged_enemy_actor.gd remapped: res://scripts/characters/rigged_enemy_actor.gd
+Completed load for: 'res://scripts/characters/rigged_enemy_actor.gd' remapped 'res://scripts/characters/rigged_enemy_actor.gd' at thread 0
+Loading resource: res://assets/models/rebuilt_enemies/corrupted_guardian.glb remapped: res://assets/models/rebuilt_enemies/corrupted_guardian.glb
+Loading resource: res://.godot/imported/corrupted_guardian.glb-d82c128bfc9b13a1227e8cd0ce1028f9.scn remapped: res://.godot/imported/corrupted_guardian.glb-d82c128bfc9b13a1227e8cd0ce1028f9.scn
+Loading resource: res://assets/models/rebuilt_enemies/corrupted_guardian_albedo.png remapped: res://assets/models/rebuilt_enemies/corrupted_guardian_albedo.png
+Loading resource: res://.godot/imported/corrupted_guardian_albedo.png-01cd999dce84a72506f10d1b162d2f65.ctex remapped: res://.godot/imported/corrupted_guardian_albedo.png-01cd999dce84a72506f10d1b162d2f65.ctex
+Completed load for: 'res://assets/models/rebuilt_enemies/corrupted_guardian_albedo.png' remapped 'res://assets/models/rebuilt_enemies/corrupted_guardian_albedo.png' at thread 0
+Completed load for: 'res://assets/models/rebuilt_enemies/corrupted_guardian.glb' remapped 'res://assets/models/rebuilt_enemies/corrupted_guardian.glb' at thread 0
+Completed load for: 'res://scenes/characters/rebuilt/corrupted_guardian_visual.tscn' remapped 'res://scenes/characters/rebuilt/corrupted_guardian_visual.tscn' at thread 0
+Completed load for: 'res://scenes/characters/guardian_visual.tscn' remapped 'res://scenes/characters/guardian_visual.tscn' at thread 0
+Completed load for: 'res://scenes/world/forest.tscn' remapped 'res://scenes/world/forest.tscn' at thread 0
+Loading resource: res://scenes/characters/player.tscn remapped: res://scenes/characters/player.tscn
+Loading resource: res://scenes/characters/ren_visual.tscn remapped: res://scenes/characters/ren_visual.tscn
+Loading resource: res://assets/models/cartoon/ren.glb remapped: res://assets/models/cartoon/ren.glb
+Loading resource: res://.godot/imported/ren.glb-4dbe0d7dbecc5a8646ff6af81ad2d5ed.scn remapped: res://.godot/imported/ren.glb-4dbe0d7dbecc5a8646ff6af81ad2d5ed.scn
+Completed load for: 'res://assets/models/cartoon/ren.glb' remapped 'res://assets/models/cartoon/ren.glb' at thread 0
+Completed load for: 'res://scenes/characters/ren_visual.tscn' remapped 'res://scenes/characters/ren_visual.tscn' at thread 0
+Completed load for: 'res://scenes/characters/player.tscn' remapped 'res://scenes/characters/player.tscn' at thread 0
+Loading resource: res://scripts/world/fixed_camera.gd remapped: res://scripts/world/fixed_camera.gd
+Completed load for: 'res://scripts/world/fixed_camera.gd' remapped 'res://scripts/world/fixed_camera.gd' at thread 0
+Loading resource: res://data/items/trail_ration.tres remapped: res://data/items/trail_ration.tres
+Completed load for: 'res://data/items/trail_ration.tres' remapped 'res://data/items/trail_ration.tres' at thread 0
+Loading resource: res://data/items/potion.tres remapped: res://data/items/potion.tres
+Completed load for: 'res://data/items/potion.tres' remapped 'res://data/items/potion.tres' at thread 0
+Loading resource: res://scenes/battle/battle_arena.tscn remapped: res://scenes/battle/battle_arena.tscn
+Loading resource: res://scenes/battle/battle_mine.tscn remapped: res://scenes/battle/battle_mine.tscn
+Completed load for: 'res://scenes/battle/battle_mine.tscn' remapped 'res://scenes/battle/battle_mine.tscn' at thread 0
+Loading resource: res://scenes/battle/battle_grove.tscn remapped: res://scenes/battle/battle_grove.tscn
+Completed load for: 'res://scenes/battle/battle_grove.tscn' remapped 'res://scenes/battle/battle_grove.tscn' at thread 0
+Completed load for: 'res://scenes/battle/battle_arena.tscn' remapped 'res://scenes/battle/battle_arena.tscn' at thread 0
+Loading resource: res://data/characters/ren.tres remapped: res://data/characters/ren.tres
+Loading resource: res://data/skills/attack.tres remapped: res://data/skills/attack.tres
+Completed load for: 'res://data/skills/attack.tres' remapped 'res://data/skills/attack.tres' at thread 0
+Loading resource: res://data/skills/star_spark.tres remapped: res://data/skills/star_spark.tres
+Completed load for: 'res://data/skills/star_spark.tres' remapped 'res://data/skills/star_spark.tres' at thread 0
+Loading resource: res://data/skills/guard.tres remapped: res://data/skills/guard.tres
+Completed load for: 'res://data/skills/guard.tres' remapped 'res://data/skills/guard.tres' at thread 0
+Completed load for: 'res://data/characters/ren.tres' remapped 'res://data/characters/ren.tres' at thread 0
+Loading resource: res://data/characters/lia.tres remapped: res://data/characters/lia.tres
+Loading resource: res://data/skills/mend.tres remapped: res://data/skills/mend.tres
+Completed load for: 'res://data/skills/mend.tres' remapped 'res://data/skills/mend.tres' at thread 0
+Completed load for: 'res://data/characters/lia.tres' remapped 'res://data/characters/lia.tres' at thread 0
+Loading resource: res://data/enemies/forest_slime.tres remapped: res://data/enemies/forest_slime.tres
+Completed load for: 'res://data/enemies/forest_slime.tres' remapped 'res://data/enemies/forest_slime.tres' at thread 0
+Loading resource: res://data/enemies/corrupted_guardian.tres remapped: res://data/enemies/corrupted_guardian.tres
+Loading resource: res://data/skills/rupture.tres remapped: res://data/skills/rupture.tres
+Completed load for: 'res://data/skills/rupture.tres' remapped 'res://data/skills/rupture.tres' at thread 0
+Completed load for: 'res://data/enemies/corrupted_guardian.tres' remapped 'res://data/enemies/corrupted_guardian.tres' at thread 0
+Completed load for: 'res://scenes/main/main.tscn' remapped 'res://scenes/main/main.tscn' at thread 0
+Loading resource: res://scripts/core/greystone_integration.gd remapped: res://scripts/core/greystone_integration.gd
+Loading resource: res://scenes/characters/ren_pixal_visual.tscn remapped: res://scenes/characters/ren_pixal_visual.tscn
+Loading resource: res://scripts/characters/female_actor.gd remapped: res://scripts/characters/female_actor.gd
+Completed load for: 'res://scripts/characters/female_actor.gd' remapped 'res://scripts/characters/female_actor.gd' at thread 0
+Loading resource: res://assets/models/pixal3d/ren_locomotion.glb remapped: res://assets/models/pixal3d/ren_locomotion.glb
+Loading resource: res://.godot/imported/ren_locomotion.glb-bfd3409336636aed1c2436a7d62431b9.scn remapped: res://.godot/imported/ren_locomotion.glb-bfd3409336636aed1c2436a7d62431b9.scn
+Loading resource: res://assets/models/pixal3d/ren_locomotion_Image_0.png remapped: res://assets/models/pixal3d/ren_locomotion_Image_0.png
+Loading resource: res://.godot/imported/ren_locomotion_Image_0.png-e07a8a442da175ca7531b471db6a5d1c.ctex remapped: res://.godot/imported/ren_locomotion_Image_0.png-e07a8a442da175ca7531b471db6a5d1c.ctex
+Completed load for: 'res://assets/models/pixal3d/ren_locomotion_Image_0.png' remapped 'res://assets/models/pixal3d/ren_locomotion_Image_0.png' at thread 0
+Loading resource: res://assets/models/pixal3d/ren_locomotion_Image_1.png remapped: res://assets/models/pixal3d/ren_locomotion_Image_1.png
+Loading resource: res://.godot/imported/ren_locomotion_Image_1.png-b22dc149887450cd58b97b1df088aba1.ctex remapped: res://.godot/imported/ren_locomotion_Image_1.png-b22dc149887450cd58b97b1df088aba1.ctex
+Completed load for: 'res://assets/models/pixal3d/ren_locomotion_Image_1.png' remapped 'res://assets/models/pixal3d/ren_locomotion_Image_1.png' at thread 0
+Loading resource: res://assets/models/pixal3d/ren_locomotion_Image_2.png remapped: res://assets/models/pixal3d/ren_locomotion_Image_2.png
+Loading resource: res://.godot/imported/ren_locomotion_Image_2.png-b63c3ea0d70d41195009e9bb44b93ec7.ctex remapped: res://.godot/imported/ren_locomotion_Image_2.png-b63c3ea0d70d41195009e9bb44b93ec7.ctex
+Completed load for: 'res://assets/models/pixal3d/ren_locomotion_Image_2.png' remapped 'res://assets/models/pixal3d/ren_locomotion_Image_2.png' at thread 0
+Completed load for: 'res://assets/models/pixal3d/ren_locomotion.glb' remapped 'res://assets/models/pixal3d/ren_locomotion.glb' at thread 0
+Loading resource: res://assets/models/pixal3d/ren_locomotion_profile.tres remapped: res://assets/models/pixal3d/ren_locomotion_profile.tres
+Completed load for: 'res://assets/models/pixal3d/ren_locomotion_profile.tres' remapped 'res://assets/models/pixal3d/ren_locomotion_profile.tres' at thread 0
+Completed load for: 'res://scenes/characters/ren_pixal_visual.tscn' remapped 'res://scenes/characters/ren_pixal_visual.tscn' at thread 0
+Loading resource: res://scenes/world/greystone_runtime.tscn remapped: res://scenes/world/greystone_runtime.tscn
+Loading resource: res://scenes/world/greystone_village.tscn remapped: res://scenes/world/greystone_village.tscn
+Loading resource: res://scenes/world/greystone/inn.tscn remapped: res://scenes/world/greystone/inn.tscn
+Loading resource: res://assets/models/greystone/buildings/inn.glb remapped: res://assets/models/greystone/buildings/inn.glb
+Loading resource: res://.godot/imported/inn.glb-cebf733201816496b602b50a1c7a6bf1.scn remapped: res://.godot/imported/inn.glb-cebf733201816496b602b50a1c7a6bf1.scn
+Loading resource: res://assets/materials/greystone/timber.tres remapped: res://assets/materials/greystone/timber.tres
+Completed load for: 'res://assets/materials/greystone/timber.tres' remapped 'res://assets/materials/greystone/timber.tres' at thread 0
+Loading resource: res://assets/materials/greystone/roof_rust.tres remapped: res://assets/materials/greystone/roof_rust.tres
+Completed load for: 'res://assets/materials/greystone/roof_rust.tres' remapped 'res://assets/materials/greystone/roof_rust.tres' at thread 0
+Loading resource: res://assets/materials/greystone/plaster.tres remapped: res://assets/materials/greystone/plaster.tres
+Completed load for: 'res://assets/materials/greystone/plaster.tres' remapped 'res://assets/materials/greystone/plaster.tres' at thread 0
+Loading resource: res://assets/materials/greystone/warm_glass.tres remapped: res://assets/materials/greystone/warm_glass.tres
+Completed load for: 'res://assets/materials/greystone/warm_glass.tres' remapped 'res://assets/materials/greystone/warm_glass.tres' at thread 0
+Loading resource: res://assets/materials/greystone/oak.tres remapped: res://assets/materials/greystone/oak.tres
+Completed load for: 'res://assets/materials/greystone/oak.tres' remapped 'res://assets/materials/greystone/oak.tres' at thread 0
+Loading resource: res://assets/materials/greystone/stone_dark.tres remapped: res://assets/materials/greystone/stone_dark.tres
+Completed load for: 'res://assets/materials/greystone/stone_dark.tres' remapped 'res://assets/materials/greystone/stone_dark.tres' at thread 0
+Loading resource: res://assets/materials/greystone/stone.tres remapped: res://assets/materials/greystone/stone.tres
+Completed load for: 'res://assets/materials/greystone/stone.tres' remapped 'res://assets/materials/greystone/stone.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/buildings/inn.glb' remapped 'res://assets/models/greystone/buildings/inn.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/inn.tscn' remapped 'res://scenes/world/greystone/inn.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/guild_hall.tscn remapped: res://scenes/world/greystone/guild_hall.tscn
+Loading resource: res://assets/models/greystone/buildings/guild_hall.glb remapped: res://assets/models/greystone/buildings/guild_hall.glb
+Loading resource: res://.godot/imported/guild_hall.glb-44c35c82306e1264636e47ca690135cd.scn remapped: res://.godot/imported/guild_hall.glb-44c35c82306e1264636e47ca690135cd.scn
+Loading resource: res://assets/materials/greystone/roof_slate.tres remapped: res://assets/materials/greystone/roof_slate.tres
+Completed load for: 'res://assets/materials/greystone/roof_slate.tres' remapped 'res://assets/materials/greystone/roof_slate.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/buildings/guild_hall.glb' remapped 'res://assets/models/greystone/buildings/guild_hall.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/guild_hall.tscn' remapped 'res://scenes/world/greystone/guild_hall.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/item_shop.tscn remapped: res://scenes/world/greystone/item_shop.tscn
+Loading resource: res://assets/models/greystone/buildings/item_shop.glb remapped: res://assets/models/greystone/buildings/item_shop.glb
+Loading resource: res://.godot/imported/item_shop.glb-531029d9828d788ce1b3de83a0854b37.scn remapped: res://.godot/imported/item_shop.glb-531029d9828d788ce1b3de83a0854b37.scn
+Completed load for: 'res://assets/models/greystone/buildings/item_shop.glb' remapped 'res://assets/models/greystone/buildings/item_shop.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/item_shop.tscn' remapped 'res://scenes/world/greystone/item_shop.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/weapon_shop.tscn remapped: res://scenes/world/greystone/weapon_shop.tscn
+Loading resource: res://assets/models/greystone/buildings/weapon_shop.glb remapped: res://assets/models/greystone/buildings/weapon_shop.glb
+Loading resource: res://.godot/imported/weapon_shop.glb-8d2f95468ac1d98f1640c0fa6a380dc8.scn remapped: res://.godot/imported/weapon_shop.glb-8d2f95468ac1d98f1640c0fa6a380dc8.scn
+Loading resource: res://assets/materials/greystone/roof_clay.tres remapped: res://assets/materials/greystone/roof_clay.tres
+Completed load for: 'res://assets/materials/greystone/roof_clay.tres' remapped 'res://assets/materials/greystone/roof_clay.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/buildings/weapon_shop.glb' remapped 'res://assets/models/greystone/buildings/weapon_shop.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/weapon_shop.tscn' remapped 'res://scenes/world/greystone/weapon_shop.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/house_a.tscn remapped: res://scenes/world/greystone/house_a.tscn
+Loading resource: res://assets/models/greystone/buildings/house_a.glb remapped: res://assets/models/greystone/buildings/house_a.glb
+Loading resource: res://.godot/imported/house_a.glb-49e929ad7e2e4254cfa7ce0768631ce7.scn remapped: res://.godot/imported/house_a.glb-49e929ad7e2e4254cfa7ce0768631ce7.scn
+Completed load for: 'res://assets/models/greystone/buildings/house_a.glb' remapped 'res://assets/models/greystone/buildings/house_a.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/house_a.tscn' remapped 'res://scenes/world/greystone/house_a.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/house_b.tscn remapped: res://scenes/world/greystone/house_b.tscn
+Loading resource: res://assets/models/greystone/buildings/house_b.glb remapped: res://assets/models/greystone/buildings/house_b.glb
+Loading resource: res://.godot/imported/house_b.glb-51d34ca7e8896e7fb23d41b6a6ae5ea2.scn remapped: res://.godot/imported/house_b.glb-51d34ca7e8896e7fb23d41b6a6ae5ea2.scn
+Completed load for: 'res://assets/models/greystone/buildings/house_b.glb' remapped 'res://assets/models/greystone/buildings/house_b.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/house_b.tscn' remapped 'res://scenes/world/greystone/house_b.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/farm_house.tscn remapped: res://scenes/world/greystone/farm_house.tscn
+Loading resource: res://assets/models/greystone/buildings/farm_house.glb remapped: res://assets/models/greystone/buildings/farm_house.glb
+Loading resource: res://.godot/imported/farm_house.glb-a0f5c1979d6935337171818fc1ebb0e6.scn remapped: res://.godot/imported/farm_house.glb-a0f5c1979d6935337171818fc1ebb0e6.scn
+Completed load for: 'res://assets/models/greystone/buildings/farm_house.glb' remapped 'res://assets/models/greystone/buildings/farm_house.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/farm_house.tscn' remapped 'res://scenes/world/greystone/farm_house.tscn' at thread 0
+Loading resource: res://assets/models/greystone/terrain/westground.glb remapped: res://assets/models/greystone/terrain/westground.glb
+Loading resource: res://.godot/imported/westground.glb-b31f2c75d02b7fbad7ccca08515bb72a.scn remapped: res://.godot/imported/westground.glb-b31f2c75d02b7fbad7ccca08515bb72a.scn
+Loading resource: res://assets/materials/greystone/terrain/terrain_00.tres remapped: res://assets/materials/greystone/terrain/terrain_00.tres
+Completed load for: 'res://assets/materials/greystone/terrain/terrain_00.tres' remapped 'res://assets/materials/greystone/terrain/terrain_00.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/terrain/westground.glb' remapped 'res://assets/models/greystone/terrain/westground.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastground.glb remapped: res://assets/models/greystone/terrain/eastground.glb
+Loading resource: res://.godot/imported/eastground.glb-705f4c1f00ed4e5bb79f99ed0a276dba.scn remapped: res://.godot/imported/eastground.glb-705f4c1f00ed4e5bb79f99ed0a276dba.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastground.glb' remapped 'res://assets/models/greystone/terrain/eastground.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/river.glb remapped: res://assets/models/greystone/terrain/river.glb
+Loading resource: res://.godot/imported/river.glb-31f7944e59fb68a0ceedd529237a822c.scn remapped: res://.godot/imported/river.glb-31f7944e59fb68a0ceedd529237a822c.scn
+Loading resource: res://assets/materials/greystone/terrain/terrain_01.tres remapped: res://assets/materials/greystone/terrain/terrain_01.tres
+Completed load for: 'res://assets/materials/greystone/terrain/terrain_01.tres' remapped 'res://assets/materials/greystone/terrain/terrain_01.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/terrain/river.glb' remapped 'res://assets/models/greystone/terrain/river.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/westbankcliff.glb remapped: res://assets/models/greystone/terrain/westbankcliff.glb
+Loading resource: res://.godot/imported/westbankcliff.glb-94ba1cebf620ae32b675d050bbcedf3a.scn remapped: res://.godot/imported/westbankcliff.glb-94ba1cebf620ae32b675d050bbcedf3a.scn
+Loading resource: res://assets/materials/greystone/terrain/terrain_02.tres remapped: res://assets/materials/greystone/terrain/terrain_02.tres
+Completed load for: 'res://assets/materials/greystone/terrain/terrain_02.tres' remapped 'res://assets/materials/greystone/terrain/terrain_02.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/terrain/westbankcliff.glb' remapped 'res://assets/models/greystone/terrain/westbankcliff.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastbankcliff.glb remapped: res://assets/models/greystone/terrain/eastbankcliff.glb
+Loading resource: res://.godot/imported/eastbankcliff.glb-cf8eaea846e0fca75f0e9998508954e2.scn remapped: res://.godot/imported/eastbankcliff.glb-cf8eaea846e0fca75f0e9998508954e2.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastbankcliff.glb' remapped 'res://assets/models/greystone/terrain/eastbankcliff.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/westoutercliff.glb remapped: res://assets/models/greystone/terrain/westoutercliff.glb
+Loading resource: res://.godot/imported/westoutercliff.glb-c65a580c19cc0ff62f449cc78da33bb1.scn remapped: res://.godot/imported/westoutercliff.glb-c65a580c19cc0ff62f449cc78da33bb1.scn
+Completed load for: 'res://assets/models/greystone/terrain/westoutercliff.glb' remapped 'res://assets/models/greystone/terrain/westoutercliff.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastoutercliff.glb remapped: res://assets/models/greystone/terrain/eastoutercliff.glb
+Loading resource: res://.godot/imported/eastoutercliff.glb-cec9643090b3071d6f6d76199b67103e.scn remapped: res://.godot/imported/eastoutercliff.glb-cec9643090b3071d6f6d76199b67103e.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastoutercliff.glb' remapped 'res://assets/models/greystone/terrain/eastoutercliff.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/northskirt.glb remapped: res://assets/models/greystone/terrain/northskirt.glb
+Loading resource: res://.godot/imported/northskirt.glb-2080ee3d4e59668526c7476ae26d350b.scn remapped: res://.godot/imported/northskirt.glb-2080ee3d4e59668526c7476ae26d350b.scn
+Completed load for: 'res://assets/models/greystone/terrain/northskirt.glb' remapped 'res://assets/models/greystone/terrain/northskirt.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/southskirt.glb remapped: res://assets/models/greystone/terrain/southskirt.glb
+Loading resource: res://.godot/imported/southskirt.glb-ecba6e84e043f16a107acb1941a36ae6.scn remapped: res://.godot/imported/southskirt.glb-ecba6e84e043f16a107acb1941a36ae6.scn
+Completed load for: 'res://assets/models/greystone/terrain/southskirt.glb' remapped 'res://assets/models/greystone/terrain/southskirt.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/plaza.glb remapped: res://assets/models/greystone/terrain/plaza.glb
+Loading resource: res://.godot/imported/plaza.glb-d6fc3d8ea4147be0adbdcfeeb1ab7199.scn remapped: res://.godot/imported/plaza.glb-d6fc3d8ea4147be0adbdcfeeb1ab7199.scn
+Loading resource: res://assets/materials/greystone/terrain/terrain_03.tres remapped: res://assets/materials/greystone/terrain/terrain_03.tres
+Completed load for: 'res://assets/materials/greystone/terrain/terrain_03.tres' remapped 'res://assets/materials/greystone/terrain/terrain_03.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/terrain/plaza.glb' remapped 'res://assets/models/greystone/terrain/plaza.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/southroad.glb remapped: res://assets/models/greystone/terrain/southroad.glb
+Loading resource: res://.godot/imported/southroad.glb-e50a437fbbdecb3301a64a2eebb0013d.scn remapped: res://.godot/imported/southroad.glb-e50a437fbbdecb3301a64a2eebb0013d.scn
+Completed load for: 'res://assets/models/greystone/terrain/southroad.glb' remapped 'res://assets/models/greystone/terrain/southroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/northroad.glb remapped: res://assets/models/greystone/terrain/northroad.glb
+Loading resource: res://.godot/imported/northroad.glb-f5cfe499c03a4b3d2a558370fc4e7e12.scn remapped: res://.godot/imported/northroad.glb-f5cfe499c03a4b3d2a558370fc4e7e12.scn
+Completed load for: 'res://assets/models/greystone/terrain/northroad.glb' remapped 'res://assets/models/greystone/terrain/northroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/westroad.glb remapped: res://assets/models/greystone/terrain/westroad.glb
+Loading resource: res://.godot/imported/westroad.glb-22224a75748154b20a6da5e61e1a96fb.scn remapped: res://.godot/imported/westroad.glb-22224a75748154b20a6da5e61e1a96fb.scn
+Completed load for: 'res://assets/models/greystone/terrain/westroad.glb' remapped 'res://assets/models/greystone/terrain/westroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/innroad.glb remapped: res://assets/models/greystone/terrain/innroad.glb
+Loading resource: res://.godot/imported/innroad.glb-5c2f2f979b903f4c1927e36df0b86e05.scn remapped: res://.godot/imported/innroad.glb-5c2f2f979b903f4c1927e36df0b86e05.scn
+Completed load for: 'res://assets/models/greystone/terrain/innroad.glb' remapped 'res://assets/models/greystone/terrain/innroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/shoproad.glb remapped: res://assets/models/greystone/terrain/shoproad.glb
+Loading resource: res://.godot/imported/shoproad.glb-67ec55b155b235527062038e41177818.scn remapped: res://.godot/imported/shoproad.glb-67ec55b155b235527062038e41177818.scn
+Completed load for: 'res://assets/models/greystone/terrain/shoproad.glb' remapped 'res://assets/models/greystone/terrain/shoproad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/mineroad.glb remapped: res://assets/models/greystone/terrain/mineroad.glb
+Loading resource: res://.godot/imported/mineroad.glb-6addef01c0150602fec2fa8204dc624c.scn remapped: res://.godot/imported/mineroad.glb-6addef01c0150602fec2fa8204dc624c.scn
+Completed load for: 'res://assets/models/greystone/terrain/mineroad.glb' remapped 'res://assets/models/greystone/terrain/mineroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/bridgeroad.glb remapped: res://assets/models/greystone/terrain/bridgeroad.glb
+Loading resource: res://.godot/imported/bridgeroad.glb-7d6a23a7c10fd831f8b20b11f3237f3e.scn remapped: res://.godot/imported/bridgeroad.glb-7d6a23a7c10fd831f8b20b11f3237f3e.scn
+Completed load for: 'res://assets/models/greystone/terrain/bridgeroad.glb' remapped 'res://assets/models/greystone/terrain/bridgeroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastroad.glb remapped: res://assets/models/greystone/terrain/eastroad.glb
+Loading resource: res://.godot/imported/eastroad.glb-2acccbeeff43a669a76ce2594fa3eb3a.scn remapped: res://.godot/imported/eastroad.glb-2acccbeeff43a669a76ce2594fa3eb3a.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastroad.glb' remapped 'res://assets/models/greystone/terrain/eastroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastlink.glb remapped: res://assets/models/greystone/terrain/eastlink.glb
+Loading resource: res://.godot/imported/eastlink.glb-9b4be3c430f52c028e37de7333dea90e.scn remapped: res://.godot/imported/eastlink.glb-9b4be3c430f52c028e37de7333dea90e.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastlink.glb' remapped 'res://assets/models/greystone/terrain/eastlink.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/southcross.glb remapped: res://assets/models/greystone/terrain/southcross.glb
+Loading resource: res://.godot/imported/southcross.glb-ba406fc293d0676f3c73bfcf5c772400.scn remapped: res://.godot/imported/southcross.glb-ba406fc293d0676f3c73bfcf5c772400.scn
+Completed load for: 'res://assets/models/greystone/terrain/southcross.glb' remapped 'res://assets/models/greystone/terrain/southcross.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/dockroad.glb remapped: res://assets/models/greystone/terrain/dockroad.glb
+Loading resource: res://.godot/imported/dockroad.glb-9d05e40a929bab83d03ef43e1c72fbaf.scn remapped: res://.godot/imported/dockroad.glb-9d05e40a929bab83d03ef43e1c72fbaf.scn
+Completed load for: 'res://assets/models/greystone/terrain/dockroad.glb' remapped 'res://assets/models/greystone/terrain/dockroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/farmroad.glb remapped: res://assets/models/greystone/terrain/farmroad.glb
+Loading resource: res://.godot/imported/farmroad.glb-46204740439515ecc340b9059ae5ddcb.scn remapped: res://.godot/imported/farmroad.glb-46204740439515ecc340b9059ae5ddcb.scn
+Completed load for: 'res://assets/models/greystone/terrain/farmroad.glb' remapped 'res://assets/models/greystone/terrain/farmroad.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/farmlink.glb remapped: res://assets/models/greystone/terrain/farmlink.glb
+Loading resource: res://.godot/imported/farmlink.glb-4a53f4e1d9410f891c707f6b6e12c04f.scn remapped: res://.godot/imported/farmlink.glb-4a53f4e1d9410f891c707f6b6e12c04f.scn
+Completed load for: 'res://assets/models/greystone/terrain/farmlink.glb' remapped 'res://assets/models/greystone/terrain/farmlink.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrim30.glb remapped: res://assets/models/greystone/terrain/riverrim30.glb
+Loading resource: res://.godot/imported/riverrim30.glb-5debda3af10b6b2c66a48d8e12ff9de3.scn remapped: res://.godot/imported/riverrim30.glb-5debda3af10b6b2c66a48d8e12ff9de3.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrim30.glb' remapped 'res://assets/models/greystone/terrain/riverrim30.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrim38.glb remapped: res://assets/models/greystone/terrain/riverrim38.glb
+Loading resource: res://.godot/imported/riverrim38.glb-d811f48bf53724315c015398bfee0bb1.scn remapped: res://.godot/imported/riverrim38.glb-d811f48bf53724315c015398bfee0bb1.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrim38.glb' remapped 'res://assets/models/greystone/terrain/riverrim38.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/northboundary.glb remapped: res://assets/models/greystone/terrain/northboundary.glb
+Loading resource: res://.godot/imported/northboundary.glb-80b9523f023e60b7fc38647edd4fdfa6.scn remapped: res://.godot/imported/northboundary.glb-80b9523f023e60b7fc38647edd4fdfa6.scn
+Completed load for: 'res://assets/models/greystone/terrain/northboundary.glb' remapped 'res://assets/models/greystone/terrain/northboundary.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/southboundary.glb remapped: res://assets/models/greystone/terrain/southboundary.glb
+Loading resource: res://.godot/imported/southboundary.glb-c44c37b52774b447f238566d9d07a2eb.scn remapped: res://.godot/imported/southboundary.glb-c44c37b52774b447f238566d9d07a2eb.scn
+Completed load for: 'res://assets/models/greystone/terrain/southboundary.glb' remapped 'res://assets/models/greystone/terrain/southboundary.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/westboundary.glb remapped: res://assets/models/greystone/terrain/westboundary.glb
+Loading resource: res://.godot/imported/westboundary.glb-70dc4de33e4a57cf99b52a687cfe427f.scn remapped: res://.godot/imported/westboundary.glb-70dc4de33e4a57cf99b52a687cfe427f.scn
+Completed load for: 'res://assets/models/greystone/terrain/westboundary.glb' remapped 'res://assets/models/greystone/terrain/westboundary.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastboundary.glb remapped: res://assets/models/greystone/terrain/eastboundary.glb
+Loading resource: res://.godot/imported/eastboundary.glb-2b95093cc04876989be58a4d290751f1.scn remapped: res://.godot/imported/eastboundary.glb-2b95093cc04876989be58a4d290751f1.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastboundary.glb' remapped 'res://assets/models/greystone/terrain/eastboundary.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff0.glb remapped: res://assets/models/greystone/terrain/cliff0.glb
+Loading resource: res://.godot/imported/cliff0.glb-886808cca0007d527eff512356df44b4.scn remapped: res://.godot/imported/cliff0.glb-886808cca0007d527eff512356df44b4.scn
+Loading resource: res://assets/materials/greystone/terrain/terrain_04.tres remapped: res://assets/materials/greystone/terrain/terrain_04.tres
+Completed load for: 'res://assets/materials/greystone/terrain/terrain_04.tres' remapped 'res://assets/materials/greystone/terrain/terrain_04.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/terrain/cliff0.glb' remapped 'res://assets/models/greystone/terrain/cliff0.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff1.glb remapped: res://assets/models/greystone/terrain/cliff1.glb
+Loading resource: res://.godot/imported/cliff1.glb-78f585fdbe33c1138152889248d2393a.scn remapped: res://.godot/imported/cliff1.glb-78f585fdbe33c1138152889248d2393a.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff1.glb' remapped 'res://assets/models/greystone/terrain/cliff1.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff2.glb remapped: res://assets/models/greystone/terrain/cliff2.glb
+Loading resource: res://.godot/imported/cliff2.glb-170ec8a505242b50315b7a66663c6634.scn remapped: res://.godot/imported/cliff2.glb-170ec8a505242b50315b7a66663c6634.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff2.glb' remapped 'res://assets/models/greystone/terrain/cliff2.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff3.glb remapped: res://assets/models/greystone/terrain/cliff3.glb
+Loading resource: res://.godot/imported/cliff3.glb-12806f8ebb4df1fe5d72986f8dc25336.scn remapped: res://.godot/imported/cliff3.glb-12806f8ebb4df1fe5d72986f8dc25336.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff3.glb' remapped 'res://assets/models/greystone/terrain/cliff3.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff4.glb remapped: res://assets/models/greystone/terrain/cliff4.glb
+Loading resource: res://.godot/imported/cliff4.glb-72d4b3e6f2d5b10e541d1611b8de8e5d.scn remapped: res://.godot/imported/cliff4.glb-72d4b3e6f2d5b10e541d1611b8de8e5d.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff4.glb' remapped 'res://assets/models/greystone/terrain/cliff4.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff5.glb remapped: res://assets/models/greystone/terrain/cliff5.glb
+Loading resource: res://.godot/imported/cliff5.glb-42464f2a0893b17438f4b9785c56a4be.scn remapped: res://.godot/imported/cliff5.glb-42464f2a0893b17438f4b9785c56a4be.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff5.glb' remapped 'res://assets/models/greystone/terrain/cliff5.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff6.glb remapped: res://assets/models/greystone/terrain/cliff6.glb
+Loading resource: res://.godot/imported/cliff6.glb-c0df9d1e64981d014fd257071ebaff8d.scn remapped: res://.godot/imported/cliff6.glb-c0df9d1e64981d014fd257071ebaff8d.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff6.glb' remapped 'res://assets/models/greystone/terrain/cliff6.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff7.glb remapped: res://assets/models/greystone/terrain/cliff7.glb
+Loading resource: res://.godot/imported/cliff7.glb-6a187984ab72e386d30f1bece7ca7541.scn remapped: res://.godot/imported/cliff7.glb-6a187984ab72e386d30f1bece7ca7541.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff7.glb' remapped 'res://assets/models/greystone/terrain/cliff7.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff8.glb remapped: res://assets/models/greystone/terrain/cliff8.glb
+Loading resource: res://.godot/imported/cliff8.glb-f8fee1062c38bfde7a0aefbda0f6536d.scn remapped: res://.godot/imported/cliff8.glb-f8fee1062c38bfde7a0aefbda0f6536d.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff8.glb' remapped 'res://assets/models/greystone/terrain/cliff8.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff9.glb remapped: res://assets/models/greystone/terrain/cliff9.glb
+Loading resource: res://.godot/imported/cliff9.glb-a538cfcbcc765e5ffba1e068b721dbca.scn remapped: res://.godot/imported/cliff9.glb-a538cfcbcc765e5ffba1e068b721dbca.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff9.glb' remapped 'res://assets/models/greystone/terrain/cliff9.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff10.glb remapped: res://assets/models/greystone/terrain/cliff10.glb
+Loading resource: res://.godot/imported/cliff10.glb-6a608bdf6e23412a2513f842b967bf53.scn remapped: res://.godot/imported/cliff10.glb-6a608bdf6e23412a2513f842b967bf53.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff10.glb' remapped 'res://assets/models/greystone/terrain/cliff10.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff11.glb remapped: res://assets/models/greystone/terrain/cliff11.glb
+Loading resource: res://.godot/imported/cliff11.glb-37be21b96b7755dbe9536f66a0f801d2.scn remapped: res://.godot/imported/cliff11.glb-37be21b96b7755dbe9536f66a0f801d2.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff11.glb' remapped 'res://assets/models/greystone/terrain/cliff11.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff12.glb remapped: res://assets/models/greystone/terrain/cliff12.glb
+Loading resource: res://.godot/imported/cliff12.glb-0460db312022e47ffc90ba5e466e57ee.scn remapped: res://.godot/imported/cliff12.glb-0460db312022e47ffc90ba5e466e57ee.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff12.glb' remapped 'res://assets/models/greystone/terrain/cliff12.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff13.glb remapped: res://assets/models/greystone/terrain/cliff13.glb
+Loading resource: res://.godot/imported/cliff13.glb-c081b597a19b3510ee2770ed0b433fb8.scn remapped: res://.godot/imported/cliff13.glb-c081b597a19b3510ee2770ed0b433fb8.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff13.glb' remapped 'res://assets/models/greystone/terrain/cliff13.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff14.glb remapped: res://assets/models/greystone/terrain/cliff14.glb
+Loading resource: res://.godot/imported/cliff14.glb-e78a1af23879a1b166309d1e86f9d853.scn remapped: res://.godot/imported/cliff14.glb-e78a1af23879a1b166309d1e86f9d853.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff14.glb' remapped 'res://assets/models/greystone/terrain/cliff14.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff15.glb remapped: res://assets/models/greystone/terrain/cliff15.glb
+Loading resource: res://.godot/imported/cliff15.glb-d0e0708264271f8aebe10932f15b5613.scn remapped: res://.godot/imported/cliff15.glb-d0e0708264271f8aebe10932f15b5613.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff15.glb' remapped 'res://assets/models/greystone/terrain/cliff15.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/cliff16.glb remapped: res://assets/models/greystone/terrain/cliff16.glb
+Loading resource: res://.godot/imported/cliff16.glb-39475919d9750fc9275d35ef506fcae7.scn remapped: res://.godot/imported/cliff16.glb-39475919d9750fc9275d35ef506fcae7.scn
+Completed load for: 'res://assets/models/greystone/terrain/cliff16.glb' remapped 'res://assets/models/greystone/terrain/cliff16.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrock0.glb remapped: res://assets/models/greystone/terrain/riverrock0.glb
+Loading resource: res://.godot/imported/riverrock0.glb-50023e4b45d056901c4f4f085d0983b0.scn remapped: res://.godot/imported/riverrock0.glb-50023e4b45d056901c4f4f085d0983b0.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrock0.glb' remapped 'res://assets/models/greystone/terrain/riverrock0.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrock1.glb remapped: res://assets/models/greystone/terrain/riverrock1.glb
+Loading resource: res://.godot/imported/riverrock1.glb-2875e0c4ba11a4e469edfad481393a79.scn remapped: res://.godot/imported/riverrock1.glb-2875e0c4ba11a4e469edfad481393a79.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrock1.glb' remapped 'res://assets/models/greystone/terrain/riverrock1.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrock2.glb remapped: res://assets/models/greystone/terrain/riverrock2.glb
+Loading resource: res://.godot/imported/riverrock2.glb-366e7137bd0bda09021dca06a09e2a5a.scn remapped: res://.godot/imported/riverrock2.glb-366e7137bd0bda09021dca06a09e2a5a.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrock2.glb' remapped 'res://assets/models/greystone/terrain/riverrock2.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrock3.glb remapped: res://assets/models/greystone/terrain/riverrock3.glb
+Loading resource: res://.godot/imported/riverrock3.glb-3acf57444982b975dd2a5bee40972f24.scn remapped: res://.godot/imported/riverrock3.glb-3acf57444982b975dd2a5bee40972f24.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrock3.glb' remapped 'res://assets/models/greystone/terrain/riverrock3.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrock4.glb remapped: res://assets/models/greystone/terrain/riverrock4.glb
+Loading resource: res://.godot/imported/riverrock4.glb-a024a40fff0317704359d50f5ac56ea6.scn remapped: res://.godot/imported/riverrock4.glb-a024a40fff0317704359d50f5ac56ea6.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrock4.glb' remapped 'res://assets/models/greystone/terrain/riverrock4.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrock5.glb remapped: res://assets/models/greystone/terrain/riverrock5.glb
+Loading resource: res://.godot/imported/riverrock5.glb-33a6a83535a8476c2d8d78336e516e8d.scn remapped: res://.godot/imported/riverrock5.glb-33a6a83535a8476c2d8d78336e516e8d.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrock5.glb' remapped 'res://assets/models/greystone/terrain/riverrock5.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/riverrock6.glb remapped: res://assets/models/greystone/terrain/riverrock6.glb
+Loading resource: res://.godot/imported/riverrock6.glb-48323c1785cbace3390238326d7c3aaf.scn remapped: res://.godot/imported/riverrock6.glb-48323c1785cbace3390238326d7c3aaf.scn
+Completed load for: 'res://assets/models/greystone/terrain/riverrock6.glb' remapped 'res://assets/models/greystone/terrain/riverrock6.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastriverrock0.glb remapped: res://assets/models/greystone/terrain/eastriverrock0.glb
+Loading resource: res://.godot/imported/eastriverrock0.glb-eaca83459d8501e1958dc7fea4b2b1e7.scn remapped: res://.godot/imported/eastriverrock0.glb-eaca83459d8501e1958dc7fea4b2b1e7.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastriverrock0.glb' remapped 'res://assets/models/greystone/terrain/eastriverrock0.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastriverrock1.glb remapped: res://assets/models/greystone/terrain/eastriverrock1.glb
+Loading resource: res://.godot/imported/eastriverrock1.glb-8e953fc1154398185fa943d7c2412839.scn remapped: res://.godot/imported/eastriverrock1.glb-8e953fc1154398185fa943d7c2412839.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastriverrock1.glb' remapped 'res://assets/models/greystone/terrain/eastriverrock1.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastriverrock2.glb remapped: res://assets/models/greystone/terrain/eastriverrock2.glb
+Loading resource: res://.godot/imported/eastriverrock2.glb-3b1dc00c7404c2cd75392ed25561c1c8.scn remapped: res://.godot/imported/eastriverrock2.glb-3b1dc00c7404c2cd75392ed25561c1c8.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastriverrock2.glb' remapped 'res://assets/models/greystone/terrain/eastriverrock2.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastriverrock3.glb remapped: res://assets/models/greystone/terrain/eastriverrock3.glb
+Loading resource: res://.godot/imported/eastriverrock3.glb-d12ef5451043cda4fd1c183927199e66.scn remapped: res://.godot/imported/eastriverrock3.glb-d12ef5451043cda4fd1c183927199e66.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastriverrock3.glb' remapped 'res://assets/models/greystone/terrain/eastriverrock3.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/eastriverrock4.glb remapped: res://assets/models/greystone/terrain/eastriverrock4.glb
+Loading resource: res://.godot/imported/eastriverrock4.glb-aa663499718747f72e1a671c09e14332.scn remapped: res://.godot/imported/eastriverrock4.glb-aa663499718747f72e1a671c09e14332.scn
+Completed load for: 'res://assets/models/greystone/terrain/eastriverrock4.glb' remapped 'res://assets/models/greystone/terrain/eastriverrock4.glb' at thread 0
+Loading resource: res://assets/models/greystone/terrain/pinecontext.glb remapped: res://assets/models/greystone/terrain/pinecontext.glb
+Loading resource: res://.godot/imported/pinecontext.glb-e5aeccd2ee5aacaecb7037633e26fa6e.scn remapped: res://.godot/imported/pinecontext.glb-e5aeccd2ee5aacaecb7037633e26fa6e.scn
+Loading resource: res://assets/materials/greystone/terrain/terrain_05.tres remapped: res://assets/materials/greystone/terrain/terrain_05.tres
+Completed load for: 'res://assets/materials/greystone/terrain/terrain_05.tres' remapped 'res://assets/materials/greystone/terrain/terrain_05.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/terrain/pinecontext.glb' remapped 'res://assets/models/greystone/terrain/pinecontext.glb' at thread 0
+Loading resource: res://scenes/world/greystone/props/stone_well.tscn remapped: res://scenes/world/greystone/props/stone_well.tscn
+Loading resource: res://assets/models/greystone/props/stone_well.glb remapped: res://assets/models/greystone/props/stone_well.glb
+Loading resource: res://.godot/imported/stone_well.glb-47acbf35f66342d2596f051f733ebff0.scn remapped: res://.godot/imported/stone_well.glb-47acbf35f66342d2596f051f733ebff0.scn
+Loading resource: res://assets/materials/greystone/props/stone.tres remapped: res://assets/materials/greystone/props/stone.tres
+Completed load for: 'res://assets/materials/greystone/props/stone.tres' remapped 'res://assets/materials/greystone/props/stone.tres' at thread 0
+Loading resource: res://assets/materials/greystone/props/water.tres remapped: res://assets/materials/greystone/props/water.tres
+Completed load for: 'res://assets/materials/greystone/props/water.tres' remapped 'res://assets/materials/greystone/props/water.tres' at thread 0
+Loading resource: res://assets/materials/greystone/props/wood.tres remapped: res://assets/materials/greystone/props/wood.tres
+Completed load for: 'res://assets/materials/greystone/props/wood.tres' remapped 'res://assets/materials/greystone/props/wood.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/props/stone_well.glb' remapped 'res://assets/models/greystone/props/stone_well.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/stone_well.tscn' remapped 'res://scenes/world/greystone/props/stone_well.tscn' at thread 0
+Loading resource: res://assets/models/greystone/props/wooden_bridge.glb remapped: res://assets/models/greystone/props/wooden_bridge.glb
+Loading resource: res://.godot/imported/wooden_bridge.glb-1c30c3457b6b23af16caee743c00cfc7.scn remapped: res://.godot/imported/wooden_bridge.glb-1c30c3457b6b23af16caee743c00cfc7.scn
+Completed load for: 'res://assets/models/greystone/props/wooden_bridge.glb' remapped 'res://assets/models/greystone/props/wooden_bridge.glb' at thread 0
+Loading resource: res://assets/models/greystone/props/wooden_dock.glb remapped: res://assets/models/greystone/props/wooden_dock.glb
+Loading resource: res://.godot/imported/wooden_dock.glb-8ab9b937c634ddac9939237e5adc91c5.scn remapped: res://.godot/imported/wooden_dock.glb-8ab9b937c634ddac9939237e5adc91c5.scn
+Completed load for: 'res://assets/models/greystone/props/wooden_dock.glb' remapped 'res://assets/models/greystone/props/wooden_dock.glb' at thread 0
+Loading resource: res://scenes/world/greystone/props/wooden_fence.tscn remapped: res://scenes/world/greystone/props/wooden_fence.tscn
+Loading resource: res://assets/models/greystone/props/wooden_fence.glb remapped: res://assets/models/greystone/props/wooden_fence.glb
+Loading resource: res://.godot/imported/wooden_fence.glb-a94d268bf7748992fb7dd01f6669a5f5.scn remapped: res://.godot/imported/wooden_fence.glb-a94d268bf7748992fb7dd01f6669a5f5.scn
+Completed load for: 'res://assets/models/greystone/props/wooden_fence.glb' remapped 'res://assets/models/greystone/props/wooden_fence.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/wooden_fence.tscn' remapped 'res://scenes/world/greystone/props/wooden_fence.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/lamp_post.tscn remapped: res://scenes/world/greystone/props/lamp_post.tscn
+Loading resource: res://assets/models/greystone/props/lamp_post.glb remapped: res://assets/models/greystone/props/lamp_post.glb
+Loading resource: res://.godot/imported/lamp_post.glb-1e12b201462b5023b135831b613c125c.scn remapped: res://.godot/imported/lamp_post.glb-1e12b201462b5023b135831b613c125c.scn
+Loading resource: res://assets/materials/greystone/props/gold.tres remapped: res://assets/materials/greystone/props/gold.tres
+Completed load for: 'res://assets/materials/greystone/props/gold.tres' remapped 'res://assets/materials/greystone/props/gold.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/props/lamp_post.glb' remapped 'res://assets/models/greystone/props/lamp_post.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/lamp_post.tscn' remapped 'res://scenes/world/greystone/props/lamp_post.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/leafy_crop.tscn remapped: res://scenes/world/greystone/props/leafy_crop.tscn
+Loading resource: res://assets/models/greystone/props/leafy_crop.glb remapped: res://assets/models/greystone/props/leafy_crop.glb
+Loading resource: res://.godot/imported/leafy_crop.glb-68f40b45439a65df9689e4a7fd89f240.scn remapped: res://.godot/imported/leafy_crop.glb-68f40b45439a65df9689e4a7fd89f240.scn
+Loading resource: res://assets/materials/greystone/props/leaf_light.tres remapped: res://assets/materials/greystone/props/leaf_light.tres
+Completed load for: 'res://assets/materials/greystone/props/leaf_light.tres' remapped 'res://assets/materials/greystone/props/leaf_light.tres' at thread 0
+Loading resource: res://assets/materials/greystone/props/leaf.tres remapped: res://assets/materials/greystone/props/leaf.tres
+Completed load for: 'res://assets/materials/greystone/props/leaf.tres' remapped 'res://assets/materials/greystone/props/leaf.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/props/leafy_crop.glb' remapped 'res://assets/models/greystone/props/leafy_crop.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/leafy_crop.tscn' remapped 'res://scenes/world/greystone/props/leafy_crop.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/wooden_sign.tscn remapped: res://scenes/world/greystone/props/wooden_sign.tscn
+Loading resource: res://assets/models/greystone/props/wooden_sign.glb remapped: res://assets/models/greystone/props/wooden_sign.glb
+Loading resource: res://.godot/imported/wooden_sign.glb-795d2fe6287375ac0a0b03d5c642bd67.scn remapped: res://.godot/imported/wooden_sign.glb-795d2fe6287375ac0a0b03d5c642bd67.scn
+Completed load for: 'res://assets/models/greystone/props/wooden_sign.glb' remapped 'res://assets/models/greystone/props/wooden_sign.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/wooden_sign.tscn' remapped 'res://scenes/world/greystone/props/wooden_sign.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/waterwheel_bank.tscn remapped: res://scenes/world/greystone/props/waterwheel_bank.tscn
+Loading resource: res://scripts/world/greystone_waterwheel.gd remapped: res://scripts/world/greystone_waterwheel.gd
+Completed load for: 'res://scripts/world/greystone_waterwheel.gd' remapped 'res://scripts/world/greystone_waterwheel.gd' at thread 0
+Loading resource: res://assets/models/greystone/props/waterwheel_bank.glb remapped: res://assets/models/greystone/props/waterwheel_bank.glb
+Loading resource: res://.godot/imported/waterwheel_bank.glb-bb50dd5ab0163b59b952fde5d3e56944.scn remapped: res://.godot/imported/waterwheel_bank.glb-bb50dd5ab0163b59b952fde5d3e56944.scn
+Loading resource: res://assets/materials/greystone/props/iron.tres remapped: res://assets/materials/greystone/props/iron.tres
+Completed load for: 'res://assets/materials/greystone/props/iron.tres' remapped 'res://assets/materials/greystone/props/iron.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/props/waterwheel_bank.glb' remapped 'res://assets/models/greystone/props/waterwheel_bank.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/waterwheel_bank.tscn' remapped 'res://scenes/world/greystone/props/waterwheel_bank.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/pine_tree_a.tscn remapped: res://scenes/world/greystone/props/pine_tree_a.tscn
+Loading resource: res://assets/models/greystone/props/pine_tree_a.glb remapped: res://assets/models/greystone/props/pine_tree_a.glb
+Loading resource: res://.godot/imported/pine_tree_a.glb-7d08bcdf71470c14e4daeb7123108df0.scn remapped: res://.godot/imported/pine_tree_a.glb-7d08bcdf71470c14e4daeb7123108df0.scn
+Completed load for: 'res://assets/models/greystone/props/pine_tree_a.glb' remapped 'res://assets/models/greystone/props/pine_tree_a.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/pine_tree_a.tscn' remapped 'res://scenes/world/greystone/props/pine_tree_a.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/pine_tree_b.tscn remapped: res://scenes/world/greystone/props/pine_tree_b.tscn
+Loading resource: res://assets/models/greystone/props/pine_tree_b.glb remapped: res://assets/models/greystone/props/pine_tree_b.glb
+Loading resource: res://.godot/imported/pine_tree_b.glb-ce6facfae2edf00fcfa58c093e9f59c8.scn remapped: res://.godot/imported/pine_tree_b.glb-ce6facfae2edf00fcfa58c093e9f59c8.scn
+Completed load for: 'res://assets/models/greystone/props/pine_tree_b.glb' remapped 'res://assets/models/greystone/props/pine_tree_b.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/pine_tree_b.tscn' remapped 'res://scenes/world/greystone/props/pine_tree_b.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/bush_a.tscn remapped: res://scenes/world/greystone/props/bush_a.tscn
+Loading resource: res://assets/models/greystone/props/bush_a.glb remapped: res://assets/models/greystone/props/bush_a.glb
+Loading resource: res://.godot/imported/bush_a.glb-34f7fe9ee0f95eaec1b0251fc8121a9c.scn remapped: res://.godot/imported/bush_a.glb-34f7fe9ee0f95eaec1b0251fc8121a9c.scn
+Completed load for: 'res://assets/models/greystone/props/bush_a.glb' remapped 'res://assets/models/greystone/props/bush_a.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/bush_a.tscn' remapped 'res://scenes/world/greystone/props/bush_a.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/flower_a.tscn remapped: res://scenes/world/greystone/props/flower_a.tscn
+Loading resource: res://assets/models/greystone/props/flower_a.glb remapped: res://assets/models/greystone/props/flower_a.glb
+Loading resource: res://.godot/imported/flower_a.glb-261b5881885adfd703831a79728cc80b.scn remapped: res://.godot/imported/flower_a.glb-261b5881885adfd703831a79728cc80b.scn
+Loading resource: res://assets/materials/greystone/props/flower.tres remapped: res://assets/materials/greystone/props/flower.tres
+Completed load for: 'res://assets/materials/greystone/props/flower.tres' remapped 'res://assets/materials/greystone/props/flower.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/props/flower_a.glb' remapped 'res://assets/models/greystone/props/flower_a.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/flower_a.tscn' remapped 'res://scenes/world/greystone/props/flower_a.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/grass_a.tscn remapped: res://scenes/world/greystone/props/grass_a.tscn
+Loading resource: res://assets/models/greystone/props/grass_a.glb remapped: res://assets/models/greystone/props/grass_a.glb
+Loading resource: res://.godot/imported/grass_a.glb-fb96c07fbd09ba3742c0f9e85ee590d7.scn remapped: res://.godot/imported/grass_a.glb-fb96c07fbd09ba3742c0f9e85ee590d7.scn
+Completed load for: 'res://assets/models/greystone/props/grass_a.glb' remapped 'res://assets/models/greystone/props/grass_a.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/grass_a.tscn' remapped 'res://scenes/world/greystone/props/grass_a.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/rock_small.tscn remapped: res://scenes/world/greystone/props/rock_small.tscn
+Loading resource: res://assets/models/greystone/props/rock_small.glb remapped: res://assets/models/greystone/props/rock_small.glb
+Loading resource: res://.godot/imported/rock_small.glb-21f468883278dc7105d629d85f6b704b.scn remapped: res://.godot/imported/rock_small.glb-21f468883278dc7105d629d85f6b704b.scn
+Completed load for: 'res://assets/models/greystone/props/rock_small.glb' remapped 'res://assets/models/greystone/props/rock_small.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/rock_small.tscn' remapped 'res://scenes/world/greystone/props/rock_small.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/rock_medium.tscn remapped: res://scenes/world/greystone/props/rock_medium.tscn
+Loading resource: res://assets/models/greystone/props/rock_medium.glb remapped: res://assets/models/greystone/props/rock_medium.glb
+Loading resource: res://.godot/imported/rock_medium.glb-dbab394682c9b5be75fa8e224c092552.scn remapped: res://.godot/imported/rock_medium.glb-dbab394682c9b5be75fa8e224c092552.scn
+Completed load for: 'res://assets/models/greystone/props/rock_medium.glb' remapped 'res://assets/models/greystone/props/rock_medium.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/rock_medium.tscn' remapped 'res://scenes/world/greystone/props/rock_medium.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/rock_cliff.tscn remapped: res://scenes/world/greystone/props/rock_cliff.tscn
+Loading resource: res://assets/models/greystone/props/rock_cliff.glb remapped: res://assets/models/greystone/props/rock_cliff.glb
+Loading resource: res://.godot/imported/rock_cliff.glb-80804be1eb24699a39843ff74dc8751e.scn remapped: res://.godot/imported/rock_cliff.glb-80804be1eb24699a39843ff74dc8751e.scn
+Completed load for: 'res://assets/models/greystone/props/rock_cliff.glb' remapped 'res://assets/models/greystone/props/rock_cliff.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/rock_cliff.tscn' remapped 'res://scenes/world/greystone/props/rock_cliff.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/barrel.tscn remapped: res://scenes/world/greystone/props/barrel.tscn
+Loading resource: res://assets/models/greystone/props/barrel.glb remapped: res://assets/models/greystone/props/barrel.glb
+Loading resource: res://.godot/imported/barrel.glb-78fb4bce54df1902cc4c9153823e3792.scn remapped: res://.godot/imported/barrel.glb-78fb4bce54df1902cc4c9153823e3792.scn
+Completed load for: 'res://assets/models/greystone/props/barrel.glb' remapped 'res://assets/models/greystone/props/barrel.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/barrel.tscn' remapped 'res://scenes/world/greystone/props/barrel.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/crate.tscn remapped: res://scenes/world/greystone/props/crate.tscn
+Loading resource: res://assets/models/greystone/props/crate.glb remapped: res://assets/models/greystone/props/crate.glb
+Loading resource: res://.godot/imported/crate.glb-b928e818792635324d4c7c0621b765c7.scn remapped: res://.godot/imported/crate.glb-b928e818792635324d4c7c0621b765c7.scn
+Completed load for: 'res://assets/models/greystone/props/crate.glb' remapped 'res://assets/models/greystone/props/crate.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/crate.tscn' remapped 'res://scenes/world/greystone/props/crate.tscn' at thread 0
+Loading resource: res://scenes/world/greystone/props/crystal_blue.tscn remapped: res://scenes/world/greystone/props/crystal_blue.tscn
+Loading resource: res://assets/models/greystone/props/crystal_blue.glb remapped: res://assets/models/greystone/props/crystal_blue.glb
+Loading resource: res://.godot/imported/crystal_blue.glb-c2900a50d77930cf6925791b3208af2d.scn remapped: res://.godot/imported/crystal_blue.glb-c2900a50d77930cf6925791b3208af2d.scn
+Loading resource: res://assets/materials/greystone/props/crystal.tres remapped: res://assets/materials/greystone/props/crystal.tres
+Completed load for: 'res://assets/materials/greystone/props/crystal.tres' remapped 'res://assets/materials/greystone/props/crystal.tres' at thread 0
+Completed load for: 'res://assets/models/greystone/props/crystal_blue.glb' remapped 'res://assets/models/greystone/props/crystal_blue.glb' at thread 0
+Completed load for: 'res://scenes/world/greystone/props/crystal_blue.tscn' remapped 'res://scenes/world/greystone/props/crystal_blue.tscn' at thread 0
+Completed load for: 'res://scenes/world/greystone_village.tscn' remapped 'res://scenes/world/greystone_village.tscn' at thread 0
+Loading resource: res://scenes/world/greystone_npcs.tscn remapped: res://scenes/world/greystone_npcs.tscn
+Loading resource: res://scenes/characters/lia_pixal_visual.tscn remapped: res://scenes/characters/lia_pixal_visual.tscn
+Loading resource: res://assets/models/pixal3d/lia_locomotion.glb remapped: res://assets/models/pixal3d/lia_locomotion.glb
+Loading resource: res://.godot/imported/lia_locomotion.glb-ca72cfd831d1b66fe32b7048487b4fde.scn remapped: res://.godot/imported/lia_locomotion.glb-ca72cfd831d1b66fe32b7048487b4fde.scn
+Loading resource: res://assets/models/pixal3d/lia_locomotion_Image_0.png remapped: res://assets/models/pixal3d/lia_locomotion_Image_0.png
+Loading resource: res://.godot/imported/lia_locomotion_Image_0.png-dc464bc0ef7c8f792fd887f81ccfc645.ctex remapped: res://.godot/imported/lia_locomotion_Image_0.png-dc464bc0ef7c8f792fd887f81ccfc645.ctex
+Completed load for: 'res://assets/models/pixal3d/lia_locomotion_Image_0.png' remapped 'res://assets/models/pixal3d/lia_locomotion_Image_0.png' at thread 0
+Loading resource: res://assets/models/pixal3d/lia_locomotion_Image_1.png remapped: res://assets/models/pixal3d/lia_locomotion_Image_1.png
+Loading resource: res://.godot/imported/lia_locomotion_Image_1.png-11c7bdc9c3c432d0cb7ff1aeeac96c69.ctex remapped: res://.godot/imported/lia_locomotion_Image_1.png-11c7bdc9c3c432d0cb7ff1aeeac96c69.ctex
+Completed load for: 'res://assets/models/pixal3d/lia_locomotion_Image_1.png' remapped 'res://assets/models/pixal3d/lia_locomotion_Image_1.png' at thread 0
+Loading resource: res://assets/models/pixal3d/lia_locomotion_Image_2.png remapped: res://assets/models/pixal3d/lia_locomotion_Image_2.png
+Loading resource: res://.godot/imported/lia_locomotion_Image_2.png-ddd9b5faff13a4403f736a73939779ca.ctex remapped: res://.godot/imported/lia_locomotion_Image_2.png-ddd9b5faff13a4403f736a73939779ca.ctex
+Completed load for: 'res://assets/models/pixal3d/lia_locomotion_Image_2.png' remapped 'res://assets/models/pixal3d/lia_locomotion_Image_2.png' at thread 0
+Completed load for: 'res://assets/models/pixal3d/lia_locomotion.glb' remapped 'res://assets/models/pixal3d/lia_locomotion.glb' at thread 0
+Loading resource: res://assets/models/pixal3d/lia_locomotion_profile.tres remapped: res://assets/models/pixal3d/lia_locomotion_profile.tres
+Completed load for: 'res://assets/models/pixal3d/lia_locomotion_profile.tres' remapped 'res://assets/models/pixal3d/lia_locomotion_profile.tres' at thread 0
+Completed load for: 'res://scenes/characters/lia_pixal_visual.tscn' remapped 'res://scenes/characters/lia_pixal_visual.tscn' at thread 0
+Loading resource: res://scenes/characters/npc/innkeeper_visual.tscn remapped: res://scenes/characters/npc/innkeeper_visual.tscn
+Loading resource: res://scripts/characters/rigged_npc_visual.gd remapped: res://scripts/characters/rigged_npc_visual.gd
+Completed load for: 'res://scripts/characters/rigged_npc_visual.gd' remapped 'res://scripts/characters/rigged_npc_visual.gd' at thread 0
+Loading resource: res://assets/models/rebuilt_npc/innkeeper.glb remapped: res://assets/models/rebuilt_npc/innkeeper.glb
+Loading resource: res://.godot/imported/innkeeper.glb-a430897a33910c4d5189a2197d7db317.scn remapped: res://.godot/imported/innkeeper.glb-a430897a33910c4d5189a2197d7db317.scn
+Loading resource: res://assets/models/rebuilt_npc/innkeeper_Image_0.png remapped: res://assets/models/rebuilt_npc/innkeeper_Image_0.png
+Loading resource: res://.godot/imported/innkeeper_Image_0.png-e438905dcf8c0a449f605bed893d5aad.ctex remapped: res://.godot/imported/innkeeper_Image_0.png-e438905dcf8c0a449f605bed893d5aad.ctex
+Completed load for: 'res://assets/models/rebuilt_npc/innkeeper_Image_0.png' remapped 'res://assets/models/rebuilt_npc/innkeeper_Image_0.png' at thread 0
+Loading resource: res://assets/models/rebuilt_npc/innkeeper_Image_1.png remapped: res://assets/models/rebuilt_npc/innkeeper_Image_1.png
+Loading resource: res://.godot/imported/innkeeper_Image_1.png-4ece1d3d11696c5895d8166736dbe808.ctex remapped: res://.godot/imported/innkeeper_Image_1.png-4ece1d3d11696c5895d8166736dbe808.ctex
+Completed load for: 'res://assets/models/rebuilt_npc/innkeeper_Image_1.png' remapped 'res://assets/models/rebuilt_npc/innkeeper_Image_1.png' at thread 0
+Loading resource: res://assets/models/rebuilt_npc/innkeeper_apron_albedo.png remapped: res://assets/models/rebuilt_npc/innkeeper_apron_albedo.png
+Loading resource: res://.godot/imported/innkeeper_apron_albedo.png-4d1694f00564f368587791e36ba2f174.ctex remapped: res://.godot/imported/innkeeper_apron_albedo.png-4d1694f00564f368587791e36ba2f174.ctex
+Completed load for: 'res://assets/models/rebuilt_npc/innkeeper_apron_albedo.png' remapped 'res://assets/models/rebuilt_npc/innkeeper_apron_albedo.png' at thread 0
+Completed load for: 'res://assets/models/rebuilt_npc/innkeeper.glb' remapped 'res://assets/models/rebuilt_npc/innkeeper.glb' at thread 0
+Completed load for: 'res://scenes/characters/npc/innkeeper_visual.tscn' remapped 'res://scenes/characters/npc/innkeeper_visual.tscn' at thread 0
+Loading resource: res://scenes/characters/npc/item_merchant_visual.tscn remapped: res://scenes/characters/npc/item_merchant_visual.tscn
+Loading resource: res://assets/models/rebuilt_npc/item_merchant.glb remapped: res://assets/models/rebuilt_npc/item_merchant.glb
+Loading resource: res://.godot/imported/item_merchant.glb-8914c217c432552f59d2fbc3393ca051.scn remapped: res://.godot/imported/item_merchant.glb-8914c217c432552f59d2fbc3393ca051.scn
+Loading resource: res://assets/models/rebuilt_npc/item_merchant_albedo.png remapped: res://assets/models/rebuilt_npc/item_merchant_albedo.png
+Loading resource: res://.godot/imported/item_merchant_albedo.png-2f062b4b0b6c4960f5b288e94e3aced8.ctex remapped: res://.godot/imported/item_merchant_albedo.png-2f062b4b0b6c4960f5b288e94e3aced8.ctex
+Completed load for: 'res://assets/models/rebuilt_npc/item_merchant_albedo.png' remapped 'res://assets/models/rebuilt_npc/item_merchant_albedo.png' at thread 0
+Completed load for: 'res://assets/models/rebuilt_npc/item_merchant.glb' remapped 'res://assets/models/rebuilt_npc/item_merchant.glb' at thread 0
+Completed load for: 'res://scenes/characters/npc/item_merchant_visual.tscn' remapped 'res://scenes/characters/npc/item_merchant_visual.tscn' at thread 0
+Loading resource: res://scenes/characters/npc/blacksmith_visual.tscn remapped: res://scenes/characters/npc/blacksmith_visual.tscn
+Loading resource: res://assets/models/rebuilt_npc/blacksmith.glb remapped: res://assets/models/rebuilt_npc/blacksmith.glb
+Loading resource: res://.godot/imported/blacksmith.glb-6ed17c1575ceba87af8df4f536ffa284.scn remapped: res://.godot/imported/blacksmith.glb-6ed17c1575ceba87af8df4f536ffa284.scn
+Loading resource: res://assets/models/rebuilt_npc/blacksmith_blacksmith_diffuse.png remapped: res://assets/models/rebuilt_npc/blacksmith_blacksmith_diffuse.png
+Loading resource: res://.godot/imported/blacksmith_blacksmith_diffuse.png-b4a62171262151ec934c13af307ea287.ctex remapped: res://.godot/imported/blacksmith_blacksmith_diffuse.png-b4a62171262151ec934c13af307ea287.ctex
+Completed load for: 'res://assets/models/rebuilt_npc/blacksmith_blacksmith_diffuse.png' remapped 'res://assets/models/rebuilt_npc/blacksmith_blacksmith_diffuse.png' at thread 0
+Completed load for: 'res://assets/models/rebuilt_npc/blacksmith.glb' remapped 'res://assets/models/rebuilt_npc/blacksmith.glb' at thread 0
+Completed load for: 'res://scenes/characters/npc/blacksmith_visual.tscn' remapped 'res://scenes/characters/npc/blacksmith_visual.tscn' at thread 0
+Loading resource: res://scenes/characters/npc/villager_male_visual.tscn remapped: res://scenes/characters/npc/villager_male_visual.tscn
+Loading resource: res://assets/models/rebuilt_npc/villager_male.glb remapped: res://assets/models/rebuilt_npc/villager_male.glb
+Loading resource: res://.godot/imported/villager_male.glb-f08acecd2f97f100628a0739e36534da.scn remapped: res://.godot/imported/villager_male.glb-f08acecd2f97f100628a0739e36534da.scn
+Loading resource: res://assets/models/rebuilt_npc/villager_male_Image_0.png remapped: res://assets/models/rebuilt_npc/villager_male_Image_0.png
+Loading resource: res://.godot/imported/villager_male_Image_0.png-20f4297275ec9b1578c9c89a76851f30.ctex remapped: res://.godot/imported/villager_male_Image_0.png-20f4297275ec9b1578c9c89a76851f30.ctex
+Completed load for: 'res://assets/models/rebuilt_npc/villager_male_Image_0.png' remapped 'res://assets/models/rebuilt_npc/villager_male_Image_0.png' at thread 0
+Loading resource: res://assets/models/rebuilt_npc/villager_male_Image_1.png remapped: res://assets/models/rebuilt_npc/villager_male_Image_1.png
+Loading resource: res://.godot/imported/villager_male_Image_1.png-2704f539042dacaa369bcc7c3a5d11d2.ctex remapped: res://.godot/imported/villager_male_Image_1.png-2704f539042dacaa369bcc7c3a5d11d2.ctex
+Completed load for: 'res://assets/models/rebuilt_npc/villager_male_Image_1.png' remapped 'res://assets/models/rebuilt_npc/villager_male_Image_1.png' at thread 0
+Completed load for: 'res://assets/models/rebuilt_npc/villager_male.glb' remapped 'res://assets/models/rebuilt_npc/villager_male.glb' at thread 0
+Completed load for: 'res://scenes/characters/npc/villager_male_visual.tscn' remapped 'res://scenes/characters/npc/villager_male_visual.tscn' at thread 0
+Completed load for: 'res://scenes/world/greystone_npcs.tscn' remapped 'res://scenes/world/greystone_npcs.tscn' at thread 0
+Completed load for: 'res://scenes/world/greystone_runtime.tscn' remapped 'res://scenes/world/greystone_runtime.tscn' at thread 0
+Completed load for: 'res://scripts/core/greystone_integration.gd' remapped 'res://scripts/core/greystone_integration.gd' at thread 0
+Completed load for: 'res://scenes/main/greystone_integration.tscn' remapped 'res://scenes/main/greystone_integration.tscn' at thread 0
+Loading resource: res://scripts/core/greystone_preview.gd remapped: res://scripts/core/greystone_preview.gd
+Completed load for: 'res://scripts/core/greystone_preview.gd' remapped 'res://scripts/core/greystone_preview.gd' at thread 0
+Completed load for: 'res://scenes/main/greystone_preview.tscn' remapped 'res://scenes/main/greystone_preview.tscn' at thread 0
+Loading resource: res://assets/models/female/willow_staff.glb remapped: res://assets/models/female/willow_staff.glb
+Loading resource: res://.godot/imported/willow_staff.glb-fe016cbdf2ecc95d1be9fe6eff366ec6.scn remapped: res://.godot/imported/willow_staff.glb-fe016cbdf2ecc95d1be9fe6eff366ec6.scn
+Completed load for: 'res://assets/models/female/willow_staff.glb' remapped 'res://assets/models/female/willow_staff.glb' at thread -1
+Loading resource: res://data/enemies/spore_sprite.tres remapped: res://data/enemies/spore_sprite.tres
+Loading resource: res://scenes/characters/spore_sprite_visual.tscn remapped: res://scenes/characters/spore_sprite_visual.tscn
+Loading resource: res://scenes/characters/rebuilt/spore_sprite_visual.tscn remapped: res://scenes/characters/rebuilt/spore_sprite_visual.tscn
+Loading resource: res://assets/models/rebuilt_enemies/spore_sprite.glb remapped: res://assets/models/rebuilt_enemies/spore_sprite.glb
+Loading resource: res://.godot/imported/spore_sprite.glb-0e640550dc9778dafe4cd464d75c75fc.scn remapped: res://.godot/imported/spore_sprite.glb-0e640550dc9778dafe4cd464d75c75fc.scn
+Loading resource: res://assets/models/rebuilt_enemies/spore_sprite_albedo.png remapped: res://assets/models/rebuilt_enemies/spore_sprite_albedo.png
+Loading resource: res://.godot/imported/spore_sprite_albedo.png-9f7dc24ed667e6932834ea1a9fb0dc84.ctex remapped: res://.godot/imported/spore_sprite_albedo.png-9f7dc24ed667e6932834ea1a9fb0dc84.ctex
+Completed load for: 'res://assets/models/rebuilt_enemies/spore_sprite_albedo.png' remapped 'res://assets/models/rebuilt_enemies/spore_sprite_albedo.png' at thread -1
+Completed load for: 'res://assets/models/rebuilt_enemies/spore_sprite.glb' remapped 'res://assets/models/rebuilt_enemies/spore_sprite.glb' at thread -1
+Completed load for: 'res://scenes/characters/rebuilt/spore_sprite_visual.tscn' remapped 'res://scenes/characters/rebuilt/spore_sprite_visual.tscn' at thread -1
+Completed load for: 'res://scenes/characters/spore_sprite_visual.tscn' remapped 'res://scenes/characters/spore_sprite_visual.tscn' at thread -1
+Completed load for: 'res://data/enemies/spore_sprite.tres' remapped 'res://data/enemies/spore_sprite.tres' at thread -1
+Loading resource: res://data/enemies/thorn_boar.tres remapped: res://data/enemies/thorn_boar.tres
+Loading resource: res://scenes/characters/thorn_boar_visual.tscn remapped: res://scenes/characters/thorn_boar_visual.tscn
+Loading resource: res://scenes/characters/rebuilt/thorn_boar_visual.tscn remapped: res://scenes/characters/rebuilt/thorn_boar_visual.tscn
+Loading resource: res://assets/models/rebuilt_enemies/thorn_boar.glb remapped: res://assets/models/rebuilt_enemies/thorn_boar.glb
+Loading resource: res://.godot/imported/thorn_boar.glb-8a5f9a2c6f8b6245ef24a622e01bf444.scn remapped: res://.godot/imported/thorn_boar.glb-8a5f9a2c6f8b6245ef24a622e01bf444.scn
+Loading resource: res://assets/models/rebuilt_enemies/thorn_boar_albedo.png remapped: res://assets/models/rebuilt_enemies/thorn_boar_albedo.png
+Loading resource: res://.godot/imported/thorn_boar_albedo.png-163484138a9bcd958d86081eed7d6d91.ctex remapped: res://.godot/imported/thorn_boar_albedo.png-163484138a9bcd958d86081eed7d6d91.ctex
+Completed load for: 'res://assets/models/rebuilt_enemies/thorn_boar_albedo.png' remapped 'res://assets/models/rebuilt_enemies/thorn_boar_albedo.png' at thread -1
+Completed load for: 'res://assets/models/rebuilt_enemies/thorn_boar.glb' remapped 'res://assets/models/rebuilt_enemies/thorn_boar.glb' at thread -1
+Completed load for: 'res://scenes/characters/rebuilt/thorn_boar_visual.tscn' remapped 'res://scenes/characters/rebuilt/thorn_boar_visual.tscn' at thread -1
+Completed load for: 'res://scenes/characters/thorn_boar_visual.tscn' remapped 'res://scenes/characters/thorn_boar_visual.tscn' at thread -1
+Completed load for: 'res://data/enemies/thorn_boar.tres' remapped 'res://data/enemies/thorn_boar.tres' at thread -1
+Loading resource: res://data/enemies/crystal_bat.tres remapped: res://data/enemies/crystal_bat.tres
+Loading resource: res://scenes/characters/crystal_bat_visual.tscn remapped: res://scenes/characters/crystal_bat_visual.tscn
+Loading resource: res://scenes/characters/rebuilt/crystal_bat_visual.tscn remapped: res://scenes/characters/rebuilt/crystal_bat_visual.tscn
+Loading resource: res://scenes/characters/rebuilt/crystal_bat_manual_visual.tscn remapped: res://scenes/characters/rebuilt/crystal_bat_manual_visual.tscn
+Loading resource: res://assets/models/rebuilt_enemies/crystal_bat_manual.glb remapped: res://assets/models/rebuilt_enemies/crystal_bat_manual.glb
+Loading resource: res://.godot/imported/crystal_bat_manual.glb-21545853df29ad967968b0c590fe6b25.scn remapped: res://.godot/imported/crystal_bat_manual.glb-21545853df29ad967968b0c590fe6b25.scn
+Loading resource: res://assets/models/rebuilt_enemies/crystal_bat_manual_BatWingPalette.png remapped: res://assets/models/rebuilt_enemies/crystal_bat_manual_BatWingPalette.png
+Loading resource: res://.godot/imported/crystal_bat_manual_BatWingPalette.png-4bb034eaf8828fb54efc0deab58efd02.ctex remapped: res://.godot/imported/crystal_bat_manual_BatWingPalette.png-4bb034eaf8828fb54efc0deab58efd02.ctex
+Completed load for: 'res://assets/models/rebuilt_enemies/crystal_bat_manual_BatWingPalette.png' remapped 'res://assets/models/rebuilt_enemies/crystal_bat_manual_BatWingPalette.png' at thread -1
+Loading resource: res://assets/models/rebuilt_enemies/crystal_bat_manual_albedo.png remapped: res://assets/models/rebuilt_enemies/crystal_bat_manual_albedo.png
+Loading resource: res://.godot/imported/crystal_bat_manual_albedo.png-59e27f9f8b12af9243ad8de25f3ec697.ctex remapped: res://.godot/imported/crystal_bat_manual_albedo.png-59e27f9f8b12af9243ad8de25f3ec697.ctex
+Completed load for: 'res://assets/models/rebuilt_enemies/crystal_bat_manual_albedo.png' remapped 'res://assets/models/rebuilt_enemies/crystal_bat_manual_albedo.png' at thread -1
+Completed load for: 'res://assets/models/rebuilt_enemies/crystal_bat_manual.glb' remapped 'res://assets/models/rebuilt_enemies/crystal_bat_manual.glb' at thread -1
+Completed load for: 'res://scenes/characters/rebuilt/crystal_bat_manual_visual.tscn' remapped 'res://scenes/characters/rebuilt/crystal_bat_manual_visual.tscn' at thread -1
+Completed load for: 'res://scenes/characters/rebuilt/crystal_bat_visual.tscn' remapped 'res://scenes/characters/rebuilt/crystal_bat_visual.tscn' at thread -1
+Completed load for: 'res://scenes/characters/crystal_bat_visual.tscn' remapped 'res://scenes/characters/crystal_bat_visual.tscn' at thread -1
+Completed load for: 'res://data/enemies/crystal_bat.tres' remapped 'res://data/enemies/crystal_bat.tres' at thread -1
+Loading resource: res://data/enemies/ore_beetle.tres remapped: res://data/enemies/ore_beetle.tres
+Loading resource: res://scenes/characters/ore_beetle_visual.tscn remapped: res://scenes/characters/ore_beetle_visual.tscn
+Loading resource: res://scenes/characters/rebuilt/ore_beetle_visual.tscn remapped: res://scenes/characters/rebuilt/ore_beetle_visual.tscn
+Loading resource: res://assets/models/rebuilt_enemies/ore_beetle.glb remapped: res://assets/models/rebuilt_enemies/ore_beetle.glb
+Loading resource: res://.godot/imported/ore_beetle.glb-3d8e2233ea2753339b815195565515fe.scn remapped: res://.godot/imported/ore_beetle.glb-3d8e2233ea2753339b815195565515fe.scn
+Loading resource: res://assets/models/rebuilt_enemies/ore_beetle_albedo.png remapped: res://assets/models/rebuilt_enemies/ore_beetle_albedo.png
+Loading resource: res://.godot/imported/ore_beetle_albedo.png-fc920a4b63179d23186a64bf4733c902.ctex remapped: res://.godot/imported/ore_beetle_albedo.png-fc920a4b63179d23186a64bf4733c902.ctex
+Completed load for: 'res://assets/models/rebuilt_enemies/ore_beetle_albedo.png' remapped 'res://assets/models/rebuilt_enemies/ore_beetle_albedo.png' at thread -1
+Completed load for: 'res://assets/models/rebuilt_enemies/ore_beetle.glb' remapped 'res://assets/models/rebuilt_enemies/ore_beetle.glb' at thread -1
+Completed load for: 'res://scenes/characters/rebuilt/ore_beetle_visual.tscn' remapped 'res://scenes/characters/rebuilt/ore_beetle_visual.tscn' at thread -1
+Completed load for: 'res://scenes/characters/ore_beetle_visual.tscn' remapped 'res://scenes/characters/ore_beetle_visual.tscn' at thread -1
+Completed load for: 'res://data/enemies/ore_beetle.tres' remapped 'res://data/enemies/ore_beetle.tres' at thread -1
+Loading resource: res://scenes/world/expanded/forest.tscn remapped: res://scenes/world/expanded/forest.tscn
+Loading resource: res://scripts/world/expanded_wilderness.gd remapped: res://scripts/world/expanded_wilderness.gd
+Completed load for: 'res://scripts/world/expanded_wilderness.gd' remapped 'res://scripts/world/expanded_wilderness.gd' at thread -1
+Loading resource: res://scenes/world/expanded/forest_scenery.tscn remapped: res://scenes/world/expanded/forest_scenery.tscn
+Loading resource: res://scenes/world/greystone/props/fallen_log.tscn remapped: res://scenes/world/greystone/props/fallen_log.tscn
+Loading resource: res://assets/models/environment/fallen_log.glb remapped: res://assets/models/environment/fallen_log.glb
+Loading resource: res://.godot/imported/fallen_log.glb-436566d60f47460bf42824652a902df9.scn remapped: res://.godot/imported/fallen_log.glb-436566d60f47460bf42824652a902df9.scn
+Loading resource: res://assets/materials/greystone/props/wood_cut.tres remapped: res://assets/materials/greystone/props/wood_cut.tres
+Completed load for: 'res://assets/materials/greystone/props/wood_cut.tres' remapped 'res://assets/materials/greystone/props/wood_cut.tres' at thread -1
+Completed load for: 'res://assets/models/environment/fallen_log.glb' remapped 'res://assets/models/environment/fallen_log.glb' at thread -1
+Completed load for: 'res://scenes/world/greystone/props/fallen_log.tscn' remapped 'res://scenes/world/greystone/props/fallen_log.tscn' at thread -1
+Completed load for: 'res://scenes/world/expanded/forest_scenery.tscn' remapped 'res://scenes/world/expanded/forest_scenery.tscn' at thread -1
+Completed load for: 'res://scenes/world/expanded/forest.tscn' remapped 'res://scenes/world/expanded/forest.tscn' at thread -1
+Loading resource: res://scenes/world/expanded/mine.tscn remapped: res://scenes/world/expanded/mine.tscn
+Completed load for: 'res://scenes/world/expanded/mine.tscn' remapped 'res://scenes/world/expanded/mine.tscn' at thread -1
+Loading resource: res://assets/models/female/willow_staff.glb remapped: res://assets/models/female/willow_staff.glb
+Loading resource: res://.godot/imported/willow_staff.glb-fe016cbdf2ecc95d1be9fe6eff366ec6.scn remapped: res://.godot/imported/willow_staff.glb-fe016cbdf2ecc95d1be9fe6eff366ec6.scn
+Completed load for: 'res://assets/models/female/willow_staff.glb' remapped 'res://assets/models/female/willow_staff.glb' at thread -1
+BOOT_LIFECYCLE_READY ready
+BOOT_LIFECYCLE_ORPHANS 0.0
+XR: Clearing primary interface
+XR: Removed interface "Native mobile"
+XR: Removed interface "OpenXR"
+Accessibility: window 0 adapter destroyed.
+Leaked instance: RefCounted:9223372075190715961 - Reference count: 0
+Leaked instance: RefCounted:9223372157583623799 - Reference count: 0
+Leaked instance: RefCounted:9223372175216478239 - Reference count: 0
+Hint: Leaked instances typically happen when nodes are removed from the scene tree (with `remove_child()`) but not freed (with `free()` or `queue_free()`).
+Orphan StringName: Vector2 (static: 0, total: 1)
+Orphan StringName: Vector3 (static: 0, total: 1)
+Orphan StringName: Vector4 (static: 0, total: 1)
+Orphan StringName: PackedVector4Array (static: 0, total: 1)
+Orphan StringName: RID (static: 0, total: 1)
+Orphan StringName: Color (static: 0, total: 1)
+Orphan StringName: PackedByteArray (static: 0, total: 1)
+Orphan StringName: Vector2i (static: 0, total: 1)
+Orphan StringName: Callable (static: 0, total: 1)
+Orphan StringName: Vector3i (static: 0, total: 1)
+Orphan StringName: Vector4i (static: 0, total: 1)
+Orphan StringName: PackedStringArray (static: 0, total: 1)
+Orphan StringName: Basis (static: 0, total: 1)
+Orphan StringName: int (static: 0, total: 1)
+Orphan StringName: PackedFloat32Array (static: 0, total: 1)
+Orphan StringName: Plane (static: 0, total: 1)
+Orphan StringName: PackedFloat64Array (static: 0, total: 1)
+Orphan StringName: NodePath (static: 0, total: 1)
+Orphan StringName: Signal (static: 0, total: 1)
+Orphan StringName: StringName (static: 0, total: 1)
+Orphan StringName: String (static: 0, total: 1)
+Orphan StringName: Transform2D (static: 0, total: 1)
+Orphan StringName: Transform3D (static: 0, total: 1)
+Orphan StringName: Array (static: 0, total: 1)
+Orphan StringName: Quaternion (static: 0, total: 1)
+Orphan StringName: bool (static: 0, total: 1)
+Orphan StringName: PackedColorArray (static: 0, total: 1)
+Orphan StringName: PackedVector2Array (static: 0, total: 1)
+Orphan StringName: Object (static: 1, total: 2)
+Orphan StringName: AABB (static: 0, total: 1)
+Orphan StringName: float (static: 0, total: 1)
+Orphan StringName: Dictionary (static: 0, total: 1)
+Orphan StringName: Projection (static: 0, total: 1)
+Orphan StringName: Rect2 (static: 0, total: 1)
+Orphan StringName: PackedVector3Array (static: 0, total: 1)
+Orphan StringName: PackedInt32Array (static: 0, total: 1)
+Orphan StringName: Rect2i (static: 0, total: 1)
+Orphan StringName: PackedInt64Array (static: 0, total: 1)
+StringName: 38 unclaimed string names at exit.
+WARNING: 3 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)

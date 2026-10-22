@@ -1,0 +1,62 @@
+[
+  {
+    "cache": "app_cache_fresh",
+    "repeat": 0,
+    "pid": 30272,
+    "exit_code": 0,
+    "seconds": 10.5677586,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-063441-330\\app_cache_fresh-0",
+    "timed_out": false,
+    "loading_screen": false
+  },
+  {
+    "cache": "app_cache_fresh",
+    "repeat": 1,
+    "pid": 17404,
+    "exit_code": 0,
+    "seconds": 5.8921789,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-063441-330\\app_cache_fresh-1",
+    "timed_out": false,
+    "loading_screen": false
+  },
+  {
+    "cache": "same_app_cache_repeat",
+    "repeat": 0,
+    "pid": 16360,
+    "exit_code": 0,
+    "seconds": 5.8318173,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-063441-330\\same_app_cache_repeat-0",
+    "timed_out": false,
+    "loading_screen": false
+  },
+  {
+    "cache": "same_app_cache_repeat",
+    "repeat": 1,
+    "pid": 25108,
+    "exit_code": 0,
+    "seconds": 5.8242079,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-063441-330\\same_app_cache_repeat-1",
+    "timed_out": false,
+    "loading_screen": false
+  },
+  {
+    "cache": "shader_cache_only_copy",
+    "repeat": 0,
+    "pid": 35660,
+    "exit_code": 0,
+    "seconds": 5.8570326,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-063441-330\\shader_cache_only_copy-0",
+    "timed_out": false,
+    "loading_screen": false
+  },
+  {
+    "cache": "shader_cache_only_copy",
+    "repeat": 1,
+    "pid": 29744,
+    "exit_code": 0,
+    "seconds": 5.8333022,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-063441-330\\shader_cache_only_copy-1",
+    "timed_out": false,
+    "loading_screen": false
+  }
+]

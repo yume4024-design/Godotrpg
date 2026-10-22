@@ -188,13 +188,14 @@ func _write_report(complete: bool, soak_start: int) -> void:
 		metrics[label].engine_peak_bytes = samples[label].engine_peak
 	var report: Dictionary = {"complete":complete,"pid":OS.get_process_id(),"engine":Engine.get_version_info().string,"renderer":RenderingServer.get_video_adapter_name(),"display":DisplayServer.get_name(),"cap_fps":60,"soak_seconds":(Time.get_ticks_usec()-soak_start)/1000000.0,"total_seconds":(Time.get_ticks_usec()-started_usec)/1000000.0,"checks":checks,"failures":failures,"cycles":cycle,"metrics":metrics,"transitions":transitions,"checkpoints":checkpoints,"spikes_over_33ms":spikes,"operations":operations,"captures":qa_capture_spans,"sampling_origin":"User main-loop sampling; not complete OS process startup", "release":not OS.is_debug_build(),"version":ProjectSettings.get_setting_with_override("application/config/version"),"method":"Graphical automated InputMap movement; repositioned route segments; full story once, repeated service/battle/save/load; not human 30-minute playthrough. Timer includes diagnostics and snapshot work."}
 	var file: FileAccess = FileAccess.open(OUTPUT,FileAccess.WRITE)
+	report["startup_events"] = qa_startup_events
 	file.store_string(JSON.stringify(report,"\t"))
 
 func _end() -> void:
 	sampling = false
 	print("G083_RESULT checks=%d failures=%d" % [checks,failures])
-	game.queue_free()
-	await process_frame
+	qa_bootstrap.queue_free()
+	await create_timer(.2).timeout
 	quit(0 if failures == 0 else 1)
 func _timed_load() -> bool:
 	var started: int = Time.get_ticks_usec()
@@ -220,7 +221,12 @@ func _check(ok: bool, title: String) -> void:
 
 func _probe_loads() -> void:
 	if not detail_scripts.is_empty():
-		_check(game.get_script() == detail_scripts.game and game.battles.get_script() == detail_scripts.flow,"QA cached probes bound to actual game and battle nodes")
+		var script: Script = game.get_script()
+		var inherited_probe: bool = false
+		while script != null:
+			if script == detail_scripts.game: inherited_probe = true
+			script = script.get_base_script()
+		_check(inherited_probe and game.battles.get_script() == detail_scripts.flow,"QA cached probes bound to actual game and battle nodes")
 	# A short, separately labelled post-warmup CPU probe, never a soak substitute.
 	var rows: Array[Dictionary] = []
 	await process_frame

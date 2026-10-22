@@ -1,0 +1,13 @@
+{
+  "source_commit": "d03db5fa5e77aeb4a8710cd7c441e1048e355bed",
+  "worktree": "C:\\Users\\yume4\\.codex\\worktrees\\g083-release-probe\\RPGGAME",
+  "main_loop": "G083StartupProbe",
+  "game_entry": "res://scenes/main/greystone_preview.tscn",
+  "config_restored": true,
+  "gameplay_methods_modified": false,
+  "files": {
+    "ProjectCrystal.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "ProjectCrystal.pck": "e248f9e3ea2581970067917f30061048b2b1954be38ec9de1882a74d845d5f39"
+  },
+  "shared_pack_comparison": "NOT_TESTED"
+}

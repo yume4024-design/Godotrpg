@@ -4,6 +4,14 @@ extends "res://tests/greystone_story_test.gd"
 var held_movement: Dictionary = {}
 const MOVE_KEYS: Dictionary = {KEY_A: &"move_left", KEY_D: &"move_right", KEY_W: &"move_forward", KEY_S: &"move_back"}
 const NpcVisual = preload("res://scripts/characters/rigged_npc_visual.gd")
+var qa_bootstrap: WindowsCandidateBootstrap
+var qa_startup_events: Array[Dictionary] = []
+
+func _create_game() -> ExplorationGame:
+	return qa_bootstrap.game as ExplorationGame
+
+func _attach_game(instance: ExplorationGame) -> void:
+	_check(instance.get_parent() == qa_bootstrap, "Packaged story uses the actual candidate loading-screen game")
 
 func _initialize() -> void:
 	super._initialize()
@@ -28,9 +36,24 @@ func _run() -> void:
 	DirAccess.make_dir_recursive_absolute("user://g08_tests/evidence")
 	_check((OS.has_feature("g08_qa") or OS.has_feature("g083_qa")) and not OS.is_debug_build(), "G08 release template and isolated feature")
 	_check(DisplayServer.get_name() != "headless", "G08 rendered Windows process")
-	_check(ProjectSettings.get_setting("application/config/version") == "0.6.1" and ProjectSettings.get_setting_with_override("application/config/version") == "0.6.1-g08-rc3", "Candidate version override preserves formal version")
+	_check(ProjectSettings.get_setting("application/config/version") == "0.6.1" and ProjectSettings.get_setting_with_override("application/config/version") == "0.6.1-g08-rc4", "Candidate version override preserves formal version")
 	for key: int in MOVE_KEYS:
 		_check(InputMap.action_get_events(MOVE_KEYS[key]).any(func(event: InputEvent) -> bool: return event is InputEventKey and (event.physical_keycode == key or event.keycode == key)), "Packaged WASD binding " + str(key))
+	# Prepare the same isolated slot before the actual game starts. The loading
+	# scene exposes a lifecycle signal; it never owns save-policy or RPG state.
+	if "--reload" not in OS.get_cmdline_user_args():
+		for suffix: String in ["", ".bak", ".tmp"]:
+			if FileAccess.file_exists(slot+suffix): DirAccess.remove_absolute(slot+suffix)
+	qa_bootstrap = load("res://scenes/main/windows_candidate_bootstrap.tscn").instantiate()
+	qa_bootstrap.game_created.connect(func(instance: Node3D) -> void: (instance.get_node("Saves") as SaveManager).slot_path = slot)
+	root.add_child(qa_bootstrap)
+	var deadline: int = Time.get_ticks_usec()+30000000
+	while qa_bootstrap.phase not in ["ready","failed"] and Time.get_ticks_usec() < deadline: await process_frame
+	_check(qa_bootstrap.phase == "ready", "Native candidate loading gate completes")
+	qa_startup_events = qa_bootstrap.timings.duplicate(true)
+	if qa_bootstrap.phase != "ready":
+		quit(1)
+		return
 	await super._run()
 
 func _capture(label: String) -> void:

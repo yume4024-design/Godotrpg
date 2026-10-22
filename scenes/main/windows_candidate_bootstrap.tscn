@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="Script" path="res://scripts/core/windows_candidate_bootstrap.gd" id="Bootstrap"]
+[ext_resource type="SystemFont" path="res://assets/ui/fonts/battle_interface_font.tres" id="Font"]
+
+[sub_resource type="StyleBoxFlat" id="ProgressTrack"]
+bg_color = Color(0.14, 0.19, 0.19, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_left = 5
+corner_radius_bottom_right = 5
+
+[sub_resource type="StyleBoxFlat" id="ProgressFill"]
+bg_color = Color(0.75, 0.65, 0.36, 1)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_left = 5
+corner_radius_bottom_right = 5
+
+[node name="WindowsCandidateBootstrap" type="Node"]
+script = ExtResource("Bootstrap")
+
+[node name="LoadingCanvas" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+layer = 100
+
+[node name="Panel" type="ColorRect" parent="LoadingCanvas"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.07, 0.08, 1)
+
+[node name="Center" type="CenterContainer" parent="LoadingCanvas/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Content" type="VBoxContainer" parent="LoadingCanvas/Panel/Center"]
+custom_minimum_size = Vector2(500, 0)
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Title" type="Label" parent="LoadingCanvas/Panel/Center/Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.95, 0.92, 0.83, 1)
+theme_override_fonts/font = ExtResource("Font")
+theme_override_font_sizes/font_size = 36
+text = "失落星核"
+horizontal_alignment = 1
+
+[node name="Status" type="Label" parent="LoadingCanvas/Panel/Center/Content"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_fonts/font = ExtResource("Font")
+theme_override_font_sizes/font_size = 22
+text = "正在準備旅程…"
+horizontal_alignment = 1
+
+[node name="Progress" type="ProgressBar" parent="LoadingCanvas/Panel/Center/Content"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 12)
+layout_mode = 2
+theme_override_styles/background = SubResource("ProgressTrack")
+theme_override_styles/fill = SubResource("ProgressFill")
+show_percentage = false
+
+[node name="ExitButton" type="Button" parent="LoadingCanvas/Panel/Center/Content"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+theme_override_fonts/font = ExtResource("Font")
+text = "結束遊戲"

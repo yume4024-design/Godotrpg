@@ -1,0 +1,83 @@
+[
+  {
+    "cache": "app_cache_fresh",
+    "repeat": 0,
+    "pid": 23604,
+    "exit_code": 0,
+    "seconds": 6.9229932,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\app_cache_fresh-0",
+    "timed_out": false
+  },
+  {
+    "cache": "app_cache_fresh",
+    "repeat": 1,
+    "pid": 25720,
+    "exit_code": 0,
+    "seconds": 5.8781038,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\app_cache_fresh-1",
+    "timed_out": false
+  },
+  {
+    "cache": "app_cache_fresh",
+    "repeat": 2,
+    "pid": 30068,
+    "exit_code": 0,
+    "seconds": 5.8487568,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\app_cache_fresh-2",
+    "timed_out": false
+  },
+  {
+    "cache": "same_app_cache_repeat",
+    "repeat": 0,
+    "pid": 27252,
+    "exit_code": 0,
+    "seconds": 5.8321015,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\same_app_cache_repeat-0",
+    "timed_out": false
+  },
+  {
+    "cache": "same_app_cache_repeat",
+    "repeat": 1,
+    "pid": 20880,
+    "exit_code": 0,
+    "seconds": 5.8118164,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\same_app_cache_repeat-1",
+    "timed_out": false
+  },
+  {
+    "cache": "same_app_cache_repeat",
+    "repeat": 2,
+    "pid": 34528,
+    "exit_code": 0,
+    "seconds": 5.8173591,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\same_app_cache_repeat-2",
+    "timed_out": false
+  },
+  {
+    "cache": "shader_cache_only_copy",
+    "repeat": 0,
+    "pid": 35308,
+    "exit_code": 0,
+    "seconds": 5.8332686,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\shader_cache_only_copy-0",
+    "timed_out": false
+  },
+  {
+    "cache": "shader_cache_only_copy",
+    "repeat": 1,
+    "pid": 16060,
+    "exit_code": 0,
+    "seconds": 5.8743055,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\shader_cache_only_copy-1",
+    "timed_out": false
+  },
+  {
+    "cache": "shader_cache_only_copy",
+    "repeat": 2,
+    "pid": 32172,
+    "exit_code": 0,
+    "seconds": 5.8247427,
+    "directory": "D:\\RPGGAME\\artifacts\\g083_startup_20261022\\20261022-060435-566\\shader_cache_only_copy-2",
+    "timed_out": false
+  }
+]

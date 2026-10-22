@@ -17,8 +17,16 @@ func _initialize() -> void:
 	quit()
 
 func _scan(path: String) -> void:
-	for name: String in DirAccess.get_files_at(path):
+	# Hidden .godot/imported and .godot/exported entries are the runtime bytes.
+	# Scanning only visible remaps cannot prove equal compiled game resources.
+	var directory: DirAccess = DirAccess.open(path)
+	directory.include_hidden = true
+	directory.include_navigational = false
+	directory.list_dir_begin()
+	var name: String = directory.get_next()
+	while not name.is_empty():
 		var file: String = path.path_join(name)
-		files[file] = FileAccess.get_sha256(file)
-	for name: String in DirAccess.get_directories_at(path):
-		_scan(path.path_join(name))
+		if directory.current_is_dir(): _scan(file)
+		else: files[file] = FileAccess.get_sha256(file)
+		name = directory.get_next()
+	directory.list_dir_end()

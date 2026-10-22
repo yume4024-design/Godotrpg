@@ -1,0 +1,51 @@
+{
+  "checks": 11,
+  "failures": 3,
+  "normalization": "UTF-8 without BOM; CRLF to LF",
+  "results": [
+    {
+      "check": "source hash scripts/core/battle_flow.gd",
+      "passed": true
+    },
+    {
+      "check": "source hash scripts/battle/battle_arena.gd",
+      "passed": true
+    },
+    {
+      "check": "source hash scripts/battle/battle_stage.gd",
+      "passed": false
+    },
+    {
+      "check": "source hash scripts/core/exploration_game.gd",
+      "passed": true
+    },
+    {
+      "check": "source hash scripts/core/greystone_integration.gd",
+      "passed": false
+    },
+    {
+      "check": "method equivalence flow._spawn",
+      "passed": true
+    },
+    {
+      "check": "method equivalence arena.setup",
+      "passed": true
+    },
+    {
+      "check": "method equivalence stage.setup",
+      "passed": false
+    },
+    {
+      "check": "method equivalence game.validate_loaded_position",
+      "passed": true
+    },
+    {
+      "check": "launch forwards to production",
+      "passed": true
+    },
+    {
+      "check": "integration inherits location validator",
+      "passed": true
+    }
+  ]
+}

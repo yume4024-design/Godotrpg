@@ -1,0 +1,6 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+WARNING: 'res://scenes/main/windows_candidate_bootstrap.tscn': In external resource #0, invalid UID: 'uid://ckwcgp6a3citf' - using text path instead: 'res://scripts/core/windows_candidate_bootstrap.gd'.
+   at: open (core/io/resource_format_binary.cpp:1028)
+G083_STARTUP_RESULT frames=254 errors=0

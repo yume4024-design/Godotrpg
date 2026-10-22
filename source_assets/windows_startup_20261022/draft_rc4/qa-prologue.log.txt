@@ -1,0 +1,167 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS G08 release template and isolated feature
+PASS G08 rendered Windows process
+PASS Candidate version override preserves formal version
+PASS Packaged WASD binding 65
+PASS Packaged WASD binding 68
+PASS Packaged WASD binding 87
+PASS Packaged WASD binding 83
+PASS Native candidate loading gate completes
+PASS Packaged story uses the actual candidate loading-screen game
+PASS G06 story scene loads
+PASS E001 completes in new village
+PASS Opening beside inn is grounded
+PASS Mine blocked before tutorial
+PASS Guild reward blocked before boss victory
+PASS Missing save rejected without changing session
+PASS Equipment ready through normal menu service
+PASS New NPCs complete E002/E003
+PASS No repeated Lia recruitment
+PASS Packaged evidence g063-guild
+PASS West exit enters forest
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS First story battle won with real commands
+PASS E004 reaches mine prerequisite
+PASS Forest returns to new village safe west spawn
+PASS Packaged evidence g063-mine-gate
+PASS New mine gate opens after tutorial
+PASS Mine returns via forest
+PASS Forest mine entrance traversed with E
+PASS Packaged evidence g063-01-mine-entrance
+PASS Walking into inner mine triggers E005
+PASS Save during dialogue deferred, no partial file
+PASS E005 commits two potions and objective once
+PASS Pending save writes at safe point
+PASS Current snapshot validates before any load
+PASS E005 cannot refill reward
+PASS Packaged evidence g063-02-journal-mine
+PASS Missing item rejects event before dialogue or flags
+PASS Missing sequence cannot fake completion
+PASS E005 potion can be consumed without refilling
+PASS Save records consumed reward and receipt
+PASS Valid save restores all owners
+PASS HP is restored from disk
+PASS Position and map restored
+PASS Loading inside E005 area does not replace consumed potion
+PASS Load does not replay completed events
+PASS Crystal starts E006 without revealing Aster
+PASS Crystal animation must finish before flag or item
+PASS Save waits for animated sequence
+PASS Packaged evidence g063-03-crystal-awakening
+PASS Completed animation grants exactly one star seal
+PASS Already inside boss area reevaluates E006 prerequisite
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Actual packaged boss uses new seventeen-bone rig including retry
+PASS Actual packaged boss uses approved A03 model
+PASS Existing boss rupture maps to imported cast
+PASS B002 spawns level three guardian
+PASS Packaged evidence g063-04-guardian-battle
+PASS Battle save remains pending and leaves existing slot intact
+PASS Guardian defeat grants nothing and cannot complete E007
+PASS Guardian retry starts another real battle
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Actual packaged boss uses new seventeen-bone rig including retry
+PASS Actual packaged boss uses approved A03 model
+PASS Existing boss rupture maps to imported cast
+PASS Retry restores vitals without replaying crystal reward
+PASS Two battles grant 62 gold total
+G08_RETURN_POSITION origin=(2.7, 0.000391, 0.0) current=(2.7, 0.000391, 0.0) velocity=(0.0, 0.0, 0.0)
+PASS Boss returns to original position
+PASS B002 return completes event and total 100 EXP
+PASS Battle pending save commits after result acknowledgment
+PASS Mine exit returns to forest
+PASS Post-boss return reaches new village
+PASS Guildmaster routes to return quest
+PASS E008 completes quest and chapter unlock atomically
+PASS Reward observers see completed quest and flags together
+PASS Exact full-prologue rewards: 212 gold and 300 EXP each
+PASS E008 and reward replay rejected
+PASS Packaged evidence g063-05-chapter-preview
+PASS Investigation/departure epilogue finishes without extra rewards
+PASS Journal projects all five completed flags
+PASS Repeated guild interaction gives no extra quest reward
+PASS Packaged evidence g063-06-completed-journal
+PASS Packaged evidence g063-07-small-journal
+PASS Packaged evidence g063-08-small-save-menu
+PASS Save menu writes final progress
+PASS Completed new village save reloads
+PASS Final save re-established for fresh process test
+PASS Packaged bat encounter launches after save or fresh-process reload
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Packaged bat encounter finishes through existing combat
+PASS Packaged bat returns to exploration
+PASS Bat practice preserves progression flags
+PASS Bat practice preserves progression quests
+PASS Bat practice preserves progression rewards
+PASS Bat practice does not rewrite the completed save
+PASS Reload completed save after bat battle
+PASS Post-bat reload preserves party
+PASS Post-bat reload preserves inventory
+PASS Post-bat reload preserves flags
+PASS Post-bat reload preserves quests
+PASS Post-bat reload preserves rewards
+PASS Packaged six original NPC slots; no female placement
+PASS Packaged accepted NPC model survives reload: Blacksmith
+PASS Packaged NPC resumes Idle: Blacksmith
+PASS Packaged accepted NPC model survives reload: ItemMerchant
+PASS Packaged NPC resumes Idle: ItemMerchant
+PASS Packaged accepted NPC model survives reload: Innkeeper
+PASS Packaged NPC resumes Idle: Innkeeper
+PASS Packaged accepted NPC model survives reload: Villager
+PASS Packaged NPC resumes Idle: Villager
+PASS Packaged ambient dialogue starts Talk: Blacksmith
+PASS Packaged ambient dialogue restores Idle: Blacksmith
+PASS Packaged ambient dialogue starts Talk: Villager
+PASS Packaged ambient dialogue restores Idle: Villager
+PASS Packaged service opens ItemMerchant
+PASS Packaged commerce retains NPC Talk: ItemMerchant
+PASS Packaged transaction feedback retains NPC Talk: ItemMerchant
+PASS Packaged transaction feedback restores Idle: ItemMerchant
+PASS Packaged exact transaction debit
+PASS Packaged service opens Innkeeper
+PASS Packaged commerce retains NPC Talk: Innkeeper
+PASS Packaged transaction feedback retains NPC Talk: Innkeeper
+PASS Packaged transaction feedback restores Idle: Innkeeper
+PASS Packaged exact transaction debit
+PASS Packaged inn restores party
+PASS Packaged evidence g08-transactions
+PASS Restore pretransaction completed save
+PASS Restart fixture remains exact and valid
+PASS Packaged v1 migration uses existing validator
+PASS Packaged migration preserves original bytes
+PASS Packaged v1 reaches new safe village layout
+PASS Packaged migration preserves party
+PASS Packaged migration preserves flags
+PASS Packaged migration preserves quests
+PASS Packaged migration preserves rewards
+PASS Packaged migration preserves economy
+PASS Restore current slot after migration test
+PASS Packaged integration enables bounded stairs
+PASS Packaged post-prologue mine transition
+PASS Packaged mine registers eleven visibility beams
+PASS Packaged fixed camera clears foreground beam
+PASS Packaged evidence g082-packaged-mine
+PASS Return from mine to saved village without state loss
+PASS Visibility preserves economy and reward receipts
+G08_CANDIDATE_RESULT checks=162 failures=0
