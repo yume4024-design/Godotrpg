@@ -1,6 +1,6 @@
 # G08.3 Windows 啟動診斷與 RC4 載入邊界
 
-日期：2026-10-22（Asia/Taipei）。分支 `feature/greystone-g06`；本輪起點 `e435e67a6c36e6ccd52c3af950fa2148aa9fda1d`。**啟動修正與短程回歸通過；RC4 固定提交的 30 分鐘 Release／實體鍵鼠及 Xbox 驗收仍待，不宣稱 G08 完成。** Android／iOS 暫停，第一章未開始。
+日期：2026-10-22（Asia/Taipei）。分支 `feature/greystone-g06`；本輪起點 `e435e67a6c36e6ccd52c3af950fa2148aa9fda1d`。**啟動修正與固定RC4原生長測1804.213秒／1548／0、另程序讀長測實檔97／0通過；新包實體鍵鼠／Xbox仍待，G08整體未完成。最新數據見[固定包報告](RC4_FIXED_PACKAGE_REPORT.md)。** Android／iOS 暫停，第一章未開始。
 
 ## 結果與測量範圍
 
@@ -54,4 +54,4 @@ python tools/audit_windows_candidate.py <manifest.json>
 
 歷史凍結 RC3 診斷可用 `export_g083_startup_probe.py`、`audit_g083_startup_pack.py`、`probe_g083_startup.ps1`；工具故意鎖定原 RC3 提交／PCK SHA，不得用來證明其他版本等價。原始檔保留於 artifacts／builds，精簡可審閱證據存 source_assets。
 
-接下來固定 RC4 source SHA，於隔離工作樹重新匯出可玩／QA／soak 包並完成實體資源稽核；再跑至少 1800 秒原生 Release 長測、另程序重啟及新包人工鍵鼠／Xbox。舊 RC3 的人工通過不轉移到 RC4。G08.4／G08.5、未完成角色與素材及完整 C1 仍保持待辦，不合併 main。
+上文初次診斷提出的固定RC4匯出／資源稽核／1800秒Release與另程序重啟，已在[固定包複驗](RC4_FIXED_PACKAGE_REPORT.md)完成；下一步是本包人工鍵鼠／Xbox。舊 RC3 的人工通過不轉移到 RC4。G08.4／G08.5、未完成角色與素材及完整 C1 仍保持待辦，不合併 main。

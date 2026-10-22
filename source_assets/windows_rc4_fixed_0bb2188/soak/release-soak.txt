@@ -1,0 +1,1635 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS G08 release template and isolated feature
+PASS G08 rendered Windows process
+PASS Candidate version override preserves formal version
+PASS Packaged WASD binding 65
+PASS Packaged WASD binding 68
+PASS Packaged WASD binding 87
+PASS Packaged WASD binding 83
+PASS Native candidate loading gate completes
+PASS Packaged story uses the actual candidate loading-screen game
+PASS G06 story scene loads
+PASS E001 completes in new village
+PASS Opening beside inn is grounded
+PASS Mine blocked before tutorial
+PASS Guild reward blocked before boss victory
+PASS Missing save rejected without changing session
+PASS Equipment ready through normal menu service
+PASS New NPCs complete E002/E003
+PASS No repeated Lia recruitment
+PASS Packaged evidence g063-guild
+PASS West exit enters forest
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS First story battle won with real commands
+PASS E004 reaches mine prerequisite
+PASS Forest returns to new village safe west spawn
+PASS Packaged evidence g063-mine-gate
+PASS New mine gate opens after tutorial
+PASS Mine returns via forest
+PASS Forest mine entrance traversed with E
+PASS Packaged evidence g063-01-mine-entrance
+PASS Walking into inner mine triggers E005
+PASS Save during dialogue deferred, no partial file
+PASS E005 commits two potions and objective once
+PASS Pending save writes at safe point
+PASS Current snapshot validates before any load
+PASS E005 cannot refill reward
+PASS Packaged evidence g063-02-journal-mine
+PASS Missing item rejects event before dialogue or flags
+PASS Missing sequence cannot fake completion
+PASS E005 potion can be consumed without refilling
+PASS Save records consumed reward and receipt
+PASS Valid save restores all owners
+PASS HP is restored from disk
+PASS Position and map restored
+PASS Loading inside E005 area does not replace consumed potion
+PASS Load does not replay completed events
+PASS Crystal starts E006 without revealing Aster
+PASS Crystal animation must finish before flag or item
+PASS Save waits for animated sequence
+PASS Packaged evidence g063-03-crystal-awakening
+PASS Completed animation grants exactly one star seal
+PASS Already inside boss area reevaluates E006 prerequisite
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Actual packaged boss uses new seventeen-bone rig including retry
+PASS Actual packaged boss uses approved A03 model
+PASS Existing boss rupture maps to imported cast
+PASS B002 spawns level three guardian
+PASS Packaged evidence g063-04-guardian-battle
+PASS Battle save remains pending and leaves existing slot intact
+PASS Guardian defeat grants nothing and cannot complete E007
+PASS Guardian retry starts another real battle
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Actual packaged boss uses new seventeen-bone rig including retry
+PASS Actual packaged boss uses approved A03 model
+PASS Existing boss rupture maps to imported cast
+PASS Retry restores vitals without replaying crystal reward
+PASS Two battles grant 62 gold total
+G08_RETURN_POSITION origin=(2.7, 0.000391, 0.0) current=(2.7, 0.000391, 0.0) velocity=(0.0, 0.0, 0.0)
+PASS Boss returns to original position
+PASS B002 return completes event and total 100 EXP
+PASS Battle pending save commits after result acknowledgment
+PASS Mine exit returns to forest
+PASS Post-boss return reaches new village
+PASS Guildmaster routes to return quest
+PASS E008 completes quest and chapter unlock atomically
+PASS Reward observers see completed quest and flags together
+PASS Exact full-prologue rewards: 212 gold and 300 EXP each
+PASS E008 and reward replay rejected
+PASS Packaged evidence g063-05-chapter-preview
+PASS Investigation/departure epilogue finishes without extra rewards
+PASS Journal projects all five completed flags
+PASS Repeated guild interaction gives no extra quest reward
+PASS Packaged evidence g063-06-completed-journal
+PASS Packaged evidence g063-07-small-journal
+PASS Packaged evidence g063-08-small-save-menu
+PASS Save menu writes final progress
+PASS Completed new village save reloads
+PASS Final save re-established for fresh process test
+G083_SOAK_STARTED pid=12900 duration_seconds=1800
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Packaged evidence g083-greystone_runtime-1
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=22.0 cycle=1 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Packaged evidence g083-forest-1
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=43.7 cycle=1 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Packaged evidence g083-mine-1
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=66.3 cycle=1 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=88.3 cycle=2 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=109.8 cycle=2 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=132.4 cycle=2 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=154.4 cycle=3 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=175.9 cycle=3 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=198.5 cycle=3 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=220.6 cycle=4 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=242.0 cycle=4 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=264.9 cycle=4 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=287.3 cycle=5 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=309.1 cycle=5 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=332.1 cycle=5 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Packaged evidence g083-greystone_runtime-6
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=354.4 cycle=6 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Packaged evidence g083-forest-6
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=376.0 cycle=6 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Packaged evidence g083-mine-6
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=398.7 cycle=6 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=421.0 cycle=7 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=442.9 cycle=7 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=465.8 cycle=7 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=488.2 cycle=8 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=510.0 cycle=8 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=532.9 cycle=8 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=555.3 cycle=9 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=577.1 cycle=9 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=600.0 cycle=9 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=622.4 cycle=10 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=644.2 cycle=10 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=667.1 cycle=10 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Packaged evidence g083-greystone_runtime-11
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=689.5 cycle=11 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Packaged evidence g083-forest-11
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=711.5 cycle=11 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Packaged evidence g083-mine-11
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=734.4 cycle=11 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=756.5 cycle=12 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=778.0 cycle=12 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=800.6 cycle=12 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=822.8 cycle=13 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=844.6 cycle=13 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=867.6 cycle=13 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=889.9 cycle=14 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=911.7 cycle=14 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=934.7 cycle=14 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=957.0 cycle=15 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=978.9 cycle=15 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1001.8 cycle=15 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Packaged evidence g083-greystone_runtime-16
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1024.2 cycle=16 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Packaged evidence g083-forest-16
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1045.8 cycle=16 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Packaged evidence g083-mine-16
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1068.4 cycle=16 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1090.8 cycle=17 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1112.6 cycle=17 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1135.5 cycle=17 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1157.9 cycle=18 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1179.7 cycle=18 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1202.7 cycle=18 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1225.0 cycle=19 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1246.8 cycle=19 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1269.8 cycle=19 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1292.1 cycle=20 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1314.0 cycle=20 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1336.9 cycle=20 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Packaged evidence g083-greystone_runtime-21
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1359.3 cycle=21 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Packaged evidence g083-forest-21
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1381.2 cycle=21 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Packaged evidence g083-mine-21
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1404.2 cycle=21 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1426.2 cycle=22 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1447.7 cycle=22 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1470.3 cycle=22 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1492.4 cycle=23 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1513.8 cycle=23 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1536.4 cycle=23 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1558.6 cycle=24 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1580.4 cycle=24 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1603.3 cycle=24 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1625.7 cycle=25 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1647.5 cycle=25 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1670.5 cycle=25 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Packaged evidence g083-greystone_runtime-26
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1692.8 cycle=26 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Packaged evidence g083-forest-26
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1714.5 cycle=26 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Packaged evidence g083-mine-26
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1737.1 cycle=26 map=mine failures=0
+PASS Travel accepted greystone_runtime
+PASS Map identity greystone_runtime
+PASS Collision movement greystone_runtime
+PASS Movement stays on intended map greystone_runtime
+PASS Soak saves greystone_runtime
+PASS Soak reloads greystone_runtime
+PASS Disk roundtrip unchanged greystone_runtime
+PASS Hero persists after reload
+PASS Service opens ItemMerchant
+PASS Shop transaction settles exactly once
+PASS Service opens Innkeeper
+PASS Inn debit and full party recovery
+PASS Restore pretransaction validated snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1759.5 cycle=27 map=greystone_runtime failures=0
+PASS Travel accepted forest
+PASS Map identity forest
+PASS Collision movement forest
+PASS Movement stays on intended map forest
+PASS Soak saves forest
+PASS Soak reloads forest
+PASS Disk roundtrip unchanged forest
+PASS Hero persists after reload
+PASS Optional encounter launches X001
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1781.3 cycle=27 map=forest failures=0
+PASS Travel accepted mine
+PASS Map identity mine
+PASS Collision movement mine
+PASS Movement stays on intended map mine
+PASS Soak saves mine
+PASS Soak reloads mine
+PASS Disk roundtrip unchanged mine
+PASS Hero persists after reload
+PASS Optional encounter launches X003
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Optional battle completes
+PASS Battle returns to exploration
+PASS Restore validated prebattle snapshot
+PASS Unique story rewards intact
+G083_HEARTBEAT seconds=1804.2 cycle=27 map=mine failures=0
+PASS At least 30 rendered minutes
+G083_RESULT checks=1548 failures=0

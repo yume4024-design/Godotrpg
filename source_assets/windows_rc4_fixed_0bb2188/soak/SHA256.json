@@ -1,0 +1,67 @@
+{
+  "files": [
+    {
+      "path": "forest.webp",
+      "bytes": 229660,
+      "sha256": "788b8ffa2aaa8f369bdd004001b7d9db56f7cee5b252daa03d9259c9330d3906"
+    },
+    {
+      "path": "greystone_runtime.webp",
+      "bytes": 82542,
+      "sha256": "eb67d8b430c598d31cacf4c6e158a29fd53f7974fd76b646daebde1ec42ce1dc"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 867,
+      "sha256": "664222205612f31099e3ca8afb1e33440183ad89f4cb5e08814c5f12872cfabe"
+    },
+    {
+      "path": "metrics.json.gz",
+      "bytes": 4554,
+      "sha256": "c34549a9a2a0dd14e48caf867f6502cb2f1cfc737c22b2c5602028414fdbdfab"
+    },
+    {
+      "path": "mine.webp",
+      "bytes": 194116,
+      "sha256": "edc44b62e2dcf22a0c2fc5ce20f8df79a2791c523a4715618cf25cb77a3d8210"
+    },
+    {
+      "path": "process.csv",
+      "bytes": 71810,
+      "sha256": "59cc287510e1833504dd5f0b5061278786c3e698a03a40c676ebadee0b1f1431"
+    },
+    {
+      "path": "release-soak.txt",
+      "bytes": 65143,
+      "sha256": "6a268915797f30b94552d49e198dfd30fede9d5746117c409bcbb1459de79745"
+    },
+    {
+      "path": "restart.txt",
+      "bytes": 4487,
+      "sha256": "543ba9a05104e5bf7d4b1faff15f9b7255e35a25f555d59e535191ef8711a6c0"
+    },
+    {
+      "path": "restart_load_probe.json",
+      "bytes": 3286,
+      "sha256": "83c6ec8f8a2db1ef26c2755fe511554a116d2de9fbd93181186a51206a219e31"
+    },
+    {
+      "path": "restart_preflight.txt",
+      "bytes": 293,
+      "sha256": "1e4d69b5a8a77d3b3cb7dbbb3418f0c3a54407afda2674af99d552f57af4ea56"
+    },
+    {
+      "path": "restart_receipt.json",
+      "bytes": 660,
+      "sha256": "83ff01555af560486c6619af97ce782b83b2c3dc501973e13a1c6c2aae0a0722"
+    },
+    {
+      "path": "summary.json",
+      "bytes": 5656,
+      "sha256": "88a42bcd979a2a8832797e5d68c0e903a7894ad56655fe0417dc55d4cabf1826"
+    }
+  ],
+  "metrics_uncompressed_sha256": "9911773e77d045e1d28d58ad8c728ffa1058204c9c00c8fb5ef13503d64d4ce7",
+  "source_save_committed": false,
+  "human_playthrough": false
+}

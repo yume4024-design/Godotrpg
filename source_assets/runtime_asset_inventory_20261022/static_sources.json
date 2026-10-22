@@ -1,0 +1,237 @@
+{
+  "scope": "Static file and definition inventory only; actual instantiated map inventory, visibility, collisions, visual quality and performance are not qualified here.",
+  "date": "2026-10-22",
+  "models": [
+    {
+      "file": "assets/models/cartoon/round_tree.glb",
+      "sha256": "84bcf9cbc79c218b7de94125730659ec61b525a0ef9083c3ebe7054f58eb6438",
+      "bytes": 61048,
+      "active_scene_triangles": 2000,
+      "material_definitions": 3,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/cartoon/moss_rock.glb",
+      "sha256": "dca974a74481928b0b4e90ed756a953176aaf04a5b580b21e31d7d839dac2991",
+      "bytes": 13556,
+      "active_scene_triangles": 360,
+      "material_definitions": 3,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/cartoon/flower_patch.glb",
+      "sha256": "1e20a1940f0e40e973f50bb6ef8f3ab5d0fb862105c8753e938dd05294aff695",
+      "bytes": 57144,
+      "active_scene_triangles": 1596,
+      "material_definitions": 5,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/cartoon/path_strip.glb",
+      "sha256": "75934e880cfdd45975974e3e4e98ce4cfcc8086d6ce338e56da622b8f76780e4",
+      "bytes": 6796,
+      "active_scene_triangles": 100,
+      "material_definitions": 1,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/cartoon/chest_base.glb",
+      "sha256": "18c4b4f5c65260ece6c967711d75ce34c16d0bb0280b8712626f0f95fe1f1c45",
+      "bytes": 23532,
+      "active_scene_triangles": 688,
+      "material_definitions": 4,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/cartoon/chest_lid.glb",
+      "sha256": "4e25b13d51f9261308869dff2f981fcf9652987cac7ed08d60c97ad82c642c6c",
+      "bytes": 11096,
+      "active_scene_triangles": 324,
+      "material_definitions": 2,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/cartoon/campfire.glb",
+      "sha256": "67e2782217e1bf2979da71142923bb2b74f408eac2bdb6e150a757300c63f040",
+      "bytes": 58156,
+      "active_scene_triangles": 1824,
+      "material_definitions": 4,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/cartoon/signpost.glb",
+      "sha256": "e47cc21b6dd120729077c2e43e9e6be38653a5e0b010e65f83fd5d525c6f75f1",
+      "bytes": 11068,
+      "active_scene_triangles": 212,
+      "material_definitions": 3,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/greystone/props/crystal_blue.glb",
+      "sha256": "2502715f4176c74ebef3a3de19fb059f98a261e8837d4e63c9ea477e4231dcba",
+      "bytes": 6468,
+      "active_scene_triangles": 72,
+      "material_definitions": 1,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/environment/fallen_log.glb",
+      "sha256": "180b55fe66bb75206b543c9ea7057ab62e74ee3335798abe3665076ce268ec48",
+      "bytes": 20980,
+      "active_scene_triangles": 268,
+      "material_definitions": 2,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/equipment/bronze_sword.glb",
+      "sha256": "00a1d8f0a7651e39a7a5d9ce8552f706e672925db551b0b3e133b9cb99c012b6",
+      "bytes": 24512,
+      "active_scene_triangles": 330,
+      "material_definitions": 3,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    },
+    {
+      "file": "assets/models/female/willow_staff.glb",
+      "sha256": "eda3b40c9ac7875005c8e9691aa5664862b3997d3a3154de526fb3c197a63f82",
+      "bytes": 12672,
+      "active_scene_triangles": 140,
+      "material_definitions": 3,
+      "images": 0,
+      "qualification": "INVENTORY_ONLY; previous acceptance is separately documented"
+    }
+  ],
+  "items": [
+    {
+      "id": "bronze_sword",
+      "source": "data/items/bronze_sword.tres",
+      "sha256": "24020b794cf6420c82787f1cc72651872a68c666f945838bfd6f2c90468d4fd6",
+      "note": "Data definition; not proof of a world-space visual binding."
+    },
+    {
+      "id": "potion",
+      "source": "data/items/potion.tres",
+      "sha256": "d082053310b4883b733b27e4650481dcaa6ef07af3c5ecdd50663a4c7c481cb8",
+      "note": "Data definition; not proof of a world-space visual binding."
+    },
+    {
+      "id": "star_seal_01",
+      "source": "data/items/star_seal_01.tres",
+      "sha256": "11bdc64b9b91ba5cf7031e7b0c554498126030a3f8bf77473e13c13ea178fa91",
+      "note": "Data definition; not proof of a world-space visual binding."
+    },
+    {
+      "id": "trail_ration",
+      "source": "data/items/trail_ration.tres",
+      "sha256": "dd7e6d0b3e9be89adc49bc0a06866f135f82a229f33ba5d244c0e3eb2eb831ad",
+      "note": "Data definition; not proof of a world-space visual binding."
+    },
+    {
+      "id": "travel_vest",
+      "source": "data/items/travel_vest.tres",
+      "sha256": "4862650cd416643a1c3d844732e6578c17a09be6995aedd354f4888da86dd0d9",
+      "note": "Data definition; not proof of a world-space visual binding."
+    },
+    {
+      "id": "willow_staff",
+      "source": "data/items/willow_staff.tres",
+      "sha256": "d1636e1a253c12362ba1180bc6c0fe82f9912c5eaf0693d08ccef826dca7d923",
+      "note": "Data definition; not proof of a world-space visual binding."
+    }
+  ],
+  "source_receipts": [
+    {
+      "path": "scenes/world/forest.tscn",
+      "sha256": "8ad906a86274b9bd3edcc45dbc78ad5c11805792bff2a92632370945526a4932"
+    },
+    {
+      "path": "scenes/world/mine.tscn",
+      "sha256": "7c8bdc62e924551576a2fb2096af12f48769136cb1a21ab40cbbb26ea5527bf6"
+    },
+    {
+      "path": "scenes/world/expanded/forest.tscn",
+      "sha256": "649163c3a192b4c3ae0076a18f4611f928550880626036836cb195fee504e1b0"
+    },
+    {
+      "path": "scenes/world/expanded/mine.tscn",
+      "sha256": "2a645561dde572a5c7fdea7925a2d71941602f55391c4274ffc138a5043f72cb"
+    },
+    {
+      "path": "scenes/world/expanded/forest_scenery.tscn",
+      "sha256": "647bddf17f42ccb0db50bbc9eb60ad38abe5e8db74aa6042059e2766f0e414a0"
+    },
+    {
+      "path": "scenes/world/greystone_runtime.tscn",
+      "sha256": "ea10cb820ead2c55f779a2d5cfa2c1fa09391eac64d062b278c39a7f1f209c54"
+    },
+    {
+      "path": "scripts/world/expanded_wilderness.gd",
+      "sha256": "757db42c674f9484e6731b2adefefbf388d37befc0208c15a9dc3dd9b15c7547"
+    },
+    {
+      "path": "scripts/characters/female_actor.gd",
+      "sha256": "603a5a588786869866664594510dbe16f0c15fed2a8fa4b1db22a12cd051aafa"
+    },
+    {
+      "path": "scenes/characters/ren_pixal_visual.tscn",
+      "sha256": "29af266d6713ede187d22f7374b7b847b5aeead68d67eae7776ff9047bab2e2d"
+    },
+    {
+      "path": "scenes/characters/lia_pixal_visual.tscn",
+      "sha256": "ec2b04573f303234d000b1239936adb21cb1c81b55c835f8099f08c3c485a3ba"
+    },
+    {
+      "path": "scenes/characters/ren_rebuilt_visual.tscn",
+      "sha256": "deba73dec36d8132266e6b575cbbe9d974408ba80888a2e5120d552613774f7b"
+    },
+    {
+      "path": "scripts/battle/action_effect.gd",
+      "sha256": "67572bee4bd306af9249450eba564385f3a180303450440d246adacb0fdbf71e"
+    },
+    {
+      "path": "scripts/inventory/item_definition.gd",
+      "sha256": "0e802ea8b1f58f753122df4e2390998b62e4694f7a16301405d11f4e548aa580"
+    }
+  ],
+  "findings": [
+    {
+      "item": "bronze_sword",
+      "model": "assets/models/equipment/bronze_sword.glb",
+      "binding": "scenes/characters/ren_rebuilt_visual.tscn",
+      "status": "ISOLATED_CANDIDATE_ONLY; formal ren_pixal_visual does not bind this HandEquipmentVisual."
+    },
+    {
+      "item": "willow_staff",
+      "model": "assets/models/female/willow_staff.glb",
+      "binding": "scripts/characters/female_actor.gd",
+      "status": "CREATED_BY_COMPONENT; actual visibility follows equipped item ID."
+    },
+    {
+      "item": "potion",
+      "binding": "scripts/battle/action_effect.gd",
+      "status": "Existing ring/sparks/cross effect and forest reward chest; no independent potion GLB asserted."
+    },
+    {
+      "item": "trail_ration",
+      "status": "Data-only; old village supply chest reference is historical, not proof of a new-Greystone placement."
+    },
+    {
+      "item": "travel_vest",
+      "status": "Data-only equipment stat; no independent swappable armor model asserted."
+    },
+    {
+      "item": "star_seal_01",
+      "status": "Key item data; world ancient crystal is a separate visual, not an independently verified seal prop."
+    }
+  ]
+}

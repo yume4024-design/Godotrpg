@@ -1,0 +1,101 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS G08 release template and isolated feature
+PASS G08 rendered Windows process
+PASS Candidate version override preserves formal version
+PASS Packaged WASD binding 65
+PASS Packaged WASD binding 68
+PASS Packaged WASD binding 87
+PASS Packaged WASD binding 83
+PASS Native candidate loading gate completes
+PASS Packaged story uses the actual candidate loading-screen game
+PASS G06 story scene loads
+PASS Restart offers Continue without replaying E001
+PASS Separate process reads completed save
+PASS Restart preserves final story and quest
+PASS Restart preserves exact currency and both characters
+PASS Restart preserves seal and reward ledger
+PASS Restart preserves equipment
+PASS Probe begins with closed menu
+PASS QA isolation ignores physical-device menu request
+PASS QA isolation permits injected menu request
+PASS Warm validation-world probe greystone_runtime
+PASS Warm validation-world probe greystone_runtime
+PASS Warm validation-world probe greystone_runtime
+PASS Warm validation-world probe greystone_runtime
+PASS Warm validation-world probe greystone_runtime
+PASS Warm validation-world probe forest
+PASS Warm validation-world probe forest
+PASS Warm validation-world probe forest
+PASS Warm validation-world probe forest
+PASS Warm validation-world probe forest
+PASS Warm validation-world probe mine
+PASS Warm validation-world probe mine
+PASS Warm validation-world probe mine
+PASS Warm validation-world probe mine
+PASS Warm validation-world probe mine
+PASS Probe restores prebattle save
+PASS Probe starts real optional encounter
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Arena ready and first player input observed
+PASS Probe battle returns
+PASS Probe restores prebattle save
+PASS Probe starts real optional encounter
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Arena ready and first player input observed
+PASS Probe battle returns
+PASS Probe restores prebattle save
+PASS Probe starts real optional encounter
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Arena ready and first player input observed
+PASS Probe battle returns
+PASS Probe restores prebattle save
+PASS Probe starts real optional encounter
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Arena ready and first player input observed
+PASS Probe battle returns
+PASS Probe restores prebattle save
+PASS Probe starts real optional encounter
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Arena ready and first player input observed
+PASS Probe battle returns
+PASS Probe restores prebattle save
+PASS Probe starts real optional encounter
+PASS Battle begins within five real seconds
+PASS Current character model before and after reload ren
+PASS Packaged ally Pixal3D rig in battle
+PASS Current character model before and after reload lia
+PASS Packaged ally Pixal3D rig in battle
+PASS Packaged bat uses seventeen-bone approved rig
+PASS Packaged bat uses approved manual wing geometry
+PASS Existing bat magic maps to full fold presentation
+PASS Arena ready and first player input observed
+PASS Probe battle returns
+G083_RESULT checks=97 failures=0

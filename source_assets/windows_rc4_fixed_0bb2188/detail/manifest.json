@@ -1,0 +1,21 @@
+{
+  "mode": "Detail",
+  "base_commit": "0bb2188df3fb25e61e58b1944f47e4b855f464f4",
+  "exe": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\qa-soak\\ProjectCrystal.exe",
+  "pck_sha256": "9066003B49C0BBCE9E4CFA7C1EB1CC7BEB523E258BD5EC782E9BE433B753BB39",
+  "pid": 28132,
+  "seconds": 38.5824608,
+  "exit_code": 0,
+  "log": "D:\\RPGGAME\\artifacts\\g083\\20261022-125735\\release-soak.log",
+  "process_samples": "D:\\RPGGAME\\artifacts\\g083\\20261022-125735\\process.csv",
+  "human_playthrough": false,
+  "android_verified": false,
+  "capture_suppression": false,
+  "source_dirty_files": [
+    "docs/ASSET_CREDITS.md",
+    "docs/CHANGELOG.md",
+    "docs/QUALITY_CHARACTER_GENERATION_REPORT.md",
+    "docs/TASKS.md"
+  ],
+  "metrics": "D:\\RPGGAME\\artifacts\\g083\\20261022-125735\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g083\\detail.json"
+}

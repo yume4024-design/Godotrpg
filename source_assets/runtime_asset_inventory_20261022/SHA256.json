@@ -1,0 +1,27 @@
+[
+  {
+    "path": "runtime.json.gz",
+    "bytes": 39183,
+    "sha256": "e008af260e724ddce0bf5249f0838f01668a31fb37562393c4a69de6252676f7"
+  },
+  {
+    "path": "runtime_summary.json",
+    "bytes": 19507,
+    "sha256": "0cb04e8ccbb4066048e334635cf71e1597af46476889167fb56b9544a8dd8276"
+  },
+  {
+    "path": "static_receipt.json",
+    "bytes": 215,
+    "sha256": "da73aab374bc866ecb4109903c40804bc357205005a3ddf3a55fd58e2b90bcbf"
+  },
+  {
+    "path": "static_sources.json",
+    "bytes": 9042,
+    "sha256": "a389fc1df4d6ee7497f0fb397cdb9be7ce845244930ba0005edc5696aa990d2d"
+  },
+  {
+    "path": "wrapper_receipt.json",
+    "bytes": 462,
+    "sha256": "63f4a5bfedb455b0bc10fce45ae43dc4f267da829b2126c2d3faafa0ca5f7f56"
+  }
+]

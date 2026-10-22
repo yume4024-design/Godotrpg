@@ -1,0 +1,45 @@
+{
+  "commit": "0bb2188df3fb25e61e58b1944f47e4b855f464f4",
+  "draft_overlay": false,
+  "packages": {
+    "candidate": [
+      {
+        "path": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\candidate\\ProjectCrystal.exe",
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      {
+        "path": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\candidate\\ProjectCrystal.pck",
+        "bytes": 175412336,
+        "sha256": "cda06c308442128628490ef2651548c7fd34b185fbf6976f9b36604d319d05b8"
+      }
+    ],
+    "qa": [
+      {
+        "path": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\qa\\ProjectCrystal.exe",
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      {
+        "path": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\qa\\ProjectCrystal.pck",
+        "bytes": 175883060,
+        "sha256": "0f65e1c4a7adca01f0a08c0dbfb6b42b31d6b06da77ec37fcf422c07fd6e05f8"
+      }
+    ],
+    "qa-soak": [
+      {
+        "path": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\qa-soak\\ProjectCrystal.exe",
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      {
+        "path": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\qa-soak\\ProjectCrystal.pck",
+        "bytes": 175883060,
+        "sha256": "9066003b49c0bbce9e4cfa7c1eb1cc7beb523e258bd5ec782e9be433b753bb39"
+      }
+    ]
+  },
+  "audio_source_restored_before_export": true,
+  "post_import_changed_files": [],
+  "source_files_unchanged": true
+}

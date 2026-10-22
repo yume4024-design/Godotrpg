@@ -1,0 +1,15 @@
+{
+  "source_commit": "0bb2188df3fb25e61e58b1944f47e4b855f464f4",
+  "pck_sha256": "9066003B49C0BBCE9E4CFA7C1EB1CC7BEB523E258BD5EC782E9BE433B753BB39",
+  "seconds": 13.70056350005325,
+  "exit_code": 0,
+  "same_long_test_profile": true,
+  "actual_slot": "Godot\\app_userdata\\\u5931\u843d\u661f\u6838 \u2014 Project Crystal\\g08_tests\\prologue.json",
+  "source_save_sha256": "09ac119ebd9ad8f16e46b444aaa60953179ac0e191fde357cc926ecb1f558212",
+  "save_after_sha256": "09ac119ebd9ad8f16e46b444aaa60953179ac0e191fde357cc926ecb1f558212",
+  "long_metrics_unchanged": true,
+  "human_playthrough": false,
+  "result_lines": [
+    "G083_RESULT checks=97 failures=0"
+  ]
+}

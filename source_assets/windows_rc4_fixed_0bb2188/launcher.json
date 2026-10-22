@@ -1,0 +1,19 @@
+{
+  "launcher": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\candidate\\start_rc4.cmd",
+  "launcher_pid": 8168,
+  "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+  "physical_input": false,
+  "passed": true,
+  "log": "D:\\RPGGAME\\builds\\g08\\rc4-fixed-0bb2188-v2\\candidate\\user_test\\play-19669-3434.log",
+  "game_pid": 33696,
+  "window_handle": 1050784,
+  "window_title": "失落星核 — Project Crystal",
+  "responding": true,
+  "observed_seconds": 8.1556814,
+  "game_exit_code": 0,
+  "launcher_exit_code": 0,
+  "stdout": "Starting Project Crystal RC4...\r\n",
+  "stderr": "",
+  "exe_sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+  "pck_sha256": "CDA06C308442128628490EF2651548C7FD34B185FBF6976F9B36604D319D05B8"
+}

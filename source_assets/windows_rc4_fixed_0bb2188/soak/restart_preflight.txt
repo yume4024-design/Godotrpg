@@ -1,0 +1,1 @@
+Initial preflight found no g083/soak.json. WindowsCandidateTestTree._run sets the actual slot to g08_tests/prologue.json, overriding the subclass initializer. No process was launched by that rejected preflight. The actual existing long-test slot is used below without creating a save fixture.

@@ -1,0 +1,10 @@
+{
+  "command": "./tools/godot.ps1 -Mode InventoryWorld",
+  "actual_output": "artifacts\\world_inventory\\20261022-130920-837.json",
+  "output_sha256": "7075659818d7c2c6d7b30955d330d0e33039fd41f981f2e900e91f07a02cb9f8",
+  "wrapper_normalized_lf_sha256": "a6977a171d8046709c17e60719daaa50ac6b02f90ab5c1302bf10d480a508a51",
+  "result": "WORLD_INVENTORY_RESULT maps=3 models=106 failures=0",
+  "exit_code": 0,
+  "display": "headless",
+  "visual_acceptance": false
+}
