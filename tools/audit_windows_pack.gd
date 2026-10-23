@@ -3,12 +3,14 @@ var files: Dictionary[String, String] = {}
 
 func _initialize() -> void:
 	var args: PackedStringArray = OS.get_cmdline_user_args()
-	if args.size() != 2 or not ProjectSettings.load_resource_pack(args[0], true):
+	if args.size() not in [2,3] or not ProjectSettings.load_resource_pack(args[0], true):
 		quit(1)
 		return
 	_scan("res://")
 	var required: Dictionary = {}
-	for path: String in ["res://assets/models/pixal3d/ren_rigged.glb", "res://assets/models/pixal3d/lia_rigged.glb", "res://scenes/main/greystone_preview.tscn"]:
+	var required_paths: PackedStringArray = PackedStringArray(["res://assets/models/pixal3d/ren_rigged.glb", "res://assets/models/pixal3d/lia_rigged.glb", "res://scenes/main/greystone_preview.tscn"])
+	if args.size() == 3: required_paths = args[2].split(",")
+	for path: String in required_paths:
 		required[path] = ResourceLoader.exists(path)
 	var output: FileAccess = FileAccess.open(args[1], FileAccess.WRITE)
 	output.store_string(JSON.stringify({"files": files, "required": required}, "\t"))

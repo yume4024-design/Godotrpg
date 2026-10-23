@@ -30,6 +30,11 @@ config/version.g083_qa="0.6.1-g08-rc4"
 run/main_scene.a04_qa="res://tests/qa_entry.tscn"
 run/main_loop_type.a04_qa="EnemyAssetPerformanceTestTree"
 config/version.a04_qa="0.6.1-a04-qa"
+run/main_scene.blender_windows_candidate="res://scenes/main/blender_windows_candidate.tscn"
+config/version.blender_windows_candidate="0.6.1-greystone-blender-rc1"
+run/main_scene.blender_windows_qa="res://tests/qa_entry.tscn"
+run/main_loop_type.blender_windows_qa="BlenderWindowsTestTree"
+config/version.blender_windows_qa="0.6.1-greystone-blender-rc1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [debug]

@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Launcher = '')
+param([string]$Launcher = '', [string]$ReadyMarker = '', [ValidateRange(8,90)][int]$ReadyTimeoutSeconds = 45)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 if (-not $Launcher) { $Launcher = Join-Path $projectRoot 'builds/g08/rc3-20261020/candidate/start_rc3.cmd' }
@@ -40,6 +40,17 @@ try {
     while ($clock.Elapsed.TotalSeconds -lt 8) {
         if ($game.HasExited) { throw 'Game exited unexpectedly during ordinary startup' }
         Start-Sleep -Milliseconds 200
+    }
+    if ($ReadyMarker) {
+        $ready = $false
+        while ($clock.Elapsed.TotalSeconds -lt $ReadyTimeoutSeconds) {
+            if ($game.HasExited) { throw 'Game exited before its ready marker' }
+            if ((Test-Path -LiteralPath $receipt.log) -and ([IO.File]::ReadAllText($receipt.log).Contains($ReadyMarker))) { $ready = $true; break }
+            Start-Sleep -Milliseconds 200
+        }
+        if (-not $ready) { throw 'Game did not reach its ready marker within the startup budget' }
+        $receipt.ready_marker = $ReadyMarker
+        $receipt.ready_seconds = $clock.Elapsed.TotalSeconds
     }
     $game.Refresh()
     $receipt.window_handle = $game.MainWindowHandle.ToInt64()

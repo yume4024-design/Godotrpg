@@ -1,0 +1,7 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/main/windows_candidate_bootstrap.tscn" id="Base"]
+[ext_resource type="Script" path="res://scripts/core/blender_windows_bootstrap.gd" id="Bootstrap"]
+[node name="BlenderWindowsCandidate" instance=ExtResource("Base")]
+script = ExtResource("Bootstrap")
+game_scene_path = "res://scenes/main/greystone_blender_integration.tscn"
+timeout_seconds = 45.0

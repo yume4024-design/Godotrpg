@@ -21,8 +21,10 @@ environment["APPDATA"] = manifest["profile"]
 environment["LOCALAPPDATA"] = str(manifest_path.parent / "local")
 for role in ("candidate", "qa"):
     output = audit_outputs / f"{role}.json"
-    run = subprocess.run([engine, "--headless", "--log-file", str(audit_outputs / f"{role}-engine.log"), "--path", str(audit_root), "--script", "audit.gd", "--",
-                          str(pathlib.Path(manifest[role]).with_suffix(".pck")), str(output)],
+    arguments = [engine, "--headless", "--log-file", str(audit_outputs / f"{role}-engine.log"), "--path", str(audit_root), "--script", "audit.gd", "--",
+                 str(pathlib.Path(manifest[role]).with_suffix(".pck")), str(output)]
+    if manifest.get("required_resources"): arguments.append(",".join(manifest["required_resources"]))
+    run = subprocess.run(arguments,
                          capture_output=True, text=True, encoding="utf-8", timeout=60, env=environment)
     (audit_outputs / f"{role}.log").write_text(run.stdout + run.stderr, encoding="utf-8")
     assert run.returncode == 0 and "ERROR:" not in run.stdout + run.stderr, run.stdout + run.stderr
