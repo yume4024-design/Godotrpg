@@ -1,9 +1,20 @@
 extends "res://tests/phase5_prologue_test.gd"
 
+var npc_slot: String = "user://g06_npc_tests/unused.json"
+
+func _create_game() -> ExplorationGame:
+	return load("res://scenes/main/greystone_integration.tscn").instantiate() as ExplorationGame
+
+func _wall_probe() -> Array[Vector3]:
+	return [Vector3(0,0,-26), Vector3(0,.1,-24)]
+
+func _route_points() -> Array[Vector3]:
+	return [Vector3(0,0,18),Vector3(6,0,6),Vector3(6,0,-6),Vector3(0,0,-18),Vector3(0,0,-22)]
+
 func _run() -> void:
 	DirAccess.make_dir_recursive_absolute("user://g06_npc_tests")
-	game = load("res://scenes/main/greystone_integration.tscn").instantiate()
-	(game.get_node("Saves") as SaveManager).slot_path = "user://g06_npc_tests/unused.json"
+	game = _create_game()
+	(game.get_node("Saves") as SaveManager).slot_path = npc_slot
 	game.initial_map = &"village"
 	game.initial_spawn = &"default"
 	root.add_child(game)
@@ -36,8 +47,9 @@ func _run() -> void:
 	# Test actual line-of-sight occlusion against a building, within interaction range.
 	var npc: WorldInteractable = game.travel.current_map.targets[0]
 	var original: Vector3 = npc.position
-	npc.position = Vector3(0,0,-26)
-	await _place(Vector3(0,.1,-24))
+	var wall: Array[Vector3] = _wall_probe()
+	npc.position = wall[0]
+	await _place(wall[1])
 	_check(not npc.in_reach(game.player),"Building wall blocks interaction ray")
 	npc.position = original
 	# Real completed v1 save exercises recruited Lia on migration and re-entry.
@@ -54,7 +66,7 @@ func _run() -> void:
 	lia = game.travel.current_map.get_node("NPCs/Lia")
 	_check(not lia.visible,"Recruited visibility survives map roundtrip")
 	# Route from southern entrance through plaza and between guild NPCs.
-	for point: Vector3 in [Vector3(0,0,18),Vector3(6,0,6),Vector3(6,0,-6),Vector3(0,0,-18),Vector3(0,0,-22)]:
+	for point: Vector3 in _route_points():
 		await _walk_local(point,true,1400)
 	_finish()
 

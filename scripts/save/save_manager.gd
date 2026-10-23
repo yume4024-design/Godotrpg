@@ -77,6 +77,11 @@ func request_load(backup: bool = false) -> bool:
 		upgraded.inventory.commerce = {"potion_bought": 0, "inn_stays": 0}
 		candidate = codec.prepare(upgraded, _game)
 		position_valid = not candidate.is_empty()
+	if position_valid and _game.greystone_layout_version == 3 and candidate.data.location.map == "greystone_runtime" and int(candidate.data.location.get("layout_version", 0)) == 2:
+		candidate = codec.prepare(BlenderVillageMigration.upgrade(candidate.data), _game)
+		position_valid = not candidate.is_empty()
+		if position_valid:
+			position_valid = await _game.validate_loaded_position(candidate.data.location, candidate.data.flags)
 	_game.restoring = false
 	_game.refresh_control_lock()
 	if not position_valid: return _finish_error("存檔位置無法安全站立；目前進度未變更。")

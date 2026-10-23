@@ -1,0 +1,42 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\greystone_ai_20261023\\house_a\\pixal_candidate_01\\house_a_textured.glb",
+    "category": null,
+    "sha256": "35e54b5142f98f99fe3f69965b6a23e98fdd4c38ac5386efaab8e6c45032cfec",
+    "maximum_triangles": 30000,
+    "triangles": 26093,
+    "headroom_triangles": 3907,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 26093,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TANGENT",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 1,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 26093,
+  "status": "PASS"
+}

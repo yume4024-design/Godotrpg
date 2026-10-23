@@ -1,0 +1,86 @@
+{
+  "measure": "Unique mesh triangles; exact zero-area / repeated indices, no automatic edits",
+  "rows": [
+    {
+      "file": "source_assets/greystone_ai_20261023/inn/pixal_candidate_01/inn_textured.glb",
+      "triangles": 35153,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 27,
+      "same_winding_duplicates": 0,
+      "stage": "raw_source"
+    },
+    {
+      "file": "source_assets/greystone_ai_20261023/house_a/pixal_candidate_01/house_a_textured.glb",
+      "triangles": 26093,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 54,
+      "same_winding_duplicates": 2,
+      "stage": "raw_source"
+    },
+    {
+      "file": "source_assets/greystone_ai_20261023/item_shop/pixal_candidate_01/item_shop_textured.glb",
+      "triangles": 26734,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 28,
+      "same_winding_duplicates": 0,
+      "stage": "raw_source"
+    },
+    {
+      "file": "source_assets/greystone_ai_20261023/weapon_shop/pixal_candidate_01/weapon_shop_textured.glb",
+      "triangles": 26309,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 37,
+      "same_winding_duplicates": 0,
+      "stage": "raw_source"
+    },
+    {
+      "file": "assets/models/greystone/blender_master/buildings/house_a.glb",
+      "triangles": 26061,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 2,
+      "same_winding_duplicates": 0,
+      "stage": "exported_candidate"
+    },
+    {
+      "file": "assets/models/greystone/blender_master/buildings/house_a_blue.glb",
+      "triangles": 26061,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 1,
+      "same_winding_duplicates": 0,
+      "stage": "exported_candidate"
+    },
+    {
+      "file": "assets/models/greystone/blender_master/buildings/inn.glb",
+      "triangles": 35247,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 1,
+      "same_winding_duplicates": 0,
+      "stage": "exported_candidate"
+    },
+    {
+      "file": "assets/models/greystone/blender_master/buildings/item_shop.glb",
+      "triangles": 26720,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 2,
+      "same_winding_duplicates": 0,
+      "stage": "exported_candidate"
+    },
+    {
+      "file": "assets/models/greystone/blender_master/buildings/weapon_shop.glb",
+      "triangles": 26351,
+      "repeated_index_faces": 0,
+      "exact_zero_area_faces": 0,
+      "duplicate_geometry_faces": 3,
+      "same_winding_duplicates": 0,
+      "stage": "exported_candidate"
+    }
+  ]
+}

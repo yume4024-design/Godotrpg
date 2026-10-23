@@ -1,0 +1,33 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_modules/item_shop.glb" id="Model"]
+[sub_resource type="BoxShape3D" id="C0"]
+size = Vector3(6.5,3,4.7)
+[sub_resource type="BoxShape3D" id="C1"]
+size = Vector3(0.2,2.76,0.2)
+[sub_resource type="BoxShape3D" id="C2"]
+size = Vector3(0.2,2.76,0.2)
+[sub_resource type="BoxShape3D" id="C3"]
+size = Vector3(2,1.25,0.65)
+[node name="item_shop" type="Node3D"]
+metadata/reference = "20261023 bottom asset strip"
+[node name="Model" parent="." instance=ExtResource("Model")]
+[node name="Body0" type="StaticBody3D" parent="."]
+position = Vector3(0,1.5,0)
+[node name="Collision" type="CollisionShape3D" parent="Body0"]
+shape = SubResource("C0")
+[node name="Body1" type="StaticBody3D" parent="."]
+position = Vector3(-3.35,1.38,3.73)
+[node name="Collision" type="CollisionShape3D" parent="Body1"]
+shape = SubResource("C1")
+[node name="Body2" type="StaticBody3D" parent="."]
+position = Vector3(3.35,1.38,3.73)
+[node name="Collision" type="CollisionShape3D" parent="Body2"]
+shape = SubResource("C2")
+[node name="Body3" type="StaticBody3D" parent="."]
+position = Vector3(1.6,0.7,3.0)
+[node name="Collision" type="CollisionShape3D" parent="Body3"]
+shape = SubResource("C3")
+[node name="DoorApproach" type="Marker3D" parent="."]
+position = Vector3(-1,0.1,4.5)
+metadata/door_height_m = 2.4
+metadata/door_width_m = 1.65

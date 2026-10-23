@@ -1,5 +1,13 @@
 # 素材來源與修改紀錄
 
+## 2026-10-23 灰石村 AI 建築候選
+
+使用者灰石村概念圖 `docs/references/greystone_20261023.png` 為設計來源；內建 imagegen 建立旅館、民宅、道具店、武器店獨立正交來源，再由本機 ComfyUI Pixal3D 生成。來源與 workflow SHA / prompt ID 保存在 `source_assets/greystone_ai_20261023/`。Blender 修補由本專案腳本完成；未下載第三方模型、未購買素材、未傳至外部 3D 服務。場景／RPG Windows 自動化驗收已完成；局部 AI 木框／屋瓦不規則與未驗收平台見重建報告。
+
+## 2026-10-23 — 灰石村參考圖底部模組
+
+使用者提供docs/references/greystone_20261023.png作造型參考；本機Blender5.2.2原創程序幾何，四建築與十件設施／環境模組，無外部下載模型或貼圖。GLB位於assets/models/greystone/reference_modules，工作檔及配方、面數／UV／實際畫面與限制見[重建報告](GREYSTONE_REFERENCE_REBUILD_REPORT.md)。參考圖本身保留為使用者提供資料，不當作新建模輸出。
+
 ## 2026-10-22 — 原創礦坑支架模組
 
 Project Crystal原創Blender參數化木架，804 triangles、三個剛性Mesh；沿用本專案G04木材／端木／鐵材配色與共用材質，沒有下載商店模型、付費生成或外部貼圖。來源scripts/tools/greystone/build_mine_support.py、source_assets/environment_rebuild_20261022/mine_support/mine_support_frame.blend，遊戲GLB assets/models/environment/mine_support_frame.glb；來源／輸出SHA、失敗輪次及獨立驗收見[報告](ENV02_MINE_SUPPORT_REPORT.md)。後續已以八份純視覺PackedScene接入新版G06礦坑，原碰撞及正式v0.6.1保留，見[整合報告](ENV02_MINE_SUPPORT_INTEGRATION_REPORT.md)；不將原生幾何佔位當作這次新製模型。

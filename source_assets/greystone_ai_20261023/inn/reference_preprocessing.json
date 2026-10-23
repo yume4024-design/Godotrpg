@@ -1,0 +1,46 @@
+[
+  {
+    "view": "front",
+    "bbox": [
+      19,
+      86,
+      624,
+      522
+    ],
+    "retained_components": 1,
+    "alpha_threshold": 96
+  },
+  {
+    "view": "left",
+    "bbox": [
+      43,
+      87,
+      599,
+      524
+    ],
+    "retained_components": 1,
+    "alpha_threshold": 96
+  },
+  {
+    "view": "back",
+    "bbox": [
+      36,
+      82,
+      621,
+      515
+    ],
+    "retained_components": 1,
+    "alpha_threshold": 96
+  },
+  {
+    "view": "right",
+    "bbox": [
+      33,
+      80,
+      600,
+      523
+    ],
+    "retained_components": 1,
+    "alpha_threshold": 96
+  }
+]

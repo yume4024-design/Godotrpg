@@ -1,0 +1,518 @@
+{
+  "status": "PASS_SCENE_CONSTRUCTION_AND_WINDOWS_AUTOMATION",
+  "base_commit_before_changes": "932b50a8b5000e22ea03cf49557d187d6d833655",
+  "models": [
+    {
+      "schema_version": 1,
+      "file": "D:\\RPGGAME\\assets\\models\\greystone\\blender_master\\buildings\\inn.glb",
+      "category": null,
+      "sha256": "d782e36553000b3861e1bf60fd153e0c313e11801e4811a1b60f4456108d6df5",
+      "maximum_triangles": 40000,
+      "triangles": 35247,
+      "headroom_triangles": 4753,
+      "triangle_gate": "PASS",
+      "status": "PASS",
+      "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+      "requirements": {
+        "uv": true,
+        "rig": false
+      },
+      "max_weight_sum_error": 0.0,
+      "primitives": [
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 72,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 12,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 35127,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 36,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "skins": [],
+      "materials": 4,
+      "animations": [],
+      "failures": [],
+      "warnings": [],
+      "visual_gate": "HUMAN_REVIEW",
+      "animation_gate": "NOT_STARTED"
+    },
+    {
+      "schema_version": 1,
+      "file": "D:\\RPGGAME\\assets\\models\\greystone\\blender_master\\buildings\\house_a.glb",
+      "category": null,
+      "sha256": "ba2b43e4b497af57538a195d09168b27bebdd9976234c5811fa969623bdad7a2",
+      "maximum_triangles": 30000,
+      "triangles": 26061,
+      "headroom_triangles": 3939,
+      "triangle_gate": "PASS",
+      "status": "PASS",
+      "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+      "requirements": {
+        "uv": true,
+        "rig": false
+      },
+      "max_weight_sum_error": 0.0,
+      "primitives": [
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 26041,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 20,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "skins": [],
+      "materials": 2,
+      "animations": [],
+      "failures": [],
+      "warnings": [],
+      "visual_gate": "HUMAN_REVIEW",
+      "animation_gate": "NOT_STARTED"
+    },
+    {
+      "schema_version": 1,
+      "file": "D:\\RPGGAME\\assets\\models\\greystone\\blender_master\\buildings\\house_a_blue.glb",
+      "category": null,
+      "sha256": "6a1ba7e554091f67c12eae20b2ea4079f2c9a962ec1d89eda6db03a12b0fd53a",
+      "maximum_triangles": 30000,
+      "triangles": 26061,
+      "headroom_triangles": 3939,
+      "triangle_gate": "PASS",
+      "status": "PASS",
+      "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+      "requirements": {
+        "uv": true,
+        "rig": false
+      },
+      "max_weight_sum_error": 0.0,
+      "primitives": [
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 20260,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 14,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 1956,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 1946,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 1885,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "skins": [],
+      "materials": 5,
+      "animations": [],
+      "failures": [],
+      "warnings": [],
+      "visual_gate": "HUMAN_REVIEW",
+      "animation_gate": "NOT_STARTED"
+    },
+    {
+      "schema_version": 1,
+      "file": "D:\\RPGGAME\\assets\\models\\greystone\\blender_master\\buildings\\item_shop.glb",
+      "category": null,
+      "sha256": "84fb3a70d493354a1c44ca81b53eec1bb963132d1367e0efaa917466db478aa1",
+      "maximum_triangles": 30000,
+      "triangles": 26720,
+      "headroom_triangles": 3280,
+      "triangle_gate": "PASS",
+      "status": "PASS",
+      "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+      "requirements": {
+        "uv": true,
+        "rig": false
+      },
+      "max_weight_sum_error": 0.0,
+      "primitives": [
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 12,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 26708,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "skins": [],
+      "materials": 2,
+      "animations": [],
+      "failures": [],
+      "warnings": [],
+      "visual_gate": "HUMAN_REVIEW",
+      "animation_gate": "NOT_STARTED"
+    },
+    {
+      "schema_version": 1,
+      "file": "D:\\RPGGAME\\assets\\models\\greystone\\blender_master\\buildings\\weapon_shop.glb",
+      "category": null,
+      "sha256": "256947c6bb14df91c4907f9c3c24ed18de4f4fdfc1f06cbf1fb43454f0a2e9e2",
+      "maximum_triangles": 30000,
+      "triangles": 26351,
+      "headroom_triangles": 3649,
+      "triangle_gate": "PASS",
+      "status": "PASS",
+      "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+      "requirements": {
+        "uv": true,
+        "rig": false
+      },
+      "max_weight_sum_error": 0.0,
+      "primitives": [
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 12,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 64,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 25042,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 0,
+          "mesh": 0,
+          "triangles": 1233,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        }
+      ],
+      "skins": [],
+      "materials": 4,
+      "animations": [],
+      "failures": [],
+      "warnings": [],
+      "visual_gate": "HUMAN_REVIEW",
+      "animation_gate": "NOT_STARTED"
+    }
+  ],
+  "executed": {
+    "testgreystoneblender": {
+      "checks": 37,
+      "failures": 0
+    },
+    "testblendermigration": {
+      "checks": 70,
+      "failures": 0
+    },
+    "testblendermigrationreload": {
+      "checks": 6,
+      "failures": 0
+    },
+    "visualblenderstory": {
+      "checks": 68,
+      "failures": 0
+    },
+    "testblenderstoryreload": {
+      "checks": 7,
+      "failures": 0
+    },
+    "visualblendercommerce": {
+      "checks": 53,
+      "failures": 0
+    },
+    "testblendercommercereload": {
+      "checks": 5,
+      "failures": 0
+    },
+    "visualblendernpc": {
+      "checks": 69,
+      "failures": 0
+    }
+  },
+  "boundary": {
+    "abyss_sweeps": 505,
+    "already_obstructed_starts": 32,
+    "covered_lower_edges": 370,
+    "failure_top_down_diagnostics": [],
+    "failures": [],
+    "method": "Actual imported Grass mesh boundary edges, <=1.2m sampling; highest physical floor rejects covered outlines; 1.95m capsule sweep toward no floor within 24m",
+    "tested_terrain_edges": 149
+  },
+  "existing_regression_manifest": "artifacts\\regression\\g06-20261023-205111.json",
+  "preserved_originals": [
+    {
+      "path": "project.godot",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "scenes/main/main.tscn",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "scenes/world/village.tscn",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "scenes/world/greystone_runtime.tscn",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "scenes/world/greystone_village.tscn",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/battles/expanded_battles.json",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/battles/prologue_battles.json",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/characters/.gitkeep",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/characters/lia.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/characters/ren.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/enemies/.gitkeep",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/enemies/corrupted_guardian.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/enemies/crystal_bat.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/enemies/forest_slime.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/enemies/ore_beetle.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/enemies/spore_sprite.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/enemies/thorn_boar.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/items/.gitkeep",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/items/bronze_sword.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/items/potion.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/items/star_seal_01.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/items/trail_ration.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/items/travel_vest.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/items/willow_staff.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/quests/q001.json",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/skills/.gitkeep",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/skills/attack.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/skills/guard.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/skills/mend.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/skills/rupture.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/skills/star_spark.tres",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/story/exploration_dialogue.json",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/story/prologue_events.json",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/validation/asset_triangle_budget.schema.json",
+      "lf_normalized_matches_head": true
+    },
+    {
+      "path": "data/validation/asset_triangle_budgets.json",
+      "lf_normalized_matches_head": true
+    }
+  ],
+  "master_blend": {
+    "path": "source_assets\\greystone_blender_20261023\\greystone_master.blend",
+    "bytes": 102451770,
+    "sha256": "9fff007059d70010bdd07ae89408d7053fe9100d5906c8aff5ea779340dbaacc"
+  },
+  "runtime_files": {
+    "assets\\models\\greystone\\blender_master\\bounds.glb": "8e5f1fca3f7f20a9c32944aa7d3ee44d352b7fb01b11a3490eed532e700aef27",
+    "assets\\models\\greystone\\blender_master\\cliffs.glb": "6e0019d0a1d819e391e7261fcb4cbdfac9983b2234b596772a1327dc33af331c",
+    "assets\\models\\greystone\\blender_master\\mine.glb": "cf8dd3473dd866d653fbca559a764aaea6cf2d29f54726c79a99b47ff6623ff5",
+    "assets\\models\\greystone\\blender_master\\paths.glb": "4bf66d7f9effdfbba806c60983a21ba85fc06620e30db862ac2a3134490d1b9d",
+    "assets\\models\\greystone\\blender_master\\props.glb": "f99fe01e41b901b721538d81ec0876885ff13cd03f14ad1a446da7df12853d6f",
+    "assets\\models\\greystone\\blender_master\\terrain.glb": "e5c996321a111e207766b78b5f71dcebedc02a07ce892dc9f554a9371f93ce53",
+    "assets\\models\\greystone\\blender_master\\vegetation.glb": "0ca491965025e2378369994456cbd14c5ff2464241907eba75341b56e84d8972",
+    "assets\\models\\greystone\\blender_master\\water.glb": "e657c94c60571ba26d2bf782483c0ee6543b632114074bce9f80892ecc383329",
+    "assets\\models\\greystone\\blender_master\\buildings\\house_a.glb": "ba2b43e4b497af57538a195d09168b27bebdd9976234c5811fa969623bdad7a2",
+    "assets\\models\\greystone\\blender_master\\buildings\\house_a_blue.glb": "6a1ba7e554091f67c12eae20b2ea4079f2c9a962ec1d89eda6db03a12b0fd53a",
+    "assets\\models\\greystone\\blender_master\\buildings\\inn.glb": "d782e36553000b3861e1bf60fd153e0c313e11801e4811a1b60f4456108d6df5",
+    "assets\\models\\greystone\\blender_master\\buildings\\item_shop.glb": "84fb3a70d493354a1c44ca81b53eec1bb963132d1367e0efaa917466db478aa1",
+    "assets\\models\\greystone\\blender_master\\buildings\\weapon_shop.glb": "256947c6bb14df91c4907f9c3c24ed18de4f4fdfc1f06cbf1fb43454f0a2e9e2"
+  },
+  "limits": [
+    "Not a new release package, 30-minute endurance test or physical input acceptance",
+    "Android/iOS paused",
+    "AI roof/timber irregularity remains; visual review is not pixel-identical reconstruction",
+    "Terrain edge sweep is sampled at <=1.2m, not a continuous proof"
+  ]
+}

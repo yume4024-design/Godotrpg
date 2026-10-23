@@ -1,0 +1,42 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\greystone_ai_20261023\\inn\\pixal_candidate_01\\inn_textured.glb",
+    "category": null,
+    "sha256": "2c5d4e1fcf9ed52e680d737283cf3b26ab5cfeabc171b06693b899a0214cc335",
+    "maximum_triangles": 40000,
+    "triangles": 35153,
+    "headroom_triangles": 4847,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 35153,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TANGENT",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 1,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 35153,
+  "status": "PASS"
+}

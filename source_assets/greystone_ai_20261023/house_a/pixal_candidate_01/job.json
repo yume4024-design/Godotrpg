@@ -1,0 +1,12 @@
+{
+  "prompt_id": "376d2f40-fb24-46b8-81ec-2a3f75494a56",
+  "status": "completed",
+  "asset": "house_a",
+  "input_preview_prompt_id": "db7e5d0d-5665-49ae-aa82-a6e51500f611",
+  "conditioning_review": "Four complete orthographic elevations inspected; common scale, front/back and opposite gables correct.",
+  "budget": 30000,
+  "host": "127.0.0.1",
+  "port": 8188,
+  "source_glb": "D:/Comfy-Desktop/ComfyUI-Shared/output/greystone_20261023/house_a_candidate01/house_a_source_00001.glb",
+  "textured_glb": "house_a_textured.glb"
+}

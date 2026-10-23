@@ -1,0 +1,62 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/house_a.tscn" id="A0"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/inn.tscn" id="A1"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/item_shop.tscn" id="A2"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/weapon_shop.tscn" id="A3"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/stone_well.tscn" id="A4"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/wooden_bridge.tscn" id="A5"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/wooden_dock.tscn" id="A6"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/pine_tree_a.tscn" id="A7"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/rock_medium.tscn" id="A8"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/wooden_fence.tscn" id="A9"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/lamp_post.tscn" id="A10"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/wooden_sign.tscn" id="A11"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/barrel.tscn" id="A12"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/reference_modules/crate.tscn" id="A13"]
+[sub_resource type="Environment" id="LibraryEnv"]
+background_mode = 1
+background_color = Color(0.14,0.19,0.21,1)
+ambient_light_source = 3
+ambient_light_energy = 0.35
+ambient_light_color = Color(0.8,0.85,0.9,1)
+[node name="ReferenceAssetLibrary" type="Node3D"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("LibraryEnv")
+[node name="Sun" type="DirectionalLight3D" parent="."]
+rotation_degrees = Vector3(-50,-30,0)
+light_energy = 0.75
+shadow_enabled = true
+[node name="house_a" parent="." instance=ExtResource("A0")]
+position = Vector3(0,0,0)
+[node name="inn" parent="." instance=ExtResource("A1")]
+position = Vector3(13,0,0)
+[node name="item_shop" parent="." instance=ExtResource("A2")]
+position = Vector3(26,0,0)
+[node name="weapon_shop" parent="." instance=ExtResource("A3")]
+position = Vector3(39,0,0)
+[node name="stone_well" parent="." instance=ExtResource("A4")]
+position = Vector3(0,0,-13)
+[node name="wooden_bridge" parent="." instance=ExtResource("A5")]
+position = Vector3(10,0,-13)
+[node name="wooden_dock" parent="." instance=ExtResource("A6")]
+position = Vector3(20,0,-13)
+[node name="pine_tree_a" parent="." instance=ExtResource("A7")]
+position = Vector3(30,0,-13)
+[node name="rock_medium" parent="." instance=ExtResource("A8")]
+position = Vector3(40,0,-13)
+[node name="wooden_fence" parent="." instance=ExtResource("A9")]
+position = Vector3(0,0,-21)
+[node name="lamp_post" parent="." instance=ExtResource("A10")]
+position = Vector3(10,0,-21)
+[node name="wooden_sign" parent="." instance=ExtResource("A11")]
+position = Vector3(20,0,-21)
+[node name="barrel" parent="." instance=ExtResource("A12")]
+position = Vector3(30,0,-21)
+[node name="crate" parent="." instance=ExtResource("A13")]
+position = Vector3(40,0,-21)
+[node name="Camera3D" type="Camera3D" parent="."]
+position = Vector3(32,35,42)
+rotation_degrees = Vector3(-35,12,0)
+projection = 1
+size = 58.0
+current = true

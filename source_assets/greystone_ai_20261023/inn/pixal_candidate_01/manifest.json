@@ -1,0 +1,109 @@
+{
+  "status": "GENERATED_AND_BLENDER_REVIEWED_CANDIDATE",
+  "budget": 40000,
+  "candidate_target": 36800,
+  "source_workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "views": {
+    "front": {
+      "file": "source_assets\\greystone_ai_20261023\\inn\\pixal_candidate_01\\uploads\\greystone_inn_ortho_v3_front.png",
+      "sheet_rect": [
+        0,
+        0,
+        900,
+        525
+      ],
+      "bbox": [
+        88,
+        39,
+        879,
+        516
+      ],
+      "scale": 1,
+      "sha256": "4579e45869abb0b64add169244a4d5b44e336332b968dfef58aa51110e676df1",
+      "crop_pad_factor": 1.1,
+      "chain": {
+        "340": "SaveImageAdvanced",
+        "312": "ImageCropToMask",
+        "364": "LoadImage",
+        "192": "RemoveBackground",
+        "193": "LoadBackgroundRemovalModel"
+      }
+    },
+    "left": {
+      "file": "source_assets\\greystone_ai_20261023\\inn\\pixal_candidate_01\\uploads\\greystone_inn_ortho_v3_left.png",
+      "sheet_rect": [
+        900,
+        0,
+        1536,
+        525
+      ],
+      "bbox": [
+        50,
+        39,
+        539,
+        516
+      ],
+      "scale": 1,
+      "sha256": "3be90e215a17b661914bc45b600a5885bc3b8e094b2fa44ff66e1602543ba307",
+      "crop_pad_factor": 1.7793456032719837,
+      "chain": {
+        "344": "SaveImageAdvanced",
+        "349": "ImageCropToMask",
+        "377": "LoadImage",
+        "348": "RemoveBackground",
+        "193": "LoadBackgroundRemovalModel"
+      }
+    },
+    "back": {
+      "file": "source_assets\\greystone_ai_20261023\\inn\\pixal_candidate_01\\uploads\\greystone_inn_ortho_v3_back.png",
+      "sheet_rect": [
+        0,
+        525,
+        900,
+        1024
+      ],
+      "bbox": [
+        55,
+        9,
+        826,
+        459
+      ],
+      "scale": 1,
+      "sha256": "dbf52225a5f1d53c2efe3812df80a7da95963034c65ea7bfa4e2d43758591656",
+      "crop_pad_factor": 1.1285343709468223,
+      "chain": {
+        "343": "SaveImageAdvanced",
+        "350": "ImageCropToMask",
+        "378": "LoadImage",
+        "351": "RemoveBackground",
+        "193": "LoadBackgroundRemovalModel"
+      }
+    },
+    "right": {
+      "file": "source_assets\\greystone_ai_20261023\\inn\\pixal_candidate_01\\uploads\\greystone_inn_ortho_v3_right.png",
+      "sheet_rect": [
+        900,
+        525,
+        1536,
+        1024
+      ],
+      "bbox": [
+        60,
+        9,
+        598,
+        459
+      ],
+      "scale": 1,
+      "sha256": "03325942ce5b84a6bb4d74c428211188c47161d51d4bbe4995f11a599b9d4444",
+      "crop_pad_factor": 1.6172862453531598,
+      "chain": {
+        "346": "SaveImageAdvanced",
+        "352": "ImageCropToMask",
+        "379": "LoadImage",
+        "353": "RemoveBackground",
+        "193": "LoadBackgroundRemovalModel"
+      }
+    }
+  },
+  "visual_review": "Candidate inspected in Blender. Generated facade/roof irregularity is recorded; full village/RPG acceptance pending."
+}

@@ -1,0 +1,198 @@
+[
+  {
+    "name": "house_a",
+    "category": "building",
+    "triangles": 5808,
+    "dimensions_xyz_godot": [
+      6.9,
+      6.18,
+      5.6
+    ],
+    "materials": 8,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "inn",
+    "category": "building",
+    "triangles": 10564,
+    "dimensions_xyz_godot": [
+      10.515,
+      7.93,
+      7.862
+    ],
+    "materials": 9,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "item_shop",
+    "category": "building",
+    "triangles": 4212,
+    "dimensions_xyz_godot": [
+      7.404,
+      6.048,
+      6.642
+    ],
+    "materials": 9,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "weapon_shop",
+    "category": "building",
+    "triangles": 4180,
+    "dimensions_xyz_godot": [
+      7.404,
+      6.048,
+      6.91
+    ],
+    "materials": 9,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "stone_well",
+    "category": "prop",
+    "triangles": 1212,
+    "dimensions_xyz_godot": [
+      2.61,
+      2.87,
+      2.61
+    ],
+    "materials": 4,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "wooden_bridge",
+    "category": "prop",
+    "triangles": 1216,
+    "dimensions_xyz_godot": [
+      8.0,
+      2.9,
+      3.4
+    ],
+    "materials": 2,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "wooden_dock",
+    "category": "prop",
+    "triangles": 948,
+    "dimensions_xyz_godot": [
+      6.0,
+      3.6,
+      5.0
+    ],
+    "materials": 2,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "pine_tree_a",
+    "category": "prop",
+    "triangles": 60,
+    "dimensions_xyz_godot": [
+      2.925,
+      5.35,
+      2.851
+    ],
+    "materials": 3,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "rock_medium",
+    "category": "prop",
+    "triangles": 20,
+    "dimensions_xyz_godot": [
+      2.504,
+      1.9,
+      1.871
+    ],
+    "materials": 1,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "wooden_fence",
+    "category": "prop",
+    "triangles": 112,
+    "dimensions_xyz_godot": [
+      3.0,
+      1.3,
+      0.22
+    ],
+    "materials": 2,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "lamp_post",
+    "category": "prop",
+    "triangles": 184,
+    "dimensions_xyz_godot": [
+      1.07,
+      2.86,
+      0.56
+    ],
+    "materials": 2,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "wooden_sign",
+    "category": "prop",
+    "triangles": 56,
+    "dimensions_xyz_godot": [
+      1.65,
+      1.9,
+      0.23
+    ],
+    "materials": 2,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "barrel",
+    "category": "prop",
+    "triangles": 764,
+    "dimensions_xyz_godot": [
+      1.06,
+      1.22,
+      1.06
+    ],
+    "materials": 2,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  },
+  {
+    "name": "crate",
+    "category": "prop",
+    "triangles": 116,
+    "dimensions_xyz_godot": [
+      1.04,
+      1.04,
+      1.16
+    ],
+    "materials": 2,
+    "uv": true,
+    "textures": 0,
+    "source": "Original geometry authored against bottom asset strip"
+  }
+]

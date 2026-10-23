@@ -1,0 +1,51 @@
+{
+  "fps_cap": 60,
+  "method": "120 frame_post_draw intervals per static camera, Engine.max_fps=60; CPU scheduling intervals, not GPU timings, endurance or Android acceptance",
+  "views": {
+    "bridge": {
+      "frames": 120,
+      "max_draw_calls": 573,
+      "mean_ms": 16.3987833333333,
+      "p95_ms": 16.847,
+      "p99_ms": 17.042,
+      "render_video_memory_bytes": 821304523.0,
+      "static_memory_bytes": 70330347.0
+    },
+    "dock": {
+      "frames": 120,
+      "max_draw_calls": 596,
+      "mean_ms": 16.39905,
+      "p95_ms": 16.823,
+      "p99_ms": 16.845,
+      "render_video_memory_bytes": 821304523.0,
+      "static_memory_bytes": 70360083.0
+    },
+    "inn": {
+      "frames": 120,
+      "max_draw_calls": 506,
+      "mean_ms": 16.3971833333333,
+      "p95_ms": 16.938,
+      "p99_ms": 17.226,
+      "render_video_memory_bytes": 821304523.0,
+      "static_memory_bytes": 70296335.0
+    },
+    "mine": {
+      "frames": 120,
+      "max_draw_calls": 320,
+      "mean_ms": 16.3978,
+      "p95_ms": 16.837,
+      "p99_ms": 16.876,
+      "render_video_memory_bytes": 821304523.0,
+      "static_memory_bytes": 70343991.0
+    },
+    "plaza": {
+      "frames": 120,
+      "max_draw_calls": 510,
+      "mean_ms": 16.4001333333333,
+      "p95_ms": 16.862,
+      "p99_ms": 16.958,
+      "render_video_memory_bytes": 821304523.0,
+      "static_memory_bytes": 70296991.0
+    }
+  }
+}

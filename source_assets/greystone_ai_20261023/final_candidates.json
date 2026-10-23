@@ -1,0 +1,42 @@
+[
+  {
+    "asset": "inn",
+    "final": "source_assets/greystone_ai_20261023/inn/pixal_candidate_01/door_only/inn_repaired.glb",
+    "triangles": 35247,
+    "budget": 40000,
+    "sha256": "80ab4b74994df5ec7a463a3d8a960345ba0be1ca79d65dcb05cf7364f95a9566",
+    "triangle_uv_gate": "PASS",
+    "visual_gate": "CANDIDATE_REVIEWED_WITH_LIMITATIONS",
+    "limits": "Generated roof/timber irregularity remains; complete village Windows automation passed in isolated RPG candidate. Not release/physical-input/mobile acceptance."
+  },
+  {
+    "asset": "house_a",
+    "final": "source_assets/greystone_ai_20261023/house_a/pixal_candidate_01/shell_repair02/house_a_repaired.glb",
+    "triangles": 26063,
+    "budget": 30000,
+    "sha256": "0f00916758551278afd6a330913d7f13c9bdff157e528a2471fdb94e24be92ee",
+    "triangle_uv_gate": "PASS",
+    "visual_gate": "CANDIDATE_REVIEWED_WITH_LIMITATIONS",
+    "limits": "Generated roof/timber irregularity remains; complete village Windows automation passed in isolated RPG candidate. Not release/physical-input/mobile acceptance."
+  },
+  {
+    "asset": "item_shop",
+    "final": "source_assets/greystone_ai_20261023/item_shop/pixal_candidate_01/shell_repair02/item_shop_repaired.glb",
+    "triangles": 26720,
+    "budget": 30000,
+    "sha256": "46bcfe37f91f517dea8341b00dab2ca81b8c4f66c6c1d9d08b1042293a5ba1c7",
+    "triangle_uv_gate": "PASS",
+    "visual_gate": "CANDIDATE_REVIEWED_WITH_LIMITATIONS",
+    "limits": "Generated roof/timber irregularity remains; complete village Windows automation passed in isolated RPG candidate. Not release/physical-input/mobile acceptance."
+  },
+  {
+    "asset": "weapon_shop",
+    "final": "source_assets/greystone_ai_20261023/weapon_shop/pixal_candidate_01/shell_repair02/weapon_shop_repaired.glb",
+    "triangles": 26351,
+    "budget": 30000,
+    "sha256": "494c95924217058898ffbce79d5620b2aed72cc8878fba39f9de3726f0d4413e",
+    "triangle_uv_gate": "PASS",
+    "visual_gate": "CANDIDATE_REVIEWED_WITH_LIMITATIONS",
+    "limits": "Generated roof/timber irregularity remains; complete village Windows automation passed in isolated RPG candidate. Not release/physical-input/mobile acceptance."
+  }
+]

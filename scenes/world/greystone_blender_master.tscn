@@ -1,0 +1,34 @@
+[gd_scene load_steps=11 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/blender_village_geometry.gd" id="Geometry"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/terrain.glb" id="1"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/paths.glb" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone/blender_master/buildings.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/water.glb" id="4"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/cliffs.glb" id="5"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/vegetation.glb" id="6"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/props.glb" id="7"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/mine.glb" id="8"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/bounds.glb" id="9"]
+
+[node name="GreystoneBlenderMaster" type="Node3D"]
+script = ExtResource("Geometry")
+metadata/status = "candidate_rpg_opt_in"
+
+[node name="Terrain" parent="." instance=ExtResource("1")]
+
+[node name="Paths" parent="." instance=ExtResource("2")]
+
+[node name="Buildings_Candidate" parent="." instance=ExtResource("3")]
+
+[node name="Water" parent="." instance=ExtResource("4")]
+
+[node name="Cliffs" parent="." instance=ExtResource("5")]
+
+[node name="Vegetation" parent="." instance=ExtResource("6")]
+
+[node name="Props" parent="." instance=ExtResource("7")]
+
+[node name="Mine" parent="." instance=ExtResource("8")]
+
+[node name="Bounds" parent="." instance=ExtResource("9")]

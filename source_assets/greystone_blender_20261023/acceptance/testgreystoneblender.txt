@@ -1,0 +1,147 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+PASS Native graphical renderer
+PASS Actual G06 character collider height
+PASS Nine independently exported Blender collections including collision bounds
+PASS Collision-only Blender guards have no visible mesh
+PASS Seven simplified building bodies
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-7.0, 0.062383, 32.74998)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-7.0, 1.037383, 32.74998)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.333693, -0.942682) input=(0.333693, -0.942682) focused=true velocity=(0.0, 0.0, -4.5) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/Entry/Entry_col normal=(0.0, 1.0, 0.0) position=(-7.0, 0.062, 32.74998)
+PASS entry (-7.0, 0.0, 29.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-7.0, 0.825499, 27.50636)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-7.0, 1.800499, 27.50636)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.333693, -0.942682) input=(0.333693, -0.942682) focused=true velocity=(0.0, 0.0, -4.5) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/EntrySteps_RampCollisionGuide/SolidTerrain normal=(0.0, 0.894424, 0.447219) position=(-7.0, 0.829348, 27.42124)
+CONTACT /root/BlenderVillagePreview/Village/Paths/EntrySteps_RampCollisionGuide/SolidTerrain normal=(0.0, 0.894424, 0.447219) position=(-7.0, 0.829959, 27.42001)
+CONTACT /root/BlenderVillagePreview/Village/Paths/EntrySteps_RampCollisionGuide/SolidTerrain normal=(0.0, 0.894424, 0.447219) position=(-7.0, 0.85853, 27.36287)
+PASS entry (-7.0, 3.0, 23.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-6.27174, 3.045908, 21.298)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-6.27174, 4.020908, 21.298)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.627675, -0.778476) input=(0.627675, -0.778475) focused=true velocity=(1.493669, 0.0, -4.244874) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/SouthRoad/SouthRoad_col normal=(0.0, 1.0, 0.0) position=(-6.27174, 3.046, 21.298)
+PASS entry (-3.0, 3.0, 12.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-3.086118, 3.046815, 10.06316)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-3.086118, 4.021815, 10.06316)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.343741, -0.939064) input=(0.343741, -0.939064) focused=true velocity=(0.048059, 0.0, -4.499743) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/SouthRoad/SouthRoad_col normal=(0.0, 1.0, 0.0) position=(-3.086118, 3.046, 10.06316)
+PASS entry (-3.0, 3.0, 2.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-3.487956, 3.044238, -0.194691)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-3.487956, 4.019238, -0.194691)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.121284, -0.992618) input=(0.121284, -0.992618) focused=true velocity=(-0.976035, 0.0, -4.392876) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/WestRoad/WestRoad_col normal=(0.0, 1.0, 0.0) position=(-3.487956, 3.044, -0.194691)
+PASS inn (-5.0, 3.0, -7.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-6.795779, 3.042162, -7.879371)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-6.795779, 4.017162, -7.879371)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.601946, -0.798537) input=(-0.601946, -0.798537) focused=true velocity=(-3.752594, 0.0, -2.483554) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/InnRoad/InnRoad_col normal=(0.0, 1.0, 0.0) position=(-6.795779, 3.042, -7.879371)
+PASS inn (-10.0, 3.0, -10.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-5.248049, 3.043984, -0.093669)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-5.248049, 4.018984, -0.093669)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.927973, -0.372648) input=(-0.927973, -0.372648) focused=true velocity=(-4.496099, 0.0, -0.187337) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/WestRoad/WestRoad_col normal=(0.0, 1.0, 0.0) position=(-5.248049, 3.044, -0.093669)
+PASS west (-27.0, 3.0, -1.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-28.662, 3.611529, -0.988621)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-28.662, 4.586529, -0.988621)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.941803, -0.336164) input=(-0.941803, -0.336164) focused=true velocity=(-4.499984, 0.0, -0.011805) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/WestSteps_RampCollisionGuide/SolidTerrain normal=(0.316359, 0.948639, 0.0) position=(-28.69884, 3.605617, -0.988451)
+CONTACT /root/BlenderVillagePreview/Village/Paths/WestSteps_RampCollisionGuide/SolidTerrain normal=(0.316359, 0.948639, 0.0) position=(-28.70115, 3.606387, -0.988458)
+CONTACT /root/BlenderVillagePreview/Village/Paths/WestSteps_RampCollisionGuide/SolidTerrain normal=(0.316359, 0.948639, 0.0) position=(-28.7635, 3.62718, -0.988621)
+PASS west (-33.0, 5.0, -1.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (22.24993, 6.100078, -29.0)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (22.24993, 7.075078, -29.0)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.942682, 0.333693) input=(0.942682, 0.333693) focused=true velocity=(4.5, 0.0, 0.0) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Props/UpstreamBridge/UpstreamBridge_col normal=(0.00008, 1.0, 0.0) position=(22.2498, 6.1, -29.0)
+PASS bridge (34.0, 6.0, -29.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (14.11453, 3.05282, 13.76893)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (14.11453, 4.027821, 13.76893)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.77189, 0.635756) input=(0.77189, 0.635756) focused=true velocity=(4.229072, 0.0, 1.53784) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/DockRoad/DockRoad_col normal=(0.0, 1.0, 0.0) position=(14.11453, 3.052, 13.76893)
+PASS dock (23.0, 3.0, 17.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (6.692212, 6.056055, -30.83088)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (6.692212, 7.031054, -30.83088)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.276384, -0.961047) input=(-0.276384, -0.961047) focused=true velocity=(-2.615566, 0.0, -3.661805) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/MineRoad/MineRoad_col normal=(0.0, 1.0, 0.0) position=(6.692212, 6.056, -30.83088)
+PASS mine (3.0, 6.0, -36.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (2.468825, 6.860305, -37.38626)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (2.468825, 7.835305, -37.38626)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.074039, -0.997255) input=(-0.074039, -0.997255) focused=true velocity=(-1.811577, 0.0, -4.119246) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/MineSteps_RampCollisionGuide/SolidTerrain normal=(0.183269, 0.885237, 0.427514) position=(2.433042, 6.866249, -37.47109)
+CONTACT /root/BlenderVillagePreview/Village/Paths/MineSteps_RampCollisionGuide/SolidTerrain normal=(0.183269, 0.885237, 0.427514) position=(2.432559, 6.866877, -37.47218)
+CONTACT /root/BlenderVillagePreview/Village/Paths/MineSteps_RampCollisionGuide/SolidTerrain normal=(0.183269, 0.885237, 0.427514) position=(2.410026, 6.896287, -37.52342)
+PASS mine (0.0, 10.0, -43.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-14.14757, 3.044219, -2.671116)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-14.14757, 4.019218, -2.671116)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.800239, -0.599681) input=(-0.800239, -0.599681) focused=true velocity=(-4.29516, 0.0, -1.342237) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/WestRoad/WestRoad_col normal=(0.0, 1.0, 0.0) position=(-14.14757, 3.044, -2.671116)
+PASS item_shop (-20.0, 3.0, -4.5)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (6.31826, 3.050443, 5.227348)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (6.31826, 4.025444, 5.227348)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.197037, 0.980396) input=(-0.197037, 0.980396) focused=true velocity=(0.636335, 0.0, 4.454782) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/WeaponLane/WeaponLane_col normal=(0.0, 1.0, 0.0) position=(6.31826, 3.05, 5.227348)
+PASS weapon_shop (7.0, 3.0, 10.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (9.182765, 3.050271, 9.383064)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (9.182765, 4.025271, 9.383064)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.97129, 0.237899) input=(0.97129, 0.237899) focused=true velocity=(4.477511, 0.0, -0.449324) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/WeaponLane/WeaponLane_col normal=(0.0, 1.0, 0.0) position=(9.182765, 3.05, 9.383064)
+PASS weapon_shop (13.0, 3.0, 9.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-6.441256, 3.000224, 10.20631)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-6.441256, 3.975224, 10.20631)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.512088, 0.858933) input=(-0.512088, 0.858933) focused=true velocity=(-0.882526, 0.0, 4.412612) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Terrain/VillageCore_Grass/SolidTerrain normal=(0.0, 1.0, 0.0) position=(-6.441256, 3.0, 10.20631)
+PASS west_house (-8.0, 3.0, 18.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-10.1191, 3.000224, 17.12769)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-10.1191, 3.975224, 17.12769)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.843368, -0.537336) input=(-0.843368, -0.537336) focused=true velocity=(-4.384499, 0.0, -1.013) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Terrain/VillageCore_Grass/SolidTerrain normal=(0.0, 1.0, 0.0) position=(-10.1191, 3.0, 17.12769)
+PASS west_house (-15.0, 3.0, 16.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (1.405564, 3.035078, -4.756954)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (1.405564, 4.010078, -4.756954)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.849459, -0.527655) input=(0.849459, -0.527655) focused=true velocity=(2.811128, 0.0, -3.513909) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/VillagePlaza/VillagePlaza_col normal=(0.0, 1.0, 0.0) position=(1.405564, 3.035, -4.756954)
+PASS guild (4.0, 3.0, -8.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (5.536973, 2.999922, -9.168259)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (5.536973, 3.974922, -9.168259)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.940999, -0.33841) input=(0.940999, -0.33841) focused=true velocity=(3.483618, 0.0, -2.848579) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Terrain/VillageCore_Grass/SolidTerrain normal=(0.0, 1.0, 0.0) position=(5.536973, 3.0, -9.168259)
+PASS guild (9.0, 3.0, -12.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 3.000224, 16.25)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (0.0, 3.975224, 16.25)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.333693, 0.942682) input=(-0.333693, 0.942682) focused=true velocity=(0.0, 0.0, 4.5) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Terrain/VillageCore_Grass/SolidTerrain normal=(0.0, 1.0, 0.0) position=(0.0, 3.0, 16.25)
+PASS south_house (0.0, 3.0, 21.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (2.242835, 3.000224, 20.77944)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (2.242835, 3.975224, 20.77944)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.913072, 0.407799) input=(0.913072, 0.407799) focused=true velocity=(4.485671, 0.0, 0.358831) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Terrain/VillageCore_Grass/SolidTerrain normal=(0.0, 1.0, 0.0) position=(2.242835, 3.0, 20.77944)
+PASS south_house (5.0, 3.0, 21.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-26.0, 3.041909, -3.250003)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-26.0, 4.016909, -3.250003)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.333693, -0.942682) input=(0.333693, -0.942682) focused=true velocity=(0.0, 0.0, -4.5) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+PASS farm_house (-26.0, 3.0, -14.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-24.2185, 3.000405, -14.97437)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-24.2185, 3.975405, -14.97437)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.950222, -0.311574) input=(0.950222, -0.311574) focused=true velocity=(3.563042, 0.0, -2.748588) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Terrain/VillageCore_Grass/SolidTerrain normal=(0.0, 1.0, 0.0) position=(-24.2185, 3.0, -14.97437)
+PASS farm_house (-19.0, 3.0, -19.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-20.44875, 3.819832, -20.35789)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-20.44875, 4.794832, -20.35789)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.278769, -0.960358) input=(-0.278769, -0.960358) focused=true velocity=(-2.624627, 0.0, -3.655316) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/NorthSteps_RampCollisionGuide/SolidTerrain normal=(0.229664, 0.933454, 0.275533) position=(-20.48568, 3.816181, -20.39508)
+CONTACT /root/BlenderVillagePreview/Village/Paths/NorthSteps_RampCollisionGuide/SolidTerrain normal=(0.229664, 0.933454, 0.275533) position=(-20.48665, 3.816831, -20.39647)
+CONTACT /root/BlenderVillagePreview/Village/Paths/NorthSteps_RampCollisionGuide/SolidTerrain normal=(0.229664, 0.933454, 0.275533) position=(-20.52243, 3.840341, -20.44629)
+PASS farm_house (-24.5, 6.0, -26.0)
+PASS farm_house (-24.0, 6.0, -28.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-21.80424, 6.054519, -27.8347)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-21.80424, 7.029519, -27.8347)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.969195, 0.246296) input=(0.969195, 0.246296) focused=true velocity=(4.481232, 0.0, -0.410558) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/NorthRoad/NorthRoad_col normal=(0.0, 1.0, 0.0) position=(-21.80424, 6.054, -27.8347)
+PASS farm_house (-20.0, 6.0, -28.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-18.23356, 6.054519, -28.62275)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-18.23356, 7.029519, -28.62275)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.999057, 0.043413) input=(0.999057, 0.043413) focused=true velocity=(4.303258, 0.0, -1.316041) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Paths/NorthRoad/NorthRoad_col normal=(0.0, 1.0, 0.0) position=(-18.23356, 6.054, -28.62275)
+PASS farm_house (-17.0, 6.0, -29.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-46.25002, 5.000225, -3.0)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-46.25002, 5.975224, -3.0)] engine=DEFAULT
+MOVE_DIAGNOSTIC (-0.942682, -0.333693) input=(-0.942682, -0.333693) focused=true velocity=(-4.5, 0.0, 0.0) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Terrain/WesternApproach_Grass/SolidTerrain normal=(0.0, 1.0, 0.0) position=(-46.25002, 5.0, -3.0)
+STALLED (-48.47046, 5.000225, -3.0) target (-53.0, 5.0, -3.0)
+PASS west_cliff blocks movement safely at (-48.47046, 5.000225, -3.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (21.25002, 3.000224, -2.0)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (21.25002, 3.975224, -2.0)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.942682, 0.333693) input=(0.942682, 0.333693) focused=true velocity=(4.5, 0.0, 0.0) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Terrain/VillageCore_Grass/SolidTerrain normal=(0.0, 1.0, 0.0) position=(21.25002, 3.0, -2.0)
+STALLED (21.40002, 3.000224, -2.0) target (28.0, 3.0, -2.0)
+PASS river_bank blocks movement safely at (21.40002, 3.000224, -2.0)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-10.00185, 3.042976, -11.64122)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (-10.00185, 4.017976, -11.64122)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.334212, -0.942498) input=(0.334212, -0.942498) focused=true velocity=(0.0, 0.0, 0.0) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Bounds/InnBody normal=(0.0, 0.0, 1.0) position=(-10.00184, 4.672976, -11.97535)
+STALLED (-10.00185, 3.042976, -11.64122) target (-10.0, 3.0, -15.0)
+PASS inn_wall blocks movement safely at (-10.00185, 3.042976, -11.64122)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (27.0, 6.100293, -31.25002)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (27.0, 7.075293, -31.25002)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.333693, -0.942682) input=(0.333693, -0.942682) focused=true velocity=(0.0, 0.0, -4.5) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Bounds/BridgeWalkFloor normal=(0.0, 1.0, 0.0) position=(27.0, 6.1, -31.25002)
+STALLED (27.0, 6.100038, -31.60012) target (27.0, 6.0, -36.0)
+PASS bridge_rail blocks movement safely at (27.0, 6.100038, -31.60012)
+BODY_STATE [X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (25.25002, 3.000224, 17.0)] delta=0.01666666666667 shape=[X: (1.0, 0.0, 0.0), Y: (0.0, 1.0, 0.0), Z: (0.0, 0.0, 1.0), O: (25.25002, 3.975224, 17.0)] engine=DEFAULT
+MOVE_DIAGNOSTIC (0.942682, 0.333693) input=(0.942682, 0.333693) focused=true velocity=(4.5, 0.0, 0.0) camera=[X: (0.942682, 0.0, -0.333693), Y: (-0.211209, 0.774198, -0.596664), Z: (0.258344, 0.632943, 0.729823)]
+CONTACT /root/BlenderVillagePreview/Village/Bounds/DockWalkFloor normal=(0.0, 1.0, 0.0) position=(25.25002, 3.0, 17.0)
+STALLED (26.58963, 3.000224, 17.0) target (30.0, 3.0, 17.0)
+PASS dock_rim blocks movement safely at (26.58963, 3.000224, 17.0)
+BLENDER_MASTER_RESULT {"checks":37,"failures":[],"scope":"Native candidate entrances, routes and sampled obstacles; RPG and terrain-boundary gates run separately"}
+Log: D:\RPGGAME\artifacts\logs\testgreystoneblender-20261023-204831-949.log

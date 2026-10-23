@@ -1,0 +1,110 @@
+{
+  "status": "GENERATED_AND_BLENDER_REVIEWED_CANDIDATE",
+  "asset": "weapon_shop",
+  "budget": 30000,
+  "candidate_target": 27600,
+  "source_workflow_sha256": "1f85e6acb0b5dfac0b1aaaefe24c9252f4127d015ed8bc8cca6abb74286e7275",
+  "views": {
+    "front": {
+      "file": "source_assets\\greystone_ai_20261023\\weapon_shop\\pixal_candidate_01\\uploads\\greystone_weapon_shop_ortho_v3_front.png",
+      "sheet_rect": [
+        0,
+        0,
+        900,
+        525
+      ],
+      "bbox": [
+        64,
+        19,
+        865,
+        489
+      ],
+      "scale": 1,
+      "sha256": "b1126edb2c90b8175b26689f8a3abb0212b9271de31c3cf9efb31fdc5fb179ec",
+      "crop_pad_factor": 1.108239700374532,
+      "chain": {
+        "340": "SaveImageAdvanced",
+        "312": "ImageCropToMask",
+        "364": "LoadImage",
+        "192": "RemoveBackground",
+        "193": "LoadBackgroundRemovalModel"
+      }
+    },
+    "left": {
+      "file": "source_assets\\greystone_ai_20261023\\weapon_shop\\pixal_candidate_01\\uploads\\greystone_weapon_shop_ortho_v3_left.png",
+      "sheet_rect": [
+        900,
+        0,
+        1536,
+        525
+      ],
+      "bbox": [
+        92,
+        34,
+        601,
+        490
+      ],
+      "scale": 1,
+      "sha256": "ce94c5e94fe6cf20fb251a0bfbba7086d1512d878f59a5c07b6a531aae070a8f",
+      "crop_pad_factor": 1.7440078585461691,
+      "chain": {
+        "344": "SaveImageAdvanced",
+        "349": "ImageCropToMask",
+        "377": "LoadImage",
+        "348": "RemoveBackground",
+        "193": "LoadBackgroundRemovalModel"
+      }
+    },
+    "back": {
+      "file": "source_assets\\greystone_ai_20261023\\weapon_shop\\pixal_candidate_01\\uploads\\greystone_weapon_shop_ortho_v3_back.png",
+      "sheet_rect": [
+        0,
+        525,
+        900,
+        1024
+      ],
+      "bbox": [
+        68,
+        0,
+        875,
+        440
+      ],
+      "scale": 1,
+      "sha256": "bf4939fd3f8e92407857483c0e4c98aa65c61456887a17367666bcc11f76fd5d",
+      "crop_pad_factor": 1.1,
+      "chain": {
+        "343": "SaveImageAdvanced",
+        "350": "ImageCropToMask",
+        "378": "LoadImage",
+        "351": "RemoveBackground",
+        "193": "LoadBackgroundRemovalModel"
+      }
+    },
+    "right": {
+      "file": "source_assets\\greystone_ai_20261023\\weapon_shop\\pixal_candidate_01\\uploads\\greystone_weapon_shop_ortho_v3_right.png",
+      "sheet_rect": [
+        900,
+        525,
+        1536,
+        1024
+      ],
+      "bbox": [
+        88,
+        0,
+        597,
+        445
+      ],
+      "scale": 1,
+      "sha256": "2d9341333e9fe663abb47105d2afb80e037966978f328ff1c481562200c669b7",
+      "crop_pad_factor": 1.7440078585461691,
+      "chain": {
+        "346": "SaveImageAdvanced",
+        "352": "ImageCropToMask",
+        "379": "LoadImage",
+        "353": "RemoveBackground",
+        "193": "LoadBackgroundRemovalModel"
+      }
+    }
+  },
+  "visual_review": "Candidate inspected in Blender. Generated facade/roof irregularity is recorded; full village/RPG acceptance pending."
+}

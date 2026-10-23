@@ -1,0 +1,215 @@
+{
+  "base_commit": "932b50a8b5000e22ea03cf49557d187d6d833655",
+  "dirty_worktree": true,
+  "platform": "Windows desktop; touch and controller events simulated",
+  "joypad_motion_isolation_requested": true,
+  "android_verified": false,
+  "results": [
+    {
+      "mode": "Check",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:51:12.0492660+08:00",
+      "seconds": 4.57,
+      "log": "check-20261023-205112-055.log",
+      "result": [
+        "Log: D:\\RPGGAME\\artifacts\\logs\\check-20261023-205112-055.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestEnemyAI",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:51:16.6508348+08:00",
+      "seconds": 0.52,
+      "log": "testenemyai-20261023-205116-656.log",
+      "result": [
+        "ENEMY_AI_RESULT checks=10 failures=0 targets=[&\"lia\", &\"ren\", &\"lia\", &\"ren\"]",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testenemyai-20261023-205116-656.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase3",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:51:17.1771085+08:00",
+      "seconds": 7.46,
+      "log": "testphase3-20261023-205117-183.log",
+      "result": [
+        "PHASE3_RESULT checks=75 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase3-20261023-205117-183.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "Smoke",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:51:24.6361425+08:00",
+      "seconds": 1.72,
+      "log": "smoke-20261023-205124-641.log",
+      "result": [
+        "Log: D:\\RPGGAME\\artifacts\\logs\\smoke-20261023-205124-641.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase5",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:51:26.3554281+08:00",
+      "seconds": 16.43,
+      "log": "testphase5-20261023-205126-361.log",
+      "result": [
+        "PHASE5_RESULT checks=69 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase5-20261023-205126-361.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase5Reload",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:51:42.7881948+08:00",
+      "seconds": 1.81,
+      "log": "testphase5reload-20261023-205142-794.log",
+      "result": [
+        "PHASE5_RESULT checks=7 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase5reload-20261023-205142-794.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestPhase6",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:51:44.6019897+08:00",
+      "seconds": 18.92,
+      "log": "testphase6-20261023-205144-607.log",
+      "result": [
+        "PHASE6_RESULT checks=85 failures=0 renderer=headless",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testphase6-20261023-205144-607.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:52:03.5218710+08:00",
+      "seconds": 7.09,
+      "log": "testg06-20261023-205203-527.log",
+      "result": [
+        "G06_1_RESULT checks=51 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06-20261023-205203-527.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06Reload",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:52:10.6105831+08:00",
+      "seconds": 4.31,
+      "log": "testg06reload-20261023-205210-618.log",
+      "result": [
+        "G06_1_RESULT checks=6 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06reload-20261023-205210-618.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06NPC",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:52:14.9238911+08:00",
+      "seconds": 74.02,
+      "log": "testg06npc-20261023-205214-929.log",
+      "result": [
+        "G06_NPC_RESULT checks=60 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06npc-20261023-205214-929.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06Story",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:53:28.9506946+08:00",
+      "seconds": 20.31,
+      "log": "testg06story-20261023-205328-956.log",
+      "result": [
+        "G06_STORY_RESULT checks=58 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06story-20261023-205328-956.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06StoryReload",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:53:49.2665303+08:00",
+      "seconds": 4.22,
+      "log": "testg06storyreload-20261023-205349-272.log",
+      "result": [
+        "G06_STORY_RESULT checks=7 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06storyreload-20261023-205349-272.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06Story",
+      "passed": true,
+      "phase5_joypad_motion_isolated": true,
+      "started": "2026-10-23T20:53:53.4852202+08:00",
+      "seconds": 24.67,
+      "log": "visualg06story-20261023-205353-490.log",
+      "result": [
+        "G06_STORY_RESULT checks=68 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06story-20261023-205353-490.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06Touch",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:54:18.1582089+08:00",
+      "seconds": 9.75,
+      "log": "visualg06touch-20261023-205418-164.log",
+      "result": [
+        "G06_TOUCH_RESULT checks=22 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06touch-20261023-205418-164.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "VisualG06TouchCommerce",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:54:27.9067374+08:00",
+      "seconds": 10.2,
+      "log": "visualg06touchcommerce-20261023-205427-912.log",
+      "result": [
+        "G06_TOUCH_COMMERCE_RESULT checks=53 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\visualg06touchcommerce-20261023-205427-912.log"
+      ],
+      "error": ""
+    },
+    {
+      "mode": "TestG06CommerceReload",
+      "passed": true,
+      "phase5_joypad_motion_isolated": false,
+      "started": "2026-10-23T20:54:38.1093824+08:00",
+      "seconds": 4.33,
+      "log": "testg06commercereload-20261023-205438-116.log",
+      "result": [
+        "G06_COMMERCE_RESULT checks=5 failures=0",
+        "Log: D:\\RPGGAME\\artifacts\\logs\\testg06commercereload-20261023-205438-116.log"
+      ],
+      "error": ""
+    }
+  ]
+}

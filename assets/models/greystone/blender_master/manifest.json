@@ -1,0 +1,63 @@
+[
+  {
+    "collection": "Terrain",
+    "path": "res://assets/models/greystone/blender_master/terrain.glb",
+    "mesh_nodes": 14,
+    "instanced_triangles": 288
+  },
+  {
+    "collection": "Paths",
+    "path": "res://assets/models/greystone/blender_master/paths.glb",
+    "mesh_nodes": 84,
+    "instanced_triangles": 1100
+  },
+  {
+    "collection": "Buildings_Candidate",
+    "path": "res://scenes/world/greystone/blender_master/buildings.tscn",
+    "mesh_nodes": 7,
+    "instanced_triangles": 192562,
+    "shared_modules": {
+      "inn": "res://assets/models/greystone/blender_master/buildings/inn.glb",
+      "item_shop": "res://assets/models/greystone/blender_master/buildings/item_shop.glb",
+      "weapon_shop": "res://assets/models/greystone/blender_master/buildings/weapon_shop.glb",
+      "house_a": "res://assets/models/greystone/blender_master/buildings/house_a.glb",
+      "house_a_blue": "res://assets/models/greystone/blender_master/buildings/house_a_blue.glb"
+    }
+  },
+  {
+    "collection": "Water",
+    "path": "res://assets/models/greystone/blender_master/water.glb",
+    "mesh_nodes": 12,
+    "instanced_triangles": 48
+  },
+  {
+    "collection": "Cliffs",
+    "path": "res://assets/models/greystone/blender_master/cliffs.glb",
+    "mesh_nodes": 203,
+    "instanced_triangles": 4060
+  },
+  {
+    "collection": "Vegetation",
+    "path": "res://assets/models/greystone/blender_master/vegetation.glb",
+    "mesh_nodes": 135,
+    "instanced_triangles": 12516
+  },
+  {
+    "collection": "Props",
+    "path": "res://assets/models/greystone/blender_master/props.glb",
+    "mesh_nodes": 79,
+    "instanced_triangles": 11189
+  },
+  {
+    "collection": "Mine",
+    "path": "res://assets/models/greystone/blender_master/mine.glb",
+    "mesh_nodes": 21,
+    "instanced_triangles": 1328
+  },
+  {
+    "collection": "Bounds",
+    "path": "res://assets/models/greystone/blender_master/bounds.glb",
+    "mesh_nodes": 1227,
+    "instanced_triangles": 14724
+  }
+]

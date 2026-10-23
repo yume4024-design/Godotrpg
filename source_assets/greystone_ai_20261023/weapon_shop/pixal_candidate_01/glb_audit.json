@@ -1,0 +1,42 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "source_assets\\greystone_ai_20261023\\weapon_shop\\pixal_candidate_01\\weapon_shop_textured.glb",
+    "category": null,
+    "sha256": "0cd6913a732139128780a769de9953421e751e0d8b7d9614ebaa2a07e723f7f4",
+    "maximum_triangles": 30000,
+    "triangles": 26309,
+    "headroom_triangles": 3691,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 26309,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TANGENT",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 1,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 26309,
+  "status": "PASS"
+}

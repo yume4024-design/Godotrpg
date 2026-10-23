@@ -1,0 +1,112 @@
+{
+  "status": "CANDIDATE_BUILT",
+  "buildings": "Four Pixal3D designs, five reusable variants, seven placed buildings",
+  "ai_sources": {
+    "inn": "source_assets\\greystone_ai_20261023\\inn\\pixal_candidate_01\\door_only\\inn_repaired.glb",
+    "house_a": "source_assets\\greystone_ai_20261023\\house_a\\pixal_candidate_01\\shell_repair02\\house_a_repaired.glb",
+    "house_a_blue": "source_assets\\greystone_ai_20261023\\house_a\\pixal_candidate_01\\shell_repair02\\house_a_repaired.glb",
+    "item_shop": "source_assets\\greystone_ai_20261023\\item_shop\\pixal_candidate_01\\shell_repair02\\item_shop_repaired.glb",
+    "weapon_shop": "source_assets\\greystone_ai_20261023\\weapon_shop\\pixal_candidate_01\\shell_repair02\\weapon_shop_repaired.glb"
+  },
+  "collections": [
+    "Terrain",
+    "Paths",
+    "Buildings_Candidate",
+    "Water",
+    "Cliffs",
+    "Vegetation",
+    "Props",
+    "Mine",
+    "Bounds",
+    "Review"
+  ],
+  "building_placements": [
+    [
+      "inn",
+      "Inn",
+      [
+        -10,
+        15,
+        3
+      ],
+      1,
+      0
+    ],
+    [
+      "item_shop",
+      "ItemShop",
+      [
+        -20,
+        9,
+        3
+      ],
+      1,
+      0
+    ],
+    [
+      "weapon_shop",
+      "WeaponShop",
+      [
+        13,
+        -5,
+        3
+      ],
+      1.18,
+      0
+    ],
+    [
+      "house_a",
+      "WestHouse",
+      [
+        -15,
+        -13,
+        3
+      ],
+      1,
+      0
+    ],
+    [
+      "house_a",
+      "FarmHouse",
+      [
+        -17,
+        33,
+        6
+      ],
+      1,
+      0
+    ],
+    [
+      "house_a_blue",
+      "SouthHouse",
+      [
+        5,
+        -18,
+        3
+      ],
+      1,
+      0
+    ],
+    [
+      "house_a_blue",
+      "GuildHall",
+      [
+        9,
+        17,
+        3
+      ],
+      1.25,
+      0
+    ]
+  ],
+  "same_facing_duplicate_cleanup": {
+    "inn": 0,
+    "item_shop": 0,
+    "weapon_shop": 0,
+    "house_a": 2
+  },
+  "edge_guards": 1127,
+  "coordinate_system": "Blender Z up, north +Y; GLTF exporter handles Y up",
+  "original_main_entry_replaced": false,
+  "rpg_candidate": "scenes/main/greystone_blender_integration.tscn"
+}

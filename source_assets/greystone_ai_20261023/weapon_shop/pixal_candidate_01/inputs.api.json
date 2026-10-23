@@ -1,0 +1,208 @@
+{
+  "340": {
+    "class_type": "SaveImageAdvanced",
+    "inputs": {
+      "filename_prefix": "greystone_20261023/weapon_shop_candidate01/front",
+      "format": "png",
+      "format.bit_depth": "8-bit",
+      "format.input_color_space": "sRGB",
+      "images": [
+        "312",
+        0
+      ]
+    }
+  },
+  "312": {
+    "class_type": "ImageCropToMask",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "pad_factor": 1.108239700374532,
+      "grow_mask": 0,
+      "background": "#000000",
+      "images": [
+        "364",
+        0
+      ],
+      "masks": [
+        "192",
+        0
+      ]
+    }
+  },
+  "364": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "greystone_weapon_shop_ortho_v3_front.png"
+    }
+  },
+  "192": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "193",
+        0
+      ],
+      "image": [
+        "364",
+        0
+      ]
+    }
+  },
+  "193": {
+    "class_type": "LoadBackgroundRemovalModel",
+    "inputs": {
+      "bg_removal_name": "birefnet.safetensors"
+    }
+  },
+  "344": {
+    "class_type": "SaveImageAdvanced",
+    "inputs": {
+      "filename_prefix": "greystone_20261023/weapon_shop_candidate01/left",
+      "format": "png",
+      "format.bit_depth": "8-bit",
+      "format.input_color_space": "sRGB",
+      "images": [
+        "349",
+        0
+      ]
+    }
+  },
+  "349": {
+    "class_type": "ImageCropToMask",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "pad_factor": 1.7440078585461691,
+      "grow_mask": 0,
+      "background": "#000000",
+      "images": [
+        "377",
+        0
+      ],
+      "masks": [
+        "348",
+        0
+      ]
+    }
+  },
+  "377": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "greystone_weapon_shop_ortho_v3_left.png"
+    }
+  },
+  "348": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "193",
+        0
+      ],
+      "image": [
+        "377",
+        0
+      ]
+    }
+  },
+  "343": {
+    "class_type": "SaveImageAdvanced",
+    "inputs": {
+      "filename_prefix": "greystone_20261023/weapon_shop_candidate01/back",
+      "format": "png",
+      "format.bit_depth": "8-bit",
+      "format.input_color_space": "sRGB",
+      "images": [
+        "350",
+        0
+      ]
+    }
+  },
+  "350": {
+    "class_type": "ImageCropToMask",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "pad_factor": 1.1,
+      "grow_mask": 0,
+      "background": "#000000",
+      "images": [
+        "378",
+        0
+      ],
+      "masks": [
+        "351",
+        0
+      ]
+    }
+  },
+  "378": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "greystone_weapon_shop_ortho_v3_back.png"
+    }
+  },
+  "351": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "193",
+        0
+      ],
+      "image": [
+        "378",
+        0
+      ]
+    }
+  },
+  "346": {
+    "class_type": "SaveImageAdvanced",
+    "inputs": {
+      "filename_prefix": "greystone_20261023/weapon_shop_candidate01/right",
+      "format": "png",
+      "format.bit_depth": "8-bit",
+      "format.input_color_space": "sRGB",
+      "images": [
+        "352",
+        0
+      ]
+    }
+  },
+  "352": {
+    "class_type": "ImageCropToMask",
+    "inputs": {
+      "width": 1024,
+      "height": 1024,
+      "pad_factor": 1.7440078585461691,
+      "grow_mask": 0,
+      "background": "#000000",
+      "images": [
+        "379",
+        0
+      ],
+      "masks": [
+        "353",
+        0
+      ]
+    }
+  },
+  "379": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "greystone_weapon_shop_ortho_v3_right.png"
+    }
+  },
+  "353": {
+    "class_type": "RemoveBackground",
+    "inputs": {
+      "bg_removal_model": [
+        "193",
+        0
+      ],
+      "image": [
+        "379",
+        0
+      ]
+    }
+  }
+}

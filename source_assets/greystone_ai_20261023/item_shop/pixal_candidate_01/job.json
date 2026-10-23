@@ -1,0 +1,12 @@
+{
+  "prompt_id": "716a17d7-dc0f-45ea-950a-45e52696f7c3",
+  "status": "completed",
+  "asset": "item_shop",
+  "input_preview_prompt_id": "2b89c21f-495f-4ed5-af6d-d4a668ff71c4",
+  "conditioning_review": "Four complete orthographic elevations inspected; no cropped roof or base.",
+  "budget": 30000,
+  "host": "127.0.0.1",
+  "port": 8188,
+  "source_glb": "D:/Comfy-Desktop/ComfyUI-Shared/output/greystone_20261023/item_shop_candidate01/item_shop_source_00001.glb",
+  "textured_glb": "item_shop_textured.glb"
+}

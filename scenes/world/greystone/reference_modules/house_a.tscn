@@ -1,0 +1,15 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_modules/house_a.glb" id="Model"]
+[sub_resource type="BoxShape3D" id="C0"]
+size = Vector3(6,3,4.7)
+[node name="house_a" type="Node3D"]
+metadata/reference = "20261023 bottom asset strip"
+[node name="Model" parent="." instance=ExtResource("Model")]
+[node name="Body0" type="StaticBody3D" parent="."]
+position = Vector3(0,1.5,0)
+[node name="Collision" type="CollisionShape3D" parent="Body0"]
+shape = SubResource("C0")
+[node name="DoorApproach" type="Marker3D" parent="."]
+position = Vector3(-1,0.1,4.5)
+metadata/door_height_m = 2.4
+metadata/door_width_m = 1.65

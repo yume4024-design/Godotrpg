@@ -1,0 +1,9 @@
+{
+  "abyss_sweeps": 505,
+  "already_obstructed_starts": 32,
+  "covered_lower_edges": 370,
+  "failure_top_down_diagnostics": [],
+  "failures": [],
+  "method": "Actual imported Grass mesh boundary edges, <=1.2m sampling; highest physical floor rejects covered outlines; 1.95m capsule sweep toward no floor within 24m",
+  "tested_terrain_edges": 149
+}

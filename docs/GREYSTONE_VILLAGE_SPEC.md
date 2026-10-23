@@ -1,5 +1,15 @@
 # 灰石村建造規格 — G03 基礎建物完成 / 2026-10-14
 
+## 2026-10-23 Blender 重建候選補充（本候選優先）
+
+最新參考圖為 [greystone_20261023.png](references/greystone_20261023.png)。
+完整 Blender 主檔組裝後分九組匯入，四種 Pixal 建築／五個可重用 GLB／七棟實例。
+新入口 `scenes/main/greystone_blender_integration.tscn` 採村莊位置版 3、獨立存檔槽，
+原 G06 位置版 2 與正式 v0.6.1 入口保留。角色實際膠囊高 1.95m、跨階 0.18m；
+以下 2026-10-14 的 1.6m 與舊座標表為歷史版本，不套用新版候選。
+本候選精確配置、啟動指令、測試與限制見 [重建報告](GREYSTONE_REFERENCE_REBUILD_REPORT.md)，
+位置遷移驗證以 [SAVE_FORMAT](SAVE_FORMAT.md) 為準。Android / iOS 持續暫停。
+
 最新使用者貼文與 [最新參考圖](references/graystone_village_2026_10_14.jpg) 優先；原企劃未被修改的故事、角色、指令式回合制與狀態所有權繼續適用。合併決策見 [PLAN_MERGE](PLAN_MERGE_2026_10_14.md)。
 
 ## 平台、尺度與方向

@@ -1,0 +1,11 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_modules/wooden_fence.glb" id="Model"]
+[sub_resource type="BoxShape3D" id="C0"]
+size = Vector3(3,1.3,0.22)
+[node name="wooden_fence" type="Node3D"]
+metadata/reference = "20261023 bottom asset strip"
+[node name="Model" parent="." instance=ExtResource("Model")]
+[node name="Body0" type="StaticBody3D" parent="."]
+position = Vector3(0,0.65,0)
+[node name="Collision" type="CollisionShape3D" parent="Body0"]
+shape = SubResource("C0")

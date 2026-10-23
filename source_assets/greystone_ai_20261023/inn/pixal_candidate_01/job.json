@@ -1,0 +1,14 @@
+{
+  "prompt_id": "37378b05-7ed0-4475-8a6e-c37b19c9582e",
+  "status_at_submission": "queued",
+  "workflow": "full.api.json",
+  "input_preview_prompt_id": "edc20a72-e64d-47b9-a6ab-26d4602c7d7f",
+  "input_preview_visual_review": "complete silhouettes, opposing elevations, compensated side scale",
+  "final_model_validation": "not production accepted",
+  "status": "completed",
+  "textured_model": "inn_textured.glb",
+  "raw_shape_source": "D:/Comfy-Desktop/ComfyUI-Shared/output/greystone_20261023/inn_candidate01/inn_source_00001.glb",
+  "triangles_glb": 35153,
+  "triangles_blender": 35127,
+  "visual_gate": "NEEDS_REPAIR: white front door, back roof texture artifacts"
+}

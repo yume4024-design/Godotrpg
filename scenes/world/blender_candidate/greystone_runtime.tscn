@@ -1,0 +1,66 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/world/blender_village_map.gd" id="Map"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone_blender_master.tscn" id="Village"]
+[ext_resource type="PackedScene" path="res://scenes/world/greystone_npcs.tscn" id="NPCs"]
+[ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
+[node name="GreystoneBlenderRuntime" type="Node3D" node_paths=PackedStringArray("default_spawn", "entrance_spawn", "return_spawn", "opening_spawn", "story_zone", "npc_anchors", "npc_root")]
+script = ExtResource("Map")
+map_id = &"greystone_runtime"
+display_name = "灰石村"
+default_camera_size = 28.0
+default_spawn = NodePath("SafeSpawn")
+entrance_spawn = NodePath("EntranceSpawn")
+return_spawn = NodePath("ForestReturn")
+opening_spawn = NodePath("InnOpening")
+story_zone = NodePath("Departure")
+story_zone_radius = 4.0
+story_trigger = &"village_departure"
+npc_anchors = NodePath("NPCAnchors")
+npc_root = NodePath("NPCs")
+[node name="Village" parent="." instance=ExtResource("Village")]
+[node name="NPCs" parent="." instance=ExtResource("NPCs")]
+[node name="SafeSpawn" type="Marker3D" parent="."]
+position = Vector3(-3, 3.1, 3)
+[node name="EntranceSpawn" type="Marker3D" parent="."]
+position = Vector3(-7, 0.1, 35)
+[node name="InnOpening" type="Marker3D" parent="."]
+position = Vector3(-11, 3.1, -8.5)
+[node name="ForestReturn" type="Marker3D" parent="."]
+position = Vector3(-42, 5.1, -16)
+[node name="Departure" type="Marker3D" parent="."]
+position = Vector3(9, 3.1, -12)
+[node name="ForestExit" type="Node3D" parent="."]
+position = Vector3(-44, 5, -18)
+script = ExtResource("Interact")
+interaction_id = &"to_forest"
+kind = "exit"
+label = "村外道路 · 低語森林"
+required_flag = &"e003_done"
+destination = &"forest"
+[node name="MineExit" type="Node3D" parent="."]
+position = Vector3(0, 10, -45.5)
+script = ExtResource("Interact")
+interaction_id = &"to_mine"
+kind = "exit"
+label = "進入廢棄礦坑"
+required_flag = &"e004_done"
+destination = &"mine"
+[node name="NPCAnchors" type="Node3D" parent="."]
+[node name="Guildmaster" type="Marker3D" parent="NPCAnchors"]
+position = Vector3(9, 3.06, -12.5)
+metadata/interaction_id = "npc_guildmaster"
+[node name="Lia" type="Marker3D" parent="NPCAnchors"]
+position = Vector3(12, 3, -12.5)
+metadata/interaction_id = "npc_lia"
+[node name="Innkeeper" type="Marker3D" parent="NPCAnchors"]
+position = Vector3(-9, 3, -10.5)
+metadata/interaction_id = "npc_innkeeper"
+[node name="ItemMerchant" type="Marker3D" parent="NPCAnchors"]
+position = Vector3(-20, 3, -4.8)
+metadata/interaction_id = "npc_item_merchant"
+[node name="Blacksmith" type="Marker3D" parent="NPCAnchors"]
+position = Vector3(13, 3.06, 9)
+metadata/interaction_id = "npc_blacksmith"
+[node name="Villager" type="Marker3D" parent="NPCAnchors"]
+position = Vector3(-14, 3, 16.8)
+metadata/interaction_id = "npc_villager"

@@ -1,7 +1,16 @@
 extends "res://tests/phase5_prologue_test.gd"
-const COMMERCE_SLOT: String = "user://g06_commerce_tests/restart.json"
-const IMPORT_SLOT: String = "user://g06_commerce_tests/import.json"
+var commerce_slot: String = "user://g06_commerce_tests/restart.json"
+var import_slot: String = "user://g06_commerce_tests/import.json"
 var panel: CommercePanel
+
+func _create_game() -> ExplorationGame:
+	return load("res://scenes/main/greystone_integration.tscn").instantiate() as ExplorationGame
+
+func _far_position() -> Vector3:
+	return Vector3(0,.1,48)
+
+func _prepare_v2(data: Dictionary) -> Dictionary:
+	return data
 
 func _run() -> void:
 	root.size = Vector2i(1280,720)
@@ -10,10 +19,10 @@ func _run() -> void:
 	var reload_only: bool = "--reload" in OS.get_cmdline_user_args()
 	if not reload_only:
 		for suffix: String in ["", ".bak", ".tmp"]:
-			if FileAccess.file_exists(COMMERCE_SLOT+suffix): DirAccess.remove_absolute(COMMERCE_SLOT+suffix)
-	game = load("res://scenes/main/greystone_integration.tscn").instantiate()
-	(game.get_node("Saves") as SaveManager).slot_path = COMMERCE_SLOT
-	game.set("legacy_slot_path",IMPORT_SLOT)
+			if FileAccess.file_exists(commerce_slot+suffix): DirAccess.remove_absolute(commerce_slot+suffix)
+	game = _create_game()
+	(game.get_node("Saves") as SaveManager).slot_path = commerce_slot
+	game.set("legacy_slot_path",import_slot)
 	root.add_child(game)
 	await create_timer(.9).timeout
 	panel = game.get("commerce")
@@ -42,17 +51,18 @@ func _run() -> void:
 	var source: String = FileAccess.get_file_as_string("user://p5_tests/restart.json")
 	_write(source)
 	_check(await game.call("import_legacy"),"v1 upgrades after original validation")
-	_check(FileAccess.get_file_as_string(IMPORT_SLOT)==source,"Original v1 bytes preserved")
+	_check(FileAccess.get_file_as_string(import_slot)==source,"Original v1 bytes preserved")
 	var v2: Dictionary = game.capture_state()
 	v2.schema_version = 2
 	v2.content_version = "CH00-G06.1"
 	v2.inventory.erase("commerce")
+	v2 = _prepare_v2(v2)
 	var v2_bytes: String = JSON.stringify(v2)
 	_write(v2_bytes)
 	_check(await game.call("import_legacy"),"v2 upgrades with zero commerce ledger")
-	_check(FileAccess.get_file_as_string(IMPORT_SLOT)==v2_bytes and game.capture_state().schema_version==3,"v2 bytes preserved; runtime is schema 3")
+	_check(FileAccess.get_file_as_string(import_slot)==v2_bytes and game.capture_state().schema_version==3,"v2 bytes preserved; runtime is schema 3")
 	await _open("ItemMerchant")
-	await _place(Vector3(0,.1,48))
+	await _place(_far_position())
 	await _click(panel.confirm_button)
 	_check(not panel.visible and game.inventory.gold==212,"Distance revalidated at confirmation")
 	var potions: int = game.inventory.count(&"potion")
@@ -70,7 +80,7 @@ func _run() -> void:
 	_check(game.inventory.commerce_snapshot().potion_bought==3,"Purchase ledger commits once")
 	await _finish_dialogue()
 	await create_timer(.1).timeout
-	_check(not game.saves.pending and FileAccess.file_exists(COMMERCE_SLOT),"Pending save writes after transaction dialogue")
+	_check(not game.saves.pending and FileAccess.file_exists(commerce_slot),"Pending save writes after transaction dialogue")
 	game.party.member(&"ren").damage(30)
 	game.toggle_menu()
 	_check(game.party_actions.use_item(&"ren", &"potion"),"Purchased supply usable through existing PartyActions")
@@ -110,7 +120,7 @@ func _run() -> void:
 		var bytes: String = JSON.stringify(bad)
 		_write(bytes)
 		_check(not await game.call("import_legacy"),"Reject corrupt commerce: " + kind)
-		_check(game.capture_state().inventory==baseline.inventory and FileAccess.get_file_as_string(IMPORT_SLOT)==bytes,"Rejected data leaves state and source unchanged")
+		_check(game.capture_state().inventory==baseline.inventory and FileAccess.get_file_as_string(import_slot)==bytes,"Rejected data leaves state and source unchanged")
 	# Isolated boundary fixture; never inserted into gameplay or used as a valid save.
 	var capacity: InventoryManager = InventoryManager.new()
 	capacity.item_definitions = game.inventory.item_definitions
@@ -147,7 +157,7 @@ func _click(button: Button) -> void:
 	await physics_frame
 
 func _write(bytes: String) -> void:
-	var file: FileAccess = FileAccess.open(IMPORT_SLOT,FileAccess.WRITE)
+	var file: FileAccess = FileAccess.open(import_slot,FileAccess.WRITE)
 	file.store_string(bytes)
 	file.close()
 

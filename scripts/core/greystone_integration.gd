@@ -3,6 +3,9 @@ extends ExplorationGame
 const NpcVisual = preload("res://scripts/characters/rigged_npc_visual.gd")
 @export var force_touch_controls: bool = false
 @export var legacy_slot_path: String = "user://crystal_slot_01.json"
+@export var village_scene: PackedScene = preload("res://scenes/world/greystone_runtime.tscn")
+@export var legacy_import_label: String = "匯入 v0.6.1 存檔（保留原檔）"
+@export var village_switch_label: String = "G06 新舊村莊往返"
 ## Isolated candidates can inject appearance without changing IDs or RPG data.
 @export var hero_appearance: PackedScene = preload("res://scenes/characters/ren_pixal_visual.tscn")
 var bridge_button: Button
@@ -62,7 +65,7 @@ func _ready() -> void:
 		var id: String = travel.maps[index].resource_path.get_file().get_basename()
 		if id in ["forest", "mine"]:
 			travel.maps[index] = load("res://scenes/world/expanded/%s.tscn" % id)
-	travel.maps.append(preload("res://scenes/world/greystone_runtime.tscn"))
+	travel.maps.append(village_scene)
 	super._ready()
 	dialogue.active_changed.connect(_on_npc_dialogue_changed)
 	var layer: CanvasLayer = CanvasLayer.new()
@@ -79,11 +82,11 @@ func _ready() -> void:
 	row.visible = not battles.active
 	battles.active_changed.connect(func(active: bool) -> void: row.visible = not active)
 	bridge_button = Button.new()
-	bridge_button.text = "G06 新舊村莊往返"
+	bridge_button.text = village_switch_label
 	row.add_child(bridge_button)
 	bridge_button.pressed.connect(visit_other_village)
 	import_button = Button.new()
-	import_button.text = "匯入 v0.6.1 存檔（保留原檔）"
+	import_button.text = legacy_import_label
 	row.add_child(import_button)
 	import_button.pressed.connect(import_legacy)
 	var commerce_layer: CanvasLayer = CanvasLayer.new()

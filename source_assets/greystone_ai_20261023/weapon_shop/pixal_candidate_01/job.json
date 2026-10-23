@@ -1,0 +1,12 @@
+{
+  "prompt_id": "e4dd3124-13bd-4c76-9b54-e3fce50e4552",
+  "status": "completed",
+  "asset": "weapon_shop",
+  "input_preview_prompt_id": "bd509e4e-fc2f-41e0-a7d3-fe17c464db17",
+  "conditioning_review": "Four complete horizontal orthographic elevations inspected; opposite awning sides and chimney placement correct.",
+  "budget": 30000,
+  "host": "127.0.0.1",
+  "port": 8188,
+  "source_glb": "D:/Comfy-Desktop/ComfyUI-Shared/output/greystone_20261023/weapon_shop_candidate01/weapon_shop_source_00001.glb",
+  "textured_glb": "weapon_shop_textured.glb"
+}

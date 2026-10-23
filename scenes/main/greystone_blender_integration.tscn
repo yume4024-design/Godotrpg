@@ -1,0 +1,11 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/main/greystone_integration.tscn" id="Base"]
+[ext_resource type="PackedScene" path="res://scenes/world/blender_candidate/greystone_runtime.tscn" id="Village"]
+[node name="GreystoneBlenderIntegration" instance=ExtResource("Base")]
+greystone_layout_version = 3
+village_scene = ExtResource("Village")
+legacy_slot_path = "user://crystal_g06_slot_01.json"
+legacy_import_label = "匯入先前旅程（保留原檔）"
+village_switch_label = "新舊村莊往返"
+[node name="Saves" parent="."]
+slot_path = "user://crystal_blender_candidate_slot_01.json"

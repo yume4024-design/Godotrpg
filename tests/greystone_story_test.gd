@@ -3,6 +3,9 @@ extends "res://tests/phase5_prologue_test.gd"
 func _create_game() -> ExplorationGame:
 	return load("res://scenes/main/greystone_integration.tscn").instantiate() as ExplorationGame
 
+func _village_position(point: Vector3) -> Vector3:
+	return point
+
 func _attach_game(instance: ExplorationGame) -> void:
 	root.add_child(instance)
 
@@ -32,16 +35,16 @@ func _run() -> void:
 		return
 	await _finish_dialogue()
 	_check(game.travel.current_map.map_id == &"greystone_runtime" and game.flags.has_flag(&"e001_done"), "E001 completes in new village")
-	_check(game.player.position.distance_to(Vector3(-20,1.5,-11)) < .3, "Opening beside inn is grounded")
-	await _place(Vector3(24,6.1,-50.6))
+	_check(game.player.position.distance_to(_village_position(Vector3(-20,1.5,-11))) < .3, "Opening beside inn is grounded")
+	await _place(_village_position(Vector3(24,6.1,-50.6)))
 	await _tap(KEY_E)
 	_check(not game.travel.transitioning and game.travel.current_map.map_id == &"greystone_runtime", "Mine blocked before tutorial")
 	_check(not game.runner.try_start(&"E008"), "Guild reward blocked before boss victory")
 	_check(not await game.saves.request_load(), "Missing save rejected without changing session")
-	await _place(Vector3(-2, 0.1, -20.6))
+	await _place(_village_position(Vector3(-2, 0.1, -20.6)))
 	await _tap(KEY_E)
 	await _finish_dialogue()
-	await _place(Vector3(3, 0.1, -20.6))
+	await _place(_village_position(Vector3(3, 0.1, -20.6)))
 	await _tap(KEY_E)
 	await _finish_dialogue()
 	await _tap(KEY_M)
@@ -50,7 +53,7 @@ func _run() -> void:
 	_check(game.party.members().size()==2 and game.flags.has_flag(&"e003_done"), "New NPCs complete E002/E003")
 	_check(not game.runner.try_start(&"E003"), "No repeated Lia recruitment")
 	await _capture("g063-guild")
-	await _place(Vector3(-51.6,.1,10))
+	await _place(_village_position(Vector3(-51.6,.1,10)))
 	await _tap(KEY_E)
 	await _wait_travel()
 	_check(game.travel.current_map.map_id == &"forest", "West exit enters forest")
@@ -81,8 +84,8 @@ func _run() -> void:
 	await _place(Vector3(-8.6,.1,0))
 	await _tap(KEY_E)
 	await _wait_travel()
-	_check(game.travel.current_map.map_id == &"greystone_runtime" and game.player.position.distance_to(Vector3(-48,0,10)) < .3, "Forest returns to new village safe west spawn")
-	await _place(Vector3(24,6.1,-50.6))
+	_check(game.travel.current_map.map_id == &"greystone_runtime" and game.player.position.distance_to(_village_position(Vector3(-48,0,10))) < .3, "Forest returns to new village safe west spawn")
+	await _place(_village_position(Vector3(24,6.1,-50.6)))
 	await _capture("g063-mine-gate")
 	await _tap(KEY_E)
 	await _wait_travel()
@@ -180,7 +183,7 @@ func _run() -> void:
 	await _tap(KEY_E)
 	await _wait_travel()
 	_check(game.travel.current_map.map_id == &"greystone_runtime", "Post-boss return reaches new village")
-	await _place(Vector3(-2, 0.1, -20.6))
+	await _place(_village_position(Vector3(-2, 0.1, -20.6)))
 	await _tap(KEY_E)
 	_check(game.runner.active_event == &"E008", "Guildmaster routes to return quest")
 	var observed: Array[bool] = []

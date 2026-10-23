@@ -1,0 +1,59 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+QA_JOYPAD_MOTION_ISOLATED []
+PASS Reachable service opens: ItemMerchant
+PASS Merchant E opens modal and locks movement
+PASS Insufficient gold does not grant goods or debit
+PASS Reject illegal quantity -1
+PASS Reject illegal quantity 0
+PASS Reject illegal quantity 100
+PASS Reachable service opens: Innkeeper
+PASS Unaffordable inn does not heal
+PASS v1 upgrades after original validation
+PASS Original v1 bytes preserved
+PASS v2 upgrades with zero commerce ledger
+PASS v2 bytes preserved; runtime is schema 3
+PASS Reachable service opens: ItemMerchant
+PASS Distance revalidated at confirmation
+PASS Reachable service opens: ItemMerchant
+PASS Cancel leaves funds unchanged
+PASS Reachable service opens: ItemMerchant
+PASS Rendered evidence: blender_g064-shop
+PASS Saving in transaction waits
+PASS Loading during transaction rejected
+PASS One confirmation buys exactly 3; repeated callback ignored
+PASS Purchase ledger commits once
+PASS Pending save writes after transaction dialogue
+PASS Purchased supply usable through existing PartyActions
+PASS Consumed purchased item remains valid for saving
+PASS Reachable service opens: Innkeeper
+PASS Rendered evidence: blender_g064-inn
+PASS Inn debits exactly once
+PASS Observers see all members recovered and debit committed
+PASS Reachable service opens: Innkeeper
+PASS Already full party incurs no charge
+PASS Rendered evidence: blender_g064-restored
+PASS Paid recovery snapshot passes strict codec
+PASS Same-process commerce reload succeeds
+PASS Reject corrupt commerce: missing
+PASS Rejected data leaves state and source unchanged
+PASS Reject corrupt commerce: negative
+PASS Rejected data leaves state and source unchanged
+PASS Reject corrupt commerce: fraction
+PASS Rejected data leaves state and source unchanged
+PASS Reject corrupt commerce: price
+PASS Rejected data leaves state and source unchanged
+PASS Reject corrupt commerce: extra_goods
+PASS Rejected data leaves state and source unchanged
+PASS Reject corrupt commerce: extra_key
+PASS Rejected data leaves state and source unchanged
+PASS Reject corrupt commerce: downgrade
+PASS Rejected data leaves state and source unchanged
+PASS Full item stack rejects purchase without debit
+PASS Save on recruited Lia former position
+PASS Reload respects recruited NPC collision removal
+PASS Unrecruited NPC still blocks same position
+PASS Final commerce save ready for separate process
+BLENDER_COMMERCE_RESULT checks=53 failures=0
+Log: D:\RPGGAME\artifacts\logs\visualblendercommerce-20261023-205042-648.log
