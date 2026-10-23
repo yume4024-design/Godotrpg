@@ -73,3 +73,41 @@ func _end() -> void:
 		raw_frames.close()
 		raw_frames = null
 	await super._end()
+
+func _capture(label: String) -> void:
+	# A loaded player is positioned after travel; the fixed rig follows on the
+	# next physics tick. Do not capture the default-spawn camera in that gap.
+	await physics_frame
+	await physics_frame
+	await super._capture(label)
+
+func _probe_loads() -> void:
+	await super._probe_loads()
+	_check(await _timed_load(), "Settled-view probe restores actual completed save")
+	_check(game.travel.travel(&"greystone_runtime"), "Settled-view village travel accepted")
+	await _wait_travel()
+	var rows: Array[Dictionary] = []
+	var points: Array[Vector3] = [Vector3(-3,3.1,8),Vector3(27,6.15,-29),Vector3(22,3.1,17)]
+	var names: PackedStringArray = ["plaza","bridge_water","dock_water"]
+	for index: int in range(points.size()):
+		await _place(points[index])
+		held_movement[KEY_D] = true
+		await create_timer(1.0).timeout
+		held_movement[KEY_D] = false
+		held_movement[KEY_A] = true
+		await create_timer(1.0).timeout
+		held_movement[KEY_A] = false
+		await physics_frame
+		await physics_frame
+		var screen: Vector2 = game.camera.unproject_position(game.player.global_position+Vector3.UP)
+		_check(root.get_visible_rect().has_point(screen), "Settled camera frames player "+names[index])
+		await _capture("blender-settled-"+names[index])
+		rows.append({"view":names[index],"player":str(game.player.global_position),"screen":str(screen)})
+	var path: String = "user://g083/load_probe.json"
+	var report: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(path))
+	report["settled_views"] = rows
+	report["checks"] = checks
+	report["failures"] = failures
+	var file: FileAccess = FileAccess.open(path,FileAccess.WRITE)
+	file.store_string(JSON.stringify(report,"  "))
+	file.close()

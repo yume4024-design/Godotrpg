@@ -32,7 +32,7 @@ try {
     # can normalize the audio bus; restore exactly the bytes captured above.
     $busNormalized=[Convert]::ToBase64String($originalBus) -ne [Convert]::ToBase64String([IO.File]::ReadAllBytes($bus))
     if ($busNormalized) { [IO.File]::WriteAllBytes($bus,$originalBus) }
-    $unexpected=@(git -C $SourceRoot diff --name-only | Where-Object { $_ -notlike '*.import' })
+    $unexpected=@(git -c core.safecrlf=false -C $SourceRoot diff --name-only | Where-Object { $_ -notlike '*.import' })
     if ($unexpected.Count) { throw ('Unexpected source change after import: '+($unexpected -join ', ')) }
     $exported=[ordered]@{}
     foreach ($role in $Roles) {
@@ -45,9 +45,9 @@ try {
         Get-ChildItem -LiteralPath $folder -File | ForEach-Object { [pscustomobject]@{file=$_.Name;bytes=$_.Length;sha256=(Get-FileHash -LiteralPath $_.FullName).Hash} } | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $folder 'SHA256.json') -Encoding utf8
         $exported[$role.Replace('-','_')]=Join-Path $folder 'ProjectCrystal.exe'
     }
-    $unexpected=@(git -C $SourceRoot diff --name-only | Where-Object { $_ -notlike '*.import' })
+    $unexpected=@(git -c core.safecrlf=false -C $SourceRoot diff --name-only | Where-Object { $_ -notlike '*.import' })
     if ($unexpected.Count) { throw ('Export modified runtime source: '+($unexpected -join ', ')) }
-    $receipt=[ordered]@{source_commit=$commit;source_root=$SourceRoot;audio_bus_restored_to_original=$busNormalized;generated_import_metadata=@(git -C $SourceRoot diff --name-only);engine=(& $GodotPath --version)}
+    $receipt=[ordered]@{source_commit=$commit;source_root=$SourceRoot;audio_bus_restored_to_original=$busNormalized;generated_import_metadata=@(git -c core.safecrlf=false -C $SourceRoot diff --name-only);engine=(& $GodotPath --version)}
     foreach ($key in $exported.Keys) { $receipt[$key]=$exported[$key] }
     $receipt | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $BuildRoot 'build_receipt.json') -Encoding utf8
     Write-Output ('BLENDER_WINDOWS_BUILD='+$BuildRoot)
