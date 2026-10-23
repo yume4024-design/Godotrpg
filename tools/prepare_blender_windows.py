@@ -6,7 +6,10 @@ root=Path(__file__).resolve().parents[1]
 path=root/'export_presets.cfg'
 text=path.read_text(encoding='utf-8')
 marker='\n; Blender Windows candidate (tools/prepare_blender_windows.py)\n'
-text=text.split(marker)[0].rstrip()+'\n'
+prefix,found,remainder=text.partition(marker)
+later_marker='\n; Mine reference candidate\n'
+tail=later_marker+remainder.split(later_marker,1)[1] if found and later_marker in remainder else ''
+text=prefix.rstrip()+'\n'
 slots=[int(v) for v in re.findall(r'^\[preset\.(\d+)\]$',text,re.M)]
 next_slot=max(slots,default=-1)+1
 excludes=['assets/source/*','source_assets/*','scripts/tools/*','scenes/tools/*','docs/*','tools/*','artifacts/*','builds/*','*.md','*.blend','*.blend1','*.blend2','npc/*','敵人/*','艾琳角色圖/*']
@@ -44,5 +47,5 @@ application/file_version="0.6.1.0"
 application/product_version="0.6.1.0"
 application/product_name="Project Crystal Greystone Blender Candidate"
 '''
-path.write_text(text,encoding='utf-8',newline='\n')
+path.write_text(text+tail,encoding='utf-8',newline='\n')
 print('BLENDER_WINDOWS_PRESETS',next_slot,next_slot+1,next_slot+2)

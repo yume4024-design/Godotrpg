@@ -4,6 +4,7 @@ const NpcVisual = preload("res://scripts/characters/rigged_npc_visual.gd")
 @export var force_touch_controls: bool = false
 @export var legacy_slot_path: String = "user://crystal_slot_01.json"
 @export var village_scene: PackedScene = preload("res://scenes/world/greystone_runtime.tscn")
+@export var mine_scene: PackedScene = preload("res://scenes/world/expanded/mine.tscn")
 @export var legacy_import_label: String = "匯入 v0.6.1 存檔（保留原檔）"
 @export var village_switch_label: String = "G06 新舊村莊往返"
 ## Isolated candidates can inject appearance without changing IDs or RPG data.
@@ -63,8 +64,8 @@ func _ready() -> void:
 		battles.definitions.append(load("res://data/enemies/%s.tres" % id))
 	for index: int in range(travel.maps.size()):
 		var id: String = travel.maps[index].resource_path.get_file().get_basename()
-		if id in ["forest", "mine"]:
-			travel.maps[index] = load("res://scenes/world/expanded/%s.tscn" % id)
+		if id == "forest": travel.maps[index] = load("res://scenes/world/expanded/forest.tscn")
+		elif id == "mine": travel.maps[index] = mine_scene
 	travel.maps.append(village_scene)
 	super._ready()
 	dialogue.active_changed.connect(_on_npc_dialogue_changed)

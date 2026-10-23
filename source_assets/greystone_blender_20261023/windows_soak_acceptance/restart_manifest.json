@@ -1,0 +1,37 @@
+{
+  "mode": "Restart",
+  "qa": "D:\\RPGGAME\\builds\\greystone-blender\\soak-9eb437a\\qa-soak\\ProjectCrystal.exe",
+  "candidate": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\ProjectCrystal.exe",
+  "profile": "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\profile",
+  "local": "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\local",
+  "temp": "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\temp",
+  "source_commit": "9eb437a9ecebb62be67e532656c0d772a3faa704",
+  "version": "0.6.1-greystone-blender-rc1",
+  "log": "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-015124-restart\\native.log",
+  "process_samples": "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-015124-restart\\process.csv",
+  "qa_pck_before": "B6FD539383C5E5FDC2FFD0D2E5FE41429342E365D490599EE749FBDF55C13E28",
+  "candidate_pck_before": "1A7448B726327C0553510DB30FBA4A84C5A72143709A198235ED998FF59D19F8",
+  "human_playthrough": false,
+  "physical_input_verified": false,
+  "android_verified": false,
+  "passed": true,
+  "preserved_before": {
+    "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g083\\metrics.json": "57414F71A2B6C568469B5C67B3776D51A701791DBAF7C91F9E88AD659D244945",
+    "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g083\\frames.csv": "5CC4A12C94B435D350E118A7777A615D43FF9E1E2284F00E3ACF7674C3E83501",
+    "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g08_tests\\prologue.json": "09AC119EBD9AD8F16E46B444AAA60953179AC0E191FDE357CC926ECB1F558212"
+  },
+  "graphical": true,
+  "pid": 12940,
+  "started_utc": "2026-10-23T17:51:27.2186566Z",
+  "exit_code": 0,
+  "metrics": "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g083\\load_probe.json",
+  "preserved_after": {
+    "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g083\\frames.csv": "5CC4A12C94B435D350E118A7777A615D43FF9E1E2284F00E3ACF7674C3E83501",
+    "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g083\\metrics.json": "57414F71A2B6C568469B5C67B3776D51A701791DBAF7C91F9E88AD659D244945",
+    "D:\\RPGGAME\\artifacts\\blender_windows_stability\\20261024-011344-soak\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\g08_tests\\prologue.json": "09AC119EBD9AD8F16E46B444AAA60953179AC0E191FDE357CC926ECB1F558212"
+  },
+  "qa_pck_after": "B6FD539383C5E5FDC2FFD0D2E5FE41429342E365D490599EE749FBDF55C13E28",
+  "candidate_pck_after": "1A7448B726327C0553510DB30FBA4A84C5A72143709A198235ED998FF59D19F8",
+  "seconds": 21.0690202,
+  "ended_utc": "2026-10-23T17:51:46.8389444Z"
+}

@@ -8,6 +8,7 @@ extends Node3D
 @export var starting_character: CombatantDefinition
 @export var greystone_enabled: bool = false
 @export_range(2, 3) var greystone_layout_version: int = 2
+@export_range(3, 4) var mine_layout_version: int = 3
 @export var initial_map: StringName = &"village"
 @export var initial_spawn: StringName = &"default"
 @onready var _default_environment: Environment = $WorldEnvironment.environment
@@ -302,7 +303,7 @@ func capture_state() -> Dictionary:
 		data.schema_version = 3
 		data.content_version = "CH00-G06.4"
 		data.inventory.commerce = inventory.commerce_snapshot()
-		data.location.layout_version = greystone_layout_version if data.location.map == "greystone_runtime" else (3 if data.location.map in ["forest", "mine"] else 1)
+		data.location.layout_version = greystone_layout_version if data.location.map == "greystone_runtime" else (mine_layout_version if data.location.map == "mine" else (3 if data.location.map == "forest" else 1))
 	return JSON.parse_string(JSON.stringify(data))
 
 func apply_loaded_state(data: Dictionary, members: Array[CombatantState]) -> void:
@@ -352,6 +353,8 @@ func validate_loaded_position(location: Dictionary, candidate_flags: Dictionary)
 		if scene.resource_path.get_file().get_basename() == location.map: selected = scene
 	if location.map in ["forest", "mine"] and int(location.get("layout_version", 1)) == 1:
 		selected = load("res://scenes/world/%s.tscn" % location.map)
+	if location.map == "mine" and int(location.get("layout_version", 1)) == 3 and mine_layout_version == 4:
+		selected = load("res://scenes/world/expanded/mine.tscn")
 	if location.map == "greystone_runtime" and int(location.get("layout_version", 0)) == 2 and greystone_layout_version == 3:
 		# Validate the old coordinates against their original world before migration.
 		selected = load("res://scenes/world/greystone_runtime.tscn")

@@ -112,8 +112,10 @@ func prepare(data: Variant, game: ExplorationGame) -> Dictionary:
 	if not greystone and location.get("map") not in ["village", "forest", "mine"]: return {}
 	if modern:
 		if location.get("map") in ["forest", "mine"] and game.greystone_enabled:
-			if not integer(location.get("layout_version"), 1, 3): return {}
-			if int(location.get("layout_version")) not in [1, 3]: return {}
+			if location.get("layout_version") == 4 and not commerce_version: return {}
+			var versions: PackedInt32Array = PackedInt32Array([1,3,4]) if location.get("map") == "mine" and game.mine_layout_version == 4 else PackedInt32Array([1,3])
+			if not integer(location.get("layout_version"), 1, versions[-1]): return {}
+			if int(location.get("layout_version")) not in versions: return {}
 		elif not integer(location.get("layout_version"), 2 if greystone else 1, (game.greystone_layout_version if commerce_version else 2) if greystone else 1): return {}
 	elif location.has("layout_version"): return {}
 	if location.map == "mine" and not flags.get("e004_done", false): return {}
@@ -122,7 +124,9 @@ func prepare(data: Variant, game: ExplorationGame) -> Dictionary:
 		if not (value is int or value is float) or not is_finite(float(value)): return {}
 	var z_limit: float = 8.5 if location.map == "mine" else 12.0
 	var expanded: bool = modern and game.greystone_enabled and location.get("layout_version") == 3 and location.map in ["forest", "mine"]
-	if expanded:
+	if modern and location.map == "mine" and location.get("layout_version") == 4 and game.mine_layout_version == 4:
+		if absf(location.x)>56 or absf(location.z)>56 or location.y < -.1 or location.y > 7.2: return {}
+	elif expanded:
 		var extent: Vector2 = Vector2(24.0,24.0) if location.map == "forest" else Vector2(25.0,19.0)
 		if absf(location.x) > extent.x or absf(location.z) > extent.y or location.y < -0.1 or location.y > 2.0: return {}
 	elif greystone:

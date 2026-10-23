@@ -1,0 +1,2538 @@
+{
+  "cap_fps": 60.0,
+  "captures": [
+    {
+      "encode_write_ms": 214.407,
+      "end_seconds": 17.038268,
+      "height": 720.0,
+      "label": "g063-guild",
+      "readback_ms": 8.765,
+      "start_seconds": 16.815096,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 211.385,
+      "end_seconds": 20.295481,
+      "height": 720.0,
+      "label": "g063-mine-gate",
+      "readback_ms": 4.547,
+      "start_seconds": 20.079549,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 159.668,
+      "end_seconds": 22.732914,
+      "height": 720.0,
+      "label": "g063-01-mine-entrance",
+      "readback_ms": 6.504,
+      "start_seconds": 22.566742,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 103.031,
+      "end_seconds": 23.809864,
+      "height": 720.0,
+      "label": "g063-02-journal-mine",
+      "readback_ms": 5.437,
+      "start_seconds": 23.701396,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 172.172,
+      "end_seconds": 25.12622,
+      "height": 720.0,
+      "label": "g063-03-crystal-awakening",
+      "readback_ms": 6.401,
+      "start_seconds": 24.947647,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 148.895,
+      "end_seconds": 28.236009,
+      "height": 720.0,
+      "label": "g063-04-guardian-battle",
+      "readback_ms": 9.019,
+      "start_seconds": 28.078095,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 169.102,
+      "end_seconds": 31.28363,
+      "height": 720.0,
+      "label": "g063-05-chapter-preview",
+      "readback_ms": 7.867,
+      "start_seconds": 31.106661,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 104.775,
+      "end_seconds": 34.996138,
+      "height": 720.0,
+      "label": "g063-06-completed-journal",
+      "readback_ms": 5.66,
+      "start_seconds": 34.885703,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 59.897,
+      "end_seconds": 35.083733,
+      "height": 540.0,
+      "label": "g063-07-small-journal",
+      "readback_ms": 5.407,
+      "start_seconds": 35.018429,
+      "width": 960.0
+    },
+    {
+      "encode_write_ms": 58.11,
+      "end_seconds": 35.215051,
+      "height": 540.0,
+      "label": "g063-08-small-save-menu",
+      "readback_ms": 4.374,
+      "start_seconds": 35.152567,
+      "width": 960.0
+    },
+    {
+      "encode_write_ms": 196.714,
+      "end_seconds": 57.04091,
+      "height": 720.0,
+      "label": "g083-greystone_runtime-1",
+      "readback_ms": 10.517,
+      "start_seconds": 56.833679,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 146.624,
+      "end_seconds": 79.409098,
+      "height": 720.0,
+      "label": "g083-forest-1",
+      "readback_ms": 7.077,
+      "start_seconds": 79.255397,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 158.907,
+      "end_seconds": 101.38268,
+      "height": 720.0,
+      "label": "g083-mine-1",
+      "readback_ms": 10.055,
+      "start_seconds": 101.213718,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 204.255,
+      "end_seconds": 392.831164,
+      "height": 720.0,
+      "label": "g083-greystone_runtime-6",
+      "readback_ms": 4.501,
+      "start_seconds": 392.622408,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 145.793,
+      "end_seconds": 415.217181,
+      "height": 720.0,
+      "label": "g083-forest-6",
+      "readback_ms": 10.28,
+      "start_seconds": 415.061108,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 157.675,
+      "end_seconds": 436.851133,
+      "height": 720.0,
+      "label": "g083-mine-6",
+      "readback_ms": 6.559,
+      "start_seconds": 436.686899,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 203.788,
+      "end_seconds": 728.051782,
+      "height": 720.0,
+      "label": "g083-greystone_runtime-11",
+      "readback_ms": 7.68,
+      "start_seconds": 727.840314,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 149.408,
+      "end_seconds": 750.473842,
+      "height": 720.0,
+      "label": "g083-forest-11",
+      "readback_ms": 9.29,
+      "start_seconds": 750.315144,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 158.814,
+      "end_seconds": 772.446191,
+      "height": 720.0,
+      "label": "g083-mine-11",
+      "readback_ms": 6.93,
+      "start_seconds": 772.280447,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 196.794,
+      "end_seconds": 1063.855269,
+      "height": 720.0,
+      "label": "g083-greystone_runtime-16",
+      "readback_ms": 7.539,
+      "start_seconds": 1063.650936,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 145.74,
+      "end_seconds": 1086.235,
+      "height": 720.0,
+      "label": "g083-forest-16",
+      "readback_ms": 7.009,
+      "start_seconds": 1086.082251,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 159.067,
+      "end_seconds": 1107.871855,
+      "height": 720.0,
+      "label": "g083-mine-16",
+      "readback_ms": 7.696,
+      "start_seconds": 1107.705092,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 213.347,
+      "end_seconds": 1399.261298,
+      "height": 720.0,
+      "label": "g083-greystone_runtime-21",
+      "readback_ms": 5.012,
+      "start_seconds": 1399.042939,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 150.089,
+      "end_seconds": 1421.654834,
+      "height": 720.0,
+      "label": "g083-forest-21",
+      "readback_ms": 9.298,
+      "start_seconds": 1421.495447,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 167.49,
+      "end_seconds": 1443.301917,
+      "height": 720.0,
+      "label": "g083-mine-21",
+      "readback_ms": 8.551,
+      "start_seconds": 1443.125876,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 217.439,
+      "end_seconds": 1734.716906,
+      "height": 720.0,
+      "label": "g083-greystone_runtime-26",
+      "readback_ms": 7.081,
+      "start_seconds": 1734.492386,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 155.819,
+      "end_seconds": 1757.117778,
+      "height": 720.0,
+      "label": "g083-forest-26",
+      "readback_ms": 9.877,
+      "start_seconds": 1756.952082,
+      "width": 1280.0
+    },
+    {
+      "encode_write_ms": 167.064,
+      "end_seconds": 1779.102092,
+      "height": 720.0,
+      "label": "g083-mine-26",
+      "readback_ms": 6.889,
+      "start_seconds": 1778.928139,
+      "width": 1280.0
+    }
+  ],
+  "checkpoints": [
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 22.419973
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 44.378245
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 67.357643
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 89.712418
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 111.544698
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 134.477166
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 156.816935
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 178.632519
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 201.564898
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 223.902042
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 245.71778
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 268.650177
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 291.037177
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 312.852887
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 335.785326
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 358.225782
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 380.18482
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 402.817583
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 424.968023
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 446.783746
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 469.716127
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 492.047525
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 513.863222
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 536.795518
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 559.139744
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 580.955421
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 603.888113
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 626.261252
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 648.09366
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 671.026007
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 693.462818
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 715.445124
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 738.395965
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 760.737597
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 782.553346
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 805.485699
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 827.858451
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 849.691031
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 872.623244
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 894.933988
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 916.74963
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 939.681959
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 962.045781
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 983.878154
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1006.810523
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1029.246757
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1051.20252
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1073.838282
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1096.19605
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1118.028343
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1140.960799
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1163.286383
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1185.102177
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1208.034632
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1230.392101
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1252.207729
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1275.140208
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1297.473163
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1319.289237
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1342.221272
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1364.659928
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1386.623137
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1409.268568
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1431.618915
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1453.434568
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1476.367041
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1498.70984
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1520.525626
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1543.45796
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1565.80006
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1587.643728
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1610.56509
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1632.913285
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1654.745822
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1677.678119
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1700.115914
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1722.092426
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1745.068801
+    },
+    {
+      "engine_bytes": null,
+      "map": "greystone_runtime",
+      "nodes": 3477.0,
+      "objects": 10066.0,
+      "orphans": null,
+      "seconds": 1767.428456
+    },
+    {
+      "engine_bytes": null,
+      "map": "forest",
+      "nodes": 833.0,
+      "objects": 6090.0,
+      "orphans": null,
+      "seconds": 1789.244131
+    },
+    {
+      "engine_bytes": null,
+      "map": "mine",
+      "nodes": 475.0,
+      "objects": 5735.0,
+      "orphans": null,
+      "seconds": 1812.17656
+    }
+  ],
+  "checks": 1548.0,
+  "complete": true,
+  "cycles": 27.0,
+  "display": "Windows",
+  "engine": "4.7.2-stable (official)",
+  "engine_memory_available": false,
+  "failures": 0.0,
+  "frame_measurement": "CPU main-loop intervals, including diagnostics; not GPU timestamps. Raw CSV includes every sampled interval.",
+  "layout_version": 3,
+  "method": "Graphical automated InputMap movement; repositioned route segments; full story once, repeated service/battle/save/load; not human 30-minute playthrough. Timer includes diagnostics and snapshot work.",
+  "metrics": {
+    "battle": {
+      "draw_max": 370.0,
+      "draw_min": 103.0,
+      "engine_peak_bytes": null,
+      "fps": 58.5060251490049,
+      "frames": 3884.0,
+      "max_ms": 188.382,
+      "mean_ms": 17.0922566941297,
+      "p95_ms": 16.833,
+      "p99_ms": 19.183
+    },
+    "forest": {
+      "draw_max": 429.0,
+      "draw_min": 368.0,
+      "engine_peak_bytes": null,
+      "fps": 60.0024636744912,
+      "frames": 33750.0,
+      "max_ms": 19.945,
+      "mean_ms": 16.6659823407406,
+      "p95_ms": 16.781,
+      "p99_ms": 16.978
+    },
+    "greystone_runtime": {
+      "draw_max": 656.0,
+      "draw_min": 242.0,
+      "engine_peak_bytes": null,
+      "fps": 59.9551201946682,
+      "frames": 33693.0,
+      "max_ms": 66.406,
+      "mean_ms": 16.6791426112249,
+      "p95_ms": 16.766,
+      "p99_ms": 16.929
+    },
+    "mine": {
+      "draw_max": 191.0,
+      "draw_min": 176.0,
+      "engine_peak_bytes": null,
+      "fps": 60.0025991865005,
+      "frames": 33690.0,
+      "max_ms": 22.712,
+      "mean_ms": 16.6659447016919,
+      "p95_ms": 16.768,
+      "p99_ms": 16.944
+    },
+    "npc_commerce": {
+      "draw_max": 619.0,
+      "draw_min": 305.0,
+      "engine_peak_bytes": null,
+      "fps": 57.4186865057483,
+      "frames": 1882.0,
+      "max_ms": 229.665,
+      "mean_ms": 17.4159330499469,
+      "p95_ms": 17.319,
+      "p99_ms": 48.8
+    },
+    "prologue": {
+      "draw_max": 639.0,
+      "draw_min": 0.0,
+      "engine_peak_bytes": null,
+      "fps": 29.8063955439915,
+      "frames": 1063.0,
+      "max_ms": 6853.176,
+      "mean_ms": 33.5498466603951,
+      "p95_ms": 17.451,
+      "p99_ms": 180.201
+    },
+    "transition": {
+      "draw_max": 654.0,
+      "draw_min": 41.0,
+      "engine_peak_bytes": null,
+      "fps": 59.8641062643247,
+      "frames": 1622.0,
+      "max_ms": 51.025,
+      "mean_ms": 16.7045006165228,
+      "p95_ms": 17.926,
+      "p99_ms": 34.732
+    }
+  },
+  "operations": {
+    "battle_launch_to_input": [
+      11.654,
+      1009.462,
+      16.38,
+      1132.962,
+      16.261,
+      1133.015,
+      16.237,
+      1133.018,
+      16.28,
+      1133.043,
+      10.306,
+      1000.979,
+      15.923,
+      1132.907,
+      16.127,
+      1132.87,
+      16.227,
+      1133.033,
+      15.972,
+      1132.988,
+      12.259,
+      984.298,
+      16.261,
+      1133.054,
+      16.198,
+      1133.003,
+      16.176,
+      1133.023,
+      16.322,
+      1132.91,
+      10.507,
+      1000.91,
+      16.214,
+      1133.14,
+      16.234,
+      1133.137,
+      16.182,
+      1133.064,
+      16.279,
+      1133.074,
+      10.862,
+      1001.138,
+      16.25,
+      1132.425,
+      16.214,
+      1132.965,
+      16.177,
+      1133.014,
+      17.734,
+      1132.871,
+      14.462,
+      1001.068,
+      16.298,
+      1132.942
+    ],
+    "save_validation_and_apply": [
+      355.92,
+      346.425,
+      362.5,
+      366.671,
+      362.342,
+      366.619,
+      344.164,
+      373.859,
+      362.363,
+      366.745,
+      362.236,
+      366.778,
+      343.605,
+      358.326,
+      362.574,
+      366.683,
+      362.437,
+      366.622,
+      342.8,
+      357.215,
+      362.509,
+      366.588,
+      362.496,
+      366.642,
+      376.445,
+      373.908,
+      361.676,
+      366.694,
+      362.38,
+      366.638,
+      361.987,
+      345.279,
+      362.624,
+      366.653,
+      362.42,
+      366.649,
+      372.232,
+      375.112,
+      362.363,
+      366.714,
+      362.32,
+      366.673,
+      343.371,
+      351.264,
+      362.702,
+      366.826,
+      362.26,
+      366.127,
+      345.321,
+      360.622,
+      362.56,
+      366.678,
+      362.499,
+      366.791,
+      360.627,
+      375.825,
+      362.594,
+      366.718,
+      362.524,
+      366.655,
+      339.82,
+      378.436,
+      362.157,
+      366.563,
+      362.348,
+      366.669,
+      326.64,
+      374.613,
+      362.392,
+      366.507,
+      362.623,
+      366.553,
+      363.035,
+      373.059,
+      362.489,
+      366.795,
+      362.34,
+      366.664,
+      338.256,
+      352.017,
+      362.544,
+      366.59,
+      362.553,
+      366.536,
+      347.829,
+      378.496,
+      362.37,
+      366.613,
+      362.35,
+      366.53,
+      377.239,
+      358.778,
+      362.772,
+      366.626,
+      362.543,
+      366.589,
+      357.189,
+      380.004,
+      362.446,
+      366.638,
+      362.038,
+      366.614,
+      330.713,
+      357.139,
+      362.33,
+      366.753,
+      362.37,
+      366.644,
+      355.222,
+      360.863,
+      362.469,
+      366.662,
+      361.492,
+      366.645,
+      345.508,
+      348.454,
+      362.418,
+      367.057,
+      362.174,
+      366.47,
+      345.984,
+      349.194,
+      362.427,
+      366.661,
+      362.453,
+      366.586,
+      360.521,
+      350.411,
+      362.571,
+      366.649,
+      362.058,
+      366.459,
+      359.661,
+      345.299,
+      362.53,
+      366.677,
+      362.455,
+      366.588,
+      341.707,
+      360.584,
+      362.044,
+      394.654,
+      362.373,
+      366.793,
+      360.736,
+      364.14,
+      362.404,
+      366.664,
+      362.287,
+      366.665,
+      349.8,
+      365.926,
+      362.06,
+      366.652,
+      362.354,
+      366.539,
+      374.088,
+      343.094,
+      362.296,
+      366.378,
+      362.315,
+      366.644
+    ]
+  },
+  "pid": 2948.0,
+  "raw_frame_count": 109584,
+  "raw_frame_csv": "user://g083/frames.csv",
+  "release": true,
+  "renderer": "NVIDIA GeForce RTX 3080",
+  "sampling_origin": "User main-loop sampling; not complete OS process startup",
+  "short_preflight": false,
+  "soak_seconds": 1812.204976,
+  "spikes_over_33ms": [
+    {
+      "ms": 43.022,
+      "phase": "prologue",
+      "seconds": 0.06656
+    },
+    {
+      "ms": 6853.176,
+      "phase": "prologue",
+      "seconds": 6.919736
+    },
+    {
+      "ms": 2515.895,
+      "phase": "prologue",
+      "seconds": 9.435631
+    },
+    {
+      "ms": 4473.384,
+      "phase": "prologue",
+      "seconds": 13.909015
+    },
+    {
+      "ms": 788.087,
+      "phase": "prologue",
+      "seconds": 14.697102
+    },
+    {
+      "ms": 227.528,
+      "phase": "prologue",
+      "seconds": 17.040917
+    },
+    {
+      "ms": 761.61,
+      "phase": "prologue",
+      "seconds": 17.996841
+    },
+    {
+      "ms": 191.774,
+      "phase": "prologue",
+      "seconds": 19.076079
+    },
+    {
+      "ms": 35.428,
+      "phase": "prologue",
+      "seconds": 19.794783
+    },
+    {
+      "ms": 219.736,
+      "phase": "prologue",
+      "seconds": 20.297439
+    },
+    {
+      "ms": 1263.624,
+      "phase": "prologue",
+      "seconds": 21.599383
+    },
+    {
+      "ms": 168.849,
+      "phase": "prologue",
+      "seconds": 22.7342
+    },
+    {
+      "ms": 40.891,
+      "phase": "prologue",
+      "seconds": 23.691587
+    },
+    {
+      "ms": 111.244,
+      "phase": "prologue",
+      "seconds": 23.811251
+    },
+    {
+      "ms": 41.791,
+      "phase": "prologue",
+      "seconds": 24.062769
+    },
+    {
+      "ms": 181.336,
+      "phase": "prologue",
+      "seconds": 25.12743
+    },
+    {
+      "ms": 159.985,
+      "phase": "prologue",
+      "seconds": 28.236908
+    },
+    {
+      "ms": 35.29,
+      "phase": "prologue",
+      "seconds": 30.155304
+    },
+    {
+      "ms": 180.201,
+      "phase": "prologue",
+      "seconds": 31.285186
+    },
+    {
+      "ms": 130.939,
+      "phase": "prologue",
+      "seconds": 35.014869
+    },
+    {
+      "ms": 69.943,
+      "phase": "prologue",
+      "seconds": 35.084812
+    },
+    {
+      "ms": 72.661,
+      "phase": "prologue",
+      "seconds": 35.22345
+    },
+    {
+      "ms": 34.207,
+      "phase": "prologue",
+      "seconds": 35.322689
+    },
+    {
+      "ms": 42.761,
+      "phase": "prologue",
+      "seconds": 35.514825
+    },
+    {
+      "ms": 43.116,
+      "phase": "transition",
+      "seconds": 35.873278
+    },
+    {
+      "ms": 46.324,
+      "phase": "greystone_runtime",
+      "seconds": 56.51778
+    },
+    {
+      "ms": 38.794,
+      "phase": "greystone_runtime",
+      "seconds": 56.681859
+    },
+    {
+      "ms": 211.982,
+      "phase": "npc_commerce",
+      "seconds": 57.043564
+    },
+    {
+      "ms": 50.347,
+      "phase": "npc_commerce",
+      "seconds": 57.775313
+    },
+    {
+      "ms": 42.185,
+      "phase": "npc_commerce",
+      "seconds": 57.938098
+    },
+    {
+      "ms": 169.31,
+      "phase": "battle",
+      "seconds": 79.422689
+    },
+    {
+      "ms": 181.023,
+      "phase": "battle",
+      "seconds": 101.392806
+    },
+    {
+      "ms": 33.648,
+      "phase": "transition",
+      "seconds": 103.208971
+    },
+    {
+      "ms": 47.732,
+      "phase": "greystone_runtime",
+      "seconds": 123.872353
+    },
+    {
+      "ms": 44.111,
+      "phase": "greystone_runtime",
+      "seconds": 124.024873
+    },
+    {
+      "ms": 47.897,
+      "phase": "npc_commerce",
+      "seconds": 125.03778
+    },
+    {
+      "ms": 39.078,
+      "phase": "npc_commerce",
+      "seconds": 125.230339
+    },
+    {
+      "ms": 34.732,
+      "phase": "transition",
+      "seconds": 170.32944
+    },
+    {
+      "ms": 50.064,
+      "phase": "greystone_runtime",
+      "seconds": 190.995389
+    },
+    {
+      "ms": 39.602,
+      "phase": "greystone_runtime",
+      "seconds": 191.143516
+    },
+    {
+      "ms": 48.017,
+      "phase": "npc_commerce",
+      "seconds": 192.158061
+    },
+    {
+      "ms": 39.778,
+      "phase": "npc_commerce",
+      "seconds": 192.33495
+    },
+    {
+      "ms": 34.473,
+      "phase": "transition",
+      "seconds": 237.417101
+    },
+    {
+      "ms": 48.881,
+      "phase": "greystone_runtime",
+      "seconds": 258.081406
+    },
+    {
+      "ms": 39.595,
+      "phase": "greystone_runtime",
+      "seconds": 258.229673
+    },
+    {
+      "ms": 47.455,
+      "phase": "npc_commerce",
+      "seconds": 259.24371
+    },
+    {
+      "ms": 39.597,
+      "phase": "npc_commerce",
+      "seconds": 259.420176
+    },
+    {
+      "ms": 39.989,
+      "phase": "greystone_runtime",
+      "seconds": 325.157174
+    },
+    {
+      "ms": 42.739,
+      "phase": "greystone_runtime",
+      "seconds": 325.349459
+    },
+    {
+      "ms": 48.227,
+      "phase": "npc_commerce",
+      "seconds": 326.362813
+    },
+    {
+      "ms": 38.972,
+      "phase": "npc_commerce",
+      "seconds": 326.571988
+    },
+    {
+      "ms": 34.858,
+      "phase": "transition",
+      "seconds": 371.637921
+    },
+    {
+      "ms": 53.58,
+      "phase": "greystone_runtime",
+      "seconds": 392.307589
+    },
+    {
+      "ms": 40.644,
+      "phase": "greystone_runtime",
+      "seconds": 392.470727
+    },
+    {
+      "ms": 214.217,
+      "phase": "npc_commerce",
+      "seconds": 392.834231
+    },
+    {
+      "ms": 48.066,
+      "phase": "npc_commerce",
+      "seconds": 393.579955
+    },
+    {
+      "ms": 43.471,
+      "phase": "npc_commerce",
+      "seconds": 393.74386
+    },
+    {
+      "ms": 169.952,
+      "phase": "battle",
+      "seconds": 415.229152
+    },
+    {
+      "ms": 175.137,
+      "phase": "battle",
+      "seconds": 436.860169
+    },
+    {
+      "ms": 36.739,
+      "phase": "greystone_runtime",
+      "seconds": 459.087945
+    },
+    {
+      "ms": 40.152,
+      "phase": "greystone_runtime",
+      "seconds": 459.277847
+    },
+    {
+      "ms": 47.924,
+      "phase": "npc_commerce",
+      "seconds": 460.29216
+    },
+    {
+      "ms": 40.499,
+      "phase": "npc_commerce",
+      "seconds": 460.502764
+    },
+    {
+      "ms": 49.345,
+      "phase": "greystone_runtime",
+      "seconds": 526.232436
+    },
+    {
+      "ms": 40.776,
+      "phase": "greystone_runtime",
+      "seconds": 526.381135
+    },
+    {
+      "ms": 48.056,
+      "phase": "npc_commerce",
+      "seconds": 527.395617
+    },
+    {
+      "ms": 49.044,
+      "phase": "npc_commerce",
+      "seconds": 527.582271
+    },
+    {
+      "ms": 35.725,
+      "phase": "transition",
+      "seconds": 572.648955
+    },
+    {
+      "ms": 48.8,
+      "phase": "greystone_runtime",
+      "seconds": 593.313307
+    },
+    {
+      "ms": 43.537,
+      "phase": "greystone_runtime",
+      "seconds": 593.464246
+    },
+    {
+      "ms": 49.451,
+      "phase": "npc_commerce",
+      "seconds": 594.479998
+    },
+    {
+      "ms": 40.345,
+      "phase": "npc_commerce",
+      "seconds": 594.657686
+    },
+    {
+      "ms": 51.025,
+      "phase": "transition",
+      "seconds": 639.756798
+    },
+    {
+      "ms": 48.052,
+      "phase": "greystone_runtime",
+      "seconds": 660.403334
+    },
+    {
+      "ms": 42.281,
+      "phase": "greystone_runtime",
+      "seconds": 660.570452
+    },
+    {
+      "ms": 47.997,
+      "phase": "npc_commerce",
+      "seconds": 661.584772
+    },
+    {
+      "ms": 41.142,
+      "phase": "npc_commerce",
+      "seconds": 661.779289
+    },
+    {
+      "ms": 35.048,
+      "phase": "transition",
+      "seconds": 706.878746
+    },
+    {
+      "ms": 48.449,
+      "phase": "greystone_runtime",
+      "seconds": 727.54283
+    },
+    {
+      "ms": 38.327,
+      "phase": "greystone_runtime",
+      "seconds": 727.688674
+    },
+    {
+      "ms": 216.19,
+      "phase": "npc_commerce",
+      "seconds": 728.054548
+    },
+    {
+      "ms": 48.8,
+      "phase": "npc_commerce",
+      "seconds": 728.784498
+    },
+    {
+      "ms": 42.761,
+      "phase": "npc_commerce",
+      "seconds": 728.980918
+    },
+    {
+      "ms": 175.381,
+      "phase": "battle",
+      "seconds": 750.488321
+    },
+    {
+      "ms": 176.87,
+      "phase": "battle",
+      "seconds": 772.45551
+    },
+    {
+      "ms": 33.959,
+      "phase": "transition",
+      "seconds": 774.247604
+    },
+    {
+      "ms": 66.406,
+      "phase": "greystone_runtime",
+      "seconds": 794.930024
+    },
+    {
+      "ms": 46.522,
+      "phase": "greystone_runtime",
+      "seconds": 795.064903
+    },
+    {
+      "ms": 48.16,
+      "phase": "npc_commerce",
+      "seconds": 796.062505
+    },
+    {
+      "ms": 39.412,
+      "phase": "npc_commerce",
+      "seconds": 796.272381
+    },
+    {
+      "ms": 33.576,
+      "phase": "transition",
+      "seconds": 841.336934
+    },
+    {
+      "ms": 51.965,
+      "phase": "greystone_runtime",
+      "seconds": 862.004611
+    },
+    {
+      "ms": 43.339,
+      "phase": "greystone_runtime",
+      "seconds": 862.170457
+    },
+    {
+      "ms": 45.192,
+      "phase": "npc_commerce",
+      "seconds": 863.181892
+    },
+    {
+      "ms": 40.046,
+      "phase": "npc_commerce",
+      "seconds": 863.376584
+    },
+    {
+      "ms": 33.652,
+      "phase": "transition",
+      "seconds": 908.47458
+    },
+    {
+      "ms": 62.49,
+      "phase": "greystone_runtime",
+      "seconds": 929.136157
+    },
+    {
+      "ms": 44.177,
+      "phase": "greystone_runtime",
+      "seconds": 929.283616
+    },
+    {
+      "ms": 46.795,
+      "phase": "npc_commerce",
+      "seconds": 930.280214
+    },
+    {
+      "ms": 51.559,
+      "phase": "npc_commerce",
+      "seconds": 930.468862
+    },
+    {
+      "ms": 34.748,
+      "phase": "transition",
+      "seconds": 975.534401
+    },
+    {
+      "ms": 51.414,
+      "phase": "greystone_runtime",
+      "seconds": 996.201259
+    },
+    {
+      "ms": 43.319,
+      "phase": "greystone_runtime",
+      "seconds": 996.3526
+    },
+    {
+      "ms": 48.923,
+      "phase": "npc_commerce",
+      "seconds": 997.367639
+    },
+    {
+      "ms": 42.431,
+      "phase": "npc_commerce",
+      "seconds": 997.563838
+    },
+    {
+      "ms": 40.012,
+      "phase": "transition",
+      "seconds": 1042.668386
+    },
+    {
+      "ms": 39.829,
+      "phase": "greystone_runtime",
+      "seconds": 1063.307181
+    },
+    {
+      "ms": 42.382,
+      "phase": "greystone_runtime",
+      "seconds": 1063.499104
+    },
+    {
+      "ms": 209.324,
+      "phase": "npc_commerce",
+      "seconds": 1063.857959
+    },
+    {
+      "ms": 48.518,
+      "phase": "npc_commerce",
+      "seconds": 1064.587982
+    },
+    {
+      "ms": 39.558,
+      "phase": "npc_commerce",
+      "seconds": 1064.764576
+    },
+    {
+      "ms": 166.987,
+      "phase": "battle",
+      "seconds": 1086.247221
+    },
+    {
+      "ms": 178.732,
+      "phase": "battle",
+      "seconds": 1107.881583
+    },
+    {
+      "ms": 34.305,
+      "phase": "transition",
+      "seconds": 1109.69029
+    },
+    {
+      "ms": 48.107,
+      "phase": "greystone_runtime",
+      "seconds": 1130.337261
+    },
+    {
+      "ms": 41.099,
+      "phase": "greystone_runtime",
+      "seconds": 1130.502468
+    },
+    {
+      "ms": 49.735,
+      "phase": "npc_commerce",
+      "seconds": 1131.51711
+    },
+    {
+      "ms": 43.366,
+      "phase": "npc_commerce",
+      "seconds": 1131.714184
+    },
+    {
+      "ms": 53.363,
+      "phase": "greystone_runtime",
+      "seconds": 1197.481263
+    },
+    {
+      "ms": 43.773,
+      "phase": "greystone_runtime",
+      "seconds": 1197.630906
+    },
+    {
+      "ms": 47.819,
+      "phase": "npc_commerce",
+      "seconds": 1198.628382
+    },
+    {
+      "ms": 39.117,
+      "phase": "npc_commerce",
+      "seconds": 1198.804492
+    },
+    {
+      "ms": 39.254,
+      "phase": "transition",
+      "seconds": 1243.891552
+    },
+    {
+      "ms": 45.264,
+      "phase": "greystone_runtime",
+      "seconds": 1264.552058
+    },
+    {
+      "ms": 39.072,
+      "phase": "greystone_runtime",
+      "seconds": 1264.716147
+    },
+    {
+      "ms": 47.016,
+      "phase": "npc_commerce",
+      "seconds": 1265.729624
+    },
+    {
+      "ms": 43.285,
+      "phase": "npc_commerce",
+      "seconds": 1265.910072
+    },
+    {
+      "ms": 35.814,
+      "phase": "transition",
+      "seconds": 1310.993669
+    },
+    {
+      "ms": 50.863,
+      "phase": "greystone_runtime",
+      "seconds": 1331.660113
+    },
+    {
+      "ms": 42.498,
+      "phase": "greystone_runtime",
+      "seconds": 1331.809607
+    },
+    {
+      "ms": 50.119,
+      "phase": "npc_commerce",
+      "seconds": 1332.82646
+    },
+    {
+      "ms": 44.264,
+      "phase": "npc_commerce",
+      "seconds": 1333.008084
+    },
+    {
+      "ms": 34.933,
+      "phase": "transition",
+      "seconds": 1378.073869
+    },
+    {
+      "ms": 52.862,
+      "phase": "greystone_runtime",
+      "seconds": 1398.742444
+    },
+    {
+      "ms": 41.279,
+      "phase": "greystone_runtime",
+      "seconds": 1398.890803
+    },
+    {
+      "ms": 224.168,
+      "phase": "npc_commerce",
+      "seconds": 1399.264337
+    },
+    {
+      "ms": 51.78,
+      "phase": "npc_commerce",
+      "seconds": 1400.013998
+    },
+    {
+      "ms": 43.063,
+      "phase": "npc_commerce",
+      "seconds": 1400.177967
+    },
+    {
+      "ms": 174.123,
+      "phase": "battle",
+      "seconds": 1421.667396
+    },
+    {
+      "ms": 188.382,
+      "phase": "battle",
+      "seconds": 1443.311813
+    },
+    {
+      "ms": 35.802,
+      "phase": "transition",
+      "seconds": 1445.122061
+    },
+    {
+      "ms": 48.229,
+      "phase": "greystone_runtime",
+      "seconds": 1465.785916
+    },
+    {
+      "ms": 42.632,
+      "phase": "greystone_runtime",
+      "seconds": 1465.953407
+    },
+    {
+      "ms": 51.075,
+      "phase": "npc_commerce",
+      "seconds": 1466.97117
+    },
+    {
+      "ms": 45.273,
+      "phase": "npc_commerce",
+      "seconds": 1467.153792
+    },
+    {
+      "ms": 34.875,
+      "phase": "transition",
+      "seconds": 1512.219594
+    },
+    {
+      "ms": 48.629,
+      "phase": "greystone_runtime",
+      "seconds": 1532.883864
+    },
+    {
+      "ms": 40.937,
+      "phase": "greystone_runtime",
+      "seconds": 1533.049463
+    },
+    {
+      "ms": 48.492,
+      "phase": "npc_commerce",
+      "seconds": 1534.064385
+    },
+    {
+      "ms": 43.065,
+      "phase": "npc_commerce",
+      "seconds": 1534.227833
+    },
+    {
+      "ms": 35.864,
+      "phase": "transition",
+      "seconds": 1579.311544
+    },
+    {
+      "ms": 49.043,
+      "phase": "greystone_runtime",
+      "seconds": 1599.976033
+    },
+    {
+      "ms": 40.112,
+      "phase": "greystone_runtime",
+      "seconds": 1600.124371
+    },
+    {
+      "ms": 47.869,
+      "phase": "npc_commerce",
+      "seconds": 1601.138834
+    },
+    {
+      "ms": 41.974,
+      "phase": "npc_commerce",
+      "seconds": 1601.318012
+    },
+    {
+      "ms": 36.947,
+      "phase": "transition",
+      "seconds": 1646.419633
+    },
+    {
+      "ms": 49.561,
+      "phase": "greystone_runtime",
+      "seconds": 1667.068025
+    },
+    {
+      "ms": 41.694,
+      "phase": "greystone_runtime",
+      "seconds": 1667.234275
+    },
+    {
+      "ms": 49.965,
+      "phase": "npc_commerce",
+      "seconds": 1668.250462
+    },
+    {
+      "ms": 43.936,
+      "phase": "npc_commerce",
+      "seconds": 1668.448204
+    },
+    {
+      "ms": 41.384,
+      "phase": "transition",
+      "seconds": 1713.537166
+    },
+    {
+      "ms": 50.959,
+      "phase": "greystone_runtime",
+      "seconds": 1734.187001
+    },
+    {
+      "ms": 46.723,
+      "phase": "greystone_runtime",
+      "seconds": 1734.358732
+    },
+    {
+      "ms": 229.665,
+      "phase": "npc_commerce",
+      "seconds": 1734.719843
+    },
+    {
+      "ms": 50.796,
+      "phase": "npc_commerce",
+      "seconds": 1735.452045
+    },
+    {
+      "ms": 44.412,
+      "phase": "npc_commerce",
+      "seconds": 1735.65054
+    },
+    {
+      "ms": 185.391,
+      "phase": "battle",
+      "seconds": 1757.134654
+    },
+    {
+      "ms": 186.277,
+      "phase": "battle",
+      "seconds": 1779.112225
+    },
+    {
+      "ms": 39.958,
+      "phase": "transition",
+      "seconds": 1780.926319
+    },
+    {
+      "ms": 41.318,
+      "phase": "greystone_runtime",
+      "seconds": 1801.583112
+    },
+    {
+      "ms": 55.699,
+      "phase": "greystone_runtime",
+      "seconds": 1801.804089
+    },
+    {
+      "ms": 56.291,
+      "phase": "npc_commerce",
+      "seconds": 1802.793753
+    },
+    {
+      "ms": 46.975,
+      "phase": "npc_commerce",
+      "seconds": 1802.963416
+    }
+  ],
+  "startup_events": [
+    {
+      "engine_usec": 1662091.0,
+      "phase": "splash_presented"
+    },
+    {
+      "engine_usec": 1662893.0,
+      "phase": "loading_resources"
+    },
+    {
+      "engine_usec": 7595606.0,
+      "phase": "creating_world"
+    },
+    {
+      "engine_usec": 8509931.0,
+      "phase": "waiting_map"
+    },
+    {
+      "engine_usec": 16296912.0,
+      "phase": "preparing_picture"
+    },
+    {
+      "engine_usec": 16327693.0,
+      "phase": "fading"
+    },
+    {
+      "engine_usec": 16509029.0,
+      "phase": "ready"
+    }
+  ],
+  "target_seconds": 1800.0,
+  "total_seconds": 1847.872946,
+  "transitions": [
+    {
+      "cycle": 1.0,
+      "map": "greystone_runtime",
+      "ms": 337.863
+    },
+    {
+      "cycle": 1.0,
+      "map": "forest",
+      "ms": 323.248
+    },
+    {
+      "cycle": 1.0,
+      "map": "mine",
+      "ms": 323.674
+    },
+    {
+      "cycle": 2.0,
+      "map": "greystone_runtime",
+      "ms": 323.336
+    },
+    {
+      "cycle": 2.0,
+      "map": "forest",
+      "ms": 340.229
+    },
+    {
+      "cycle": 2.0,
+      "map": "mine",
+      "ms": 323.311
+    },
+    {
+      "cycle": 3.0,
+      "map": "greystone_runtime",
+      "ms": 324.658
+    },
+    {
+      "cycle": 3.0,
+      "map": "forest",
+      "ms": 323.165
+    },
+    {
+      "cycle": 3.0,
+      "map": "mine",
+      "ms": 323.833
+    },
+    {
+      "cycle": 4.0,
+      "map": "greystone_runtime",
+      "ms": 323.554
+    },
+    {
+      "cycle": 4.0,
+      "map": "forest",
+      "ms": 323.599
+    },
+    {
+      "cycle": 4.0,
+      "map": "mine",
+      "ms": 323.057
+    },
+    {
+      "cycle": 5.0,
+      "map": "greystone_runtime",
+      "ms": 322.829
+    },
+    {
+      "cycle": 5.0,
+      "map": "forest",
+      "ms": 323.244
+    },
+    {
+      "cycle": 5.0,
+      "map": "mine",
+      "ms": 322.939
+    },
+    {
+      "cycle": 6.0,
+      "map": "greystone_runtime",
+      "ms": 323.622
+    },
+    {
+      "cycle": 6.0,
+      "map": "forest",
+      "ms": 322.608
+    },
+    {
+      "cycle": 6.0,
+      "map": "mine",
+      "ms": 322.488
+    },
+    {
+      "cycle": 7.0,
+      "map": "greystone_runtime",
+      "ms": 322.325
+    },
+    {
+      "cycle": 7.0,
+      "map": "forest",
+      "ms": 321.108
+    },
+    {
+      "cycle": 7.0,
+      "map": "mine",
+      "ms": 320.957
+    },
+    {
+      "cycle": 8.0,
+      "map": "greystone_runtime",
+      "ms": 321.79
+    },
+    {
+      "cycle": 8.0,
+      "map": "forest",
+      "ms": 321.161
+    },
+    {
+      "cycle": 8.0,
+      "map": "mine",
+      "ms": 321.385
+    },
+    {
+      "cycle": 9.0,
+      "map": "greystone_runtime",
+      "ms": 323.309
+    },
+    {
+      "cycle": 9.0,
+      "map": "forest",
+      "ms": 321.627
+    },
+    {
+      "cycle": 9.0,
+      "map": "mine",
+      "ms": 321.807
+    },
+    {
+      "cycle": 10.0,
+      "map": "greystone_runtime",
+      "ms": 320.103
+    },
+    {
+      "cycle": 10.0,
+      "map": "forest",
+      "ms": 337.883
+    },
+    {
+      "cycle": 10.0,
+      "map": "mine",
+      "ms": 321.079
+    },
+    {
+      "cycle": 11.0,
+      "map": "greystone_runtime",
+      "ms": 322.855
+    },
+    {
+      "cycle": 11.0,
+      "map": "forest",
+      "ms": 337.896
+    },
+    {
+      "cycle": 11.0,
+      "map": "mine",
+      "ms": 320.49
+    },
+    {
+      "cycle": 12.0,
+      "map": "greystone_runtime",
+      "ms": 320.391
+    },
+    {
+      "cycle": 12.0,
+      "map": "forest",
+      "ms": 320.005
+    },
+    {
+      "cycle": 12.0,
+      "map": "mine",
+      "ms": 319.977
+    },
+    {
+      "cycle": 13.0,
+      "map": "greystone_runtime",
+      "ms": 320.375
+    },
+    {
+      "cycle": 13.0,
+      "map": "forest",
+      "ms": 336.298
+    },
+    {
+      "cycle": 13.0,
+      "map": "mine",
+      "ms": 319.134
+    },
+    {
+      "cycle": 14.0,
+      "map": "greystone_runtime",
+      "ms": 320.681
+    },
+    {
+      "cycle": 14.0,
+      "map": "forest",
+      "ms": 319.056
+    },
+    {
+      "cycle": 14.0,
+      "map": "mine",
+      "ms": 319.176
+    },
+    {
+      "cycle": 15.0,
+      "map": "greystone_runtime",
+      "ms": 319.747
+    },
+    {
+      "cycle": 15.0,
+      "map": "forest",
+      "ms": 336.232
+    },
+    {
+      "cycle": 15.0,
+      "map": "mine",
+      "ms": 318.234
+    },
+    {
+      "cycle": 16.0,
+      "map": "greystone_runtime",
+      "ms": 306.165
+    },
+    {
+      "cycle": 16.0,
+      "map": "forest",
+      "ms": 318.487
+    },
+    {
+      "cycle": 16.0,
+      "map": "mine",
+      "ms": 318.516
+    },
+    {
+      "cycle": 17.0,
+      "map": "greystone_runtime",
+      "ms": 302.191
+    },
+    {
+      "cycle": 17.0,
+      "map": "forest",
+      "ms": 335.284
+    },
+    {
+      "cycle": 17.0,
+      "map": "mine",
+      "ms": 317.63
+    },
+    {
+      "cycle": 18.0,
+      "map": "greystone_runtime",
+      "ms": 317.906
+    },
+    {
+      "cycle": 18.0,
+      "map": "forest",
+      "ms": 317.799
+    },
+    {
+      "cycle": 18.0,
+      "map": "mine",
+      "ms": 318.06
+    },
+    {
+      "cycle": 19.0,
+      "map": "greystone_runtime",
+      "ms": 323.338
+    },
+    {
+      "cycle": 19.0,
+      "map": "forest",
+      "ms": 318.158
+    },
+    {
+      "cycle": 19.0,
+      "map": "mine",
+      "ms": 317.497
+    },
+    {
+      "cycle": 20.0,
+      "map": "greystone_runtime",
+      "ms": 319.403
+    },
+    {
+      "cycle": 20.0,
+      "map": "forest",
+      "ms": 317.884
+    },
+    {
+      "cycle": 20.0,
+      "map": "mine",
+      "ms": 314.23
+    },
+    {
+      "cycle": 21.0,
+      "map": "greystone_runtime",
+      "ms": 319.146
+    },
+    {
+      "cycle": 21.0,
+      "map": "forest",
+      "ms": 316.047
+    },
+    {
+      "cycle": 21.0,
+      "map": "mine",
+      "ms": 317.388
+    },
+    {
+      "cycle": 22.0,
+      "map": "greystone_runtime",
+      "ms": 318.941
+    },
+    {
+      "cycle": 22.0,
+      "map": "forest",
+      "ms": 317.487
+    },
+    {
+      "cycle": 22.0,
+      "map": "mine",
+      "ms": 315.887
+    },
+    {
+      "cycle": 23.0,
+      "map": "greystone_runtime",
+      "ms": 318.414
+    },
+    {
+      "cycle": 23.0,
+      "map": "forest",
+      "ms": 317.15
+    },
+    {
+      "cycle": 23.0,
+      "map": "mine",
+      "ms": 317.028
+    },
+    {
+      "cycle": 24.0,
+      "map": "greystone_runtime",
+      "ms": 318.957
+    },
+    {
+      "cycle": 24.0,
+      "map": "forest",
+      "ms": 315.072
+    },
+    {
+      "cycle": 24.0,
+      "map": "mine",
+      "ms": 302.766
+    },
+    {
+      "cycle": 25.0,
+      "map": "greystone_runtime",
+      "ms": 302.278
+    },
+    {
+      "cycle": 25.0,
+      "map": "forest",
+      "ms": 332.882
+    },
+    {
+      "cycle": 25.0,
+      "map": "mine",
+      "ms": 315.353
+    },
+    {
+      "cycle": 26.0,
+      "map": "greystone_runtime",
+      "ms": 307.24
+    },
+    {
+      "cycle": 26.0,
+      "map": "forest",
+      "ms": 314.712
+    },
+    {
+      "cycle": 26.0,
+      "map": "mine",
+      "ms": 315.31
+    },
+    {
+      "cycle": 27.0,
+      "map": "greystone_runtime",
+      "ms": 321.523
+    },
+    {
+      "cycle": 27.0,
+      "map": "forest",
+      "ms": 313.437
+    },
+    {
+      "cycle": 27.0,
+      "map": "mine",
+      "ms": 314.888
+    }
+  ],
+  "version": "0.6.1-greystone-blender-rc1",
+  "village_views": [
+    "plaza",
+    "bridge_water",
+    "dock_water"
+  ]
+}

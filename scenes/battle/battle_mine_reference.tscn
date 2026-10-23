@@ -1,0 +1,18 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://assets/models/mine_reference/core_cavern.glb" id="Core"]
+[ext_resource type="Script" path="res://scripts/world/mine_reference_geometry.gd" id="Surface"]
+[node name="MineReferenceBattle" type="Node3D"]
+script = ExtResource("Surface")
+build_collisions = false
+[node name="Core" parent="." instance=ExtResource("Core")]
+position = Vector3(-38,0,-41)
+[node name="CrystalLight" type="OmniLight3D" parent="."]
+position = Vector3(4,4,-5)
+light_color = Color(0.12,0.55,1,1)
+light_energy = 2.3
+omni_range = 12.0
+[node name="TorchLight" type="OmniLight3D" parent="."]
+position = Vector3(-4,4,2)
+light_color = Color(1,0.51,0.16,1)
+light_energy = 1.5
+omni_range = 10.0

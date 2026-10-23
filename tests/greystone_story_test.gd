@@ -6,6 +6,9 @@ func _create_game() -> ExplorationGame:
 func _village_position(point: Vector3) -> Vector3:
 	return point
 
+func _mine_position(point: Vector3) -> Vector3:
+	return point
+
 func _attach_game(instance: ExplorationGame) -> void:
 	root.add_child(instance)
 
@@ -90,7 +93,7 @@ func _run() -> void:
 	await _tap(KEY_E)
 	await _wait_travel()
 	_check(game.travel.current_map.map_id == &"mine", "New mine gate opens after tutorial")
-	await _place(Vector3(-9.5,.1,0))
+	await _place(_mine_position(Vector3(-9.5,.1,0)))
 	await _tap(KEY_E)
 	await _wait_travel()
 	_check(game.travel.current_map.map_id == &"forest", "Mine returns via forest")
@@ -99,7 +102,7 @@ func _run() -> void:
 	await _wait_travel()
 	_check(game.travel.current_map.map_id == &"mine", "Forest mine entrance traversed with E")
 	await _capture("g063-01-mine-entrance")
-	await _place(Vector3(-6.6, 0.1, 0))
+	await _place(_mine_position(Vector3(-6.6, 0.1, 0)))
 	_key(KEY_D, true)
 	_key(KEY_S, true)
 	await create_timer(0.5).timeout
@@ -141,7 +144,7 @@ func _run() -> void:
 	_check(game.player.global_position.distance_to(Vector3(snapshot.location.x, snapshot.location.y, snapshot.location.z)) < 0.03, "Position and map restored")
 	_check(game.inventory.count(&"potion") == int(snapshot.inventory.counts.potion), "Loading inside E005 area does not replace consumed potion")
 	_check(not game.dialogue.active and game.flags.has_flag(&"e005_done"), "Load does not replay completed events")
-	await _place(Vector3(2.7, 0.1, 0))
+	await _place(_mine_position(Vector3(2.7, 0.1, 0)))
 	await _tap(KEY_E)
 	_check(game.runner.active_event == &"E006" and game.ui.speaker.text.begins_with("神秘聲音"), "Crystal starts E006 without revealing Aster")
 	await _finish_dialogue()
@@ -175,7 +178,7 @@ func _run() -> void:
 	_check(game.player.position.distance_to(battle_return)<.15,"Boss returns to original position")
 	_check(game.flags.has_flag(&"e007_done") and game.party.member(&"ren").experience == 100, "B002 return completes event and total 100 EXP")
 	_check(not game.saves.pending, "Battle pending save commits after result acknowledgment")
-	await _place(Vector3(-9.5, 0.1, 0))
+	await _place(_mine_position(Vector3(-9.5, 0.1, 0)))
 	await _tap(KEY_E)
 	await _wait_travel()
 	_check(game.travel.current_map.map_id == &"forest", "Mine exit returns to forest")

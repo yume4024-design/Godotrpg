@@ -1,5 +1,11 @@
 # 序章存檔格式 v1
 
+## 2026-10-24 礦坑位置版4（獨立候選）
+
+新`mine_reference_integration.tscn`使用`user://crystal_mine_reference_slot_01.json`，Schema仍3／CH00-G06.4。只有此設定`mine_layout_version=4`接受礦坑位置4；既有入口預設3，森林位置版仍3、村莊仍依各入口2／3。新版礦坑粗界x/z±56、y -0.1～7.2m，之後仍強制實心膠囊與地板驗證，不能直接接受水中或岩內。
+
+舊位置1／3先在原始礦坑／expanded礦坑獨立物理世界驗證，再映射(-44.5,0.1,28)及版本4，再驗新圖。原件只讀，保存新槽；角色、裝備、經濟、旗標、任務及收據保留，v1依既有契約加入零交易帳本。歷史schema2不能虛報位置4，舊設定拒絕未來版，不提供反向降版。[實測](MINE_REFERENCE_REPORT.md)。
+
 ## 2026-10-23 Blender 灰石村候選位置版
 
 獨立入口 `scenes/main/greystone_blender_integration.tscn` 使用

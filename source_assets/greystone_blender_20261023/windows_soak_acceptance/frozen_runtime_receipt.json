@@ -1,0 +1,9 @@
+{
+  "runtime_entries": 935,
+  "frozen_qa_sha256": "B6FD539383C5E5FDC2FFD0D2E5FE41429342E365D490599EE749FBDF55C13E28",
+  "raw_qa_sha256": "BD084DF330B2A105AEEBE56EDAEB0690CD46F18CEC6FD33EE5CE0826B639F6A2",
+  "candidate_sha256": "1A7448B726327C0553510DB30FBA4A84C5A72143709A198235ED998FF59D19F8",
+  "freeze_tool_sha256": "9FF9D38336038BAA9151825512D91B74F0AFDE9609B389FB1A09D90326DC5B21",
+  "candidate": "builds/greystone-blender/rc1-63d05f5/candidate/ProjectCrystal.pck",
+  "method": "QA-only PCK: all 935 delivered runtime entries pinned byte-for-byte; exported QA scripts and feature settings retained"
+}

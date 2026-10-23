@@ -1,0 +1,4 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/main/blender_windows_candidate.tscn" id="Base"]
+[node name="MineReferenceCandidate" instance=ExtResource("Base")]
+game_scene_path = "res://scenes/main/mine_reference_integration.tscn"

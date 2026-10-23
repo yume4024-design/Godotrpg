@@ -1,5 +1,11 @@
 # 變更紀錄
 
+## 2026-10-24 — 場景Skill與礦坑內部參考重建
+
+新增crystal-scene-builder Skill、完整Blender八區礦坑、分區與可重用機械GLB、岩土／木材／動態水體與火把表面，接回既有序章及核心洞窟戰鬥背景。以獨立入口／存檔槽及mine layout4驗證與遷移保留舊進度；角色、數值、旗標和Schema不變。圖形動線55／0、遷移59／0、圖形序章68／0、原16組回歸通過，Windows包驗收中。[報告](MINE_REFERENCE_REPORT.md)。人工驗證依最新指示暫停。
+
+上一村莊RC1完成1812.205秒自動圖形長測1548／0及新程序97／0；初始化／服務尖峰保留，不宣稱每幀60FPS。[結果](BLENDER_WINDOWS_STABILITY_REPORT.md)。
+
 ## 2026-10-24 — 灰石村 Blender Windows RC1 固定包
 
 新增獨立 Windows Candidate／QA presets、沿用載入邊界及延後關閉的專用入口、隔離 profile 啟動器與匯出／驗收工具。固定來源包原生序章116／0、另一程序重啟22／0、普通啟動關閉通過，935共用runtime SHA一致；保留日誌緩衝／CIM驗收工具失敗，不抵算成遊戲或新長測通過。正式v0.6.1／舊RC4保留，實體輸入及新長測仍待。[驗收報告](BLENDER_WINDOWS_RC1_REPORT.md)。

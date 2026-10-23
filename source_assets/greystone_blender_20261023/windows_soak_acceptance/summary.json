@@ -1,0 +1,370 @@
+{
+  "soak_seconds": 1812.204976,
+  "total_seconds": 1847.872946,
+  "process_seconds": 1850.7096132,
+  "checks": 1548.0,
+  "failures": 0.0,
+  "cycles_started": 27.0,
+  "transitions": {
+    "count": 81,
+    "mean": 320.62706172839506,
+    "p95": 336.298,
+    "p99": 340.229,
+    "max": 340.229,
+    "min": 302.191
+  },
+  "operations": {
+    "battle_launch_to_input": {
+      "count": 54,
+      "mean": 559.3020185185185,
+      "p95": 1133.074,
+      "p99": 1133.14,
+      "max": 1133.14,
+      "min": 10.306
+    },
+    "save_validation_and_apply": {
+      "count": 162,
+      "mean": 362.1819567901235,
+      "p95": 374.613,
+      "p99": 380.004,
+      "max": 394.654,
+      "min": 326.64
+    }
+  },
+  "all_frames": {
+    "count": 109584,
+    "mean": 16.857792195941013,
+    "p95": 16.775,
+    "p99": 17.019,
+    "max": 6853.174,
+    "min": 1.199
+  },
+  "raw_phases": {
+    "prologue": {
+      "count": 1063,
+      "mean": 33.54375352775165,
+      "p95": 17.431,
+      "p99": 180.196,
+      "max": 6853.174,
+      "min": 1.314
+    },
+    "transition": {
+      "count": 1622,
+      "mean": 16.69858384710234,
+      "p95": 17.921,
+      "p99": 34.703,
+      "max": 50.995,
+      "min": 1.433
+    },
+    "greystone_runtime": {
+      "count": 33693,
+      "mean": 16.674718339120886,
+      "p95": 16.76,
+      "p99": 16.923,
+      "max": 66.393,
+      "min": 1.406
+    },
+    "npc_commerce": {
+      "count": 1882,
+      "mean": 17.411430924548352,
+      "p95": 17.316,
+      "p99": 48.794,
+      "max": 229.659,
+      "min": 1.424
+    },
+    "forest": {
+      "count": 33750,
+      "mean": 16.661386074074073,
+      "p95": 16.775,
+      "p99": 16.973,
+      "max": 19.927,
+      "min": 12.856
+    },
+    "battle": {
+      "count": 3884,
+      "mean": 17.087936405767252,
+      "p95": 16.822,
+      "p99": 19.175,
+      "max": 188.377,
+      "min": 1.199
+    },
+    "mine": {
+      "count": 33690,
+      "mean": 16.661361353517364,
+      "p95": 16.762,
+      "p99": 16.939,
+      "max": 22.703,
+      "min": 12.264
+    }
+  },
+  "all_spike_count_over_33ms": 173,
+  "top_20_spikes": [
+    {
+      "elapsed_seconds": "6.919734",
+      "phase": "prologue",
+      "frame_ms": 6853.174,
+      "draw_calls": "5",
+      "video_memory_bytes": "1570678157",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "13.909012",
+      "phase": "prologue",
+      "frame_ms": 4473.381,
+      "draw_calls": "352",
+      "video_memory_bytes": "1618227587",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "9.435629",
+      "phase": "prologue",
+      "frame_ms": 2515.893,
+      "draw_calls": "59",
+      "video_memory_bytes": "1611694677",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "21.599377",
+      "phase": "prologue",
+      "frame_ms": 1263.618,
+      "draw_calls": "176",
+      "video_memory_bytes": "1667886091",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "14.697100",
+      "phase": "prologue",
+      "frame_ms": 788.085,
+      "draw_calls": "417",
+      "video_memory_bytes": "1618227587",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "17.996835",
+      "phase": "prologue",
+      "frame_ms": 761.604,
+      "draw_calls": "370",
+      "video_memory_bytes": "1664469281",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "1734.719837",
+      "phase": "npc_commerce",
+      "frame_ms": 229.659,
+      "draw_calls": "305",
+      "video_memory_bytes": "1670008527",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "17.040911",
+      "phase": "prologue",
+      "frame_ms": 227.522,
+      "draw_calls": "588",
+      "video_memory_bytes": "1661912191",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "1399.264330",
+      "phase": "npc_commerce",
+      "frame_ms": 224.161,
+      "draw_calls": "305",
+      "video_memory_bytes": "1670008527",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "20.297433",
+      "phase": "prologue",
+      "frame_ms": 219.73,
+      "draw_calls": "398",
+      "video_memory_bytes": "1667680267",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "728.054543",
+      "phase": "npc_commerce",
+      "frame_ms": 216.185,
+      "draw_calls": "305",
+      "video_memory_bytes": "1670008527",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "392.834225",
+      "phase": "npc_commerce",
+      "frame_ms": 214.211,
+      "draw_calls": "305",
+      "video_memory_bytes": "1670008527",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "57.043557",
+      "phase": "npc_commerce",
+      "frame_ms": 211.975,
+      "draw_calls": "327",
+      "video_memory_bytes": "1669891145",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "1063.857953",
+      "phase": "npc_commerce",
+      "frame_ms": 209.318,
+      "draw_calls": "327",
+      "video_memory_bytes": "1670008527",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "19.076071",
+      "phase": "prologue",
+      "frame_ms": 191.766,
+      "draw_calls": "356",
+      "video_memory_bytes": "1668158717",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "1443.311808",
+      "phase": "battle",
+      "frame_ms": 188.377,
+      "draw_calls": "175",
+      "video_memory_bytes": "1669736911",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "1779.112220",
+      "phase": "battle",
+      "frame_ms": 186.272,
+      "draw_calls": "175",
+      "video_memory_bytes": "1669736911",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "1757.134649",
+      "phase": "battle",
+      "frame_ms": 185.386,
+      "draw_calls": "370",
+      "video_memory_bytes": "1670608027",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "25.127424",
+      "phase": "prologue",
+      "frame_ms": 181.33,
+      "draw_calls": "258",
+      "video_memory_bytes": "1668511991",
+      "engine_static_bytes": ""
+    },
+    {
+      "elapsed_seconds": "101.392801",
+      "phase": "battle",
+      "frame_ms": 181.018,
+      "draw_calls": "175",
+      "video_memory_bytes": "1669736911",
+      "engine_static_bytes": ""
+    }
+  ],
+  "video_memory_bytes": {
+    "count": 109584,
+    "mean": 1669627798.2516608,
+    "p95": 1670008527,
+    "p99": 1670008527,
+    "max": 1673728851,
+    "min": 14690935
+  },
+  "process_memory": {
+    "working_set_bytes": {
+      "peak": 913223680,
+      "first_60_mean": 888001331.2,
+      "last_60_mean": 661893256.5333333
+    },
+    "private_bytes": {
+      "peak": 3106160640,
+      "first_60_mean": 3065896004.266667,
+      "last_60_mean": 3062060851.2
+    },
+    "peak_working_set_bytes": {
+      "peak": 937390080,
+      "first_60_mean": 937390080,
+      "last_60_mean": 937390080
+    }
+  },
+  "checkpoints": {
+    "greystone_runtime": {
+      "count": 27,
+      "first": {
+        "engine_bytes": null,
+        "map": "greystone_runtime",
+        "nodes": 3477.0,
+        "objects": 10066.0,
+        "orphans": null,
+        "seconds": 22.419973
+      },
+      "last": {
+        "engine_bytes": null,
+        "map": "greystone_runtime",
+        "nodes": 3477.0,
+        "objects": 10066.0,
+        "orphans": null,
+        "seconds": 1767.428456
+      },
+      "node_counts": [
+        3477.0
+      ],
+      "object_counts": [
+        10066.0
+      ]
+    },
+    "forest": {
+      "count": 27,
+      "first": {
+        "engine_bytes": null,
+        "map": "forest",
+        "nodes": 833.0,
+        "objects": 6090.0,
+        "orphans": null,
+        "seconds": 44.378245
+      },
+      "last": {
+        "engine_bytes": null,
+        "map": "forest",
+        "nodes": 833.0,
+        "objects": 6090.0,
+        "orphans": null,
+        "seconds": 1789.244131
+      },
+      "node_counts": [
+        833.0
+      ],
+      "object_counts": [
+        6090.0
+      ]
+    },
+    "mine": {
+      "count": 27,
+      "first": {
+        "engine_bytes": null,
+        "map": "mine",
+        "nodes": 475.0,
+        "objects": 5735.0,
+        "orphans": null,
+        "seconds": 67.357643
+      },
+      "last": {
+        "engine_bytes": null,
+        "map": "mine",
+        "nodes": 475.0,
+        "objects": 5735.0,
+        "orphans": null,
+        "seconds": 1812.17656
+      },
+      "node_counts": [
+        475.0
+      ],
+      "object_counts": [
+        5735.0
+      ]
+    }
+  },
+  "metrics_sha256": "57414f71a2b6c568469b5c67b3776d51a701791dbaf7c91f9e88ad659d244945",
+  "raw_csv_sha256": "5cc4a12c94b435d350e118a7777a615d43ff9e1e2284f00e3acf7674c3e83501",
+  "physical_input_verified": false,
+  "android_verified": false,
+  "method": "Native graphical automated QA, CPU frame intervals including cap/waits and diagnostics; not human playthrough or GPU timing. Release engine static memory unavailable is null."
+}

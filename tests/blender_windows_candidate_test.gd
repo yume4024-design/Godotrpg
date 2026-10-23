@@ -7,6 +7,15 @@ var boot: WindowsCandidateBootstrap
 var held: Dictionary[int, bool] = {}
 const MOVEMENT: Dictionary[int, StringName] = {KEY_A:&"move_left",KEY_D:&"move_right",KEY_W:&"move_forward",KEY_S:&"move_back"}
 
+func _qa_feature() -> bool:
+	return OS.has_feature("blender_windows_qa")
+
+func _expected_version() -> String:
+	return VERSION
+
+func _boot_path() -> String:
+	return "res://scenes/main/blender_windows_candidate.tscn"
+
 func _initialize() -> void:
 	super._initialize()
 	slot = OUTPUT + "story.json"
@@ -33,14 +42,14 @@ func _attach_game(instance: ExplorationGame) -> void:
 func _run() -> void:
 	Engine.max_fps = 60
 	DirAccess.make_dir_recursive_absolute(OUTPUT + "evidence")
-	_check(OS.has_feature("blender_windows_qa") and not OS.is_debug_build(), "Native release template with isolated Blender QA feature")
+	_check(_qa_feature() and not OS.is_debug_build(), "Native release template with isolated scene QA feature")
 	_check(DisplayServer.get_name() != "headless", "Actual graphical Windows process")
-	_check(ProjectSettings.get_setting("application/config/version") == "0.6.1" and ProjectSettings.get_setting_with_override("application/config/version") == VERSION, "Candidate version preserves formal base version")
+	_check(ProjectSettings.get_setting("application/config/version") == "0.6.1" and ProjectSettings.get_setting_with_override("application/config/version") == _expected_version(), "Candidate version preserves formal base version")
 	if failures > 0: quit(1); return
 	if "--reload" not in OS.get_cmdline_user_args():
 		for suffix: String in ["", ".bak", ".tmp"]:
 			if FileAccess.file_exists(slot + suffix): DirAccess.remove_absolute(slot + suffix)
-	boot = load("res://scenes/main/blender_windows_candidate.tscn").instantiate()
+	boot = load(_boot_path()).instantiate()
 	boot.game_created.connect(func(instance: Node3D) -> void: (instance.get_node("Saves") as SaveManager).slot_path = slot)
 	root.add_child(boot)
 	var deadline: int = Time.get_ticks_usec() + 50000000

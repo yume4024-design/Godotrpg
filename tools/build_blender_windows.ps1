@@ -3,6 +3,7 @@ param(
     [Parameter(Mandatory=$true)][string]$SourceRoot,
     [Parameter(Mandatory=$true)][string]$BuildRoot,
     [ValidateSet('candidate','qa','qa-soak')][string[]]$Roles=@('candidate','qa'),
+    [ValidateSet('Blender','Mine')][string]$CandidateFamily='Blender',
     [string]$GodotPath='D:/Godot_v4.7.2-stable_win64.exe/Godot_v4.7.2-stable_win64_console.exe'
 )
 $ErrorActionPreference='Stop'
@@ -38,16 +39,22 @@ try {
     foreach ($role in $Roles) {
         $folder=Join-Path $BuildRoot $role
         New-Item -ItemType Directory -Force $folder | Out-Null
-        $preset=switch ($role) { 'candidate' { 'Windows Blender Candidate' } 'qa' { 'Windows Blender QA' } 'qa-soak' { 'Windows Blender Soak QA' } }
+        if ($CandidateFamily -eq 'Mine') {
+            if ($role -eq 'qa-soak') { throw 'Mine has no endurance QA preset; do not reuse village endurance evidence.' }
+            $preset=if ($role -eq 'candidate') { 'Windows Mine Candidate' } else { 'Windows Mine QA' }
+        } else { $preset=switch ($role) { 'candidate' { 'Windows Blender Candidate' } 'qa' { 'Windows Blender QA' } 'qa-soak' { 'Windows Blender Soak QA' } } }
         Invoke-Engine ('export-'+$role) @('--headless','--path',$SourceRoot,'--export-release',$preset,(Join-Path $folder 'ProjectCrystal.exe'))
         foreach ($name in @('ASSET_CREDITS.md','GODOT_LICENSES.txt')) { Copy-Item -LiteralPath (Join-Path $SourceRoot ('docs/'+$name)) -Destination $folder }
-        if ($role -eq 'candidate') { Copy-Item -LiteralPath (Join-Path $SourceRoot 'tools/start_blender_village.cmd') -Destination $folder }
+        if ($role -eq 'candidate') {
+            $launcher=if ($CandidateFamily -eq 'Mine') { 'tools/start_mine_reference.cmd' } else { 'tools/start_blender_village.cmd' }
+            Copy-Item -LiteralPath (Join-Path $SourceRoot $launcher) -Destination $folder
+        }
         Get-ChildItem -LiteralPath $folder -File | ForEach-Object { [pscustomobject]@{file=$_.Name;bytes=$_.Length;sha256=(Get-FileHash -LiteralPath $_.FullName).Hash} } | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $folder 'SHA256.json') -Encoding utf8
         $exported[$role.Replace('-','_')]=Join-Path $folder 'ProjectCrystal.exe'
     }
     $unexpected=@(git -c core.safecrlf=false -C $SourceRoot diff --name-only | Where-Object { $_ -notlike '*.import' })
     if ($unexpected.Count) { throw ('Export modified runtime source: '+($unexpected -join ', ')) }
-    $receipt=[ordered]@{source_commit=$commit;source_root=$SourceRoot;audio_bus_restored_to_original=$busNormalized;generated_import_metadata=@(git -c core.safecrlf=false -C $SourceRoot diff --name-only);engine=(& $GodotPath --version)}
+    $receipt=[ordered]@{source_commit=$commit;source_root=$SourceRoot;candidate_family=$CandidateFamily;audio_bus_restored_to_original=$busNormalized;generated_import_metadata=@(git -c core.safecrlf=false -C $SourceRoot diff --name-only);engine=(& $GodotPath --version)}
     foreach ($key in $exported.Keys) { $receipt[$key]=$exported[$key] }
     $receipt | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $BuildRoot 'build_receipt.json') -Encoding utf8
     Write-Output ('BLENDER_WINDOWS_BUILD='+$BuildRoot)

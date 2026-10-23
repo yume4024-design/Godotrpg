@@ -1,0 +1,5 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/battle/battle_arena.tscn" id="Base"]
+[ext_resource type="PackedScene" path="res://scenes/battle/battle_mine_reference.tscn" id="Mine"]
+[node name="BattleArena" instance=ExtResource("Base")]
+mine_backdrop = ExtResource("Mine")

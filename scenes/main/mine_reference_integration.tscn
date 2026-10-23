@@ -1,0 +1,11 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/main/greystone_blender_integration.tscn" id="Base"]
+[ext_resource type="PackedScene" path="res://scenes/world/mine_reference/mine.tscn" id="Mine"]
+[ext_resource type="PackedScene" path="res://scenes/battle/mine_reference_arena.tscn" id="Arena"]
+[node name="MineReferenceIntegration" instance=ExtResource("Base")]
+mine_layout_version = 4
+mine_scene = ExtResource("Mine")
+[node name="Saves" parent="."]
+slot_path = "user://crystal_mine_reference_slot_01.json"
+[node name="Battles" parent="."]
+battle_scene = ExtResource("Arena")

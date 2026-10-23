@@ -1,0 +1,36 @@
+{
+  "layout_version": 4,
+  "map_id": "mine",
+  "reference": "docs/references/mine_interior_reference.png",
+  "extent": [56, 56],
+  "zones": [
+    {"id":"entrance_camp","label":"入口營地","bounds":[-48,-24,22,42],"height":0},
+    {"id":"rail_workings","label":"礦車軌道區","bounds":[-48,-24,-16,4],"height":3},
+    {"id":"bridge_junction","label":"木橋岔路","bounds":[20,30,-4,6],"height":3},
+    {"id":"crystal_workings","label":"水晶採掘區","bounds":[-36,4,-42,-26],"height":7},
+    {"id":"storage","label":"儲物區","bounds":[20,44,-30,-12],"height":7},
+    {"id":"waterway","label":"地下水道","bounds":[20,44,12,30],"height":0},
+    {"id":"collapse","label":"危險塌方區","bounds":[-8,12,26,44],"height":0},
+    {"id":"core_cavern","label":"深處核心洞窟","bounds":[24,50,34,50],"height":0}
+  ],
+  "links": [
+    {"id":"camp_stairs","a":[-36,0,22],"b":[-36,3,4],"width":5,"kind":"stairs"},
+    {"id":"west_high_stairs","a":[-32,3,-16],"b":[-32,7,-26],"width":5,"kind":"stairs"},
+    {"id":"cross_bridge","a":[-24,3,0],"b":[24,3,0],"width":5,"kind":"bridge"},
+    {"id":"north_bridge","a":[-4,3,20],"b":[-4,3,-12],"width":5,"kind":"bridge"},
+    {"id":"north_stairs","a":[-4,3,-12],"b":[-4,7,-26],"width":5,"kind":"stairs"},
+    {"id":"upper_gallery","a":[4,7,-28],"b":[20,7,-28],"width":5,"kind":"bridge"},
+    {"id":"storage_stairs","a":[25,3,-4],"b":[25,7,-12],"width":5,"kind":"stairs"},
+    {"id":"water_stairs","a":[25,3,6],"b":[25,0,12],"width":5,"kind":"stairs"},
+    {"id":"south_stairs","a":[-4,3,20],"b":[-4,0,26],"width":5,"kind":"stairs"},
+    {"id":"camp_danger_bridge","a":[-24,0,32],"b":[-8,0,32],"width":5,"kind":"bridge"},
+    {"id":"danger_core_bridge","a":[12,0,36],"b":[24,0,36],"width":5,"kind":"bridge"},
+    {"id":"water_core_bridge","a":[34,0,30],"b":[34,0,34],"width":5,"kind":"bridge"}
+  ],
+  "route": [[-44.5,0,28],[-36,0,28],[-36,0,22],[-36,3,4],[-32,3,0],[-32,3,-16],[-32,7,-26],[-32,7,-32],[-4,7,-32],[-4,7,-28],[4,7,-28],[20,7,-28],[25,7,-24],[25,7,-12],[25,3,-4],[25,3,6],[25,0,12],[34,0,20],[34,0,30],[34,0,34],[36,0,39],[30,0,36],[24,0,36],[12,0,36],[0,0,36],[-4,0,32],[-8,0,32],[-24,0,32],[-36,0,32],[-44.5,0,28]],
+  "cross_route": [[-32,3,0],[-24,3,0],[-4,3,0],[20,3,0],[25,3,0]],
+  "north_route": [[-4,0,32],[-4,0,26],[-4,3,20],[-4,3,0],[-4,3,-12],[-4,7,-26],[-4,7,-32]],
+  "story": {"entrance":[-44.5,0.1,28],"exit":[-46,0,28],"inner":[-37,0,28],"inner_radius":6.5,"crystal":[38,0,39],"boss":[36,0,39]},
+  "lights": [[-43,3,31],[-43,6,-10],[-29,6,-12],[-29,10,-36],[-2,10,-37],[29,10,-26],[39,10,-18],[28,3,22],[-2,3,38],[43,4,45]],
+  "water": [{"name":"CentralChannel","bounds":[4,17,-38,44],"height":-7},{"name":"UndergroundPool","bounds":[15,51,5,33],"height":-5.5}]
+}

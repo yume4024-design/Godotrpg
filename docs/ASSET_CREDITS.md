@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-24 — 礦坑內部參考場景
+
+使用者提供`docs/references/mine_interior_reference.png`作構圖與模組設計參考，未把概念圖當遊戲貼圖。新岩層、橋、鐵軌、礦車、吊籠、營帳與造景由本專案Blender Python製作，來源`source_assets/mine_reference_20261024/mine_reference_master.blend`；重用G04 crate／barrel／crystal_blue及ENV02 mine_support_frame，沿用原作者與授權紀錄，來源SHA列於`assets/models/mine_reference/manifest.json`。本輪未下載第三方素材或使用付費API；岩土／木紋／水流／火把為本專案共享Shader。[範圍與檢查](MINE_REFERENCE_REPORT.md)。
+
 ## 2026-10-24 — 灰石村程序表面與水體
 
 本專案原創 GDScript／Godot shader 與 Blender 程序節點製作土粒、草色、礦物紋理、波紋及水深泡沫；未下載第三方貼圖、模型、外掛或使用付費服務。沿用既有灰石村參考、模型與授權紀錄；兩片水底為原水面網格的純視覺衍生。來源配方、測試與限制見[材質報告](GREYSTONE_SURFACE_REPORT.md)。
