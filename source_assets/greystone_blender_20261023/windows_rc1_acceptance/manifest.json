@@ -1,0 +1,133 @@
+{
+  "base_commit": "63d05f5c13c09531ba7a773b253e449828218e3a",
+  "candidate": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\ProjectCrystal.exe",
+  "qa": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\qa\\ProjectCrystal.exe",
+  "profile": "D:\\RPGGAME\\artifacts\\blender_windows\\20261024-003525\\profile",
+  "results": [
+    {
+      "mode": "prologue",
+      "checks": 116,
+      "failures": 0,
+      "seconds": null,
+      "timing_note": "Initial runner stopped at CIM launcher check after both QA processes passed; per-process stopwatch duration was not persisted. Native result files and logs retained.",
+      "log": "D:\\RPGGAME\\artifacts\\blender_windows\\20261024-003525\\prologue.log"
+    },
+    {
+      "mode": "restart",
+      "checks": 22,
+      "failures": 0,
+      "seconds": null,
+      "timing_note": "Initial runner stopped at CIM launcher check after both QA processes passed; per-process stopwatch duration was not persisted. Native result files and logs retained.",
+      "log": "D:\\RPGGAME\\artifacts\\blender_windows\\20261024-003525\\restart.log"
+    }
+  ],
+  "required_resources": [
+    "res://scenes/main/blender_windows_candidate.tscn",
+    "res://scenes/main/greystone_blender_integration.tscn",
+    "res://scenes/world/greystone_blender_master.tscn",
+    "res://assets/models/greystone/blender_master/water.glb",
+    "res://assets/shaders/greystone/water.gdshader",
+    "res://assets/shaders/greystone/ground.gdshader",
+    "res://assets/shaders/greystone/rock.gdshader"
+  ],
+  "physical_input_acceptance": false,
+  "endurance_acceptance": false,
+  "launcher_failed_attempts": [
+    {
+      "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+      "launcher_pid": 35612,
+      "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+      "physical_input": false,
+      "passed": false,
+      "error": "用戶端無法存取 CIM 資源。"
+    },
+    {
+      "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+      "launcher_pid": 27268,
+      "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+      "physical_input": false,
+      "passed": false,
+      "log": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-14709-15253.log",
+      "game_pid": 10692,
+      "error": "Exception calling \"ReadAllText\" with \"1\" argument(s): \"The process cannot access the file 'D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-14709-15253.log' because it is being used by another process.\""
+    },
+    {
+      "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+      "launcher_pid": 6068,
+      "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+      "physical_input": false,
+      "passed": false,
+      "log": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-15019-20543.log",
+      "game_pid": 28772,
+      "error": "Game did not reach its ready marker within the startup budget"
+    }
+  ],
+  "normal_launch": {
+    "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+    "launcher_pid": 20132,
+    "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+    "physical_input": false,
+    "passed": true,
+    "log": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-15516-15901.log",
+    "game_pid": 23440,
+    "window_handle": 3148304,
+    "window_title": "失落星核 — Project Crystal",
+    "responding": true,
+    "observed_seconds": 12.1249257,
+    "game_exit_code": 0,
+    "launcher_exit_code": 0,
+    "stdout": "Starting Project Crystal - Greystone Village...\r\n",
+    "stderr": "",
+    "ready_marker": "BLENDER_WINDOWS_READY",
+    "ready_confirmation": "Flushed log after normal close; no live marker timestamp claimed",
+    "exe_sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+    "pck_sha256": "1A7448B726327C0553510DB30FBA4A84C5A72143709A198235ED998FF59D19F8"
+  },
+  "launcher_status": "passed",
+  "package_hashes": {
+    "candidate": {
+      "ASSET_CREDITS.md": {
+        "bytes": 25224,
+        "sha256": "61819bdee3d739bc9ec95e1991c064c6bdbf0e320c7e63b985b6690350d66f37"
+      },
+      "GODOT_LICENSES.txt": {
+        "bytes": 109361,
+        "sha256": "1efe99b58c0972fe1f11e3fccf9dea210845b818b332f8d3781e2c208200f365"
+      },
+      "PLAYTEST_GUIDE.md": {
+        "bytes": 1890,
+        "sha256": "e4a61895ef4300a9dd6ec7dcf1cd4282674363b1f9c3fb9e8551c7ae0ccd719b"
+      },
+      "ProjectCrystal.exe": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      "ProjectCrystal.pck": {
+        "bytes": 319111348,
+        "sha256": "1a7448b726327c0553510db30fba4a84c5a72143709a198235ed998ff59d19f8"
+      },
+      "start_blender_village.cmd": {
+        "bytes": 1332,
+        "sha256": "09735bd1e1ad51be91c97763c1c0deb323eab8ec48360ff2f1cbb2dfc15df90d"
+      }
+    },
+    "qa": {
+      "ASSET_CREDITS.md": {
+        "bytes": 25224,
+        "sha256": "61819bdee3d739bc9ec95e1991c064c6bdbf0e320c7e63b985b6690350d66f37"
+      },
+      "GODOT_LICENSES.txt": {
+        "bytes": 109361,
+        "sha256": "1efe99b58c0972fe1f11e3fccf9dea210845b818b332f8d3781e2c208200f365"
+      },
+      "ProjectCrystal.exe": {
+        "bytes": 109268480,
+        "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+      },
+      "ProjectCrystal.pck": {
+        "bytes": 319634928,
+        "sha256": "b7b15bb2a472e8c63e865323db36b7376bc66761c3503e6933f05bbd42cf0c7f"
+      }
+    }
+  }
+}

@@ -85,4 +85,4 @@ Draw Calls：廣場 478、橋 665、碼頭 658、礦口 292、岩石近景 396�
 [`source_assets/greystone_blender_20261023/surface_acceptance/`](../source_assets/greystone_blender_20261023/surface_acceptance/summary.json)。
 前一輪場景證據仍保留在 `acceptance/`，不將其當成本輪 shader 的測試結果。
 
-下一步：固定這份候選包，進行真實鍵鼠／Xbox 探索與水景視覺覆核，再決定是否重新進行長時間 Windows 驗收。
+後續已建立 [Windows 固定候選與包內驗證](BLENDER_WINDOWS_RC1_REPORT.md)。該包的實體鍵鼠／Xbox 探索與水景覆核、新長時間 Windows 驗收仍待。

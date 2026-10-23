@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-24 新 Blender 灰石村 Windows 固定候選已匯出：`builds/greystone-blender/rc1-63d05f5/candidate/start_blender_village.cmd`。包含地面／岩石紋理及動態水體；原生包內序章116／0＋重啟22／0，實體輸入與新長測仍待。[操作說明](docs/BLENDER_WINDOWS_RC1_GUIDE.md)／[實際結果](docs/BLENDER_WINDOWS_RC1_REPORT.md)。正式v0.6.1／舊RC4保留。
+
 2026-10-18 Windows G08.2 台階／礦坑橫梁修正驗收完成，候選版本 0.6.1-g08-rc2；[遊玩指南](docs/GREYSTONE_G08_GUIDE.md)、[驗收結果與未完成項目](docs/GREYSTONE_G08_REPORT.md)。G08 整體未完成，正式 v0.6.1 保留。
 
 2026-10-17 雷恩／莉雅已改用 ComfyUI Pixal3D 重製模型，見 [重製報告](docs/PIXAL3D_CHARACTER_REPORT.md)。以 `tools/godot.ps1 -Mode PreviewCharacters` 檢視兩人，`-Mode RunG06` 遊玩新版灰石村；正式 v0.6.1 入口與既有匯出保留。

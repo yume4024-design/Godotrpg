@@ -1,0 +1,21 @@
+{
+  "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+  "launcher_pid": 20132,
+  "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+  "physical_input": false,
+  "passed": true,
+  "log": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-15516-15901.log",
+  "game_pid": 23440,
+  "window_handle": 3148304,
+  "window_title": "失落星核 — Project Crystal",
+  "responding": true,
+  "observed_seconds": 12.1249257,
+  "game_exit_code": 0,
+  "launcher_exit_code": 0,
+  "stdout": "Starting Project Crystal - Greystone Village...\r\n",
+  "stderr": "",
+  "ready_marker": "BLENDER_WINDOWS_READY",
+  "ready_confirmation": "Flushed log after normal close; no live marker timestamp claimed",
+  "exe_sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+  "pck_sha256": "1A7448B726327C0553510DB30FBA4A84C5A72143709A198235ED998FF59D19F8"
+}

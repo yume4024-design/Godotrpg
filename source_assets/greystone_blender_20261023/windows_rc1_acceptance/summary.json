@@ -1,0 +1,141 @@
+{
+  "date": "2026-10-24",
+  "source_commit": "63d05f5c13c09531ba7a773b253e449828218e3a",
+  "version": "0.6.1-greystone-blender-rc1",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "renderer": "Windows native OpenGL Compatibility / RTX 3080",
+  "checks": 138,
+  "failures": 0,
+  "results": [
+    {
+      "mode": "prologue",
+      "checks": 116,
+      "failures": 0,
+      "seconds": null,
+      "timing_note": "Initial runner stopped at CIM launcher check after both QA processes passed; per-process stopwatch duration was not persisted. Native result files and logs retained.",
+      "log": "D:\\RPGGAME\\artifacts\\blender_windows\\20261024-003525\\prologue.log"
+    },
+    {
+      "mode": "restart",
+      "checks": 22,
+      "failures": 0,
+      "seconds": null,
+      "timing_note": "Initial runner stopped at CIM launcher check after both QA processes passed; per-process stopwatch duration was not persisted. Native result files and logs retained.",
+      "log": "D:\\RPGGAME\\artifacts\\blender_windows\\20261024-003525\\restart.log"
+    }
+  ],
+  "ordinary_start": {
+    "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+    "launcher_pid": 20132,
+    "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+    "physical_input": false,
+    "passed": true,
+    "log": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-15516-15901.log",
+    "game_pid": 23440,
+    "window_handle": 3148304,
+    "window_title": "失落星核 — Project Crystal",
+    "responding": true,
+    "observed_seconds": 12.1249257,
+    "game_exit_code": 0,
+    "launcher_exit_code": 0,
+    "stdout": "Starting Project Crystal - Greystone Village...\r\n",
+    "stderr": "",
+    "ready_marker": "BLENDER_WINDOWS_READY",
+    "ready_confirmation": "Flushed log after normal close; no live marker timestamp claimed",
+    "exe_sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+    "pck_sha256": "1A7448B726327C0553510DB30FBA4A84C5A72143709A198235ED998FF59D19F8"
+  },
+  "failed_launcher_tool_attempts": [
+    {
+      "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+      "launcher_pid": 35612,
+      "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+      "physical_input": false,
+      "passed": false,
+      "error": "用戶端無法存取 CIM 資源。"
+    },
+    {
+      "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+      "launcher_pid": 27268,
+      "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+      "physical_input": false,
+      "passed": false,
+      "log": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-14709-15253.log",
+      "game_pid": 10692,
+      "error": "Exception calling \"ReadAllText\" with \"1\" argument(s): \"The process cannot access the file 'D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-14709-15253.log' because it is being used by another process.\""
+    },
+    {
+      "launcher": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\start_blender_village.cmd",
+      "launcher_pid": 6068,
+      "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+      "physical_input": false,
+      "passed": false,
+      "log": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\user_test\\play-15019-20543.log",
+      "game_pid": 28772,
+      "error": "Game did not reach its ready marker within the startup budget"
+    }
+  ],
+  "fixtures": {
+    "legacy_v1.json": {
+      "original_sha256": "03b537bc655864953db207251ad0a175e3767d197d8c3c16bab176830fba270a",
+      "copied_sha256": "03b537bc655864953db207251ad0a175e3767d197d8c3c16bab176830fba270a",
+      "original_unchanged": true
+    },
+    "legacy_layout2.json": {
+      "original_sha256": "d8719f04b3438e9f5c97d7e099348382d1f8a022d67d7f62241a5d33a249fa95",
+      "copied_sha256": "d8719f04b3438e9f5c97d7e099348382d1f8a022d67d7f62241a5d33a249fa95",
+      "original_unchanged": true
+    }
+  },
+  "pack_audit": {
+    "candidate_files": 939,
+    "qa_files": 1129,
+    "shared_runtime_hashes_matched": 935,
+    "forbidden": [],
+    "root_references": [],
+    "mismatches": []
+  },
+  "zip": {
+    "file": "builds/greystone-blender/rc1-63d05f5/ProjectCrystal-0.6.1-greystone-blender-rc1-windows-x64.zip",
+    "bytes": 352838676,
+    "sha256": "89f91f66204a3bfe444db58c3933c8528224d9710963ee9e924ef88586a78702",
+    "entries": [
+      "ASSET_CREDITS.md",
+      "GODOT_LICENSES.txt",
+      "PLAYTEST_GUIDE.md",
+      "ProjectCrystal.exe",
+      "ProjectCrystal.pck",
+      "SHA256.json",
+      "start_blender_village.cmd"
+    ],
+    "player_profiles_included": false
+  },
+  "formal_and_rc4_packages_preserved": true,
+  "runtime_overlay": false,
+  "per_process_qa_seconds_recorded": false,
+  "physical_keyboard_xbox_acceptance": false,
+  "new_endurance_acceptance": false,
+  "android_ios_paused": true,
+  "evidence": {
+    ".gitattributes": "e9cfe1991d824178623b6be94e6a04b16f543072d71909767159e11c1b09290d",
+    "bridge_water.webp": "de32819016d9fc518f589b9761627b9378d3747a05c95a321f04bfc1a0c2a0a0",
+    "build_receipt.json": "6317406bbaf703394d1853385bbe54fc363d3f2885dab0a0f801afc8ad6e22c7",
+    "candidate_SHA256.json": "72e1c25346bea5c033857f543a354785b8b195665e5436e5ca7b34c4fd94a45b",
+    "g063-04-guardian-battle.webp": "18d3d8b900444cc8a878e2c7e4c00df8e76ab8a2cc14b81b78a0714e48126c12",
+    "legacy_rc4_pack_audit.json": "6255c9db4c08a410b9288a600bc2f38902900f7bca39e3d11dedf61133c76b22",
+    "manifest.json": "c9aade6c5753f3dfc4d13877b116873801380cf8ae5671b8c385cc6942332e8b",
+    "normal_launch.json": "2bf84179dec83266315a0fe902b76a69404fcb95eae611fe80c4730393475fe8",
+    "package_zip.json": "b20534d9cab48fdd8b74cc3eb8146bd486db869d3e3874bf3b1e16d69ece9ab4",
+    "pack_audit.json": "5988a0458c812b28e2f1c410a7c194f2e7353d86595acc776010fbbcb33362a4",
+    "pack_candidate.json": "bb1faeeb09b595e995a109582478f6e23126e86be38ace2ec9c539efb91c8347",
+    "pack_qa.json": "6f12e6ff502d1ba981a7b0253d1a3c2e35e7bb090cafc32ea2f304688d842c56",
+    "prologue.txt": "ecac0ddc907ac5651903b2b7b1c9d268d2dd248a685042acde322ab68944fdc8",
+    "prologue_result.json": "283b00a19cb5b3e4fcf85e21ae5e19539fd81f571e4280982379923a323d9c2e",
+    "protected_packages.json": "6926f49f013c2298d6a4f67666f1338bed53474b025e502fc6856c5d04c30e7c",
+    "qa_SHA256.json": "5920340b3bdad90d7fa422f3f444af66b8d542d9e0ed9703ba7ff346c67a99cc",
+    "restart.txt": "6c27b364c161f09b78f6e7215e689ef4d80a0936f8470a381e60b37a9d8f7af3",
+    "restart_result.json": "72b52d660f298f269285cce2dab7bbe951d52238a9418d3d7535bf7a160b9ec9",
+    "service_Innkeeper.webp": "0c61bce632542b7d3aa1b8fe39c464ce6d2141cb3cde8d38bfab999b15e4c224",
+    "service_ItemMerchant.webp": "36061aabf9c364844b44760b55993551febae4b4ab16ffdc1688ee4addb40153"
+  }
+}

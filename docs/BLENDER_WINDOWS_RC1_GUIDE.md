@@ -5,7 +5,7 @@
 
 ## 開啟
 
-進入 `builds/greystone-blender/rc1-<來源短SHA>/candidate/`，雙擊 `start_blender_village.cmd`。
+本輪固定包位於 `builds/greystone-blender/rc1-63d05f5/candidate/`，雙擊 `start_blender_village.cmd`。
 請保留啟動器、`ProjectCrystal.exe`、`ProjectCrystal.pck` 在同一資料夾；不要只複製 EXE。
 開始時會先呈現載入畫面，完成後進入旅館旁的序章。第一次建置 shader 可能較慢。
 

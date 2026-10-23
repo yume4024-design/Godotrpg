@@ -1,0 +1,9 @@
+{
+  "source_commit": "63d05f5c13c09531ba7a773b253e449828218e3a",
+  "source_root": "C:\\Users\\yume4\\.codex\\worktrees\\greystone-blender-rc1\\RPGGAME",
+  "candidate": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\candidate\\ProjectCrystal.exe",
+  "qa": "D:\\RPGGAME\\builds\\greystone-blender\\rc1-63d05f5\\qa\\ProjectCrystal.exe",
+  "audio_bus_restored_to_original": true,
+  "generated_import_metadata": [],
+  "engine": "4.7.2.stable.official.ed1daf0bf"
+}

@@ -1,5 +1,5 @@
 [CmdletBinding()]
-param([string]$Launcher = '', [string]$ReadyMarker = '', [ValidateRange(8,90)][int]$ReadyTimeoutSeconds = 45)
+param([string]$Launcher = '', [string]$ReadyMarker = '', [ValidateRange(8,90)][int]$ObservationSeconds = 8)
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path -Parent $PSScriptRoot
 if (-not $Launcher) { $Launcher = Join-Path $projectRoot 'builds/g08/rc3-20261020/candidate/start_rc3.cmd' }
@@ -37,20 +37,9 @@ try {
     }
     if ($null -eq $game) { throw 'Missing uniquely owned game child' }
     $receipt.game_pid = $game.Id
-    while ($clock.Elapsed.TotalSeconds -lt 8) {
+    while ($clock.Elapsed.TotalSeconds -lt $ObservationSeconds) {
         if ($game.HasExited) { throw 'Game exited unexpectedly during ordinary startup' }
         Start-Sleep -Milliseconds 200
-    }
-    if ($ReadyMarker) {
-        $ready = $false
-        while ($clock.Elapsed.TotalSeconds -lt $ReadyTimeoutSeconds) {
-            if ($game.HasExited) { throw 'Game exited before its ready marker' }
-            if ((Test-Path -LiteralPath $receipt.log) -and ([IO.File]::ReadAllText($receipt.log).Contains($ReadyMarker))) { $ready = $true; break }
-            Start-Sleep -Milliseconds 200
-        }
-        if (-not $ready) { throw 'Game did not reach its ready marker within the startup budget' }
-        $receipt.ready_marker = $ReadyMarker
-        $receipt.ready_seconds = $clock.Elapsed.TotalSeconds
     }
     $game.Refresh()
     $receipt.window_handle = $game.MainWindowHandle.ToInt64()
@@ -67,6 +56,13 @@ try {
     $receipt.stderr = $stderr.GetAwaiter().GetResult()
     if ($game.ExitCode -ne 0 -or $launcherProcess.ExitCode -ne 0) { throw 'Nonzero normal-close exit code' }
     if (-not (Test-Path -LiteralPath $receipt.log)) { throw 'Owned game launch produced no isolated log' }
+    if ($ReadyMarker) {
+        # Release file logging may flush only on close. Confirm the ready event
+        # from the flushed log, without treating buffering as a game timeout.
+        if (-not ([IO.File]::ReadAllText($receipt.log).Contains($ReadyMarker))) { throw 'Ordinary game did not report ready before normal close' }
+        $receipt.ready_marker = $ReadyMarker
+        $receipt.ready_confirmation = 'Flushed log after normal close; no live marker timestamp claimed'
+    }
     if ((Get-Content -LiteralPath $receipt.log -Raw) -match '(?im)^\s*(SCRIPT ERROR:|ERROR:|Parse Error:|Failed loading resource)') { throw 'Game launch log contains an engine error' }
     $receipt.exe_sha256 = (Get-FileHash -LiteralPath (Join-Path $folder 'ProjectCrystal.exe')).Hash
     $receipt.pck_sha256 = (Get-FileHash -LiteralPath (Join-Path $folder 'ProjectCrystal.pck')).Hash

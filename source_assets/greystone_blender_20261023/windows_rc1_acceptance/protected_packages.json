@@ -1,0 +1,18 @@
+[
+  {
+    "path": "builds/windows/ProjectCrystal.exe",
+    "sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562"
+  },
+  {
+    "path": "builds/windows/ProjectCrystal.pck",
+    "sha256": "A8C95F156C55A0CF15CB6B71E617C435868EB6822D0C08A014FBDEFBB42002B7"
+  },
+  {
+    "path": "builds/g08/rc4-fixed-0bb2188-v2/candidate/ProjectCrystal.exe",
+    "sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562"
+  },
+  {
+    "path": "builds/g08/rc4-fixed-0bb2188-v2/candidate/ProjectCrystal.pck",
+    "sha256": "CDA06C308442128628490EF2651548C7FD34B185FBF6976F9B36604D319D05B8"
+  }
+]

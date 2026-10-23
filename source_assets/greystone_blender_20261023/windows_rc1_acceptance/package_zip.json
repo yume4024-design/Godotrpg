@@ -1,0 +1,15 @@
+{
+  "file": "builds/greystone-blender/rc1-63d05f5/ProjectCrystal-0.6.1-greystone-blender-rc1-windows-x64.zip",
+  "bytes": 352838676,
+  "sha256": "89f91f66204a3bfe444db58c3933c8528224d9710963ee9e924ef88586a78702",
+  "entries": [
+    "ASSET_CREDITS.md",
+    "GODOT_LICENSES.txt",
+    "PLAYTEST_GUIDE.md",
+    "ProjectCrystal.exe",
+    "ProjectCrystal.pck",
+    "SHA256.json",
+    "start_blender_village.cmd"
+  ],
+  "player_profiles_included": false
+}

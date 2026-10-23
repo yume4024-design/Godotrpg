@@ -1,0 +1,39 @@
+{
+  "checks": 22,
+  "display": "Windows",
+  "endurance_acceptance": false,
+  "failures": 0,
+  "physical_input_acceptance": false,
+  "release": true,
+  "startup_phases": [
+    {
+      "engine_usec": 826250,
+      "phase": "splash_presented"
+    },
+    {
+      "engine_usec": 826673,
+      "phase": "loading_resources"
+    },
+    {
+      "engine_usec": 6682415,
+      "phase": "creating_world"
+    },
+    {
+      "engine_usec": 7535001,
+      "phase": "waiting_map"
+    },
+    {
+      "engine_usec": 7753160,
+      "phase": "preparing_picture"
+    },
+    {
+      "engine_usec": 7802956,
+      "phase": "fading"
+    },
+    {
+      "engine_usec": 7970137,
+      "phase": "ready"
+    }
+  ],
+  "version": "0.6.1-greystone-blender-rc1"
+}

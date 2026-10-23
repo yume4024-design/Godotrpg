@@ -5,17 +5,17 @@ $projectRoot=Split-Path -Parent $PSScriptRoot
 $BuildRoot=(Resolve-Path -LiteralPath $BuildRoot).Path
 $build=Get-Content -LiteralPath (Join-Path $BuildRoot 'build_receipt.json') -Raw | ConvertFrom-Json
 $output=Join-Path $projectRoot ('artifacts/blender_windows/'+(Get-Date -Format 'yyyyMMdd-HHmmss'))
-$profile=Join-Path $output 'profile'
-$local=Join-Path $output 'local'
-$temp=Join-Path $output 'temp'
-New-Item -ItemType Directory -Force $profile,$local,$temp | Out-Null
+$profileRoot=Join-Path $output 'profile'
+$localRoot=Join-Path $output 'local'
+$tempRoot=Join-Path $output 'temp'
+New-Item -ItemType Directory -Force $profileRoot,$localRoot,$tempRoot | Out-Null
 $fixtures=@{}
 foreach ($row in @(@('p5_tests','legacy_v1.json',1),@('g06_tests','legacy_layout2.json',3))) {
     $source=Get-ChildItem -LiteralPath (Join-Path $projectRoot 'artifacts/godot-user') -Filter restart.json -Recurse | Where-Object { $_.Directory.Name -eq $row[0] } | Select-Object -First 1
     if (-not $source) { throw ('Missing actual generated fixture '+$row[0]) }
     $data=Get-Content -LiteralPath $source.FullName -Raw | ConvertFrom-Json
     if ($data.schema_version -ne $row[2]) { throw 'Fixture has unexpected schema' }
-    $destination=Join-Path $profile ('Godot/app_userdata/'+$source.Directory.Parent.Name+'/blender_windows_tests')
+    $destination=Join-Path $profileRoot ('Godot/app_userdata/'+$source.Directory.Parent.Name+'/blender_windows_tests')
     New-Item -ItemType Directory -Force $destination | Out-Null
     Copy-Item -LiteralPath $source.FullName -Destination (Join-Path $destination $row[1])
     $fixtures[$row[1]]=@{source=$source.FullName;sha256=(Get-FileHash -LiteralPath $source.FullName).Hash}
@@ -27,8 +27,8 @@ foreach ($mode in @('prologue','restart')) {
     $info.FileName=$build.qa; $info.WorkingDirectory=Split-Path -Parent $build.qa
     $info.Arguments='--log-file "'+$log+'"'+$(if($mode -eq 'restart'){' -- --reload'}else{''})
     $info.UseShellExecute=$false; $info.CreateNoWindow=$true
-    $info.EnvironmentVariables['APPDATA']=$profile; $info.EnvironmentVariables['LOCALAPPDATA']=$local
-    $info.EnvironmentVariables['TEMP']=$temp; $info.EnvironmentVariables['TMP']=$temp
+    $info.EnvironmentVariables['APPDATA']=$profileRoot; $info.EnvironmentVariables['LOCALAPPDATA']=$localRoot
+    $info.EnvironmentVariables['TEMP']=$tempRoot; $info.EnvironmentVariables['TMP']=$tempRoot
     $info.EnvironmentVariables['CRYSTAL_QA_ISOLATE_JOYPAD_MOTION']='1'
     $watch=[Diagnostics.Stopwatch]::StartNew()
     $process=[Diagnostics.Process]::Start($info)
@@ -44,17 +44,22 @@ foreach ($mode in @('prologue','restart')) {
 foreach ($record in $fixtures.Values) {
     if ((Get-FileHash -LiteralPath $record.source).Hash -ne $record.sha256) { throw 'Original generated legacy fixture changed' }
 }
+$required=@('res://scenes/main/blender_windows_candidate.tscn','res://scenes/main/greystone_blender_integration.tscn','res://scenes/world/greystone_blender_master.tscn','res://assets/models/greystone/blender_master/water.glb','res://assets/shaders/greystone/water.gdshader','res://assets/shaders/greystone/ground.gdshader','res://assets/shaders/greystone/rock.gdshader')
+$manifest=[ordered]@{base_commit=$build.source_commit;candidate=$build.candidate;qa=$build.qa;profile=$profileRoot;results=$results;fixtures=$fixtures;required_resources=$required;physical_input_acceptance=$false;endurance_acceptance=$false;launcher_status='pending'}
+$manifest | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $output 'manifest.json') -Encoding utf8
 $priorPause=$env:CRYSTAL_NO_PAUSE
 try {
     $env:CRYSTAL_NO_PAUSE='1'
-    $launch=& (Join-Path $PSScriptRoot 'test_rc3_launcher.ps1') -Launcher (Join-Path $BuildRoot 'candidate/start_blender_village.cmd') -ReadyMarker 'BLENDER_WINDOWS_READY'
+    $launch=& (Join-Path $PSScriptRoot 'test_rc3_launcher.ps1') -Launcher (Join-Path $BuildRoot 'candidate/start_blender_village.cmd') -ReadyMarker 'BLENDER_WINDOWS_READY' -ObservationSeconds 12
     $line=@($launch | Where-Object { $_ -like 'RC3_LAUNCHER_EVIDENCE=*' })
     if ($line.Count -ne 1) { throw 'Missing ordinary launcher receipt' }
     Copy-Item -LiteralPath (Join-Path $line[0].Substring('RC3_LAUNCHER_EVIDENCE='.Length) 'result.json') -Destination (Join-Path $output 'normal_launch.json')
     $launch | Out-Host
+    $manifest.launcher_status='passed'
 }
-finally { $env:CRYSTAL_NO_PAUSE=$priorPause }
-$required=@('res://scenes/main/blender_windows_candidate.tscn','res://scenes/main/greystone_blender_integration.tscn','res://scenes/world/greystone_blender_master.tscn','res://assets/models/greystone/blender_master/water.glb','res://assets/shaders/greystone/water.gdshader','res://assets/shaders/greystone/ground.gdshader','res://assets/shaders/greystone/rock.gdshader')
-$manifest=[ordered]@{base_commit=$build.source_commit;candidate=$build.candidate;qa=$build.qa;profile=$profile;results=$results;fixtures=$fixtures;required_resources=$required;physical_input_acceptance=$false;endurance_acceptance=$false}
-$manifest | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $output 'manifest.json') -Encoding utf8
+catch { $manifest.launcher_status='failed'; $manifest.error=$_.Exception.Message; throw }
+finally {
+    $env:CRYSTAL_NO_PAUSE=$priorPause
+    $manifest | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $output 'manifest.json') -Encoding utf8
+}
 Write-Output ('BLENDER_WINDOWS_TEST_MANIFEST='+(Join-Path $output 'manifest.json'))

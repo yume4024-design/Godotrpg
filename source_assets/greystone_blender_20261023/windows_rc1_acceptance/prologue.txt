@@ -1,0 +1,122 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+QA_JOYPAD_MOTION_ISOLATED [{"device":0,"left_x":0.0,"left_y":0.0,"name":"XInput Controller"}]
+PASS Native release template with isolated Blender QA feature
+PASS Actual graphical Windows process
+PASS Candidate version preserves formal base version
+BLENDER_WINDOWS_READY
+PASS Real loading gate reaches ready
+PASS Story uses actual candidate loading-screen instance
+PASS G06 story scene loads
+PASS E001 completes in new village
+PASS Opening beside inn is grounded
+PASS Mine blocked before tutorial
+PASS Guild reward blocked before boss victory
+PASS Missing save rejected without changing session
+PASS Equipment ready through normal menu service
+PASS New NPCs complete E002/E003
+PASS No repeated Lia recruitment
+PASS Packaged rendered evidence g063-guild
+PASS West exit enters forest
+PASS First story battle won with real commands
+PASS E004 reaches mine prerequisite
+PASS Forest returns to new village safe west spawn
+PASS Packaged rendered evidence g063-mine-gate
+PASS New mine gate opens after tutorial
+PASS Mine returns via forest
+PASS Forest mine entrance traversed with E
+PASS Packaged rendered evidence g063-01-mine-entrance
+PASS Walking into inner mine triggers E005
+PASS Save during dialogue deferred, no partial file
+PASS E005 commits two potions and objective once
+PASS Pending save writes at safe point
+PASS Current snapshot validates before any load
+PASS E005 cannot refill reward
+PASS Packaged rendered evidence g063-02-journal-mine
+PASS Missing item rejects event before dialogue or flags
+PASS Missing sequence cannot fake completion
+PASS E005 potion can be consumed without refilling
+PASS Save records consumed reward and receipt
+PASS Valid save restores all owners
+PASS HP is restored from disk
+PASS Position and map restored
+PASS Loading inside E005 area does not replace consumed potion
+PASS Load does not replay completed events
+PASS Crystal starts E006 without revealing Aster
+PASS Crystal animation must finish before flag or item
+PASS Save waits for animated sequence
+PASS Packaged rendered evidence g063-03-crystal-awakening
+PASS Completed animation grants exactly one star seal
+PASS Already inside boss area reevaluates E006 prerequisite
+PASS B002 spawns level three guardian
+PASS Packaged rendered evidence g063-04-guardian-battle
+PASS Battle save remains pending and leaves existing slot intact
+PASS Guardian defeat grants nothing and cannot complete E007
+PASS Guardian retry starts another real battle
+PASS Retry restores vitals without replaying crystal reward
+PASS Two battles grant 62 gold total
+PASS Boss returns to original position
+PASS B002 return completes event and total 100 EXP
+PASS Battle pending save commits after result acknowledgment
+PASS Mine exit returns to forest
+PASS Post-boss return reaches new village
+PASS Guildmaster routes to return quest
+PASS E008 completes quest and chapter unlock atomically
+PASS Reward observers see completed quest and flags together
+PASS Exact full-prologue rewards: 212 gold and 300 EXP each
+PASS E008 and reward replay rejected
+PASS Packaged rendered evidence g063-05-chapter-preview
+PASS Investigation/departure epilogue finishes without extra rewards
+PASS Journal projects all five completed flags
+PASS Repeated guild interaction gives no extra quest reward
+PASS Packaged rendered evidence g063-06-completed-journal
+PASS Packaged rendered evidence g063-07-small-journal
+PASS Packaged rendered evidence g063-08-small-save-menu
+PASS Save menu writes final progress
+PASS Completed new village save reloads
+PASS Final save re-established for fresh process test
+PASS Packaged village retains layout 3 after story or restart
+PASS Six existing NPC slots retained
+PASS Packaged ambient dialogue Blacksmith
+PASS Packaged ambient dialogue Villager
+PASS Packaged service opens ItemMerchant
+PASS Packaged service debits once ItemMerchant
+PASS Packaged rendered evidence service_ItemMerchant
+PASS Packaged service opens Innkeeper
+PASS Packaged service debits once Innkeeper
+PASS Inn restores entire party
+PASS Packaged rendered evidence service_Innkeeper
+PASS Restore exact completed save after transactions
+PASS Services preserve saved unique rewards and currency
+PASS Actual generated legacy fixture exists legacy_v1.json
+PASS Packaged legacy migration legacy_v1.json
+PASS Legacy source bytes retained legacy_v1.json
+PASS Legacy reaches schema 3 / layout 3 legacy_v1.json
+PASS Legacy retains party legacy_v1.json
+PASS Legacy retains flags legacy_v1.json
+PASS Legacy retains quests legacy_v1.json
+PASS Legacy retains rewards legacy_v1.json
+PASS Legacy retains economy legacy_v1.json
+PASS Restore candidate after legacy import legacy_v1.json
+PASS Actual generated legacy fixture exists legacy_layout2.json
+PASS Packaged legacy migration legacy_layout2.json
+PASS Legacy source bytes retained legacy_layout2.json
+PASS Legacy reaches schema 3 / layout 3 legacy_layout2.json
+PASS Legacy retains party legacy_layout2.json
+PASS Legacy retains flags legacy_layout2.json
+PASS Legacy retains quests legacy_layout2.json
+PASS Legacy retains rewards legacy_layout2.json
+PASS Legacy retains economy legacy_layout2.json
+PASS Restore candidate after legacy import legacy_layout2.json
+PASS Invalid water location rejected in exported physics world
+PASS Rejected import preserves current state and source
+PASS Packaged modular collection Terrain
+PASS Packaged modular collection Paths
+PASS Packaged modular collection Cliffs
+PASS Packaged modular collection Water
+PASS Exported river uses actual shared water shader
+PASS Exported water and visual beds remain non-walkable
+PASS Packaged rendered evidence bridge_water
+PASS Return from water review to exact completed save
+BLENDER_WINDOWS_RESULT checks=116 failures=0
