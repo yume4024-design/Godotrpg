@@ -34,9 +34,12 @@ Blender全集靜態場景 **146616 triangles**，本輪明確預算200000；不�
 | 新入口無頭完整序章 | **58／0** |
 | 新入口實際圖形完整序章、核心洞窟戰鬥、截圖、敗北重試與回村存讀 | **68／0** |
 | 既有G06、NPC、劇情、交易、觸控、森林／礦坑往返、敵AI、正式序章16組回歸 | 全通過；PC觸控模擬不是手機驗收 |
-| 新Windows固定包／同包另一程序續讀 | 匯出驗收中，完成後追加實際結果 |
+| 新Windows RC1 Release完整序章／交易／舊檔遷移 | **127／0**，35.235秒，自動圖形流程 |
+| 同一QA包、同一存檔、另一程序續讀 | **22／0**，10.614秒 |
+| 普通候選啟動器／正常關閉 | **通過**，視窗保持12.116秒，EXE與啟動器exit0 |
+| 候選／QA共用執行資源／禁止檔案 | **985個SHA一致**，989／1189檔，無工具、來源或參考圖混入 |
 
-走跑程序使用真實1.95m CharacterBody3D及InputMap回饋轉向，只在獨立路線開頭定位，主環線內不瞬移，不設劇情／獎勵旗標。RTX3080、Windows Compatibility、1280×720、Debug引擎、60FPS上限；8780幀，平均59.526FPS、P95 16.706ms、P99 16.748ms、最大217.771ms。包含取樣與截圖成本，非GPU時間、Release長測或其他硬體保證。
+走跑程序使用真實1.95m CharacterBody3D及InputMap回饋轉向，只在獨立路線開頭定位，主環線內不瞬移，不設劇情／獎勵旗標。RTX3080、Windows Compatibility、1280×720、Debug引擎、60FPS上限；8780幀，平均59.526FPS、P95 16.706ms、P99 16.748ms、最大217.771ms。包含取樣與截圖成本，非GPU時間、Release長測或其他硬體保證。45個落點取樣Draw Calls 82～157，Debug引擎Memory Static 42.488～42.666MiB；不是程序Working Set、顯存或Release記憶體保證。
 
 村莊BlenderRC1另有1812.205秒圖形長測1548／0及另程序97／0，詳見[舊村莊包長測](BLENDER_WINDOWS_STABILITY_REPORT.md)。該30分鐘結果**不抵算本次新礦坑長測**。
 
@@ -50,3 +53,33 @@ Blender全集靜態場景 **146616 triangles**，本輪明確預算200000；不�
 - Blender腳本例外可能仍exit0：新增`--python-exit-code 1`、完成marker與來源SHA檢查，失敗的舊產物不算新成果。非阻斷的內建筆刷相對路徑警告未進入遊戲資產。
 - 吊籠、軌道與礦車為靜態造景；未新增採礦或升降機玩法。與參考圖仍有岩壁密度、手繪細節與精確構圖差異，不宣稱逐像素還原。
 - 人工鍵鼠／Xbox與整體G08人工Gate暫停；新礦坑尚非30分鐘長測、Android／iOS或正式v0.6.1覆寫。
+
+## Windows固定包與重現
+
+來源固定在 `2d02f635dcfe2a32e64fe7e18202b3144b0f0ea5` 的乾淨managed worktree，版本 `0.6.1-mine-reference-rc1`。匯出使用Godot4.7.2匹配Windows x64 Release模板；遊戲`application/config/version`基值與正式主入口仍為0.6.1，僅額外custom feature切換新候選。
+
+- 啟動：`builds/mine-reference/rc1-2d02f63/candidate/start_mine_reference.cmd`；[操作指南](MINE_REFERENCE_GUIDE.md)。獨立`user_test`，不讀寫正式存檔。
+- ZIP：`builds/mine-reference/rc1-2d02f63/ProjectCrystal-0.6.1-mine-reference-rc1-windows-x64.zip`，355980021 bytes，七檔，逐項解壓CRC檢查通過；沒有測試存檔／日誌。
+- ZIP SHA256：`93394d4ad4e2bcadf4fcf57f2fa7d0e0bb4e3e6509870022c95ed1fab0fb0ae8`。
+- Candidate PCK：322815188 bytes，SHA256 `dd14666045912b9cc1a93232c5d8750f0c2151951b337452cfb9a1e7cf09f833`。
+- 在獨立空專案掛載兩個PCK，檢查985份共用runtime完整SHA；新礦坑GLB、Shader與場景可載入，layout與碰撞manifest兩份JSON存在。候選沒有tests／tools／來源blend或根目錄參考圖。
+- 新包原生Release首次loading到ready約8.025秒（引擎ticks），不是作業系統點擊至出畫面的獨立計時；持續保留啟動畫面，不將初始化尖峰當每幀60FPS。
+- 正式Windows、RC4與上一BlenderRC1的EXE／PCK六檔及村莊ZIP實際SHA均與原紀錄一致。
+
+實際執行命令（PowerShell；匯出SourceRoot須為來源提交的乾淨工作樹）：
+
+```powershell
+./tools/godot.ps1 -Mode Check
+./tools/godot.ps1 -Mode TestMineReference
+./tools/godot.ps1 -Mode TestMineReferenceMigration
+./tools/godot.ps1 -Mode TestMineReferenceStory
+./tools/godot.ps1 -Mode VisualMineReferenceStory
+./tools/build_blender_windows.ps1 -SourceRoot C:/Users/yume4/.codex/worktrees/mine-reference-rc1/RPGGAME -BuildRoot D:/RPGGAME/builds/mine-reference/rc1-2d02f63 -CandidateFamily Mine
+./tools/test_mine_windows.ps1 -BuildRoot D:/RPGGAME/builds/mine-reference/rc1-2d02f63
+# 使用本機Python執行；manifest由上一命令產生
+python tools/audit_windows_candidate.py artifacts/mine_windows/20261024-025959/manifest.json
+```
+
+輸出及失敗紀錄留於本機artifacts，已提交的[攜帶式驗收證據](../source_assets/mine_reference_20261024/evidence/)包含來源測試結果、16組回歸摘要、Windows包原生結果、啟動／匯出／封裝收據、PCK稽核、保留包SHA與實際畫面，另有sha256.json核對完整性；不提交本機存檔或原始引擎日誌。QA使用實際遊戲管理系統與匯出資源，自動移動／加速操作不代表人類20～30分鐘遊玩或實體控制器驗收。
+
+本輪已完成場景建造、接回序章與Windows自動圖形驗收。人工驗證維持暫停，G08總Gate保持未通過；下一個獨立技術驗收可做新礦坑候選長測，不能套用舊村莊30分鐘結果。

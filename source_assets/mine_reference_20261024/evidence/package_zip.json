@@ -1,0 +1,48 @@
+{
+  "source_commit": "2d02f635dcfe2a32e64fe7e18202b3144b0f0ea5",
+  "archive": "D:\\RPGGAME\\builds\\mine-reference\\rc1-2d02f63\\ProjectCrystal-0.6.1-mine-reference-rc1-windows-x64.zip",
+  "bytes": 355980021,
+  "sha256": "93394d4ad4e2bcadf4fcf57f2fa7d0e0bb4e3e6509870022c95ed1fab0fb0ae8",
+  "files": [
+    "ASSET_CREDITS.md",
+    "GODOT_LICENSES.txt",
+    "ProjectCrystal.exe",
+    "ProjectCrystal.pck",
+    "README.txt",
+    "start_mine_reference.cmd",
+    "SHA256.json"
+  ],
+  "candidate_sha256": [
+    {
+      "file": "ASSET_CREDITS.md",
+      "bytes": 25888,
+      "sha256": "a09f3c72941135a2cb0b6a52c0637b52bd71c4a949f48ee1a86f1f8c5a560fbf"
+    },
+    {
+      "file": "GODOT_LICENSES.txt",
+      "bytes": 109361,
+      "sha256": "1efe99b58c0972fe1f11e3fccf9dea210845b818b332f8d3781e2c208200f365"
+    },
+    {
+      "file": "ProjectCrystal.exe",
+      "bytes": 109268480,
+      "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+    },
+    {
+      "file": "ProjectCrystal.pck",
+      "bytes": 322815188,
+      "sha256": "dd14666045912b9cc1a93232c5d8750f0c2151951b337452cfb9a1e7cf09f833"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 623,
+      "sha256": "9c15cb335be1d3cac8a73667ec21b4a138673301f8e80306c138e9ddac524f43"
+    },
+    {
+      "file": "start_mine_reference.cmd",
+      "bytes": 1338,
+      "sha256": "884f32049026469f0d14d6f0feb28ab38ddc3d33b40e605b1b5b99e4e409c69f"
+    }
+  ],
+  "user_data_included": false
+}

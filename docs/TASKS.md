@@ -4,7 +4,8 @@
 
 - [x] 建立並安裝 crystal-scene-builder；完整Blender主檔、八區／三層、12分區GLB及4模組，146616面，既有合格資產重用。
 - [x] 實際Player走跑55／0，舊檔遷移59／0，新入口無頭序章58／0、圖形序章68／0，既有16組RPG回歸通過；[規格](MINE_REFERENCE_SPEC.md)／[結果](MINE_REFERENCE_REPORT.md)。
-- [ ] Windows新固定包及同包重啟驗收中；人工鍵鼠／Xbox依使用者指示暫停，不再追問。Android／iOS與第一章暫停。
+- [x] Windows RC1 Release完整序章／交易／遷移127／0＋另一程序重啟22／0，普通啟動、985共用runtime SHA與七檔ZIP驗證通過；來源`2d02f63`，包路徑見[指南](MINE_REFERENCE_GUIDE.md)。
+- [ ] 人工鍵鼠／Xbox依使用者指示暫停，不再追問；新礦坑30分鐘長測未執行，G08人工Gate未標通過。Android／iOS與第一章暫停。
 - [x] 上一版Blender村莊RC1新圖形長測1812.205秒、1548／0＋另程序97／0已保存；不抵算新礦坑長測。[證據](BLENDER_WINDOWS_STABILITY_REPORT.md)。
 
 ## 2026-10-24 — 灰石村 Blender Windows RC1 固定包

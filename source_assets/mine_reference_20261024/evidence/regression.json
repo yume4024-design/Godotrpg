@@ -1,0 +1,82 @@
+[
+  {
+    "mode": "TestG06",
+    "passed": true,
+    "result": "G06_1_RESULT checks=51 failures=0"
+  },
+  {
+    "mode": "TestG06Reload",
+    "passed": true,
+    "result": "G06_1_RESULT checks=6 failures=0"
+  },
+  {
+    "mode": "TestG06NPC",
+    "passed": true,
+    "result": "G06_NPC_RESULT checks=60 failures=0"
+  },
+  {
+    "mode": "TestG06Story",
+    "passed": true,
+    "result": "G06_STORY_RESULT checks=58 failures=0"
+  },
+  {
+    "mode": "TestG06StoryReload",
+    "passed": true,
+    "result": "G06_STORY_RESULT checks=7 failures=0"
+  },
+  {
+    "mode": "TestG06Commerce",
+    "passed": true,
+    "result": "G06_COMMERCE_RESULT checks=50 failures=0"
+  },
+  {
+    "mode": "TestG06CommerceReload",
+    "passed": true,
+    "result": "G06_COMMERCE_RESULT checks=5 failures=0"
+  },
+  {
+    "mode": "TestG06Touch",
+    "passed": true,
+    "result": "G06_TOUCH_RESULT checks=17 failures=0"
+  },
+  {
+    "mode": "TestG06TouchCommerce",
+    "passed": true,
+    "result": "G06_TOUCH_COMMERCE_RESULT checks=50 failures=0"
+  },
+  {
+    "mode": "TestWildernessBalance",
+    "passed": true,
+    "result": "WILDERNESS_BALANCE_RESULT checks=49 failures=0"
+  },
+  {
+    "mode": "PrepareWildernessRestart",
+    "passed": true,
+    "result": "WILDERNESS_RESTART_RESULT mode=prepare checks=6 failures=0"
+  },
+  {
+    "mode": "TestForestRestart",
+    "passed": true,
+    "result": "WILDERNESS_RESTART_RESULT mode=forest checks=15 failures=0"
+  },
+  {
+    "mode": "TestMineRestart",
+    "passed": true,
+    "result": "WILDERNESS_RESTART_RESULT mode=mine checks=15 failures=0"
+  },
+  {
+    "mode": "TestEnemyAI",
+    "passed": true,
+    "result": "ENEMY_AI_RESULT checks=10 failures=0 targets=[&\"lia\", &\"ren\", &\"lia\", &\"ren\"]"
+  },
+  {
+    "mode": "TestPhase5",
+    "passed": true,
+    "result": "PHASE5_RESULT checks=69 failures=0 renderer=headless"
+  },
+  {
+    "mode": "TestPhase5Reload",
+    "passed": true,
+    "result": "PHASE5_RESULT checks=7 failures=0 renderer=headless"
+  }
+]

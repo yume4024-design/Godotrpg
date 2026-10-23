@@ -2,7 +2,7 @@
 
 ## 2026-10-24 — 場景Skill與礦坑內部參考重建
 
-新增crystal-scene-builder Skill、完整Blender八區礦坑、分區與可重用機械GLB、岩土／木材／動態水體與火把表面，接回既有序章及核心洞窟戰鬥背景。以獨立入口／存檔槽及mine layout4驗證與遷移保留舊進度；角色、數值、旗標和Schema不變。圖形動線55／0、遷移59／0、圖形序章68／0、原16組回歸通過，Windows包驗收中。[報告](MINE_REFERENCE_REPORT.md)。人工驗證依最新指示暫停。
+新增crystal-scene-builder Skill、完整Blender八區礦坑、分區與可重用機械GLB、岩土／木材／動態水體與火把表面，接回既有序章及核心洞窟戰鬥背景。以獨立入口／存檔槽及mine layout4驗證與遷移保留舊進度；角色、數值、旗標和Schema不變。圖形動線55／0、遷移59／0、圖形序章68／0、原16組回歸通過，Windows RC1 Release包序章／交易／遷移127／0＋新程序讀檔22／0，普通啟動與985共用runtime SHA通過；獨立七檔ZIP已封裝，原正式及舊候選包保留。[報告](MINE_REFERENCE_REPORT.md)。人工驗證依最新指示暫停。
 
 上一村莊RC1完成1812.205秒自動圖形長測1548／0及新程序97／0；初始化／服務尖峰保留，不宣稱每幀60FPS。[結果](BLENDER_WINDOWS_STABILITY_REPORT.md)。
 

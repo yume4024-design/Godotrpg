@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-24 新礦坑參考重建與序章候選已完成自動圖形驗收：八區三層Blender場景、完整探索環線、動態水體與安全舊檔遷移。Windows Release序章／交易／遷移127／0＋新程序讀檔22／0；啟動`builds/mine-reference/rc1-2d02f63/candidate/start_mine_reference.cmd`。[指南](docs/MINE_REFERENCE_GUIDE.md)／[報告](docs/MINE_REFERENCE_REPORT.md)／[場景Skill](docs/skills/crystal-scene-builder/SKILL.md)。人工鍵鼠／Xbox依使用者指示暫停，新礦坑長測未做；正式v0.6.1與舊候選包保留。
+
 2026-10-24 新 Blender 灰石村 Windows 固定候選已匯出：`builds/greystone-blender/rc1-63d05f5/candidate/start_blender_village.cmd`。包含地面／岩石紋理及動態水體；原生包內序章116／0＋重啟22／0，實體輸入與新長測仍待。[操作說明](docs/BLENDER_WINDOWS_RC1_GUIDE.md)／[實際結果](docs/BLENDER_WINDOWS_RC1_REPORT.md)。正式v0.6.1／舊RC4保留。
 
 2026-10-18 Windows G08.2 台階／礦坑橫梁修正驗收完成，候選版本 0.6.1-g08-rc2；[遊玩指南](docs/GREYSTONE_G08_GUIDE.md)、[驗收結果與未完成項目](docs/GREYSTONE_G08_REPORT.md)。G08 整體未完成，正式 v0.6.1 保留。

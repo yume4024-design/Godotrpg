@@ -1,0 +1,10 @@
+{
+  "source_commit": "2d02f635dcfe2a32e64fe7e18202b3144b0f0ea5",
+  "source_root": "C:\\Users\\yume4\\.codex\\worktrees\\mine-reference-rc1\\RPGGAME",
+  "candidate_family": "Mine",
+  "audio_bus_restored_to_original": true,
+  "generated_import_metadata": [],
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "candidate": "D:\\RPGGAME\\builds\\mine-reference\\rc1-2d02f63\\candidate\\ProjectCrystal.exe",
+  "qa": "D:\\RPGGAME\\builds\\mine-reference\\rc1-2d02f63\\qa\\ProjectCrystal.exe"
+}

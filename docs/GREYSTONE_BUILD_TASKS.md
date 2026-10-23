@@ -4,7 +4,8 @@
 
 - [x] 場景Skill、完整Blender八區礦坑、12分區／4模組與三層可走動線；新獨立入口接回Blender灰石村及原森林。
 - [x] 走跑55／0、遷移59／0、圖形序章68／0、既有16組回歸通過，[礦坑報告](MINE_REFERENCE_REPORT.md)。原村莊固定包長測1548／0＋另程序97／0，另見[長測](BLENDER_WINDOWS_STABILITY_REPORT.md)。
-- [ ] 新Windows包驗收中；人工驗證已依使用者最新指示暫停，G08人工Gate不標通過。Android／iOS、第一章暫停。
+- [x] Windows礦坑RC1 Release序章／交易／遷移127／0＋新程序讀檔22／0；普通啟動與985共用runtime SHA一致，正式v0.6.1／RC4／村莊RC1原檔SHA保留。
+- [ ] 人工驗證依最新指示暫停，G08人工Gate不標通過；新礦坑30分鐘長測未執行。Android／iOS、第一章暫停。
 
 ## 2026-10-24 — 灰石村 Blender Windows RC1 固定包
 

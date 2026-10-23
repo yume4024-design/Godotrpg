@@ -1,0 +1,50 @@
+{
+  "base_commit": "2d02f635dcfe2a32e64fe7e18202b3144b0f0ea5",
+  "candidate": "D:\\RPGGAME\\builds\\mine-reference\\rc1-2d02f63\\candidate\\ProjectCrystal.exe",
+  "qa": "D:\\RPGGAME\\builds\\mine-reference\\rc1-2d02f63\\qa\\ProjectCrystal.exe",
+  "profile": "D:\\RPGGAME\\artifacts\\mine_windows\\20261024-025959\\profile",
+  "results": [
+    {
+      "failures": 0,
+      "log": "D:\\RPGGAME\\artifacts\\mine_windows\\20261024-025959\\prologue.log",
+      "seconds": 35.2345721,
+      "mode": "prologue",
+      "checks": 127
+    },
+    {
+      "failures": 0,
+      "log": "D:\\RPGGAME\\artifacts\\mine_windows\\20261024-025959\\restart.log",
+      "seconds": 10.6136719,
+      "mode": "restart",
+      "checks": 22
+    }
+  ],
+  "fixtures": {
+    "legacy_layout2.json": {
+      "source": "D:\\RPGGAME\\artifacts\\godot-user\\Godot\\app_userdata\\失落星核 — Project Crystal\\g06_tests\\restart.json",
+      "sha256": "D8719F04B3438E9F5C97D7E099348382D1F8A022D67D7F62241A5D33A249FA95"
+    },
+    "legacy_v1.json": {
+      "source": "D:\\RPGGAME\\artifacts\\godot-user\\Godot\\app_userdata\\失落星核 — Project Crystal\\p5_tests\\restart.json",
+      "sha256": "03B537BC655864953DB207251AD0A175E3767D197D8C3C16BAB176830FBA270A"
+    }
+  },
+  "required_resources": [
+    "res://scenes/main/mine_reference_candidate.tscn",
+    "res://scenes/main/mine_reference_integration.tscn",
+    "res://scenes/world/mine_reference/mine.tscn",
+    "res://scenes/world/mine_reference/geometry.tscn",
+    "res://assets/models/mine_reference/core_cavern.glb",
+    "res://assets/shaders/mine/wood.gdshader",
+    "res://scenes/main/blender_windows_candidate.tscn",
+    "res://scenes/main/greystone_blender_integration.tscn",
+    "res://scenes/world/greystone_blender_master.tscn",
+    "res://assets/models/greystone/blender_master/water.glb",
+    "res://assets/shaders/greystone/water.gdshader",
+    "res://assets/shaders/greystone/ground.gdshader",
+    "res://assets/shaders/greystone/rock.gdshader"
+  ],
+  "physical_input_acceptance": false,
+  "endurance_acceptance": false,
+  "launcher_status": "passed"
+}
