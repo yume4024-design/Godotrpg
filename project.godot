@@ -35,6 +35,9 @@ config/version.blender_windows_candidate="0.6.1-greystone-blender-rc1"
 run/main_scene.blender_windows_qa="res://tests/qa_entry.tscn"
 run/main_loop_type.blender_windows_qa="BlenderWindowsTestTree"
 config/version.blender_windows_qa="0.6.1-greystone-blender-rc1"
+run/main_scene.blender_windows_soak="res://tests/qa_entry.tscn"
+run/main_loop_type.blender_windows_soak="BlenderWindowsStabilityTestTree"
+config/version.blender_windows_soak="0.6.1-greystone-blender-rc1"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [debug]

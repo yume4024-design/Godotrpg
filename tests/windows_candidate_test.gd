@@ -7,6 +7,15 @@ const NpcVisual = preload("res://scripts/characters/rigged_npc_visual.gd")
 var qa_bootstrap: WindowsCandidateBootstrap
 var qa_startup_events: Array[Dictionary] = []
 
+func _release_feature_ok() -> bool:
+	return OS.has_feature("g08_qa") or OS.has_feature("g083_qa")
+
+func _expected_package_version() -> String:
+	return "0.6.1-g08-rc4"
+
+func _bootstrap_path() -> String:
+	return "res://scenes/main/windows_candidate_bootstrap.tscn"
+
 func _create_game() -> ExplorationGame:
 	return qa_bootstrap.game as ExplorationGame
 
@@ -34,9 +43,9 @@ func _run() -> void:
 	slot = "user://g08_tests/prologue.json"
 	visual_slot = slot
 	DirAccess.make_dir_recursive_absolute("user://g08_tests/evidence")
-	_check((OS.has_feature("g08_qa") or OS.has_feature("g083_qa")) and not OS.is_debug_build(), "G08 release template and isolated feature")
+	_check(_release_feature_ok() and not OS.is_debug_build(), "G08 release template and isolated feature")
 	_check(DisplayServer.get_name() != "headless", "G08 rendered Windows process")
-	_check(ProjectSettings.get_setting("application/config/version") == "0.6.1" and ProjectSettings.get_setting_with_override("application/config/version") == "0.6.1-g08-rc4", "Candidate version override preserves formal version")
+	_check(ProjectSettings.get_setting("application/config/version") == "0.6.1" and ProjectSettings.get_setting_with_override("application/config/version") == _expected_package_version(), "Candidate version override preserves formal version")
 	for key: int in MOVE_KEYS:
 		_check(InputMap.action_get_events(MOVE_KEYS[key]).any(func(event: InputEvent) -> bool: return event is InputEventKey and (event.physical_keycode == key or event.keycode == key)), "Packaged WASD binding " + str(key))
 	# Prepare the same isolated slot before the actual game starts. The loading
@@ -44,7 +53,7 @@ func _run() -> void:
 	if "--reload" not in OS.get_cmdline_user_args():
 		for suffix: String in ["", ".bak", ".tmp"]:
 			if FileAccess.file_exists(slot+suffix): DirAccess.remove_absolute(slot+suffix)
-	qa_bootstrap = load("res://scenes/main/windows_candidate_bootstrap.tscn").instantiate()
+	qa_bootstrap = load(_bootstrap_path()).instantiate()
 	qa_bootstrap.game_created.connect(func(instance: Node3D) -> void: (instance.get_node("Saves") as SaveManager).slot_path = slot)
 	root.add_child(qa_bootstrap)
 	var deadline: int = Time.get_ticks_usec()+30000000

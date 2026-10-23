@@ -19,6 +19,12 @@ var qa_capture_spans: Array[Dictionary] = []
 var map_trace: Array[Dictionary] = []
 const OUTPUT: String = "user://g083/metrics.json"
 
+func _soak_target_seconds() -> float:
+	return 1800.0
+
+func _exploration_point(map_id: StringName) -> Vector3:
+	return Vector3(0,.1,10) if map_id == &"greystone_runtime" else Vector3(-7,.1,0)
+
 func _initialize() -> void:
 	if "--probe-detail" in OS.get_cmdline_user_args():
 		for pair: Array in [["flow","scripts/core/battle_flow.gd"],["arena","scripts/battle/battle_arena.gd"],["stage","scripts/battle/battle_stage.gd"],["game","scripts/core/greystone_integration.gd"]]:
@@ -78,8 +84,9 @@ func _finish() -> void:
 
 func _soak() -> void:
 	var soak_start: int = Time.get_ticks_usec()
-	print("G083_SOAK_STARTED pid=%d duration_seconds=1800" % OS.get_process_id())
-	while Time.get_ticks_usec() - soak_start < 1800000000 and failures == 0:
+	var duration: float = _soak_target_seconds()
+	print("G083_SOAK_STARTED pid=%d duration_seconds=%.0f" % [OS.get_process_id(),duration])
+	while Time.get_ticks_usec() - soak_start < duration * 1000000.0 and failures == 0:
 		cycle += 1
 		for map_id: StringName in [&"greystone_runtime", &"forest", &"mine"]:
 			phase_label = "transition"
@@ -89,7 +96,7 @@ func _soak() -> void:
 			transitions.append({"cycle": cycle, "map": str(map_id), "ms": (Time.get_ticks_usec()-before)/1000.0})
 			_check(game.travel.current_map.map_id == map_id, "Map identity " + str(map_id))
 			phase_label = str(map_id)
-			var point: Vector3 = Vector3(0,.1,10) if map_id == &"greystone_runtime" else Vector3(-7,.1,0)
+			var point: Vector3 = _exploration_point(map_id)
 			await _place(point)
 			var distance: float = 0.0
 			for second: int in range(20):
@@ -132,7 +139,7 @@ func _soak() -> void:
 			_write_report(false, soak_start)
 			print("G083_HEARTBEAT seconds=%.1f cycle=%d map=%s failures=%d" % [(Time.get_ticks_usec()-soak_start)/1000000.0,cycle,map_id,failures])
 			if failures > 0 or Time.get_ticks_usec()-soak_start >= 1800000000: break
-	_check(Time.get_ticks_usec()-soak_start >= 1800000000, "At least 30 rendered minutes")
+	_check(Time.get_ticks_usec()-soak_start >= duration * 1000000.0, "At least %.0f rendered seconds" % duration)
 	_write_report(true, soak_start)
 	await _end()
 

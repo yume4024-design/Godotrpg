@@ -14,7 +14,8 @@ excludes += [p.name for p in root.iterdir() if p.is_file() and p.suffix.lower() 
 text+=marker
 for offset,(label,feature,role) in enumerate([
     ('Windows Blender Candidate','blender_windows_candidate','candidate'),
-    ('Windows Blender QA','blender_windows_qa','qa')]):
+    ('Windows Blender QA','blender_windows_qa','qa'),
+    ('Windows Blender Soak QA','blender_windows_soak','qa-soak')]):
     slot=next_slot+offset
     filtering=excludes+(['tests/*'] if role=='candidate' else [])
     text+=f'''\n[preset.{slot}]
@@ -44,4 +45,4 @@ application/product_version="0.6.1.0"
 application/product_name="Project Crystal Greystone Blender Candidate"
 '''
 path.write_text(text,encoding='utf-8',newline='\n')
-print('BLENDER_WINDOWS_PRESETS',next_slot,next_slot+1)
+print('BLENDER_WINDOWS_PRESETS',next_slot,next_slot+1,next_slot+2)
