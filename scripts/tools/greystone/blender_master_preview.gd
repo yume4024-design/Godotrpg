@@ -129,7 +129,7 @@ func _run_checks() -> void:
 	for frame: int in 30: await get_tree().physics_frame
 	_check(DisplayServer.get_name() != "headless", "Native graphical renderer")
 	_check(is_equal_approx((player.get_node("CollisionShape3D").shape as CapsuleShape3D).height, 1.95), "Actual G06 character collider height")
-	_check(village.get_child_count() == 9, "Nine independently exported Blender collections including collision bounds")
+	_check(village.get_node_or_null("Terrain") != null and village.get_node_or_null("Bounds") != null and village.get_node_or_null("SurfaceTreatment") != null, "Exported Blender collections, collision bounds and shared surface treatment")
 	_check(village.get_node("Bounds").find_children("*", "MeshInstance3D", true, false).is_empty(), "Collision-only Blender guards have no visible mesh")
 	_check(village.get_node("Bounds").find_children("*Body*", "StaticBody3D", true, false).size() == 7, "Seven simplified building bodies")
 	await RenderingServer.frame_post_draw

@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-24 — 灰石村程序表面與水體
+
+本專案原創 GDScript／Godot shader 與 Blender 程序節點製作土粒、草色、礦物紋理、波紋及水深泡沫；未下載第三方貼圖、模型、外掛或使用付費服務。沿用既有灰石村參考、模型與授權紀錄；兩片水底為原水面網格的純視覺衍生。來源配方、測試與限制見[材質報告](GREYSTONE_SURFACE_REPORT.md)。
+
 ## 2026-10-23 灰石村 AI 建築候選
 
 使用者灰石村概念圖 `docs/references/greystone_20261023.png` 為設計來源；內建 imagegen 建立旅館、民宅、道具店、武器店獨立正交來源，再由本機 ComfyUI Pixal3D 生成。來源與 workflow SHA / prompt ID 保存在 `source_assets/greystone_ai_20261023/`。Blender 修補由本專案腳本完成；未下載第三方模型、未購買素材、未傳至外部 3D 服務。場景／RPG Windows 自動化驗收已完成；局部 AI 木框／屋瓦不規則與未驗收平台見重建報告。

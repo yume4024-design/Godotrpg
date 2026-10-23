@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3]
+[gd_scene load_steps=12 format=3]
 
 [ext_resource type="Script" path="res://scripts/world/blender_village_geometry.gd" id="Geometry"]
+[ext_resource type="Script" path="res://scripts/world/blender_village_surfaces.gd" id="Surfaces"]
 [ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/terrain.glb" id="1"]
 [ext_resource type="PackedScene" path="res://assets/models/greystone/blender_master/paths.glb" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/world/greystone/blender_master/buildings.tscn" id="3"]
@@ -32,3 +33,7 @@ metadata/status = "candidate_rpg_opt_in"
 [node name="Mine" parent="." instance=ExtResource("8")]
 
 [node name="Bounds" parent="." instance=ExtResource("9")]
+
+[node name="SurfaceTreatment" type="Node" parent="." node_paths=PackedStringArray("village")]
+script = ExtResource("Surfaces")
+village = NodePath("..")

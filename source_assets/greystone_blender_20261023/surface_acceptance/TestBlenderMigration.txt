@@ -1,0 +1,75 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+QA_JOYPAD_MOTION_ISOLATED []
+PASS Blender RPG candidate loads
+PASS Actual completed G06 layout 2 fixture exists
+PASS Old coordinates validated in original map before migration
+PASS Original save bytes preserved
+PASS Old coordinates map to safe new plaza spawn
+PASS Global schema and content versions preserved
+PASS Migration preserves party
+PASS Migration preserves inventory
+PASS Migration preserves flags
+PASS Migration preserves quests
+PASS Migration preserves rewards
+PASS Migration preserves story
+PASS New spawn passes real floor and capsule validation
+PASS Legal deck plank seam remains loadable (27.0, 6.1, -29.0)
+PASS Legal deck plank seam remains loadable (23.0, 3.0, 17.0)
+PASS Legal deck plank seam remains loadable (23.28, 3.0, 17.0)
+PASS Retained G06 configuration rejects future layout
+PASS Historical schema 2 cannot invent layout 3
+PASS Write only isolated candidate slot
+PASS Saving candidate leaves old save untouched
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 3, "x": 28.0, "y": 2.0, "z": -2.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 3, "x": -10.0, "y": 3.0, "z": -15.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 3, "x": 58.0, "y": 0.0, "z": 58.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 3, "x": 9.0, "y": 3.0, "z": -22.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 2, "x": -3.0, "y": 9.0, "z": 3.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 99, "x": -3.0, "y": 3.1, "z": 3.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Reward receipt still prevents duplicate payout
+PASS Read isolated migrated slot again
+BLENDER_MIGRATION_RESULT checks=70 failures=0
+Log: D:\RPGGAME\artifacts\logs\testblendermigration-20261023-235858-205.log

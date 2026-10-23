@@ -1,0 +1,5 @@
+{
+  "checks": 37,
+  "failures": [],
+  "scope": "Native candidate entrances, routes and sampled obstacles; RPG and terrain-boundary gates run separately"
+}

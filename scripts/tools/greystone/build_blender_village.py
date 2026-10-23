@@ -380,6 +380,10 @@ cam.rotation_euler=(Vector((0,8,2))-cam.location).to_track_quat('-Z','Y').to_eul
 scene.render.engine='CYCLES';scene.cycles.samples=12
 scene.render.resolution_x=1400;scene.render.resolution_y=1200;scene.render.resolution_percentage=100
 scene.render.image_settings.file_format='PNG';scene.view_settings.view_transform='AgX'
+import sys
+sys.path.insert(0,str(Path(__file__).parent))
+from polish_blender_surfaces import apply_surfaces
+apply_surfaces()
 bpy.ops.wm.save_as_mainfile(filepath=str(DEST/'greystone_master.blend'),compress=True)
 scene.render.filepath=str(ART/'overview.png');bpy.ops.render.render(write_still=True)
 (DEST/'manifest.json').write_text(json.dumps({'status':'CANDIDATE_BUILT','buildings':'Four Pixal3D designs, five reusable variants, seven placed buildings','ai_sources':{k:str(v.relative_to(ROOT)) for k,v in ai_sources.items()},'collections':list(groups),'building_placements':placements,'same_facing_duplicate_cleanup':cleanup_counts,'edge_guards':guard_count,'coordinate_system':'Blender Z up, north +Y; GLTF exporter handles Y up','original_main_entry_replaced':False,'rpg_candidate':'scenes/main/greystone_blender_integration.tscn'},ensure_ascii=False,indent=2),encoding='utf8')

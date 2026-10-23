@@ -27,8 +27,8 @@
   {
     "collection": "Water",
     "path": "res://assets/models/greystone/blender_master/water.glb",
-    "mesh_nodes": 12,
-    "instanced_triangles": 48
+    "mesh_nodes": 14,
+    "instanced_triangles": 66
   },
   {
     "collection": "Cliffs",

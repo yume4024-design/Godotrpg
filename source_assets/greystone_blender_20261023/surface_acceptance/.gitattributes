@@ -1,0 +1,2 @@
+# Frozen evidence hashes refer to the exact captured bytes.
+* -text whitespace=blank-at-eol,space-before-tab,cr-at-eol

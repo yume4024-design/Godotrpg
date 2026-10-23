@@ -1,0 +1,42 @@
+[
+  {
+    "mode": "TestBlenderSurfaces",
+    "passed": true,
+    "seconds": 25.41
+  },
+  {
+    "mode": "TestGreystoneBlender",
+    "passed": true,
+    "seconds": 79.158
+  },
+  {
+    "mode": "TestBlenderMigration",
+    "passed": true,
+    "seconds": 9.225
+  },
+  {
+    "mode": "TestBlenderMigrationReload",
+    "passed": true,
+    "seconds": 7.89
+  },
+  {
+    "mode": "VisualBlenderStory",
+    "passed": true,
+    "seconds": 31.422
+  },
+  {
+    "mode": "TestBlenderStoryReload",
+    "passed": true,
+    "seconds": 7.72
+  },
+  {
+    "mode": "VisualBlenderCommerce",
+    "passed": true,
+    "seconds": 15.042
+  },
+  {
+    "mode": "TestBlenderCommerceReload",
+    "passed": true,
+    "seconds": 9.251
+  }
+]

@@ -1,0 +1,9 @@
+00:02.907  blend            | Read blend: "D:\RPGGAME\source_assets\greystone_blender_20261023\greystone_master.blend"
+D:\RPGGAME\scripts\tools\greystone\polish_blender_surfaces.py:21: DeprecationWarning: 'Material.use_nodes' is expected to be removed in Blender 6.0
+  material.use_nodes = True
+00:03.516  image.write      | ERROR OpenImageIO write failed: Could not open file "C:\Users\yume4\.thumbnails\large\blender_32920_d39313740c436ed8e803dffae70fb520.png.png"
+Info: Saved as "greystone_master.blend"
+BLENDER_SURFACES_SAVED 102467841
+Blender 5.2.2 LTS (hash d13f752e3b9c built 2026-09-15 01:37:04)
+
+Blender quit

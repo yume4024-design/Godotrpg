@@ -1,0 +1,207 @@
+{
+  "baseline_commit": "8bffbecd1921ac948745c0fea2e254e2b819d7be",
+  "completed_local_date": "2026-10-24",
+  "branch": "feature/greystone-g06",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "blender": "5.2.2 LTS",
+  "results": {
+    "TestBlenderCommerceReload": {
+      "checks": 5,
+      "failures": 0
+    },
+    "TestBlenderMigration": {
+      "checks": 70,
+      "failures": 0
+    },
+    "TestBlenderMigrationReload": {
+      "checks": 6,
+      "failures": 0
+    },
+    "TestBlenderStoryReload": {
+      "checks": 7,
+      "failures": 0
+    },
+    "VisualBlenderCommerce": {
+      "checks": 53,
+      "failures": 0
+    },
+    "VisualBlenderStory": {
+      "checks": 68,
+      "failures": 0
+    },
+    "TestBlenderSurfaces": {
+      "checks": 6,
+      "failures": 0
+    },
+    "TestGreystoneBlender": {
+      "checks": 37,
+      "failures": 0
+    }
+  },
+  "total_checks": 252,
+  "failures": 0,
+  "source_hashes": {
+    "source_assets/greystone_blender_20261023/greystone_master.blend": {
+      "bytes": 102467841,
+      "sha256": "e732d8affa3b12006415dbc081e6335d369d12f7a9d44f8d39b11cac1e95623f"
+    },
+    "assets/models/greystone/blender_master/water.glb": {
+      "bytes": 11824,
+      "sha256": "ae2ee28dba2eb4ca9b3e7eed40f8be2cdcbae06b287170703a6d191c27223b59"
+    },
+    "assets/models/greystone/blender_master/manifest.json": {
+      "bytes": 2022,
+      "sha256": "3150d1b159974a9a104f0159f922afb638199f9ff1c19a270d82dd9a4f69b417"
+    },
+    "scenes/world/greystone_blender_master.tscn": {
+      "bytes": 2032,
+      "sha256": "771eb10c172231b9215401015106bfd717b47bff7396ac1fa0c7015920e8ba00"
+    },
+    "scripts/world/blender_village_surfaces.gd": {
+      "bytes": 2127,
+      "sha256": "859d8e3344ce0e2c4044ebe9437dd2dcd494460ddb6e2e8375cb3b57f2290f7b"
+    },
+    "assets/shaders/greystone/ground.gdshader": {
+      "bytes": 1091,
+      "sha256": "dc626bcbafb394d38cb87bc3c390b1b58281a6b5a576d54c4413dedaecebc99d"
+    },
+    "assets/shaders/greystone/ground.gdshader.uid": {
+      "bytes": 20,
+      "sha256": "c473e6953aaba0ceb4e6c21ed293f8fbab63d3eae3d5169b58c7f8600ffeba4d"
+    },
+    "assets/shaders/greystone/rock.gdshader": {
+      "bytes": 1085,
+      "sha256": "c456147be9f97825168b5af5fb90091eecc8fc9d64efe54c61ba7d0e568a1408"
+    },
+    "assets/shaders/greystone/rock.gdshader.uid": {
+      "bytes": 19,
+      "sha256": "53970298b5a7895f920559767acdfbf65400cf8870c14800c6fe9da16f2d5fe0"
+    },
+    "assets/shaders/greystone/surface_noise.gdshaderinc": {
+      "bytes": 539,
+      "sha256": "aa35726118416b7bc5c4f4f74be83caff7f9d2d6b9a2a39103cd58196d9a9132"
+    },
+    "assets/shaders/greystone/surface_noise.gdshaderinc.uid": {
+      "bytes": 19,
+      "sha256": "a320d3cf8c38e4e1649cb4b62b0c2158d093c87b26c1bf803add56e234d8d902"
+    },
+    "assets/shaders/greystone/water.gdshader": {
+      "bytes": 2341,
+      "sha256": "90c151bdd8aa045ba803417fcb2020204d77458bc9603d888a6078a5c041eed9"
+    },
+    "assets/shaders/greystone/water.gdshader.uid": {
+      "bytes": 20,
+      "sha256": "b09da883dc18a51ab128ac79dc2f39ad32424637d7bbc902b4cf1aa6883173b6"
+    },
+    "assets/materials/greystone/blender_surface/earth.tres": {
+      "bytes": 336,
+      "sha256": "0221ba99412a18086ce58adeb140c2b62eff4855b833a11bb2c764dae98c74c5"
+    },
+    "assets/materials/greystone/blender_surface/grass.tres": {
+      "bytes": 336,
+      "sha256": "faf042c05831f1dc3e35511a390d69a433a6e5150f4d3b2325d76dec94587dd7"
+    },
+    "assets/materials/greystone/blender_surface/lake.tres": {
+      "bytes": 250,
+      "sha256": "2e331af12d265024728c56b1a111467222a77f8cceb52ca71e40c1c3df2b26c8"
+    },
+    "assets/materials/greystone/blender_surface/river.tres": {
+      "bytes": 250,
+      "sha256": "2f1ebb72bae14933b48b0946befcfc81102f22a06a0646063b7b836c67f51d71"
+    },
+    "assets/materials/greystone/blender_surface/rock.tres": {
+      "bytes": 183,
+      "sha256": "ff333dd6d14ac7426e000da56a050eec5c373a756968d18a12bf8e41dd47b9eb"
+    },
+    "assets/materials/greystone/blender_surface/waterfall.tres": {
+      "bytes": 249,
+      "sha256": "6b2f64ff9977ff0156def8e26a2eaf5bc7be5800408b7551ad6b54280b0754c4"
+    }
+  },
+  "protected_paths_unchanged_from_baseline": [
+    "scenes/main/main.tscn",
+    "scenes/world/village.tscn",
+    "scripts/story",
+    "scripts/quests",
+    "scripts/save",
+    "data",
+    "assets/models/greystone/blender_master/buildings"
+  ],
+  "test_timings": [
+    {
+      "mode": "TestBlenderSurfaces",
+      "passed": true,
+      "seconds": 25.41
+    },
+    {
+      "mode": "TestGreystoneBlender",
+      "passed": true,
+      "seconds": 79.158
+    },
+    {
+      "mode": "TestBlenderMigration",
+      "passed": true,
+      "seconds": 9.225
+    },
+    {
+      "mode": "TestBlenderMigrationReload",
+      "passed": true,
+      "seconds": 7.89
+    },
+    {
+      "mode": "VisualBlenderStory",
+      "passed": true,
+      "seconds": 31.422
+    },
+    {
+      "mode": "TestBlenderStoryReload",
+      "passed": true,
+      "seconds": 7.72
+    },
+    {
+      "mode": "VisualBlenderCommerce",
+      "passed": true,
+      "seconds": 15.042
+    },
+    {
+      "mode": "TestBlenderCommerceReload",
+      "passed": true,
+      "seconds": 9.251
+    }
+  ],
+  "evidence": {
+    ".gitattributes": "a63c058364ffaa1f9ccc3cf98ed5e09e6878a17e31d477cebf1d4454a7aca463",
+    "blender_g063-guild.webp": "7fef31ea539efa9a793740f68100a947e17b30c61e8ad2fc5a5167401539c2b0",
+    "blender_g064-inn.webp": "ab9fe8bbc64131b4af61c4d53c470fa170ba126b08381fc6af3700aef50204f6",
+    "blender_g064-shop.webp": "a457e961144cf784dd154e1ef8a684816a0034822cb091117915c5c076022df8",
+    "blender_materials.txt": "5b9fabc0db0c6457ba6394c36dc49b7ea471be352c771adf128d2e85afc24d44",
+    "blender_overview.png": "e2e88013fe417012859b3d1e1bdcc60a4f3d3d0ba2c48af84237fd8116ef064d",
+    "blender_render.txt": "80a3b611ea85ceac96381e013ef7505cedc28a6e3cf7a48338682c1934cce6a4",
+    "blender_water.png": "b87f124d512ceaaa17e0b86c861f6009fd88934efea172930095a257d187de05",
+    "bridge.png": "124f58d96c6007f78ec238ab5702c5f48deb803fa9ac4f0451c9d79e478dc837",
+    "dock.png": "7ca52fe8b633459c3280a27b984f7fa2b7ddeb1d8a6214c3941125c5567ad2d3",
+    "mine.png": "19de8a56ff67c5cd0aed415827244b9af1793bd9e004db374b5f2f1bf81e19d3",
+    "overview.png": "ebfc5cb502ddefccb1d3bf6ce0ed5ca586e5202e6081da6e5c75c64392688921",
+    "plaza.png": "89f0f7aa674648be196dcc950cb3cc143a91408d16bbea186168fd1b85520743",
+    "regression.json": "ae62176b9c441e47f43df7e9ce223108bb783624c2af846d61a1221ac1b26482",
+    "result.json": "522a53dd9341b946de90b16a88e051b3485043db8d161d02d59b4d08859745c0",
+    "rock_detail.png": "a2d919c074681378e3bff00ce7623d77a6204e0c6d6773911169f01b61f89db2",
+    "route_result.json": "70782197620f7a5f744d2c2b3b816fbde09db38079a5057c3cca806864a3abdc",
+    "TestBlenderCommerceReload.txt": "9d2dba82604f49de4fca88cc639865f52ce59b4e8867e69dae9dd087b7ab7016",
+    "TestBlenderMigration.txt": "5d460a1cb0ab45c41da3218ee60eb30ec93714c78cdd6620f2f0c22daa03b2b1",
+    "TestBlenderMigrationReload.txt": "b133d9753161462d3aecc592629e453f24f339c79a97d0f414bfbf34673d59f1",
+    "TestBlenderStoryReload.txt": "28c08657628656878f1f59830db2c3e992cec6f98b4f40db52bf0185b9488cc0",
+    "TestBlenderSurfaces.txt": "e9a0ba4a4add82e09d962e982d229054d7c6f739642a944324046ba383e5fc7c",
+    "TestGreystoneBlender.txt": "7e013ad6a4f51c6cb8723432f9b462c7067d423b9a1fa9a848072df9c87b65b0",
+    "VisualBlenderCommerce.txt": "eab55e85b168058e99f709b59c16279614759b3b82bd07a0562af7799e77c6f0",
+    "VisualBlenderStory.txt": "92e08a7c63cb7bc1f80642a3191a2a881b00f380d1224a9d8b5bdef28c65c096",
+    "water_time_0.png": "4177b190e569f3181bc7548aa0c0c22c8748ce20aad711825dff12ffb5a353db",
+    "water_time_1.png": "3ce95ba08413452225a85f41b331128c2c9f8c4963b5ef50581e62ee55c90e0d"
+  },
+  "limits": [
+    "Native scripted Windows graphics; not physical keyboard/controller sign-off",
+    "No new endurance test, release package, G08 gate, Android or iOS acceptance",
+    "Blender and Godot procedural materials use different renderers; depth foam is Godot-only",
+    "No vertex displacement, water physics, SSR or refraction"
+  ]
+}
