@@ -1,0 +1,52 @@
+{
+  "source_commit": "122891e39f73833c6be4253bd03a952a92262e9b",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "zip": {
+    "path": "builds/greystone-reference/rc2-122891e/ProjectCrystal-0.6.1-greystone-reference-rc2-windows-x64.zip",
+    "bytes": 384576605,
+    "sha256": "c23e34250755762bde6d47f5f147d33d35f93e18f6201bcdef73842171bf7d93",
+    "members": [
+      "ProjectCrystal.exe",
+      "ProjectCrystal.pck",
+      "start_reference_village.cmd",
+      "ASSET_CREDITS.md",
+      "GODOT_LICENSES.txt",
+      "README.txt",
+      "SHA256.json"
+    ]
+  },
+  "candidate": [
+    {
+      "file": "ProjectCrystal.exe",
+      "bytes": 109268480,
+      "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+    },
+    {
+      "file": "ProjectCrystal.pck",
+      "bytes": 351580296,
+      "sha256": "e87a88dcb7bb5e40e73c97f1a335213e432a3d47c7e059cd119e270ea01315cd"
+    },
+    {
+      "file": "start_reference_village.cmd",
+      "bytes": 1350,
+      "sha256": "69d210813f0c4e55239d51f4332eb9b47647e4d7667daa712158e247e150d4ba"
+    },
+    {
+      "file": "ASSET_CREDITS.md",
+      "bytes": 26525,
+      "sha256": "589f5313ad5f20b802737bdb25717c4975dea267b20ead08a997fb24853cacd6"
+    },
+    {
+      "file": "GODOT_LICENSES.txt",
+      "bytes": 109361,
+      "sha256": "1efe99b58c0972fe1f11e3fccf9dea210845b818b332f8d3781e2c208200f365"
+    },
+    {
+      "file": "README.txt",
+      "bytes": 532,
+      "sha256": "0da0edcd4a115c8db2c1d487d696a78007980c0f65faa3052edb351d8728b04b"
+    }
+  ],
+  "build_audio_bus_restored": true,
+  "generated_import_metadata": []
+}

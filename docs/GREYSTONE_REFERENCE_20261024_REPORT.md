@@ -7,7 +7,14 @@
 源碼啟動：`./tools/godot.ps1 -Mode RunReferenceVillage`。
 整合入口：`scenes/main/greystone_reference_integration.tscn`。
 正式 `scenes/main/main.tscn` 和先前固定匯出包保留。
-本輪 Windows 候選尚待乾淨提交匯出；完成後在本節補上實際路徑與測試結果。
+固定包已從乾淨提交 `122891e39f73833c6be4253bd03a952a92262e9b` 匯出。啟動 `D:\RPGGAME\builds\greystone-reference\rc2-122891e\candidate\start_reference_village.cmd`，詳細操作見 [啟動指南](GREYSTONE_REFERENCE_20261024_GUIDE.md)。舊 `rc2-8e1d693` 包有橋面裝飾問題，保留診斷用，不作為交付版。
+
+Windows Release圖形序章 **138/0**、新程序重啟 **23/0**，含輸出後橋面淨空、舊Schema1及村莊位置2／3遷移、礦坑位置3遷移、交易／旅館與唯一獎勵。普通啟動觀察 **12.12秒**，視窗有回應、載入就緒，正常關閉後遊戲與啟動器均退出0。初次普通啟動測試遇到CIM存取限制，授權系統程序查詢後重驗通過；不是遊戲崩潰。
+
+候選／QA共用 **1068** 份執行資源SHA一致，候選包無測試／工具／source_assets／本機存檔，必需地圖、GLB與Shader齊全。ZIP **384,576,605 bytes**，只含7個交付檔案，已逐一核對解壓雜湊，無user_test或日誌。ZIP SHA256：`c23e34250755762bde6d47f5f147d33d35f93e18f6201bcdef73842171bf7d93`。
+
+[Windows證據](../source_assets/greystone_reference_20261024/evidence/windows_manifest.json) · [包內容稽核](../source_assets/greystone_reference_20261024/evidence/windows_pack_audit.json) · [交付雜湊](../source_assets/greystone_reference_20261024/evidence/windows_delivery.json)。
+
 
 ## 參考對應與尺度
 
@@ -79,7 +86,7 @@
 [短時畫面指標](../source_assets/greystone_reference_20261024/evidence/metrics.json)。
 原始引擎日誌與測試存檔留在被忽略的artifacts，沒有提交。
 
-上游橋的圖形回看發現裝飾石／草跨上橋面；新增真實網格AABB淨空檢查，先重現失敗，再在Blender完成所有擺放後剔除橋面上方裝飾。未放寬測試。原8e1d693固定包保留作診斷但撤回交付，新包需以修復後提交重建。[重現與回歸](../source_assets/greystone_reference_20261024/evidence/bridge_clearance_regression.json)。
+上游橋的圖形回看發現裝飾石／草跨上橋面；新增真實網格AABB淨空檢查，先重現失敗，再在Blender完成所有擺放後剔除橋面上方裝飾。未放寬測試。原8e1d693固定包保留作診斷但撤回交付，修復後已以122891e提交重建固定包。[重現與回歸](../source_assets/greystone_reference_20261024/evidence/bridge_clearance_regression.json)。
 
 ## 畫面與已知差距
 
