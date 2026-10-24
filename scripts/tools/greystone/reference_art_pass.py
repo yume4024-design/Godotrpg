@@ -31,7 +31,7 @@ def repair_roof(data, asset):
                           dist=.00001, plane_co=(0, 0, eave), plane_no=(0, 0, 1), clear_outer=True)
     indices = {}
     palette = {'plaster':(.79,.74,.61), 'timber':(.30,.21,.13), 'stack':(.45,.45,.40),
-               'cap':(.36,.33,.28), 'glass':(.36,.47,.49)}
+               'cap':(.36,.33,.28), 'glass':(.95,.60,.21)}
     tiles = [(.67,.32,.20),(.69,.34,.22),(.70,.35,.23)]
     if asset in ('item_shop','house_a_blue'):
         tiles = [(.29,.36,.42),(.30,.37,.43),(.31,.38,.44)]
@@ -102,6 +102,18 @@ def repair_roof(data, asset):
             box((x,y-.255,z+.24),(.48,.035,.42),'glass')
             beam((x-.58,y-.36,z+.65),(x,y-.36,z+1.0),.12,.13)
             beam((x,y-.36,z+1.0),(x+.58,y-.36,z+.65),.12,.13)
+            # Closed dormer slopes and a front gable, not two floating rafters.
+            for side in [-1,1]:
+                corners=[(x,y-.40,z+1.03),(x+side*.62,y-.40,z+.65),
+                         (x+side*.62,y+.44,z+.65),(x,y+.44,z+1.03)]
+                if side<0:corners.reverse()
+                bottom=[(a,b,c-.08) for a,b,c in corners]
+                poly(corners+bottom,[(0,1,2,3),(7,6,5,4),(0,4,5,1),(1,5,6,2),(2,6,7,3),(3,7,4,0)],'tile1')
+            poly([(x-.43,y-.27,z+.62),(x+.43,y-.27,z+.62),(x,y-.27,z+.94)],[(0,1,2)],'plaster')
+            for dx in [-.28,.28]:box((x+dx,y-.29,z+.24),(.065,.08,.5),'timber')
+            box((x,y-.29,z+.01),(.63,.1,.075),'timber')
+            box((x,y-.29,z+.47),(.63,.1,.075),'timber')
+            box((x,y-.29,z+.24),(.045,.07,.42),'timber')
     bm.to_mesh(data);bm.free();data.update()
     data.calc_loop_triangles()
     return {'retained_wall_uvs':True,'eave_m':eave,'ridge_m':ridge,'triangles':len(data.loop_triangles)}

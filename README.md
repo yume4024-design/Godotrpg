@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-25 原始專案已更新岩壁、鋪面與光照；使用 `./tools/godot.ps1 -Mode RunReferenceVillage` 查看。[本輪畫面與結果](docs/GREYSTONE_REFERENCE_FINISH_20261025_REPORT.md)。下列rc2固定包仍對應之前的122891e提交。
+
 新版灰石村參考候選：`./tools/godot.ps1 -Mode RunReferenceVillage`。雙橋、實心階梯、礦坑道路與封閉船殼；[畫面／驗證／新包入口](docs/GREYSTONE_REFERENCE_20261024_REPORT.md)。固定包 `builds/greystone-reference/rc2-122891e/candidate/start_reference_village.cmd`；[啟動指南](docs/GREYSTONE_REFERENCE_20261024_GUIDE.md)。人工驗證仍暫停。
 
 2026-10-24 新礦坑參考重建與序章候選已完成自動圖形驗收：八區三層Blender場景、完整探索環線、動態水體與安全舊檔遷移。Windows Release序章／交易／遷移127／0＋新程序讀檔22／0；啟動`builds/mine-reference/rc1-2d02f63/candidate/start_mine_reference.cmd`。[指南](docs/MINE_REFERENCE_GUIDE.md)／[報告](docs/MINE_REFERENCE_REPORT.md)／[場景Skill](docs/skills/crystal-scene-builder/SKILL.md)。人工鍵鼠／Xbox依使用者指示暫停，新礦坑長測未做；正式v0.6.1與舊候選包保留。

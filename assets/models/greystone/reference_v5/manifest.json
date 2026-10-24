@@ -15,7 +15,7 @@
     "collection": "Buildings_Candidate",
     "path": "res://scenes/world/greystone/reference_v5/buildings.tscn",
     "mesh_nodes": 6,
-    "instanced_triangles": 116183,
+    "instanced_triangles": 116353,
     "shared_modules": {
       "inn": "res://assets/models/greystone/reference_v5/buildings/inn.glb",
       "item_shop": "res://assets/models/greystone/reference_v5/buildings/item_shop.glb",
@@ -34,7 +34,7 @@
     "collection": "Cliffs",
     "path": "res://assets/models/greystone/reference_v5/cliffs.glb",
     "mesh_nodes": 232,
-    "instanced_triangles": 6980
+    "instanced_triangles": 9320
   },
   {
     "collection": "Vegetation",
@@ -45,8 +45,8 @@
   {
     "collection": "Props",
     "path": "res://assets/models/greystone/reference_v5/props.glb",
-    "mesh_nodes": 330,
-    "instanced_triangles": 16624
+    "mesh_nodes": 331,
+    "instanced_triangles": 17704
   },
   {
     "collection": "Mine",

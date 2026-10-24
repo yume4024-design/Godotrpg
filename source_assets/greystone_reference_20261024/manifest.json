@@ -95,7 +95,7 @@
       "retained_wall_uvs": true,
       "eave_m": 3.65,
       "ridge_m": 5.85,
-      "triangles": 28128
+      "triangles": 28298
     },
     "item_shop": {
       "retained_wall_uvs": true,
@@ -1563,7 +1563,7 @@
       "width": 3.6
     }
   ],
-  "builder_sha256": "e821433a523d9ca32f7814fb1cbd0faebff574ea32d2aaced5f8231527ba1884",
+  "builder_sha256": "3bb560b34085471f1771e96d0c3e9a63d939e6e9db58d76c5aaf33ac9eba4e36",
   "same_facing_duplicate_cleanup": {
     "inn": 0,
     "item_shop": 0,
@@ -1656,5 +1656,13 @@
         6.0
       ]
     }
-  ]
+  ],
+  "detail_pass": {
+    "revision": "reference_finish_20261025",
+    "fractured_cliff_modules": 195,
+    "inlaid_stones": 108,
+    "protected_geometry_sha256_before": "8d3bbd9fc7974a94d48c8e3e4ec6144f1801acc2350fc1232d44984be03d9414",
+    "protected_geometry_sha256_after": "8d3bbd9fc7974a94d48c8e3e4ec6144f1801acc2350fc1232d44984be03d9414",
+    "script_sha256": "2142ef4d9d0b33efdddb1657b948298db028a4a3ba2727acb434e813ca8c1379"
+  }
 }

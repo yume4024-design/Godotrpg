@@ -586,6 +586,9 @@ for surface in [o for o in groups['Terrain'].objects if o.name.endswith('_Grass'
             o=box(f'EdgeGuard_{guard_count:03d}-colonly',(p.x,p.y,h+.9),(length/count+.12,.40,2.0),'black','Bounds')
             o.rotation_euler.z=math.atan2(direction.y,direction.x);o.hide_render=True;o.display_type='WIRE';guard_count+=1
 
+from reference_detail_pass import apply_reference_details
+detail_receipt=apply_reference_details(groups,materials)
+
 scene.world.use_nodes=True
 scene.world.node_tree.nodes['Background'].inputs[0].default_value=(.55,.65,.75,1)
 scene.world.node_tree.nodes['Background'].inputs[1].default_value=.6
@@ -613,5 +616,6 @@ layout={'layout_version':4,'reference':'docs/references/greystone_reference_2026
 (ROOT/'data/world/greystone_reference_layout_v4.json').write_text(json.dumps(layout,indent=2),encoding='utf-8')
 receipt=json.loads((DEST/'manifest.json').read_text(encoding='utf8'))
 receipt['bridge_clearance_removed']=bridge_clearance_removed
+receipt['detail_pass']=detail_receipt
 (DEST/'manifest.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding='utf8')
 print('REFERENCE_V5_MASTER_ASSEMBLED',str(DEST/'greystone_master.blend'),flush=True)

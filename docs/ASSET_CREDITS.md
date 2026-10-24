@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-25 灰石村視覺細節修整
+
+既有使用者參考及專案模組來源維持不變；新增岩壁斷層網格、嵌石、窗框／小窗屋頂、材質和光照由本專案Blender Python／Godot Shader製作。無新增外部素材、付費API、貼圖下載或授權變更。來源腳本及雜湊見[修整報告](GREYSTONE_REFERENCE_FINISH_20261025_REPORT.md)。
+
 ## 2026-10-24 — 更新參考圖的灰石村模組修整
 
 使用者提供 `docs/references/greystone_reference_20261024.png` 作佈局／配色參考，未用作表面貼圖。本輪重用先前本機 Pixal3D 合格牆面與 G04／reference_modules；以背景 Blender Python 重做屋頂、石階、拱橋、封閉船殼、階地岩面及造景，材質為本專案程序 Shader。未新增外部下載、付費素材、AI 圖像或 3D 生成服務。原始合格 GLB 與舊 Blender 主檔保留；新主檔 `source_assets/greystone_reference_20261024/greystone_master.blend`，來源／SHA 詳見其 `evidence/asset_receipt.json`。

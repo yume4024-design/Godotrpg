@@ -27,7 +27,10 @@ func _run() -> void:
 		"mine_landing":Vector3(0,10.1,-43),
 		"dock_road":Vector3(17,3.1,15),
 		"boat":Vector3(25,3.1,18),
-		"plaza":Vector3(-3,3.1,3)
+		"plaza":Vector3(-3,3.1,3),
+		"inn_facade":Vector3(-9,3.1,-8),
+		"item_facade":Vector3(-21,3.1,-1),
+		"river_cliff":Vector3(39,3.1,-6)
 	}
 	for name: String in views:
 		await _place(views[name])
@@ -57,7 +60,7 @@ func _run() -> void:
 	await RenderingServer.frame_post_draw
 	root.get_texture().get_image().save_webp(output+"overview.webp",false,.95)
 	FileAccess.open(output+"metrics.json",FileAccess.WRITE).store_string(JSON.stringify({"method":"120 native frame_post_draw intervals/view at 60 FPS cap, scheduler timing not GPU duration or endurance","renderer":RenderingServer.get_current_rendering_method(),"device":RenderingServer.get_video_adapter_name(),"views":measurements},"  "))
-	print("VILLAGE_VISUAL_CAPTURE ",label," nine actual rendered views; no human acceptance claimed")
+	print("VILLAGE_VISUAL_CAPTURE ",label," ",views.size()+1," actual rendered views; no human acceptance claimed")
 	game.queue_free()
 	await process_frame
 	quit(0)

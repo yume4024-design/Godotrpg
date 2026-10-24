@@ -1,0 +1,127 @@
+{
+  "baseline_commit": "0c5946f1b0ed92bf6967f74846859ecd69304a2f",
+  "detail_pass": {
+    "revision": "reference_finish_20261025",
+    "fractured_cliff_modules": 195,
+    "inlaid_stones": 108,
+    "protected_geometry_sha256_before": "8d3bbd9fc7974a94d48c8e3e4ec6144f1801acc2350fc1232d44984be03d9414",
+    "protected_geometry_sha256_after": "8d3bbd9fc7974a94d48c8e3e4ec6144f1801acc2350fc1232d44984be03d9414",
+    "script_sha256": "2142ef4d9d0b33efdddb1657b948298db028a4a3ba2727acb434e813ca8c1379"
+  },
+  "visual_triangles": 170703,
+  "visual_mesh_nodes": 1208,
+  "files": [
+    {
+      "path": "scripts/tools/greystone/build_reference_v5.py",
+      "bytes": 42397,
+      "sha256": "3bb560b34085471f1771e96d0c3e9a63d939e6e9db58d76c5aaf33ac9eba4e36"
+    },
+    {
+      "path": "scripts/tools/greystone/reference_detail_pass.py",
+      "bytes": 5374,
+      "sha256": "2142ef4d9d0b33efdddb1657b948298db028a4a3ba2727acb434e813ca8c1379"
+    },
+    {
+      "path": "scripts/tools/greystone/reference_art_pass.py",
+      "bytes": 6474,
+      "sha256": "32d57f3b62db0e8af447219cc86d246c1c212cc69fd17f01054dcc3065f27a73"
+    },
+    {
+      "path": "scripts/tools/greystone/audit_reference_finish.py",
+      "bytes": 1568,
+      "sha256": "efa0d5cb3b5697ee5d59da1e33cd9dd8d88fa72b2abccf7c8ba77dcb0bac220e"
+    },
+    {
+      "path": "scripts/world/reference_village_surfaces.gd",
+      "bytes": 6799,
+      "sha256": "a14788976e933085577f89f2dac2a7ac7f24160ff40bb879a2d71de7ae76e8cb"
+    },
+    {
+      "path": "source_assets/greystone_reference_20261024/greystone_master.blend",
+      "bytes": 23653447,
+      "sha256": "99ff85e88a0ea1097e75cfd74cf493cd89ac12be23219343cecf4a7549afd5cd"
+    },
+    {
+      "path": "assets/shaders/greystone/reference_ground.gdshader",
+      "bytes": 2647,
+      "sha256": "ffe105f12c9b3ec14db9963dd996d927f4ba14fe4377cd1c868fda28d3986397"
+    },
+    {
+      "path": "assets/shaders/greystone/reference_rock.gdshader",
+      "bytes": 1731,
+      "sha256": "d76b08cc1e604058ff70c1347c7ca46e808137b78d564aec3efecd7216957ad6"
+    },
+    {
+      "path": "assets/materials/greystone/reference_v5/daylight.tres",
+      "bytes": 560,
+      "sha256": "89b1805e77c76e69beef1f5d35b6584e5c553f312df188622ea17d9fb6965aaa"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/bounds.glb",
+      "bytes": 1559496,
+      "sha256": "3796cd1a4707ede5c4d6fd97ef7a37f5064c6a86a4963cec4e6f3561197707f0"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/cliffs.glb",
+      "bytes": 1102944,
+      "sha256": "9ffa0f5a95fcee77243b0cce8b14b6d8a91ed5a221a3a701006882586e71309f"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/mine.glb",
+      "bytes": 105096,
+      "sha256": "1adb8c579776e43453c82763b06faa9f6324ed2d08d04d9f629a416c87457af7"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/paths.glb",
+      "bytes": 139748,
+      "sha256": "0636b0798fc0e243161bbf2fff560f93576114e1171350620d46e198d3409633"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/props.glb",
+      "bytes": 808680,
+      "sha256": "e16636442e63c5e2fcf6437e4d218219fe94dd9cde96dc35957dd0fcf53a6649"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/terrain.glb",
+      "bytes": 37936,
+      "sha256": "f26695fe8e86596397a019bd258d50b9f2be4d2a378a0a3e52d3081e97a1b8c7"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/vegetation.glb",
+      "bytes": 363228,
+      "sha256": "38ebb251c58fdc1b23426e94ab48499158a14bb0c2299b42bc52be8d6332e39c"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/water.glb",
+      "bytes": 53392,
+      "sha256": "e3292dbcf5c2dc53f5cc69dde9ae886152914ae4dccdc8b0e9834087e741bc55"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/house_a.glb",
+      "bytes": 5073148,
+      "sha256": "002bcf2117a15d4002dac1f3c00dbdead85141708cee93a89f6e6f21875593c7"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/house_a_blue.glb",
+      "bytes": 5090792,
+      "sha256": "595d7906e5b419d23051752934a42faabfb28b09879febf41a4fb54a6f3e5f31"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/inn.glb",
+      "bytes": 5786988,
+      "sha256": "41409eabbe20de80cad39149444048494eebf6cede00209d50e3b1a02fe2cbc3"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/item_shop.glb",
+      "bytes": 5102972,
+      "sha256": "6c0b55caa9e4704f6968b44d0f7db47ef5026f813fd002ddb99419bfec6e65a1"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/weapon_shop.glb",
+      "bytes": 5477640,
+      "sha256": "fc033b405e76044e9a4619de37abe45d71dbc7167295d1dbeaf0a0fc1b74de8f"
+    }
+  ],
+  "human_acceptance": "paused_by_user",
+  "new_windows_export": false
+}
