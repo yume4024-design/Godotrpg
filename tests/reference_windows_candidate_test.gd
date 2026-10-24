@@ -29,3 +29,14 @@ func _verify_migrations() -> void:
 	for field: String in ["party","inventory","flags","quests","rewards","story"]:
 		_check(game.capture_state()[field]==baseline[field],"Packaged layout 3 migration preserves "+field)
 	_check(await game.saves.request_load(),"Packaged migrated village reloads completed slot")
+
+func _verify_surfaces() -> void:
+	await super._verify_surfaces()
+	var world: Node3D = game.travel.current_map.get_node("Village")
+	var deck_volume := AABB(Vector3(19.1,6.05,-30.9),Vector3(15.8,2.5,3.8))
+	var intrusions: Array[String] = []
+	for group: String in ["Vegetation","Cliffs"]:
+		for node: Node in world.get_node(group).find_children("*","MeshInstance3D",true,false):
+			var mesh: MeshInstance3D = node as MeshInstance3D
+			if (mesh.global_transform*mesh.get_aabb()).intersects(deck_volume):intrusions.append(mesh.name)
+	_check(intrusions.is_empty(),"Packaged upper bridge retains clear walking volume: "+str(intrusions))

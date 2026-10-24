@@ -5,8 +5,8 @@
   "files": [
     {
       "path": "scripts/tools/greystone/build_reference_v5.py",
-      "bytes": 41120,
-      "sha256": "2e3a90221db7b7996034f84ad4142893e6409ed99d79c2c0bbd5da8d3198c02a"
+      "bytes": 42239,
+      "sha256": "e821433a523d9ca32f7814fb1cbd0faebff574ea32d2aaced5f8231527ba1884"
     },
     {
       "path": "scripts/tools/greystone/reference_art_pass.py",
@@ -20,8 +20,8 @@
     },
     {
       "path": "source_assets/greystone_reference_20261024/greystone_master.blend",
-      "bytes": 23589204,
-      "sha256": "7d652eae8a61a205d8b7f6c183fa989cef1edd677720ad6be4d701033d0d2849"
+      "bytes": 23590055,
+      "sha256": "fa0df61d03cbb5c19f161586f8841f5393c98dcc35b2d507c7303528eafdd6fd"
     },
     {
       "path": "docs/references/greystone_reference_20261024.png",
@@ -31,7 +31,7 @@
     {
       "path": "data/world/greystone_reference_layout_v4.json",
       "bytes": 23953,
-      "sha256": "e7a7584186dc75a39ed98d31ccd0cbda4a05f3f39c6b4945e0f9774388be3509"
+      "sha256": "5defe9c0bd8fd36d7c1c65ad21dc27dd231cbb1d7380d339eab8c1f58b5c38b0"
     },
     {
       "path": "assets/models/greystone/reference_v5/bounds.glb",
@@ -65,8 +65,8 @@
     },
     {
       "path": "assets/models/greystone/reference_v5/vegetation.glb",
-      "bytes": 365156,
-      "sha256": "00f5ce1d7032642bd60ad531fea81872e9c5de8a663662c34dadae102e4cb17e"
+      "bytes": 363228,
+      "sha256": "38ebb251c58fdc1b23426e94ab48499158a14bb0c2299b42bc52be8d6332e39c"
     },
     {
       "path": "assets/models/greystone/reference_v5/water.glb",
@@ -85,8 +85,8 @@
     },
     {
       "path": "assets/models/greystone/reference_v5/buildings/inn.glb",
-      "bytes": 5774936,
-      "sha256": "eb2675a1cb630c1e32c3bc20ecf708372a96ac88a676a2b7c115c62a8e4aba45"
+      "bytes": 5774952,
+      "sha256": "c3d8d535b7a3bd83af4a24da19b67396d68bce20338dc56ea6ebef383773999e"
     },
     {
       "path": "assets/models/greystone/reference_v5/buildings/item_shop.glb",
@@ -95,8 +95,8 @@
     },
     {
       "path": "assets/models/greystone/reference_v5/buildings/weapon_shop.glb",
-      "bytes": 5477640,
-      "sha256": "fc033b405e76044e9a4619de37abe45d71dbc7167295d1dbeaf0a0fc1b74de8f"
+      "bytes": 5477788,
+      "sha256": "ba7ac3b3e4131ab90a5bf2b979db7814daea7bedb7d67adc1745d9f12edb0a38"
     },
     {
       "path": "assets/shaders/greystone/reference_ground.gdshader",
@@ -160,8 +160,8 @@
     {
       "collection": "Vegetation",
       "path": "res://assets/models/greystone/reference_v5/vegetation.glb",
-      "mesh_nodes": 469,
-      "instanced_triangles": 24074
+      "mesh_nodes": 460,
+      "instanced_triangles": 23774
     },
     {
       "collection": "Props",
@@ -182,6 +182,6 @@
       "instanced_triangles": 15264
     }
   ],
-  "scene_instanced_triangles_including_collision": 182677,
-  "visual_instanced_triangles": 167413
+  "scene_instanced_triangles_including_collision": 182377,
+  "visual_instanced_triangles": 167113
 }

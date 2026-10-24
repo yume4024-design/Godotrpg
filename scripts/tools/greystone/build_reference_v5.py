@@ -510,6 +510,20 @@ for x in [-15,-12,-9,-6,-3,0,3,6,9,12,15,18]:
 for x,y,z,scale in [(-18,54,13,3.0),(-9,55,16,2.6),(3,55,17,2.9),(13,53,14,3.1),(22,52,14,2.2),(35,50,14,2.8),(42,51,14,3.0)]:
     instance('rock_medium','BackdropCrag',(x,y,z),scale,rng.random()*6,'Cliffs')
 
+# Imported upstream bridge was absent from the soil-strip exclusion list. A
+# background stone could therefore sit on its deck despite routes being walkable.
+# Audit actual world bounds after all placement, before creating any trunk bodies.
+bpy.context.view_layer.update()
+bridge_clearance_removed=[]
+for collection in ['Vegetation','Cliffs']:
+    for obj in list(groups[collection].objects):
+        corners=[obj.matrix_world@Vector(corner) for corner in obj.bound_box]
+        lo=Vector([min(p[i] for p in corners) for i in range(3)])
+        hi=Vector([max(p[i] for p in corners) for i in range(3)])
+        if hi.x>18.65 and lo.x<35.35 and hi.y>26.65 and lo.y<31.35 and hi.z>6.05 and lo.z<8.6:
+            bridge_clearance_removed.append({'collection':collection,'name':obj.name,'position':list(obj.location)})
+            bpy.data.objects.remove(obj,do_unlink=True)
+
 # Static body volumes are independent of AI topology and remain editable in Blender.
 for building in list(groups['Buildings_Candidate'].objects):
     corners=[building.matrix_world@Vector(c) for c in building.bound_box]
@@ -597,4 +611,7 @@ scene.render.filepath=str(ART/'overview.png');bpy.ops.render.render(write_still=
 (DEST/'manifest.json').write_text(json.dumps({'status':'CANDIDATE_BUILT','buildings':'Approved textured wall designs with repaired roofs; six placements from updated reference','ai_sources':{k:str(v.relative_to(ROOT)) for k,v in ai_sources.items()},'collections':list(groups),'building_placements':placements,'layout_version':4,'reference':'docs/references/greystone_reference_20261024.png','roof_repairs':roof_repairs,'vegetation_removed':vegetation_repairs,'roads':ROAD_PATHS,'builder_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'same_facing_duplicate_cleanup':cleanup_counts,'edge_guards':guard_count,'coordinate_system':'Blender Z up, north +Y; GLTF exporter handles Y up','original_main_entry_replaced':False,'rpg_candidate':'scenes/main/greystone_reference_integration.tscn'},ensure_ascii=False,indent=2),encoding='utf8')
 layout={'layout_version':4,'reference':'docs/references/greystone_reference_20261024.png','reference_sha256':hashlib.sha256((ROOT/'docs/references/greystone_reference_20261024.png').read_bytes()).hexdigest(),'blender_axes':'x east, y north, z up; Godot x,y,z = x,z,-y','building_placements':placements,'roads':ROAD_PATHS,'ramps':RAMPS,'bridge_centers':[[27,29,6.1],[27,6,3.7]],'landmarks':{'well':[0,0,3],'mine':[0,46.5,10],'dock':[23,-17,3],'forest_exit':[-44,18,5]},'builder_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
 (ROOT/'data/world/greystone_reference_layout_v4.json').write_text(json.dumps(layout,indent=2),encoding='utf-8')
+receipt=json.loads((DEST/'manifest.json').read_text(encoding='utf8'))
+receipt['bridge_clearance_removed']=bridge_clearance_removed
+(DEST/'manifest.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding='utf8')
 print('REFERENCE_V5_MASTER_ASSEMBLED',str(DEST/'greystone_master.blend'),flush=True)

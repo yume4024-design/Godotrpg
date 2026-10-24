@@ -10,6 +10,11 @@ func _update_camera() -> void:
 func _run_checks() -> void:
 	Engine.max_fps = 60
 	for frame: int in 30: await get_tree().physics_frame
+	if "--bridge-clearance-only" in OS.get_cmdline_user_args():
+		_audit_bridge_clearance()
+		print("BRIDGE_CLEARANCE_RESULT checks=", checks, " failures=", failures)
+		get_tree().quit(0 if failures.is_empty() else 1)
+		return
 	_check(DisplayServer.get_name() != "headless", "Native graphical renderer")
 	_check(is_equal_approx((player.get_node("CollisionShape3D").shape as CapsuleShape3D).height, 1.95), "Actual 1.95 m player collider")
 	_check(village.get_node("Buildings_Candidate").get_child_count() == 6, "Six reference buildings")
@@ -59,6 +64,7 @@ func _run_checks() -> void:
 	get_tree().quit(0 if failures.is_empty() else 1)
 
 func _audit_visible_geometry() -> void:
+	_audit_bridge_clearance()
 	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/world/greystone_reference_layout_v4.json"))
 	var visible_steps: PackedVector3Array = PackedVector3Array()
 	for node: Node in village.get_node("Paths").find_children("*Steps*", "MeshInstance3D", true, false):
@@ -125,3 +131,13 @@ func _audit_visible_geometry() -> void:
 		if count!=2:closed=false
 	_check(closed,"Boat skin is manifold: every triangle edge has two adjoining faces")
 	_check(interior_found,"Boat inside floor above 2 m waterline; minimum sampled height "+str(lowest))
+
+func _audit_bridge_clearance() -> void:
+	var walk_volume := AABB(Vector3(19.1,6.05,-30.9),Vector3(15.8,2.5,3.8))
+	var intrusions: Array[String] = []
+	for group: String in ["Vegetation","Cliffs"]:
+		for node: Node in village.get_node(group).find_children("*","MeshInstance3D",true,false):
+			var visual: MeshInstance3D = node as MeshInstance3D
+			if (visual.global_transform*visual.get_aabb()).intersects(walk_volume):
+				intrusions.append(group+"/"+visual.name)
+	_check(intrusions.is_empty(),"Upper bridge walking volume has no decoration: "+str(intrusions))

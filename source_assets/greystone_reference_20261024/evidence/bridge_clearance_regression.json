@@ -1,0 +1,96 @@
+{
+  "reproduced_from_source": "8e1d6931da908c1f4b8ee6054250bc3569b415d5",
+  "before": {
+    "log_sha256": "f60398592eacb1c2571d55d983ba351dc3cd14981301791b352fa34e9ad41973",
+    "expected_failure": "GardenStone_085 and GrassTuft_040/042/043 overlapped actual upper bridge walking volume"
+  },
+  "removed": [
+    {
+      "collection": "Vegetation",
+      "name": "Shrub.010",
+      "position": [
+        36.0,
+        30.0,
+        6.0
+      ]
+    },
+    {
+      "collection": "Vegetation",
+      "name": "GrassTuft.040",
+      "position": [
+        34.75450134277344,
+        29.738554000854492,
+        6.0
+      ]
+    },
+    {
+      "collection": "Vegetation",
+      "name": "GrassTuft.042",
+      "position": [
+        34.70526123046875,
+        29.160879135131836,
+        6.0
+      ]
+    },
+    {
+      "collection": "Vegetation",
+      "name": "GrassTuft.043",
+      "position": [
+        34.97115707397461,
+        29.284761428833008,
+        6.0
+      ]
+    },
+    {
+      "collection": "Vegetation",
+      "name": "GardenStone.021",
+      "position": [
+        21.796184539794922,
+        26.032468795776367,
+        6.0
+      ]
+    },
+    {
+      "collection": "Vegetation",
+      "name": "GroundShrub.016",
+      "position": [
+        22.405704498291016,
+        25.93446922302246,
+        6.0
+      ]
+    },
+    {
+      "collection": "Vegetation",
+      "name": "GardenStone.085",
+      "position": [
+        23.332015991210938,
+        29.852876663208008,
+        6.0
+      ]
+    },
+    {
+      "collection": "Vegetation",
+      "name": "GardenStone.092",
+      "position": [
+        22.314067840576172,
+        26.71106719970703,
+        6.0
+      ]
+    },
+    {
+      "collection": "Vegetation",
+      "name": "GroundGrass.082",
+      "position": [
+        21.454538345336914,
+        26.523183822631836,
+        6.0
+      ]
+    }
+  ],
+  "after": {
+    "checks": 70,
+    "failures": [],
+    "scope": "Native InputMap player traversal, two bridges, five stair routes and sampled obstacles; no physical input certification"
+  },
+  "after_log_sha256": "e0ebb70a51a6e56f5359e7d724c8f01c79aa3d1e972acf83dd3d704f150063be"
+}
