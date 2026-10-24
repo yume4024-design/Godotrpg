@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-25 建築第二輪：旅館交錯山牆、商店窗框與屋頂封底已接入原始專案；[實際畫面與回歸結果](docs/GREYSTONE_ARCHITECTURE_20261025_REPORT.md)。入口同下；舊rc2固定包尚未包含本輪美術。
+
 2026-10-25 原始專案已更新岩壁、鋪面與光照；使用 `./tools/godot.ps1 -Mode RunReferenceVillage` 查看。[本輪畫面與結果](docs/GREYSTONE_REFERENCE_FINISH_20261025_REPORT.md)。下列rc2固定包仍對應之前的122891e提交。
 
 新版灰石村參考候選：`./tools/godot.ps1 -Mode RunReferenceVillage`。雙橋、實心階梯、礦坑道路與封閉船殼；[畫面／驗證／新包入口](docs/GREYSTONE_REFERENCE_20261024_REPORT.md)。固定包 `builds/greystone-reference/rc2-122891e/candidate/start_reference_village.cmd`；[啟動指南](docs/GREYSTONE_REFERENCE_20261024_GUIDE.md)。人工驗證仍暫停。

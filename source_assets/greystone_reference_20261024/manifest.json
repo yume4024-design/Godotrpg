@@ -95,31 +95,36 @@
       "retained_wall_uvs": true,
       "eave_m": 3.65,
       "ridge_m": 5.85,
-      "triangles": 28298
+      "triangles": 29090,
+      "roof_style": "clipped_cross_gable"
     },
     "item_shop": {
       "retained_wall_uvs": true,
       "eave_m": 2.65,
       "ridge_m": 4.1,
-      "triangles": 15943
+      "triangles": 16123,
+      "roof_style": "gable_with_shuttered_window"
     },
     "weapon_shop": {
       "retained_wall_uvs": true,
       "eave_m": 2.65,
       "ridge_m": 4.1,
-      "triangles": 19916
+      "triangles": 20096,
+      "roof_style": "gable_with_shuttered_window"
     },
     "house_a": {
       "retained_wall_uvs": true,
       "eave_m": 2.65,
       "ridge_m": 4.1,
-      "triangles": 17288
+      "triangles": 17468,
+      "roof_style": "gable_with_shuttered_window"
     },
     "house_a_blue": {
       "retained_wall_uvs": true,
       "eave_m": 2.65,
       "ridge_m": 4.1,
-      "triangles": 17454
+      "triangles": 17654,
+      "roof_style": "gable_with_shuttered_window"
     }
   },
   "vegetation_removed": [
@@ -1563,7 +1568,7 @@
       "width": 3.6
     }
   ],
-  "builder_sha256": "3bb560b34085471f1771e96d0c3e9a63d939e6e9db58d76c5aaf33ac9eba4e36",
+  "builder_sha256": "58f829e4fc81f1a71faf5a711b2b1062f663e04fced0bfe4688816a797947e83",
   "same_facing_duplicate_cleanup": {
     "inn": 0,
     "item_shop": 0,
@@ -1661,8 +1666,12 @@
     "revision": "reference_finish_20261025",
     "fractured_cliff_modules": 195,
     "inlaid_stones": 108,
-    "protected_geometry_sha256_before": "8d3bbd9fc7974a94d48c8e3e4ec6144f1801acc2350fc1232d44984be03d9414",
-    "protected_geometry_sha256_after": "8d3bbd9fc7974a94d48c8e3e4ec6144f1801acc2350fc1232d44984be03d9414",
+    "protected_geometry_sha256_before": "c5b11117b3a0d58d3c0e6625286ef670d62aedae655bbd166a13278bcb982625",
+    "protected_geometry_sha256_after": "c5b11117b3a0d58d3c0e6625286ef670d62aedae655bbd166a13278bcb982625",
     "script_sha256": "2142ef4d9d0b33efdddb1657b948298db028a4a3ba2727acb434e813ca8c1379"
+  },
+  "architectural_sources_sha256": {
+    "reference_art_pass.py": "0ce87c22a6ecaf7a7b554e202a97cb30c6d69ccae7abbc1e3fa43d48e10523c8",
+    "reference_building_collisions_v4.json": "bedf4223acec9611863361b7be66ebe5b8829505328eeb53566ea1c410701c6e"
   }
 }

@@ -15,7 +15,7 @@
     "collection": "Buildings_Candidate",
     "path": "res://scenes/world/greystone/reference_v5/buildings.tscn",
     "mesh_nodes": 6,
-    "instanced_triangles": 116353,
+    "instanced_triangles": 118085,
     "shared_modules": {
       "inn": "res://assets/models/greystone/reference_v5/buildings/inn.glb",
       "item_shop": "res://assets/models/greystone/reference_v5/buildings/item_shop.glb",

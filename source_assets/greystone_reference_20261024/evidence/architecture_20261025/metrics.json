@@ -1,0 +1,95 @@
+{
+  "device": "NVIDIA GeForce RTX 3080",
+  "method": "120 native frame_post_draw intervals/view at 60 FPS cap, scheduler timing not GPU duration or endurance",
+  "renderer": "gl_compatibility",
+  "views": {
+    "boat": {
+      "engine_static_bytes": 370068374.0,
+      "max_draw_calls": 850,
+      "mean_ms": 16.4556583333333,
+      "p95_ms": 16.717,
+      "p99_ms": 16.73,
+      "video_bytes": 946639545.0
+    },
+    "dock_road": {
+      "engine_static_bytes": 370042690.0,
+      "max_draw_calls": 842,
+      "mean_ms": 16.578275,
+      "p95_ms": 16.71,
+      "p99_ms": 16.742,
+      "video_bytes": 946639545.0
+    },
+    "entry_base": {
+      "engine_static_bytes": 369594110.0,
+      "max_draw_calls": 741,
+      "mean_ms": 16.459,
+      "p95_ms": 16.711,
+      "p99_ms": 16.728,
+      "video_bytes": 946639545.0
+    },
+    "entry_top": {
+      "engine_static_bytes": 369684458.0,
+      "max_draw_calls": 903,
+      "mean_ms": 16.4564916666667,
+      "p95_ms": 16.72,
+      "p99_ms": 16.744,
+      "video_bytes": 946639545.0
+    },
+    "inn_facade": {
+      "engine_static_bytes": 370082062.0,
+      "max_draw_calls": 686,
+      "mean_ms": 16.4248666666667,
+      "p95_ms": 16.686,
+      "p99_ms": 16.703,
+      "video_bytes": 946639545.0
+    },
+    "item_facade": {
+      "engine_static_bytes": 370363058.0,
+      "max_draw_calls": 801,
+      "mean_ms": 16.4568083333333,
+      "p95_ms": 16.724,
+      "p99_ms": 16.774,
+      "video_bytes": 946945379.0
+    },
+    "mine_approach": {
+      "engine_static_bytes": 369949970.0,
+      "max_draw_calls": 850,
+      "mean_ms": 16.507575,
+      "p95_ms": 16.683,
+      "p99_ms": 16.72,
+      "video_bytes": 946639545.0
+    },
+    "mine_landing": {
+      "engine_static_bytes": 369993938.0,
+      "max_draw_calls": 610,
+      "mean_ms": 16.4294166666667,
+      "p95_ms": 16.686,
+      "p99_ms": 16.706,
+      "video_bytes": 946639545.0
+    },
+    "north_steps": {
+      "engine_static_bytes": 369711086.0,
+      "max_draw_calls": 607,
+      "mean_ms": 16.5465333333333,
+      "p95_ms": 16.686,
+      "p99_ms": 16.721,
+      "video_bytes": 946639545.0
+    },
+    "plaza": {
+      "engine_static_bytes": 370083058.0,
+      "max_draw_calls": 736,
+      "mean_ms": 16.4320583333334,
+      "p95_ms": 16.687,
+      "p99_ms": 16.7,
+      "video_bytes": 946639545.0
+    },
+    "river_cliff": {
+      "engine_static_bytes": 370593454.0,
+      "max_draw_calls": 1377,
+      "mean_ms": 16.427775,
+      "p95_ms": 16.695,
+      "p99_ms": 16.708,
+      "video_bytes": 946945379.0
+    }
+  }
+}

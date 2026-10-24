@@ -524,12 +524,15 @@ for collection in ['Vegetation','Cliffs']:
             bridge_clearance_removed.append({'collection':collection,'name':obj.name,'position':list(obj.location)})
             bpy.data.objects.remove(obj,do_unlink=True)
 
-# Static body volumes are independent of AI topology and remain editable in Blender.
-for building in list(groups['Buildings_Candidate'].objects):
-    corners=[building.matrix_world@Vector(c) for c in building.bound_box]
-    lo=Vector([min(p[i] for p in corners) for i in range(3)]);hi=Vector([max(p[i] for p in corners) for i in range(3)])
-    size=hi-lo;height=min(3.8,size.z*.58)
-    o=box(building.name+'Body-colonly',((lo.x+hi.x)/2,(lo.y+hi.y)/2,lo.z+height/2),(size.x*.86,size.y*.78,height),'black','Bounds')
+# Freeze the validated layout-4 bodies independently of visual roof extents.
+# Editing a window or eave must not silently move a wall into an NPC lane.
+body_file=Path(__file__).with_name('reference_building_collisions_v4.json')
+body_contract=json.loads(body_file.read_text(encoding='utf8'))
+assert body_contract['layout_version']==4
+assert {row['name'] for row in body_contract['bodies']}=={o.name+'Body-colonly' for o in groups['Buildings_Candidate'].objects}
+for row in body_contract['bodies']:
+    o=mesh(row['name'],row['vertices'],row['faces'],'black','Bounds')
+    o.matrix_world=Matrix(row['matrix_world'])
     o.hide_render=True;o.display_type='WIRE'
 for tree in list(groups['Vegetation'].objects):
     if not tree.name.startswith('Pine'):continue
@@ -617,5 +620,6 @@ layout={'layout_version':4,'reference':'docs/references/greystone_reference_2026
 receipt=json.loads((DEST/'manifest.json').read_text(encoding='utf8'))
 receipt['bridge_clearance_removed']=bridge_clearance_removed
 receipt['detail_pass']=detail_receipt
+receipt['architectural_sources_sha256']={name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in ['reference_art_pass.py','reference_building_collisions_v4.json']}
 (DEST/'manifest.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding='utf8')
 print('REFERENCE_V5_MASTER_ASSEMBLED',str(DEST/'greystone_master.blend'),flush=True)

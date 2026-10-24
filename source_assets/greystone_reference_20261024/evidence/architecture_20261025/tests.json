@@ -1,0 +1,88 @@
+[
+  {
+    "mode": "TestReferenceVillage",
+    "checks": 70,
+    "failures": 0,
+    "marker": "REFERENCE_VILLAGE_RESULT {\"checks\":70,\"failures\":[],\"scope\":\"Native InputMap player traversal, two bridges, five stair routes and sampled obstacles; no physical input certification\"}",
+    "log_sha256": "e4562c40ebe25061af649ac54f57fab9fceab6bfd8c8ae13aec120cc2e35589d",
+    "command": "./tools/godot.ps1 -Mode TestReferenceVillage"
+  },
+  {
+    "mode": "VisualReferenceStory",
+    "checks": 68,
+    "failures": 0,
+    "marker": "REFERENCE_STORY_RESULT checks=68 failures=0",
+    "log_sha256": "bd10894c9730a1b76dd63c38645244dbecb5f23c230ef4e7009090f560c3b4d8",
+    "command": "./tools/godot.ps1 -Mode VisualReferenceStory"
+  },
+  {
+    "mode": "TestReferenceStoryReload",
+    "checks": 7,
+    "failures": 0,
+    "marker": "REFERENCE_STORY_RESULT checks=7 failures=0",
+    "log_sha256": "6ed22df099102ddc491b3c110858d63fa8f49cb853cb79c5c25510b1b2a1185f",
+    "command": "./tools/godot.ps1 -Mode TestReferenceStoryReload"
+  },
+  {
+    "mode": "VisualReferenceCommerce",
+    "checks": 53,
+    "failures": 0,
+    "marker": "REFERENCE_COMMERCE_RESULT checks=53 failures=0",
+    "log_sha256": "2e8ed5942842744b9a5d20babd2358b38a5c4d31a1dd88e3411c81a4f0d7352b",
+    "command": "./tools/godot.ps1 -Mode VisualReferenceCommerce"
+  },
+  {
+    "mode": "TestReferenceCommerceReload",
+    "checks": 5,
+    "failures": 0,
+    "marker": "REFERENCE_COMMERCE_RESULT checks=5 failures=0",
+    "log_sha256": "aa0457a7153681d9eb235f19d49b351c14aa180fbff4ecfa70b0ceb0cf4aa24e",
+    "command": "./tools/godot.ps1 -Mode TestReferenceCommerceReload"
+  },
+  {
+    "mode": "TestReferenceMigration",
+    "checks": 80,
+    "failures": 0,
+    "marker": "REFERENCE_MIGRATION_RESULT checks=80 failures=0",
+    "log_sha256": "b34c29d975f2d062ca2ed2bfd41b9cf166cb66f07bd8f0ec2893760e94650aee",
+    "command": "./tools/godot.ps1 -Mode TestReferenceMigration"
+  },
+  {
+    "mode": "TestReferenceMigrationReload",
+    "checks": 6,
+    "failures": 0,
+    "marker": "REFERENCE_MIGRATION_RESULT checks=6 failures=0",
+    "log_sha256": "ec12445df2d29c397461c5421df465fa7f9ff564fca683d4b9b56e50dd877fea",
+    "command": "./tools/godot.ps1 -Mode TestReferenceMigrationReload"
+  },
+  {
+    "step": "build-final",
+    "marker": "REFERENCE_V5_MASTER_ASSEMBLED",
+    "log_sha256": "7a0ad274d56722bb883f38acd7ab489e6e7859d8f88ff36ee63d556f658eafc7"
+  },
+  {
+    "step": "export",
+    "marker": "EXPORTED_BLENDER_MASTER",
+    "log_sha256": "795f7982bbb450214ff551727168aa8e2e814aa6d0fac5008dfc1d972a187388"
+  },
+  {
+    "step": "audit-final",
+    "marker": "REFERENCE_FINISH_GEOMETRY_AUDIT",
+    "log_sha256": "110735d30f59bd62446c36691555fe840537a0e3a6a8fa05740215d2586e167c"
+  },
+  {
+    "step": "roof-audit",
+    "marker": "REFERENCE_ROOF_AUDIT",
+    "log_sha256": "b04fdca516a0682fa3d26826aff8d99c067b926b069451e045bd1dd1757fecc1"
+  },
+  {
+    "step": "capture",
+    "marker": "15 actual rendered views",
+    "log_sha256": "e8c7b09d0981b024998b24d8c0490d07f91eec47b90bb3a83e528c19432f0422"
+  },
+  {
+    "mode": "Check",
+    "passed": true,
+    "log_sha256": "ec2fa04ddc074f80647f73a31edf3b5a690d1cd2ed01c4194ca94af154aa1fd2"
+  }
+]

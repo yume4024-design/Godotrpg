@@ -1,0 +1,110 @@
+{
+  "baseline_commit": "66b4cfdb123d52f607c4249cf1014b13a6ccdc73",
+  "visual_triangles": 172435,
+  "previous_visual_triangles": 170703,
+  "visual_mesh_nodes": 1208,
+  "files": [
+    {
+      "path": "scripts/tools/greystone/build_reference_v5.py",
+      "bytes": 42698,
+      "sha256": "58f829e4fc81f1a71faf5a711b2b1062f663e04fced0bfe4688816a797947e83"
+    },
+    {
+      "path": "scripts/tools/greystone/reference_art_pass.py",
+      "bytes": 11775,
+      "sha256": "0ce87c22a6ecaf7a7b554e202a97cb30c6d69ccae7abbc1e3fa43d48e10523c8"
+    },
+    {
+      "path": "scripts/tools/greystone/reference_building_collisions_v4.json",
+      "bytes": 11538,
+      "sha256": "bedf4223acec9611863361b7be66ebe5b8829505328eeb53566ea1c410701c6e"
+    },
+    {
+      "path": "scripts/tools/greystone/audit_reference_roofs.py",
+      "bytes": 2591,
+      "sha256": "8d261eed0f9caa26e4be3aa2fb1ebaeee8e0ba90284f0bfe8f24436ad7e76365"
+    },
+    {
+      "path": "scripts/tools/greystone/audit_reference_finish.py",
+      "bytes": 1568,
+      "sha256": "efa0d5cb3b5697ee5d59da1e33cd9dd8d88fa72b2abccf7c8ba77dcb0bac220e"
+    },
+    {
+      "path": "tests/village_visual_repair_test.gd",
+      "bytes": 4231,
+      "sha256": "ce4948c65ee18ba1cd57647138568a355e9561feb8c4483a871bc0f87def07a0"
+    },
+    {
+      "path": "source_assets/greystone_reference_20261024/greystone_master.blend",
+      "bytes": 23694251,
+      "sha256": "1fd8e28f5a2f9f61ee967a9b948185057220cbfaf9a74f0de1e52528384af12f"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/bounds.glb",
+      "bytes": 1559496,
+      "sha256": "3796cd1a4707ede5c4d6fd97ef7a37f5064c6a86a4963cec4e6f3561197707f0"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/cliffs.glb",
+      "bytes": 1102944,
+      "sha256": "9ffa0f5a95fcee77243b0cce8b14b6d8a91ed5a221a3a701006882586e71309f"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/mine.glb",
+      "bytes": 105096,
+      "sha256": "1adb8c579776e43453c82763b06faa9f6324ed2d08d04d9f629a416c87457af7"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/paths.glb",
+      "bytes": 139748,
+      "sha256": "0636b0798fc0e243161bbf2fff560f93576114e1171350620d46e198d3409633"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/props.glb",
+      "bytes": 808680,
+      "sha256": "e16636442e63c5e2fcf6437e4d218219fe94dd9cde96dc35957dd0fcf53a6649"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/terrain.glb",
+      "bytes": 37936,
+      "sha256": "f26695fe8e86596397a019bd258d50b9f2be4d2a378a0a3e52d3081e97a1b8c7"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/vegetation.glb",
+      "bytes": 363228,
+      "sha256": "38ebb251c58fdc1b23426e94ab48499158a14bb0c2299b42bc52be8d6332e39c"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/water.glb",
+      "bytes": 53392,
+      "sha256": "e3292dbcf5c2dc53f5cc69dde9ae886152914ae4dccdc8b0e9834087e741bc55"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/house_a.glb",
+      "bytes": 5087624,
+      "sha256": "705d6fa0f8d50a0e4374727d2afd79a87a03b08282a600d9c397c226e067796a"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/house_a_blue.glb",
+      "bytes": 5106660,
+      "sha256": "8d16df5aaa9319f6549375381c376cd8ce9677ecdb1c5e545f5282a2ba32cbd8"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/inn.glb",
+      "bytes": 5843676,
+      "sha256": "bd860582b2410ee65a46d8212f92c8f50800cb18bee570b307e36f2863f54914"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/item_shop.glb",
+      "bytes": 5117452,
+      "sha256": "c9a4d3b8a5b11b5b476930394982e9e0078ec73fe2f2e3e8615de900bb91d39e"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/weapon_shop.glb",
+      "bytes": 5492128,
+      "sha256": "235139b9bbf61c657b39d03cb19005ebc3e6008884019d7d0f07ebc0ddd6f706"
+    }
+  ],
+  "human_acceptance": "paused_by_user",
+  "new_windows_export": false
+}

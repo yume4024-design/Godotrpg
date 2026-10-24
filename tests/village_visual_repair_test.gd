@@ -59,8 +59,22 @@ func _run() -> void:
 	game.camera.size = 103
 	await RenderingServer.frame_post_draw
 	root.get_texture().get_image().save_webp(output+"overview.webp",false,.95)
+	# HUD-free architectural review uses the same live map and renderer. The
+	# player's close exploration camera and input settings remain unchanged.
+	var architecture_views: Dictionary = {
+		"inn_architecture": [Vector3(-22,24,4), Vector3(-9,6,-16), 25.0],
+		"item_architecture": [Vector3(-30,15,7), Vector3(-21,5.4,-7), 17.0],
+		"weapon_architecture": [Vector3(3,16,20), Vector3(13,5.8,5), 19.0]
+	}
+	for view_name: String in architecture_views:
+		var setup: Array = architecture_views[view_name]
+		game.camera.global_position = setup[0]
+		game.camera.look_at(setup[1])
+		game.camera.size = setup[2]
+		await RenderingServer.frame_post_draw
+		root.get_texture().get_image().save_webp(output+view_name+".webp",false,.95)
 	FileAccess.open(output+"metrics.json",FileAccess.WRITE).store_string(JSON.stringify({"method":"120 native frame_post_draw intervals/view at 60 FPS cap, scheduler timing not GPU duration or endurance","renderer":RenderingServer.get_current_rendering_method(),"device":RenderingServer.get_video_adapter_name(),"views":measurements},"  "))
-	print("VILLAGE_VISUAL_CAPTURE ",label," ",views.size()+1," actual rendered views; no human acceptance claimed")
+	print("VILLAGE_VISUAL_CAPTURE ",label," ",views.size()+1+architecture_views.size()," actual rendered views; no human acceptance claimed")
 	game.queue_free()
 	await process_frame
 	quit(0)
