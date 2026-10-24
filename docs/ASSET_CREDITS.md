@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-24 — 更新參考圖的灰石村模組修整
+
+使用者提供 `docs/references/greystone_reference_20261024.png` 作佈局／配色參考，未用作表面貼圖。本輪重用先前本機 Pixal3D 合格牆面與 G04／reference_modules；以背景 Blender Python 重做屋頂、石階、拱橋、封閉船殼、階地岩面及造景，材質為本專案程序 Shader。未新增外部下載、付費素材、AI 圖像或 3D 生成服務。原始合格 GLB 與舊 Blender 主檔保留；新主檔 `source_assets/greystone_reference_20261024/greystone_master.blend`，來源／SHA 詳見其 `evidence/asset_receipt.json`。
+
 ## 2026-10-24 — 礦坑內部參考場景
 
 使用者提供`docs/references/mine_interior_reference.png`作構圖與模組設計參考，未把概念圖當遊戲貼圖。新岩層、橋、鐵軌、礦車、吊籠、營帳與造景由本專案Blender Python製作，來源`source_assets/mine_reference_20261024/mine_reference_master.blend`；重用G04 crate／barrel／crystal_blue及ENV02 mine_support_frame，沿用原作者與授權紀錄，來源SHA列於`assets/models/mine_reference/manifest.json`。本輪未下載第三方素材或使用付費API；岩土／木紋／水流／火把為本專案共享Shader。[範圍與檢查](MINE_REFERENCE_REPORT.md)。

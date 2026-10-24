@@ -1,0 +1,12 @@
+[gd_scene format=3]
+[ext_resource type="PackedScene" path="res://scenes/main/mine_reference_integration.tscn" id="Base"]
+[ext_resource type="PackedScene" path="res://scenes/world/reference_candidate/greystone_runtime.tscn" id="Village"]
+[ext_resource type="Script" path="res://scripts/core/reference_village_game.gd" id="Game"]
+[node name="GreystoneReferenceIntegration" instance=ExtResource("Base")]
+script = ExtResource("Game")
+greystone_layout_version = 4
+village_scene = ExtResource("Village")
+legacy_slot_path = "user://crystal_mine_reference_slot_01.json"
+legacy_import_label = "匯入先前旅程（保留原檔）"
+[node name="Saves" parent="."]
+slot_path = "user://crystal_reference_v4_slot_01.json"

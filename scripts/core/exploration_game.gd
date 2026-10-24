@@ -7,7 +7,7 @@ extends Node3D
 @export_file("*.json") var battles_path: String
 @export var starting_character: CombatantDefinition
 @export var greystone_enabled: bool = false
-@export_range(2, 3) var greystone_layout_version: int = 2
+@export_range(2, 4) var greystone_layout_version: int = 2
 @export_range(3, 4) var mine_layout_version: int = 3
 @export var initial_map: StringName = &"village"
 @export var initial_spawn: StringName = &"default"
@@ -355,9 +355,11 @@ func validate_loaded_position(location: Dictionary, candidate_flags: Dictionary)
 		selected = load("res://scenes/world/%s.tscn" % location.map)
 	if location.map == "mine" and int(location.get("layout_version", 1)) == 3 and mine_layout_version == 4:
 		selected = load("res://scenes/world/expanded/mine.tscn")
-	if location.map == "greystone_runtime" and int(location.get("layout_version", 0)) == 2 and greystone_layout_version == 3:
+	if location.map == "greystone_runtime" and int(location.get("layout_version", 0)) == 2 and greystone_layout_version >= 3:
 		# Validate the old coordinates against their original world before migration.
 		selected = load("res://scenes/world/greystone_runtime.tscn")
+	if location.map == "greystone_runtime" and int(location.get("layout_version", 0)) == 3 and greystone_layout_version == 4:
+		selected = load("res://scenes/world/blender_candidate/greystone_runtime.tscn")
 	if selected == null: return false
 	var viewport: SubViewport = SubViewport.new()
 	viewport.world_3d = World3D.new()

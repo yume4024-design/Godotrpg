@@ -82,6 +82,14 @@ func request_load(backup: bool = false) -> bool:
 		position_valid = not candidate.is_empty()
 		if position_valid:
 			position_valid = await _game.validate_loaded_position(candidate.data.location, candidate.data.flags)
+	if position_valid and _game.greystone_layout_version == 4 and candidate.data.location.map == "greystone_runtime" and int(candidate.data.location.get("layout_version",0)) in [2,3]:
+		# A different bridge width and eastern terrace require a new layout. The
+		# original world was validated above; never apply old coordinates to it.
+		var village_upgrade: Dictionary = candidate.data.duplicate(true)
+		village_upgrade.location = {"map":"greystone_runtime","layout_version":4,"x":-3.0,"y":3.1,"z":3.0}
+		candidate = codec.prepare(village_upgrade,_game)
+		position_valid = not candidate.is_empty()
+		if position_valid: position_valid = await _game.validate_loaded_position(candidate.data.location,candidate.data.flags)
 	if position_valid and _game.mine_layout_version == 4 and candidate.data.location.map == "mine" and int(candidate.data.location.get("layout_version",1)) != 4:
 		var mine_upgrade: Dictionary = candidate.data.duplicate(true)
 		mine_upgrade.location = {"map":"mine","layout_version":4,"x":-44.5,"y":.1,"z":28.0}

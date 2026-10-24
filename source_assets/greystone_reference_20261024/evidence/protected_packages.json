@@ -1,0 +1,56 @@
+[
+  {
+    "path": "builds/windows/ProjectCrystal.exe",
+    "sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+    "actual_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "unchanged": true
+  },
+  {
+    "path": "builds/windows/ProjectCrystal.pck",
+    "sha256": "A8C95F156C55A0CF15CB6B71E617C435868EB6822D0C08A014FBDEFBB42002B7",
+    "actual_sha256": "a8c95f156c55a0cf15cb6b71e617c435868eb6822d0c08a014fbdefbb42002b7",
+    "unchanged": true
+  },
+  {
+    "path": "builds/g08/rc4-fixed-0bb2188-v2/candidate/ProjectCrystal.exe",
+    "sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+    "actual_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "unchanged": true
+  },
+  {
+    "path": "builds/g08/rc4-fixed-0bb2188-v2/candidate/ProjectCrystal.pck",
+    "sha256": "CDA06C308442128628490EF2651548C7FD34B185FBF6976F9B36604D319D05B8",
+    "actual_sha256": "cda06c308442128628490ef2651548c7fd34b185fbf6976f9b36604d319d05b8",
+    "unchanged": true
+  },
+  {
+    "path": "builds/greystone-blender/rc1-63d05f5/candidate/ProjectCrystal.exe",
+    "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "actual_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "unchanged": true
+  },
+  {
+    "path": "builds/greystone-blender/rc1-63d05f5/candidate/ProjectCrystal.pck",
+    "sha256": "1a7448b726327c0553510db30fba4a84c5a72143709a198235ed998ff59d19f8",
+    "actual_sha256": "1a7448b726327c0553510db30fba4a84c5a72143709a198235ed998ff59d19f8",
+    "unchanged": true
+  },
+  {
+    "path": "builds/greystone-blender/rc1-63d05f5/ProjectCrystal-0.6.1-greystone-blender-rc1-windows-x64.zip",
+    "sha256": "89f91f66204a3bfe444db58c3933c8528224d9710963ee9e924ef88586a78702",
+    "actual_sha256": "89f91f66204a3bfe444db58c3933c8528224d9710963ee9e924ef88586a78702",
+    "unchanged": true
+  },
+  {
+    "path": "builds/mine-reference/rc1-2d02f63/candidate/ProjectCrystal.pck",
+    "sha256": "dd14666045912b9cc1a93232c5d8750f0c2151951b337452cfb9a1e7cf09f833",
+    "actual_sha256": "dd14666045912b9cc1a93232c5d8750f0c2151951b337452cfb9a1e7cf09f833",
+    "unchanged": true
+  },
+  {
+    "path": "builds/mine-reference/rc1-2d02f63/ProjectCrystal-0.6.1-mine-reference-rc1-windows-x64.zip",
+    "sha256": "93394d4ad4e2bcadf4fcf57f2fa7d0e0bb4e3e6509870022c95ed1fab0fb0ae8",
+    "actual_sha256": "93394d4ad4e2bcadf4fcf57f2fa7d0e0bb4e3e6509870022c95ed1fab0fb0ae8",
+    "unchanged": true
+  }
+]

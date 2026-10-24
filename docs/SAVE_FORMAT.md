@@ -1,5 +1,9 @@
 # 序章存檔格式 v1
 
+## 2026-10-24 更新參考灰石村位置版4
+
+新版獨立入口為 `scenes/main/greystone_reference_integration.tscn`，新槽 `user://crystal_reference_v4_slot_01.json`；Schema3／CH00-G06.4不變。村莊位置版2或3先在各自原始地圖完成地板／膠囊驗證，再將複本映射位置版4廣場(-3,3.1,3)，再次驗證新圖。來源槽保留，隊伍、裝備、經濟、旗標、任務、劇情及收據不改。新村莊粗界仍x/z±60、y -0.1～10.2m；不能以粗界直接接受水中或岩內位置。舊設定拒絕新版位置，歷史Schema2不能偽稱位置4，無效來源拒絕且保留檔案。本候選同時重用礦坑位置4與森林位置3。[測試證據](GREYSTONE_REFERENCE_20261024_REPORT.md)。
+
 ## 2026-10-24 礦坑位置版4（獨立候選）
 
 新`mine_reference_integration.tscn`使用`user://crystal_mine_reference_slot_01.json`，Schema仍3／CH00-G06.4。只有此設定`mine_layout_version=4`接受礦坑位置4；既有入口預設3，森林位置版仍3、村莊仍依各入口2／3。新版礦坑粗界x/z±56、y -0.1～7.2m，之後仍強制實心膠囊與地板驗證，不能直接接受水中或岩內。

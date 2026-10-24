@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3]
+[ext_resource type="Shader" path="res://assets/shaders/greystone/reference_ground.gdshader" id="1"]
+[resource]
+shader = ExtResource("1")
+shader_parameter/base_color = Color(0.35, 0.44, 0.22, 1)
+shader_parameter/grain_color = Color(0.51, 0.56, 0.31, 1)
+shader_parameter/grass_amount = 1.0
+shader_parameter/road_edge_blend = 0.0

@@ -107,7 +107,7 @@ func set_dialogue_active(active: bool) -> void:
 func set_input_hint(gamepad: bool) -> void:
 	footer.text = "左搖桿 / 十字鍵  移動     A  互動     Menu  手冊     B  返回" if gamepad else "WASD / 方向鍵  移動     E  互動     M  手冊     R  返回本區起點"
 	if running_enabled:
-		footer.text = "左搖桿  走路 · 按住 LS  跑步     A  互動     Menu  手冊     B  返回" if gamepad else "WASD / 方向鍵  走路 · 按住 Shift  跑步     E  互動     M  手冊     R  返回起點"
+		footer.text = "左搖桿  走路 · 按住 LB  跑步     A  互動     Menu  手冊     B  返回" if gamepad else "WASD / 方向鍵  走路 · 按住 Shift  跑步     E  互動     M  手冊     R  返回起點"
 	next_button.text = "A  顯示全文・繼續  ›" if gamepad else "E / 空白鍵 / Enter  顯示全文・繼續  ›"
 
 func show_line(who: String, text: String, index: int, total: int) -> void:

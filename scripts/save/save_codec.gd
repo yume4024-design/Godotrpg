@@ -130,7 +130,7 @@ func prepare(data: Variant, game: ExplorationGame) -> Dictionary:
 		var extent: Vector2 = Vector2(24.0,24.0) if location.map == "forest" else Vector2(25.0,19.0)
 		if absf(location.x) > extent.x or absf(location.z) > extent.y or location.y < -0.1 or location.y > 2.0: return {}
 	elif greystone:
-		var height_limit: float = 10.2 if int(location.layout_version) == 3 else 6.2
+		var height_limit: float = 10.2 if int(location.layout_version) in [3,4] else 6.2
 		if absf(location.x) > 60.0 or absf(location.z) > 60.0 or location.y < -0.1 or location.y > height_limit: return {}
 	elif absf(location.x) > 12.5 or absf(location.z) > z_limit or location.y < -0.1 or location.y > 2.0: return {}
 	error = ""

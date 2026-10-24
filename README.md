@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+新版灰石村參考候選：`./tools/godot.ps1 -Mode RunReferenceVillage`。雙橋、實心階梯、礦坑道路與封閉船殼；[畫面／驗證／新包入口](docs/GREYSTONE_REFERENCE_20261024_REPORT.md)。人工驗證仍暫停。
+
 2026-10-24 新礦坑參考重建與序章候選已完成自動圖形驗收：八區三層Blender場景、完整探索環線、動態水體與安全舊檔遷移。Windows Release序章／交易／遷移127／0＋新程序讀檔22／0；啟動`builds/mine-reference/rc1-2d02f63/candidate/start_mine_reference.cmd`。[指南](docs/MINE_REFERENCE_GUIDE.md)／[報告](docs/MINE_REFERENCE_REPORT.md)／[場景Skill](docs/skills/crystal-scene-builder/SKILL.md)。人工鍵鼠／Xbox依使用者指示暫停，新礦坑長測未做；正式v0.6.1與舊候選包保留。
 
 2026-10-24 新 Blender 灰石村 Windows 固定候選已匯出：`builds/greystone-blender/rc1-63d05f5/candidate/start_blender_village.cmd`。包含地面／岩石紋理及動態水體；原生包內序章116／0＋重啟22／0，實體輸入與新長測仍待。[操作說明](docs/BLENDER_WINDOWS_RC1_GUIDE.md)／[實際結果](docs/BLENDER_WINDOWS_RC1_REPORT.md)。正式v0.6.1／舊RC4保留。
@@ -8,7 +10,7 @@
 
 2026-10-17 雷恩／莉雅已改用 ComfyUI Pixal3D 重製模型，見 [重製報告](docs/PIXAL3D_CHARACTER_REPORT.md)。以 `tools/godot.ps1 -Mode PreviewCharacters` 檢視兩人，`-Mode RunG06` 遊玩新版灰石村；正式 v0.6.1 入口與既有匯出保留。
 
-2026-10-21 G06 探索比例與步態已修整：兩位主角約 1.95m，與村民／門面統一尺度。WASD／方向鍵或左搖桿走路，按住 **Shift／Xbox LS（左搖桿按鍵）** 跑步；鬆開恢復走路。見 [比例與走跑報告](docs/EXPLORATION_LOCOMOTION_REPORT.md)。
+2026-10-21 G06 探索比例與步態已修整：兩位主角約 1.95m，與村民／門面統一尺度。WASD／方向鍵或左搖桿走路，新版源碼按住 **Shift／Xbox LB** 跑步（2026-10-24更新；舊匯出包仍用LS）；鬆開恢復走路。見 [比例與走跑報告](docs/EXPLORATION_LOCOMOTION_REPORT.md)。
 
 2026-10-17 功能分支已提供新版灰石村 Windows 預覽與角色更新，見 [預覽說明](docs/GREYSTONE_PREVIEW_GUIDE.md) 及 [角色修整紀錄](docs/CHARACTER_POLISH_REPORT.md)。用 `tools/godot.ps1 -Mode ExportGreystonePreview` 產生獨立預覽；正式 v0.6.1 輸出保留。
 

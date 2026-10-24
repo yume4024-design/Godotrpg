@@ -1,0 +1,76 @@
+{
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "physical_input_tested": false,
+  "tests": [
+    {
+      "mode": "TestReferenceMigration",
+      "markers": [
+        "REFERENCE_MIGRATION_RESULT checks=80 failures=0"
+      ],
+      "log_sha256": "7d74c7e2caaff2f2a0f22e74746446189d1520b68219eff2d22a7a9a06d45c8e"
+    },
+    {
+      "mode": "TestReferenceMigrationReload",
+      "markers": [
+        "REFERENCE_MIGRATION_RESULT checks=6 failures=0"
+      ],
+      "log_sha256": "1783f70aa0302bc803a22b8398c02808075643e9456fa773b3f27ced605fdb6f"
+    },
+    {
+      "mode": "TestReferenceStory",
+      "markers": [
+        "REFERENCE_STORY_RESULT checks=58 failures=0"
+      ],
+      "log_sha256": "b6cc1324718690f5281561be1e8bb50e35f3c3a497320428e46c2edde0056e5c"
+    },
+    {
+      "mode": "VisualReferenceStory",
+      "markers": [
+        "REFERENCE_STORY_RESULT checks=68 failures=0"
+      ],
+      "log_sha256": "584fca41a540f7df1702851c22157d3d52762fea4b530e8b6de0b885fafcdf54"
+    },
+    {
+      "mode": "TestReferenceStoryReload",
+      "markers": [
+        "REFERENCE_STORY_RESULT checks=7 failures=0"
+      ],
+      "log_sha256": "602b06310b58a4933e9339597cab8eda008f4ed1bdc03f07525dfb502e1d9110"
+    },
+    {
+      "mode": "TestReferenceCommerce",
+      "markers": [
+        "REFERENCE_COMMERCE_RESULT checks=50 failures=0"
+      ],
+      "log_sha256": "349ad7f0f7088ee38e44a055b9427f743ca6f32c0a89989bacc26eee0423017e"
+    },
+    {
+      "mode": "VisualReferenceCommerce",
+      "markers": [
+        "REFERENCE_COMMERCE_RESULT checks=53 failures=0"
+      ],
+      "log_sha256": "ef154fdd4516895e14ddd1e31515ea1687f64ce76f92c4dc3837a92d7d6709f5"
+    },
+    {
+      "mode": "TestReferenceCommerceReload",
+      "markers": [
+        "REFERENCE_COMMERCE_RESULT checks=5 failures=0"
+      ],
+      "log_sha256": "50687309aaf82bacf11269ec7a92bcda58585d8d877e709fd9a436cfc20ef703"
+    },
+    {
+      "mode": "TestExplorationLocomotion",
+      "markers": [
+        "EXPLORATION_LOCOMOTION_RESULT checks=67 failures=0"
+      ],
+      "log_sha256": "631a43305aeddf8365bd38a08fed67fdfbb0ef72b999b14ccc9bd3ee4bf4e0b4"
+    },
+    {
+      "mode": "TestPhase6",
+      "markers": [
+        "PHASE6_RESULT checks=85 failures=0 renderer=headless"
+      ],
+      "log_sha256": "0dfb9daf65cbecb2ffd42bec44b67c792215f7d9bacd3bc02ccdbaf219d53ed3"
+    }
+  ]
+}

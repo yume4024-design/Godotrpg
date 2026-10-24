@@ -3,7 +3,7 @@ param(
     [Parameter(Mandatory=$true)][string]$SourceRoot,
     [Parameter(Mandatory=$true)][string]$BuildRoot,
     [ValidateSet('candidate','qa','qa-soak')][string[]]$Roles=@('candidate','qa'),
-    [ValidateSet('Blender','Mine')][string]$CandidateFamily='Blender',
+    [ValidateSet('Blender','Mine','Reference')][string]$CandidateFamily='Blender',
     [string]$GodotPath='D:/Godot_v4.7.2-stable_win64.exe/Godot_v4.7.2-stable_win64_console.exe'
 )
 $ErrorActionPreference='Stop'
@@ -39,14 +39,14 @@ try {
     foreach ($role in $Roles) {
         $folder=Join-Path $BuildRoot $role
         New-Item -ItemType Directory -Force $folder | Out-Null
-        if ($CandidateFamily -eq 'Mine') {
+        if ($CandidateFamily -in @('Mine','Reference')) {
             if ($role -eq 'qa-soak') { throw 'Mine has no endurance QA preset; do not reuse village endurance evidence.' }
-            $preset=if ($role -eq 'candidate') { 'Windows Mine Candidate' } else { 'Windows Mine QA' }
+            $preset=if ($CandidateFamily -eq 'Reference') { if ($role -eq 'candidate') { 'Windows Reference Candidate' } else { 'Windows Reference QA' } } else { if ($role -eq 'candidate') { 'Windows Mine Candidate' } else { 'Windows Mine QA' } }
         } else { $preset=switch ($role) { 'candidate' { 'Windows Blender Candidate' } 'qa' { 'Windows Blender QA' } 'qa-soak' { 'Windows Blender Soak QA' } } }
         Invoke-Engine ('export-'+$role) @('--headless','--path',$SourceRoot,'--export-release',$preset,(Join-Path $folder 'ProjectCrystal.exe'))
         foreach ($name in @('ASSET_CREDITS.md','GODOT_LICENSES.txt')) { Copy-Item -LiteralPath (Join-Path $SourceRoot ('docs/'+$name)) -Destination $folder }
         if ($role -eq 'candidate') {
-            $launcher=if ($CandidateFamily -eq 'Mine') { 'tools/start_mine_reference.cmd' } else { 'tools/start_blender_village.cmd' }
+            $launcher=if ($CandidateFamily -eq 'Reference') { 'tools/start_reference_village.cmd' } elseif ($CandidateFamily -eq 'Mine') { 'tools/start_mine_reference.cmd' } else { 'tools/start_blender_village.cmd' }
             Copy-Item -LiteralPath (Join-Path $SourceRoot $launcher) -Destination $folder
         }
         Get-ChildItem -LiteralPath $folder -File | ForEach-Object { [pscustomobject]@{file=$_.Name;bytes=$_.Length;sha256=(Get-FileHash -LiteralPath $_.FullName).Hash} } | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $folder 'SHA256.json') -Encoding utf8

@@ -1,0 +1,5 @@
+{
+  "checks": 69,
+  "failures": [],
+  "scope": "Native InputMap player traversal, two bridges, five stair routes and sampled obstacles; no physical input certification"
+}

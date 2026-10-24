@@ -1,0 +1,71 @@
+{
+  "device": "NVIDIA GeForce RTX 3080",
+  "method": "120 native frame_post_draw intervals/view at 60 FPS cap, scheduler timing not GPU duration or endurance",
+  "renderer": "gl_compatibility",
+  "views": {
+    "boat": {
+      "engine_static_bytes": 369874272.0,
+      "max_draw_calls": 826,
+      "mean_ms": 16.5004833333333,
+      "p95_ms": 16.684,
+      "p99_ms": 16.705,
+      "video_bytes": 945556013.0
+    },
+    "dock_road": {
+      "engine_static_bytes": 369848576.0,
+      "max_draw_calls": 815,
+      "mean_ms": 16.5209083333333,
+      "p95_ms": 16.681,
+      "p99_ms": 16.717,
+      "video_bytes": 945556013.0
+    },
+    "entry_base": {
+      "engine_static_bytes": 369469256.0,
+      "max_draw_calls": 727,
+      "mean_ms": 16.5432083333333,
+      "p95_ms": 16.684,
+      "p99_ms": 16.699,
+      "video_bytes": 945556013.0
+    },
+    "entry_top": {
+      "engine_static_bytes": 369525560.0,
+      "max_draw_calls": 879,
+      "mean_ms": 16.4753,
+      "p95_ms": 16.699,
+      "p99_ms": 16.72,
+      "video_bytes": 945556013.0
+    },
+    "mine_approach": {
+      "engine_static_bytes": 369724496.0,
+      "max_draw_calls": 845,
+      "mean_ms": 16.4266,
+      "p95_ms": 16.701,
+      "p99_ms": 20.318,
+      "video_bytes": 945556013.0
+    },
+    "mine_landing": {
+      "engine_static_bytes": 369801344.0,
+      "max_draw_calls": 610,
+      "mean_ms": 16.4456833333333,
+      "p95_ms": 16.69,
+      "p99_ms": 16.703,
+      "video_bytes": 945556013.0
+    },
+    "north_steps": {
+      "engine_static_bytes": 369551436.0,
+      "max_draw_calls": 594,
+      "mean_ms": 16.4804333333333,
+      "p95_ms": 16.696,
+      "p99_ms": 16.708,
+      "video_bytes": 945556013.0
+    },
+    "plaza": {
+      "engine_static_bytes": 369888956.0,
+      "max_draw_calls": 703,
+      "mean_ms": 16.5479416666667,
+      "p95_ms": 16.676,
+      "p99_ms": 16.693,
+      "video_bytes": 945556013.0
+    }
+  }
+}

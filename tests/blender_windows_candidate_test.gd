@@ -64,7 +64,7 @@ func _capture(label: String) -> void:
 
 func _finish() -> void:
 	if failures == 0:
-		_check(game.capture_state().location.layout_version == 3, "Packaged village retains layout 3 after story or restart")
+		_check(game.capture_state().location.layout_version == _expected_village_layout(), "Packaged village retains expected layout after story or restart")
 		_check(game.travel.current_map.get_node("NPCs").get_child_count() == 6, "Six existing NPC slots retained")
 		if "--reload" not in OS.get_cmdline_user_args():
 			await _verify_services()
@@ -118,14 +118,14 @@ func _verify_migrations() -> void:
 		_check(await game.call("import_legacy"),"Packaged legacy migration " + name)
 		_check(FileAccess.get_file_as_string(path) == bytes,"Legacy source bytes retained " + name)
 		var migrated: Dictionary = game.capture_state()
-		_check(migrated.schema_version == 3 and migrated.location.layout_version == 3,"Legacy reaches schema 3 / layout 3 " + name)
+		_check(migrated.schema_version == 3 and migrated.location.layout_version == _expected_village_layout(),"Legacy reaches schema 3 / expected layout " + name)
 		for field: String in ["party","flags","quests","rewards"]:
 			_check(migrated[field] == old[field],"Legacy retains " + field + " " + name)
 		_check(migrated.inventory.gold == old.inventory.gold and migrated.inventory.counts == old.inventory.counts,"Legacy retains economy " + name)
 		_check(await game.saves.request_load(),"Restore candidate after legacy import " + name)
 	var before: Dictionary = game.capture_state()
 	var invalid: Dictionary = before.duplicate(true)
-	invalid.location = {"map":"greystone_runtime","layout_version":3,"x":28.0,"y":2.0,"z":-2.0}
+	invalid.location = {"map":"greystone_runtime","layout_version":_expected_village_layout(),"x":28.0,"y":2.0,"z":-2.0}
 	var bad_path: String = OUTPUT + "invalid_water.json"
 	FileAccess.open(bad_path,FileAccess.WRITE).store_string(JSON.stringify(invalid))
 	var bad_bytes: String = FileAccess.get_file_as_string(bad_path)
@@ -144,3 +144,6 @@ func _verify_surfaces() -> void:
 	_check(world.get_node("Water").find_children("*", "CollisionShape3D",true,false).is_empty(),"Exported water and visual beds remain non-walkable")
 	await _capture("bridge_water")
 	_check(await game.saves.request_load(),"Return from water review to exact completed save")
+
+func _expected_village_layout() -> int:
+	return 3

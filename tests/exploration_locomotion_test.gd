@@ -57,12 +57,24 @@ func _run() -> void:
 	key_release.shift_pressed = false
 	Input.parse_input_event(key_release)
 	var joy: InputEventJoypadButton = InputEventJoypadButton.new()
-	joy.button_index = JOY_BUTTON_LEFT_STICK
+	joy.button_index = JOY_BUTTON_LEFT_SHOULDER
 	joy.pressed = true
+	(game.get("bridge_button") as Button).grab_focus()
+	var prior_focus: Control = root.gui_get_focus_owner()
 	Input.parse_input_event(joy)
 	await process_frame
-	_check(game.player.input_component.read_run(), "Xbox LS binding requests run (injected input, not hardware certification)")
+	_check(game.player.input_component.read_run(), "Xbox LB binding requests run (injected input, not hardware certification)")
+	_check(root.gui_get_focus_owner() == prior_focus, "Running with LB does not cycle background UI focus")
 	var joy_release: InputEventJoypadButton = joy.duplicate()
+	joy_release.pressed = false
+	Input.parse_input_event(joy_release)
+	await process_frame
+	_check(not game.player.input_component.read_run(), "Releasing LB restores walking")
+	joy.button_index = JOY_BUTTON_LEFT_STICK
+	Input.parse_input_event(joy)
+	await process_frame
+	_check(not game.player.input_component.read_run(), "Pressing LS no longer requests running")
+	joy_release = joy.duplicate()
 	joy_release.pressed = false
 	Input.parse_input_event(joy_release)
 	for character: String in ["ren", "lia"]:
@@ -112,7 +124,7 @@ func _run() -> void:
 	game.ui.set_input_hint(false)
 	_check(game.ui.footer.text.contains("Shift"), "Keyboard footer explains run")
 	game.ui.set_input_hint(true)
-	_check(game.ui.footer.text.contains("LS"), "Gamepad footer explains run")
+	_check(game.ui.footer.text.contains("LB"), "Gamepad footer explains run")
 	await _capture_at("village_gameplay")
 	measurements["checks"] = checks
 	measurements["failures"] = failures

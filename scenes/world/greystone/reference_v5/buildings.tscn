@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3]
+
+[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/buildings/inn.glb" id="inn"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/buildings/item_shop.glb" id="item_shop"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/buildings/weapon_shop.glb" id="weapon_shop"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/buildings/house_a.glb" id="house_a"]
+[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/buildings/house_a_blue.glb" id="house_a_blue"]
+
+[node name="Buildings_Candidate" type="Node3D"]
+
+[node name="Inn" parent="." instance=ExtResource("inn")]
+position = Vector3(-9.000000, 3.000000, -16.000000)
+scale = Vector3(1.250000, 1.250000, 1.250000)
+
+[node name="ItemShop" parent="." instance=ExtResource("item_shop")]
+position = Vector3(-21.000000, 3.000000, -7.000000)
+scale = Vector3(1.150000, 1.150000, 1.150000)
+
+[node name="WeaponShop" parent="." instance=ExtResource("weapon_shop")]
+position = Vector3(13.000000, 3.000000, 5.000000)
+scale = Vector3(1.300000, 1.300000, 1.300000)
+
+[node name="WestHouse" parent="." instance=ExtResource("house_a")]
+position = Vector3(-15.000000, 3.000000, 13.000000)
+scale = Vector3(1.180000, 1.180000, 1.180000)
+
+[node name="SouthHouse" parent="." instance=ExtResource("house_a_blue")]
+position = Vector3(5.000000, 3.000000, 18.000000)
+scale = Vector3(1.180000, 1.180000, 1.180000)
+
+[node name="GuildHall" parent="." instance=ExtResource("house_a_blue")]
+position = Vector3(9.000000, 3.000000, -17.000000)
+scale = Vector3(1.400000, 1.400000, 1.400000)
