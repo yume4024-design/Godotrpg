@@ -1,0 +1,13 @@
+{
+  "scope": "Test-only metadata load, no game state change",
+  "immediate_release": {
+    "code": "extends SceneTree\n\nfunc _initialize() -> void:\n\tcall_deferred(\"run\")\n\nfunc run() -> void:\n\tvar source: PackedScene = load(\"res://scenes/world/reference_candidate/greystone_runtime.tscn\")\n\tvar state: SceneState = source.get_state()\n\tprint(\"PROBE nodes=\", state.get_node_count())\n\tstate = null\n\tsource = null\n\tfor frame in 4: await process_frame\n\tquit()\n",
+    "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nOpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080\n\nPROBE nodes=17\nERROR: Texture with GL ID of 23: leaked 349524 bytes.\n   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)\nERROR: Texture with GL ID of 24: leaked 349524 bytes.\n   at: ~Utilities (drivers/gles3/storage/utilities.cpp:82)\n"
+  },
+  "delayed_release": {
+    "code": "extends SceneTree\n\nfunc _initialize() -> void:\n\tcall_deferred(\"run\")\n\nfunc run() -> void:\n\tvar source: PackedScene = load(\"res://scenes/world/reference_candidate/greystone_runtime.tscn\")\n\tvar state: SceneState = source.get_state()\n\tprint(\"PROBE nodes=\", state.get_node_count())\n\tfor frame in 4: await process_frame\n\tstate = null\n\tsource = null\n\tfor frame in 4: await process_frame\n\tquit()\n",
+    "output": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nOpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080\n\nPROBE nodes=17\n"
+  },
+  "integrated_smoke": "Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org\nOpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080\n\nPASS Courtyard meshes and live NPC marker definitions imported (10 beds, 5 props, 6 NPCs)\nPASS Actual garden bounds keep road widths clear: []\nPASS Actual garden bounds clear all NPC interaction circles: []\nPASS Porch, signs and display retain 2.2m ground clearance: []\nCOURTYARD_CLEARANCE_RESULT checks=4 failures=[]\n",
+  "fix": "Wait for frame_post_draw before releasing SceneState/PackedScene, then let rendering finish resource release."
+}

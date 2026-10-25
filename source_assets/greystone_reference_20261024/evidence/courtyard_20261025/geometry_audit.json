@@ -1,0 +1,12 @@
+{
+  "baseline": {
+    "file_sha256": "1fd8e28f5a2f9f61ee967a9b948185057220cbfaf9a74f0de1e52528384af12f",
+    "protected_geometry_sha256": "cd7c72e4d2eb69ca17460dc871b4ca0fd32e040078abef3b3bde5c30fb48be84"
+  },
+  "finished": {
+    "file_sha256": "bd8fbad7d61b978d80df9bec0e7efce542cc020ae7856d8cf17ff4d0a6c9969d",
+    "protected_geometry_sha256": "cd7c72e4d2eb69ca17460dc871b4ca0fd32e040078abef3b3bde5c30fb48be84"
+  },
+  "unchanged": true,
+  "scope": "All Terrain / Paths / Bounds world transforms, vertices and polygons. Art-only meshes excluded."
+}

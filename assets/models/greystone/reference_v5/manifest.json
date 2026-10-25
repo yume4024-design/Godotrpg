@@ -39,14 +39,14 @@
   {
     "collection": "Vegetation",
     "path": "res://assets/models/greystone/reference_v5/vegetation.glb",
-    "mesh_nodes": 460,
-    "instanced_triangles": 23774
+    "mesh_nodes": 470,
+    "instanced_triangles": 52214
   },
   {
     "collection": "Props",
     "path": "res://assets/models/greystone/reference_v5/props.glb",
-    "mesh_nodes": 331,
-    "instanced_triangles": 17704
+    "mesh_nodes": 336,
+    "instanced_triangles": 18370
   },
   {
     "collection": "Mine",

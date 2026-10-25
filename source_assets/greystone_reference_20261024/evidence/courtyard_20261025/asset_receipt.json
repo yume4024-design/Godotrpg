@@ -1,0 +1,1050 @@
+{
+  "baseline_commit": "839c7eda6527aeac4d7c6ac9ebed558f3daeb983",
+  "visual_triangles": 201541,
+  "previous_visual_triangles": 172435,
+  "visual_mesh_nodes": 1223,
+  "courtyard": {
+    "revision": "courtyard_20261025",
+    "beds": [
+      "Courtyard_Bed_InnWest",
+      "Courtyard_Bed_InnFront",
+      "Courtyard_Bed_InnEast",
+      "Courtyard_Bed_ItemEast",
+      "Courtyard_Bed_ItemRear",
+      "Courtyard_Bed_GuildEast",
+      "Courtyard_Bed_WeaponEast",
+      "Courtyard_Bed_WestHouse",
+      "Courtyard_Bed_WestFront",
+      "Courtyard_Bed_SouthHouse"
+    ],
+    "accepted_plants": [
+      {
+        "bed": "InnWest",
+        "position": [
+          -16.735804207025616,
+          13.978717084279872,
+          3.035
+        ],
+        "radius": 0.7216734791883159,
+        "height": 0.685556533122999
+      },
+      {
+        "bed": "InnWest",
+        "position": [
+          -17.11831211816333,
+          13.503765758260702,
+          3.035
+        ],
+        "radius": 0.5325365436757424,
+        "height": 0.34463910569008777
+      },
+      {
+        "bed": "InnWest",
+        "position": [
+          -17.702781900042233,
+          14.911765728880766,
+          3.035
+        ],
+        "radius": 0.7701547737214176,
+        "height": 0.4984173492137225
+      },
+      {
+        "bed": "InnWest",
+        "position": [
+          -17.279829930351976,
+          15.47100031049766,
+          3.035
+        ],
+        "radius": 0.7339341672749207,
+        "height": 0.6972036215372899
+      },
+      {
+        "bed": "InnWest",
+        "position": [
+          -17.218860447283088,
+          16.303748531459696,
+          3.035
+        ],
+        "radius": 0.5145551104544804,
+        "height": 0.3330021483056662
+      },
+      {
+        "bed": "InnWest",
+        "position": [
+          -16.701329106996425,
+          14.807592101858642,
+          3.035
+        ],
+        "radius": 0.6715570990771118,
+        "height": 0.4346083678093846
+      },
+      {
+        "bed": "InnWest",
+        "position": [
+          -17.44778001578738,
+          15.650511141295441,
+          3.035
+        ],
+        "radius": 0.7117430980523421,
+        "height": 0.6761231288751041
+      },
+      {
+        "bed": "InnWest",
+        "position": [
+          -17.175246192444725,
+          13.370920361222307,
+          3.035
+        ],
+        "radius": 0.6219120051364477,
+        "height": 0.4024797918819666
+      },
+      {
+        "bed": "InnWest",
+        "position": [
+          -17.719359562718385,
+          14.706633501071494,
+          3.035
+        ],
+        "radius": 0.6030631633536787,
+        "height": 0.3902814778837016
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -12.757097966302497,
+          10.676204237534872,
+          3.035
+        ],
+        "radius": 0.7910140126488809,
+        "height": 0.7514268430276807
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -14.123779383345639,
+          10.650356315602952,
+          3.035
+        ],
+        "radius": 0.6635205581145867,
+        "height": 0.4294073983678342
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -13.332583099776038,
+          11.127673942436497,
+          3.035
+        ],
+        "radius": 0.6315609629623934,
+        "height": 0.4087242613657362
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -13.016777563368676,
+          10.772871274132445,
+          3.035
+        ],
+        "radius": 0.8568908226769495,
+        "height": 0.8140067753633407
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -14.344064259212013,
+          10.945882540725124,
+          3.035
+        ],
+        "radius": 0.6480677789426925,
+        "height": 0.41940689782477525
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -13.198296564931763,
+          10.560633107941511,
+          3.035
+        ],
+        "radius": 0.7490498216983571,
+        "height": 0.4847589592360976
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -12.77101792769008,
+          10.34130167329364,
+          3.035
+        ],
+        "radius": 0.826077481194996,
+        "height": 0.7847355215768469
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -14.473923049582128,
+          10.777373521237612,
+          3.035
+        ],
+        "radius": 0.5474472454111126,
+        "height": 0.35428879259386314
+      },
+      {
+        "bed": "InnFront",
+        "position": [
+          -12.758783397445297,
+          11.12805842147819,
+          3.035
+        ],
+        "radius": 0.6824623532564054,
+        "height": 0.4416658685430118
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -0.8607341418655718,
+          15.162050853802796,
+          3.035
+        ],
+        "radius": 0.6423092806725046,
+        "height": 0.6101642035478844
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -0.3724011980139249,
+          17.26390222961378,
+          3.035
+        ],
+        "radius": 0.5792422734739917,
+        "height": 0.3748654275067416
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -1.2594574994754995,
+          17.98266174028059,
+          3.035
+        ],
+        "radius": 0.6777246014471004,
+        "height": 0.43859976056238337
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -0.8069279189060322,
+          18.879885819597014,
+          3.035
+        ],
+        "radius": 0.6816468656294674,
+        "height": 0.6475330956330676
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -0.3934493565992664,
+          16.35608499831462,
+          3.035
+        ],
+        "radius": 0.6822158604784809,
+        "height": 0.44150634700115365
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -0.7565214611273898,
+          15.923359431270374,
+          3.035
+        ],
+        "radius": 0.5188719676115848,
+        "height": 0.3357958679248821
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -0.9293071984925434,
+          15.533817525744833,
+          3.035
+        ],
+        "radius": 0.7635211737269121,
+        "height": 0.7253099135843919
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -1.3842742635606986,
+          16.115275018885566,
+          3.035
+        ],
+        "radius": 0.7709287361991768,
+        "height": 0.49891823077638764
+      },
+      {
+        "bed": "InnEast",
+        "position": [
+          -1.0136464595201944,
+          15.43758158147016,
+          3.035
+        ],
+        "radius": 0.6738623432267496,
+        "height": 0.4361002415438044
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -16.43382053069267,
+          6.970867069709775,
+          3.035
+        ],
+        "radius": 0.8299301217840173,
+        "height": 0.7883953525138919
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -15.667865545927937,
+          6.584680194351883,
+          3.035
+        ],
+        "radius": 0.5197914281632313,
+        "height": 0.3363909107740536
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -14.903418146679048,
+          7.100818152016006,
+          3.035
+        ],
+        "radius": 0.6827227850042668,
+        "height": 0.44183441090079395
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -15.935355542493372,
+          7.774739853846652,
+          3.035
+        ],
+        "radius": 0.8457894683909033,
+        "height": 0.8034610006095395
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -15.418248924997425,
+          7.385795737913628,
+          3.035
+        ],
+        "radius": 0.634772813129316,
+        "height": 0.4108028589423426
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -15.4376210026543,
+          7.1561516043203905,
+          3.035
+        ],
+        "radius": 0.7248849055330377,
+        "height": 0.4691202670276572
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -15.975271666419118,
+          8.084512262184433,
+          3.035
+        ],
+        "radius": 0.7950054568779686,
+        "height": 0.7552185310233721
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -16.33461481665518,
+          6.804803697665103,
+          3.035
+        ],
+        "radius": 0.7432775026300852,
+        "height": 0.48102331535386594
+      },
+      {
+        "bed": "ItemEast",
+        "position": [
+          -15.443526195477183,
+          6.422402439531503,
+          3.035
+        ],
+        "radius": 0.6112999896429381,
+        "height": 0.3956120650138562
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -19.51628429891609,
+          10.509963455522417,
+          3.035
+        ],
+        "radius": 0.7950792805857042,
+        "height": 0.7552886601421454
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -19.514264523088656,
+          11.111989046897074,
+          3.035
+        ],
+        "radius": 0.5920639962592832,
+        "height": 0.38316319998190096
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -20.759701042366814,
+          10.48321284051932,
+          3.035
+        ],
+        "radius": 0.6772757103527668,
+        "height": 0.4383092538785875
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -20.926346100702688,
+          10.504539184881944,
+          3.035
+        ],
+        "radius": 0.8602723163760563,
+        "height": 0.8172190384767701
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -20.00170720830169,
+          10.81556905198205,
+          3.035
+        ],
+        "radius": 0.5741240723371098,
+        "height": 0.37155310597030444
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -20.83694686751704,
+          10.949553904031195,
+          3.035
+        ],
+        "radius": 0.7116163887855756,
+        "height": 0.460533345059606
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -19.526141962874245,
+          10.567162675620374,
+          3.035
+        ],
+        "radius": 0.6994403610236798,
+        "height": 0.664436095904487
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -20.55945395988039,
+          11.112830916078323,
+          3.035
+        ],
+        "radius": 0.7139960361507421,
+        "height": 0.4620733699640529
+      },
+      {
+        "bed": "ItemRear",
+        "position": [
+          -20.74325732774986,
+          11.007033286319164,
+          3.035
+        ],
+        "radius": 0.7709784461736459,
+        "height": 0.49895040134073365
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          15.205799292946667,
+          18.4834175048464,
+          3.035
+        ],
+        "radius": 0.83113641720883,
+        "height": 0.7895412775522999
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          15.005202482348272,
+          18.55010710043829,
+          3.035
+        ],
+        "radius": 0.7181967297301801,
+        "height": 0.46479191256115426
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          15.352701089977256,
+          16.94153939794302,
+          3.035
+        ],
+        "radius": 0.7029788240363912,
+        "height": 0.45494341395374793
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          15.427910702545665,
+          18.666847512312227,
+          3.035
+        ],
+        "radius": 0.6684897146471173,
+        "height": 0.6350344087984332
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          15.668706435200278,
+          18.212408652380635,
+          3.035
+        ],
+        "radius": 0.635403295465195,
+        "height": 0.41121088515382276
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          15.856387064676271,
+          18.10737490923072,
+          3.035
+        ],
+        "radius": 0.6574701792161852,
+        "height": 0.4254918038468675
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          15.31020472428394,
+          17.757376056730116,
+          3.035
+        ],
+        "radius": 0.8026920986145435,
+        "height": 0.7625204862874226
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          15.192716044927144,
+          17.61314406230558,
+          3.035
+        ],
+        "radius": 0.6305605751727573,
+        "height": 0.4080768452263972
+      },
+      {
+        "bed": "GuildEast",
+        "position": [
+          14.93424128837137,
+          17.067740698223005,
+          3.035
+        ],
+        "radius": 0.5946438567030632,
+        "height": 0.3848327958184844
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.848407263676997,
+          -6.249346054160841,
+          3.035
+        ],
+        "radius": 0.7274189272887193,
+        "height": 0.6910144439296712
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.6821122768253,
+          -4.615573969476802,
+          3.035
+        ],
+        "radius": 0.6500291915727098,
+        "height": 0.42067625577349466
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.50484416981983,
+          -4.517462651041278,
+          3.035
+        ],
+        "radius": 0.6050923127722704,
+        "height": 0.39159467272307924
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.003855475832083,
+          -4.124839203923864,
+          3.035
+        ],
+        "radius": 0.7878595894758711,
+        "height": 0.7484302864451613
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.48791417828538,
+          -5.750277289681991,
+          3.035
+        ],
+        "radius": 0.6847791114960485,
+        "height": 0.44316519379550934
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.515800741275523,
+          -4.471109330870206,
+          3.035
+        ],
+        "radius": 0.5697588754780379,
+        "height": 0.3687281025793865
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.652162185792875,
+          -4.850330659120964,
+          3.035
+        ],
+        "radius": 0.8502444831316426,
+        "height": 0.8076930592187989
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.33248683022452,
+          -3.4178524131415617,
+          3.035
+        ],
+        "radius": 0.6266740479551975,
+        "height": 0.4055616201579828
+      },
+      {
+        "bed": "WeaponEast",
+        "position": [
+          18.009476105253256,
+          -5.928997018795839,
+          3.035
+        ],
+        "radius": 0.6257830065023503,
+        "height": 0.40498496915987015
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -20.148106155801713,
+          -11.810738053676971,
+          3.035
+        ],
+        "radius": 0.608306127120338,
+        "height": 0.5778627753581014
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -19.819513381201435,
+          -13.039365307777567,
+          3.035
+        ],
+        "radius": 0.5608559590515827,
+        "height": 0.3629664451087672
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -20.442724894576717,
+          -12.308197936933883,
+          3.035
+        ],
+        "radius": 0.6361580131408422,
+        "height": 0.41169931215075367
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -20.377428731378707,
+          -14.670284895662636,
+          3.035
+        ],
+        "radius": 0.7301560948341569,
+        "height": 0.6936146269031921
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -19.816168964265874,
+          -13.243941113856932,
+          3.035
+        ],
+        "radius": 0.7032614604315952,
+        "height": 0.455126326386022
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -20.34115487878751,
+          -13.77569355778427,
+          3.035
+        ],
+        "radius": 0.5368127557565316,
+        "height": 0.34740652123136134
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -19.52198038909744,
+          -12.688352832773512,
+          3.035
+        ],
+        "radius": 0.6790301651636591,
+        "height": 0.6450473508311684
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -20.00774520091711,
+          -11.683753003661533,
+          3.035
+        ],
+        "radius": 0.7560316737590236,
+        "height": 0.4892773707494935
+      },
+      {
+        "bed": "WestHouse",
+        "position": [
+          -20.526421325507723,
+          -12.832928497134297,
+          3.035
+        ],
+        "radius": 0.49764460107574165,
+        "height": 0.3220582555376217
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -19.11501324456575,
+          -17.573612178704018,
+          3.035
+        ],
+        "radius": 0.6311952336651648,
+        "height": 0.5996063712940408
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -18.48853423882809,
+          -17.66692792824148,
+          3.035
+        ],
+        "radius": 0.7051718222551094,
+        "height": 0.4563626460305971
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -18.00369828213678,
+          -17.15334605961014,
+          3.035
+        ],
+        "radius": 0.5267169488268355,
+        "height": 0.34087286656898974
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -18.28915439435581,
+          -17.01472859210851,
+          3.035
+        ],
+        "radius": 0.6895134247147018,
+        "height": 0.6550059640834174
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -17.991386284261782,
+          -17.62912060021145,
+          3.035
+        ],
+        "radius": 0.6557238250588082,
+        "height": 0.4243616242523137
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -18.077167919559635,
+          -17.16914841009746,
+          3.035
+        ],
+        "radius": 0.6553941662070095,
+        "height": 0.4241482805236701
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -18.28380247293135,
+          -17.048738570962882,
+          3.035
+        ],
+        "radius": 0.6081613448492829,
+        "height": 0.5777252388756552
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -18.181832951191385,
+          -17.186605948657906,
+          3.035
+        ],
+        "radius": 0.5764967250990376,
+        "height": 0.37308860421111967
+      },
+      {
+        "bed": "WestFront",
+        "position": [
+          -18.205323103147954,
+          -17.15723177631077,
+          3.035
+        ],
+        "radius": 0.6795554467892302,
+        "height": 0.43978461990933676
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          9.874956011228528,
+          -18.75675373492367,
+          3.035
+        ],
+        "radius": 0.6443237788268774,
+        "height": 0.6120778839179153
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          9.484306513471676,
+          -17.915749251602353,
+          3.035
+        ],
+        "radius": 0.7699403842648778,
+        "height": 0.4982786038234788
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          9.883180943968505,
+          -18.770975404062657,
+          3.035
+        ],
+        "radius": 0.7289261269252637,
+        "height": 0.47173560477875137
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          10.24738959272513,
+          -19.126660592442732,
+          3.035
+        ],
+        "radius": 0.7452495410183626,
+        "height": 0.7079527049084425
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          9.88011815047942,
+          -17.546356568590927,
+          3.035
+        ],
+        "radius": 0.5600428802576649,
+        "height": 0.36244024882849457
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          10.404974856457269,
+          -19.463644616096385,
+          3.035
+        ],
+        "radius": 0.5277924410807314,
+        "height": 0.341568887702114
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          9.57377794339862,
+          -19.322045657953172,
+          3.035
+        ],
+        "radius": 0.7699748394526233,
+        "height": 0.7314405984833707
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          9.502925536548117,
+          -17.287206231449687,
+          3.035
+        ],
+        "radius": 0.7131784314355142,
+        "height": 0.4615442446651218
+      },
+      {
+        "bed": "SouthHouse",
+        "position": [
+          9.84437827908973,
+          -18.149403834794033,
+          3.035
+        ],
+        "radius": 0.7204754294036769,
+        "height": 0.4662666076350165
+      }
+    ],
+    "rejected_plants": 0,
+    "plant_count": 90,
+    "signs": 3,
+    "navigation_changed": false
+  },
+  "mcp_export": {
+    "sha256": "20dccfe8ef2ae9b1c97bf66cd9b2f06a1d93755dd7243b1f415f642c6ab51995",
+    "bytes": 2056708,
+    "triangles": 29106,
+    "mesh_triangles": {
+      "Courtyard_Bed_GuildEast": 2844,
+      "Courtyard_Bed_InnEast": 2844,
+      "Courtyard_Bed_InnFront": 2844,
+      "Courtyard_Bed_InnWest": 2844,
+      "Courtyard_Bed_ItemEast": 2844,
+      "Courtyard_Bed_ItemRear": 2844,
+      "Courtyard_Bed_SouthHouse": 2844,
+      "Courtyard_Bed_WeaponEast": 2844,
+      "Courtyard_Bed_WestFront": 2844,
+      "Courtyard_Bed_WestHouse": 2844,
+      "Courtyard_InnPorchTrim": 72,
+      "Courtyard_ItemDisplay": 228,
+      "Courtyard_Sign_Inn": 144,
+      "Courtyard_Sign_Item": 116,
+      "Courtyard_Sign_Weapon": 106
+    },
+    "runtime_names_and_triangle_counts_match": true,
+    "scope": "Names and triangle counts compared, not bit-identical vertex buffers or runtime shaders"
+  },
+  "files": [
+    {
+      "path": "scripts/tools/greystone/build_reference_v5.py",
+      "bytes": 43016,
+      "sha256": "6df1ab7d6f5ce0df80dbf682adffd59706af68c7e7c5d3932eb3643a2ed8d26a"
+    },
+    {
+      "path": "scripts/tools/greystone/reference_courtyard_pass.py",
+      "bytes": 9395,
+      "sha256": "4f835e12a9ed178f954fd9622d29fd9943768c3b2941db56952a1818ac17824a"
+    },
+    {
+      "path": "scripts/tools/greystone/reference_v5_preview.gd",
+      "bytes": 12480,
+      "sha256": "95336c664de57cb63aabcfe79d6c128756252352bef9899f30fd02a205d9bd39"
+    },
+    {
+      "path": "source_assets/greystone_reference_20261024/greystone_master.blend",
+      "bytes": 24261462,
+      "sha256": "bd8fbad7d61b978d80df9bec0e7efce542cc020ae7856d8cf17ff4d0a6c9969d"
+    },
+    {
+      "path": "source_assets/greystone_reference_20261024/manifest.json",
+      "bytes": 52570,
+      "sha256": "192502e249b54a4cd533746503ccc169aa87e8987895fdee29ddf2d683818640"
+    },
+    {
+      "path": "data/world/greystone_reference_layout_v4.json",
+      "bytes": 23953,
+      "sha256": "8ab309a2c9f131f62c39fb35b80d6645edf82a0e911e461a06c00caedbdda5e5"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/bounds.glb",
+      "bytes": 1559496,
+      "sha256": "3796cd1a4707ede5c4d6fd97ef7a37f5064c6a86a4963cec4e6f3561197707f0"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/cliffs.glb",
+      "bytes": 1102944,
+      "sha256": "9ffa0f5a95fcee77243b0cce8b14b6d8a91ed5a221a3a701006882586e71309f"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/mine.glb",
+      "bytes": 105096,
+      "sha256": "1adb8c579776e43453c82763b06faa9f6324ed2d08d04d9f629a416c87457af7"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/paths.glb",
+      "bytes": 139748,
+      "sha256": "0636b0798fc0e243161bbf2fff560f93576114e1171350620d46e198d3409633"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/props.glb",
+      "bytes": 855820,
+      "sha256": "ee06f97796edb062be1aefa1bb27c3b0e3a92ef8a8f0edf720f030d97c2e2e60"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/terrain.glb",
+      "bytes": 37936,
+      "sha256": "f26695fe8e86596397a019bd258d50b9f2be4d2a378a0a3e52d3081e97a1b8c7"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/vegetation.glb",
+      "bytes": 2372608,
+      "sha256": "390e221dc701b3e5fb946ff71ad40d3228bd1c7288263ba70c65edb226b53664"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/water.glb",
+      "bytes": 53392,
+      "sha256": "e3292dbcf5c2dc53f5cc69dde9ae886152914ae4dccdc8b0e9834087e741bc55"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/house_a.glb",
+      "bytes": 5087624,
+      "sha256": "705d6fa0f8d50a0e4374727d2afd79a87a03b08282a600d9c397c226e067796a"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/house_a_blue.glb",
+      "bytes": 5106660,
+      "sha256": "8d16df5aaa9319f6549375381c376cd8ce9677ecdb1c5e545f5282a2ba32cbd8"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/inn.glb",
+      "bytes": 5843676,
+      "sha256": "bd860582b2410ee65a46d8212f92c8f50800cb18bee570b307e36f2863f54914"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/item_shop.glb",
+      "bytes": 5117452,
+      "sha256": "c9a4d3b8a5b11b5b476930394982e9e0078ec73fe2f2e3e8615de900bb91d39e"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/buildings/weapon_shop.glb",
+      "bytes": 5492128,
+      "sha256": "235139b9bbf61c657b39d03cb19005ebc3e6008884019d7d0f07ebc0ddd6f706"
+    }
+  ],
+  "human_acceptance": "paused_by_user",
+  "new_windows_export": false
+}

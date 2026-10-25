@@ -10,6 +10,11 @@ func _update_camera() -> void:
 func _run_checks() -> void:
 	Engine.max_fps = 60
 	for frame: int in 30: await get_tree().physics_frame
+	if "--courtyard-clearance-only" in OS.get_cmdline_user_args():
+		await _audit_courtyard_clearance(JSON.parse_string(FileAccess.get_file_as_string("res://data/world/greystone_reference_layout_v4.json")))
+		print("COURTYARD_CLEARANCE_RESULT checks=", checks, " failures=", failures)
+		get_tree().quit(0 if failures.is_empty() else 1)
+		return
 	if "--bridge-clearance-only" in OS.get_cmdline_user_args():
 		_audit_bridge_clearance()
 		print("BRIDGE_CLEARANCE_RESULT checks=", checks, " failures=", failures)
@@ -21,7 +26,7 @@ func _run_checks() -> void:
 	_check(village.get_node("Bounds").find_children("*Body*", "StaticBody3D", true, false).size() == 6, "Six solid building proxies")
 	for node: Node in village.get_node("Paths").find_children("*RampCollisionGuide*", "MeshInstance3D", true, false):
 		_check(not (node as MeshInstance3D).visible, "Collision guide does not cover masonry/bridge: " + node.name)
-	_audit_visible_geometry()
+	await _audit_visible_geometry()
 	var routes: Dictionary = {
 		"entry": [Vector3(-7,.4,35),Vector3(-7,0,29),Vector3(-7,3,23),Vector3(-3,3,12),Vector3(-3,3,3)],
 		"inn": [Vector3(-3,3.4,3),Vector3(-5,3,-7),Vector3(-9,3,-9.8)],
@@ -66,6 +71,7 @@ func _run_checks() -> void:
 func _audit_visible_geometry() -> void:
 	_audit_bridge_clearance()
 	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/world/greystone_reference_layout_v4.json"))
+	await _audit_courtyard_clearance(layout)
 	var visible_steps: PackedVector3Array = PackedVector3Array()
 	for node: Node in village.get_node("Paths").find_children("*Steps*", "MeshInstance3D", true, false):
 		var instance: MeshInstance3D = node as MeshInstance3D
@@ -141,3 +147,59 @@ func _audit_bridge_clearance() -> void:
 			if (visual.global_transform*visual.get_aabb()).intersects(walk_volume):
 				intrusions.append(group+"/"+visual.name)
 	_check(intrusions.is_empty(),"Upper bridge walking volume has no decoration: "+str(intrusions))
+
+func _flat_box_distance(a: Vector2, b: Vector2, bounds: Rect2) -> float:
+	if bounds.has_point(a) or bounds.has_point(b): return 0.0
+	var corners: Array[Vector2] = [bounds.position, Vector2(bounds.end.x,bounds.position.y), bounds.end, Vector2(bounds.position.x,bounds.end.y)]
+	var distance: float = minf(a.distance_to(a.clamp(bounds.position,bounds.end)),b.distance_to(b.clamp(bounds.position,bounds.end)))
+	for i: int in 4:
+		if Geometry2D.segment_intersects_segment(a,b,corners[i],corners[(i+1)%4]) != null: return 0.0
+		distance=minf(distance,corners[i].distance_to(Geometry2D.get_closest_point_to_segment(corners[i],a,b)))
+	return distance
+
+func _audit_courtyard_clearance(layout: Dictionary) -> void:
+	# Inspect imported visible bounds against actual road data and NPC markers.
+	# This catches decoration blocking a lane even when it has no physics shape.
+	var npc_positions: Array[Vector3] = []
+	var source: PackedScene = load("res://scenes/world/reference_candidate/greystone_runtime.tscn")
+	var state: SceneState = source.get_state()
+	for index: int in state.get_node_count():
+		if not str(state.get_node_path(index)).trim_prefix("./").begins_with("NPCAnchors/"): continue
+		for property: int in state.get_node_property_count(index):
+			if state.get_node_property_name(index,property)==&"position":
+				npc_positions.append(state.get_node_property_value(index,property))
+	var beds: Array[Node] = village.get_node("Vegetation").find_children("Courtyard_Bed_*","MeshInstance3D",true,false)
+	var props: Array[Node] = village.get_node("Props").find_children("Courtyard_*","MeshInstance3D",true,false)
+	_check(beds.size()==10 and props.size()==5 and npc_positions.size()==6,"Courtyard meshes and live NPC marker definitions imported (%d beds, %d props, %d NPCs)" % [beds.size(), props.size(), npc_positions.size()])
+	var roads_blocked: Array[String] = []
+	var npcs_blocked: Array[String] = []
+	for node: Node in beds:
+		var mesh: MeshInstance3D = node as MeshInstance3D
+		var bounds: AABB = mesh.global_transform*mesh.get_aabb()
+		var flat := Rect2(Vector2(bounds.position.x,bounds.position.z),Vector2(bounds.size.x,bounds.size.z))
+		for npc: Vector3 in npc_positions:
+			var point := Vector2(npc.x,npc.z)
+			if point.distance_to(point.clamp(flat.position,flat.end))<2.2:
+				npcs_blocked.append(str(mesh.name))
+		for road: Dictionary in layout.roads:
+			for i: int in road.points.size()-1:
+				var av: Array = road.points[i]
+				var bv: Array = road.points[i+1]
+				if minf(av[2],bv[2])>bounds.end.y+.2 or maxf(av[2],bv[2])<bounds.position.y-.2: continue
+				if _flat_box_distance(Vector2(av[0],-av[1]),Vector2(bv[0],-bv[1]),flat)<float(road.width)*.5+.25:
+					roads_blocked.append(str(mesh.name)+" / "+str(road.name)); break
+	_check(roads_blocked.is_empty(),"Actual garden bounds keep road widths clear: "+str(roads_blocked))
+	_check(npcs_blocked.is_empty(),"Actual garden bounds clear all NPC interaction circles: "+str(npcs_blocked))
+	var low_props: Array[String] = []
+	for node: Node in props:
+		var mesh: MeshInstance3D = node as MeshInstance3D
+		if (mesh.global_transform*mesh.get_aabb()).position.y<5.199:
+			low_props.append(str(mesh.name))
+	_check(low_props.is_empty(),"Porch, signs and display retain 2.2m ground clearance: "+str(low_props))
+	# A metadata-only scene load also queues procedural sky textures. Keep its
+	# resources alive until rendering has initialized them before releasing them.
+	# Immediate same-frame release reproduces two GLES3 shutdown texture leaks.
+	await RenderingServer.frame_post_draw
+	state = null
+	source = null
+	await RenderingServer.frame_post_draw

@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-25 門廊與庭院：Blender MCP製作的店面招牌、門廊補強與10組植栽已接入原始專案；[畫面與293項回歸](docs/GREYSTONE_COURTYARD_20261025_REPORT.md)。以 `./tools/godot.ps1 -Mode RunReferenceVillage` 查看；舊rc2固定包不含本輪美術。
+
 2026-10-25 建築第二輪：旅館交錯山牆、商店窗框與屋頂封底已接入原始專案；[實際畫面與回歸結果](docs/GREYSTONE_ARCHITECTURE_20261025_REPORT.md)。入口同下；舊rc2固定包尚未包含本輪美術。
 
 2026-10-25 原始專案已更新岩壁、鋪面與光照；使用 `./tools/godot.ps1 -Mode RunReferenceVillage` 查看。[本輪畫面與結果](docs/GREYSTONE_REFERENCE_FINISH_20261025_REPORT.md)。下列rc2固定包仍對應之前的122891e提交。
