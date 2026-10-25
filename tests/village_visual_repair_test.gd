@@ -64,7 +64,10 @@ func _run() -> void:
 	var architecture_views: Dictionary = {
 		"inn_architecture": [Vector3(-22,24,4), Vector3(-9,6,-16), 25.0],
 		"item_architecture": [Vector3(-30,15,7), Vector3(-21,5.4,-7), 17.0],
-		"weapon_architecture": [Vector3(3,16,20), Vector3(13,5.8,5), 19.0]
+		"weapon_architecture": [Vector3(3,16,20), Vector3(13,5.8,5), 19.0],
+		"south_cliff_detail": [Vector3(-29,17,38), Vector3(-17,0,26), 24.0],
+		"north_cliff_detail": [Vector3(-22,20,-7), Vector3(-14,5,-27), 26.0],
+		"mine_cliff_detail": [Vector3(13,28,-22), Vector3(6,13,-43), 34.0]
 	}
 	for view_name: String in architecture_views:
 		var setup: Array = architecture_views[view_name]

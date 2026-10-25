@@ -46,7 +46,12 @@ func _ready() -> void:
 			if mesh.name == &"VillageClearing":
 				_apply_clearing_verge(mesh)
 		elif path.begins_with("Cliffs/") or (path.begins_with("Mine/") and ("Cliff" in mesh.name or "Rock" in mesh.name)):
-			mesh.material_override = ROCK
+			if mesh.name.begins_with("NaturalRimGrass_"):
+				mesh.material_override = GRASS
+			elif mesh.name.begins_with("NaturalRimSoil_"):
+				mesh.material_override = EARTH
+			else:
+				mesh.material_override = ROCK
 		elif path.begins_with("Water/"):
 			mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 			mesh.material_override = foam if "FoamSplash" in mesh.name else (ROCK if "_Bed" in mesh.name else (FALL if "Waterfall" in mesh.name else (LAKE if "Lake" in mesh.name else RIVER)))

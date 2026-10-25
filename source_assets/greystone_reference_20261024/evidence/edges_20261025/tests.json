@@ -1,0 +1,81 @@
+[
+  {
+    "command": "./tools/godot.ps1 -Mode TestReferenceVillage",
+    "checks": 77,
+    "failures": 0,
+    "marker": "REFERENCE_VILLAGE_RESULT {\"checks\":77,\"failures\":[],\"scope\":\"Native InputMap player traversal, two bridges, five stair routes and sampled obstacles; no physical input certification\"}",
+    "log_sha256": "1fd7a89c9fb0a03134b2a07cc1f3ee208a8b99953f8e082da1e19ba92e393ccb"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode VisualReferenceStory",
+    "checks": 68,
+    "failures": 0,
+    "marker": "REFERENCE_STORY_RESULT checks=68 failures=0",
+    "log_sha256": "3b8b622001154c20e759157df9357744edc305e31f0058b0af4aaf814adcaaac"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode TestReferenceStoryReload",
+    "checks": 7,
+    "failures": 0,
+    "marker": "REFERENCE_STORY_RESULT checks=7 failures=0",
+    "log_sha256": "4d04c0c5ac9148d815f677e278ba17123f18041dc6285ef99dec1ddfa3b8a65a"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode VisualReferenceCommerce",
+    "checks": 53,
+    "failures": 0,
+    "marker": "REFERENCE_COMMERCE_RESULT checks=53 failures=0",
+    "log_sha256": "a1560c92b4ef6213c4f658ced679d581ef5bd9a7aa6933cc1e4e7847b0731f0c"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode TestReferenceCommerceReload",
+    "checks": 5,
+    "failures": 0,
+    "marker": "REFERENCE_COMMERCE_RESULT checks=5 failures=0",
+    "log_sha256": "39e8fd7b171ce8286a680a1d1dd9d357525e90e8aadd51bcbde8a3f45fdbd2f3"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode TestReferenceMigration",
+    "checks": 80,
+    "failures": 0,
+    "marker": "REFERENCE_MIGRATION_RESULT checks=80 failures=0",
+    "log_sha256": "15fba90a401c905db8e882e08ffacc3e5cb9c7bb3d21bf5824208b43701863d7"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode TestReferenceMigrationReload",
+    "checks": 6,
+    "failures": 0,
+    "marker": "REFERENCE_MIGRATION_RESULT checks=6 failures=0",
+    "log_sha256": "7c1e1f304dd7bc1c420ccade3c8ed441b482366de5983777de61beb2ae38d787"
+  },
+  {
+    "step": "build-final",
+    "marker": "REFERENCE_V5_MASTER_ASSEMBLED",
+    "log_sha256": "b1306621e5798731679b59a7336e73e8fc3cbf8b524d17aec2714a8efc08e6e1"
+  },
+  {
+    "step": "export-final",
+    "marker": "EXPORTED_BLENDER_MASTER",
+    "log_sha256": "388ae22a56926789e1b6264b257d04e1b549a797dbe7b75eef469c7e5f34c8e3"
+  },
+  {
+    "step": "edges-audit",
+    "marker": "NATURAL_EDGES_AUDIT",
+    "log_sha256": "01a89bdffdd3221f3d940e018840cc02f0a89cea31f09083555fbf69cb95fbf3"
+  },
+  {
+    "step": "geometry-audit",
+    "marker": "REFERENCE_FINISH_GEOMETRY_AUDIT",
+    "log_sha256": "999f0e848f8718a63ed2c5a97734f195a242f53c99cbbf70f6b17c958ae9b8e5"
+  },
+  {
+    "step": "CaptureReferenceVillage",
+    "marker": "18 actual rendered views",
+    "log_sha256": "9d86f25f3e3179a2dbfacdd041997e3e8ac76a4973ed315d20e61bbb70841c72"
+  },
+  {
+    "step": "Check",
+    "marker": "[ DONE ]",
+    "log_sha256": "dfedea6176926feb28939667d19d122249d2c5fcd0e79c347e9701b94c80d0b3"
+  }
+]

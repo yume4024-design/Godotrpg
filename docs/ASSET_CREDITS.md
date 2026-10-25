@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-25 灰石村自然岩壁與草皮
+
+依使用者最新參考圖，以專案Blender Python重建既有岩壁外皮和草土邊緣；沿用原石材、草地、土壤shader。Blender MCP用於匯入檢視，未新增第三方下載、付費生成或授權變更。[來源與測試](GREYSTONE_NATURAL_EDGES_20261025_REPORT.md)。
+
 ## 2026-10-25 灰石村門廊、招牌與庭院
 
 沿用使用者最新場景參考圖與既有Shrub／Flowers資產及材質；木製門廊補強、酒杯／藥瓶／鐵砧標誌和陳列架由本專案Blender Python與MCP製作。沒有新增外部下載、付費素材或授權變更。[來源與雜湊](GREYSTONE_COURTYARD_20261025_REPORT.md)。

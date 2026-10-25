@@ -593,6 +593,8 @@ from reference_detail_pass import apply_reference_details
 detail_receipt=apply_reference_details(groups,materials)
 from reference_courtyard_pass import apply_courtyards
 courtyard_receipt=apply_courtyards(groups['Props'],groups['Vegetation'],ROAD_PATHS)
+from reference_natural_edges import apply_natural_edges
+natural_edges_receipt=apply_natural_edges(groups,materials,ROAD_PATHS,RAMPS,terrain_height)
 
 scene.world.use_nodes=True
 scene.world.node_tree.nodes['Background'].inputs[0].default_value=(.55,.65,.75,1)
@@ -624,6 +626,8 @@ receipt['bridge_clearance_removed']=bridge_clearance_removed
 receipt['detail_pass']=detail_receipt
 receipt['courtyard_pass']=courtyard_receipt
 receipt['courtyard_script_sha256']=hashlib.sha256(Path(__file__).with_name('reference_courtyard_pass.py').read_bytes()).hexdigest()
+receipt['natural_edges']=natural_edges_receipt
+receipt['natural_edges_script_sha256']=hashlib.sha256(Path(__file__).with_name('reference_natural_edges.py').read_bytes()).hexdigest()
 receipt['architectural_sources_sha256']={name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in ['reference_art_pass.py','reference_building_collisions_v4.json']}
 (DEST/'manifest.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding='utf8')
 print('REFERENCE_V5_MASTER_ASSEMBLED',str(DEST/'greystone_master.blend'),flush=True)

@@ -70,6 +70,7 @@ func _run_checks() -> void:
 
 func _audit_visible_geometry() -> void:
 	_audit_bridge_clearance()
+	_audit_natural_edges()
 	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/world/greystone_reference_layout_v4.json"))
 	await _audit_courtyard_clearance(layout)
 	var visible_steps: PackedVector3Array = PackedVector3Array()
@@ -156,6 +157,21 @@ func _flat_box_distance(a: Vector2, b: Vector2, bounds: Rect2) -> float:
 		if Geometry2D.segment_intersects_segment(a,b,corners[i],corners[(i+1)%4]) != null: return 0.0
 		distance=minf(distance,corners[i].distance_to(Geometry2D.get_closest_point_to_segment(corners[i],a,b)))
 	return distance
+
+func _audit_natural_edges() -> void:
+	var cliffs: Node = village.get_node("Cliffs")
+	var rocks: Array[Node] = cliffs.find_children("*_RockFace*", "MeshInstance3D", true, false)
+	var grass: Array[Node] = cliffs.find_children("NaturalRimGrass_*", "MeshInstance3D", true, false)
+	var soil: Array[Node] = cliffs.find_children("NaturalRimSoil_*", "MeshInstance3D", true, false)
+	_check(rocks.size()==195, "All 195 rock shoulders imported")
+	_check(not grass.is_empty() and grass.size()==soil.size(), "Paired turf and soil rim batches imported")
+	var wrong: Array[String] = []
+	for kind: Array in [[grass, "grass.tres"], [soil, "earth.tres"], [rocks, "rock.tres"]]:
+		for node: Node in kind[0]:
+			var mesh: MeshInstance3D = node as MeshInstance3D
+			if mesh.material_override == null or not mesh.material_override.resource_path.ends_with(kind[1]):
+				wrong.append(str(mesh.name))
+	_check(wrong.is_empty(), "Rock, grass and soil render with the intended shared materials: "+str(wrong))
 
 func _audit_courtyard_clearance(layout: Dictionary) -> void:
 	# Inspect imported visible bounds against actual road data and NPC markers.

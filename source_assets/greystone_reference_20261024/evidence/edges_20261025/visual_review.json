@@ -1,0 +1,22 @@
+{
+  "scope": "Three relevant composition/lighting receptors; not an overall art approval",
+  "source": "godot-master agent-vision composition-fx receptors",
+  "scores": {
+    "COMP-LEAD-ENV": {
+      "score": 2,
+      "max": 2,
+      "reason": "Roads, stairs, bridges and entrances remain legible."
+    },
+    "COMP-DEPTH-LAYERS": {
+      "score": 1,
+      "max": 2,
+      "reason": "Terrace layers read clearly, but silhouette still too regular versus the reference."
+    },
+    "LIGHT-KEY-FILL": {
+      "score": 1,
+      "max": 2,
+      "reason": "Rock forms visible; distant crevice shadows and baked building dark patches remain."
+    }
+  },
+  "comparison": "Actual Godot captures; reference match remains incomplete"
+}
