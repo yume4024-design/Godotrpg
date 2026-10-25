@@ -5,8 +5,48 @@ Runs after reference_detail_pass; never modifies Terrain, Paths or Bounds.
 import math
 import random
 import bpy
+import bmesh
 from mathutils import Vector
 from mathutils.bvhtree import BVHTree
+from mathutils.geometry import tessellate_polygon
+
+
+def _convex_triangles(points):
+    """Remove only millimetric hull slivers, keeping a closed outward surface."""
+    points=[Vector(p) for p in points]
+    for attempt in range(8):
+        bm=bmesh.new()
+        for point in points:bm.verts.new(point)
+        hull=bmesh.ops.convex_hull(bm,input=list(bm.verts),use_existing_faces=False)
+        unused=[v for v in set(hull['geom_unused']+hull['geom_interior']) if isinstance(v,bmesh.types.BMVert)]
+        if unused:bmesh.ops.delete(bm,geom=unused,context='VERTS')
+        bm.verts.index_update()
+        points=[v.co.copy() for v in bm.verts]
+        triangles=[]
+        for face in bm.faces:
+            indices=[v.index for v in face.verts]
+            choices=[]
+            for pivot in range(len(indices)):
+                order=indices[pivot:]+indices[:pivot]
+                candidate=[(order[0],order[i],order[i+1]) for i in range(1,len(order)-1)]
+                deviation=0.0
+                for a,b,c in candidate:
+                    normal=(points[b]-points[a]).cross(points[c]-points[a]).normalized()
+                    deviation=max(deviation,max(normal.dot(p-points[a]) for p in points))
+                choices.append((deviation,candidate))
+            triangles.extend(min(choices,key=lambda choice:choice[0])[1])
+        bm.free()
+        worst=(0.0,0)
+        for a,b,c in triangles:
+            normal=(points[b]-points[a]).cross(points[c]-points[a]).normalized()
+            worst=max(worst,max((normal.dot(p-points[a]),i) for i,p in enumerate(points)))
+        if worst[0]<=1e-4:
+            return points,triangles
+        # The hull operator can retain near-coplanar slivers at this scale.
+        # Remove the offending point and rebuild, rather than relaxing QA.
+        assert worst[0]<.005, ('Non-numerical hull error',worst)
+        points.pop(worst[1])
+    raise AssertionError('Could not remove a near-coplanar hull sliver')
 
 
 def apply_natural_edges(groups, materials, roads, ramps, terrain_height):
@@ -25,16 +65,32 @@ def apply_natural_edges(groups, materials, roads, ramps, terrain_height):
         batch['faces'].extend(tuple(start + i for i in face) for face in faces)
         batch['tints'].extend([tint] * len(faces))
 
-    def mesh_data(name, points, faces, mat, tints):
+    def mesh_data(name, points, faces, mat, tints, convex=False):
+        # Twisted quads/ngons must not share a single averaged normal across
+        # their export triangles: that produces large self-shadow wedges.
+        triangles, triangle_tints = [], []
+        for face, tint in zip(faces, tints):
+            polygon = [Vector(points[i]) for i in face]
+            for tri in tessellate_polygon([polygon]):
+                triangles.append(tuple(face[v if isinstance(v, int) else polygon.index(v)] for v in tri))
+                triangle_tints.append(tint)
         data = bpy.data.meshes.new(name)
-        data.from_pydata(points, [], faces)
+        if convex:
+            # Each exposed block is a solid stone, not a folded sheet. A hull
+            # removes inward dents that turn broad fractures into dark spikes.
+            hull_points,hull_triangles=_convex_triangles(points)
+            data.from_pydata(hull_points,[],hull_triangles)
+            average=sum(tints)/len(tints)
+            triangle_tints=[average*(.98+.04*(i%3)/2) for i in range(len(data.polygons))]
+        else:
+            data.from_pydata(points, [], triangles)
         data.materials.append(mat)
         data.update()
         uv=data.uv_layers.new(name='SurfaceInterior')
         for loop in uv.data:
             loop.uv=(.5,.5)
         colors = data.color_attributes.new(name='RockFacets', type='FLOAT_COLOR', domain='CORNER')
-        for face, tint in zip(data.polygons, tints):
+        for face, tint in zip(data.polygons, triangle_tints):
             for index in face.loop_indices:
                 colors.data[index].color = (tint, tint*.995, tint*.98, 1)
         return data
@@ -92,8 +148,9 @@ def apply_natural_edges(groups, materials, roads, ramps, terrain_height):
                 else:
                     z = [bottom, bottom+(top-bottom)*rng.uniform(.38,.51),
                          top-shoulder*rng.uniform(1.0,1.40), top-rng.uniform(.20,.65)][band]
-                    spread = [1.0, rng.uniform(.94,1.08), .95, rng.uniform(.65,.83)][band]
-                    p = Vector((center.x, center.y, z))+tangent*(u+rng.uniform(-.16,.16))+outer*(v*spread)
+                    spread = [1.0, rng.uniform(.68,1.08), rng.uniform(.82,1.05), rng.uniform(.65,.83)][band]
+                    drift = width*.09 if band in (1,2) else .16
+                    p = Vector((center.x, center.y, z))+tangent*(u+rng.uniform(-drift,drift))+outer*(v*spread)
                 points.append(p)
                 if band == 3:
                     upper.append(p)
@@ -106,10 +163,10 @@ def apply_natural_edges(groups, materials, roads, ramps, terrain_height):
                 tints.append(stone_tint*rng.uniform(.94,1.06))
         faces.extend([tuple(range(6,-1,-1)),tuple(range(21,28))])
         tints.extend([stone_tint*.8,stone_tint*1.07])
-        obj.data = mesh_data(obj.name+'_Shouldered', points, faces, materials['stone'], tints)
-        obj['visual_only_revision'] = 'natural_edges_20261025'
+        obj.data = mesh_data(obj.name+'_Shouldered', points, faces, materials['stone'], tints, convex=True)
+        obj['visual_only_revision'] = 'triangulated_cliffs_20261025'
         rock_count += 1
-        rock_surface = BVHTree.FromPolygons(points, faces, all_triangles=False)
+        rock_surface = BVHTree.FromPolygons([v.co for v in obj.data.vertices], [tuple(f.vertices) for f in obj.data.polygons], all_triangles=True)
 
         # Exposed rims only. Grass grows over the rock shoulder, not across a
         # bridge/stair landing or buried below another terrain level.
@@ -163,18 +220,37 @@ def apply_natural_edges(groups, materials, roads, ramps, terrain_height):
         support_points.extend(support.matrix_world@v.co for v in support.data.vertices)
         support_faces.extend(tuple(offset+i for i in f.vertices) for f in support.data.polygons)
     support_tree=BVHTree.FromPolygons(support_points,support_faces,all_triangles=False)
-    for (sector,kind),batch in batches.items():
+    retained_caps=[]
+    for (sector,kind),batch in list(batches.items()):
         if kind!='Grass':continue
-        for point in batch['verts']:
-            hit=support_tree.ray_cast(point+Vector((0,0,.5)),Vector((0,0,-1)),2)[0]
-            assert hit is not None,sector
-            point.z=hit.z+.018
+        grass_batch,earth_batch=new_batch(),new_batch()
+        floor=bpy.data.objects[sector+'_Grass']
+        floor_height=max((floor.matrix_world@v.co).z for v in floor.data.vertices)
+        sector_caps=[c for c in caps if c['rock'].split('_RockFace')[0]==sector]
+        assert len(sector_caps)*7==len(batch['verts'])
+        for cap_i,record in enumerate(sector_caps):
+            cap_top=[p.copy() for p in batch['verts'][cap_i*7:cap_i*7+7]]
+            for point in cap_top:
+                hit=support_tree.ray_cast(point+Vector((0,0,.5)),Vector((0,0,-1)),2)[0]
+                assert hit is not None,sector
+                point.z=hit.z+.018
+            if max(p.z for p in cap_top)>floor_height+.05:
+                skipped+=1
+                continue
+            # Projected grass and its soil skirt share identical top vertices.
+            cap_bottom=[p-Vector((0,0,.075)) for p in cap_top]
+            emit(grass_batch,cap_top,[tuple(range(6,-1,-1))],batch['tints'][cap_i])
+            emit(earth_batch,cap_top+cap_bottom,[(k,(k+1)%7,(k+1)%7+7,k+7) for k in range(7)]+[tuple(range(7,14))],1)
+            retained_caps.append(record)
+        batches[(sector,'Grass')]=grass_batch
+        batches[(sector,'Soil')]=earth_batch
+    caps=retained_caps
     for (sector,kind),batch in batches.items():
         name='NaturalRim'+kind+'_'+sector
         data=mesh_data(name,batch['verts'],batch['faces'],materials['grass' if kind=='Grass' else 'earth'],batch['tints'])
         obj=bpy.data.objects.new(name,data)
         groups['Cliffs'].objects.link(obj)
-        obj['visual_only_revision']='natural_edges_20261025'
-    return {'revision':'natural_edges_20261025','rock_modules':rock_count,
+        obj['visual_only_revision']='triangulated_cliffs_20261025'
+    return {'revision':'triangulated_cliffs_20261025','rock_modules':rock_count,
             'turf_caps':len(caps),'batched_rim_meshes':len(batches),'caps':caps,
             'skipped_hidden_or_routes':skipped,'navigation_changed':False}

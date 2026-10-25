@@ -1,5 +1,9 @@
 # 素材來源與修改紀錄
 
+## 2026-10-26 灰石村岩壁修復
+
+使用專案Blender Python修整既有195塊岩壁及草土邊緣，保留既有材質與來源。無新下載、付費生成或第三方授權變更。[幾何與畫面證據](GREYSTONE_CLIFF_SHADOW_REPORT.md)。
+
 ## 2026-10-25 灰石村自然岩壁與草皮
 
 依使用者最新參考圖，以專案Blender Python重建既有岩壁外皮和草土邊緣；沿用原石材、草地、土壤shader。Blender MCP用於匯入檢視，未新增第三方下載、付費生成或授權變更。[來源與測試](GREYSTONE_NATURAL_EDGES_20261025_REPORT.md)。

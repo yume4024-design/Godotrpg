@@ -172,6 +172,26 @@ func _audit_natural_edges() -> void:
 			if mesh.material_override == null or not mesh.material_override.resource_path.ends_with(kind[1]):
 				wrong.append(str(mesh.name))
 	_check(wrong.is_empty(), "Rock, grass and soil render with the intended shared materials: "+str(wrong))
+	var averaged_normals: Array[String] = []
+	for node: Node in rocks:
+		var instance: MeshInstance3D = node as MeshInstance3D
+		for surface: int in instance.mesh.get_surface_count():
+			var arrays: Array = instance.mesh.surface_get_arrays(surface)
+			var points: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
+			var normals: PackedVector3Array = arrays[Mesh.ARRAY_NORMAL]
+			var indices: PackedInt32Array = arrays[Mesh.ARRAY_INDEX]
+			if indices.is_empty() or normals.size()!=points.size():
+				averaged_normals.append(str(instance.name)+" missing indexed normals")
+				continue
+			for start: int in range(0, indices.size(), 3):
+				var a: int = indices[start]
+				var b: int = indices[start+1]
+				var c: int = indices[start+2]
+				var geometric: Vector3 = (points[b]-points[a]).cross(points[c]-points[a]).normalized()
+				if minf(absf(geometric.dot(normals[a])), minf(absf(geometric.dot(normals[b])), absf(geometric.dot(normals[c])))) < 0.999:
+					averaged_normals.append(str(instance.name))
+					break
+	_check(averaged_normals.is_empty(), "Rock normals match actual exported facets: "+str(averaged_normals))
 
 func _audit_courtyard_clearance(layout: Dictionary) -> void:
 	# Inspect imported visible bounds against actual road data and NPC markers.

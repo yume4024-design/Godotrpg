@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-26 岩壁法線與草土接合已修復；[297項回歸及前後畫面](docs/GREYSTONE_CLIFF_SHADOW_REPORT.md)。以 `./tools/godot.ps1 -Mode RunReferenceVillage` 查看；舊固定包未替換。
+
 2026-10-25 岩壁與草皮：原始專案新增自然岩肩、草土接縫及近景驗證；[畫面與296項回歸](docs/GREYSTONE_NATURAL_EDGES_20261025_REPORT.md)。`./tools/godot.ps1 -Mode RunReferenceVillage`查看；舊rc2包未更新。
 
 2026-10-25 門廊與庭院：Blender MCP製作的店面招牌、門廊補強與10組植栽已接入原始專案；[畫面與293項回歸](docs/GREYSTONE_COURTYARD_20261025_REPORT.md)。以 `./tools/godot.ps1 -Mode RunReferenceVillage` 查看；舊rc2固定包不含本輪美術。

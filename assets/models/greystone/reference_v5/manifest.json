@@ -34,7 +34,7 @@
     "collection": "Cliffs",
     "path": "res://assets/models/greystone/reference_v5/cliffs.glb",
     "mesh_nodes": 248,
-    "instanced_triangles": 13208
+    "instanced_triangles": 9382
   },
   {
     "collection": "Vegetation",

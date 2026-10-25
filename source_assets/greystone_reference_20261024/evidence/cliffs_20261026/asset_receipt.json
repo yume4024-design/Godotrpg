@@ -1,0 +1,46 @@
+{
+  "baseline_commit": "00a394a023a4c40c6d746ed4c53bcc9d2d2fda6e",
+  "visual_triangles": 201603,
+  "before_visual_triangles": 205429,
+  "mesh_nodes": 1239,
+  "caps": 90,
+  "human_acceptance": "paused",
+  "new_export": false,
+  "files": [
+    {
+      "path": "scripts/tools/greystone/reference_natural_edges.py",
+      "bytes": 12918,
+      "sha256": "d18ed86be082d0c81810da0be2b98f9012aba62980dc1b616a00dd4457d16a06"
+    },
+    {
+      "path": "scripts/tools/greystone/audit_natural_edges.py",
+      "bytes": 3432,
+      "sha256": "725801eb50c2e381d748c3240f6838dd794391f1215de76029fde17d64dee9a0"
+    },
+    {
+      "path": "scripts/tools/greystone/reference_v5_preview.gd",
+      "bytes": 14597,
+      "sha256": "51782911e6ccc7ae7db3fa7c208b568dde1bc87872c11bcd4621514b96b9dbaf"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/cliffs.glb",
+      "bytes": 1378124,
+      "sha256": "783112e09c133da273d2a8bece9439312c66d2fd8dca8633f6b9482accfdf8b4"
+    },
+    {
+      "path": "assets/models/greystone/reference_v5/manifest.json",
+      "bytes": 1997,
+      "sha256": "1abb10da8fff8c6af04937526909563f0c0776008fc9b860055f1b7264884f43"
+    },
+    {
+      "path": "source_assets/greystone_reference_20261024/greystone_master.blend",
+      "bytes": 24283732,
+      "sha256": "3b4b886bdfdfbdb295f454deff3a974eaaacb764f18075cd138f4c81f2942088"
+    },
+    {
+      "path": "source_assets/greystone_reference_20261024/manifest.json",
+      "bytes": 80733,
+      "sha256": "157c6cdf763d1e8796931d1d1691ca9cc8abaa6a69c9ac2a6d4c6fcb5bd6b45d"
+    }
+  ]
+}
