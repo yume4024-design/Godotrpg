@@ -4,9 +4,13 @@ const OUTPUT: String = "user://forest_visual_finish/"
 const BASELINE: String = "res://source_assets/forest_visual_finish_20261026/baseline.json"
 var recording: bool = false
 var plant_statistics: Dictionary = {}
+var output_path: String = OUTPUT
 
 func _initialize() -> void:
-	DirAccess.make_dir_recursive_absolute(OUTPUT)
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--output=user://"):
+			output_path=argument.trim_prefix("--output=").trim_suffix("/")+"/"
+	DirAccess.make_dir_recursive_absolute(output_path)
 	preload("res://tests/qa_input_isolation.gd").isolate_joypad_motion()
 	root.unfocusable = true
 	Engine.max_fps = 60
@@ -84,9 +88,11 @@ func _run() -> void:
 	process_frame.connect(_sample)
 	await _walk([[-7,0,0],[-2,0,0],[2,0,0],[7,0,0],[7,0,2],[9,0,2]],"forest_story",true)
 	await _walk([[-18,0,-13],[-15,0,-17],[15,0,-17],[18,0,-13],[18,0,13],[15,0,17],[-15,0,17],[-18,0,13],[-18,0,-13]],"forest_loop",true)
-	process_frame.disconnect(_sample)
 	if not recording:
 		await _capture("player_trail")
+		await _walk([[9,0,2],[7,0,2],[7,0,0],[2,0,0],[-2,0,0],[-7,0,0]],"forest_story_walk_back",false)
+	process_frame.disconnect(_sample)
+	if not recording:
 		player.reset_to(map.spawn_position(&"entrance"))
 		await create_timer(.3).timeout
 		await _capture("player_entrance")
@@ -102,7 +108,7 @@ func _run() -> void:
 		await _capture(String(row[0]))
 	frame_times.sort()
 	var result: Dictionary={"checks":checks,"failures":failures,"baseline":recording,"snapshot":snapshot,"plants":plant_statistics,"routes":rows,"frames":frame_times.size(),"mean_ms":_mean(frame_times),"max_ms":frame_times[-1],"p95_ms":frame_times[int(frame_times.size()*.95)],"p99_ms":frame_times[int(frame_times.size()*.99)],"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string}
-	FileAccess.open(OUTPUT+("before.json" if recording else "after.json"),FileAccess.WRITE).store_string(JSON.stringify(result,"  "))
+	FileAccess.open(output_path+("before.json" if recording else "after.json"),FileAccess.WRITE).store_string(JSON.stringify(result,"  "))
 	print("FOREST_VISUAL_FINISH_RESULT checks=%d failures=%d baseline=%s"%[checks,failures,recording])
 	world.queue_free()
 	await process_frame
@@ -121,7 +127,13 @@ func _verify_presentation() -> void:
 		var visual := node as MeshInstance3D
 		var material: Material=visual.get_active_material(0)
 		if material is ShaderMaterial and material.shader.resource_path=="res://assets/shaders/forest/trail.gdshader":softened_trails+=1
-	_check(softened_trails==6,"Six actual trail modules share the soft edge shader")
+	_check(softened_trails==9,"Central and expanded trails share nine soft edge surfaces")
+	var flat_trails: bool=true
+	var floor_y: float=(ground.global_transform*ground.get_aabb()).end.y
+	for node: Node in map.get_node("Presentation").find_children("TrailSurface*","MeshInstance3D",true,false):
+		var visual := node as MeshInstance3D
+		flat_trails=flat_trails and visual.mesh is PlaneMesh and is_equal_approx(visual.global_position.y,floor_y+.005)
+	_check(flat_trails and softened_trails==9,"Road display has no raised side walls or height seams")
 	var encroaching: int=0
 	var border_surfaces: int=0
 	for node: Node in map.get_node("Presentation/Border").find_children("*","MeshInstance3D",true,false):
@@ -151,4 +163,4 @@ func _capture(label: String) -> void:
 	await physics_frame
 	await physics_frame
 	await RenderingServer.frame_post_draw
-	root.get_texture().get_image().save_webp(OUTPUT+("before_" if recording else "after_")+label+".webp")
+	root.get_texture().get_image().save_webp(output_path+("before_" if recording else "after_")+label+".webp")

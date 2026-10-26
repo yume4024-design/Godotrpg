@@ -17,10 +17,9 @@ func _surface(base: Color, grain: Color, grass: float) -> ShaderMaterial:
 func _dress() -> void:
 	_map = get_parent() as Node3D
 	var grass := _surface(Color(.24,.39,.22),Color(.45,.50,.27),.6)
-	var earth := _surface(Color(.52,.43,.26),Color(.68,.61,.40),0.0)
 	var palette: Dictionary = {}
-	var trails: Array[MeshInstance3D] = []
 	var rectangles := PackedVector4Array()
+	var original_roads: Array[MeshInstance3D] = []
 	# The old central-map decorative stone ring no longer bounds this expanded map.
 	# Hide its artwork, retaining every physics object and the old source scene.
 	for child: Node in _map.get_children():
@@ -32,14 +31,17 @@ func _dress() -> void:
 		if path == "Ground/Mesh" or path.begins_with("Scenery/EdgeGround/"):
 			visual.material_override=grass
 		elif path.begins_with("PathArt") or path.begins_with("PathEast") or path.begins_with("PathGuild"):
-			visual.material_override=earth
-			visual.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			var bounds: AABB=visual.global_transform*visual.get_aabb()
+			var center: Vector3=bounds.get_center()
+			rectangles.append(Vector4(center.x,center.z,bounds.size.x*.5,bounds.size.z*.5))
+			visual.visible=false
+			original_roads.append(visual)
 		elif visual.mesh is BoxMesh:
 			var size: Vector3=(visual.mesh as BoxMesh).size
 			# Expanded trails receive generated node names; match floor geometry.
 			if size.y <= .021 and (size.x >= 3.4 or size.z >= 3.4):
-				visual.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
-				trails.append(visual)
+				visual.visible=false
+				original_roads.append(visual)
 				rectangles.append(Vector4(visual.global_position.x,visual.global_position.z,size.x*.5,size.z*.5))
 		# Local surface overrides, never mutate imported shared materials.
 		if path.begins_with("Presentation/Border/") or path.begins_with("Tree") or (visual.mesh != null and visual.mesh.resource_path.contains("round_tree")):
@@ -58,13 +60,34 @@ func _dress() -> void:
 							foliage.roughness=.95
 							palette[key]=foliage
 						visual.set_surface_override_material(surface,palette[key])
-	# This pass recognizes the six existing expanded trail modules, without
-	# copying their positions into a second authored navigation layout.
-	if rectangles.size()==6:
+	# Flatten presentation only. Physical ground and route dimensions stay intact.
+	# One world-space material paints the union, so overlapping planes have the
+	# same color and do not introduce grassy cross seams or raised side faces.
+	if rectangles.size()>0 and rectangles.size()<=16:
 		var trail := ShaderMaterial.new()
 		trail.shader=load("res://assets/shaders/forest/trail.gdshader")
-		trail.set_shader_parameter("trail_rects",rectangles)
-		for visual: MeshInstance3D in trails:visual.material_override=trail
+		trail.set_shader_parameter("trail_count",rectangles.size())
+		var shader_rectangles: PackedVector4Array=rectangles.duplicate()
+		shader_rectangles.resize(16)
+		trail.set_shader_parameter("trail_rects",shader_rectangles)
+		var ground := _map.get_node("Ground/Mesh") as MeshInstance3D
+		var floor_bounds: AABB=ground.global_transform*ground.get_aabb()
+		for i: int in rectangles.size():
+			var rect: Vector4=rectangles[i]
+			var plane := PlaneMesh.new()
+			plane.size=Vector2(rect.z*2,rect.w*2)
+			plane.subdivide_width=0
+			plane.subdivide_depth=0
+			plane.material=trail
+			var surface := MeshInstance3D.new()
+			surface.name="TrailSurface%d"%i
+			surface.mesh=plane
+			surface.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			add_child(surface)
+			surface.global_position=Vector3(rect.x,floor_bounds.end.y+.005,rect.y)
+	else:
+		push_error("Forest presentation expected 1–16 road rectangles; keep original road artwork.")
+		for original: MeshInstance3D in original_roads:original.visible=true
 	var rng := RandomNumberGenerator.new()
 	rng.seed=261026
 	for asset: String in ["grass_a","bush_a","flower_a"]:
