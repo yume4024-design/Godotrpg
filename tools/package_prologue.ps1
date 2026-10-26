@@ -15,8 +15,9 @@ $runtime = Join-Path $projectRoot 'builds/mine-reference/rc2-ef0764c/candidate/P
 if ((Get-Item -LiteralPath $runtime).VersionInfo.FileVersion -ne '4.7.2') { throw 'Runtime version mismatch.' }
 $sourceRoot = Join-Path $versionRoot 'source'
 $profile = Join-Path $versionRoot 'build-profile'
+$tempRoot = Join-Path $versionRoot 'build-temp'
 $logs = Join-Path $versionRoot 'logs'
-New-Item -ItemType Directory -Path $sourceRoot,$profile,$logs -Force | Out-Null
+New-Item -ItemType Directory -Path $sourceRoot,$profile,$tempRoot,$logs -Force | Out-Null
 # Export only a Git snapshot. Untracked art experiments and local modifications
 # never silently become part of a package labelled with a commit SHA.
 $archive = Join-Path $versionRoot 'source.zip'
@@ -38,6 +39,8 @@ function Invoke-BuildGodot([string]$Name, [string[]]$EngineArguments) {
     $info.RedirectStandardError = $true
     $info.EnvironmentVariables['APPDATA'] = $profile
     $info.EnvironmentVariables['LOCALAPPDATA'] = $profile
+    $info.EnvironmentVariables['TEMP'] = $tempRoot
+    $info.EnvironmentVariables['TMP'] = $tempRoot
     $process = [Diagnostics.Process]::new()
     $process.StartInfo = $info
     try {
