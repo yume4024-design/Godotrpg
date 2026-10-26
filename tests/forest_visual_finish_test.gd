@@ -134,6 +134,19 @@ func _verify_presentation() -> void:
 		var visual := node as MeshInstance3D
 		flat_trails=flat_trails and visual.mesh is PlaneMesh and is_equal_approx(visual.global_position.y,floor_y+.005)
 	_check(flat_trails and softened_trails==9,"Road display has no raised side walls or height seams")
+	var flat_edges: int=0
+	var hidden_edge_boxes: int=0
+	for node: Node in map.find_children("*","MeshInstance3D",true,false):
+		var visual := node as MeshInstance3D
+		var path: String=String(map.get_path_to(visual))
+		if path.begins_with("Scenery/EdgeGround/") and visual.mesh is BoxMesh and not visual.visible:
+			hidden_edge_boxes+=1
+		if String(visual.name).begins_with("EdgeGroundSurface_"):
+			flat_edges+=1
+			var material: Material=visual.get_active_material(0)
+			flat_trails=flat_trails and visual.mesh is PlaneMesh and is_equal_approx(visual.global_position.y,floor_y+.006)
+			flat_trails=flat_trails and material is ShaderMaterial and (material as ShaderMaterial).shader.resource_path=="res://assets/shaders/greystone/ground.gdshader"
+	_check(flat_edges==4 and hidden_edge_boxes==4 and flat_trails,"Perimeter ground joins the floor with four flat matching surfaces")
 	var encroaching: int=0
 	var border_surfaces: int=0
 	for node: Node in map.get_node("Presentation/Border").find_children("*","MeshInstance3D",true,false):

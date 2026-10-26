@@ -28,8 +28,27 @@ func _dress() -> void:
 	for node: Node in _map.find_children("*","MeshInstance3D",true,false):
 		var visual := node as MeshInstance3D
 		var path: String = String(_map.get_path_to(node))
-		if path == "Ground/Mesh" or path.begins_with("Scenery/EdgeGround/"):
+		if path == "Ground/Mesh":
 			visual.material_override=grass
+		elif path.begins_with("OuterWall"):
+			# The original low boundary boxes stay solid, but their visible caps
+			# create a straight dark stripe well inside the camera view.
+			visual.visible=false
+		elif path.begins_with("Scenery/EdgeGround/") and visual.mesh is BoxMesh:
+			# Perimeter slabs exist only to extend the visible terrain; they have no
+			# collision. Replace their thick boxes with overlapping flat tops so
+			# the camera cannot see a dark vertical side at the ground transition.
+			var size: Vector3=(visual.mesh as BoxMesh).size
+			var surface_mesh := PlaneMesh.new()
+			surface_mesh.size=Vector2(size.x+.08,size.z+.08)
+			surface_mesh.material=grass
+			var surface := MeshInstance3D.new()
+			surface.name="EdgeGroundSurface_%s"%visual.name
+			surface.mesh=surface_mesh
+			surface.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			add_child(surface)
+			surface.global_position=Vector3(visual.global_position.x,.006,visual.global_position.z)
+			visual.visible=false
 		elif path.begins_with("PathArt") or path.begins_with("PathEast") or path.begins_with("PathGuild"):
 			var bounds: AABB=visual.global_transform*visual.get_aabb()
 			var center: Vector3=bounds.get_center()
@@ -44,7 +63,14 @@ func _dress() -> void:
 				original_roads.append(visual)
 				rectangles.append(Vector4(visual.global_position.x,visual.global_position.z,size.x*.5,size.z*.5))
 		# Local surface overrides, never mutate imported shared materials.
-		if path.begins_with("Presentation/Border/") or path.begins_with("Tree") or (visual.mesh != null and visual.mesh.resource_path.contains("round_tree")):
+		if path.begins_with("Presentation/Border/"):
+			# High polygon cliff crowns cast long sharp lines across the playable floor.
+			visual.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+			for surface: int in visual.mesh.get_surface_count():
+				var original: Material=visual.mesh.surface_get_material(surface)
+				if original != null and original.resource_name == "ForestEarth":
+					visual.set_surface_override_material(surface,grass)
+		elif path.begins_with("Tree") or (visual.mesh != null and visual.mesh.resource_path.contains("round_tree")):
 			for surface: int in visual.mesh.get_surface_count():
 				var original: Material=visual.mesh.surface_get_material(surface)
 				if original == null:continue
