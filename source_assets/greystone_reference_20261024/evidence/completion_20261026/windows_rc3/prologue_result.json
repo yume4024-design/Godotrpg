@@ -1,0 +1,39 @@
+{
+  "checks": 143,
+  "display": "Windows",
+  "endurance_acceptance": false,
+  "failures": 0,
+  "physical_input_acceptance": false,
+  "release": true,
+  "startup_phases": [
+    {
+      "engine_usec": 834720,
+      "phase": "splash_presented"
+    },
+    {
+      "engine_usec": 835265,
+      "phase": "loading_resources"
+    },
+    {
+      "engine_usec": 7259492,
+      "phase": "creating_world"
+    },
+    {
+      "engine_usec": 7703038,
+      "phase": "waiting_map"
+    },
+    {
+      "engine_usec": 10561068,
+      "phase": "preparing_picture"
+    },
+    {
+      "engine_usec": 10610865,
+      "phase": "fading"
+    },
+    {
+      "engine_usec": 10777817,
+      "phase": "ready"
+    }
+  ],
+  "version": "0.6.1-greystone-reference-rc3"
+}

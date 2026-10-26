@@ -1,0 +1,15 @@
+{
+  "file": "ProjectCrystal-0.6.1-greystone-reference-rc3-windows-x64.zip",
+  "bytes": 384364883,
+  "sha256": "a5caded9541220ce5a10572dfee7d275dd3d8b366509aa3b25712d59337077ad",
+  "verified_crc": true,
+  "files": [
+    "ASSET_CREDITS.md",
+    "GODOT_LICENSES.txt",
+    "ProjectCrystal.exe",
+    "ProjectCrystal.pck",
+    "start_reference_village.cmd",
+    "SHA256.json"
+  ],
+  "contains_saves_or_logs": false
+}

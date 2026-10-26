@@ -1,0 +1,15 @@
+{
+  "source_commit": "d0bb61006298a92f470889552039f218d9ae81e0",
+  "source_root": "C:\\Users\\yume4\\.codex\\worktrees\\greystone-reference-rc3\\RPGGAME",
+  "candidate_family": "Reference",
+  "audio_bus_restored_to_original": false,
+  "generated_import_metadata": [],
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "candidate": "D:\\RPGGAME\\builds\\greystone-reference\\rc3-d0bb610-verified\\candidate\\ProjectCrystal.exe",
+  "qa": "D:\\RPGGAME\\builds\\greystone-reference\\rc3-d0bb610-verified\\qa\\ProjectCrystal.exe",
+  "log_sha256": {
+    "import.txt": "7272f1a616b95db4510273232271ced55a1c572c7648ad7c5e53b3f97730858b",
+    "export-candidate.txt": "bfb1b7a310159c2acfc7913faebf3b851312a1980b82675a94e6653ecaab9f4c",
+    "export-qa.txt": "45c0b25592f500161822e9af7b8b81f48723e3de08017a799fd28085444366e1"
+  }
+}

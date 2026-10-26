@@ -1,0 +1,21 @@
+{
+  "launcher": "D:\\RPGGAME\\builds\\greystone-reference\\rc3-d0bb610-verified\\candidate\\start_reference_village.cmd",
+  "launcher_pid": 7764,
+  "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+  "physical_input": false,
+  "passed": true,
+  "log": "D:\\RPGGAME\\builds\\greystone-reference\\rc3-d0bb610-verified\\candidate\\user_test\\play-9187-4722.log",
+  "game_pid": 29980,
+  "window_handle": 2164812,
+  "window_title": "失落星核 — Project Crystal",
+  "responding": true,
+  "observed_seconds": 12.1716951,
+  "game_exit_code": 0,
+  "launcher_exit_code": 0,
+  "stdout": "Starting Project Crystal - Greystone Updated Reference Village...\r\n",
+  "stderr": "",
+  "ready_marker": "BLENDER_WINDOWS_READY",
+  "ready_confirmation": "Flushed log after normal close; no live marker timestamp claimed",
+  "exe_sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+  "pck_sha256": "035A833FEC40BB7AE840B15AC4C0A61567F44AFCBD426014BCBABB0F10C8A549"
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "failure": "stale QA expected RC2",
+    "log_sha256": "9d0f88b7dcb32d31e9f795d99e6949f6266470736898066e9699f182cab85285",
+    "observed": "FAIL Candidate version preserves formal base version",
+    "resolution": "Strict version updated and full package rebuilt"
+  },
+  {
+    "failure": "one transient Godot import cache read error",
+    "log_sha256": "3e69730e6cfe606695074ac2c6c098c1c1e92a0ab3aed885851d82452bf0f8f0",
+    "observed": "ERROR: Condition \"f.is_null()\" is true. Continuing.",
+    "resolution": "Same commit imported and exported again with zero errors; failed build retained locally"
+  }
+]

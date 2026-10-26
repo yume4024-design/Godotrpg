@@ -1,6 +1,6 @@
 # 《失落星核》｜Project Crystal
 
-2026-10-26 灰石村完整場景候選已接入原始專案：乾淨木框建築、連續瀑布與庭院；[307項回歸與實景](docs/GREYSTONE_SCENE_COMPLETION_REPORT.md)。入口 `./tools/godot.ps1 -Mode RunReferenceVillage`；本輪將建立獨立RC3，舊rc2保留。
+2026-10-26 灰石村完整場景候選已接入原始專案：乾淨木框建築、連續瀑布與庭院；[307項回歸與實景](docs/GREYSTONE_SCENE_COMPLETION_REPORT.md)。[Windows RC3啟動指南](docs/GREYSTONE_REFERENCE_20261024_GUIDE.md)：143項序章／28項重啟讀檔通過；舊rc2保留，人工驗收暫停。
 
 2026-10-26 岩壁法線與草土接合已修復；[297項回歸及前後畫面](docs/GREYSTONE_CLIFF_SHADOW_REPORT.md)。以 `./tools/godot.ps1 -Mode RunReferenceVillage` 查看；舊固定包未替換。
 

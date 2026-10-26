@@ -1,0 +1,56 @@
+{
+  "base_commit": "d0bb61006298a92f470889552039f218d9ae81e0",
+  "candidate": "D:\\RPGGAME\\builds\\greystone-reference\\rc3-d0bb610-verified\\candidate\\ProjectCrystal.exe",
+  "qa": "D:\\RPGGAME\\builds\\greystone-reference\\rc3-d0bb610-verified\\qa\\ProjectCrystal.exe",
+  "profile": "D:\\RPGGAME\\artifacts\\reference_windows\\20261026-132820\\profile",
+  "results": [
+    {
+      "seconds": 42.6407894,
+      "failures": 0,
+      "log": "D:\\RPGGAME\\artifacts\\reference_windows\\20261026-132820\\prologue.log",
+      "checks": 143,
+      "mode": "prologue"
+    },
+    {
+      "seconds": 10.8867025,
+      "failures": 0,
+      "log": "D:\\RPGGAME\\artifacts\\reference_windows\\20261026-132820\\restart.log",
+      "checks": 28,
+      "mode": "restart"
+    }
+  ],
+  "fixtures": {
+    "legacy_v1.json": {
+      "source": "D:\\RPGGAME\\artifacts\\godot-user\\Godot\\app_userdata\\失落星核 — Project Crystal\\p5_tests\\restart.json",
+      "sha256": "03B537BC655864953DB207251AD0A175E3767D197D8C3C16BAB176830FBA270A"
+    },
+    "legacy_layout2.json": {
+      "source": "D:\\RPGGAME\\artifacts\\godot-user\\Godot\\app_userdata\\失落星核 — Project Crystal\\g06_tests\\restart.json",
+      "sha256": "D8719F04B3438E9F5C97D7E099348382D1F8A022D67D7F62241A5D33A249FA95"
+    }
+  },
+  "required_resources": [
+    "res://scenes/main/greystone_reference_candidate.tscn",
+    "res://scenes/main/greystone_reference_integration.tscn",
+    "res://scenes/world/greystone_reference_master.tscn",
+    "res://assets/models/greystone/reference_v5/water.glb",
+    "res://assets/models/greystone/reference_v5/buildings/inn.glb",
+    "res://assets/shaders/greystone/reference_fall.gdshader",
+    "res://scenes/main/mine_reference_candidate.tscn",
+    "res://scenes/main/mine_reference_integration.tscn",
+    "res://scenes/world/mine_reference/mine.tscn",
+    "res://scenes/world/mine_reference/geometry.tscn",
+    "res://assets/models/mine_reference/core_cavern.glb",
+    "res://assets/shaders/mine/wood.gdshader",
+    "res://scenes/main/blender_windows_candidate.tscn",
+    "res://scenes/main/greystone_blender_integration.tscn",
+    "res://scenes/world/greystone_blender_master.tscn",
+    "res://assets/models/greystone/blender_master/water.glb",
+    "res://assets/shaders/greystone/water.gdshader",
+    "res://assets/shaders/greystone/ground.gdshader",
+    "res://assets/shaders/greystone/rock.gdshader"
+  ],
+  "physical_input_acceptance": false,
+  "endurance_acceptance": false,
+  "launcher_status": "passed"
+}

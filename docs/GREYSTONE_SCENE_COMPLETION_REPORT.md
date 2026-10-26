@@ -58,11 +58,41 @@ Blender另通過：195塊封閉凸形岩殼、630個草皮支撐點、18,029條�
 
 ![瀑布與上游橋](../source_assets/greystone_reference_20261024/evidence/completion_20261026/waterfall_detail.webp)
 
-Agent Vision：道路連通與地標可辨識；本輪牆面無原有生成黑斑、瀑布無首次穿插。相對概念圖仍採較寬的可玩通道、公會配置與既有玩家鏡頭，並非逐像素複製或使用者美術認可。完整場景已可探索，人工驗收保持暫停；Android／iOS與第一章沒有啟動。Windows候選包將以本輪提交建立獨立RC3並另記實測結果，舊包保留。
+Agent Vision：道路連通與地標可辨識；本輪牆面無原有生成黑斑、瀑布無首次穿插。相對概念圖仍採較寬的可玩通道、公會配置與既有玩家鏡頭，並非逐像素複製或使用者美術認可。完整場景已可探索，人工驗收保持暫停；Android／iOS與第一章沒有啟動。Windows RC3已從固定提交匯出並通過下列執行檔驗證；舊包保留。
+
+## Windows RC3 交付驗證
+
+場景提交`7740afc1a002ebe5402de3fef3ce0c26beb9644f`；包來源提交`d0bb61006298a92f470889552039f218d9ae81e0`（補齊QA版本／表面驗證）。正式v0.6.1及既有候選包保留，沒有合併main。
+
+啟動：[start_reference_village.cmd](../builds/greystone-reference/rc3-d0bb610-verified/candidate/start_reference_village.cmd)。[操作與隔離存檔指南](GREYSTONE_REFERENCE_20261024_GUIDE.md)。可攜ZIP在同一建置目錄，只含exe、pck、啟動器、授權及SHA256表；CRC檢查通過，不含測試存檔或日誌。
+
+| 執行檔驗證 | 實際結果 |
+|---|---|
+| Release序章、交易、舊檔遷移、場景往返、水體與六棟建築 | 143檢查／0失敗，42.64秒 |
+| 全新程序重啟讀檔 | 28檢查／0失敗，10.89秒 |
+| 普通啟動器（沒有preview-smoke） | 視窗保持回應12.17秒，正常關閉，遊戲／啟動器退出碼皆0 |
+| 素材匯入及兩個Release匯出 | 最終輪無引擎錯誤，來源工作樹無內容差異 |
+
+這171項是執行檔的原生圖形自動測試，與上述307項來源測試分開記錄；不是人體操作或30分鐘長測。新包人工美術／鍵鼠／Xbox驗收仍依使用者指示暫停。角色、旗標、獎勵與存檔Schema未修改。
+
+第一次重新匯入曾遇到Godot `get_multiple_md5` 圖像快取讀取錯誤，建置被阻擋；確認工作樹沒有內容變更後，對同一提交重跑匯入／匯出，最終輪無錯誤。失敗包與日誌保留於本機，未混入通過證據。另清除了本輪驗證工作樹的過期空白Git索引鎖：確認無Git程序、無檔案鎖且逾五分鐘後移入artifacts保留；其他工作樹未改動。
+
+![Release序章完成後的新村莊](../source_assets/greystone_reference_20261024/evidence/completion_20261026/windows_rc3/completed_village.webp)
+
+[建置及雜湊](../source_assets/greystone_reference_20261024/evidence/completion_20261026/windows_rc3/build_receipt.json)／[執行檔實測](../source_assets/greystone_reference_20261024/evidence/completion_20261026/windows_rc3/test_manifest.json)／[普通啟動器](../source_assets/greystone_reference_20261024/evidence/completion_20261026/windows_rc3/normal_launch.json)。
+
+重現：
+
+```powershell
+./tools/build_blender_windows.ps1 -SourceRoot '<該提交的乾淨驗證工作樹>' -BuildRoot '<新的空建置目錄>' -CandidateFamily Reference
+./tools/test_reference_windows.ps1 -BuildRoot '<同一建置目錄>'
+```
+
+本輪場景搭建、Godot整合與可玩Windows候選交付已完成；仍保留參考圖與遊戲尺度／構圖差異的說明，不將暫停中的人工認可標為通過。Android、iOS、第一章沒有開始。
 
 ## 重現與修改檔案
 
-首次Windows RC3匯出成功，但包內QA在版本檢查即中止：`tests/reference_windows_candidate_test.gd`仍要求RC2。已重現`FAIL Candidate version preserves formal base version`，保留失敗日誌於`artifacts/reference_windows/20261026-132158/prologue.log`；修正為明確RC3預期值，沒有移除正式0.6.1基準檢查，並補上三個新水體Shader與六棟立面的包內檢查。該首次包不作為交付通過證據，需以修正提交重新匯出與驗證。
+首次Windows RC3匯出成功，但包內QA在版本檢查即中止：`tests/reference_windows_candidate_test.gd`仍要求RC2。已重現`FAIL Candidate version preserves formal base version`，保留失敗日誌於`artifacts/reference_windows/20261026-132158/prologue.log`；修正為明確RC3預期值，沒有移除正式0.6.1基準檢查，並補上三個新水體Shader與六棟立面的包內檢查。該首次包不作為交付通過證據，已由修正提交重新匯出並通過下列驗證。
 
 ```powershell
 blender --background --factory-startup --python-exit-code 1 --python scripts/tools/greystone/build_reference_v5.py
