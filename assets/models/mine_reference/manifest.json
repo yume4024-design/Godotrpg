@@ -1,6 +1,6 @@
 {
   "layout_version": 4,
-  "builder_sha256": "8fbd25c5d27b226d16b37c908aef8445469629bcd06f50d6896b0a5cb39f7c63",
+  "builder_sha256": "efd0467dc9b02fb588952ac29640ece391d123d7a90ddcb612b3aca7822fcae4",
   "layout_sha256": "79d3389414b99e9b6f2134750e29c56a4be649eebabf7efdb5307b62eb40159d",
   "source_reference_sha256": "2fb4748cedb580b9962b8197fb9f67f0a5083062e6ef5067c5ddb75829f8284b",
   "zones": [
@@ -8,73 +8,73 @@
       "zone": "entrance_camp",
       "path": "res://assets/models/mine_reference/entrance_camp.glb",
       "meshes": 10,
-      "triangles": 14352
+      "triangles": 17932
     },
     {
       "zone": "rail_workings",
       "path": "res://assets/models/mine_reference/rail_workings.glb",
       "meshes": 10,
-      "triangles": 14172
+      "triangles": 17928
     },
     {
       "zone": "bridge_junction",
       "path": "res://assets/models/mine_reference/bridge_junction.glb",
-      "meshes": 4,
-      "triangles": 3272
+      "meshes": 5,
+      "triangles": 4220
     },
     {
       "zone": "crystal_workings",
       "path": "res://assets/models/mine_reference/crystal_workings.glb",
       "meshes": 11,
-      "triangles": 18156
+      "triangles": 20884
     },
     {
       "zone": "storage",
       "path": "res://assets/models/mine_reference/storage.glb",
       "meshes": 11,
-      "triangles": 12944
+      "triangles": 21048
     },
     {
       "zone": "waterway",
       "path": "res://assets/models/mine_reference/waterway.glb",
       "meshes": 9,
-      "triangles": 13336
+      "triangles": 14904
     },
     {
       "zone": "collapse",
       "path": "res://assets/models/mine_reference/collapse.glb",
-      "meshes": 5,
-      "triangles": 9736
+      "meshes": 6,
+      "triangles": 9692
     },
     {
       "zone": "core_cavern",
       "path": "res://assets/models/mine_reference/core_cavern.glb",
       "meshes": 10,
-      "triangles": 12500
+      "triangles": 13832
     },
     {
       "zone": "connections",
       "path": "res://assets/models/mine_reference/connections.glb",
-      "meshes": 6,
-      "triangles": 43248
+      "meshes": 5,
+      "triangles": 44136
     },
     {
       "zone": "details",
       "path": "res://assets/models/mine_reference/details.glb",
       "meshes": 3,
-      "triangles": 1200
+      "triangles": 840
     },
     {
       "zone": "water",
       "path": "res://assets/models/mine_reference/water.glb",
-      "meshes": 4,
-      "triangles": 648
+      "meshes": 5,
+      "triangles": 1608
     },
     {
       "zone": "backdrop",
       "path": "res://assets/models/mine_reference/backdrop.glb",
       "meshes": 1,
-      "triangles": 3052
+      "triangles": 3664
     }
   ],
   "collisions": [
@@ -21288,5 +21288,1045 @@
     }
   ],
   "master": "source_assets/mine_reference_20261024/mine_reference_master.blend",
-  "total_triangles": 146616
+  "total_triangles": 170688,
+  "art_refinement": {
+    "revision": "mine_reference_art_20261026",
+    "script_sha256": "967760d181fc3e4fb1375553dc3362b4be02b9b644b22942124a61ac032eb84a",
+    "new_dressing": [
+      {
+        "kind": "recessed_portal",
+        "zone": "rail_workings",
+        "position": [
+          -41,
+          3,
+          -12
+        ]
+      },
+      {
+        "kind": "recessed_portal",
+        "zone": "crystal_workings",
+        "position": [
+          -28,
+          7,
+          -38
+        ]
+      },
+      {
+        "kind": "recessed_portal",
+        "zone": "storage",
+        "position": [
+          38,
+          7,
+          -26
+        ]
+      },
+      {
+        "kind": "recessed_portal",
+        "zone": "waterway",
+        "position": [
+          40,
+          0,
+          16
+        ]
+      },
+      {
+        "kind": "recessed_portal",
+        "zone": "core_cavern",
+        "position": [
+          44,
+          0,
+          36
+        ]
+      },
+      {
+        "kind": "stock_shelf",
+        "zone": "rail_workings",
+        "position": [
+          -45,
+          3,
+          -8
+        ]
+      },
+      {
+        "kind": "stock_shelf",
+        "zone": "storage",
+        "position": [
+          41,
+          7,
+          -15
+        ]
+      },
+      {
+        "kind": "stock_shelf",
+        "zone": "crystal_workings",
+        "position": [
+          -23,
+          7,
+          -39
+        ]
+      },
+      {
+        "kind": "stock_shelf",
+        "zone": "entrance_camp",
+        "position": [
+          -29,
+          0,
+          39
+        ]
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -31.11836502550229,
+          0,
+          24.11306325973463
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -32.89140275709104,
+          0,
+          25.509007139583893
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -44.62768763882218,
+          0,
+          33.226011430559126
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -32.39250113255543,
+          0,
+          40.020808132097535
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -39.85080668468363,
+          0,
+          40.722728772654634
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -32.96276004667833,
+          0,
+          40.66193755336026
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -27.424975918994143,
+          0,
+          24.58861461188423
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -31.969109195270917,
+          0,
+          39.59112205050931
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -26.137674386392366,
+          0,
+          35.89480247302199
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "entrance_camp",
+        "position": [
+          -27.232053007921365,
+          0,
+          30.045312245860146
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "work_deck",
+        "zone": "entrance_camp",
+        "position": [
+          -28,
+          0,
+          25.0
+        ]
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -46.20160297465427,
+          3,
+          0.6263396607278686
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -34.9834739275161,
+          3,
+          -13.03987985248244
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -26.929430403708675,
+          3,
+          -4.820009637668125
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -40.306006090753655,
+          3,
+          2.139804559930427
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -45.78580637646599,
+          3,
+          -2.474166960075898
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -43.415818215776476,
+          3,
+          2.8917456970466606
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -29.542382645803066,
+          3,
+          -14.288881128522402
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -44.91741112398679,
+          3,
+          -13.475273164046403
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -26.41113142236029,
+          3,
+          -13.515281991561828
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -44.8582202430736,
+          3,
+          -13.27976634844226
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -25.429624041097227,
+          3,
+          -6.415149337087833
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "rail_workings",
+        "position": [
+          -38.85698458853925,
+          3,
+          0.47246995375202516
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "work_deck",
+        "zone": "rail_workings",
+        "position": [
+          -44,
+          3,
+          -13.0
+        ]
+      },
+      {
+        "kind": "work_deck",
+        "zone": "rail_workings",
+        "position": [
+          -28,
+          3,
+          -13.0
+        ]
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          28.293394151769025,
+          3,
+          -1.6240406092170485
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          21.497158728954712,
+          3,
+          -2.543215623747575
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          28.552516170398807,
+          3,
+          0.23631513403774695
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          22.883466267359093,
+          3,
+          3.8863594252611686
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          28.770596417034113,
+          3,
+          3.033379593109385
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          28.061439486122975,
+          3,
+          0.9691807933925523
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          21.98972450951532,
+          3,
+          -2.6505383929735276
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          22.19059594472698,
+          3,
+          1.842328477349398
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          28.663893529742126,
+          3,
+          0.7744647281939172
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          27.490671316513364,
+          3,
+          1.878180472271167
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "bridge_junction",
+        "position": [
+          28.7397983452991,
+          3,
+          1.8596184775724152
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "crystal_workings",
+        "position": [
+          -15.74956360036095,
+          7,
+          -39.90193218620362
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "crystal_workings",
+        "position": [
+          -33.03598508480313,
+          7,
+          -39.308996576366084
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "crystal_workings",
+        "position": [
+          -14.940619553261602,
+          7,
+          -28.134210411425546
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "crystal_workings",
+        "position": [
+          -4.463382772763115,
+          7,
+          -39.39688723046751
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "crystal_workings",
+        "position": [
+          -11.318142826635231,
+          7,
+          -39.29342151575753
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "work_deck",
+        "zone": "crystal_workings",
+        "position": [
+          -32,
+          7,
+          -39.0
+        ]
+      },
+      {
+        "kind": "work_deck",
+        "zone": "crystal_workings",
+        "position": [
+          0,
+          7,
+          -39.0
+        ]
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          22.860028470889077,
+          7,
+          -13.225919638621457
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          36.70982470047661,
+          7,
+          -26.793451579036518
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          21.920030498177393,
+          7,
+          -17.28384823128927
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          40.16770025624557,
+          7,
+          -14.230790380835783
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          40.30568972396502,
+          7,
+          -25.39393312199536
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          21.787411120514694,
+          7,
+          -17.367279782451746
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          40.15268146539101,
+          7,
+          -13.99344866429652
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          39.930672358983735,
+          7,
+          -14.727905657397518
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          42.065579391796625,
+          7,
+          -27.691323608945407
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          21.133312100636633,
+          7,
+          -16.10768667940535
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          42.76420826636175,
+          7,
+          -22.351076936172596
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          38.68196251521621,
+          7,
+          -14.079589013952015
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "storage",
+        "position": [
+          42.44528166731543,
+          7,
+          -14.988625664778192
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "work_deck",
+        "zone": "storage",
+        "position": [
+          40,
+          7,
+          -27.0
+        ]
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          22.632177100436973,
+          0,
+          21.615972504163942
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          39.72320296411013,
+          0,
+          26.36582780015501
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          37.400932177709265,
+          0,
+          15.306360502718707
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          42.295630710464806,
+          0,
+          22.1100353847268
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          41.49038741130561,
+          0,
+          14.784357242422145
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          22.69458160546807,
+          0,
+          20.466028132438776
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          23.210542031807787,
+          0,
+          18.75549565526699
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          42.51530487761758,
+          0,
+          20.988701642828783
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          26.721699379273122,
+          0,
+          27.834201286236038
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          21.367490511381863,
+          0,
+          25.80224435518171
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          42.44950738476945,
+          0,
+          21.474929021007814
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          29.81737478929759,
+          0,
+          26.772748978274088
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          37.36386984879334,
+          0,
+          28.7021812531801
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "waterway",
+        "position": [
+          39.81070932816192,
+          0,
+          14.462939293639174
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "work_deck",
+        "zone": "waterway",
+        "position": [
+          40,
+          0,
+          15.0
+        ]
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          -6.132827769757867,
+          0,
+          38.458066205112125
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          3.656915480498796,
+          0,
+          29.680859499864955
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          2.994366103343326,
+          0,
+          28.42783589474908
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          9.898579245231007,
+          0,
+          40.55649247746561
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          10.096665391705924,
+          0,
+          32.51427634269512
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          10.640190400570118,
+          0,
+          31.233221031438205
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          5.684461143134195,
+          0,
+          42.752989769401
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          8.475384203984186,
+          0,
+          31.14280420277315
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          -4.7956895828017725,
+          0,
+          40.37474315378917
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "collapse",
+        "position": [
+          9.707105958351905,
+          0,
+          28.47301632670469
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "work_deck",
+        "zone": "collapse",
+        "position": [
+          8,
+          0,
+          29.0
+        ]
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          41.757080290036036,
+          0,
+          46.70288692242326
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          46.9762294635545,
+          0,
+          35.49556669342478
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          39.77305894818359,
+          0,
+          46.33121215225256
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          25.27092734566989,
+          0,
+          39.87606889141778
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          27.523380074830857,
+          0,
+          44.16429231127178
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          29.020258278612204,
+          0,
+          48.17589658176422
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          44.696079977983416,
+          0,
+          48.692564071375195
+        ],
+        "radius": 1.15
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          45.464536813209435,
+          0,
+          48.1363922629599
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          42.04362021548327,
+          0,
+          48.328908000827354
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          41.80448741143191,
+          0,
+          46.74516955104385
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "edge_dressing",
+        "zone": "core_cavern",
+        "position": [
+          35.1198847886575,
+          0,
+          47.14100417244188
+        ],
+        "radius": 0.65
+      },
+      {
+        "kind": "work_deck",
+        "zone": "core_cavern",
+        "position": [
+          46,
+          0,
+          37.0
+        ]
+      },
+      {
+        "kind": "continuous_cascade",
+        "index": 0,
+        "triangles": 96
+      },
+      {
+        "kind": "continuous_cascade",
+        "index": 1,
+        "triangles": 96
+      }
+    ],
+    "protected_layout_version": 4,
+    "new_collisions": 0
+  }
 }

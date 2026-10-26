@@ -1,0 +1,155 @@
+{
+  "master_sha256": "03d68cdf1318816fc4000247743f3457b0e929ad49d878fd10b6e1f81174e1c9",
+  "meshes": [
+    {
+      "mesh": "entrance_camp_Mine_Rock",
+      "closed_components": 60,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "rail_workings_Mine_Rock",
+      "closed_components": 64,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "bridge_junction_Mine_Rock",
+      "closed_components": 37,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "crystal_workings_Mine_Rock",
+      "closed_components": 54,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "storage_Mine_Rock",
+      "closed_components": 62,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "waterway_Mine_Rock",
+      "closed_components": 68,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "collapse_Mine_Rock",
+      "closed_components": 59,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "core_cavern_Mine_Rock",
+      "closed_components": 53,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "connections_Mine_Rock",
+      "closed_components": 10,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "water_Mine_Rock",
+      "closed_components": 2,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "backdrop_Mine_Rock",
+      "closed_components": 84,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.050",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.051",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.052",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.053",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.054",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.055",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.056",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.057",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.058",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    },
+    {
+      "mesh": "OreInCart.059",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "inward_faces": 0
+    }
+  ],
+  "closed_rock_components": 563,
+  "failures": [],
+  "method": "Actual Blender rock material meshes; every edge paired, nondegenerate faces, component outward orientation. No geometry changed."
+}

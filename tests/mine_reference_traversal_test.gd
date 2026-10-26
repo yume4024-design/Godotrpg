@@ -77,6 +77,11 @@ func _run() -> void:
 	overview.make_current()
 	await _capture("overview")
 	camera.make_current()
+	if "--mine-capture-only" in OS.get_cmdline_user_args():
+		await _capture_review()
+		print("MINE_CAPTURE_RESULT views=13 failures=",failures)
+		quit(0 if failures == 0 else 1)
+		return
 	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/world/mine_reference_layout.json"))
 	last_usec = Time.get_ticks_usec()
 	process_frame.connect(_sample)
@@ -105,6 +110,27 @@ func _sample() -> void:
 	var now: int = Time.get_ticks_usec()
 	frame_times.append((now-last_usec)/1000.0)
 	last_usec = now
+
+func _capture_review() -> void:
+	var places: Dictionary = {"camp":Vector3(-38,.1,30),"rail":Vector3(-37,3.1,-7),"crossing":Vector3(-4,3.1,0),"crystal":Vector3(-17,7.1,-32),"storage":Vector3(30,7.1,-22),"waterway":Vector3(32,.1,21),"collapse":Vector3(0,.1,36),"core":Vector3(36,.1,39),"cascade":Vector3(25,3.1,0)}
+	for label: String in places:
+		player.reset_to(places[label])
+		for frame: int in 32: await physics_frame
+		await _capture("review_"+label)
+		if label=="cascade":
+			await create_timer(.75).timeout
+			await _capture("review_cascade_motion")
+	var review := Camera3D.new()
+	map.add_child(review)
+	review.projection = Camera3D.PROJECTION_ORTHOGONAL
+	review.size = 19.0
+	review.far = 200.0
+	review.global_position = Vector3(17,10,-13)
+	review.look_at(Vector3(10,-1,-27))
+	review.make_current()
+	await _capture("review_water_detail")
+	await create_timer(.75).timeout
+	await _capture("review_water_detail_motion")
 
 func _walk(route: Array,label: String,running: bool) -> bool:
 	_release()

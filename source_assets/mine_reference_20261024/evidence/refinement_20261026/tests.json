@@ -1,0 +1,38 @@
+[
+  {
+    "command": "./tools/godot.ps1 -Mode TestMineReference",
+    "checks": 55,
+    "failures": 0,
+    "log_sha256": "a0a56eb1ce91812a11034e6021c4b484c3c57ebb8ecbf1b6938d03b7450621cf"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode TestMineReferenceMigration",
+    "checks": 59,
+    "failures": 0,
+    "log_sha256": "21ef5029ac07a8fbc191d20a39a8643036f4d076fe2b3630ade059c186663430"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode VisualMineReferenceStory",
+    "checks": 68,
+    "failures": 0,
+    "log_sha256": "6866c75008c4879a05e550ddff1d4831c6d29942cc0d256d101d41809ba3fe6e"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode TestMineReferenceStoryReload",
+    "checks": 7,
+    "failures": 0,
+    "log_sha256": "3927f587feecbb632de4e04183832925b91143f9e4422bcb81cd0e11a1097748"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode VisualReferenceStory",
+    "checks": 68,
+    "failures": 0,
+    "log_sha256": "2f68d5e4d7aa76dd761fa8241d80a65add24a9541ded6e4be927565652138165"
+  },
+  {
+    "command": "./tools/godot.ps1 -Mode TestReferenceStoryReload",
+    "checks": 7,
+    "failures": 0,
+    "log_sha256": "613b519f577250171a066a64ac7dd9d6e81448e24c9cd2fcaf84d01085e860bb"
+  }
+]

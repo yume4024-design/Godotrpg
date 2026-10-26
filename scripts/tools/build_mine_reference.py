@@ -1,5 +1,5 @@
 """Build the complete cutaway mine in an owned background Blender process."""
-import bpy, json, math, random, hashlib
+import bpy, bmesh, json, math, random, hashlib, sys
 from pathlib import Path
 from mathutils import Vector,Matrix
 
@@ -55,11 +55,26 @@ def cylinder(name,p,radius,depth,material,group,vertices=10):
     bpy.ops.mesh.primitive_cylinder_add(vertices=vertices,radius=radius,depth=depth,location=p)
     o=bpy.context.object;o.name=name;link(o,group);o.data.materials.append(materials[material]);return o
 def stone(name,p,size,group):
-    bpy.ops.mesh.primitive_ico_sphere_add(subdivisions=2,radius=1,location=p)
-    o=bpy.context.object;o.name=name;link(o,group)
-    for v in o.data.vertices:
-        v.co.x*=rng.uniform(.85,1.15);v.co.y*=rng.uniform(.85,1.15);v.co.z*=rng.uniform(.85,1.15)
-    o.scale=size;o.data.materials.append(materials['Rock']);return o
+    # Closed, flat-crowned convex blocks instead of stretched pointed spheres.
+    rock_rng=random.Random();rock_rng.setstate(rng.getstate())
+    # Preserve the old 42-vertex rock's 126 draws: later rubble collider
+    # placement must not change merely because this visual topology changed.
+    for unused in range(126):rng.random()
+    bm=bmesh.new()
+    for z,r in [(-.92,.72),(-.12,1.0),(.91,.77)]:
+        for i in range(8):
+            angle=math.tau*(i/8+.0625)
+            bm.verts.new((math.cos(angle)*r*rock_rng.uniform(.94,1.06),math.sin(angle)*r*rock_rng.uniform(.94,1.06),z+rock_rng.uniform(-.035,.035)))
+    hull=bmesh.ops.convex_hull(bm,input=list(bm.verts))
+    unused=[v for v in bm.verts if not v.link_faces]
+    if unused:bmesh.ops.delete(bm,geom=unused,context='VERTS')
+    bmesh.ops.recalc_face_normals(bm,faces=list(bm.faces))
+    bmesh.ops.triangulate(bm,faces=list(bm.faces))
+    data=bpy.data.meshes.new(name);bm.to_mesh(data);bm.free()
+    o=bpy.data.objects.new(name,data);collection(group).objects.link(o)
+    o.location=p;o.scale=tuple(s*rock_rng.uniform(.94,1.06) for s in size)
+    o.rotation_euler.z=rock_rng.uniform(-.28,.28)
+    o.data.materials.append(materials['Rock']);return o
 def collider_box(name,p,size,rotation=0):colliders.append({'name':name,'type':'box','position':list(p),'size':list(size),'rotation':rotation})
 def slope_points(a,b,width,bottom=-.45,top=0):
     a,b=Vector(a),Vector(b);d=Vector((b.x-a.x,0,b.z-a.z)).normalized();n=Vector((-d.z,0,d.x))*width*.5
@@ -71,16 +86,27 @@ def slope(name,a,b,width,group,kind):
         a,b=Vector(a),Vector(b);length=(b-a).length;n=Vector((-(b.z-a.z),0,b.x-a.x)).normalized()
         count=math.ceil(length/.48)
         for i in range(count):
-            p=a.lerp(b,(i+.5)/count)+Vector((0,-.115,0));beam(name+'_Plank',B(p-n*width*.5),B(p+n*width*.5),.44,.23,'WoodLight',group)
+            p=a.lerp(b,(i+.5)/count)+Vector((0,-.115,0));run=.44
+            if name=='north_bridge':
+                # Cross bridge already supplies the junction deck. Trim the
+                # north planks at its edge instead of layering coplanar boards.
+                crossing=next(v for v in LAYOUT['links'] if v['id']=='cross_bridge')
+                center=crossing['a'][2];half=crossing['width']*.5
+                offset=p.z-center;outside=abs(offset)-half
+                if outside<=-.22:continue
+                if outside<.22:
+                    run=outside+.22;p.z=center+math.copysign(half+run*.5,offset)
+            beam(name+'_Plank',B(p-n*width*.5),B(p+n*width*.5),run,.23,'WoodLight',group)
         for side in [-1,1]:
             beam(name+'_Girder',B(a+n*(width*.38*side)+Vector((0,-.55,0))),B(b+n*(width*.38*side)+Vector((0,-.55,0))),.36,.4,'Wood',group)
     else:
-        mesh(name+'_Ramp',[B(p) for p in pts],faces,'Rock',group)
         a,b=Vector(a),Vector(b);count=max(1,math.ceil(abs(b.y-a.y)/.14))
         d=Vector((b.x-a.x,0,b.z-a.z)).normalized();n=Vector((-d.z,0,d.x))
+        for side in [-1,1]:
+            beam(name+'_Stringer',B(a+n*width*.40*side+Vector((0,-.25,0))),B(b+n*width*.40*side+Vector((0,-.25,0))),.25,.3,'Wood',group)
         for i in range(count):
             p=a.lerp(b,(i+.5)/count)
-            beam(name+'_Tread',B(p-n*width*.5+Vector((0,.015,0))),B(p+n*width*.5+Vector((0,.015,0))),max(.2,Vector((b.x-a.x,0,b.z-a.z)).length/count),.12,'Earth',group)
+            beam(name+'_Tread',B(p-n*width*.5+Vector((0,.015,0))),B(p+n*width*.5+Vector((0,.015,0))),max(.2,Vector((b.x-a.x,0,b.z-a.z)).length/count),.12,'WoodLight',group)
     colliders.append({'name':name,'type':'hull','points':pts})
     return pts
 def fence(name,a,b,group,solid=True):
@@ -98,15 +124,29 @@ for name,relative in {'crate':'assets/models/greystone/props/crate.glb','barrel'
     before=set(bpy.data.objects);bpy.ops.import_scene.gltf(filepath=str(ROOT/relative));objects=list(set(bpy.data.objects)-before)
     meshes=[o for o in objects if o.type=='MESH'];templates[name]=[]
     for o in meshes:
-        templates[name].append((o.data.copy(),o.matrix_world.copy()))
+        data=o.data.copy()
+        if name in ['crate','barrel']:
+            for i,m in enumerate(data.materials):
+                if m and 'iron' in m.name.lower():data.materials[i]=materials['Metal']
+                elif m:data.materials[i]=materials['WoodLight' if 'gold' in m.name.lower() else 'Wood']
+        templates[name].append((data,o.matrix_world.copy()))
     for o in objects:bpy.data.objects.remove(o,do_unlink=True)
     sources.append({'asset':name,'source':relative,'sha256':hashlib.sha256((ROOT/relative).read_bytes()).hexdigest()})
 def instance(name,p,group,scale=1,yaw=0):
     from mathutils import Matrix
     scaling=Matrix.Diagonal(Vector((*scale,1.0))) if isinstance(scale,(tuple,list)) else Matrix.Scale(scale,4)
+    placement=Matrix.Translation(B(p))@Matrix.Rotation(yaw,4,'Z')@scaling
     for data,matrix in templates[name]:
         o=bpy.data.objects.new(name,data);collection(group).objects.link(o)
-        o.matrix_world=Matrix.Translation(B(p))@Matrix.Rotation(yaw,4,'Z')@scaling@matrix
+        o.matrix_world=placement@matrix
+    if name=='crate':
+        details=[]
+        for x in [-.3,-.1,.1,.3]:
+            details.append(gbox('CrateTopSeam',(x,1.008,0),(.014,.012,.9),'Wood',group))
+            for z in [-.567,.567]:details.append(gbox('CrateSeam',(x,.5,z),(.014,.9,.012),'Wood',group))
+        for z in [-.574,.574]:
+            for sign in [-1,1]:details.append(beam('CrateDiagonal',B((-.38,.18 if sign>0 else .84,z)),B((.38,.84 if sign>0 else .18,z)),.075,.055,'WoodLight',group))
+        for detail in details:detail.matrix_world=placement@detail.matrix_world
     return o
 def crystal(p,group,scale=1):
     instance('crystal',p,group,scale)
@@ -206,7 +246,9 @@ for item in LAYOUT['links']:
 
 # Distinct readable workplace dressing, keeping the declared routes clear.
 for group,p in [('entrance_camp',(-42,0,36)),('rail_workings',(-41,3,-12)),('crystal_workings',(-28,7,-38)),('storage',(38,7,-26)),('waterway',(38,0,26)),('core_cavern',(44,0,36))]:
-    portal((-47,0,28) if group=='entrance_camp' else p,group,6,5,math.pi/2 if group=='entrance_camp' else 0)
+    portal_p=(-47,0,28) if group=='entrance_camp' else ((40,0,16) if group=='waterway' else p)
+    portal_yaw=math.pi/2 if group=='entrance_camp' else (-math.pi/2 if group=='waterway' else 0)
+    portal(portal_p,group,6,5,portal_yaw)
     for side in [-1,1]:torch((p[0]+side*3.5,p[1],p[2]+1),group)
     for i in range(3):
         pos=(p[0]+1+i*1.1,p[1],p[2]-2+(i%2)*1.1) if group=='waterway' else (p[0]-4+i*1.2,p[1],p[2]+1.4+(i%2)*1.1)
@@ -258,12 +300,19 @@ for x,z,bottom,top in [(10,-28,-7,5),(19,15,-5.5,1)]:
     gbox('FallingWater',(x,(bottom+top)/2,z),(4,top-bottom,.08),'Fall','water')
     crystal((x-2,bottom+1,z+2),'water',1.4)
 # Far cave envelope and layered rock formations; front remains an open cutaway.
-for i in range(22):
-    x=-52+i*5
-    stone('BackCavern',B((x,6,-46)),(4,4,rng.uniform(10,15)),'backdrop')
-for z in range(-38,44,8):stone('WestCavern',B((-52,2,z)),(4,5,rng.uniform(7,12)),'backdrop')
+for row in range(3):
+    for i in range(18):
+        x=-51+i*6+(row%2)*2+rng.uniform(-.6,.6)
+        stone('BackCavern',B((x,1+row*5+rng.uniform(-.5,.5),-47-row*.4+rng.uniform(-.6,.6))),(rng.uniform(3.8,4.8),4.0,rng.uniform(3.6,4.7)),'backdrop')
+for row in range(2):
+    for z in range(-38,44,7):stone('WestCavern',B((-52-row*.6,1+row*5.5,z)),(4,4.5,3.7),'backdrop')
 for x,z in [(-22,-22),(13,-20),(12,26),(19,37),(-20,16)]:stone('ChasmPillar',B((x,-3,z)),(3,3,6),'backdrop')
 gbox('CavernBasement',(0,-11.8,0),(112,1,112),'Rock','backdrop')
+
+# Reference-specific art remains separate from the frozen gameplay layout.
+sys.path.insert(0,str(ROOT/'scripts/tools'))
+from mine_reference_art import refine_mine
+art_receipt=refine_mine(globals())
 
 # Reusable new machinery modules, independently exportable without the world.
 for name,build in [('mine_cart',lambda:cart((0,0,0),'module_mine_cart')),('rail_segment',lambda:rail((0,0,-2),(0,0,2),'module_rail_segment')),('mine_portal',lambda:portal((0,0,0),'module_mine_portal')),('hoist_cage',lambda:crane((0,0,0),'module_hoist_cage'))]:
@@ -321,6 +370,8 @@ scene.render.resolution_x=1440;scene.render.resolution_y=1200;scene.render.resol
 scene.view_settings.view_transform='AgX'
 bpy.ops.wm.save_as_mainfile(filepath=str(SOURCE/'mine_reference_master.blend'),compress=True)
 report={'layout_version':4,'builder_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'layout_sha256':hashlib.sha256((ROOT/'data/world/mine_reference_layout.json').read_bytes()).hexdigest(),'source_reference_sha256':hashlib.sha256((ROOT/LAYOUT['reference']).read_bytes()).hexdigest(),'zones':manifest,'collisions':colliders,'reused_sources':sources,'master':'source_assets/mine_reference_20261024/mine_reference_master.blend','total_triangles':sum(v['triangles'] for v in manifest)}
+report['art_refinement']=art_receipt
 (OUT/'manifest.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf8')
-scene.render.filepath=str(SOURCE/'overview.png');bpy.ops.render.render(write_still=True)
+if '--skip-render' not in sys.argv:
+    scene.render.filepath=str(SOURCE/'overview.png');bpy.ops.render.render(write_still=True)
 print('MINE_MASTER_COMPLETE',report['total_triangles'],len(colliders))

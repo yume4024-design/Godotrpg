@@ -1,10 +1,12 @@
 extends Node3D
 ## Explicit simplified colliders are authored with the Blender layout, not guessed.
-const ROCK: Shader = preload("res://assets/shaders/greystone/rock.gdshader")
+const ROCK: Shader = preload("res://assets/shaders/mine/faceted_rock.gdshader")
 const EARTH: Shader = preload("res://assets/shaders/greystone/ground.gdshader")
 const WATER: Shader = preload("res://assets/shaders/greystone/water.gdshader")
 const WOOD: Shader = preload("res://assets/shaders/mine/wood.gdshader")
 const FLAME: Shader = preload("res://assets/shaders/mine/flame.gdshader")
+const FALL: Shader = preload("res://assets/shaders/greystone/reference_fall.gdshader")
+const FOAM: Shader = preload("res://assets/shaders/mine/impact_foam.gdshader")
 var _shared: Dictionary = {}
 @export var build_collisions: bool = true
 
@@ -41,13 +43,14 @@ func _apply_surfaces() -> void:
 			var original: Material = visual.mesh.surface_get_material(index)
 			if original == null: continue
 			var name_key: String = original.resource_name
-			if name_key.begins_with("Mine_Rock") or name_key.begins_with("Mine_Earth") or name_key.begins_with("Mine_Water") or name_key.begins_with("Mine_Fall") or name_key.begins_with("Mine_Wood") or name_key.begins_with("Mine_Flame"):
+			if name_key.begins_with("Mine_Rock") or name_key.begins_with("Mine_Earth") or name_key.begins_with("Mine_Water") or name_key.begins_with("Mine_Fall") or name_key.begins_with("Mine_Wood") or name_key.begins_with("Mine_Flame") or name_key.begins_with("Mine_Foam"):
 				visual.set_surface_override_material(index,_material(name_key))
 			elif "crystal" in name_key.to_lower() and original is StandardMaterial3D:
 				var emissive := original.duplicate() as StandardMaterial3D
 				emissive.emission_enabled = true
 				emissive.emission = Color(.05,.35,.85)
-				emissive.emission_energy_multiplier = 1.3
+				emissive.emission_energy_multiplier = .35
+				emissive.albedo_color = Color(.10,.43,.72)
 				visual.set_surface_override_material(index,emissive)
 
 func _vector(array: Array) -> Vector3:
@@ -58,13 +61,15 @@ func _material(key: String) -> ShaderMaterial:
 	var material := ShaderMaterial.new()
 	if key.begins_with("Mine_Flame"):
 		material.shader = FLAME
+	elif key.begins_with("Mine_Fall"):
+		material.shader = FALL
+	elif key.begins_with("Mine_Foam"):
+		material.shader = FOAM
 	elif key.begins_with("Mine_Wood"):
 		material.shader = WOOD
 		material.set_shader_parameter("base_color",Color(.56,.36,.18) if key.begins_with("Mine_WoodLight") else Color(.40,.25,.12))
 	elif key.begins_with("Mine_Rock"):
 		material.shader = ROCK
-		material.set_shader_parameter("base_color",Color(.37,.40,.46))
-		material.set_shader_parameter("moss_color",Color(.27,.36,.38))
 	elif key.begins_with("Mine_Earth"):
 		material.shader = EARTH
 		material.set_shader_parameter("base_color",Color(.63,.48,.29))

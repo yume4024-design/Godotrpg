@@ -1,0 +1,26 @@
+{
+  "separation_seconds": 0.75,
+  "method": "Read-only pixel comparison of two fixed-camera native captures; does not certify flow direction or fluid simulation",
+  "regions": {
+    "waterfall": {
+      "roi": [
+        650,
+        250,
+        705,
+        385
+      ],
+      "mean_channel_delta_255": 14.822491582491583,
+      "pixels_over_5_ratio": 0.585050505050505
+    },
+    "static_rock": {
+      "roi": [
+        350,
+        190,
+        450,
+        290
+      ],
+      "mean_channel_delta_255": 0.0,
+      "pixels_over_5_ratio": 0.0
+    }
+  }
+}

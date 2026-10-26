@@ -1,0 +1,172 @@
+{
+  "baseline_commit": "5d7e90a896032aa480791cb3fb7e9cc91b8f814f",
+  "scene_triangles": 170688,
+  "zones": 12,
+  "modules": 4,
+  "new_dressing_entries": 106,
+  "layout_version": 4,
+  "latest_reference": "docs/references/mine_interior_reference_20261026.png",
+  "full_reference": "docs/references/mine_interior_reference.png",
+  "files": [
+    {
+      "path": "scripts/tools/build_mine_reference.py",
+      "bytes": 25855,
+      "sha256": "efd0467dc9b02fb588952ac29640ece391d123d7a90ddcb612b3aca7822fcae4"
+    },
+    {
+      "path": "scripts/tools/mine_reference_art.py",
+      "bytes": 7265,
+      "sha256": "967760d181fc3e4fb1375553dc3362b4be02b9b644b22942124a61ac032eb84a"
+    },
+    {
+      "path": "scripts/tools/audit_mine_visuals.py",
+      "bytes": 2112,
+      "sha256": "d5bfedde90a135e15824ed1ef02fe9a2dbc24b1f72664dd511f9118e29fc1d0a"
+    },
+    {
+      "path": "scripts/tools/write_mine_scene.py",
+      "bytes": 5514,
+      "sha256": "7b072cc887e6950d7ed67db76714a02a409e4422e391b488e8b1e080f5932607"
+    },
+    {
+      "path": "scripts/world/mine_reference_geometry.gd",
+      "bytes": 3861,
+      "sha256": "39a874186ea5985e8fc4c37b93d9dea497555e661f93d1d74de7557ec31beac9"
+    },
+    {
+      "path": "tests/mine_reference_traversal_test.gd",
+      "bytes": 8348,
+      "sha256": "6a55ad216826020a640d30c9d88476817c8bff5ac7b604a7d0917daea7f1a634"
+    },
+    {
+      "path": "assets/shaders/mine/faceted_rock.gdshader",
+      "bytes": 555,
+      "sha256": "ea98b66f56f29329714750cb7e4595c275b618df21f41646e4c24c7a4e30614c"
+    },
+    {
+      "path": "assets/shaders/mine/faceted_rock.gdshader.uid",
+      "bytes": 19,
+      "sha256": "ca7e5c0e341cca492be158e36395b3434738bb0da7a124e7d881cc7981439e0c"
+    },
+    {
+      "path": "assets/shaders/mine/impact_foam.gdshader",
+      "bytes": 426,
+      "sha256": "ddbc24b6ed7836f51d7ba49d62a4b155f4869b7c678e742ae1b51cf48e02c9bb"
+    },
+    {
+      "path": "assets/shaders/mine/impact_foam.gdshader.uid",
+      "bytes": 20,
+      "sha256": "789849b6ac12e503c859db730e457428d1ee269275525e2cdc10ccaa3dc74bf2"
+    },
+    {
+      "path": "scenes/world/mine_reference/geometry.tscn",
+      "bytes": 2154,
+      "sha256": "12fdd9162ae70e500526f5cf5e2cf122eeef5674400e9c5187519138bb32ddd6"
+    },
+    {
+      "path": "scenes/world/mine_reference/mine.tscn",
+      "bytes": 6625,
+      "sha256": "28149b157c41d40b100fb643e896e678568058da3bd8991b4e6bb6c8f0c5ec22"
+    },
+    {
+      "path": "assets/models/mine_reference/manifest.json",
+      "bytes": 429037,
+      "sha256": "428af5f43283b724ce9a7c31860170ef4bba90831984b9e9c46722b612c843e8"
+    },
+    {
+      "path": "source_assets/mine_reference_20261024/mine_reference_master.blend",
+      "bytes": 1440093,
+      "sha256": "03d68cdf1318816fc4000247743f3457b0e929ad49d878fd10b6e1f81174e1c9"
+    },
+    {
+      "path": "source_assets/mine_reference_20261024/asset_audit.json",
+      "bytes": 46785,
+      "sha256": "221c063f32259995620ad8d975f5ff7bcfc534832f236fdc2f09bcf6b8001086"
+    },
+    {
+      "path": "docs/references/mine_interior_reference_20261026.png",
+      "bytes": 505300,
+      "sha256": "afb7b80350b81b2254454b1b02204481e8f0656287f17479c12c0dd0513a43a9"
+    },
+    {
+      "path": "assets/models/mine_reference/backdrop.glb",
+      "bytes": 286772,
+      "sha256": "e156f36472a68fc8cd8705263c08de1b97f86d387a1c34fcbcec121353ca4b46"
+    },
+    {
+      "path": "assets/models/mine_reference/bridge_junction.glb",
+      "bytes": 283108,
+      "sha256": "2c48b519393143a8ee9a4773b2c224391cab140a2293abb9be54d04ca56281a3"
+    },
+    {
+      "path": "assets/models/mine_reference/collapse.glb",
+      "bytes": 621644,
+      "sha256": "457fe921023643853bd068ac84db5de7c45e35d4a5ca1aaa33bda60e0fcac9c5"
+    },
+    {
+      "path": "assets/models/mine_reference/connections.glb",
+      "bytes": 2591064,
+      "sha256": "4cb1dea8f0eed470bd4147132a4a56b4442d0d2f92997a882e75d6696557c96d"
+    },
+    {
+      "path": "assets/models/mine_reference/core_cavern.glb",
+      "bytes": 869604,
+      "sha256": "57e8760911375752f2b86d1f2440bafad1b08821fe81be1464c783bf181797d3"
+    },
+    {
+      "path": "assets/models/mine_reference/crystal_workings.glb",
+      "bytes": 1292132,
+      "sha256": "235701ba4181f020f3d2d56c87dde88deafe9a89647d60d7c530e14ae2ad37e1"
+    },
+    {
+      "path": "assets/models/mine_reference/details.glb",
+      "bytes": 61204,
+      "sha256": "55a46a81a55b6f42a766716eaa0463fb00a7154f2baad3d90af76e93eefbc9e4"
+    },
+    {
+      "path": "assets/models/mine_reference/entrance_camp.glb",
+      "bytes": 1105272,
+      "sha256": "4e0dfe9769f640281463609d0b46204c8c5f73ff034fd43f13df70c65a7f7846"
+    },
+    {
+      "path": "assets/models/mine_reference/hoist_cage.glb",
+      "bytes": 20712,
+      "sha256": "3bf3525d847266ec590b7ff0673b984ec554b49cc28a74321a2909a7f17cdcbc"
+    },
+    {
+      "path": "assets/models/mine_reference/mine_cart.glb",
+      "bytes": 65184,
+      "sha256": "c1aec6750c48bfacdc0d5224753228dd18fda8e36fc655e66f953e48d21245eb"
+    },
+    {
+      "path": "assets/models/mine_reference/mine_portal.glb",
+      "bytes": 50472,
+      "sha256": "93ea75eff24d8d350e587700986299d19cac60f8e0a8f7aa90ec8fe449eacfdc"
+    },
+    {
+      "path": "assets/models/mine_reference/rail_segment.glb",
+      "bytes": 9168,
+      "sha256": "4d8dce9d402ab5c1b92068efea659ffd7ff0929d3bae90ca2a76b9387be24121"
+    },
+    {
+      "path": "assets/models/mine_reference/rail_workings.glb",
+      "bytes": 1114960,
+      "sha256": "656236ff9636c9e5b828c646210fce87700f5972254eebfee2d805a3eb507786"
+    },
+    {
+      "path": "assets/models/mine_reference/storage.glb",
+      "bytes": 1294696,
+      "sha256": "a5f84c791806312ed11e2dbd1b2c095ec1f6265547f1eac36ceb94df36876779"
+    },
+    {
+      "path": "assets/models/mine_reference/water.glb",
+      "bytes": 119116,
+      "sha256": "dcec61c611b62f27ab1fb16bc7178208cd86a5632531fcfe3db3fb0f1f08fca1"
+    },
+    {
+      "path": "assets/models/mine_reference/waterway.glb",
+      "bytes": 933888,
+      "sha256": "0e0edd0eb997ce4f9bf22fd8f94afe32bfab93a162e33502da19d99c562b2e9c"
+    }
+  ]
+}
