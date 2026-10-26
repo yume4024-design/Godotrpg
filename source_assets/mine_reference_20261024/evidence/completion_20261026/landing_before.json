@@ -1,0 +1,211 @@
+{
+  "master_sha256": "9e51678d8977988f1c643bbb1cfa511b9a5b67ba30457128b76ffbc87488416b",
+  "samples": [
+    {
+      "x": 20.2,
+      "wood_top": 2.9949991703033447,
+      "earth_top": 3.0,
+      "gap": -0.0050008296966552734,
+      "normal_z": 0.7071303725242615
+    },
+    {
+      "x": 20.31,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 20.419999999999998,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 20.529999999999998,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 20.75,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 20.86,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 20.97,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 21.08,
+      "wood_top": 2.9950010776519775,
+      "earth_top": 3.0,
+      "gap": -0.004998922348022461,
+      "normal_z": 0.707127034664154
+    },
+    {
+      "x": 21.189999999999998,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 21.3,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 21.41,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 0.9999999403953552
+    },
+    {
+      "x": 21.52,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 0.9999999403953552
+    },
+    {
+      "x": 21.63,
+      "wood_top": 2.984999656677246,
+      "earth_top": 3.0,
+      "gap": -0.015000343322753906,
+      "normal_z": 0.7071303725242615
+    },
+    {
+      "x": 21.74,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 21.849999999999998,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 21.96,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 22.18,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 22.29,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 22.4,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 22.509999999999998,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 22.619999999999997,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 22.73,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 22.84,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 22.95,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 23.06,
+      "wood_top": 2.975001811981201,
+      "earth_top": 3.0,
+      "gap": -0.024998188018798828,
+      "normal_z": 0.7071303725242615
+    },
+    {
+      "x": 23.169999999999998,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    },
+    {
+      "x": 23.28,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 23.39,
+      "wood_top": 3.0,
+      "earth_top": 3.0,
+      "gap": 0.0,
+      "normal_z": 1.0
+    },
+    {
+      "x": 23.61,
+      "wood_top": 2.999999761581421,
+      "earth_top": 3.0,
+      "gap": -2.384185791015625e-07,
+      "normal_z": 1.0
+    }
+  ],
+  "flat_top_samples": 25,
+  "status": "FAIL",
+  "method": "BVH rays against actual WoodLight bridge triangles and Earth platform triangles; east landing only. Flat top faces >=2cm; sloping bevels >2mm. Normals distinguish bevels from coplanar tops; no collision edits."
+}

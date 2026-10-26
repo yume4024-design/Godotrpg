@@ -86,7 +86,9 @@ def slope(name,a,b,width,group,kind):
         a,b=Vector(a),Vector(b);length=(b-a).length;n=Vector((-(b.z-a.z),0,b.x-a.x)).normalized()
         count=math.ceil(length/.48)
         for i in range(count):
-            p=a.lerp(b,(i+.5)/count)+Vector((0,-.115,0));run=.44
+            # Keep the timber landing 3cm above the earthen platform. The
+            # authored bridge hull remains unchanged; coplanar top faces flicker.
+            p=a.lerp(b,(i+.5)/count)+Vector((0,-.085,0));run=.44
             if name=='north_bridge':
                 # Cross bridge already supplies the junction deck. Trim the
                 # north planks at its edge instead of layering coplanar boards.

@@ -1,0 +1,150 @@
+{
+  "triangles": 199112,
+  "files": [
+    {
+      "path": "scripts/tools/build_mine_reference.py",
+      "bytes": 26127,
+      "sha256": "5038d17c8a3f53b57fc7b1c276ecab8501814a371756df9acae7200ce378156d"
+    },
+    {
+      "path": "scripts/tools/audit_mine_landing.py",
+      "bytes": 2144,
+      "sha256": "b9acf503a232bfa1a504aec8b43848bd2971c78be30e51db5e578a41bdba385b"
+    },
+    {
+      "path": "scripts/tools/mine_reference_finish.py",
+      "bytes": 6269,
+      "sha256": "2eae415679d0adf7a62149e1039b707697352edf2ae3528105be1044c2c4c217"
+    },
+    {
+      "path": "scripts/tools/mine_reference_art.py",
+      "bytes": 7530,
+      "sha256": "9c915d057c9d61f8dd27526d748804b7b168154c019d59ee7326815362a640fa"
+    },
+    {
+      "path": "scripts/world/mine_reference_geometry.gd",
+      "bytes": 3880,
+      "sha256": "d9ae77926a1b8acc23b13dfedeeb8d04ae6c38e687c987385af53f9cf465f2d7"
+    },
+    {
+      "path": "assets/shaders/mine/crystal.gdshader",
+      "bytes": 623,
+      "sha256": "cf5a5fb35e4ba93e143be262309e8467f284a31344bde8e6e84303d49333ec0d"
+    },
+    {
+      "path": "assets/shaders/mine/flame.gdshader",
+      "bytes": 376,
+      "sha256": "4154aa71b1f8402ceefcce633efe2629b0830abb8d95238db7fc7108741e39ad"
+    },
+    {
+      "path": "project.godot",
+      "bytes": 8974,
+      "sha256": "f6a4a81cbd35ad1d1957343a8856f280516d498c85746681aef9304b04d87841"
+    },
+    {
+      "path": "tests/mine_reference_traversal_test.gd",
+      "bytes": 8486,
+      "sha256": "0d2c6ae5d446b605d0405af78f5ad8eb674d352f862ca97f400cf6677b1eb1cc"
+    },
+    {
+      "path": "tests/mine_windows_candidate_test.gd",
+      "bytes": 3131,
+      "sha256": "301feb73958881211dc719276a686762fc1172c0bf931b1cbd0940dd3df5dac9"
+    },
+    {
+      "path": "source_assets/mine_reference_20261024/asset_audit.json",
+      "bytes": 47878,
+      "sha256": "78c2c274f97f355796587336f834a3e0a0453b8e23bc0f061a096c7d4c3da7e1"
+    },
+    {
+      "path": "source_assets/mine_reference_20261024/mine_reference_master.blend",
+      "bytes": 1902279,
+      "sha256": "cb049c679949ffddba7ab4d07ea335fa0f9eb23502b957b85ab019a0d1ff2671"
+    },
+    {
+      "path": "assets/models/mine_reference/manifest.json",
+      "bytes": 450935,
+      "sha256": "959afffb2494737c0144d6f33c10ae689e82e4d962672daec044756c5830aed2"
+    },
+    {
+      "path": "assets/models/mine_reference/backdrop.glb",
+      "bytes": 320184,
+      "sha256": "1bd0cf761e4944f758d0795aa058014276b3df19097760ecbc43bfcbca6e99b0"
+    },
+    {
+      "path": "assets/models/mine_reference/bridge_junction.glb",
+      "bytes": 337420,
+      "sha256": "06b2c30ec6e41b14fe062536145bac70f048656d7e930e4f3c2275854a452c8f"
+    },
+    {
+      "path": "assets/models/mine_reference/collapse.glb",
+      "bytes": 908860,
+      "sha256": "aa773ec242bd6b918ae80ffd931e439c0e0c21af883f70e9a739f84872d6aa86"
+    },
+    {
+      "path": "assets/models/mine_reference/connections.glb",
+      "bytes": 2595064,
+      "sha256": "e2ac938f6b09306f1fd2d563ca878bf00f8e9f5f294b9b76882f1df9fe8cf8a9"
+    },
+    {
+      "path": "assets/models/mine_reference/core_cavern.glb",
+      "bytes": 1186164,
+      "sha256": "151294399b6545986a09b6f1fad94ff58ae68a15bcfe29842194e10da8058a74"
+    },
+    {
+      "path": "assets/models/mine_reference/crystal_workings.glb",
+      "bytes": 1514132,
+      "sha256": "568fbbeae9c6d7230fc8282160c1df0aa4ebe1080c164b9d6818e83c6ebaa934"
+    },
+    {
+      "path": "assets/models/mine_reference/details.glb",
+      "bytes": 59236,
+      "sha256": "785075124ca6bd8676f5eec404258252bf1e1208e5de02502d8cf58c7448f103"
+    },
+    {
+      "path": "assets/models/mine_reference/entrance_camp.glb",
+      "bytes": 1423120,
+      "sha256": "6a335c5b88ee4cd359b9f170b9272c311d69efb5b9e9ce9e9a77da927fc267ac"
+    },
+    {
+      "path": "assets/models/mine_reference/hoist_cage.glb",
+      "bytes": 20712,
+      "sha256": "3bf3525d847266ec590b7ff0673b984ec554b49cc28a74321a2909a7f17cdcbc"
+    },
+    {
+      "path": "assets/models/mine_reference/mine_cart.glb",
+      "bytes": 67236,
+      "sha256": "e0fb0c67d19bd1862c8df08cd638e123e7d3a2a3f11846615f435948b8968f4e"
+    },
+    {
+      "path": "assets/models/mine_reference/mine_portal.glb",
+      "bytes": 50472,
+      "sha256": "b23ec6e8afe58830852f45a5d2d6059da36ff3c3fbb519ef5dba94247eb7bd90"
+    },
+    {
+      "path": "assets/models/mine_reference/rail_segment.glb",
+      "bytes": 9160,
+      "sha256": "6db0e2a3b7403d150de6f8c0c74d05ae18274e9b42630165d2fed0135f014c33"
+    },
+    {
+      "path": "assets/models/mine_reference/rail_workings.glb",
+      "bytes": 1391428,
+      "sha256": "6cd7f94abbd4b9f223279552db476fd039f83e998decb769df595afb381b2945"
+    },
+    {
+      "path": "assets/models/mine_reference/storage.glb",
+      "bytes": 1474068,
+      "sha256": "662479b1edd5c6585fcb3a720b524d87919baa40a78a92629af823d0c0919bb2"
+    },
+    {
+      "path": "assets/models/mine_reference/water.glb",
+      "bytes": 124024,
+      "sha256": "88e80d1cf4f4a8152a95307c5142138f0591bdb3c1defabf471bbc58b58c7a70"
+    },
+    {
+      "path": "assets/models/mine_reference/waterway.glb",
+      "bytes": 1263552,
+      "sha256": "6d918b3ded51cf3bdcd0bffa2ea5b2ed43ef25bd8434b2434199f06d9e3461fb"
+    }
+  ]
+}

@@ -79,7 +79,7 @@ func _run() -> void:
 	camera.make_current()
 	if "--mine-capture-only" in OS.get_cmdline_user_args():
 		await _capture_review()
-		print("MINE_CAPTURE_RESULT views=13 failures=",failures)
+		print("MINE_CAPTURE_RESULT views=14 failures=",failures)
 		quit(0 if failures == 0 else 1)
 		return
 	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/world/mine_reference_layout.json"))
@@ -131,6 +131,10 @@ func _capture_review() -> void:
 	await _capture("review_water_detail")
 	await create_timer(.75).timeout
 	await _capture("review_water_detail_motion")
+	review.size = 12.0
+	review.global_position = Vector3(-36,8,0)
+	review.look_at(Vector3(-41,5,-14))
+	await _capture("review_tunnel_depth")
 
 func _walk(route: Array,label: String,running: bool) -> bool:
 	_release()

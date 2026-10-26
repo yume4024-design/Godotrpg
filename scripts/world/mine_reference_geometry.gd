@@ -7,6 +7,7 @@ const WOOD: Shader = preload("res://assets/shaders/mine/wood.gdshader")
 const FLAME: Shader = preload("res://assets/shaders/mine/flame.gdshader")
 const FALL: Shader = preload("res://assets/shaders/greystone/reference_fall.gdshader")
 const FOAM: Shader = preload("res://assets/shaders/mine/impact_foam.gdshader")
+const CRYSTAL: Shader = preload("res://assets/shaders/mine/crystal.gdshader")
 var _shared: Dictionary = {}
 @export var build_collisions: bool = true
 
@@ -46,12 +47,11 @@ func _apply_surfaces() -> void:
 			if name_key.begins_with("Mine_Rock") or name_key.begins_with("Mine_Earth") or name_key.begins_with("Mine_Water") or name_key.begins_with("Mine_Fall") or name_key.begins_with("Mine_Wood") or name_key.begins_with("Mine_Flame") or name_key.begins_with("Mine_Foam"):
 				visual.set_surface_override_material(index,_material(name_key))
 			elif "crystal" in name_key.to_lower() and original is StandardMaterial3D:
-				var emissive := original.duplicate() as StandardMaterial3D
-				emissive.emission_enabled = true
-				emissive.emission = Color(.05,.35,.85)
-				emissive.emission_energy_multiplier = .35
-				emissive.albedo_color = Color(.10,.43,.72)
-				visual.set_surface_override_material(index,emissive)
+				if not _shared.has("crystal"):
+					var crystal_material := ShaderMaterial.new()
+					crystal_material.shader = CRYSTAL
+					_shared["crystal"] = crystal_material
+				visual.set_surface_override_material(index,_shared["crystal"])
 
 func _vector(array: Array) -> Vector3:
 	return Vector3(float(array[0]),float(array[1]),float(array[2]))

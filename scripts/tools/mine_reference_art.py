@@ -118,4 +118,6 @@ def refine_mine(api):
         receipt['new_dressing'].append({'kind':'continuous_cascade','index':index,'triangles':96})
     from mine_reference_continuity import refine_continuity
     receipt['continuity']=refine_continuity(api,clear)
+    from mine_reference_finish import finish_cavern
+    receipt['finish']=finish_cavern(api,clear)
     return receipt

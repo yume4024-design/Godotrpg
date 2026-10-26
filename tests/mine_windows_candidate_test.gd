@@ -5,7 +5,7 @@ func _qa_feature() -> bool:
 	return OS.has_feature("mine_windows_qa")
 
 func _expected_version() -> String:
-	return "0.6.1-mine-reference-rc1"
+	return "0.6.1-mine-reference-rc2"
 
 func _boot_path() -> String:
 	return "res://scenes/main/mine_reference_candidate.tscn"
@@ -17,6 +17,28 @@ func _capture(label: String) -> void:
 	await physics_frame
 	await physics_frame
 	await super._capture("mine_"+label)
+
+func _verify_surfaces() -> void:
+	await super._verify_surfaces()
+	var geometry: Node3D = load("res://scenes/world/mine_reference/geometry.tscn").instantiate()
+	root.add_child(geometry)
+	await process_frame
+	var shader_counts: Dictionary = {}
+	for node: Node in geometry.find_children("*","MeshInstance3D",true,false):
+		var mesh := node as MeshInstance3D
+		for surface: int in mesh.mesh.get_surface_count():
+			var material: Material = mesh.get_active_material(surface)
+			if material is ShaderMaterial and material.shader != null:
+				var path: String = material.shader.resource_path
+				shader_counts[path] = int(shader_counts.get(path,0)) + 1
+	for shader: String in ["mine/crystal.gdshader","mine/faceted_rock.gdshader","mine/wood.gdshader","mine/flame.gdshader","mine/impact_foam.gdshader","greystone/water.gdshader","greystone/reference_fall.gdshader"]:
+		_check(int(shader_counts.get("res://assets/shaders/"+shader,0)) > 0,"Packaged mine uses actual shader surfaces: "+shader)
+	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/models/mine_reference/manifest.json"))
+	_check(manifest.total_triangles <= 200000,"Packaged mine static geometry within budget")
+	_check(manifest.art_refinement.finish.tunnels.size() == 6,"Packaged complete six recessed tunnel modules")
+	_check(manifest.collisions.size() == 501,"Packaged authored collision count retained")
+	geometry.queue_free()
+	await process_frame
 
 func _verify_migrations() -> void:
 	await super._verify_migrations()
