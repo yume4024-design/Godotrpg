@@ -99,23 +99,27 @@ def refine_mine(api):
     bsdf=next(n for n in foam_mat.node_tree.nodes if n.type=='BSDF_PRINCIPLED')
     bsdf.inputs['Base Color'].default_value=foam_mat.diffuse_color
     for index,(x,z,bottom,top) in enumerate([(10,-28,-7,5),(19,15,-5.5,1)]):
+        # Keep the central cascade wide enough to cover the 13m channel span.
+        span=13.0 if index==0 else 4.0
+        center_x=x+.5 if index==0 else x
+        columns=17 if index==0 else 9
         points=[];faces=[]
         profile=[(-2.0,top),(-.8,top),(-.15,top-.15),(.20,top-.8),(.30,(top+bottom)/2),(.48,bottom+.35),(1.0,bottom+.05)]
         for zz,hh in profile:
-            for i in range(9):points.append(B((x-2.0+i*.5,hh,z+zz)))
+            for i in range(columns):points.append(B((center_x-span*.5+i*span/(columns-1),hh,z+zz)))
         for row in range(len(profile)-1):
-            for i in range(8):
-                a=row*9+i;faces.extend([(a,a+1,a+10),(a,a+10,a+9)])
+            for i in range(columns-1):
+                a=row*columns+i;faces.extend([(a,a+1,a+columns+1),(a,a+columns+1,a+columns)])
         obj=mesh('CascadeSheet'+str(index),points,faces,'Fall','water')
         uv=obj.data.uv_layers.new(name='Flow')
         for poly in obj.data.polygons:
             for loop in poly.loop_indices:
                 vi=obj.data.loops[loop].vertex_index
-                uv.data[loop].uv=(vi%9/8,vi//9/(len(profile)-1))
-        for i in range(9):
+                uv.data[loop].uv=(vi%columns/(columns-1),vi//columns/(len(profile)-1))
+        for i in range(columns):
             o=stone('FoamImpact',B((x+rng.uniform(-2.2,2.2),bottom+.12,z+rng.uniform(.4,1.8))),(.45,.5,.18),'water')
             o.data.materials.clear();o.data.materials.append(foam_mat)
-        receipt['new_dressing'].append({'kind':'continuous_cascade','index':index,'triangles':96})
+        receipt['new_dressing'].append({'kind':'continuous_cascade','index':index,'width_m':span,'triangles':(len(profile)-1)*(columns-1)*2})
     from mine_reference_continuity import refine_continuity
     receipt['continuity']=refine_continuity(api,clear)
     from mine_reference_finish import finish_cavern

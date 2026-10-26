@@ -2,6 +2,11 @@ extends ExplorationMap
 ## Additive exploration layout: old event/spawn coordinates remain unchanged.
 func _ready() -> void:
 	var forest: bool = map_id == &"forest"
+	if forest:
+		navigation_layout_kind = "paths"
+		navigation_extent = Vector2(24.5, 24.5)
+		for road_name: String in ["PathArtEast", "PathArtSouth", "PathArtGuild"]:
+			navigation_roads.append(get_node(road_name) as Node3D)
 	if not forest:
 		for index: int in range(3):
 			get_node("Beam%d" % index).add_to_group(&"exploration_occluder")
@@ -78,6 +83,8 @@ func _box(label: String, position_value: Vector3, size_value: Vector3, color: Co
 	node.name = label
 	add_child(node)
 	node.position = position_value
+	if map_id == &"forest" and label in ["Trail", "LinkTrail"]:
+		navigation_roads.append(node)
 	var mesh: BoxMesh = BoxMesh.new()
 	mesh.size = size_value
 	var material: StandardMaterial3D = StandardMaterial3D.new()

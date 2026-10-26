@@ -1,6 +1,9 @@
 extends "res://tests/phase5_prologue_test.gd"
-const NEW_SLOT: String = "user://reference_village_tests/migrated.json"
-const OLD_COPY: String = "user://reference_village_tests/legacy_copy.json"
+var NEW_SLOT: String = "user://reference_village_tests/migrated.json"
+var OLD_COPY: String = "user://reference_village_tests/legacy_copy.json"
+
+func _create_game() -> ExplorationGame:
+	return load("res://scenes/main/greystone_reference_integration.tscn").instantiate() as ExplorationGame
 
 func _run() -> void:
 	DirAccess.make_dir_recursive_absolute("user://reference_village_tests")
@@ -8,7 +11,7 @@ func _run() -> void:
 	if not reload_only:
 		for suffix: String in ["", ".bak", ".tmp"]:
 			if FileAccess.file_exists(NEW_SLOT + suffix): DirAccess.remove_absolute(NEW_SLOT + suffix)
-	game = load("res://scenes/main/greystone_reference_integration.tscn").instantiate() as ExplorationGame
+	game = _create_game()
 	(game.get_node("Saves") as SaveManager).slot_path = NEW_SLOT
 	game.set("legacy_slot_path", OLD_COPY)
 	root.add_child(game)
@@ -77,6 +80,7 @@ func _run() -> void:
 	_check(game.capture_state().location.layout_version==4 and game.player.position.distance_to(Vector3(-3,3.1,3))<.2, "Layout 3 maps to safe layout 4 plaza")
 	for field: String in ["party","inventory","flags","quests","rewards","story"]:
 		_check(game.capture_state()[field]==old[field], "Layout 3 preserves "+field)
+	await _verify_candidate_slot(layout_three)
 	_write_legacy(source)
 	_check(not game.rewards.claim(&"event:E008",150,200,{}), "Reward receipt still prevents duplicate payout")
 	_check(await game.saves.request_load(), "Read isolated migrated slot again")
@@ -92,3 +96,6 @@ func _finish() -> void:
 	game.queue_free()
 	await process_frame
 	quit(0 if failures == 0 else 1)
+
+func _verify_candidate_slot(_legacy: Dictionary) -> void:
+	pass

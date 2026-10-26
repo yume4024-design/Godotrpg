@@ -1,0 +1,10 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/main/greystone_reference_integration.tscn" id="Base"]
+[ext_resource type="PackedScene" path="res://scenes/characters/ren_rebuilt_visual.tscn" id="Ren"]
+
+; Latest assembled prologue candidate; formal main.tscn remains untouched.
+[node name="ProjectCrystalPrologueCandidate" instance=ExtResource("Base")]
+hero_appearance = ExtResource("Ren")
+[node name="Saves" parent="."]
+slot_path = "user://crystal_prologue_candidate_20261027_slot_01.json"

@@ -15,6 +15,8 @@ void fragment() {
 	vec3 body=mix(vec3(.025,.15,.22),vec3(.075,.43,.51),broad*.7+.20);
 	float glint=smoothstep(.82,.95,thin)*.12;
 	ALBEDO=body*(.96+ripples*.045)+vec3(.17,.32,.34)*(fresnel*.15+glint);
+	// Keep the pool legible beneath cave overhangs without washing out its depth.
+	EMISSION=body*.16+vec3(.12,.24,.28)*glint;
 	ROUGHNESS=.24;
 	SPECULAR=.62;
 }

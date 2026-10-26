@@ -19,6 +19,10 @@ var fade: ColorRect
 var _typing: Tween
 var footer: Label
 var running_enabled: bool = false
+var _navigation_enabled: bool = false
+var _minimap: Control
+var _top_stack: VBoxContainer
+var _party_vitals: HBoxContainer
 
 func _ready() -> void:
 	var root_control: Control = Control.new()
@@ -33,12 +37,16 @@ func _ready() -> void:
 	theme.set_color("font_color", "Label", Color("#e5e9dc"))
 	theme.set_color("default_color", "RichTextLabel", Color("#e5e9dc"))
 	root_control.theme = theme
-	var top: PanelContainer = _panel(root_control, Vector4(24, 22, 470, 160))
-	var stack: VBoxContainer = _stack(top)
-	location = _label(stack, "", 25, Color("#ebc887"))
-	objective = _label(stack, "序章 · 灰石村的異變", 19)
+	var top: PanelContainer = _panel(root_control, Vector4(24, 22, 470, 220))
+	_top_stack = _stack(top)
+	location = _label(_top_stack, "", 25, Color("#ebc887"))
+	objective = _label(_top_stack, "序章 · 灰石村的異變", 19)
 	objective.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
-	quest = _label(stack, "尚未接受委託", 16, Color("#a3b9b4"))
+	quest = _label(_top_stack, "尚未接受委託", 16, Color("#a3b9b4"))
+	_party_vitals = HBoxContainer.new()
+	_party_vitals.add_theme_constant_override("separation", 8)
+	_party_vitals.visible = false
+	_top_stack.add_child(_party_vitals)
 	var status: PanelContainer = _panel(root_control, Vector4(-390, 22, -24, 185), true)
 	var status_stack: VBoxContainer = _stack(status)
 	_label(status_stack, "失落星核  /  灰石村的異變", 19, Color("#ebc887"))
@@ -101,13 +109,88 @@ func _ready() -> void:
 func set_dialogue_active(active: bool) -> void:
 	dialogue_panel.visible = active
 	prompt_label.visible = not active
+	footer.visible = not active
 	if not active and is_instance_valid(_typing):
 		_typing.kill()
+
+func enable_navigation(actor: Node3D, scene_manager: Node, party_members: Array[CombatantState]) -> void:
+	_navigation_enabled = true
+	_party_vitals.visible = true
+	party_status.visible = false
+	refresh_party_vitals(party_members)
+	if not is_instance_valid(_minimap):
+		_minimap = Control.new()
+		_minimap.name = "ExplorationMinimap"
+		_minimap.set_script(load("res://scripts/ui/exploration_minimap.gd"))
+		_minimap.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_minimap.anchor_left = 1.0
+		_minimap.anchor_right = 1.0
+		_minimap.offset_left = -252
+		_minimap.offset_top = 198
+		_minimap.offset_right = -24
+		_minimap.offset_bottom = 476
+		add_child(_minimap)
+	_minimap.call("configure", actor, scene_manager)
+	set_input_hint(false)
+
+func refresh_party_vitals(party_members: Array[CombatantState]) -> void:
+	if not _navigation_enabled:
+		return
+	for old_card: Node in _party_vitals.get_children():
+		_party_vitals.remove_child(old_card)
+		old_card.queue_free()
+	for actor: CombatantState in party_members:
+		_party_vitals.add_child(_build_vital_card(actor))
+
+func _build_vital_card(actor: CombatantState) -> Control:
+	var card: PanelContainer = PanelContainer.new()
+	card.custom_minimum_size = Vector2(194, 0)
+	var panel_style: StyleBoxFlat = StyleBoxFlat.new()
+	panel_style.bg_color = Color(0.05, 0.095, 0.11, 0.88)
+	panel_style.border_color = Color(0.31, 0.43, 0.42, 0.78)
+	panel_style.set_border_width_all(1)
+	panel_style.set_corner_radius_all(5)
+	panel_style.content_margin_left = 8
+	panel_style.content_margin_right = 8
+	panel_style.content_margin_top = 5
+	panel_style.content_margin_bottom = 5
+	card.add_theme_stylebox_override("panel", panel_style)
+	var stack: VBoxContainer = VBoxContainer.new()
+	stack.add_theme_constant_override("separation", 2)
+	card.add_child(stack)
+	var heading: Label = _label(stack, "%s  Lv.%d" % [actor.definition.display_name, actor.level], 14, Color("#f1dca8"))
+	heading.clip_text = true
+	var hp_label: Label = _label(stack, "HP  %d / %d" % [actor.hp, actor.max_hp], 11, Color("#a8d8b4"))
+	hp_label.add_theme_constant_override("line_spacing", 0)
+	var hp_bar: ProgressBar = _vital_bar(actor.hp, actor.max_hp, Color("#55ba74"))
+	stack.add_child(hp_bar)
+	_label(stack, "MP  %d / %d" % [actor.mp, actor.max_mp], 11, Color("#a9c9ee"))
+	stack.add_child(_vital_bar(actor.mp, actor.max_mp, Color("#5798e3")))
+	return card
+
+func _vital_bar(value: float, maximum: float, fill_color: Color) -> ProgressBar:
+	var bar: ProgressBar = ProgressBar.new()
+	bar.min_value = 0
+	bar.max_value = maxf(maximum, 1.0)
+	bar.value = value
+	bar.show_percentage = false
+	bar.custom_minimum_size = Vector2(0, 7)
+	var background: StyleBoxFlat = StyleBoxFlat.new()
+	background.bg_color = Color(0.055, 0.075, 0.08, 1)
+	background.set_corner_radius_all(3)
+	var fill: StyleBoxFlat = StyleBoxFlat.new()
+	fill.bg_color = fill_color
+	fill.set_corner_radius_all(3)
+	bar.add_theme_stylebox_override("background", background)
+	bar.add_theme_stylebox_override("fill", fill)
+	return bar
 
 func set_input_hint(gamepad: bool) -> void:
 	footer.text = "左搖桿 / 十字鍵  移動     A  互動     Menu  手冊     B  返回" if gamepad else "WASD / 方向鍵  移動     E  互動     M  手冊     R  返回本區起點"
 	if running_enabled:
-		footer.text = "左搖桿  走路 · 按住 LB  跑步     A  互動     Menu  手冊     B  返回" if gamepad else "WASD / 方向鍵  走路 · 按住 Shift  跑步     E  互動     M  手冊     R  返回起點"
+		footer.text = "左搖桿  移動 · LB  跑步     A  互動     Menu  手冊" if gamepad else "WASD / 方向鍵  移動 · Shift  跑步     E  互動     M  手冊"
+	if _navigation_enabled:
+		footer.text += "     F10  開發設定" if not gamepad else "     F10  開發設定"
 	next_button.text = "A  顯示全文・繼續  ›" if gamepad else "E / 空白鍵 / Enter  顯示全文・繼續  ›"
 
 func show_line(who: String, text: String, index: int, total: int) -> void:

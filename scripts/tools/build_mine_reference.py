@@ -24,7 +24,8 @@ def link(obj,group):
 def linear(c):return c/12.92 if c<=.04045 else ((c+.055)/1.055)**2.4
 for name,color in {'Rock':(.32,.35,.40),'Earth':(.65,.49,.29),'Wood':(.40,.25,.12),'WoodLight':(.56,.36,.18),'Metal':(.19,.21,.22),'Brass':(.62,.42,.19),'Crystal':(.12,.61,.95),'Flame':(1,.52,.08),'Canvas':(.77,.65,.43),'Water':(.08,.43,.69),'Fall':(.20,.65,.92),'Rope':(.49,.37,.22)}.items():
     m=bpy.data.materials.new('Mine_'+name);m.diffuse_color=tuple(linear(v) for v in color)+(1,);m.use_nodes=True
-    bsdf=m.node_tree.nodes.get('Principled BSDF');bsdf.inputs['Base Color'].default_value=m.diffuse_color;bsdf.inputs['Roughness'].default_value=.82
+    # Node labels are localized by Blender; identify the shader by its stable type.
+    bsdf=next(n for n in m.node_tree.nodes if n.type=='BSDF_PRINCIPLED');bsdf.inputs['Base Color'].default_value=m.diffuse_color;bsdf.inputs['Roughness'].default_value=.82
     if name in ['Crystal','Flame','Water','Fall']:
         bsdf.inputs['Emission Color'].default_value=m.diffuse_color;bsdf.inputs['Emission Strength'].default_value=2 if name in ['Crystal','Flame'] else .18
     if name in ['Rock','Earth','Wood','WoodLight']:

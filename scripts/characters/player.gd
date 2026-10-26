@@ -22,6 +22,11 @@ func _physics_process(delta: float) -> void:
 		visual.rotation.y = lerp_angle(visual.rotation.y, atan2(direction.x, direction.z), 14.0 * delta)
 
 
+func facing_direction() -> Vector3:
+	# Movement turns the visual, not the CharacterBody. Model forward is +Z.
+	return visual.global_basis.z.normalized()
+
+
 func reset_to(spawn: Vector3) -> void:
 	global_position = spawn
 	velocity = Vector3.ZERO

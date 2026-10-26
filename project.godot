@@ -48,6 +48,11 @@ run/main_scene.reference_windows_qa="res://tests/qa_entry.tscn"
 run/main_loop_type.reference_windows_qa="ReferenceWindowsTestTree"
 config/version.reference_windows_candidate="0.6.1-greystone-reference-rc3"
 config/version.reference_windows_qa="0.6.1-greystone-reference-rc3"
+run/main_scene.prologue_candidate="res://scenes/main/prologue_candidate.tscn"
+config/version.prologue_candidate="0.6.1-prologue-rc2-20261027"
+run/main_scene.prologue_qa="res://tests/qa_entry.tscn"
+run/main_loop_type.prologue_qa="PrologueCandidateTestTree"
+config/version.prologue_qa="0.6.1-prologue-qa-20261027"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [debug]

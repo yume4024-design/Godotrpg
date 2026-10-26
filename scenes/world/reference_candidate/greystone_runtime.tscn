@@ -8,6 +8,8 @@
 script = ExtResource("Map")
 map_id = &"greystone_runtime"
 display_name = "灰石村"
+navigation_layout_path = "res://data/world/greystone_reference_layout_v4.json"
+navigation_layout_kind = "village"
 environment = ExtResource("Daylight")
 sunlight = 0.95
 default_camera_size = 28.0

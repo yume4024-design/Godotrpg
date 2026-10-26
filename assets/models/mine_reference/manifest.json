@@ -1,6 +1,6 @@
 {
   "layout_version": 4,
-  "builder_sha256": "feddd4766db529e6f85329c3243dd13db44a4e894174259ae0fcd3d565511ee5",
+  "builder_sha256": "03b3afa0e6f4dc93f839edeca889740f2ee5081c3e39b8ceeb04ad52f3aac022",
   "layout_sha256": "79d3389414b99e9b6f2134750e29c56a4be649eebabf7efdb5307b62eb40159d",
   "source_reference_sha256": "2fb4748cedb580b9962b8197fb9f67f0a5083062e6ef5067c5ddb75829f8284b",
   "zones": [
@@ -8,13 +8,13 @@
       "zone": "entrance_camp",
       "path": "res://assets/models/mine_reference/entrance_camp.glb",
       "meshes": 12,
-      "triangles": 19037
+      "triangles": 19033
     },
     {
       "zone": "rail_workings",
       "path": "res://assets/models/mine_reference/rail_workings.glb",
       "meshes": 10,
-      "triangles": 18106
+      "triangles": 18108
     },
     {
       "zone": "bridge_junction",
@@ -68,7 +68,7 @@
       "zone": "water",
       "path": "res://assets/models/mine_reference/water.glb",
       "meshes": 6,
-      "triangles": 2264
+      "triangles": 2712
     },
     {
       "zone": "backdrop",
@@ -21288,10 +21288,10 @@
     }
   ],
   "master": "source_assets/mine_reference_20261024/mine_reference_master.blend",
-  "total_triangles": 168959,
+  "total_triangles": 169405,
   "art_refinement": {
     "revision": "mine_reference_art_20261026",
-    "script_sha256": "7d94871979b226a11d980f02a7812c6543d1420b2896881b2d106790289f3e0d",
+    "script_sha256": "c0bdf15ef81cfd405fb6226084d95350721c7920fba0cb9cdbc8d453bad920b5",
     "new_dressing": [
       {
         "kind": "recessed_portal",
@@ -22318,11 +22318,13 @@
       {
         "kind": "continuous_cascade",
         "index": 0,
-        "triangles": 96
+        "width_m": 13.0,
+        "triangles": 192
       },
       {
         "kind": "continuous_cascade",
         "index": 1,
+        "width_m": 4.0,
         "triangles": 96
       }
     ],

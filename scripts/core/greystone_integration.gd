@@ -19,6 +19,8 @@ var occlusion: ExplorationOcclusion
 var _merchant: WorldInteractable
 var _inn_service: bool = false
 var _speaking_npc: NpcVisual
+var _developer_tools_open: bool = false
+var _tools_panel: PanelContainer
 
 func _ready() -> void:
 	greystone_enabled = true
@@ -68,20 +70,35 @@ func _ready() -> void:
 		elif id == "mine": travel.maps[index] = mine_scene
 	travel.maps.append(village_scene)
 	super._ready()
+	ui.enable_navigation(player, travel, party.members())
 	dialogue.active_changed.connect(_on_npc_dialogue_changed)
 	var layer: CanvasLayer = CanvasLayer.new()
+	layer.layer = 5
 	add_child(layer)
+	_tools_panel = PanelContainer.new()
+	_tools_panel.name = "DeveloperToolsPanel"
+	_tools_panel.position = Vector2(24, 252)
+	_tools_panel.visible = false
+	var panel_style: StyleBoxFlat = StyleBoxFlat.new()
+	panel_style.bg_color = Color(0.035, 0.075, 0.09, 0.95)
+	panel_style.border_color = Color("#677d75")
+	panel_style.set_border_width_all(1)
+	panel_style.set_corner_radius_all(6)
+	panel_style.content_margin_left = 10
+	panel_style.content_margin_right = 10
+	panel_style.content_margin_top = 8
+	panel_style.content_margin_bottom = 8
+	_tools_panel.add_theme_stylebox_override("panel", panel_style)
+	layer.add_child(_tools_panel)
 	var row: HBoxContainer = HBoxContainer.new()
-	row.position = Vector2(24,170)
+	row.add_theme_constant_override("separation", 8)
 	var theme: Theme = Theme.new()
 	var font: SystemFont = SystemFont.new()
 	font.font_names = PackedStringArray(["Microsoft JhengHei"])
 	theme.default_font = font
-	theme.default_font_size = 18
+	theme.default_font_size = 15
 	row.theme = theme
-	layer.add_child(row)
-	row.visible = not battles.active
-	battles.active_changed.connect(func(active: bool) -> void: row.visible = not active)
+	_tools_panel.add_child(row)
 	bridge_button = Button.new()
 	bridge_button.text = village_switch_label
 	row.add_child(bridge_button)
@@ -116,6 +133,20 @@ func _ready() -> void:
 	row.add_child(quality_button)
 	quality_button.pressed.connect(quality.cycle)
 	quality.preset_changed.connect(func(_preset: int) -> void: quality_button.text = quality.label())
+	battles.active_changed.connect(func(active: bool) -> void: _tools_panel.visible = _developer_tools_open and not active)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo and event.keycode == KEY_F10:
+		_developer_tools_open = not _developer_tools_open
+		_tools_panel.visible = _developer_tools_open and not battles.active
+		get_viewport().set_input_as_handled()
+		return
+	if is_instance_valid(commerce) and commerce.visible:
+		if event.is_action_pressed("ui_cancel"): close_commerce()
+		elif event.is_action_pressed("quick_save"): saves.request_save()
+		get_viewport().set_input_as_handled()
+		return
+	super._unhandled_input(event)
 
 func _process(_delta: float) -> void:
 	if bridge_button == null: return
@@ -125,6 +156,7 @@ func _process(_delta: float) -> void:
 
 func _refresh_party() -> void:
 	super._refresh_party()
+	ui.refresh_party_vitals(party.members())
 	var ren: CombatantState = party.member(&"ren")
 	if ren != null and player.appearance.has_method("set_equipment_visual"):
 		player.appearance.call("set_equipment_visual", ren.equipped(&"weapon"))
@@ -159,14 +191,6 @@ func locked() -> bool:
 
 func safe_to_load() -> bool:
 	return super.safe_to_load() and not (is_instance_valid(commerce) and commerce.visible)
-
-func _unhandled_input(event: InputEvent) -> void:
-	if is_instance_valid(commerce) and commerce.visible:
-		if event.is_action_pressed("ui_cancel"): close_commerce()
-		elif event.is_action_pressed("quick_save"): saves.request_save()
-		get_viewport().set_input_as_handled()
-		return
-	super._unhandled_input(event)
 
 func interact() -> bool:
 	if locked() or not is_instance_valid(nearest) or not nearest.in_reach(player): return false

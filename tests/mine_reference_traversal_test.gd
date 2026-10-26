@@ -11,9 +11,13 @@ var map: ExplorationMap
 var controls: CanvasLayer
 const OUT: String = "user://mine_reference_tests/"
 const ACTIONS: Array[StringName] = [&"move_left",&"move_right",&"move_forward",&"move_back",&"move_run"]
+var output_path: String = OUT
 
 func _initialize() -> void:
-	DirAccess.make_dir_recursive_absolute(OUT)
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--output=user://"):
+			output_path=argument.trim_prefix("--output=").trim_suffix("/")+"/"
+	DirAccess.make_dir_recursive_absolute(output_path)
 	preload("res://tests/qa_input_isolation.gd").isolate_joypad_motion()
 	Engine.max_fps = 60
 	root.unfocusable = true
@@ -68,6 +72,20 @@ func _run() -> void:
 	_check(DisplayServer.get_name() != "headless","Graphical traversal required")
 	_check(map.map_id == &"mine" and map.targets.size() == 4,"Mine identity and original interactable kinds")
 	_check(player.is_on_floor(),"Entrance grounds real 1.95m player")
+	var geometry: Node3D = map.get_node("Geometry")
+	var ledge_safety: StaticBody3D = geometry.get_node_or_null("LedgeSafety") as StaticBody3D
+	var perimeter_safety: StaticBody3D = geometry.get_node_or_null("MinePerimeterSafety") as StaticBody3D
+	_check(ledge_safety != null and ledge_safety.get_child_count() >= 20,"Every mine platform has generated ledge safety collision")
+	_check(perimeter_safety != null and perimeter_safety.get_child_count() == 4,"Mine outer perimeter has four full-height safety barriers")
+	_check(int(geometry.get_meta("rock_collision_count",0)) >= 39,"All 15 large ledge boulders and 24 portal/camp rock cheeks have simplified collision")
+	await physics_frame
+	var space: PhysicsDirectSpaceState3D = map.get_world_3d().direct_space_state
+	var outer_hit: Dictionary = space.intersect_ray(PhysicsRayQueryParameters3D.create(Vector3(54.3,3,0),Vector3(56.3,3,0),1))
+	_check(not outer_hit.is_empty() and (outer_hit.collider as Node).name == "MinePerimeterSafety","Outer boundary physically blocks exiting the cave")
+	var ledge_query := PhysicsRayQueryParameters3D.create(Vector3(-24.8,0.6,38),Vector3(-23.4,0.6,38),1)
+	ledge_query.exclude = [geometry.get_node("AuthoredCollision").get_rid()]
+	var ledge_hit: Dictionary = space.intersect_ray(ledge_query)
+	_check(not ledge_hit.is_empty() and (ledge_hit.collider as Node).name == "LedgeSafety","Open platform edge has a fall-prevention collider")
 	var overview := Camera3D.new()
 	world.add_child(overview)
 	overview.projection = Camera3D.PROJECTION_ORTHOGONAL
@@ -187,9 +205,12 @@ func _walk(route: Array,label: String,running: bool) -> bool:
 			await physics_frame
 		_release()
 		var reached: bool = player.position.distance_to(target)<.65
-		_check(reached,label+" waypoint "+str(i)+" "+str(target))
+		_check(reached,label+" waypoint "+str(i)+" "+str(target)+" actual="+str(player.position))
 		rows.append({"route":label,"waypoint":i,"target":str(target),"actual":str(player.position),"reached":reached,"draw_calls":Performance.get_monitor(Performance.RENDER_TOTAL_DRAW_CALLS_IN_FRAME),"engine_bytes":Performance.get_monitor(Performance.MEMORY_STATIC)})
 		if not reached:
+			for contact_index: int in player.get_slide_collision_count():
+				var contact: KinematicCollision3D = player.get_slide_collision(contact_index)
+				print("ROUTE_CONTACT ",contact.get_collider().name," point=",contact.get_position())
 			await _capture("failure_"+label+"_"+str(i))
 			return false
 		if label == "route" and i in [1,4,8,12,17,20,24]: await _capture(label+"_"+str(i))
@@ -209,7 +230,7 @@ func _capture(label: String) -> void:
 	await physics_frame
 	await physics_frame
 	await RenderingServer.frame_post_draw
-	root.get_texture().get_image().save_webp(OUT+label+".webp")
+	root.get_texture().get_image().save_webp(output_path+label+".webp")
 
 func _check(ok: bool,label: String) -> void:
 	checks += 1
