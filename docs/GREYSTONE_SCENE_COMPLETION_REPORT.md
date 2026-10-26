@@ -62,6 +62,8 @@ Agent Vision：道路連通與地標可辨識；本輪牆面無原有生成黑�
 
 ## 重現與修改檔案
 
+首次Windows RC3匯出成功，但包內QA在版本檢查即中止：`tests/reference_windows_candidate_test.gd`仍要求RC2。已重現`FAIL Candidate version preserves formal base version`，保留失敗日誌於`artifacts/reference_windows/20261026-132158/prologue.log`；修正為明確RC3預期值，沒有移除正式0.6.1基準檢查，並補上三個新水體Shader與六棟立面的包內檢查。該首次包不作為交付通過證據，需以修正提交重新匯出與驗證。
+
 ```powershell
 blender --background --factory-startup --python-exit-code 1 --python scripts/tools/greystone/build_reference_v5.py
 blender --background --factory-startup --python-exit-code 1 --python scripts/tools/greystone/export_reference_v5.py -- --only Buildings_Candidate Water Cliffs Vegetation Props

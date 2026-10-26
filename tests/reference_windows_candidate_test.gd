@@ -5,7 +5,7 @@ func _qa_feature() -> bool:
 	return OS.has_feature("reference_windows_qa")
 
 func _expected_version() -> String:
-	return "0.6.1-greystone-reference-rc2"
+	return "0.6.1-greystone-reference-rc3"
 
 func _boot_path() -> String:
 	return "res://scenes/main/greystone_reference_candidate.tscn"
@@ -40,3 +40,17 @@ func _verify_surfaces() -> void:
 			var mesh: MeshInstance3D = node as MeshInstance3D
 			if (mesh.global_transform*mesh.get_aabb()).intersects(deck_volume):intrusions.append(mesh.name)
 	_check(intrusions.is_empty(),"Packaged upper bridge retains clear walking volume: "+str(intrusions))
+	for pair: Array in [["WaterfallCascade","reference_fall.gdshader"],["CascadeFoamPool","reference_foam.gdshader"],["RiverStoneWakes","reference_foam.gdshader"]]:
+		var mesh: MeshInstance3D = world.get_node("Water").find_child(pair[0],true,false) as MeshInstance3D
+		var material: ShaderMaterial = mesh.material_override as ShaderMaterial if mesh else null
+		_check(material != null and material.shader.resource_path == "res://assets/shaders/greystone/"+pair[1],"Packaged RC3 water surface and shader "+pair[0])
+	var facades: int = 0
+	for node: Node in world.get_node("Buildings_Candidate").find_children("*","MeshInstance3D",true,false):
+		var mesh: MeshInstance3D = node as MeshInstance3D
+		for surface: int in mesh.mesh.get_surface_count():
+			var material: Material = mesh.mesh.surface_get_material(surface)
+			if material != null and material.resource_name.begins_with("ReferenceFacade_"):
+				facades += 1
+				break
+	_check(facades == 6,"Packaged RC3 retains all six authored facades")
+	await _capture("reference_rc3_completed_village")
