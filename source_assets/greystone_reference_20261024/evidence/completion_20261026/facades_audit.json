@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "buildings": [
+    {
+      "building": "Inn",
+      "wall_rays": 340,
+      "missing": [],
+      "legacy_faces": 0,
+      "maximum_low_furniture_extension_m": 0.16293621063232422,
+      "passed": true
+    },
+    {
+      "building": "ItemShop",
+      "wall_rays": 340,
+      "missing": [],
+      "legacy_faces": 0,
+      "maximum_low_furniture_extension_m": 0.16813087463378906,
+      "passed": true
+    },
+    {
+      "building": "WeaponShop",
+      "wall_rays": 340,
+      "missing": [],
+      "legacy_faces": 0,
+      "maximum_low_furniture_extension_m": 0.19694995880126953,
+      "passed": true
+    },
+    {
+      "building": "WestHouse",
+      "wall_rays": 340,
+      "missing": [],
+      "legacy_faces": 0,
+      "maximum_low_furniture_extension_m": 0.1787700653076172,
+      "passed": true
+    },
+    {
+      "building": "SouthHouse",
+      "wall_rays": 340,
+      "missing": [],
+      "legacy_faces": 0,
+      "maximum_low_furniture_extension_m": 0.17876815795898438,
+      "passed": true
+    },
+    {
+      "building": "GuildHall",
+      "wall_rays": 340,
+      "missing": [],
+      "legacy_faces": 0,
+      "maximum_low_furniture_extension_m": 0.2120990753173828,
+      "passed": true
+    }
+  ],
+  "scope": "Closed plaster shell, no generated atlas faces, low furniture less than 0.26m outside body; player radius 0.32m. Native traversal remains required."
+}

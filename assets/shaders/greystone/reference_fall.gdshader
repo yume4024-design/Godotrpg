@@ -1,18 +1,19 @@
 shader_type spatial;
 render_mode cull_disabled, diffuse_burley;
 #include "res://assets/shaders/greystone/surface_noise.gdshaderinc"
-uniform bool horizontal = false;
-varying vec3 world_position;
-void vertex() { world_position = (MODEL_MATRIX * vec4(VERTEX,1.0)).xyz; }
 void fragment() {
-	vec2 p = horizontal ? world_position.xz : world_position.xy;
-	float flow = p.y * .55 + TIME * 2.5;
-	float ribbons = surface_noise(vec3(p.x*2.8,flow*.5,0.0));
-	float thread = smoothstep(.56,.84,ribbons);
-	vec3 blue = vec3(.035,.37,.58);
-	vec3 white = vec3(.43,.76,.85);
-	ALBEDO = mix(blue,white,thread*(horizontal ? .3 : .82));
-	EMISSION = ALBEDO * .07;
-	ROUGHNESS = .28;
-	SPECULAR = .55;
+	// Authored arc-length UV continues from the upper stream over the lip.
+	// glTF flips Blender's V coordinate; convert it back to downstream distance.
+	// Subtracting TIME moves each pattern toward the impact pool.
+	float downstream = 1.0 - UV.y;
+	float flow = downstream * 13.0 - TIME * 1.6;
+	float ribbons = surface_noise(vec3(UV.x * 17.0, flow * .55, 1.0));
+	float fine = surface_noise(vec3(UV.x * 43.0, flow * 1.5, 5.0));
+	float falling = smoothstep(.46, .65, downstream);
+	float thread = smoothstep(.38, .79, ribbons) * .66 + smoothstep(.62,.86,fine) * .22;
+	float impact = smoothstep(.88, 1.0, downstream) * .45;
+	ALBEDO = mix(vec3(.035,.40,.60), vec3(.65,.88,.92), clamp(thread * mix(.3,1.0,falling) + impact,0.0,.95));
+	EMISSION = ALBEDO * .10;
+	ROUGHNESS = .32;
+	SPECULAR = .48;
 }

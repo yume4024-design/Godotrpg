@@ -1,0 +1,19 @@
+{
+  "interval_seconds": 0.75,
+  "water_roi_xyxy": [
+    540,
+    260,
+    630,
+    430
+  ],
+  "water_mean_abs_8bit": 24.89527233115469,
+  "water_changed_fraction_over_5": 0.7598039215686274,
+  "static_rock_roi_xyxy": [
+    900,
+    260,
+    1000,
+    400
+  ],
+  "static_mean_abs_8bit": 0.0,
+  "scope": "Two native frames with fixed camera; visual shader motion, not a fluid simulation."
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "attempt": "first_uv_failure",
+    "result": {
+      "checks": 86,
+      "failures": [
+        "Flow UV runs from upper stream to impact pool"
+      ],
+      "scope": "Native InputMap player traversal, two bridges, five stair routes and sampled obstacles; no physical input certification"
+    },
+    "resolved_in_final_run": true
+  },
+  {
+    "attempt": "first_garden_failure",
+    "result": {
+      "checks": 88,
+      "failures": [
+        "Actual garden bounds keep road widths clear: [\"Courtyard_Bed_InnWest / NorthSteps_RampCollisionGuide\"]"
+      ],
+      "scope": "Native InputMap player traversal, two bridges, five stair routes and sampled obstacles; no physical input certification"
+    },
+    "resolved_in_final_run": true
+  }
+]

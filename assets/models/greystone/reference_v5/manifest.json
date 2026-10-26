@@ -15,7 +15,7 @@
     "collection": "Buildings_Candidate",
     "path": "res://scenes/world/greystone/reference_v5/buildings.tscn",
     "mesh_nodes": 6,
-    "instanced_triangles": 118085,
+    "instanced_triangles": 25958,
     "shared_modules": {
       "inn": "res://assets/models/greystone/reference_v5/buildings/inn.glb",
       "item_shop": "res://assets/models/greystone/reference_v5/buildings/item_shop.glb",
@@ -27,20 +27,20 @@
   {
     "collection": "Water",
     "path": "res://assets/models/greystone/reference_v5/water.glb",
-    "mesh_nodes": 30,
-    "instanced_triangles": 368
+    "mesh_nodes": 8,
+    "instanced_triangles": 1072
   },
   {
     "collection": "Cliffs",
     "path": "res://assets/models/greystone/reference_v5/cliffs.glb",
-    "mesh_nodes": 248,
-    "instanced_triangles": 9382
+    "mesh_nodes": 250,
+    "instanced_triangles": 9742
   },
   {
     "collection": "Vegetation",
     "path": "res://assets/models/greystone/reference_v5/vegetation.glb",
     "mesh_nodes": 470,
-    "instanced_triangles": 52214
+    "instanced_triangles": 71174
   },
   {
     "collection": "Props",

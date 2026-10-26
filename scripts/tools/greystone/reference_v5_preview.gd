@@ -10,6 +10,11 @@ func _update_camera() -> void:
 func _run_checks() -> void:
 	Engine.max_fps = 60
 	for frame: int in 30: await get_tree().physics_frame
+	if "--water-details-only" in OS.get_cmdline_user_args():
+		_audit_water_details()
+		print("WATER_DETAILS_RESULT checks=", checks, " failures=", failures)
+		get_tree().quit(0 if failures.is_empty() else 1)
+		return
 	if "--courtyard-clearance-only" in OS.get_cmdline_user_args():
 		await _audit_courtyard_clearance(JSON.parse_string(FileAccess.get_file_as_string("res://data/world/greystone_reference_layout_v4.json")))
 		print("COURTYARD_CLEARANCE_RESULT checks=", checks, " failures=", failures)
@@ -71,6 +76,8 @@ func _run_checks() -> void:
 func _audit_visible_geometry() -> void:
 	_audit_bridge_clearance()
 	_audit_natural_edges()
+	_audit_water_details()
+	_audit_facades()
 	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/world/greystone_reference_layout_v4.json"))
 	await _audit_courtyard_clearance(layout)
 	var visible_steps: PackedVector3Array = PackedVector3Array()
@@ -138,6 +145,83 @@ func _audit_visible_geometry() -> void:
 		if count!=2:closed=false
 	_check(closed,"Boat skin is manifold: every triangle edge has two adjoining faces")
 	_check(interior_found,"Boat inside floor above 2 m waterline; minimum sampled height "+str(lowest))
+
+func _audit_facades() -> void:
+	var stale_surfaces: Array[String] = []
+	var white_stone: Array[String] = []
+	var facade_count: int = 0
+	for node: Node in village.get_node("Buildings_Candidate").find_children("*", "MeshInstance3D", true, false):
+		var instance: MeshInstance3D = node as MeshInstance3D
+		var has_facade: bool = false
+		for surface: int in instance.mesh.get_surface_count():
+			var material: Material = instance.mesh.surface_get_material(surface)
+			if material==null: stale_surfaces.append(str(node.name)); continue
+			var name: String = material.resource_name
+			if name.begins_with("ReferenceFacade_"): has_facade=true
+			elif not name.begins_with("ReferenceRoof_"): stale_surfaces.append(str(node.name)+"/"+name)
+			if name=="ReferenceFacade_stone":
+				var override: Material = instance.get_surface_override_material(surface)
+				if override==null or not override.resource_path.ends_with("rock.tres"): white_stone.append(str(node.name))
+		if has_facade: facade_count+=1
+	_check(facade_count==6 and stale_surfaces.is_empty(), "All six facades use clean authored surfaces: "+str(stale_surfaces))
+	_check(white_stone.is_empty(), "Facade stone has native procedural material, no white glTF fallback: "+str(white_stone))
+
+func _audit_water_details() -> void:
+	var water: Node = village.get_node("Water")
+	var cascade: MeshInstance3D = water.find_child("WaterfallCascade", true, false) as MeshInstance3D
+	_check(cascade != null, "Continuous waterfall imported")
+	if cascade == null: return
+	var legacy: Array[String] = []
+	for node: Node in water.find_children("*", "MeshInstance3D", true, false):
+		if node.name == &"Waterfall" or node.name.begins_with("WaterfallStream") or node.name.begins_with("UpperRiver"):
+			legacy.append(str(node.name))
+	_check(legacy.is_empty(), "No overlapping legacy waterfall boxes/cards: "+str(legacy))
+	var adjacency: Dictionary = {}
+	var degenerate: bool = false
+	var faces: PackedVector3Array = cascade.mesh.get_faces()
+	for index: int in range(0, faces.size(), 3):
+		degenerate = degenerate or (faces[index+1]-faces[index]).cross(faces[index+2]-faces[index]).length_squared()<0.0000001
+		for corner: int in 3:
+			var a: Vector3 = faces[index+corner].snapped(Vector3.ONE*.0001)
+			var b: Vector3 = faces[index+(corner+1)%3].snapped(Vector3.ONE*.0001)
+			if not adjacency.has(a): adjacency[a]=[]
+			if not adjacency.has(b): adjacency[b]=[]
+			adjacency[a].append(b)
+			adjacency[b].append(a)
+	var seen: Dictionary = {}
+	var pending: Array = [adjacency.keys()[0]] if not adjacency.is_empty() else []
+	while not pending.is_empty():
+		var point: Vector3 = pending.pop_back()
+		if seen.has(point): continue
+		seen[point]=true
+		pending.append_array(adjacency[point])
+	_check(not degenerate and not seen.is_empty() and seen.size()==adjacency.size(), "Waterfall is one connected nondegenerate surface")
+	var uv_valid: bool = true
+	var found_upstream: bool = false
+	var found_impact: bool = false
+	for surface: int in cascade.mesh.get_surface_count():
+		var arrays: Array = cascade.mesh.surface_get_arrays(surface)
+		var points: PackedVector3Array = arrays[Mesh.ARRAY_VERTEX]
+		var uvs: PackedVector2Array = arrays[Mesh.ARRAY_TEX_UV]
+		if uvs.size()!=points.size(): uv_valid=false; continue
+		for index: int in points.size():
+			var point: Vector3 = cascade.to_global(points[index])
+			uv_valid = uv_valid and uvs[index].y>=-.001 and uvs[index].y<=1.001
+			if uvs[index].y>.999: found_upstream = found_upstream or point.y>13.9
+			if uvs[index].y<.001: found_impact = found_impact or point.y<2.2
+	_check(uv_valid and found_upstream and found_impact, "Flow UV runs from upper stream to impact pool")
+	var material: ShaderMaterial = cascade.material_override as ShaderMaterial
+	_check(material!=null and material.shader.resource_path.ends_with("reference_fall.gdshader"), "Cascade uses continuous UV flow shader")
+	for foam_name: String in ["CascadeFoamPool", "RiverStoneWakes"]:
+		var instance: MeshInstance3D = water.find_child(foam_name,true,false) as MeshInstance3D
+		var foam_material: ShaderMaterial = instance.material_override as ShaderMaterial if instance else null
+		_check(foam_material!=null and foam_material.shader.resource_path.ends_with("reference_foam.gdshader"), "Animated foam imported: "+foam_name)
+	var bridge_volume := AABB(Vector3(19.1,3.65,-7.9),Vector3(15.8,2.3,3.8))
+	var intrusions: Array[String] = []
+	for rock_name: String in ["RiverbankBoulders", "CascadeLipBoulders"]:
+		var rock: MeshInstance3D = village.get_node("Cliffs").find_child(rock_name,true,false) as MeshInstance3D
+		if rock==null or (rock.global_transform*rock.get_aabb()).intersects(bridge_volume): intrusions.append(rock_name)
+	_check(intrusions.is_empty(), "Added river rocks clear lower bridge walking volume: "+str(intrusions))
 
 func _audit_bridge_clearance() -> void:
 	var walk_volume := AABB(Vector3(19.1,6.05,-30.9),Vector3(15.8,2.5,3.8))

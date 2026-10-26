@@ -1,6 +1,6 @@
-"""Reference-specific mesh repairs, retaining the approved textured lower walls.
+"""Reference-specific roof and facade repairs.
 
-Clean roof geometry replaces damaged generated roof/stack triangles. No live scene,
+Clean geometry replaces damaged generated building surfaces. No live scene,
 external service or source character is modified by this module.
 """
 import bpy
@@ -22,7 +22,7 @@ def color_material(name, rgb):
 
 
 def repair_roof(data, asset):
-    """Retain wall UVs below the eave; build closed, clean, softly colored roofs."""
+    """Build closed roofs and replace defective lower walls inside the footprint."""
     inn = asset == 'inn'
     eave, rise = (3.65, 2.2) if inn else (2.65, 1.45)
     bm = bmesh.new()
@@ -206,6 +206,8 @@ def repair_roof(data, asset):
             box((x,y-.29,z+.47),(.63,.1,.075),'timber')
             box((x,y-.29,z+.24),(.045,.07,.42),'timber')
     bm.to_mesh(data);bm.free();data.update()
+    from reference_facades import rebuild_facade
+    facade=rebuild_facade(data,asset,color_material)
     data.calc_loop_triangles()
-    return {'retained_wall_uvs':True,'eave_m':eave,'ridge_m':ridge,'triangles':len(data.loop_triangles),
+    return {'retained_wall_uvs':False,'facade':facade,'eave_m':eave,'ridge_m':ridge,'triangles':len(data.loop_triangles),
             'roof_style':'clipped_cross_gable' if inn else 'gable_with_shuttered_window'}

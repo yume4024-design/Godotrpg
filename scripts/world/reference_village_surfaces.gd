@@ -10,6 +10,7 @@ const LAKE: ShaderMaterial = preload("res://assets/materials/greystone/blender_s
 const FALL: ShaderMaterial = preload("res://assets/materials/greystone/blender_surface/waterfall.tres")
 const FLAME: Shader = preload("res://assets/shaders/mine/flame.gdshader")
 const FALL_STREAM: Shader = preload("res://assets/shaders/greystone/reference_fall.gdshader")
+const FOAM: Shader = preload("res://assets/shaders/greystone/reference_foam.gdshader")
 const TIMBER: Shader = preload("res://assets/shaders/mine/wood.gdshader")
 
 func _ready() -> void:
@@ -21,6 +22,10 @@ func _ready() -> void:
 	flame.shader = FLAME
 	var falling := ShaderMaterial.new()
 	falling.shader = FALL_STREAM
+	var pool_foam := ShaderMaterial.new()
+	pool_foam.shader = FOAM
+	var wake_foam: ShaderMaterial = pool_foam.duplicate()
+	wake_foam.set_shader_parameter("rock_wake", true)
 	var timber := ShaderMaterial.new()
 	timber.shader = TIMBER
 	timber.set_shader_parameter("base_color", Color(.48,.31,.16))
@@ -56,17 +61,19 @@ func _ready() -> void:
 			mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
 			mesh.material_override = foam if "FoamSplash" in mesh.name else (ROCK if "_Bed" in mesh.name else (FALL if "Waterfall" in mesh.name else (LAKE if "Lake" in mesh.name else RIVER)))
 			if "Waterfall" in mesh.name: mesh.material_override = falling
-			if "UpperRiver" in mesh.name:
-				var upper: ShaderMaterial = falling.duplicate()
-				upper.set_shader_parameter("horizontal", true)
-				mesh.material_override = upper
+			if mesh.name == &"CascadeFoamPool": mesh.material_override = pool_foam
+			if mesh.name == &"CascadeFoamBillows": mesh.material_override = foam
+			if mesh.name == &"RiverStoneWakes": mesh.material_override = wake_foam
 		elif path.begins_with("Vegetation/") and ("Stone" in mesh.name or "Rock" in mesh.name):
 			mesh.material_override = ROCK
 		elif path.begins_with("Buildings_Candidate/"):
 			for index: int in mesh.mesh.get_surface_count():
 				var material: Material = mesh.mesh.surface_get_material(index)
-				if material and material.resource_name.begins_with("ReferenceRoof_") and "_glass" in material.resource_name:
+				if material and (material.resource_name.begins_with("ReferenceRoof_") or material.resource_name.begins_with("ReferenceFacade_")) and material.resource_name.ends_with("_glass"):
 					mesh.set_surface_override_material(index, lantern)
+				elif material and material.resource_name == "ReferenceFacade_stone":
+					# Blender's procedural stone graph is not encoded by glTF.
+					mesh.set_surface_override_material(index, ROCK)
 		elif path.begins_with("Mine/") and "TorchFlame" in mesh.name:
 			mesh.material_override = flame
 			mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
@@ -132,6 +139,9 @@ func _apply_clearing_verge(mesh: MeshInstance3D) -> void:
 	ends.resize(32)
 	var clearing: ShaderMaterial = EARTH.duplicate()
 	clearing.set_shader_parameter("clearing_edge_count", count)
+	# Only the large clearing gains a broader grass verge; intersecting paths
+	# retain their full soil width and all collision geometry stays unchanged.
+	clearing.set_shader_parameter("clearing_verge_width", 3.0)
 	clearing.set_shader_parameter("clearing_edge_start", starts)
 	clearing.set_shader_parameter("clearing_edge_end", ends)
 	mesh.material_override = clearing

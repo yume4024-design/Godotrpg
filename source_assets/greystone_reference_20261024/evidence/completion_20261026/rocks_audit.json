@@ -1,0 +1,11 @@
+{
+  "rock_shells": 195,
+  "convex_rock_shells": 195,
+  "turf_batches": 8,
+  "sampled_turf_vertices": 630,
+  "min_surface_gap_m": 0.017999649047851562,
+  "max_surface_gap_m": 0.018000125885009766,
+  "max_soil_seam_m": 0.0,
+  "failures": [],
+  "scope": "Closed convex triangulated rocks, face area, turf support and attached soil skirt; not a full visual quality certificate"
+}

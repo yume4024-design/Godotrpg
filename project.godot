@@ -46,8 +46,8 @@ config/version.mine_windows_qa="0.6.1-mine-reference-rc1"
 run/main_scene.reference_windows_candidate="res://scenes/main/greystone_reference_candidate.tscn"
 run/main_scene.reference_windows_qa="res://tests/qa_entry.tscn"
 run/main_loop_type.reference_windows_qa="ReferenceWindowsTestTree"
-config/version.reference_windows_candidate="0.6.1-greystone-reference-rc2"
-config/version.reference_windows_qa="0.6.1-greystone-reference-rc2"
+config/version.reference_windows_candidate="0.6.1-greystone-reference-rc3"
+config/version.reference_windows_qa="0.6.1-greystone-reference-rc3"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 
 [debug]

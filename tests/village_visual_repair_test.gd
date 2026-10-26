@@ -6,6 +6,7 @@ func _run() -> void:
 	root.content_scale_size = root.size
 	root.unfocusable = true
 	var baseline: bool = "--baseline" in OS.get_cmdline_user_args()
+	var architecture_only: bool = "--architecture-only" in OS.get_cmdline_user_args()
 	game = load("res://scenes/main/mine_reference_integration.tscn" if baseline else "res://scenes/main/greystone_reference_integration.tscn").instantiate()
 	(game.get_node("Saves") as SaveManager).slot_path = "user://village_visual_repair/isolated.json"
 	root.add_child(game)
@@ -32,7 +33,7 @@ func _run() -> void:
 		"item_facade":Vector3(-21,3.1,-1),
 		"river_cliff":Vector3(39,3.1,-6)
 	}
-	for name: String in views:
+	for name: String in ([] if architecture_only else views.keys()):
 		await _place(views[name])
 		await physics_frame
 		await physics_frame
@@ -67,7 +68,9 @@ func _run() -> void:
 		"weapon_architecture": [Vector3(3,16,20), Vector3(13,5.8,5), 19.0],
 		"south_cliff_detail": [Vector3(-29,17,38), Vector3(-17,0,26), 24.0],
 		"north_cliff_detail": [Vector3(-22,20,-7), Vector3(-14,5,-27), 26.0],
-		"mine_cliff_detail": [Vector3(13,28,-22), Vector3(6,13,-43), 34.0]
+		"mine_cliff_detail": [Vector3(13,28,-22), Vector3(6,13,-43), 34.0],
+		"plaza_detail": [Vector3(-14,21,22), Vector3(0,3,-1), 32.0],
+		"waterfall_detail": [Vector3(42,22,-17), Vector3(28,8,-39), 22.0]
 	}
 	for view_name: String in architecture_views:
 		var setup: Array = architecture_views[view_name]
@@ -76,8 +79,12 @@ func _run() -> void:
 		game.camera.size = setup[2]
 		await RenderingServer.frame_post_draw
 		root.get_texture().get_image().save_webp(output+view_name+".webp",false,.95)
+		if view_name == "waterfall_detail":
+			await create_timer(.75).timeout
+			await RenderingServer.frame_post_draw
+			root.get_texture().get_image().save_webp(output+"waterfall_motion.webp",false,.95)
 	FileAccess.open(output+"metrics.json",FileAccess.WRITE).store_string(JSON.stringify({"method":"120 native frame_post_draw intervals/view at 60 FPS cap, scheduler timing not GPU duration or endurance","renderer":RenderingServer.get_current_rendering_method(),"device":RenderingServer.get_video_adapter_name(),"views":measurements},"  "))
-	print("VILLAGE_VISUAL_CAPTURE ",label," ",views.size()+1+architecture_views.size()," actual rendered views; no human acceptance claimed")
+	print("VILLAGE_VISUAL_CAPTURE ",label," ",(0 if architecture_only else views.size())+2+architecture_views.size()," actual rendered views; no human acceptance claimed")
 	game.queue_free()
 	await process_frame
 	quit(0)

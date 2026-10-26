@@ -1,0 +1,48 @@
+{
+  "method": "Vertical BVH rays over all six roof footprints; lower tolerance 0.11m includes continuous under-tile decking.",
+  "passed": true,
+  "buildings": [
+    {
+      "building": "Inn",
+      "rays": 6045,
+      "missing_or_low_hits": 0,
+      "minimum_height_above_ideal_m": -0.07000056208396455,
+      "failures": []
+    },
+    {
+      "building": "ItemShop",
+      "rays": 2914,
+      "missing_or_low_hits": 0,
+      "minimum_height_above_ideal_m": -0.07000085830688452,
+      "failures": []
+    },
+    {
+      "building": "WeaponShop",
+      "rays": 2914,
+      "missing_or_low_hits": 0,
+      "minimum_height_above_ideal_m": -0.07000085830688452,
+      "failures": []
+    },
+    {
+      "building": "WestHouse",
+      "rays": 2052,
+      "missing_or_low_hits": 0,
+      "minimum_height_above_ideal_m": 0.034998782566615816,
+      "failures": []
+    },
+    {
+      "building": "SouthHouse",
+      "rays": 2052,
+      "missing_or_low_hits": 0,
+      "minimum_height_above_ideal_m": 0.034998782566615816,
+      "failures": []
+    },
+    {
+      "building": "GuildHall",
+      "rays": 2052,
+      "missing_or_low_hits": 0,
+      "minimum_height_above_ideal_m": 0.034998782566615816,
+      "failures": []
+    }
+  ]
+}

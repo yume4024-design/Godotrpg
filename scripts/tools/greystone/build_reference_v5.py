@@ -595,6 +595,8 @@ from reference_courtyard_pass import apply_courtyards
 courtyard_receipt=apply_courtyards(groups['Props'],groups['Vegetation'],ROAD_PATHS)
 from reference_natural_edges import apply_natural_edges
 natural_edges_receipt=apply_natural_edges(groups,materials,ROAD_PATHS,RAMPS,terrain_height)
+from reference_water_pass import apply_water_details
+water_details_receipt=apply_water_details(groups,materials)
 
 scene.world.use_nodes=True
 scene.world.node_tree.nodes['Background'].inputs[0].default_value=(.55,.65,.75,1)
@@ -618,7 +620,7 @@ for image in bpy.data.images:
         w,h=image.size;factor=1024/max(w,h);image.scale(round(w*factor),round(h*factor));image.pack()
 bpy.ops.wm.save_as_mainfile(filepath=str(DEST/'greystone_master.blend'),compress=True)
 scene.render.filepath=str(ART/'overview.png');bpy.ops.render.render(write_still=True)
-(DEST/'manifest.json').write_text(json.dumps({'status':'CANDIDATE_BUILT','buildings':'Approved textured wall designs with repaired roofs; six placements from updated reference','ai_sources':{k:str(v.relative_to(ROOT)) for k,v in ai_sources.items()},'collections':list(groups),'building_placements':placements,'layout_version':4,'reference':'docs/references/greystone_reference_20261024.png','roof_repairs':roof_repairs,'vegetation_removed':vegetation_repairs,'roads':ROAD_PATHS,'builder_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'same_facing_duplicate_cleanup':cleanup_counts,'edge_guards':guard_count,'coordinate_system':'Blender Z up, north +Y; GLTF exporter handles Y up','original_main_entry_replaced':False,'rpg_candidate':'scenes/main/greystone_reference_integration.tscn'},ensure_ascii=False,indent=2),encoding='utf8')
+(DEST/'manifest.json').write_text(json.dumps({'status':'CANDIDATE_BUILT','buildings':'Authored timber/plaster facades and closed roofs; six existing placements from the updated reference','ai_sources':{k:str(v.relative_to(ROOT)) for k,v in ai_sources.items()},'collections':list(groups),'building_placements':placements,'layout_version':4,'reference':'docs/references/greystone_reference_20261024.png','roof_repairs':roof_repairs,'vegetation_removed':vegetation_repairs,'roads':ROAD_PATHS,'builder_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),'same_facing_duplicate_cleanup':cleanup_counts,'edge_guards':guard_count,'coordinate_system':'Blender Z up, north +Y; GLTF exporter handles Y up','original_main_entry_replaced':False,'rpg_candidate':'scenes/main/greystone_reference_integration.tscn'},ensure_ascii=False,indent=2),encoding='utf8')
 layout={'layout_version':4,'reference':'docs/references/greystone_reference_20261024.png','reference_sha256':hashlib.sha256((ROOT/'docs/references/greystone_reference_20261024.png').read_bytes()).hexdigest(),'blender_axes':'x east, y north, z up; Godot x,y,z = x,z,-y','building_placements':placements,'roads':ROAD_PATHS,'ramps':RAMPS,'bridge_centers':[[27,29,6.1],[27,6,3.7]],'landmarks':{'well':[0,0,3],'mine':[0,46.5,10],'dock':[23,-17,3],'forest_exit':[-44,18,5]},'builder_sha256':hashlib.sha256(Path(__file__).read_bytes()).hexdigest()}
 (ROOT/'data/world/greystone_reference_layout_v4.json').write_text(json.dumps(layout,indent=2),encoding='utf-8')
 receipt=json.loads((DEST/'manifest.json').read_text(encoding='utf8'))
@@ -628,6 +630,9 @@ receipt['courtyard_pass']=courtyard_receipt
 receipt['courtyard_script_sha256']=hashlib.sha256(Path(__file__).with_name('reference_courtyard_pass.py').read_bytes()).hexdigest()
 receipt['natural_edges']=natural_edges_receipt
 receipt['natural_edges_script_sha256']=hashlib.sha256(Path(__file__).with_name('reference_natural_edges.py').read_bytes()).hexdigest()
+receipt['water_details']=water_details_receipt
+receipt['water_details_script_sha256']=hashlib.sha256(Path(__file__).with_name('reference_water_pass.py').read_bytes()).hexdigest()
+receipt['facade_script_sha256']=hashlib.sha256(Path(__file__).with_name('reference_facades.py').read_bytes()).hexdigest()
 receipt['architectural_sources_sha256']={name:hashlib.sha256(Path(__file__).with_name(name).read_bytes()).hexdigest() for name in ['reference_art_pass.py','reference_building_collisions_v4.json']}
 (DEST/'manifest.json').write_text(json.dumps(receipt,ensure_ascii=False,indent=2),encoding='utf8')
 print('REFERENCE_V5_MASTER_ASSEMBLED',str(DEST/'greystone_master.blend'),flush=True)

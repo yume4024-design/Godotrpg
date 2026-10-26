@@ -8,6 +8,7 @@ uniform float grass_amount : hint_range(0.0, 1.0) = 1.0;
 uniform float road_edge_blend : hint_range(0.0, 1.0) = 0.0;
 uniform vec4 verge_color : source_color = vec4(0.35,0.44,0.22,1.0);
 uniform int clearing_edge_count = 0;
+uniform float clearing_verge_width = 0.07;
 uniform vec2 clearing_edge_start[32];
 uniform vec2 clearing_edge_end[32];
 varying vec3 surface_position;
@@ -34,7 +35,7 @@ void fragment() {
 				float t = clamp(dot(p.xz-a, d) / max(dot(d,d), 0.0001), 0.0, 1.0);
 				distance_to_edge = min(distance_to_edge, length(p.xz-a-d*t));
 			}
-			float erosion = 0.07 + surface_noise(p*2.2)*0.22 + surface_noise(p*6.5)*0.12;
+			float erosion = clearing_verge_width + surface_noise(p*2.2)*0.22 + surface_noise(p*6.5)*0.12;
 			if (distance_to_edge < erosion) { discard; }
 		}
 	}

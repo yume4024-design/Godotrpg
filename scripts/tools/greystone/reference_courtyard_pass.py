@@ -88,7 +88,7 @@ def apply_courtyards(props, vegetation, roads):
 
     # Narrow soft planting beds occupy leftover ground along the walls, never
     # the square, door aprons, stair routes or NPC interaction circles.
-    beds=[('InnWest',-17.2,14.9,1.1,3.2),('InnFront',-13.8,10.7,2.8,1.0),
+    beds=[('InnWest',-17.2,14.0,1.1,2.6),('InnFront',-13.8,10.7,2.8,1.0),
           ('InnEast',-.9,17,1.4,4.2),('ItemEast',-15.7,7.2,1.6,2.5),
           ('ItemRear',-21,10.8,3.0,.9),('GuildEast',15.5,17.5,1.2,3.4),
           ('WeaponEast',18.5,-4.8,1.0,3.2),('WestHouse',-20,-13,1.1,3.5),
@@ -96,7 +96,7 @@ def apply_courtyards(props, vegetation, roads):
     accepted=[];rejected=0;bed_objects=[]
     for name,cx,cy,sx,sy in beds:
         b=batch()
-        for i in range(9):
+        for i in range(15):
             x=cx+rng.uniform(-sx/2,sx/2);y=cy+rng.uniform(-sy/2,sy/2)
             is_flower=i%3!=0;height=rng.uniform(.32,.50) if is_flower else rng.uniform(.56,.82)
             source=flower if is_flower else shrub
