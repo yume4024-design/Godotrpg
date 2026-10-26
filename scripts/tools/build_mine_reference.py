@@ -146,6 +146,7 @@ def instance(name,p,group,scale=1,yaw=0):
             for z in [-.567,.567]:details.append(gbox('CrateSeam',(x,.5,z),(.014,.9,.012),'Wood',group))
         for z in [-.574,.574]:
             for sign in [-1,1]:details.append(beam('CrateDiagonal',B((-.38,.18 if sign>0 else .84,z)),B((.38,.84 if sign>0 else .18,z)),.075,.055,'WoodLight',group))
+        bpy.context.view_layer.update()
         for detail in details:detail.matrix_world=placement@detail.matrix_world
     return o
 def crystal(p,group,scale=1):
@@ -162,6 +163,7 @@ def portal(p,group,width=6,height=5,yaw=0):
     for side in [-1,1]:beam('PortalBrace',B((x+side*width*.5,h+height-1.6,z)),B((x+side*(width*.5-1.5),h+height,z)),.3,.3,'Wood',group)
     gbox('TunnelDark',(x,h+height*.46,z-.35),(width, height*.88,.15),'Metal',group)
     if yaw:
+        bpy.context.view_layer.update()
         transform=Matrix.Translation(B(p))@Matrix.Rotation(yaw,4,'Z')@Matrix.Translation(-B(p))
         for o in set(collection(group).objects)-before:o.matrix_world=transform@o.matrix_world
 def rail(a,b,group):
@@ -182,6 +184,7 @@ def cart(p,group,yaw=0,loaded=True):
             o=cylinder('CartWheel',B((side*.96,.4,zz)),.34,.18,'Metal',group,12);o.rotation_euler.y=math.pi/2
     if loaded:
         for i in range(10):stone('OreInCart',B((rng.uniform(-.6,.6),rng.uniform(1.2,1.8),rng.uniform(-.75,.75))),(.38,.35,.3),group)
+    bpy.context.view_layer.update()
     matrix=Matrix.Translation(B(p))@Matrix.Rotation(yaw,4,'Z')
     for o in set(collection(group).objects)-before:o.matrix_world=matrix@o.matrix_world
 def crane(p,group):

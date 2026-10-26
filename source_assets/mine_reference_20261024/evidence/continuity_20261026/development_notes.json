@@ -1,0 +1,12 @@
+{
+  "resolved": [
+    "Body ray probe initially mixed Godot Y-up and Blender Z-up; corrected and compared against old and new masters. Discarded probe is not acceptance evidence.",
+    "Signed volume audit initially omitted quad faces; now triangulates an in-memory copy, checks paired edge winding and positive signed volume. Old master rerun passed; original geometry is not changed by audit.",
+    "Bridge-side rock pillar top was read before dependency graph update; refreshed world matrices, then lowered that visual pillar below the deck. Final body rays pass.",
+    "Portal/cart/crate detail transforms were premultiplied before dependency graph evaluation; updated matrices first. Baseline reproduces two out-of-bounds meshes; final bounds audit requires zero."
+  ],
+  "method_boundaries": [
+    "Body clearance is sampled; does not certify camera occlusion or continuous capsule collision.",
+    "Positive signed component volume supports concave shells; does not certify lack of intersections between independent solids."
+  ]
+}

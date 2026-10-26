@@ -1,62 +1,62 @@
 {
   "layout_version": 4,
-  "builder_sha256": "efd0467dc9b02fb588952ac29640ece391d123d7a90ddcb612b3aca7822fcae4",
+  "builder_sha256": "9a2276a16b90add378d01b66e4aa82f228a546b6de45a848e20b1e6fdc77ab06",
   "layout_sha256": "79d3389414b99e9b6f2134750e29c56a4be649eebabf7efdb5307b62eb40159d",
   "source_reference_sha256": "2fb4748cedb580b9962b8197fb9f67f0a5083062e6ef5067c5ddb75829f8284b",
   "zones": [
     {
       "zone": "entrance_camp",
       "path": "res://assets/models/mine_reference/entrance_camp.glb",
-      "meshes": 10,
-      "triangles": 17932
+      "meshes": 11,
+      "triangles": 20968
     },
     {
       "zone": "rail_workings",
       "path": "res://assets/models/mine_reference/rail_workings.glb",
       "meshes": 10,
-      "triangles": 17928
+      "triangles": 20196
     },
     {
       "zone": "bridge_junction",
       "path": "res://assets/models/mine_reference/bridge_junction.glb",
       "meshes": 5,
-      "triangles": 4220
+      "triangles": 4304
     },
     {
       "zone": "crystal_workings",
       "path": "res://assets/models/mine_reference/crystal_workings.glb",
       "meshes": 11,
-      "triangles": 20884
+      "triangles": 22316
     },
     {
       "zone": "storage",
       "path": "res://assets/models/mine_reference/storage.glb",
       "meshes": 11,
-      "triangles": 21048
+      "triangles": 21984
     },
     {
       "zone": "waterway",
       "path": "res://assets/models/mine_reference/waterway.glb",
-      "meshes": 9,
-      "triangles": 14904
+      "meshes": 10,
+      "triangles": 18008
     },
     {
       "zone": "collapse",
       "path": "res://assets/models/mine_reference/collapse.glb",
-      "meshes": 6,
-      "triangles": 9692
+      "meshes": 8,
+      "triangles": 12364
     },
     {
       "zone": "core_cavern",
       "path": "res://assets/models/mine_reference/core_cavern.glb",
-      "meshes": 10,
-      "triangles": 13832
+      "meshes": 11,
+      "triangles": 16696
     },
     {
       "zone": "connections",
       "path": "res://assets/models/mine_reference/connections.glb",
       "meshes": 5,
-      "triangles": 44136
+      "triangles": 44208
     },
     {
       "zone": "details",
@@ -68,13 +68,13 @@
       "zone": "water",
       "path": "res://assets/models/mine_reference/water.glb",
       "meshes": 5,
-      "triangles": 1608
+      "triangles": 1704
     },
     {
       "zone": "backdrop",
       "path": "res://assets/models/mine_reference/backdrop.glb",
       "meshes": 1,
-      "triangles": 3664
+      "triangles": 3444
     }
   ],
   "collisions": [
@@ -21288,10 +21288,10 @@
     }
   ],
   "master": "source_assets/mine_reference_20261024/mine_reference_master.blend",
-  "total_triangles": 170688,
+  "total_triangles": 187032,
   "art_refinement": {
     "revision": "mine_reference_art_20261026",
-    "script_sha256": "967760d181fc3e4fb1375553dc3362b4be02b9b644b22942124a61ac032eb84a",
+    "script_sha256": "c62930d8a79c28d87900e0f347786304b4ce82b34c14b3ec7671d2269b1cc98a",
     "new_dressing": [
       {
         "kind": "recessed_portal",
@@ -22327,6 +22327,354 @@
       }
     ],
     "protected_layout_version": 4,
-    "new_collisions": 0
+    "new_collisions": 0,
+    "continuity": {
+      "revision": "mine_continuity_20261026",
+      "script_sha256": "dd26eeff3189005de959210cca345b4ac9e7c8b478639d0e9e6dc1c0cd29bc89",
+      "strata": [
+        {
+          "zone": "entrance_camp",
+          "perimeter_vertices": 22,
+          "closed": true
+        },
+        {
+          "zone": "rail_workings",
+          "perimeter_vertices": 22,
+          "closed": true
+        },
+        {
+          "zone": "bridge_junction",
+          "perimeter_vertices": 12,
+          "closed": true
+        },
+        {
+          "zone": "crystal_workings",
+          "perimeter_vertices": 26,
+          "closed": true
+        },
+        {
+          "zone": "storage",
+          "perimeter_vertices": 20,
+          "closed": true
+        },
+        {
+          "zone": "waterway",
+          "perimeter_vertices": 20,
+          "closed": true
+        },
+        {
+          "zone": "collapse",
+          "perimeter_vertices": 18,
+          "closed": true
+        },
+        {
+          "zone": "core_cavern",
+          "perimeter_vertices": 20,
+          "closed": true
+        }
+      ],
+      "rail_curves": [
+        {
+          "zone": "entrance_camp",
+          "anchors": [
+            [
+              -47,
+              0,
+              28
+            ],
+            [
+              -41,
+              0,
+              30
+            ],
+            [
+              -34,
+              0,
+              30
+            ],
+            [
+              -28,
+              0,
+              30
+            ],
+            [
+              -25,
+              0,
+              32
+            ]
+          ],
+          "samples": 33
+        },
+        {
+          "zone": "rail_workings",
+          "anchors": [
+            [
+              -44,
+              3,
+              -12
+            ],
+            [
+              -40,
+              3,
+              -12
+            ],
+            [
+              -35,
+              3,
+              -12
+            ],
+            [
+              -29,
+              3,
+              -9
+            ],
+            [
+              -27,
+              3,
+              -3
+            ]
+          ],
+          "samples": 32
+        },
+        {
+          "zone": "crystal_workings",
+          "anchors": [
+            [
+              -28,
+              7,
+              -38
+            ],
+            [
+              -24,
+              7,
+              -37
+            ],
+            [
+              -16,
+              7,
+              -37
+            ],
+            [
+              -8,
+              7,
+              -37
+            ],
+            [
+              1,
+              7,
+              -34
+            ]
+          ],
+          "samples": 36
+        },
+        {
+          "zone": "waterway",
+          "anchors": [
+            [
+              41,
+              0,
+              16
+            ],
+            [
+              37,
+              0,
+              16
+            ],
+            [
+              36,
+              0,
+              20
+            ],
+            [
+              36,
+              0,
+              23
+            ],
+            [
+              39,
+              0,
+              23
+            ],
+            [
+              42,
+              0,
+              23
+            ],
+            [
+              42,
+              0,
+              27
+            ]
+          ],
+          "samples": 31
+        },
+        {
+          "zone": "core_cavern",
+          "anchors": [
+            [
+              33,
+              0,
+              40
+            ],
+            [
+              36,
+              0,
+              44
+            ],
+            [
+              43,
+              0,
+              45
+            ],
+            [
+              47,
+              0,
+              42
+            ],
+            [
+              47,
+              0,
+              37
+            ]
+          ],
+          "samples": 30
+        }
+      ],
+      "work_bays": [
+        {
+          "zone": "entrance_camp",
+          "position": [
+            -43,
+            0,
+            38
+          ]
+        },
+        {
+          "zone": "entrance_camp",
+          "position": [
+            -29,
+            0,
+            38
+          ]
+        },
+        {
+          "zone": "rail_workings",
+          "position": [
+            -43,
+            3,
+            0
+          ]
+        },
+        {
+          "zone": "storage",
+          "position": [
+            39,
+            7,
+            -25
+          ]
+        },
+        {
+          "zone": "waterway",
+          "position": [
+            25,
+            0,
+            17
+          ]
+        },
+        {
+          "zone": "waterway",
+          "position": [
+            25,
+            0,
+            26
+          ]
+        },
+        {
+          "zone": "collapse",
+          "position": [
+            7,
+            0,
+            31
+          ]
+        },
+        {
+          "zone": "collapse",
+          "position": [
+            -3,
+            0,
+            40
+          ]
+        },
+        {
+          "zone": "collapse",
+          "position": [
+            7,
+            0,
+            40
+          ]
+        },
+        {
+          "zone": "core_cavern",
+          "position": [
+            29,
+            0,
+            46
+          ]
+        }
+      ],
+      "lowered_pillars": [
+        {
+          "name": "ChasmPillar.003",
+          "old_top": 2.8562402725219727,
+          "new_top": -0.38
+        }
+      ],
+      "water_branches": [
+        {
+          "name": "CrossingWest",
+          "bounds": [
+            -24,
+            4,
+            -5,
+            5
+          ],
+          "surface_height": -7,
+          "collision": false
+        },
+        {
+          "name": "NorthFork",
+          "bounds": [
+            -7,
+            4,
+            -28,
+            -5
+          ],
+          "surface_height": -7,
+          "collision": false
+        },
+        {
+          "name": "SouthFork",
+          "bounds": [
+            -7,
+            4,
+            5,
+            32
+          ],
+          "surface_height": -7,
+          "collision": false
+        },
+        {
+          "name": "CrossingEast",
+          "bounds": [
+            17,
+            25,
+            -4,
+            4
+          ],
+          "surface_height": -7,
+          "collision": false
+        }
+      ]
+    }
   }
 }

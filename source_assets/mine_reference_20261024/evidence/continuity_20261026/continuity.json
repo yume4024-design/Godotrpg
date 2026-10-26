@@ -1,0 +1,348 @@
+{
+  "revision": "mine_continuity_20261026",
+  "script_sha256": "dd26eeff3189005de959210cca345b4ac9e7c8b478639d0e9e6dc1c0cd29bc89",
+  "strata": [
+    {
+      "zone": "entrance_camp",
+      "perimeter_vertices": 22,
+      "closed": true
+    },
+    {
+      "zone": "rail_workings",
+      "perimeter_vertices": 22,
+      "closed": true
+    },
+    {
+      "zone": "bridge_junction",
+      "perimeter_vertices": 12,
+      "closed": true
+    },
+    {
+      "zone": "crystal_workings",
+      "perimeter_vertices": 26,
+      "closed": true
+    },
+    {
+      "zone": "storage",
+      "perimeter_vertices": 20,
+      "closed": true
+    },
+    {
+      "zone": "waterway",
+      "perimeter_vertices": 20,
+      "closed": true
+    },
+    {
+      "zone": "collapse",
+      "perimeter_vertices": 18,
+      "closed": true
+    },
+    {
+      "zone": "core_cavern",
+      "perimeter_vertices": 20,
+      "closed": true
+    }
+  ],
+  "rail_curves": [
+    {
+      "zone": "entrance_camp",
+      "anchors": [
+        [
+          -47,
+          0,
+          28
+        ],
+        [
+          -41,
+          0,
+          30
+        ],
+        [
+          -34,
+          0,
+          30
+        ],
+        [
+          -28,
+          0,
+          30
+        ],
+        [
+          -25,
+          0,
+          32
+        ]
+      ],
+      "samples": 33
+    },
+    {
+      "zone": "rail_workings",
+      "anchors": [
+        [
+          -44,
+          3,
+          -12
+        ],
+        [
+          -40,
+          3,
+          -12
+        ],
+        [
+          -35,
+          3,
+          -12
+        ],
+        [
+          -29,
+          3,
+          -9
+        ],
+        [
+          -27,
+          3,
+          -3
+        ]
+      ],
+      "samples": 32
+    },
+    {
+      "zone": "crystal_workings",
+      "anchors": [
+        [
+          -28,
+          7,
+          -38
+        ],
+        [
+          -24,
+          7,
+          -37
+        ],
+        [
+          -16,
+          7,
+          -37
+        ],
+        [
+          -8,
+          7,
+          -37
+        ],
+        [
+          1,
+          7,
+          -34
+        ]
+      ],
+      "samples": 36
+    },
+    {
+      "zone": "waterway",
+      "anchors": [
+        [
+          41,
+          0,
+          16
+        ],
+        [
+          37,
+          0,
+          16
+        ],
+        [
+          36,
+          0,
+          20
+        ],
+        [
+          36,
+          0,
+          23
+        ],
+        [
+          39,
+          0,
+          23
+        ],
+        [
+          42,
+          0,
+          23
+        ],
+        [
+          42,
+          0,
+          27
+        ]
+      ],
+      "samples": 31
+    },
+    {
+      "zone": "core_cavern",
+      "anchors": [
+        [
+          33,
+          0,
+          40
+        ],
+        [
+          36,
+          0,
+          44
+        ],
+        [
+          43,
+          0,
+          45
+        ],
+        [
+          47,
+          0,
+          42
+        ],
+        [
+          47,
+          0,
+          37
+        ]
+      ],
+      "samples": 30
+    }
+  ],
+  "work_bays": [
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -43,
+        0,
+        38
+      ]
+    },
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -29,
+        0,
+        38
+      ]
+    },
+    {
+      "zone": "rail_workings",
+      "position": [
+        -43,
+        3,
+        0
+      ]
+    },
+    {
+      "zone": "storage",
+      "position": [
+        39,
+        7,
+        -25
+      ]
+    },
+    {
+      "zone": "waterway",
+      "position": [
+        25,
+        0,
+        17
+      ]
+    },
+    {
+      "zone": "waterway",
+      "position": [
+        25,
+        0,
+        26
+      ]
+    },
+    {
+      "zone": "collapse",
+      "position": [
+        7,
+        0,
+        31
+      ]
+    },
+    {
+      "zone": "collapse",
+      "position": [
+        -3,
+        0,
+        40
+      ]
+    },
+    {
+      "zone": "collapse",
+      "position": [
+        7,
+        0,
+        40
+      ]
+    },
+    {
+      "zone": "core_cavern",
+      "position": [
+        29,
+        0,
+        46
+      ]
+    }
+  ],
+  "lowered_pillars": [
+    {
+      "name": "ChasmPillar.003",
+      "old_top": 2.8562402725219727,
+      "new_top": -0.38
+    }
+  ],
+  "water_branches": [
+    {
+      "name": "CrossingWest",
+      "bounds": [
+        -24,
+        4,
+        -5,
+        5
+      ],
+      "surface_height": -7,
+      "collision": false
+    },
+    {
+      "name": "NorthFork",
+      "bounds": [
+        -7,
+        4,
+        -28,
+        -5
+      ],
+      "surface_height": -7,
+      "collision": false
+    },
+    {
+      "name": "SouthFork",
+      "bounds": [
+        -7,
+        4,
+        5,
+        32
+      ],
+      "surface_height": -7,
+      "collision": false
+    },
+    {
+      "name": "CrossingEast",
+      "bounds": [
+        17,
+        25,
+        -4,
+        4
+      ],
+      "surface_height": -7,
+      "collision": false
+    }
+  ]
+}

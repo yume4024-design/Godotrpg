@@ -38,6 +38,7 @@ def refine_mine(api):
         for dx in [-2.7,2.7]:
             for zz in [-.4,-1.8]:box('TunnelRib',(x+dx,h+2.2,z+zz),(.22,4.4,.25),'WoodLight',group)
         if yaw:
+            api['bpy'].context.view_layer.update()
             transform=Matrix.Translation(B(p))@Matrix.Rotation(yaw,4,'Z')@Matrix.Translation(-B(p))
             for obj in set(api['collection'](group).objects)-before:obj.matrix_world=transform@obj.matrix_world
         receipt['new_dressing'].append({'kind':'recessed_portal','zone':group,'position':list(p)})
@@ -115,4 +116,6 @@ def refine_mine(api):
             o=stone('FoamImpact',B((x+rng.uniform(-2.2,2.2),bottom+.12,z+rng.uniform(.4,1.8))),(.45,.5,.18),'water')
             o.data.materials.clear();o.data.materials.append(foam_mat)
         receipt['new_dressing'].append({'kind':'continuous_cascade','index':index,'triangles':96})
+    from mine_reference_continuity import refine_continuity
+    receipt['continuity']=refine_continuity(api,clear)
     return receipt

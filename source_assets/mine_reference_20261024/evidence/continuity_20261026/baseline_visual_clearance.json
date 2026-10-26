@@ -1,0 +1,1852 @@
+{
+  "master": "D:/RPGGAME/artifacts/mine_continuity_20261026/baseline.blend",
+  "samples": 3670,
+  "hits": [
+    {
+      "route": "route",
+      "segment": 2,
+      "position": [
+        -36.0,
+        2.612903118133545,
+        6.322580337524414
+      ],
+      "hit": [
+        -36.0,
+        3.0647406578063965,
+        6.0425801277160645
+      ],
+      "mesh": "rail_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 2,
+      "position": [
+        -36.0,
+        2.709677219390869,
+        5.741935729980469
+      ],
+      "hit": [
+        -36.0,
+        3.092024087905884,
+        5.741935729980469
+      ],
+      "mesh": "rail_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 2,
+      "position": [
+        -36.0,
+        2.709677219390869,
+        5.741935729980469
+      ],
+      "hit": [
+        -35.720001220703125,
+        3.0916919708251953,
+        5.741935729980469
+      ],
+      "mesh": "rail_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 2,
+      "position": [
+        -36.0,
+        2.709677219390869,
+        5.741935729980469
+      ],
+      "hit": [
+        -36.279998779296875,
+        3.083772897720337,
+        5.741935729980469
+      ],
+      "mesh": "rail_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 2,
+      "position": [
+        -36.0,
+        2.709677219390869,
+        5.741935729980469
+      ],
+      "hit": [
+        -36.0,
+        3.0693509578704834,
+        6.021935939788818
+      ],
+      "mesh": "rail_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 2,
+      "position": [
+        -36.0,
+        2.709677219390869,
+        5.741935729980469
+      ],
+      "hit": [
+        -36.0,
+        3.0965726375579834,
+        5.461935520172119
+      ],
+      "mesh": "rail_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.111111164093018,
+        -23.77777862548828
+      ],
+      "hit": [
+        -32.279998779296875,
+        6.68937873840332,
+        -23.77777862548828
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.111111164093018,
+        -23.77777862548828
+      ],
+      "hit": [
+        -32.0,
+        6.511881351470947,
+        -24.05777931213379
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.3333330154418945,
+        -24.333332061767578
+      ],
+      "hit": [
+        -32.0,
+        7.093920707702637,
+        -24.333332061767578
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.3333330154418945,
+        -24.333332061767578
+      ],
+      "hit": [
+        -32.279998779296875,
+        7.103972434997559,
+        -24.333332061767578
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.3333330154418945,
+        -24.333332061767578
+      ],
+      "hit": [
+        -32.0,
+        7.090133190155029,
+        -24.613332748413086
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.555555820465088,
+        -24.88888931274414
+      ],
+      "hit": [
+        -32.0,
+        7.0864057540893555,
+        -24.88888931274414
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.555555820465088,
+        -24.88888931274414
+      ],
+      "hit": [
+        -31.719999313354492,
+        7.076354026794434,
+        -24.88888931274414
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.555555820465088,
+        -24.88888931274414
+      ],
+      "hit": [
+        -32.279998779296875,
+        7.096457481384277,
+        -24.88888931274414
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.555555820465088,
+        -24.88888931274414
+      ],
+      "hit": [
+        -32.0,
+        7.090193271636963,
+        -24.608888626098633
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 5,
+      "position": [
+        -32.0,
+        6.555555820465088,
+        -24.88888931274414
+      ],
+      "hit": [
+        -32.0,
+        7.082618236541748,
+        -25.16888999938965
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 9,
+      "position": [
+        2.2857141494750977,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        2.565714120864868,
+        8.138799667358398,
+        -28.0
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 9,
+      "position": [
+        2.2857141494750977,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        2.2857141494750977,
+        8.128340721130371,
+        -27.719999313354492
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 9,
+      "position": [
+        2.857142925262451,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        2.5771429538726807,
+        8.203261375427246,
+        -28.0
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 9,
+      "position": [
+        2.857142925262451,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        2.857142925262451,
+        8.213720321655273,
+        -28.280000686645508
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 10,
+      "position": [
+        5.185185432434082,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        5.465185642242432,
+        7.951931953430176,
+        -28.0
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 10,
+      "position": [
+        5.185185432434082,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        5.185185432434082,
+        8.087307929992676,
+        -28.280000686645508
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 10,
+      "position": [
+        5.777777671813965,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        5.497777462005615,
+        7.743757724761963,
+        -28.0
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 10,
+      "position": [
+        5.777777671813965,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        5.777777671813965,
+        7.608381271362305,
+        -27.719999313354492
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 10,
+      "position": [
+        18.22222328186035,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        18.50222396850586,
+        8.28277587890625,
+        -28.0
+      ],
+      "mesh": "storage_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 10,
+      "position": [
+        18.22222328186035,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        18.22222328186035,
+        8.30914306640625,
+        -28.280000686645508
+      ],
+      "mesh": "storage_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 10,
+      "position": [
+        18.814815521240234,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        18.534814834594727,
+        8.481523513793945,
+        -28.0
+      ],
+      "mesh": "storage_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 10,
+      "position": [
+        18.814815521240234,
+        7.0,
+        -28.0
+      ],
+      "hit": [
+        18.814815521240234,
+        8.445684432983398,
+        -27.719999313354492
+      ],
+      "mesh": "storage_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 11,
+      "position": [
+        20.909090042114258,
+        7.0,
+        -27.27272605895996
+      ],
+      "hit": [
+        20.909090042114258,
+        8.812631607055664,
+        -27.55272674560547
+      ],
+      "mesh": "storage_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 13,
+      "position": [
+        25.0,
+        6.733333110809326,
+        -11.466666221618652
+      ],
+      "hit": [
+        25.280000686645508,
+        7.281702995300293,
+        -11.466666221618652
+      ],
+      "mesh": "storage_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 13,
+      "position": [
+        25.0,
+        6.4666666984558105,
+        -10.933332443237305
+      ],
+      "hit": [
+        25.280000686645508,
+        7.331114768981934,
+        -10.933332443237305
+      ],
+      "mesh": "storage_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 15,
+      "position": [
+        25.0,
+        2.5,
+        7.0
+      ],
+      "hit": [
+        25.280000686645508,
+        2.883406400680542,
+        7.0
+      ],
+      "mesh": "bridge_junction_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 15,
+      "position": [
+        25.0,
+        2.25,
+        7.5
+      ],
+      "hit": [
+        25.280000686645508,
+        2.7727200984954834,
+        7.5
+      ],
+      "mesh": "bridge_junction_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        31.71428680419922
+      ],
+      "hit": [
+        34.0,
+        0.41546526551246643,
+        31.71428680419922
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        31.71428680419922
+      ],
+      "hit": [
+        34.279998779296875,
+        0.4155714213848114,
+        31.71428680419922
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        31.71428680419922
+      ],
+      "hit": [
+        34.0,
+        0.4307793974876404,
+        31.994287490844727
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.28571319580078
+      ],
+      "hit": [
+        34.0,
+        0.44671839475631714,
+        32.28571319580078
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.28571319580078
+      ],
+      "hit": [
+        34.279998779296875,
+        0.4468245506286621,
+        32.28571319580078
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.28571319580078
+      ],
+      "hit": [
+        33.720001220703125,
+        0.44661223888397217,
+        32.28571319580078
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.28571319580078
+      ],
+      "hit": [
+        34.0,
+        0.4620324373245239,
+        32.565711975097656
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.28571319580078
+      ],
+      "hit": [
+        34.0,
+        0.43140438199043274,
+        32.005714416503906
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.85714340209961
+      ],
+      "hit": [
+        34.0,
+        0.46252286434173584,
+        32.85714340209961
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.85714340209961
+      ],
+      "hit": [
+        34.279998779296875,
+        0.47807788848876953,
+        32.85714340209961
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.85714340209961
+      ],
+      "hit": [
+        33.720001220703125,
+        0.43898963928222656,
+        32.85714340209961
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.85714340209961
+      ],
+      "hit": [
+        34.0,
+        0.43687713146209717,
+        33.137142181396484
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        32.85714340209961
+      ],
+      "hit": [
+        34.0,
+        0.46265771985054016,
+        32.577144622802734
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        33.42856979370117
+      ],
+      "hit": [
+        34.0,
+        0.4101845622062683,
+        33.42856979370117
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        33.42856979370117
+      ],
+      "hit": [
+        34.279998779296875,
+        0.4337177872657776,
+        33.42856979370117
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        33.42856979370117
+      ],
+      "hit": [
+        33.720001220703125,
+        0.38665130734443665,
+        33.42856979370117
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        33.42856979370117
+      ],
+      "hit": [
+        34.0,
+        0.38453876972198486,
+        33.70856857299805
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        33.42856979370117
+      ],
+      "hit": [
+        34.0,
+        0.43583032488822937,
+        33.1485710144043
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        34.0
+      ],
+      "hit": [
+        34.0,
+        0.35784587264060974,
+        34.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        34.0
+      ],
+      "hit": [
+        34.279998779296875,
+        0.381379097700119,
+        34.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 18,
+      "position": [
+        34.0,
+        0.0,
+        34.0
+      ],
+      "hit": [
+        34.0,
+        0.3834916353225708,
+        33.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 19,
+      "position": [
+        34.0,
+        0.0,
+        34.0
+      ],
+      "hit": [
+        34.0,
+        0.35784587264060974,
+        34.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 19,
+      "position": [
+        34.0,
+        0.0,
+        34.0
+      ],
+      "hit": [
+        34.279998779296875,
+        0.381379097700119,
+        34.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 19,
+      "position": [
+        34.0,
+        0.0,
+        34.0
+      ],
+      "hit": [
+        34.0,
+        0.3834916353225708,
+        33.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 19,
+      "position": [
+        34.22222137451172,
+        0.0,
+        34.55555725097656
+      ],
+      "hit": [
+        34.22222137451172,
+        0.3512839674949646,
+        34.27555847167969
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        25.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        25.51999855041504,
+        1.65545654296875,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        25.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        25.799999237060547,
+        1.142331600189209,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        25.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        25.200000762939453,
+        0.46731996536254883,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        25.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.920000076293945,
+        0.470384418964386,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        25.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        25.200000762939453,
+        0.4596498906612396,
+        36.279998779296875
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        25.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        25.200000762939453,
+        0.47195202112197876,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.599998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.599998474121094,
+        0.4738866686820984,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.599998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.8799991607666,
+        0.47082221508026123,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.599998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.319997787475586,
+        0.47695109248161316,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.599998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.599998474121094,
+        0.46925464272499084,
+        36.279998779296875
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.599998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.599998474121094,
+        0.47851866483688354,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.0,
+        0.4803702235221863,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.280000686645508,
+        0.477388858795166,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        23.719999313354492,
+        0.48318684101104736,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.0,
+        0.47580933570861816,
+        36.279998779296875
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.0,
+        0.4849310517311096,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.0,
+        0.4803702235221863,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.280000686645508,
+        0.477388858795166,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        23.719999313354492,
+        0.48318684101104736,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.0,
+        0.47580933570861816,
+        36.279998779296875
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        24.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        24.0,
+        0.4849310517311096,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        23.399999618530273,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        23.399999618530273,
+        0.48640578985214233,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        23.399999618530273,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        23.68000030517578,
+        0.48358917236328125,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        23.399999618530273,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        23.119998931884766,
+        0.4871211051940918,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        23.399999618530273,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        23.399999618530273,
+        0.4818449318408966,
+        36.279998779296875
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        23.399999618530273,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        23.399999618530273,
+        0.48898977041244507,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        22.799999237060547,
+        0.4846542179584503,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        23.079999923706055,
+        0.4868127703666687,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        22.51999855041504,
+        0.48249566555023193,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        22.799999237060547,
+        0.48494410514831543,
+        36.279998779296875
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        22.799999237060547,
+        0.4843643307685852,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        22.200000762939453,
+        0.48002877831459045,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        22.48000144958496,
+        0.48218733072280884,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        21.920000076293945,
+        0.47787022590637207,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        22.200000762939453,
+        0.48031866550445557,
+        36.279998779296875
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        22.200000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        22.200000762939453,
+        0.47973889112472534,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        21.600000381469727,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        21.600000381469727,
+        0.475403368473053,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        21.600000381469727,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        21.880001068115234,
+        0.477561891078949,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        21.600000381469727,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        21.31999969482422,
+        0.4730607271194458,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        21.600000381469727,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        21.600000381469727,
+        0.4756932258605957,
+        36.279998779296875
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        21.600000381469727,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        21.600000381469727,
+        0.472606360912323,
+        35.720001220703125
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        21.0,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        21.280000686645508,
+        0.47252973914146423,
+        36.0
+      ],
+      "mesh": "core_cavern_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        16.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        16.799999237060547,
+        0.6692063808441162,
+        36.0
+      ],
+      "mesh": "backdrop_Mine_Rock"
+    },
+    {
+      "route": "route",
+      "segment": 22,
+      "position": [
+        16.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        16.799999237060547,
+        1.2709299325942993,
+        36.279998779296875
+      ],
+      "mesh": "backdrop_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.199999809265137,
+        -23.200000762939453
+      ],
+      "hit": [
+        -4.0,
+        7.11008882522583,
+        -23.48000144958496
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.359999656677246,
+        -23.760000228881836
+      ],
+      "hit": [
+        -4.0,
+        7.185858249664307,
+        -23.760000228881836
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.359999656677246,
+        -23.760000228881836
+      ],
+      "hit": [
+        -3.7200000286102295,
+        7.184883117675781,
+        -23.760000228881836
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.359999656677246,
+        -23.760000228881836
+      ],
+      "hit": [
+        -4.28000020980835,
+        7.186833381652832,
+        -23.760000228881836
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.359999656677246,
+        -23.760000228881836
+      ],
+      "hit": [
+        -4.0,
+        7.110088348388672,
+        -23.479999542236328
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.359999656677246,
+        -23.760000228881836
+      ],
+      "hit": [
+        -4.0,
+        7.246213436126709,
+        -24.040000915527344
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.519999980926514,
+        -24.31999969482422
+      ],
+      "hit": [
+        -4.0,
+        7.263930797576904,
+        -24.31999969482422
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.519999980926514,
+        -24.31999969482422
+      ],
+      "hit": [
+        -3.7200000286102295,
+        7.245828151702881,
+        -24.31999969482422
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.519999980926514,
+        -24.31999969482422
+      ],
+      "hit": [
+        -4.28000020980835,
+        7.2820329666137695,
+        -24.31999969482422
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.519999980926514,
+        -24.31999969482422
+      ],
+      "hit": [
+        -4.0,
+        7.246213436126709,
+        -24.03999900817871
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.519999980926514,
+        -24.31999969482422
+      ],
+      "hit": [
+        -4.0,
+        7.281352996826172,
+        -24.600000381469727
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.679999828338623,
+        -24.8799991607666
+      ],
+      "hit": [
+        -4.0,
+        7.298303127288818,
+        -24.8799991607666
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.679999828338623,
+        -24.8799991607666
+      ],
+      "hit": [
+        -3.7200000286102295,
+        7.280227184295654,
+        -24.8799991607666
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.679999828338623,
+        -24.8799991607666
+      ],
+      "hit": [
+        -4.28000020980835,
+        7.316379547119141,
+        -24.8799991607666
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.679999828338623,
+        -24.8799991607666
+      ],
+      "hit": [
+        -4.0,
+        7.281352996826172,
+        -24.599998474121094
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.679999828338623,
+        -24.8799991607666
+      ],
+      "hit": [
+        -4.0,
+        7.315253734588623,
+        -25.15999984741211
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.839999675750732,
+        -25.439998626708984
+      ],
+      "hit": [
+        -4.0,
+        7.332204341888428,
+        -25.439998626708984
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.839999675750732,
+        -25.439998626708984
+      ],
+      "hit": [
+        -3.7200000286102295,
+        7.3141279220581055,
+        -25.439998626708984
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.839999675750732,
+        -25.439998626708984
+      ],
+      "hit": [
+        -4.28000020980835,
+        7.35028076171875,
+        -25.439998626708984
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.839999675750732,
+        -25.439998626708984
+      ],
+      "hit": [
+        -4.0,
+        7.315253734588623,
+        -25.159997940063477
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    },
+    {
+      "route": "north_route",
+      "segment": 4,
+      "position": [
+        -4.0,
+        6.839999675750732,
+        -25.439998626708984
+      ],
+      "hit": [
+        -4.0,
+        7.349154949188232,
+        -25.719999313354492
+      ],
+      "mesh": "crystal_workings_Mine_Rock"
+    }
+  ],
+  "method": "Actual triangle BVH, vertical body rays at centre and four 0.28m offsets, 0.6m route spacing, 0.35\u20131.90m above nominal floor. Includes existing geometry; excludes hidden module assets. A sampled visual clearance check, not continuous capsule collision or camera occlusion certification."
+}

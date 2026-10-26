@@ -1,0 +1,420 @@
+{
+  "checks": 55,
+  "display": "Windows",
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "fps": 59.4602532928224,
+  "frames": 8779,
+  "max_ms": 246.774,
+  "method": "Actual CharacterBody3D and InputMap feedback steering; reset only at separate route starts. No Story or reward flags set. Debug editor binary, 60 FPS cap; not a new release endurance or human playthrough.",
+  "p95_ms": 16.73,
+  "p99_ms": 16.827,
+  "renderer": "NVIDIA GeForce RTX 3080",
+  "routes": [
+    {
+      "actual": "(-36.32492, 0.000391, 28.0)",
+      "draw_calls": 89.0,
+      "engine_bytes": 44939016.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-36.0, 0.0, 28.0)",
+      "waypoint": 1
+    },
+    {
+      "actual": "(-36.0167, 0.000391, 22.30835)",
+      "draw_calls": 90.0,
+      "engine_bytes": 44941544.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-36.0, 0.0, 22.0)",
+      "waypoint": 2
+    },
+    {
+      "actual": "(-36.00032, 2.947021, 4.349455)",
+      "draw_calls": 89.0,
+      "engine_bytes": 44947432.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-36.0, 3.0, 4.0)",
+      "waypoint": 3
+    },
+    {
+      "actual": "(-32.24766, 3.000693, 0.269382)",
+      "draw_calls": 100.0,
+      "engine_bytes": 44947192.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-32.0, 3.0, 0.0)",
+      "waypoint": 4
+    },
+    {
+      "actual": "(-32.00566, 3.000693, -15.62876)",
+      "draw_calls": 106.0,
+      "engine_bytes": 44952020.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-32.0, 3.0, -16.0)",
+      "waypoint": 5
+    },
+    {
+      "actual": "(-32.00024, 6.876833, -25.62827)",
+      "draw_calls": 93.0,
+      "engine_bytes": 44955836.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-32.0, 7.0, -26.0)",
+      "waypoint": 6
+    },
+    {
+      "actual": "(-32.00001, 7.000281, -31.65337)",
+      "draw_calls": 92.0,
+      "engine_bytes": 44953748.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-32.0, 7.0, -32.0)",
+      "waypoint": 7
+    },
+    {
+      "actual": "(-4.326986, 7.000281, -31.99595)",
+      "draw_calls": 103.0,
+      "engine_bytes": 44959144.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-4.0, 7.0, -32.0)",
+      "waypoint": 8
+    },
+    {
+      "actual": "(-4.027262, 7.000281, -28.33316)",
+      "draw_calls": 102.0,
+      "engine_bytes": 44960300.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-4.0, 7.0, -28.0)",
+      "waypoint": 9
+    },
+    {
+      "actual": "(3.69109, 7.000281, -28.01282)",
+      "draw_calls": 108.0,
+      "engine_bytes": 44995040.0,
+      "reached": true,
+      "route": "route",
+      "target": "(4.0, 7.0, -28.0)",
+      "waypoint": 10
+    },
+    {
+      "actual": "(19.66609, 7.000281, -28.00026)",
+      "draw_calls": 122.0,
+      "engine_bytes": 45002620.0,
+      "reached": true,
+      "route": "route",
+      "target": "(20.0, 7.0, -28.0)",
+      "waypoint": 11
+    },
+    {
+      "actual": "(24.7062, 7.000281, -24.22034)",
+      "draw_calls": 124.0,
+      "engine_bytes": 45003020.0,
+      "reached": true,
+      "route": "route",
+      "target": "(25.0, 7.0, -24.0)",
+      "waypoint": 12
+    },
+    {
+      "actual": "(24.99101, 7.000281, -12.37384)",
+      "draw_calls": 126.0,
+      "engine_bytes": 45004920.0,
+      "reached": true,
+      "route": "route",
+      "target": "(25.0, 7.0, -12.0)",
+      "waypoint": 13
+    },
+    {
+      "actual": "(24.99965, 3.202673, -4.328865)",
+      "draw_calls": 133.0,
+      "engine_bytes": 45000984.0,
+      "reached": true,
+      "route": "route",
+      "target": "(25.0, 3.0, -4.0)",
+      "waypoint": 14
+    },
+    {
+      "actual": "(24.99999, 3.000525, 5.647302)",
+      "draw_calls": 131.0,
+      "engine_bytes": 45007404.0,
+      "reached": true,
+      "route": "route",
+      "target": "(25.0, 3.0, 6.0)",
+      "waypoint": 15
+    },
+    {
+      "actual": "(25.0, 0.20719, 11.66186)",
+      "draw_calls": 136.0,
+      "engine_bytes": 45003328.0,
+      "reached": true,
+      "route": "route",
+      "target": "(25.0, 0.0, 12.0)",
+      "waypoint": 16
+    },
+    {
+      "actual": "(33.74843, 0.000281, 19.76693)",
+      "draw_calls": 153.0,
+      "engine_bytes": 45018580.0,
+      "reached": true,
+      "route": "route",
+      "target": "(34.0, 0.0, 20.0)",
+      "waypoint": 17
+    },
+    {
+      "actual": "(33.99173, 0.000281, 29.66401)",
+      "draw_calls": 157.0,
+      "engine_bytes": 45020600.0,
+      "reached": true,
+      "route": "route",
+      "target": "(34.0, 0.0, 30.0)",
+      "waypoint": 18
+    },
+    {
+      "actual": "(33.99931, 0.000281, 33.63905)",
+      "draw_calls": 168.0,
+      "engine_bytes": 45022012.0,
+      "reached": true,
+      "route": "route",
+      "target": "(34.0, 0.0, 34.0)",
+      "waypoint": 19
+    },
+    {
+      "actual": "(35.88738, 0.000863, 38.69825)",
+      "draw_calls": 163.0,
+      "engine_bytes": 45022640.0,
+      "reached": true,
+      "route": "route",
+      "target": "(36.0, 0.0, 39.0)",
+      "waypoint": 20
+    },
+    {
+      "actual": "(30.29662, 0.000863, 36.13594)",
+      "draw_calls": 168.0,
+      "engine_bytes": 45023780.0,
+      "reached": true,
+      "route": "route",
+      "target": "(30.0, 0.0, 36.0)",
+      "waypoint": 21
+    },
+    {
+      "actual": "(24.37306, 0.000863, 36.00806)",
+      "draw_calls": 150.0,
+      "engine_bytes": 45025680.0,
+      "reached": true,
+      "route": "route",
+      "target": "(24.0, 0.0, 36.0)",
+      "waypoint": 22
+    },
+    {
+      "actual": "(12.37299, 0.000863, 36.00024)",
+      "draw_calls": 138.0,
+      "engine_bytes": 45026820.0,
+      "reached": true,
+      "route": "route",
+      "target": "(12.0, 0.0, 36.0)",
+      "waypoint": 23
+    },
+    {
+      "actual": "(0.373006, 0.000863, 36.00001)",
+      "draw_calls": 110.0,
+      "engine_bytes": 45027208.0,
+      "reached": true,
+      "route": "route",
+      "target": "(0.0, 0.0, 36.0)",
+      "waypoint": 24
+    },
+    {
+      "actual": "(-3.722229, 0.000863, 32.25407)",
+      "draw_calls": 113.0,
+      "engine_bytes": 45028376.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-4.0, 0.0, 32.0)",
+      "waypoint": 25
+    },
+    {
+      "actual": "(-7.690243, 0.000863, 32.01839)",
+      "draw_calls": 113.0,
+      "engine_bytes": 45030292.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-8.0, 0.0, 32.0)",
+      "waypoint": 26
+    },
+    {
+      "actual": "(-23.6653, 0.000863, 32.00038)",
+      "draw_calls": 107.0,
+      "engine_bytes": 45031476.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-24.0, 0.0, 32.0)",
+      "waypoint": 27
+    },
+    {
+      "actual": "(-35.66542, 0.000863, 32.00001)",
+      "draw_calls": 94.0,
+      "engine_bytes": 45046308.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-36.0, 0.0, 32.0)",
+      "waypoint": 28
+    },
+    {
+      "actual": "(-44.20604, 0.000863, 28.1331)",
+      "draw_calls": 85.0,
+      "engine_bytes": 45047820.0,
+      "reached": true,
+      "route": "route",
+      "target": "(-44.5, 0.0, 28.0)",
+      "waypoint": 29
+    },
+    {
+      "actual": "(-24.37983, 3.000391, -0.0)",
+      "draw_calls": 104.0,
+      "engine_bytes": 45050004.0,
+      "reached": true,
+      "route": "cross_route",
+      "target": "(-24.0, 3.0, 0.0)",
+      "waypoint": 1
+    },
+    {
+      "actual": "(-4.369678, 3.000391, -0.0)",
+      "draw_calls": 104.0,
+      "engine_bytes": 45051204.0,
+      "reached": true,
+      "route": "cross_route",
+      "target": "(-4.0, 3.0, 0.0)",
+      "waypoint": 2
+    },
+    {
+      "actual": "(19.63037, 3.000391, -0.0)",
+      "draw_calls": 126.0,
+      "engine_bytes": 45073920.0,
+      "reached": true,
+      "route": "cross_route",
+      "target": "(20.0, 3.0, 0.0)",
+      "waypoint": 3
+    },
+    {
+      "actual": "(24.64047, 3.000391, -0.0)",
+      "draw_calls": 130.0,
+      "engine_bytes": 45075060.0,
+      "reached": true,
+      "route": "cross_route",
+      "target": "(25.0, 3.0, 0.0)",
+      "waypoint": 4
+    },
+    {
+      "actual": "(-4.0, 0.000391, 26.37494)",
+      "draw_calls": 108.0,
+      "engine_bytes": 45079612.0,
+      "reached": true,
+      "route": "north_route",
+      "target": "(-4.0, 0.0, 26.0)",
+      "waypoint": 1
+    },
+    {
+      "actual": "(-4.0, 2.851054, 20.37531)",
+      "draw_calls": 99.0,
+      "engine_bytes": 45083364.0,
+      "reached": true,
+      "route": "north_route",
+      "target": "(-4.0, 3.0, 20.0)",
+      "waypoint": 2
+    },
+    {
+      "actual": "(-4.0, 2.9999, 0.347907)",
+      "draw_calls": 104.0,
+      "engine_bytes": 45081884.0,
+      "reached": true,
+      "route": "north_route",
+      "target": "(-4.0, 3.0, 0.0)",
+      "waypoint": 3
+    },
+    {
+      "actual": "(-4.0, 2.9999, -11.65207)",
+      "draw_calls": 118.0,
+      "engine_bytes": 45083044.0,
+      "reached": true,
+      "route": "north_route",
+      "target": "(-4.0, 3.0, -12.0)",
+      "waypoint": 4
+    },
+    {
+      "actual": "(-4.0, 6.922636, -25.68135)",
+      "draw_calls": 112.0,
+      "engine_bytes": 45086796.0,
+      "reached": true,
+      "route": "north_route",
+      "target": "(-4.0, 7.0, -26.0)",
+      "waypoint": 5
+    },
+    {
+      "actual": "(-4.0, 7.000179, -31.65874)",
+      "draw_calls": 103.0,
+      "engine_bytes": 45084604.0,
+      "reached": true,
+      "route": "north_route",
+      "target": "(-4.0, 7.0, -32.0)",
+      "waypoint": 6
+    },
+    {
+      "actual": "(-4.0, 7.000391, -26.35987)",
+      "draw_calls": 105.0,
+      "engine_bytes": 45087996.0,
+      "reached": true,
+      "route": "north_reverse_walk",
+      "target": "(-4.0, 7.0, -26.0)",
+      "waypoint": 1
+    },
+    {
+      "actual": "(-4.0, 3.120312, -12.37447)",
+      "draw_calls": 116.0,
+      "engine_bytes": 45083892.0,
+      "reached": true,
+      "route": "north_reverse_walk",
+      "target": "(-4.0, 3.0, -12.0)",
+      "waypoint": 2
+    },
+    {
+      "actual": "(-4.0, 3.000439, -0.372726)",
+      "draw_calls": 104.0,
+      "engine_bytes": 45090284.0,
+      "reached": true,
+      "route": "north_reverse_walk",
+      "target": "(-4.0, 3.0, 0.0)",
+      "waypoint": 3
+    },
+    {
+      "actual": "(-4.0, 3.000439, 19.63731)",
+      "draw_calls": 95.0,
+      "engine_bytes": 45124300.0,
+      "reached": true,
+      "route": "north_reverse_walk",
+      "target": "(-4.0, 3.0, 20.0)",
+      "waypoint": 4
+    },
+    {
+      "actual": "(-4.0, 0.214794, 25.6466)",
+      "draw_calls": 102.0,
+      "engine_bytes": 45120196.0,
+      "reached": true,
+      "route": "north_reverse_walk",
+      "target": "(-4.0, 0.0, 26.0)",
+      "waypoint": 5
+    },
+    {
+      "actual": "(-4.0, 0.000195, 31.64976)",
+      "draw_calls": 113.0,
+      "engine_bytes": 45125860.0,
+      "reached": true,
+      "route": "north_reverse_walk",
+      "target": "(-4.0, 0.0, 32.0)",
+      "waypoint": 6
+    }
+  ]
+}
