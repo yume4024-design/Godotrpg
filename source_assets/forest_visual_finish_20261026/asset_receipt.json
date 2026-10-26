@@ -1,0 +1,180 @@
+{
+  "text_encoding": "UTF-8 LF",
+  "files": [
+    {
+      "path": "docs/FOREST_VISUAL_FINISH_REPORT.md",
+      "bytes": 6198,
+      "sha256": "a2b3cef2bec754e884a1aee3e3af8a089aa83d69332c05862a4caafa470c5ec8"
+    },
+    {
+      "path": "scenes/world/expanded/forest.tscn",
+      "bytes": 634,
+      "sha256": "ea948b072d8d512843c3e5974c4cccb9aa183ce49d542d13310a5e73ecc7d50f"
+    },
+    {
+      "path": "scenes/world/expanded/forest_presentation.tscn",
+      "bytes": 442,
+      "sha256": "192d683c6a3e71442c035583d1e6f033d08edefeff0bcdd68a2b9020636d41f9"
+    },
+    {
+      "path": "scripts/world/forest_presentation.gd",
+      "bytes": 5115,
+      "sha256": "ce4ce27b699c0bc50c58ba4fdec6790277d18a167cd1735a42fbdd8a7134cc02"
+    },
+    {
+      "path": "scripts/world/forest_presentation.gd.uid",
+      "bytes": 20,
+      "sha256": "2467054003d427b02ac6abf30994ecb7ab81c564bd0edba443d7ee92a6af7faa"
+    },
+    {
+      "path": "scripts/tools/forest/build_forest_dressing.py",
+      "bytes": 5503,
+      "sha256": "9c8b4f1ecb194c5e3dc6722eacf1e8485ee247fa596678bb1b1ae556bb09feb1"
+    },
+    {
+      "path": "tests/forest_visual_finish_test.gd",
+      "bytes": 8255,
+      "sha256": "d9718ef99f03c3f5882e8907b18d2449558f9453294c37c2e72197fce69451e0"
+    },
+    {
+      "path": "tests/forest_visual_finish_test.gd.uid",
+      "bytes": 20,
+      "sha256": "e5253b4b82b9f40a9a97121663047dd0597382e76600a4fbd168a9d3a322b2f9"
+    },
+    {
+      "path": "assets/models/forest_visual_finish/border.glb",
+      "bytes": 1849856,
+      "sha256": "9432ac89039a3f26da8451203a5159b4438995a67d5b028667fd04e26336d461"
+    },
+    {
+      "path": "assets/models/forest_visual_finish/border.glb.import",
+      "bytes": 1168,
+      "sha256": "0d2d5d031f15404a0b9311e174647fb4576d85cd3bd60806d851d286324e87b4"
+    },
+    {
+      "path": "assets/shaders/forest/trail.gdshader",
+      "bytes": 930,
+      "sha256": "a5c6b7738db7a628141fe5d532dc058ecd2baa26bbe9263c25579b8d9a1bfc7a"
+    },
+    {
+      "path": "assets/shaders/forest/trail.gdshader.uid",
+      "bytes": 20,
+      "sha256": "205e26b70bbe5e3a2e81c6de0021e893b122cfa1e31259538a5036def621f41c"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/.gdignore",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/baseline.json",
+      "bytes": 13749,
+      "sha256": "f60babdad7f3d874cf35bfa0b00e6bd215b955be59b57b587ca30cda24d79f73"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/build_receipt.json",
+      "bytes": 558,
+      "sha256": "1aaf5f00c33e55e5e8cf734940d7d36fcde22e3ce4cd686fd5f523fc7d1a5823"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after.json",
+      "bytes": 17444,
+      "sha256": "edf06bc0cbe86f3582f57d5f77eeee59bbb8fb2ca610f1133331930d397841cc"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after_entrance.webp",
+      "bytes": 864294,
+      "sha256": "2f02c0c4f54bc7d0e5b104e4fdd4a6133c025b44a8d792a6315fed0dd6b23a17"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after_mine_way.webp",
+      "bytes": 873254,
+      "sha256": "97344555f0da1d939535f1bdb4cf5b3d01540a5e6240a64b0a74066e794db747"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after_north_trail.webp",
+      "bytes": 791316,
+      "sha256": "7c03719272660647e01f78058d334a74bedd72d1ac1c9cabc766e1e9dfe6acf7"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after_overview.webp",
+      "bytes": 549776,
+      "sha256": "ff194548f485075711fa72d2a09342cd943106a47835cf0b45305b9cd1181a91"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after_player_entrance.webp",
+      "bytes": 765574,
+      "sha256": "1d954fe6193fd15160a5f44b27e36853dce3d0e1cf03e9530f7c3dcb79c8b157"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after_player_trail.webp",
+      "bytes": 698900,
+      "sha256": "6a65d787f28453f6da28a96c7bdaaa5914a2236745a01a2ac4db7f43e2fda671"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after_south_edge.webp",
+      "bytes": 702400,
+      "sha256": "cccd06ecbbff073ec9703b6bec63d4e3c0d97780176cc0d6f056fe036fc26cc2"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/after_west_border.webp",
+      "bytes": 686872,
+      "sha256": "5345639f140679192bb8bad826e1855ea301aa8e306fe225fa780e1026694924"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/before.json",
+      "bytes": 17142,
+      "sha256": "20a755b8ef5aec07b029ab1c443452994e4e92601c8b58a484aa3ba2d3ad90f4"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/before_entrance.webp",
+      "bytes": 270228,
+      "sha256": "32d3b783cc8af8eda14cb2e2bce5f27daefff89260a6f30c4493c412754c6415"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/before_mine_way.webp",
+      "bytes": 250432,
+      "sha256": "edc8a2f2eb02afb8107537d81d55bf0234d17def5b238c86a44ee5a3566b5b5b"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/before_north_trail.webp",
+      "bytes": 225346,
+      "sha256": "b4d3d39c70ebc75e16e893e0d1497e1191f382c3cba96b6946249b84eef41a64"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/before_overview.webp",
+      "bytes": 220916,
+      "sha256": "52f27d69fed796e6a80cbe7e23dd59d30f6936b8839d06a692e372cd89904650"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/before_south_edge.webp",
+      "bytes": 146706,
+      "sha256": "5b1bf5c3004f3305bc7344f0b6beeb444a9113bf525344993e6f00b97317ffd0"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/before_west_border.webp",
+      "bytes": 184460,
+      "sha256": "38690884a69e1f924d293a05da5a183b93e1d1d2cbc18c79cd858c260a86f8e2"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/blender_backdrop.webp",
+      "bytes": 26784,
+      "sha256": "11a6bab84d70338d9c18940a8fb5b1bae815e5c703ebd1364f4db58d169d7192"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/failed_palette_audit.json",
+      "bytes": 17194,
+      "sha256": "ecd74195e396ad1b3bcdfb509f283a8f907d278a9f08d21abd33fa6934c3acc5"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/evidence/tests.json",
+      "bytes": 1024,
+      "sha256": "f21ac2e51fb56d20b3561c95a30fa32121aa9602429a1314cc56a18db5032488"
+    },
+    {
+      "path": "source_assets/forest_visual_finish_20261026/forest_dressing.blend",
+      "bytes": 1229970,
+      "sha256": "9aa7bb9c39bd36db580278787e88eb9ebf0d18983f01a808ccb87192a8bb22b7"
+    }
+  ]
+}

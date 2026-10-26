@@ -1,5 +1,10 @@
 # 素材來源與修改紀錄
 
+## 2026-10-26 — 低語森林背景及地表修整
+
+- 重用既有cartoon/round_tree及greystone/props/bush_a、grass_a、flower_a；原作者／授權沿用本文件既有條目，沒有新下載、購買或重新宣稱為新原創模型。
+- 背景土裙與配置、森林草土路緣Shader及整合腳本為本專案製作；保留獨立Blender背景主檔、來源GLB SHA與[修改範圍](FOREST_VISUAL_FINISH_REPORT.md)。
+
 ## 2026-10-26 — 礦坑整體畫面收尾
 
 - 不規則土緣、支架、帳篷附屬件、營火、木料棚、斷架、鐵釘及水沫網格由本專案Blender Python原創，重用既有模型；礦坑water／ripple Shader原創，沒有下載或購買外部素材。

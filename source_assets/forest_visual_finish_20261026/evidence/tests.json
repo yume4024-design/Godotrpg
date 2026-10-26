@@ -1,0 +1,38 @@
+{
+  "engine": "4.7.2-stable (official)",
+  "display": "Windows",
+  "checks": 176,
+  "failures": 0,
+  "tests": [
+    {
+      "mode": "ForestVisualFinish",
+      "checks": 26,
+      "failures": 0,
+      "log_sha256": "40a40b2356dfe4f82b46f44a2cdffca834914445c35ed8c088d59ff06e7d7a82"
+    },
+    {
+      "mode": "VisualReferenceStory",
+      "checks": 68,
+      "failures": 0,
+      "log_sha256": "6d36ae9e29f8b655a486a573c673a97934b0c938c25b667f8a4eea9eeec952b0"
+    },
+    {
+      "mode": "TestReferenceStoryReload",
+      "checks": 7,
+      "failures": 0,
+      "log_sha256": "5bffaccf2f6b32281ad413924aa04b01685ceec49d8637954dfb8a256a6c03cf"
+    },
+    {
+      "mode": "VisualMineReferenceStory",
+      "checks": 68,
+      "failures": 0,
+      "log_sha256": "aca19a6b67fc24d707e73a51112d2a00b1b2509ff63955e6ab094317b114cfc2"
+    },
+    {
+      "mode": "TestMineReferenceStoryReload",
+      "checks": 7,
+      "failures": 0,
+      "log_sha256": "7aaafe985cd2044ceae194008468f5af69f4d5c6bf4e981ccc8b1b2dc003f753"
+    }
+  ]
+}

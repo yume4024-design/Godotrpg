@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/world/forest_presentation.gd" id="Script"]
+[ext_resource type="PackedScene" path="res://assets/models/forest_visual_finish/border.glb" id="Border"]
+
+[node name="Presentation" type="Node3D"]
+script = ExtResource("Script")
+metadata/scope = "Visual only; collision, events and save layout retained"
+
+[node name="Border" parent="." instance=ExtResource("Border")]

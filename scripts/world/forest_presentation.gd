@@ -1,0 +1,102 @@
+extends Node3D
+## Presentation only. No interaction, physics, story or saved-state ownership.
+
+var _map: Node3D
+
+func _ready() -> void:
+	call_deferred("_dress")
+
+func _surface(base: Color, grain: Color, grass: float) -> ShaderMaterial:
+	var material := ShaderMaterial.new()
+	material.shader = load("res://assets/shaders/greystone/ground.gdshader")
+	material.set_shader_parameter("base_color",base)
+	material.set_shader_parameter("grain_color",grain)
+	material.set_shader_parameter("grass_amount",grass)
+	return material
+
+func _dress() -> void:
+	_map = get_parent() as Node3D
+	var grass := _surface(Color(.24,.39,.22),Color(.45,.50,.27),.6)
+	var earth := _surface(Color(.52,.43,.26),Color(.68,.61,.40),0.0)
+	var palette: Dictionary = {}
+	var trails: Array[MeshInstance3D] = []
+	var rectangles := PackedVector4Array()
+	# The old central-map decorative stone ring no longer bounds this expanded map.
+	# Hide its artwork, retaining every physics object and the old source scene.
+	for child: Node in _map.get_children():
+		if String(child.name).begins_with("Boundary") and child is Node3D:
+			(child as Node3D).visible=false
+	for node: Node in _map.find_children("*","MeshInstance3D",true,false):
+		var visual := node as MeshInstance3D
+		var path: String = String(_map.get_path_to(node))
+		if path == "Ground/Mesh" or path.begins_with("Scenery/EdgeGround/"):
+			visual.material_override=grass
+		elif path.begins_with("PathArt") or path.begins_with("PathEast") or path.begins_with("PathGuild"):
+			visual.material_override=earth
+			visual.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		elif visual.mesh is BoxMesh:
+			var size: Vector3=(visual.mesh as BoxMesh).size
+			# Expanded trails receive generated node names; match floor geometry.
+			if size.y <= .021 and (size.x >= 3.4 or size.z >= 3.4):
+				visual.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+				trails.append(visual)
+				rectangles.append(Vector4(visual.global_position.x,visual.global_position.z,size.x*.5,size.z*.5))
+		# Local surface overrides, never mutate imported shared materials.
+		if path.begins_with("Presentation/Border/") or path.begins_with("Tree") or (visual.mesh != null and visual.mesh.resource_path.contains("round_tree")):
+			for surface: int in visual.mesh.get_surface_count():
+				var original: Material=visual.mesh.surface_get_material(surface)
+				if original == null:continue
+				if original.resource_name == "ForestEarth":
+					visual.set_surface_override_material(surface,grass)
+				elif original is StandardMaterial3D:
+					var color: Color=(original as StandardMaterial3D).albedo_color
+					if color.g > color.r*1.15 and color.g > color.b*1.05:
+						var key: String=original.resource_name
+						if not palette.has(key):
+							var foliage := StandardMaterial3D.new()
+							foliage.albedo_color=Color(.34,.48,.20) if key.contains("light") else Color(.22,.36,.14)
+							foliage.roughness=.95
+							palette[key]=foliage
+						visual.set_surface_override_material(surface,palette[key])
+	# This pass recognizes the six existing expanded trail modules, without
+	# copying their positions into a second authored navigation layout.
+	if rectangles.size()==6:
+		var trail := ShaderMaterial.new()
+		trail.shader=load("res://assets/shaders/forest/trail.gdshader")
+		trail.set_shader_parameter("trail_rects",rectangles)
+		for visual: MeshInstance3D in trails:visual.material_override=trail
+	var rng := RandomNumberGenerator.new()
+	rng.seed=261026
+	for asset: String in ["grass_a","bush_a","flower_a"]:
+		var packed: PackedScene=load("res://assets/models/greystone/props/"+asset+".glb")
+		var template: Node3D=packed.instantiate()
+		var meshes: Array[Node]=template.find_children("*","MeshInstance3D",true,false)
+		if meshes.is_empty():
+			template.free()
+			continue
+		var source := meshes[0] as MeshInstance3D
+		var transforms: Array[Transform3D]=[]
+		for attempt: int in range(300 if asset=="grass_a" else 90):
+			var p:=Vector3(rng.randf_range(-22,22),.025,rng.randf_range(-22,22))
+			if not _off_road(p):continue
+			var scale_value: float=rng.randf_range(.45,.85) if asset=="bush_a" else rng.randf_range(.55,1.05)
+			transforms.append(Transform3D(Basis(Vector3.UP,rng.randf()*TAU).scaled(Vector3.ONE*scale_value),p))
+		var batch := MultiMeshInstance3D.new()
+		batch.name=asset.to_pascal_case()+"Batch"
+		batch.multimesh=MultiMesh.new()
+		batch.multimesh.transform_format=MultiMesh.TRANSFORM_3D
+		batch.multimesh.mesh=source.mesh
+		batch.multimesh.instance_count=transforms.size()
+		for i: int in transforms.size():batch.multimesh.set_instance_transform(i,transforms[i])
+		batch.cast_shadow=GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		add_child(batch)
+		template.free()
+
+func _off_road(p: Vector3) -> bool:
+	if absf(p.z)<2.5 or (absf(p.x)<2.5 and absf(p.z)<11):return false
+	if absf(absf(p.z)-17)<2.5 or absf(absf(p.x)-18)<2.5:return false
+	for target: WorldInteractable in (_map as ExplorationMap).targets:
+		if p.distance_to(target.position)<2.6:return false
+	for marker: Node in _map.find_children("*","Marker3D",true,false):
+		if p.distance_to((marker as Node3D).position)<2.6:return false
+	return true

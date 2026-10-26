@@ -1,0 +1,16 @@
+{
+  "seed": 261026,
+  "scope": "Additive backdrop only; original forest and its mine sign remain in Godot.",
+  "sources": {
+    "assets/models/cartoon/round_tree.glb": "84bcf9cbc79c218b7de94125730659ec61b525a0ef9083c3ebe7054f58eb6438",
+    "assets/models/greystone/props/bush_a.glb": "39c603388c6a9830d101057bd369848bd23154668d4e6a8050f8a9e7cab2008e"
+  },
+  "models": {
+    "border": {
+      "triangles": 52576,
+      "materials": 5
+    }
+  },
+  "blender": "5.2.2 LTS",
+  "builder_sha256": "9c8b4f1ecb194c5e3dc6722eacf1e8485ee247fa596678bb1b1ae556bb09feb1"
+}
