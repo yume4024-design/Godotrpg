@@ -4,7 +4,7 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\backdrop.glb",
       "category": null,
-      "sha256": "be973e7aa43ca193e398fa20070037c6a37c71fd202367f5b78a95efd9abb4a7",
+      "sha256": "808f07c5c0d2ecbffe225760e3ecc8ba6532b651833266910aed5c8c5d1f3d08",
       "maximum_triangles": 200000,
       "triangles": 4448,
       "headroom_triangles": 195552,
@@ -39,10 +39,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\bridge_junction.glb",
       "category": null,
-      "sha256": "6271f1d7268c239836bdaf1baeef8257c2e1a631549a15705f771d552204e294",
+      "sha256": "72c6e093eaf6702d96be1f6cce114979ed4272b556f3200c223b95e9eb4287ce",
       "maximum_triangles": 200000,
-      "triangles": 4944,
-      "headroom_triangles": 195056,
+      "triangles": 4148,
+      "headroom_triangles": 195852,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -55,7 +55,7 @@
         {
           "node": 0,
           "mesh": 0,
-          "triangles": 12,
+          "triangles": 48,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -102,7 +102,7 @@
         {
           "node": 4,
           "mesh": 4,
-          "triangles": 1144,
+          "triangles": 312,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -121,10 +121,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\collapse.glb",
       "category": null,
-      "sha256": "32a361f16a2cde757e56e79a8b731964240c79ac68b0adc1c90e461e9495b0ff",
+      "sha256": "5af503aba315553b6dbdb66fd0f99eb98912610449ea3d8daaa0d5b127c9f9dc",
       "maximum_triangles": 200000,
-      "triangles": 13676,
-      "headroom_triangles": 186324,
+      "triangles": 11532,
+      "headroom_triangles": 188468,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -146,7 +146,7 @@
         {
           "node": 1,
           "mesh": 1,
-          "triangles": 12,
+          "triangles": 72,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -182,7 +182,7 @@
         {
           "node": 5,
           "mesh": 5,
-          "triangles": 3700,
+          "triangles": 3904,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -211,7 +211,7 @@
         {
           "node": 7,
           "mesh": 7,
-          "triangles": 3920,
+          "triangles": 1512,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -230,10 +230,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\connections.glb",
       "category": null,
-      "sha256": "f9bf2aec7de18ab8c9f3ff4f095b34a9c8fe756732946564ee598fe14f3b182d",
+      "sha256": "49158c0933f907c165c98246f5294ffdd13b605e2def078e49663b63b21c7a73",
       "maximum_triangles": 200000,
-      "triangles": 44208,
-      "headroom_triangles": 155792,
+      "triangles": 38032,
+      "headroom_triangles": 161968,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -246,7 +246,7 @@
         {
           "node": 0,
           "mesh": 0,
-          "triangles": 312,
+          "triangles": 1176,
           "attributes": [
             "NORMAL",
             "POSITION",
@@ -274,7 +274,7 @@
         {
           "node": 3,
           "mesh": 3,
-          "triangles": 17480,
+          "triangles": 15816,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -283,7 +283,7 @@
         {
           "node": 4,
           "mesh": 4,
-          "triangles": 25860,
+          "triangles": 20484,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -302,10 +302,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\core_cavern.glb",
       "category": null,
-      "sha256": "857b5ecca44a2e240899f4d2c41f17cc5c18bb13761ffed232c232a0a2af9b94",
+      "sha256": "1903354f485e68698587179b42476adefd296d41f1cc3022aecf888fe1529f11",
       "maximum_triangles": 200000,
-      "triangles": 18440,
-      "headroom_triangles": 181560,
+      "triangles": 14684,
+      "headroom_triangles": 185316,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -364,7 +364,7 @@
         {
           "node": 3,
           "mesh": 3,
-          "triangles": 24,
+          "triangles": 92,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -402,7 +402,7 @@
         {
           "node": 7,
           "mesh": 7,
-          "triangles": 6024,
+          "triangles": 5184,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -451,7 +451,7 @@
         {
           "node": 10,
           "mesh": 10,
-          "triangles": 4824,
+          "triangles": 1840,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -470,10 +470,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\crystal_workings.glb",
       "category": null,
-      "sha256": "4bcbe3bd17b16fc009d9c837a240b7366f15d63d61734c6637670deaa5063597",
+      "sha256": "49a9f245ce1505abb947cd65e9b56201cbf9cc7a603ee80e54cdb700a5bb8bd3",
       "maximum_triangles": 200000,
-      "triangles": 24072,
-      "headroom_triangles": 175928,
+      "triangles": 19244,
+      "headroom_triangles": 180756,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -532,7 +532,7 @@
         {
           "node": 3,
           "mesh": 3,
-          "triangles": 24,
+          "triangles": 116,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -570,7 +570,7 @@
         {
           "node": 7,
           "mesh": 7,
-          "triangles": 8340,
+          "triangles": 7248,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -619,7 +619,7 @@
         {
           "node": 10,
           "mesh": 10,
-          "triangles": 7268,
+          "triangles": 3440,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -638,7 +638,7 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\details.glb",
       "category": null,
-      "sha256": "785075124ca6bd8676f5eec404258252bf1e1208e5de02502d8cf58c7448f103",
+      "sha256": "9a9497a59dfb479a555f1bee86b2e8d835074aedf9bd2f75dd6103e8518e18b1",
       "maximum_triangles": 200000,
       "triangles": 760,
       "headroom_triangles": 199240,
@@ -693,10 +693,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\entrance_camp.glb",
       "category": null,
-      "sha256": "34819029d0b98684e6bc81dd6eb5e50d40d776c763de2e9811553c5f53559885",
+      "sha256": "dc31e4da4d0858a2798e7cf6db55ecad135a086b8d08ec19cfe968689bd9a638",
       "maximum_triangles": 200000,
-      "triangles": 22408,
-      "headroom_triangles": 177592,
+      "triangles": 19037,
+      "headroom_triangles": 180963,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -745,7 +745,7 @@
         {
           "node": 2,
           "mesh": 2,
-          "triangles": 4,
+          "triangles": 29,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -754,7 +754,7 @@
         {
           "node": 3,
           "mesh": 3,
-          "triangles": 24,
+          "triangles": 100,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -763,7 +763,7 @@
         {
           "node": 4,
           "mesh": 4,
-          "triangles": 72,
+          "triangles": 144,
           "attributes": [
             "COLOR_0",
             "NORMAL",
@@ -783,7 +783,7 @@
         {
           "node": 6,
           "mesh": 6,
-          "triangles": 4876,
+          "triangles": 5228,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -792,7 +792,7 @@
         {
           "node": 7,
           "mesh": 7,
-          "triangles": 7376,
+          "triangles": 72,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -801,6 +801,15 @@
         {
           "node": 8,
           "mesh": 8,
+          "triangles": 6572,
+          "attributes": [
+            "NORMAL",
+            "POSITION"
+          ]
+        },
+        {
+          "node": 9,
+          "mesh": 9,
           "triangles": 96,
           "attributes": [
             "NORMAL",
@@ -809,29 +818,9 @@
           ]
         },
         {
-          "node": 8,
-          "mesh": 8,
+          "node": 9,
+          "mesh": 9,
           "triangles": 384,
-          "attributes": [
-            "NORMAL",
-            "POSITION",
-            "TEXCOORD_0"
-          ]
-        },
-        {
-          "node": 9,
-          "mesh": 9,
-          "triangles": 216,
-          "attributes": [
-            "NORMAL",
-            "POSITION",
-            "TEXCOORD_0"
-          ]
-        },
-        {
-          "node": 9,
-          "mesh": 9,
-          "triangles": 432,
           "attributes": [
             "NORMAL",
             "POSITION",
@@ -841,7 +830,27 @@
         {
           "node": 10,
           "mesh": 10,
-          "triangles": 6464,
+          "triangles": 216,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 10,
+          "mesh": 10,
+          "triangles": 432,
+          "attributes": [
+            "NORMAL",
+            "POSITION",
+            "TEXCOORD_0"
+          ]
+        },
+        {
+          "node": 11,
+          "mesh": 11,
+          "triangles": 3300,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -849,7 +858,7 @@
         }
       ],
       "skins": [],
-      "materials": 11,
+      "materials": 12,
       "animations": [],
       "failures": [],
       "warnings": [],
@@ -1039,7 +1048,7 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\mine_cart.glb",
       "category": null,
-      "sha256": "eb61c66fa0e5677a1f5079293c19cd77ccab63e40a8a755d7122f7f9502d6d05",
+      "sha256": "8f9ac88b8db1a839c8431f630af088b9a463d24cda06f2b0846b68322ffa7ec3",
       "maximum_triangles": 4096,
       "triangles": 724,
       "headroom_triangles": 3372,
@@ -1535,10 +1544,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\rail_workings.glb",
       "category": null,
-      "sha256": "5078a1e9cc7a143a32914f55168058d8e808693313f156f6d3f9eb6cbf01127c",
+      "sha256": "6b89c5b92b6a30be108061015436042170739e2556e16edb4e2daf3ab1df8f7a",
       "maximum_triangles": 200000,
-      "triangles": 21854,
-      "headroom_triangles": 178146,
+      "triangles": 18106,
+      "headroom_triangles": 181894,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -1587,7 +1596,7 @@
         {
           "node": 2,
           "mesh": 2,
-          "triangles": 24,
+          "triangles": 100,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -1625,7 +1634,7 @@
         {
           "node": 6,
           "mesh": 6,
-          "triangles": 6992,
+          "triangles": 6088,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -1674,7 +1683,7 @@
         {
           "node": 9,
           "mesh": 9,
-          "triangles": 6192,
+          "triangles": 3272,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -1693,10 +1702,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\storage.glb",
       "category": null,
-      "sha256": "e925fc7d8e4825bce1ccf78486d9e37e0b874769a43ee875eac587a584aac453",
+      "sha256": "75c11008746db74dbaaf6601cae418d6066f50d4112f19fc40c6709027f49232",
       "maximum_triangles": 200000,
-      "triangles": 23508,
-      "headroom_triangles": 176492,
+      "triangles": 20852,
+      "headroom_triangles": 179148,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -1745,7 +1754,7 @@
         {
           "node": 2,
           "mesh": 2,
-          "triangles": 24,
+          "triangles": 92,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -1792,7 +1801,7 @@
         {
           "node": 7,
           "mesh": 7,
-          "triangles": 7368,
+          "triangles": 7500,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -1841,7 +1850,7 @@
         {
           "node": 10,
           "mesh": 10,
-          "triangles": 8108,
+          "triangles": 5252,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -1860,10 +1869,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\water.glb",
       "category": null,
-      "sha256": "d604cc59774d4068ffbe5580292a9530a59fad6ed042061ac91944a0b7929bfc",
+      "sha256": "9168168c8ed07a4dddaefb8ca785a2f2cf43a8b2f98dc281b615f067b8db8299",
       "maximum_triangles": 200000,
-      "triangles": 1704,
-      "headroom_triangles": 198296,
+      "triangles": 2264,
+      "headroom_triangles": 197736,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -1905,10 +1914,11 @@
         {
           "node": 3,
           "mesh": 3,
-          "triangles": 72,
+          "triangles": 560,
           "attributes": [
             "NORMAL",
-            "POSITION"
+            "POSITION",
+            "TEXCOORD_0"
           ]
         },
         {
@@ -1919,10 +1929,19 @@
             "NORMAL",
             "POSITION"
           ]
+        },
+        {
+          "node": 5,
+          "mesh": 5,
+          "triangles": 72,
+          "attributes": [
+            "NORMAL",
+            "POSITION"
+          ]
         }
       ],
       "skins": [],
-      "materials": 5,
+      "materials": 6,
       "animations": [],
       "failures": [],
       "warnings": [],
@@ -1933,10 +1952,10 @@
       "schema_version": 1,
       "file": "D:\\RPGGAME\\assets\\models\\mine_reference\\waterway.glb",
       "category": null,
-      "sha256": "7c2de518eec3cfbe05534accbd921c1288cf76584ec2b42d0cb083177648c8b8",
+      "sha256": "c2dc7ec64385e48526b7609752bc3201116a77648e628de9f096be71be7361c8",
       "maximum_triangles": 200000,
-      "triangles": 19576,
-      "headroom_triangles": 180424,
+      "triangles": 15852,
+      "headroom_triangles": 184148,
       "triangle_gate": "PASS",
       "status": "PASS",
       "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
@@ -1985,7 +2004,7 @@
         {
           "node": 2,
           "mesh": 2,
-          "triangles": 24,
+          "triangles": 92,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -2023,7 +2042,7 @@
         {
           "node": 6,
           "mesh": 6,
-          "triangles": 6084,
+          "triangles": 5212,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -2072,7 +2091,7 @@
         {
           "node": 9,
           "mesh": 9,
-          "triangles": 5068,
+          "triangles": 2148,
           "attributes": [
             "NORMAL",
             "POSITION"
@@ -2089,9 +2108,9 @@
     }
   ],
   "scene_triangle_budget": 200000,
-  "scene_triangles": 199598,
+  "scene_triangles": 168959,
   "source_master": "source_assets/mine_reference_20261024/mine_reference_master.blend",
-  "master_sha256": "aab4077fa8f1ce942fcc26eca2ddf01b1c0bd4ee845443f7be6951b5239694a3",
+  "master_sha256": "d1d273f950e7278236caab842fcec2a85bfefc093dc4cb3c7d4bd92c4eba6e36",
   "reference_sha256": "2fb4748cedb580b9962b8197fb9f67f0a5083062e6ef5067c5ddb75829f8284b",
   "static_assets": true,
   "uv_note": "World-position shaders and constant-colour materials; UV not required. Not a UV quality pass.",

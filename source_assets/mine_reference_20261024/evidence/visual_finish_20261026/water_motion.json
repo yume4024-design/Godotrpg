@@ -1,0 +1,24 @@
+{
+  "water": {
+    "roi": [
+      50,
+      520,
+      260,
+      660
+    ],
+    "mean_channel_difference": 0.58859410430839,
+    "pixels_changed_gt3": 0.016802721088435373
+  },
+  "static_rock": {
+    "roi": [
+      100,
+      170,
+      280,
+      330
+    ],
+    "mean_channel_difference": 0.0,
+    "pixels_changed_gt3": 0.0
+  },
+  "interval_seconds": 0.75,
+  "method": "Fixed native camera, read-only RGB difference; confirms temporal change in this water ROI, not fluid physics or GPU performance."
+}

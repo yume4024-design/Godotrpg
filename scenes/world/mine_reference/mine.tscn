@@ -1,4 +1,5 @@
 [gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/world/mine_reference_geometry.gd" id="CrystalSurface"]
 [ext_resource type="Script" path="res://scripts/world/exploration_map.gd" id="Map"]
 [ext_resource type="Script" path="res://scripts/world/interactable.gd" id="Interact"]
 [ext_resource type="PackedScene" path="res://scenes/world/mine_reference/geometry.tscn" id="Geometry"]
@@ -12,15 +13,15 @@ height = 3.2
 background_mode = 1
 background_color = Color(0.035,0.055,0.09,1)
 ambient_light_source = 3
-ambient_light_color = Color(0.58,0.68,0.84,1)
-ambient_light_energy = 0.48
+ambient_light_color = Color(0.54,0.60,0.70,1)
+ambient_light_energy = 0.38
 reflected_light_source = 2
 [node name="Mine" type="Node3D" node_paths=PackedStringArray("default_spawn","entrance_spawn","story_zone","extra_story_zones","sequence_target","sequence_light")]
 script = ExtResource("Map")
 map_id = &"mine"
 display_name = "廢棄礦坑 · 地底星晶坑道"
 environment = SubResource("Environment")
-sunlight = 0.22
+sunlight = 0.14
 default_camera_size = 22.0
 default_spawn = NodePath("Entrance")
 entrance_spawn = NodePath("Entrance")
@@ -56,6 +57,8 @@ label = "調查核心古代星晶"
 radius = 3.0
 required_flag = &"e005_done"
 [node name="Prism" parent="Crystal" instance=ExtResource("CrystalArt")]
+script = ExtResource("CrystalSurface")
+build_collisions = false
 scale = Vector3(2.2,2.2,2.2)
 [node name="Glow" type="OmniLight3D" parent="Crystal"]
 position = Vector3(0,3,0)
@@ -78,90 +81,90 @@ shape = SubResource("CrystalCollision")
 [node name="WarmLight0" type="OmniLight3D" parent="."]
 position = Vector3(-43, 3, 31)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight1" type="OmniLight3D" parent="."]
 position = Vector3(-43, 6, -10)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight2" type="OmniLight3D" parent="."]
 position = Vector3(-29, 6, -12)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight3" type="OmniLight3D" parent="."]
 position = Vector3(-29, 10, -36)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight4" type="OmniLight3D" parent="."]
 position = Vector3(-2, 10, -37)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight5" type="OmniLight3D" parent="."]
 position = Vector3(29, 10, -26)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight6" type="OmniLight3D" parent="."]
 position = Vector3(39, 10, -18)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight7" type="OmniLight3D" parent="."]
 position = Vector3(28, 3, 22)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight8" type="OmniLight3D" parent="."]
 position = Vector3(-2, 3, 38)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="WarmLight9" type="OmniLight3D" parent="."]
 position = Vector3(43, 4, 45)
 light_color = Color(1,0.51,0.16,1)
-light_energy = 3.0
-omni_range = 12.0
+light_energy = 3.8
+omni_range = 13.0
 shadow_enabled = false
 light_bake_mode = 0
 [node name="BlueLight0" type="OmniLight3D" parent="."]
 position = Vector3(-12, 10, -35)
 light_color = Color(0.12,0.55,1,1)
-light_energy = 2.5
-omni_range = 14.0
+light_energy = 1.6
+omni_range = 11.0
 shadow_enabled = false
 [node name="BlueLight1" type="OmniLight3D" parent="."]
 position = Vector3(10, -2, 0)
 light_color = Color(0.12,0.55,1,1)
-light_energy = 2.5
-omni_range = 14.0
+light_energy = 1.6
+omni_range = 11.0
 shadow_enabled = false
 [node name="BlueLight2" type="OmniLight3D" parent="."]
 position = Vector3(42, 4, 42)
 light_color = Color(0.12,0.55,1,1)
-light_energy = 2.5
-omni_range = 14.0
+light_energy = 1.6
+omni_range = 11.0
 shadow_enabled = false
 [node name="CrystalBat" type="Node3D" parent="."]
 script = ExtResource("Interact")
@@ -181,3 +184,21 @@ battle_id = &"X004"
 required_flag = &"e004_done"
 label = "坑道魔物 · 挑戰（無獎勵）"
 [node name="Appearance" parent="OreBeetle" instance=ExtResource("Beetle")]
+[node name="CampFireLight" type="OmniLight3D" parent="."]
+position = Vector3(-34, 1.5, 36)
+light_color = Color(1,0.51,0.16,1)
+light_energy = 1.5
+omni_range = 7
+shadow_enabled = false
+[node name="CoreTorchLeft" type="OmniLight3D" parent="."]
+position = Vector3(34, 3, 43)
+light_color = Color(1,0.51,0.16,1)
+light_energy = 2.0
+omni_range = 10
+shadow_enabled = false
+[node name="CoreTorchRight" type="OmniLight3D" parent="."]
+position = Vector3(48, 3, 46)
+light_color = Color(1,0.51,0.16,1)
+light_energy = 2.0
+omni_range = 10
+shadow_enabled = false

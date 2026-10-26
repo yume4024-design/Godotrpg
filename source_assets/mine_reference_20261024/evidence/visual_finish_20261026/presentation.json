@@ -1,0 +1,379 @@
+{
+  "script_sha256": "ef421b2b30538d23c6fda8986428da998ce6044fc0d18602beca94fda88c459e",
+  "organic_ledges": [
+    {
+      "zone": "entrance_camp",
+      "rim_vertices": 22,
+      "maximum_verge_m": 1.1,
+      "walkable_bounds": [
+        -48,
+        -24,
+        22,
+        42
+      ]
+    },
+    {
+      "zone": "rail_workings",
+      "rim_vertices": 22,
+      "maximum_verge_m": 1.1,
+      "walkable_bounds": [
+        -48,
+        -24,
+        -16,
+        4
+      ]
+    },
+    {
+      "zone": "bridge_junction",
+      "rim_vertices": 12,
+      "maximum_verge_m": 1.1,
+      "walkable_bounds": [
+        20,
+        30,
+        -4,
+        6
+      ]
+    },
+    {
+      "zone": "crystal_workings",
+      "rim_vertices": 26,
+      "maximum_verge_m": 1.1,
+      "walkable_bounds": [
+        -36,
+        4,
+        -42,
+        -26
+      ]
+    },
+    {
+      "zone": "storage",
+      "rim_vertices": 20,
+      "maximum_verge_m": 1.1,
+      "walkable_bounds": [
+        20,
+        44,
+        -30,
+        -12
+      ]
+    },
+    {
+      "zone": "waterway",
+      "rim_vertices": 20,
+      "maximum_verge_m": 1.1,
+      "walkable_bounds": [
+        20,
+        44,
+        12,
+        30
+      ]
+    },
+    {
+      "zone": "collapse",
+      "rim_vertices": 18,
+      "maximum_verge_m": 1.1,
+      "walkable_bounds": [
+        -8,
+        12,
+        26,
+        44
+      ]
+    },
+    {
+      "zone": "core_cavern",
+      "rim_vertices": 20,
+      "maximum_verge_m": 1.1,
+      "walkable_bounds": [
+        24,
+        50,
+        34,
+        50
+      ]
+    }
+  ],
+  "workplace_details": [
+    "supported camp canvas, bedrolls, stone fire ring and supply bench",
+    "camp torch moved outside canvas",
+    "supported warning sign and fractured mine frame",
+    "storage canopy and lumber stock",
+    "two core torches moved clear of crystal faces",
+    "core approach torch moved outside the walking lane"
+  ],
+  "water_foam": [
+    {
+      "name": "CascadeRipple",
+      "position": [
+        10,
+        -6.94,
+        -25.7
+      ]
+    },
+    {
+      "name": "CascadeRipple",
+      "position": [
+        10,
+        -6.94,
+        -25.7
+      ]
+    },
+    {
+      "name": "CascadeRipple",
+      "position": [
+        10,
+        -6.94,
+        -25.7
+      ]
+    },
+    {
+      "name": "CascadeRipple",
+      "position": [
+        19,
+        -5.44,
+        17.0
+      ]
+    },
+    {
+      "name": "CascadeRipple",
+      "position": [
+        19,
+        -5.44,
+        17.0
+      ]
+    },
+    {
+      "name": "CascadeRipple",
+      "position": [
+        19,
+        -5.44,
+        17.0
+      ]
+    },
+    {
+      "name": "RockWaterWake",
+      "position": [
+        6,
+        -6.94,
+        -16
+      ]
+    },
+    {
+      "name": "RockWaterWake",
+      "position": [
+        15,
+        -6.94,
+        3
+      ]
+    },
+    {
+      "name": "RockWaterWake",
+      "position": [
+        21,
+        -5.44,
+        21
+      ]
+    },
+    {
+      "name": "RockWaterWake",
+      "position": [
+        40,
+        -5.44,
+        29
+      ]
+    }
+  ],
+  "removed_small_bevels": 1072,
+  "new_collisions": 0,
+  "flame_centers": [
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -45.5,
+        2.5199999809265137,
+        37.0
+      ]
+    },
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -33.0,
+        2.5199999809265137,
+        38.0
+      ]
+    },
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -34.12000274658203,
+        0.5799999833106995,
+        36.0
+      ]
+    },
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -33.849998474121094,
+        0.5799999833106995,
+        36.0
+      ]
+    },
+    {
+      "zone": "rail_workings",
+      "position": [
+        -44.5,
+        5.519999980926514,
+        -11.0
+      ]
+    },
+    {
+      "zone": "rail_workings",
+      "position": [
+        -37.5,
+        5.519999980926514,
+        -11.0
+      ]
+    },
+    {
+      "zone": "crystal_workings",
+      "position": [
+        -31.5,
+        9.520000457763672,
+        -37.0
+      ]
+    },
+    {
+      "zone": "crystal_workings",
+      "position": [
+        -24.5,
+        9.520000457763672,
+        -37.0
+      ]
+    },
+    {
+      "zone": "storage",
+      "position": [
+        34.5,
+        9.520000457763672,
+        -25.0
+      ]
+    },
+    {
+      "zone": "storage",
+      "position": [
+        41.5,
+        9.520000457763672,
+        -25.0
+      ]
+    },
+    {
+      "zone": "waterway",
+      "position": [
+        34.5,
+        2.5199999809265137,
+        27.0
+      ]
+    },
+    {
+      "zone": "waterway",
+      "position": [
+        41.5,
+        2.5199999809265137,
+        27.0
+      ]
+    },
+    {
+      "zone": "core_cavern",
+      "position": [
+        34.0,
+        2.5199999809265137,
+        43.0
+      ]
+    },
+    {
+      "zone": "core_cavern",
+      "position": [
+        48.0,
+        2.5199999809265137,
+        46.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        -47.0,
+        2.5199999809265137,
+        25.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        -26.0,
+        2.5199999809265137,
+        38.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        -45.0,
+        5.519999980926514,
+        -3.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        -27.0,
+        9.520000457763672,
+        -30.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        -2.0,
+        9.520000457763672,
+        -29.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        23.0,
+        9.520000457763672,
+        -18.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        21.0,
+        2.5199999809265137,
+        24.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        27.0,
+        2.5199999809265137,
+        40.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        -46.0,
+        2.5199999809265137,
+        25.0
+      ]
+    },
+    {
+      "zone": "details",
+      "position": [
+        -46.0,
+        2.5199999809265137,
+        31.0
+      ]
+    }
+  ]
+}

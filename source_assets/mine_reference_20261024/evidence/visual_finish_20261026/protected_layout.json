@@ -1,0 +1,9 @@
+{
+  "baseline_commit": "cb49ea3d54e5459ab4da3f7983337ba6f35068b7",
+  "unchanged_collisions": true,
+  "collision_count": 501,
+  "layout_version": 4,
+  "layout_sha256": "79d3389414b99e9b6f2134750e29c56a4be649eebabf7efdb5307b62eb40159d",
+  "collision_sha256": "03e9e14b66186a0068299550e69bf084bae94fe2fb3ebc00dcf6582a4705c1b4",
+  "before_torch_master_sha256": "c15530684be7d4902386518664aa62ed36f2a4bd080274f9910c51a49a05532f"
+}

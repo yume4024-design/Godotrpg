@@ -120,4 +120,7 @@ def refine_mine(api):
     receipt['continuity']=refine_continuity(api,clear)
     from mine_reference_finish import finish_cavern
     receipt['finish']=finish_cavern(api,clear)
+    from mine_reference_presentation import finish_presentation
+    api['art_receipt_pending']=receipt
+    receipt['presentation']=finish_presentation(api,clear)
     return receipt

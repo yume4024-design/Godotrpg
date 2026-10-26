@@ -1,0 +1,339 @@
+{
+  "master_sha256": "d1d273f950e7278236caab842fcec2a85bfefc093dc4cb3c7d4bd92c4eba6e36",
+  "earth_shells": [
+    {
+      "zone": "entrance_camp",
+      "unpaired_or_inconsistent_edges": 0
+    },
+    {
+      "zone": "rail_workings",
+      "unpaired_or_inconsistent_edges": 0
+    },
+    {
+      "zone": "bridge_junction",
+      "unpaired_or_inconsistent_edges": 0
+    },
+    {
+      "zone": "crystal_workings",
+      "unpaired_or_inconsistent_edges": 0
+    },
+    {
+      "zone": "storage",
+      "unpaired_or_inconsistent_edges": 0
+    },
+    {
+      "zone": "waterway",
+      "unpaired_or_inconsistent_edges": 0
+    },
+    {
+      "zone": "collapse",
+      "unpaired_or_inconsistent_edges": 0
+    },
+    {
+      "zone": "core_cavern",
+      "unpaired_or_inconsistent_edges": 0
+    }
+  ],
+  "floor_support": [
+    {
+      "zone": "entrance_camp",
+      "samples": 195
+    },
+    {
+      "zone": "rail_workings",
+      "samples": 195
+    },
+    {
+      "zone": "bridge_junction",
+      "samples": 49
+    },
+    {
+      "zone": "crystal_workings",
+      "samples": 240
+    },
+    {
+      "zone": "storage",
+      "samples": 165
+    },
+    {
+      "zone": "waterway",
+      "samples": 165
+    },
+    {
+      "zone": "collapse",
+      "samples": 143
+    },
+    {
+      "zone": "core_cavern",
+      "samples": 160
+    }
+  ],
+  "flame_clearance": [
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -45.5,
+        2.5199999809265137,
+        37.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -33.0,
+        2.5199999809265137,
+        38.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -34.12000274658203,
+        0.5799999833106995,
+        36.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "entrance_camp",
+      "position": [
+        -33.849998474121094,
+        0.5799999833106995,
+        36.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "rail_workings",
+      "position": [
+        -44.5,
+        5.519999980926514,
+        -11.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "rail_workings",
+      "position": [
+        -37.5,
+        5.519999980926514,
+        -11.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "crystal_workings",
+      "position": [
+        -31.5,
+        9.520000457763672,
+        -37.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "crystal_workings",
+      "position": [
+        -24.5,
+        9.520000457763672,
+        -37.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "storage",
+      "position": [
+        34.5,
+        9.520000457763672,
+        -25.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "storage",
+      "position": [
+        41.5,
+        9.520000457763672,
+        -25.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "waterway",
+      "position": [
+        34.5,
+        2.5199999809265137,
+        27.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "waterway",
+      "position": [
+        41.5,
+        2.5199999809265137,
+        27.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "core_cavern",
+      "position": [
+        34.0,
+        2.5199999809265137,
+        43.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "core_cavern",
+      "position": [
+        48.0,
+        2.5199999809265137,
+        46.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        -47.0,
+        2.5199999809265137,
+        25.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        -26.0,
+        2.5199999809265137,
+        38.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        -45.0,
+        5.519999980926514,
+        -3.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        -27.0,
+        9.520000457763672,
+        -30.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        -2.0,
+        9.520000457763672,
+        -29.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        23.0,
+        9.520000457763672,
+        -18.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        21.0,
+        2.5199999809265137,
+        24.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        27.0,
+        2.5199999809265137,
+        40.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        -46.0,
+        2.5199999809265137,
+        25.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    },
+    {
+      "zone": "details",
+      "position": [
+        -46.0,
+        2.5199999809265137,
+        31.0
+      ],
+      "near_surface": false,
+      "ray_crossings": 0,
+      "clear": true
+    }
+  ],
+  "failures": [],
+  "method": "Closed edge winding for earth mesh; original rectangle sampled at <=1.8m including edges, exact original floor height; flame centres at least .30m from canvas/crystal triangles and outside closed crystals via odd/even ray count. Open canvas uses surface distance only. Sampling is not a whole-world collision certificate."
+}

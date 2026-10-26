@@ -64,13 +64,14 @@ func _run() -> void:
 	player.movement_camera = camera
 	player.reset_to(map.spawn_position(&"entrance"))
 	await create_timer(.4).timeout
+	_verify_visual_surfaces()
 	_check(DisplayServer.get_name() != "headless","Graphical traversal required")
 	_check(map.map_id == &"mine" and map.targets.size() == 4,"Mine identity and original interactable kinds")
 	_check(player.is_on_floor(),"Entrance grounds real 1.95m player")
 	var overview := Camera3D.new()
 	world.add_child(overview)
 	overview.projection = Camera3D.PROJECTION_ORTHOGONAL
-	overview.size = 143
+	overview.size = 128
 	overview.far = 400
 	overview.position = Vector3(105,138,138)
 	overview.look_at(Vector3(0,0,2))
@@ -79,7 +80,7 @@ func _run() -> void:
 	camera.make_current()
 	if "--mine-capture-only" in OS.get_cmdline_user_args():
 		await _capture_review()
-		print("MINE_CAPTURE_RESULT views=14 failures=",failures)
+		print("MINE_CAPTURE_RESULT views=18 failures=",failures)
 		quit(0 if failures == 0 else 1)
 		return
 	var layout: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://data/world/mine_reference_layout.json"))
@@ -111,6 +112,25 @@ func _sample() -> void:
 	frame_times.append((now-last_usec)/1000.0)
 	last_usec = now
 
+func _verify_visual_surfaces() -> void:
+	var paths: Dictionary = {}
+	for node: Node in map.find_children("*","MeshInstance3D",true,false):
+		var mesh := node as MeshInstance3D
+		for i: int in mesh.mesh.get_surface_count():
+			var material: Material = mesh.get_active_material(i)
+			if material is ShaderMaterial and material.shader != null:
+				paths[material.shader.resource_path] = true
+	for path: String in ["mine/water.gdshader","mine/ripple.gdshader","mine/faceted_rock.gdshader","mine/wood.gdshader","mine/flame.gdshader","mine/crystal.gdshader","greystone/reference_fall.gdshader"]:
+		_check(paths.has("res://assets/shaders/"+path),"Actual mine surface uses "+path)
+	var quest_crystal: Node3D = map.get_node("Crystal/Prism")
+	var styled: bool = false
+	for node: Node in quest_crystal.find_children("*","MeshInstance3D",true,false):
+		var mesh := node as MeshInstance3D
+		for i: int in mesh.mesh.get_surface_count():
+			var material: Material = mesh.get_active_material(i)
+			if material is ShaderMaterial and material.shader.resource_path=="res://assets/shaders/mine/crystal.gdshader":styled=true
+	_check(styled,"Interactive ancient crystal shares the mine material treatment")
+
 func _capture_review() -> void:
 	var places: Dictionary = {"camp":Vector3(-38,.1,30),"rail":Vector3(-37,3.1,-7),"crossing":Vector3(-4,3.1,0),"crystal":Vector3(-17,7.1,-32),"storage":Vector3(30,7.1,-22),"waterway":Vector3(32,.1,21),"collapse":Vector3(0,.1,36),"core":Vector3(36,.1,39),"cascade":Vector3(25,3.1,0)}
 	for label: String in places:
@@ -135,6 +155,11 @@ func _capture_review() -> void:
 	review.global_position = Vector3(-36,8,0)
 	review.look_at(Vector3(-41,5,-14))
 	await _capture("review_tunnel_depth")
+	for row: Array in [["camp_detail",Vector3(-25,13,50),Vector3(-35,1,37),19.0],["storage_detail",Vector3(34,16,-7),Vector3(34,8,-22),16.0],["ledge_detail",Vector3(-10,10,40),Vector3(-32,-2,35),19.0],["water_surface",Vector3(35,9,32),Vector3(28,-5,21),18.0]]:
+		review.size=float(row[3])
+		review.global_position=row[1]
+		review.look_at(row[2])
+		await _capture("review_"+String(row[0]))
 
 func _walk(route: Array,label: String,running: bool) -> bool:
 	_release()

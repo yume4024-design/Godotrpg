@@ -1,0 +1,7 @@
+{
+  "master": "D:\\RPGGAME\\source_assets\\mine_reference_20261024\\mine_reference_master.blend",
+  "samples": 58275,
+  "spacing_m": 0.15,
+  "hits": [],
+  "method": "Actual triangle BVH, vertical body rays at centre, four axial and four diagonal offsets; four cross-body diameters at heights .55/1.05/1.6m catch tall thin posts. Body radius .28m, configured route spacing. Includes existing geometry; excludes hidden module assets. Sampled, not continuous capsule or camera certification."
+}

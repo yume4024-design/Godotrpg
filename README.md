@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-26 礦坑整體畫面修整已更新來源：[八區清單、18張實景與264＋8項驗證](docs/MINE_VISUAL_FINISH_REPORT.md)。使用`./tools/godot.ps1 -Mode RunMineReference`查看；本輪先畫面、不打包，RC2不含最新修整，人工驗收暫停。
+
 2026-10-26 礦坑八區造景候選與 Windows RC2 已完成整合：深坑道、岩層、彎軌、採掘工具與地下水；[264項來源回歸／137項包內序章／32項重啟及已知差距](docs/MINE_SCENE_COMPLETION_REPORT.md)，[啟動指南](docs/MINE_REFERENCE_GUIDE.md)。人工美術與實體輸入驗收維持暫停。
 
 2026-10-26 灰石村完整場景候選已接入原始專案：乾淨木框建築、連續瀑布與庭院；[307項回歸與實景](docs/GREYSTONE_SCENE_COMPLETION_REPORT.md)。[Windows RC3啟動指南](docs/GREYSTONE_REFERENCE_20261024_GUIDE.md)：143項序章／28項重啟讀檔通過；舊rc2保留，人工驗收暫停。

@@ -1,0 +1,178 @@
+{
+  "master_sha256": "d1d273f950e7278236caab842fcec2a85bfefc093dc4cb3c7d4bd92c4eba6e36",
+  "meshes": [
+    {
+      "mesh": "entrance_camp_Mine_Rock",
+      "closed_components": 117,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "rail_workings_Mine_Rock",
+      "closed_components": 109,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "bridge_junction_Mine_Rock",
+      "closed_components": 51,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "crystal_workings_Mine_Rock",
+      "closed_components": 90,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "storage_Mine_Rock",
+      "closed_components": 102,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "waterway_Mine_Rock",
+      "closed_components": 118,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "collapse_Mine_Rock",
+      "closed_components": 113,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "core_cavern_Mine_Rock",
+      "closed_components": 96,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "connections_Mine_Rock",
+      "closed_components": 16,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "water_Mine_Rock",
+      "closed_components": 6,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "backdrop_Mine_Rock",
+      "closed_components": 88,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.050",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.051",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.052",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.053",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.054",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.055",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.056",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.057",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.058",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    },
+    {
+      "mesh": "OreInCart.059",
+      "closed_components": 1,
+      "unpaired_edges": 0,
+      "degenerate_faces": 0,
+      "winding_errors": 0,
+      "nonpositive_components": 0
+    }
+  ],
+  "closed_rock_components": 916,
+  "out_of_bounds_meshes": [],
+  "horizontal_limit_m": 64,
+  "failures": [],
+  "method": "Actual Blender rock meshes: paired edges, consistent edge winding, nondegenerate faces and positive signed component volume; visible geometry within the 56m extent plus 8m cave-envelope allowance. Supports concave strata; no geometry changed."
+}

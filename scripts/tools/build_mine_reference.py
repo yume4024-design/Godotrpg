@@ -361,7 +361,7 @@ for name,col in list(collections.items()):
 
 # Authored overview lighting and orthographic camera remain editable in .blend.
 review=collection('Review')
-for index,p in enumerate(LAYOUT['lights']):
+for index,p in enumerate(LAYOUT['lights']+[[-34,1.5,36],[34,3,43],[48,3,46]]):
     light=bpy.data.lights.new('WarmTorch'+str(index),'POINT');light.energy=450;light.color=(1,.48,.12);light.shadow_soft_size=1
     obj=bpy.data.objects.new(light.name,light);review.objects.link(obj);obj.location=B(p)
 for p in [(-12,10,-35),(40,5,42),(10,-2,0)]:

@@ -1,62 +1,62 @@
 {
   "layout_version": 4,
-  "builder_sha256": "9bfc45c1f62f6afcb283931a890ba9fa0ae116477da5055934cd5d6a582186e8",
+  "builder_sha256": "feddd4766db529e6f85329c3243dd13db44a4e894174259ae0fcd3d565511ee5",
   "layout_sha256": "79d3389414b99e9b6f2134750e29c56a4be649eebabf7efdb5307b62eb40159d",
   "source_reference_sha256": "2fb4748cedb580b9962b8197fb9f67f0a5083062e6ef5067c5ddb75829f8284b",
   "zones": [
     {
       "zone": "entrance_camp",
       "path": "res://assets/models/mine_reference/entrance_camp.glb",
-      "meshes": 11,
-      "triangles": 22408
+      "meshes": 12,
+      "triangles": 19037
     },
     {
       "zone": "rail_workings",
       "path": "res://assets/models/mine_reference/rail_workings.glb",
       "meshes": 10,
-      "triangles": 21854
+      "triangles": 18106
     },
     {
       "zone": "bridge_junction",
       "path": "res://assets/models/mine_reference/bridge_junction.glb",
       "meshes": 5,
-      "triangles": 4944
+      "triangles": 4148
     },
     {
       "zone": "crystal_workings",
       "path": "res://assets/models/mine_reference/crystal_workings.glb",
       "meshes": 11,
-      "triangles": 24072
+      "triangles": 19244
     },
     {
       "zone": "storage",
       "path": "res://assets/models/mine_reference/storage.glb",
       "meshes": 11,
-      "triangles": 23508
+      "triangles": 20852
     },
     {
       "zone": "waterway",
       "path": "res://assets/models/mine_reference/waterway.glb",
       "meshes": 10,
-      "triangles": 19576
+      "triangles": 15852
     },
     {
       "zone": "collapse",
       "path": "res://assets/models/mine_reference/collapse.glb",
       "meshes": 8,
-      "triangles": 13676
+      "triangles": 11532
     },
     {
       "zone": "core_cavern",
       "path": "res://assets/models/mine_reference/core_cavern.glb",
       "meshes": 11,
-      "triangles": 18440
+      "triangles": 14684
     },
     {
       "zone": "connections",
       "path": "res://assets/models/mine_reference/connections.glb",
       "meshes": 5,
-      "triangles": 44208
+      "triangles": 38032
     },
     {
       "zone": "details",
@@ -67,8 +67,8 @@
     {
       "zone": "water",
       "path": "res://assets/models/mine_reference/water.glb",
-      "meshes": 5,
-      "triangles": 1704
+      "meshes": 6,
+      "triangles": 2264
     },
     {
       "zone": "backdrop",
@@ -21288,10 +21288,10 @@
     }
   ],
   "master": "source_assets/mine_reference_20261024/mine_reference_master.blend",
-  "total_triangles": 199598,
+  "total_triangles": 168959,
   "art_refinement": {
     "revision": "mine_reference_art_20261026",
-    "script_sha256": "9c915d057c9d61f8dd27526d748804b7b168154c019d59ee7326815362a640fa",
+    "script_sha256": "7d94871979b226a11d980f02a7812c6543d1420b2896881b2d106790289f3e0d",
     "new_dressing": [
       {
         "kind": "recessed_portal",
@@ -23533,6 +23533,385 @@
         ]
       ],
       "floor_gravel": 122
+    },
+    "presentation": {
+      "script_sha256": "ef421b2b30538d23c6fda8986428da998ce6044fc0d18602beca94fda88c459e",
+      "organic_ledges": [
+        {
+          "zone": "entrance_camp",
+          "rim_vertices": 22,
+          "maximum_verge_m": 1.1,
+          "walkable_bounds": [
+            -48,
+            -24,
+            22,
+            42
+          ]
+        },
+        {
+          "zone": "rail_workings",
+          "rim_vertices": 22,
+          "maximum_verge_m": 1.1,
+          "walkable_bounds": [
+            -48,
+            -24,
+            -16,
+            4
+          ]
+        },
+        {
+          "zone": "bridge_junction",
+          "rim_vertices": 12,
+          "maximum_verge_m": 1.1,
+          "walkable_bounds": [
+            20,
+            30,
+            -4,
+            6
+          ]
+        },
+        {
+          "zone": "crystal_workings",
+          "rim_vertices": 26,
+          "maximum_verge_m": 1.1,
+          "walkable_bounds": [
+            -36,
+            4,
+            -42,
+            -26
+          ]
+        },
+        {
+          "zone": "storage",
+          "rim_vertices": 20,
+          "maximum_verge_m": 1.1,
+          "walkable_bounds": [
+            20,
+            44,
+            -30,
+            -12
+          ]
+        },
+        {
+          "zone": "waterway",
+          "rim_vertices": 20,
+          "maximum_verge_m": 1.1,
+          "walkable_bounds": [
+            20,
+            44,
+            12,
+            30
+          ]
+        },
+        {
+          "zone": "collapse",
+          "rim_vertices": 18,
+          "maximum_verge_m": 1.1,
+          "walkable_bounds": [
+            -8,
+            12,
+            26,
+            44
+          ]
+        },
+        {
+          "zone": "core_cavern",
+          "rim_vertices": 20,
+          "maximum_verge_m": 1.1,
+          "walkable_bounds": [
+            24,
+            50,
+            34,
+            50
+          ]
+        }
+      ],
+      "workplace_details": [
+        "supported camp canvas, bedrolls, stone fire ring and supply bench",
+        "camp torch moved outside canvas",
+        "supported warning sign and fractured mine frame",
+        "storage canopy and lumber stock",
+        "two core torches moved clear of crystal faces",
+        "core approach torch moved outside the walking lane"
+      ],
+      "water_foam": [
+        {
+          "name": "CascadeRipple",
+          "position": [
+            10,
+            -6.94,
+            -25.7
+          ]
+        },
+        {
+          "name": "CascadeRipple",
+          "position": [
+            10,
+            -6.94,
+            -25.7
+          ]
+        },
+        {
+          "name": "CascadeRipple",
+          "position": [
+            10,
+            -6.94,
+            -25.7
+          ]
+        },
+        {
+          "name": "CascadeRipple",
+          "position": [
+            19,
+            -5.44,
+            17.0
+          ]
+        },
+        {
+          "name": "CascadeRipple",
+          "position": [
+            19,
+            -5.44,
+            17.0
+          ]
+        },
+        {
+          "name": "CascadeRipple",
+          "position": [
+            19,
+            -5.44,
+            17.0
+          ]
+        },
+        {
+          "name": "RockWaterWake",
+          "position": [
+            6,
+            -6.94,
+            -16
+          ]
+        },
+        {
+          "name": "RockWaterWake",
+          "position": [
+            15,
+            -6.94,
+            3
+          ]
+        },
+        {
+          "name": "RockWaterWake",
+          "position": [
+            21,
+            -5.44,
+            21
+          ]
+        },
+        {
+          "name": "RockWaterWake",
+          "position": [
+            40,
+            -5.44,
+            29
+          ]
+        }
+      ],
+      "removed_small_bevels": 1072,
+      "new_collisions": 0,
+      "flame_centers": [
+        {
+          "zone": "entrance_camp",
+          "position": [
+            -45.5,
+            2.5199999809265137,
+            37.0
+          ]
+        },
+        {
+          "zone": "entrance_camp",
+          "position": [
+            -33.0,
+            2.5199999809265137,
+            38.0
+          ]
+        },
+        {
+          "zone": "entrance_camp",
+          "position": [
+            -34.12000274658203,
+            0.5799999833106995,
+            36.0
+          ]
+        },
+        {
+          "zone": "entrance_camp",
+          "position": [
+            -33.849998474121094,
+            0.5799999833106995,
+            36.0
+          ]
+        },
+        {
+          "zone": "rail_workings",
+          "position": [
+            -44.5,
+            5.519999980926514,
+            -11.0
+          ]
+        },
+        {
+          "zone": "rail_workings",
+          "position": [
+            -37.5,
+            5.519999980926514,
+            -11.0
+          ]
+        },
+        {
+          "zone": "crystal_workings",
+          "position": [
+            -31.5,
+            9.520000457763672,
+            -37.0
+          ]
+        },
+        {
+          "zone": "crystal_workings",
+          "position": [
+            -24.5,
+            9.520000457763672,
+            -37.0
+          ]
+        },
+        {
+          "zone": "storage",
+          "position": [
+            34.5,
+            9.520000457763672,
+            -25.0
+          ]
+        },
+        {
+          "zone": "storage",
+          "position": [
+            41.5,
+            9.520000457763672,
+            -25.0
+          ]
+        },
+        {
+          "zone": "waterway",
+          "position": [
+            34.5,
+            2.5199999809265137,
+            27.0
+          ]
+        },
+        {
+          "zone": "waterway",
+          "position": [
+            41.5,
+            2.5199999809265137,
+            27.0
+          ]
+        },
+        {
+          "zone": "core_cavern",
+          "position": [
+            34.0,
+            2.5199999809265137,
+            43.0
+          ]
+        },
+        {
+          "zone": "core_cavern",
+          "position": [
+            48.0,
+            2.5199999809265137,
+            46.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            -47.0,
+            2.5199999809265137,
+            25.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            -26.0,
+            2.5199999809265137,
+            38.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            -45.0,
+            5.519999980926514,
+            -3.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            -27.0,
+            9.520000457763672,
+            -30.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            -2.0,
+            9.520000457763672,
+            -29.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            23.0,
+            9.520000457763672,
+            -18.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            21.0,
+            2.5199999809265137,
+            24.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            27.0,
+            2.5199999809265137,
+            40.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            -46.0,
+            2.5199999809265137,
+            25.0
+          ]
+        },
+        {
+          "zone": "details",
+          "position": [
+            -46.0,
+            2.5199999809265137,
+            31.0
+          ]
+        }
+      ]
     }
   }
 }

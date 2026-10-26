@@ -1,0 +1,488 @@
+{
+  "master": "D:/RPGGAME/artifacts/mine_visual_finish_20261026/torch_before.blend",
+  "samples": 58275,
+  "spacing_m": 0.15,
+  "hits": [
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.25,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.06999969482422,
+        0.550000011920929,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.25,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.06999969482422,
+        1.0499999523162842,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.25,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.06999969482422,
+        1.600000023841858,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        0.550000011920929,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.029998779296875,
+        0.550000011920929,
+        36.06999969482422
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.029998779296875,
+        0.550000011920929,
+        35.93000030517578
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.0499999523162842,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.029998779296875,
+        1.0499999523162842,
+        36.06999969482422
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.029998779296875,
+        1.0499999523162842,
+        35.93000030517578
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.600000023841858,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.029998779296875,
+        1.600000023841858,
+        36.06999969482422
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        29.099998474121094,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        29.029998779296875,
+        1.600000023841858,
+        35.93000030517578
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        0.550000011920929,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.950000762939453,
+        0.550000011920929,
+        36.06999969482422
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        0.550000011920929,
+        36.02000045776367
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        0.550000011920929,
+        35.97999954223633
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.0499999523162842,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.950000762939453,
+        1.0499999523162842,
+        36.06999969482422
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.0499999523162842,
+        36.02000045776367
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.0499999523162842,
+        35.97999954223633
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.600000023841858,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.950000762939453,
+        1.600000023841858,
+        36.06999969482422
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.600000023841858,
+        36.02000045776367
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.950000762939453,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.600000023841858,
+        35.97999954223633
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        0.550000011920929,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.0499999523162842,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.799999237060547,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.600000023841858,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.650001525878906,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        0.550000011920929,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.650001525878906,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.0499999523162842,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    },
+    {
+      "route": "route",
+      "segment": 21,
+      "position": [
+        28.650001525878906,
+        0.0,
+        36.0
+      ],
+      "hit": [
+        28.93000030517578,
+        1.600000023841858,
+        36.0
+      ],
+      "mesh": "details_Mine_Wood",
+      "probe": "horizontal_body"
+    }
+  ],
+  "method": "Actual triangle BVH, vertical body rays at centre, four axial and four diagonal offsets; four cross-body diameters at heights .55/1.05/1.6m catch tall thin posts. Body radius .28m, configured route spacing. Includes existing geometry; excludes hidden module assets. Sampled, not continuous capsule or camera certification."
+}

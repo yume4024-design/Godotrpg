@@ -1,0 +1,7 @@
+{
+  "checks": 8,
+  "failures": 0,
+  "command": "Godot --path D:/RPGGAME --script res://tests/mine_reference_traversal_test.gd -- --mine-capture-only",
+  "log_sha256": "44bb27e63605b36dd5e74575d64c251efd4b6e9fdfc9f7958a45b5f7484c1fc1",
+  "views": 18
+}

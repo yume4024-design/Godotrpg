@@ -21,6 +21,7 @@ func _capture(label: String) -> void:
 func _verify_surfaces() -> void:
 	await super._verify_surfaces()
 	var geometry: Node3D = load("res://scenes/world/mine_reference/geometry.tscn").instantiate()
+	geometry.set("build_collisions",false)
 	root.add_child(geometry)
 	await process_frame
 	var shader_counts: Dictionary = {}
@@ -31,7 +32,7 @@ func _verify_surfaces() -> void:
 			if material is ShaderMaterial and material.shader != null:
 				var path: String = material.shader.resource_path
 				shader_counts[path] = int(shader_counts.get(path,0)) + 1
-	for shader: String in ["mine/crystal.gdshader","mine/faceted_rock.gdshader","mine/wood.gdshader","mine/flame.gdshader","mine/impact_foam.gdshader","greystone/water.gdshader","greystone/reference_fall.gdshader"]:
+	for shader: String in ["mine/crystal.gdshader","mine/faceted_rock.gdshader","mine/wood.gdshader","mine/flame.gdshader","mine/impact_foam.gdshader","mine/water.gdshader","mine/ripple.gdshader","greystone/reference_fall.gdshader"]:
 		_check(int(shader_counts.get("res://assets/shaders/"+shader,0)) > 0,"Packaged mine uses actual shader surfaces: "+shader)
 	var manifest: Dictionary = JSON.parse_string(FileAccess.get_file_as_string("res://assets/models/mine_reference/manifest.json"))
 	_check(manifest.total_triangles <= 200000,"Packaged mine static geometry within budget")
