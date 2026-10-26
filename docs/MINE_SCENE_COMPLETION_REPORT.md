@@ -41,6 +41,16 @@ Godot 4.7.2.stable.official.ed1daf0bf、Blender 5.2.2 LTS、Windows／RTX3080／
 
 ## Windows 固定包
 
-版本契約已更新為0.6.1-mine-reference-rc2；包來源提交、建置與包內測試在後續固定來源建置完成後補記，現階段不得沿用RC1測試認證RC2。
+固定包來源提交：`ef0764c965741b3f8882c56e4181b50bdb6f77d1`，版本`0.6.1-mine-reference-rc2`。重用乾淨驗證工作樹，執行`tools/build_blender_windows.ps1 -CandidateFamily Mine`及`tools/test_mine_windows.ps1`。匯入／匯出無錯誤，沒有來源正規化差異。
+
+實際Windows Release圖形包：序章／交易／遷移137項、37.81秒；新程序重啟32項、10.80秒；普通啟動器保持12.18秒後正常關閉，遊戲與啟動器退出0。檢查實際Mesh surface使用岩石、木材、水晶、火焰、水面、瀑布與水沫Shader，並確認六個深坑道及501碰撞清單。這些是不同程序的包內檢查，與來源264項分開計算；不是30分鐘長測或實體手把驗收。
+
+啟動：`D:/RPGGAME/builds/mine-reference/rc2-ef0764c/candidate/start_mine_reference.cmd`。ZIP：`D:/RPGGAME/builds/mine-reference/rc2-ef0764c/ProjectCrystal-0.6.1-mine-reference-rc2-windows-x64.zip`，384,251,428 bytes，SHA256 `32fb75268e077daf30d3f1c3c7db6a5814975f86a2fcbaafde72a74601121a17`。明確七檔白名單，CRC及每檔SHA一致；不包含user_test、日誌或存檔。保留RC1及所有正式包。
+
+此礦坑專用包沿用既有Blender村莊入口；最新參考灰石村的來源入口仍是`RunReferenceVillage`，本輪來源回歸已涵蓋該入口與新礦坑，但不能將此包宣稱為最新村莊候選的替換包。人工驗收繼續暫停。
+
+[建置／包內測試收據](../source_assets/mine_reference_20261024/evidence/completion_20261026/windows_rc2/package_receipt.json)、[包內檢查](../source_assets/mine_reference_20261024/evidence/completion_20261026/windows_rc2/manifest.json)、[普通啟動器](../source_assets/mine_reference_20261024/evidence/completion_20261026/windows_rc2/normal_launch.json)。
+
+![Release核心洞窟](../source_assets/mine_reference_20261024/evidence/completion_20261026/windows_rc2/mine_g063-03-crystal-awakening.webp)
 
 [資產／SHA](../source_assets/mine_reference_20261024/evidence/completion_20261026/asset_receipt.json)、[測試](../source_assets/mine_reference_20261024/evidence/completion_20261026/tests.json)、[動線](../source_assets/mine_reference_20261024/evidence/completion_20261026/traversal.json)、[碰撞保留](../source_assets/mine_reference_20261024/evidence/completion_20261026/protected_layout.json)。

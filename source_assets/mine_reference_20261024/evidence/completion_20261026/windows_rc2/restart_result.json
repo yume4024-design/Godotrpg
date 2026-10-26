@@ -1,0 +1,39 @@
+{
+  "checks": 32,
+  "display": "Windows",
+  "endurance_acceptance": false,
+  "failures": 0,
+  "physical_input_acceptance": false,
+  "release": true,
+  "startup_phases": [
+    {
+      "engine_usec": 779444,
+      "phase": "splash_presented"
+    },
+    {
+      "engine_usec": 779742,
+      "phase": "loading_resources"
+    },
+    {
+      "engine_usec": 7069391,
+      "phase": "creating_world"
+    },
+    {
+      "engine_usec": 7503702,
+      "phase": "waiting_map"
+    },
+    {
+      "engine_usec": 7726065,
+      "phase": "preparing_picture"
+    },
+    {
+      "engine_usec": 7775913,
+      "phase": "fading"
+    },
+    {
+      "engine_usec": 7942845,
+      "phase": "ready"
+    }
+  ],
+  "version": "0.6.1-mine-reference-rc2"
+}

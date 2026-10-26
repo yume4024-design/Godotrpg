@@ -1,0 +1,10 @@
+{
+  "source_commit": "ef0764c965741b3f8882c56e4181b50bdb6f77d1",
+  "source_root": "C:\\Users\\yume4\\.codex\\worktrees\\greystone-reference-rc3\\RPGGAME",
+  "candidate_family": "Mine",
+  "audio_bus_restored_to_original": false,
+  "generated_import_metadata": [],
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "candidate": "D:\\RPGGAME\\builds\\mine-reference\\rc2-ef0764c\\candidate\\ProjectCrystal.exe",
+  "qa": "D:\\RPGGAME\\builds\\mine-reference\\rc2-ef0764c\\qa\\ProjectCrystal.exe"
+}

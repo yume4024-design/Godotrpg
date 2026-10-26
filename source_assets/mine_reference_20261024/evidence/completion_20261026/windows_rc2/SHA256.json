@@ -1,0 +1,32 @@
+[
+  {
+    "file": "ProjectCrystal.exe",
+    "bytes": 109268480,
+    "sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+  },
+  {
+    "file": "ProjectCrystal.pck",
+    "bytes": 351439004,
+    "sha256": "d5b2ae21d3784d2c3fbceef65087033c74976b82e75a69d81bfbaaaf49d5d33c"
+  },
+  {
+    "file": "start_mine_reference.cmd",
+    "bytes": 1338,
+    "sha256": "884f32049026469f0d14d6f0feb28ab38ddc3d33b40e605b1b5b99e4e409c69f"
+  },
+  {
+    "file": "ASSET_CREDITS.md",
+    "bytes": 30072,
+    "sha256": "982afd3119968077a6aa90cc3efc8abc2e3a763bbfe63cbe2c087354ed96f8a5"
+  },
+  {
+    "file": "GODOT_LICENSES.txt",
+    "bytes": 109361,
+    "sha256": "1efe99b58c0972fe1f11e3fccf9dea210845b818b332f8d3781e2c208200f365"
+  },
+  {
+    "file": "README.txt",
+    "bytes": 827,
+    "sha256": "0208cde193e79d465bd8d00d2b7656ce5f2667e1bb2eb42081b82526719b881f"
+  }
+]

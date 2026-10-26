@@ -1,0 +1,23 @@
+{
+  "source_commit": "ef0764c965741b3f8882c56e4181b50bdb6f77d1",
+  "version": "0.6.1-mine-reference-rc2",
+  "zip_path": "D:\\RPGGAME\\builds\\mine-reference\\rc2-ef0764c\\ProjectCrystal-0.6.1-mine-reference-rc2-windows-x64.zip",
+  "zip_bytes": 384251428,
+  "zip_sha256": "32fb75268e077daf30d3f1c3c7db6a5814975f86a2fcbaafde72a74601121a17",
+  "whitelist": [
+    "ProjectCrystal.exe",
+    "ProjectCrystal.pck",
+    "start_mine_reference.cmd",
+    "ASSET_CREDITS.md",
+    "GODOT_LICENSES.txt",
+    "README.txt",
+    "SHA256.json"
+  ],
+  "crc_verified": true,
+  "entry_sha256_verified": true,
+  "included_user_data": false,
+  "log_sha256": {
+    "prologue.log": "e97a3460bb2a25c49b059366ceebd2790f78f79eba053641e7e3c7bbdf3cba43",
+    "restart.log": "94859efcf075579e895181ab1cf405f5a18782bf2ce3fddca2d572da7a9f26c1"
+  }
+}

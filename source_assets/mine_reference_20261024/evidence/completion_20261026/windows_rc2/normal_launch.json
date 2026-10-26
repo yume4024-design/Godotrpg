@@ -1,0 +1,21 @@
+{
+  "launcher": "D:\\RPGGAME\\builds\\mine-reference\\rc2-ef0764c\\candidate\\start_mine_reference.cmd",
+  "launcher_pid": 38568,
+  "mode": "Normal graphical launch without --preview-smoke; observe owned child then request normal window close",
+  "physical_input": false,
+  "passed": true,
+  "log": "D:\\RPGGAME\\builds\\mine-reference\\rc2-ef0764c\\candidate\\user_test\\play-11733-9892.log",
+  "game_pid": 38668,
+  "window_handle": 7471636,
+  "window_title": "失落星核 — Project Crystal",
+  "responding": true,
+  "observed_seconds": 12.1825829,
+  "game_exit_code": 0,
+  "launcher_exit_code": 0,
+  "stdout": "Starting Project Crystal - Mine Reference Prologue...\r\n",
+  "stderr": "",
+  "ready_marker": "BLENDER_WINDOWS_READY",
+  "ready_confirmation": "Flushed log after normal close; no live marker timestamp claimed",
+  "exe_sha256": "D34D36F3BE1A6C49C56525AE86469B92E4F417DDF0B43CF00DD80C385C4B0562",
+  "pck_sha256": "D5B2AE21D3784D2C3FBCEEF65087033C74976B82E75A69D81BFBAAAF49D5D33C"
+}
