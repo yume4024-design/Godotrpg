@@ -32,17 +32,24 @@ def refine_continuity(api,clear):
             for j in range(count):outline.append(Vector((x+(xx-x)*j/count,0,z+(zz-z)*j/count)))
         center=Vector(((x0+x1)/2,0,(z0+z1)/2));points=[];n=len(outline)
         pads=[rng.uniform(.65,1.25) for _ in outline]
-        for level,y in enumerate([h-.07,h-.85,h-3.3,-9.0]):
+        heights=[h-.07,h-.85,h-3.3,h-6.0,-9.0]
+        for level,y in enumerate(heights):
             for i,p in enumerate(outline):
-                d=(p-center).normalized();pad=0 if level==0 else pads[i]*[0,1,1.4,1.05][level]
-                q=p+d*pad;q.y=y
-                if level<3:q.y=route_ceiling(q)
+                d=(p-center).normalized();pad=pads[i]*[0,1,2.6,1.75,1.05][level]
+                tangent=Vector((-d.z,0,d.x))
+                # Keep the exact walkable rim; stagger the buried ledges so
+                # tall faces no longer read as rectangular retaining walls.
+                wobble=0 if level==0 else math.sin(i*1.91+level*.83)*.45
+                q=p+d*pad+tangent*wobble;q.y=y
+                if level not in [0,len(heights)-1]:q.y+=math.sin(i*1.37+level)*.30
+                if level<len(heights)-1:q.y=route_ceiling(q)
                 points.append(tuple(q))
         faces=[]
-        for row in range(3):
+        for row in range(len(heights)-1):
             for i in range(n):faces.append((row*n+i,row*n+(i+1)%n,(row+1)*n+(i+1)%n,(row+1)*n+i))
         points.extend([(center.x,h-.07,center.z),(center.x,-9,center.z)])
-        for i in range(n):faces.extend([(4*n,i,(i+1)%n),(4*n+1,3*n+(i+1)%n,3*n+i)])
+        cap=len(heights)*n;bottom=(len(heights)-1)*n
+        for i in range(n):faces.extend([(cap,i,(i+1)%n),(cap+1,bottom+(i+1)%n,bottom+i)])
         solid('ContinuousStrata_'+group,points,faces,group)
         for i,p in enumerate(outline):
             if i%2:continue
@@ -51,7 +58,7 @@ def refine_continuity(api,clear):
                 height=min(h-drop,route_ceiling(Vector((q.x,h-.6,q.z)))-1.2)
                 lens=stone('StrataLens',B((q.x,height,q.z)),(rng.uniform(2.0,3.0),rng.uniform(.8,1.2),rng.uniform(.7,1.1)),group)
                 lens.rotation_euler.z=math.atan2(-d.z,d.x)+math.pi/2+rng.uniform(-.15,.15)
-        receipt['strata'].append({'zone':group,'perimeter_vertices':n,'closed':True})
+        receipt['strata'].append({'zone':group,'perimeter_vertices':n,'profile_rings':len(heights),'closed':True})
     # A rock foundation under each wooden stair ties the levels together.
     for link in layout['links']:
         if link['kind']!='stairs':continue
@@ -74,22 +81,26 @@ def refine_continuity(api,clear):
             receipt['lowered_pillars'].append({'name':obj.name,'old_top':top,'new_top':limit})
     def wall(name,front,back):
         points=[];count=len(front)
-        for row in range(3):
+        rings=4
+        def row_height(row,i):
+            return [-10.5,-1.5+math.sin(i*1.31)*.8,6.5+math.sin(i*.93)*1.4,15.0+2.0*math.sin(i*.71)][row]
+        for row in range(rings):
             for i,(x,z) in enumerate(front):
-                height=[-10.5,3.0+math.sin(i*.9),15.0+2.0*math.sin(i*.71)][row]
-                retreat=[-.4,0,3.0][row]
+                height=row_height(row,i)
+                retreat=[-.4,-1.6+math.sin(i*1.17)*.8,.8+math.sin(i*.91)*1.2,3.0][row]
                 outward=(Vector(back[i])-Vector(front[i])).normalized()
                 points.append((x+outward.x*retreat,height,z+outward.y*retreat))
-            for i,(x,z) in enumerate(back):points.append((x,[-10.5,3.0+math.sin(i*.9),15.0+2.0*math.sin(i*.71)][row],z))
+            for i,(x,z) in enumerate(back):points.append((x,row_height(row,i),z))
         faces=[];stride=2*count
-        for row in range(2):
+        for row in range(rings-1):
             for side in [0,count]:
                 for i in range(count-1):
                     a=row*stride+side+i;faces.append((a,a+1,a+stride+1,a+stride))
         for i in range(count-1):
-            faces.extend([(i,i+count,i+count+1,i+1),(2*stride+i,2*stride+i+1,2*stride+i+count+1,2*stride+i+count)])
+            top=(rings-1)*stride
+            faces.extend([(i,i+count,i+count+1,i+1),(top+i,top+i+1,top+i+count+1,top+i+count)])
         for i in [0,count-1]:
-            for row in range(2):
+            for row in range(rings-1):
                 a=row*stride+i;faces.append((a,a+count,a+count+stride,a+stride))
         solid(name,points,faces,'backdrop')
     wall('NorthCavernStrata',[(-56+i*5,-46+math.sin(i*.83)*2.0) for i in range(23)],[(-56+i*5,-55) for i in range(23)])

@@ -47,7 +47,11 @@ def finish_cavern(api, clear):
                 p, size = (t, h, -46.6 - max(0, h-3)*.23), (rng.uniform(3,6), rng.uniform(1.8,3), rng.uniform(2,4.5))
             else:
                 p, size = (-51.5-max(0,h-3)*.23, h, t), (rng.uniform(1.4,2.3), rng.uniform(3,5), rng.uniform(2,4.3))
-            stone('CavernButtress', B(p), size, 'backdrop')
+            rock=stone('CavernButtress', B(p), size, 'backdrop')
+            # Tilt the embedded fault blocks without moving their anchors or
+            # consuming the dressing RNG, preserving the approved work bays.
+            rock.rotation_euler.x=math.sin(i*1.73)*.22
+            rock.rotation_euler.y=math.cos(i*1.31)*.18
             receipt['wall_masses'] += 1
     # Irregular rock shoulders interrupt the straight ledges; their broad radii
     # are checked against protected routes before placement, then BVH audited.

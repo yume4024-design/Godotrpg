@@ -61,10 +61,15 @@ def stone(name,p,size,group):
     # placement must not change merely because this visual topology changed.
     for unused in range(126):rng.random()
     bm=bmesh.new()
-    for z,r in [(-.92,.72),(-.12,1.0),(.91,.77)]:
+    cap_tilt=rock_rng.uniform(-math.pi,math.pi)
+    for row,(z,r) in enumerate([(-.92,.72),(-.12,1.0),(.72,.77)]):
         for i in range(8):
-            angle=math.tau*(i/8+.0625)
-            bm.verts.new((math.cos(angle)*r*rock_rng.uniform(.94,1.06),math.sin(angle)*r*rock_rng.uniform(.94,1.06),z+rock_rng.uniform(-.035,.035)))
+            angle=math.tau*(i/8+.0625)+rock_rng.uniform(-.075,.075)
+            radial=r*rock_rng.uniform(.83,1.10)
+            # A tilted broken crown and uneven ring radii avoid the identical
+            # flat octagonal caps that made mine boulders look like columns.
+            crown=.20*math.cos(angle+cap_tilt) if row==2 else 0
+            bm.verts.new((math.cos(angle)*radial,math.sin(angle)*radial,z+crown+rock_rng.uniform(-.025,.025)))
     hull=bmesh.ops.convex_hull(bm,input=list(bm.verts))
     unused=[v for v in bm.verts if not v.link_faces]
     if unused:bmesh.ops.delete(bm,geom=unused,context='VERTS')

@@ -1,0 +1,38 @@
+[
+  {
+    "mode": "TestMineReference",
+    "checks": 55,
+    "failures": 0,
+    "log_sha256": "23bcb868c95a6860e2e7eda53a8bfab82b7b471a8b8b5c3ce982b1e84abcfff9"
+  },
+  {
+    "mode": "TestMineReferenceMigration",
+    "checks": 59,
+    "failures": 0,
+    "log_sha256": "e53ac4b181878b6c34e9834ba395883c63b42da1757de1f7dbadb7a93964d544"
+  },
+  {
+    "mode": "VisualMineReferenceStory",
+    "checks": 68,
+    "failures": 0,
+    "log_sha256": "952d695fd39655bbfd903bf2e37b175c8433d5260773b78e9ad48dbb5763923b"
+  },
+  {
+    "mode": "TestMineReferenceStoryReload",
+    "checks": 7,
+    "failures": 0,
+    "log_sha256": "40f8544329e7322bfb35c3e81d405706b479f3afc16551bd905aa79c388c7f16"
+  },
+  {
+    "mode": "VisualReferenceStory",
+    "checks": 68,
+    "failures": 0,
+    "log_sha256": "18776148ed59f7b466e828fb6a478c7e0dca51712ae175f65f73fbca8f86f070"
+  },
+  {
+    "mode": "TestReferenceStoryReload",
+    "checks": 7,
+    "failures": 0,
+    "log_sha256": "7f1c97ac86af72b658fe9a39fa52166b66162e108b8e0c629d16756205467a1a"
+  }
+]
