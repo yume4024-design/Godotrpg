@@ -21,9 +21,12 @@ New-Item -ItemType Directory -Path $sourceRoot,$profile,$tempRoot,$logs -Force |
 # Export only a Git snapshot. Untracked art experiments and local modifications
 # never silently become part of a package labelled with a commit SHA.
 $archive = Join-Path $versionRoot 'source.zip'
-git -C $projectRoot archive --format=zip --output=$archive $commit project.godot export_presets.cfg assets scenes scripts data tests tools
+git -C $projectRoot archive --format=zip --output=$archive $commit project.godot default_bus_layout.tres export_presets.cfg assets scenes scripts data tests tools
 if ($LASTEXITCODE -ne 0) { throw 'Git source snapshot failed.' }
 Expand-Archive -LiteralPath $archive -DestinationPath $sourceRoot
+if (-not (Test-Path -LiteralPath (Join-Path $sourceRoot 'default_bus_layout.tres'))) {
+    throw 'The committed runtime snapshot must include the Music/SFX audio buses.'
+}
 if (-not (Select-String -LiteralPath (Join-Path $sourceRoot 'project.godot') -SimpleMatch $version -Quiet)) {
     throw 'Commit the RC2 configuration before packaging.'
 }

@@ -23,6 +23,8 @@ func _key(key: int,pressed: bool) -> void:
 	super._key(key,pressed)
 
 func _create_game() -> ExplorationGame:
+	_check(AudioServer.get_bus_index("Music") >= 0, "Runtime includes Music audio bus")
+	_check(AudioServer.get_bus_index("SFX") >= 0, "Runtime includes SFX audio bus")
 	var instance := load("res://scenes/main/prologue_candidate.tscn").instantiate() as ExplorationGame
 	_latest_candidate_hero_wired = instance.hero_appearance.resource_path == "res://scenes/characters/ren_rebuilt_visual.tscn"
 	_check(_latest_candidate_hero_wired, "Latest playable Ren is wired into assembled prologue")
