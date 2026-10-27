@@ -14,7 +14,10 @@ var _tab: String = "狀態"
 var _body: VBoxContainer
 var _title: Label
 var _members: OptionButton
-var _tabs: HBoxContainer
+var _tabs: HFlowContainer
+var _content_scroll: ScrollContainer
+var _map_actor: ExplorationPlayer
+var _map_manager: ExplorationSceneManager
 var _notice: Label
 var _close: Button
 var _audio: AdventureAudio
@@ -78,6 +81,9 @@ func _ready() -> void:
 	layout.add_child(heading)
 	_title = _label(heading, "旅途手冊", 27)
 	_title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_title.clip_text = true
+	_title.autowrap_mode = TextServer.AUTOWRAP_OFF
+	_title.custom_minimum_size.y = 36
 	_close = _button(heading, "返回旅途  [M / Esc]", func() -> void: close_requested.emit())
 	var tools_row: HBoxContainer = HBoxContainer.new()
 	tools_row.add_theme_constant_override("separation", 20)
@@ -88,12 +94,16 @@ func _ready() -> void:
 	_members.item_selected.connect(func(index: int) -> void:
 		_selected = _party.members()[index].definition.id
 		refresh())
-	_tabs = HBoxContainer.new()
-	_tabs.add_theme_constant_override("separation", 10)
+	_tabs = HFlowContainer.new()
+	_tabs.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_tabs.add_theme_constant_override("h_separation", 10)
+	_tabs.add_theme_constant_override("v_separation", 6)
 	tools_row.add_child(_tabs)
 	for title: String in ["狀態", "背包", "技能", "裝備", "任務", "旅程", "音量"]:
 		_button(_tabs, title, _select_tab.bind(title))
 	var scroll: ScrollContainer = ScrollContainer.new()
+	_content_scroll = scroll
+	scroll.name = "HandbookContent"
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	scroll.horizontal_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED
 	scroll.follow_focus = true
@@ -120,6 +130,18 @@ func setup_journey(quests: QuestManager, saves: SaveManager) -> void:
 
 func open_journey() -> void:
 	_tab = "旅程"
+	open()
+
+func setup_navigation(actor: ExplorationPlayer, manager: ExplorationSceneManager) -> void:
+	_map_actor = actor
+	_map_manager = manager
+	for child: Button in _tabs.get_children():
+		if child.text == "地圖": return
+	_button(_tabs, "地圖", _select_tab.bind("地圖"))
+
+func open_map() -> void:
+	if not is_instance_valid(_map_manager): return
+	_tab = "地圖"
 	open()
 
 func reset_selection() -> void:
@@ -154,11 +176,22 @@ func refresh() -> void:
 		if actor.definition.id == _selected: _members.select(_members.item_count - 1)
 	var actor: CombatantState = _party.member(_selected)
 	if actor == null: return
-	for tab_button: Button in _tabs.get_children(): tab_button.disabled = tab_button.text == _tab
+	for tab_button: Button in _tabs.get_children():
+		tab_button.toggle_mode = true
+		tab_button.set_pressed_no_signal(tab_button.text == _tab)
 	for child: Node in _body.get_children():
 		_body.remove_child(child)
 		child.queue_free()
+	# The map fits this viewport; only its landmark list should scroll.
+	_content_scroll.vertical_scroll_mode = ScrollContainer.SCROLL_MODE_DISABLED if _tab == "地圖" else ScrollContainer.SCROLL_MODE_AUTO
+	_body.size_flags_vertical = Control.SIZE_EXPAND_FILL if _tab == "地圖" else Control.SIZE_FILL
 	match _tab:
+		"地圖":
+			var map_panel := preload("res://scripts/ui/area_map_panel.gd").new()
+			map_panel.actor = _map_actor
+			map_panel.scene_manager = _map_manager
+			map_panel.size_flags_vertical = Control.SIZE_EXPAND_FILL
+			_body.add_child(map_panel)
 		"音量":
 			if _audio == null: return
 			_label(_body, "旅途的聲音", 26)

@@ -71,6 +71,11 @@ func _ready() -> void:
 	travel.maps.append(village_scene)
 	super._ready()
 	ui.enable_navigation(player, travel, party.members())
+	menu.setup_navigation(player, travel)
+	ui.map_requested.connect(func() -> void:
+		if not locked():
+			menu.open_map()
+			_update_lock())
 	dialogue.active_changed.connect(_on_npc_dialogue_changed)
 	var layer: CanvasLayer = CanvasLayer.new()
 	layer.layer = 5

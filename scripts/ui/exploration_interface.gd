@@ -4,6 +4,7 @@ extends CanvasLayer
 signal advance_requested
 signal reveal_finished
 signal menu_requested
+signal map_requested
 var location: Label
 var objective: Label
 var quest: Label
@@ -122,7 +123,10 @@ func enable_navigation(actor: Node3D, scene_manager: Node, party_members: Array[
 		_minimap = Control.new()
 		_minimap.name = "ExplorationMinimap"
 		_minimap.set_script(load("res://scripts/ui/exploration_minimap.gd"))
-		_minimap.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		_minimap.mouse_filter = Control.MOUSE_FILTER_STOP
+		_minimap.mouse_default_cursor_shape = Control.CURSOR_POINTING_HAND
+		_minimap.tooltip_text = "點擊展開區域地圖；手把 Menu → 地圖"
+		_minimap.connect("expand_requested", func() -> void: map_requested.emit())
 		_minimap.anchor_left = 1.0
 		_minimap.anchor_right = 1.0
 		_minimap.offset_left = -252

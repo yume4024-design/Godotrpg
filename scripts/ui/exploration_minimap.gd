@@ -1,8 +1,11 @@
 extends Control
-## Lightweight, non-interactive RPG navigation map. Draws authored world data,
+## Lightweight RPG navigation map. Draws authored world data,
 ## player position and current interactables without adding a SubViewport.
 
 
+signal expand_requested
+var expanded: bool = false
+var selected_target: WorldInteractable
 var player: ExplorationPlayer
 var scene_manager: Node
 var _active_map: ExplorationMap
@@ -18,16 +21,46 @@ func configure(actor: ExplorationPlayer, manager: Node) -> void:
 	queue_redraw()
 
 func _process(_delta: float) -> void:
-	if not is_instance_valid(scene_manager):
+	if not is_visible_in_tree() or not is_instance_valid(scene_manager):
 		return
 	var next_map: ExplorationMap = scene_manager.get("current_map") as ExplorationMap
 	if next_map != _active_map:
 		_refresh_map()
 	queue_redraw()
 
+func _gui_input(event: InputEvent) -> void:
+	if not expanded and event is InputEventMouseButton and event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+		expand_requested.emit()
+		accept_event()
+
+func landmarks() -> Array[Dictionary]:
+	var entries: Array[Dictionary] = []
+	if not is_instance_valid(_active_map): return entries
+	for target: WorldInteractable in _active_map.targets:
+		if is_instance_valid(target) and target.is_visible_in_tree():
+			entries.append({"target": target, "label": target.prompt(), "kind": target.kind})
+	return entries
+
+func select_landmark(target: WorldInteractable) -> void:
+	selected_target = target
+	queue_redraw()
+
+func landmark_color(kind: String) -> Color:
+	return Color("#53c5e8") if kind == "exit" else (Color("#f5c96c") if kind == "story" else Color("#ec8e79"))
+
+func map_area() -> Rect2:
+	var available := Rect2(11, 36 if expanded else 31, size.x - 22, size.y - (66 if expanded else 43))
+	if not expanded: return available
+	# Keep distances proportional on the large map instead of stretching it.
+	var factor: float = minf(available.size.x / (_extent.x * 2.0), available.size.y / (_extent.y * 2.0))
+	var dimensions: Vector2 = _extent * 2.0 * factor
+	return Rect2(available.position + (available.size - dimensions) * .5, dimensions)
+
 func _refresh_map() -> void:
 	_active_map = scene_manager.get("current_map") as ExplorationMap if is_instance_valid(scene_manager) else null
 	_layout = {}
+	_road_polygons.clear()
+	selected_target = null
 	_extent = Vector2(56, 56)
 	_map_title = _active_map.display_name if is_instance_valid(_active_map) else "世界地圖"
 	if not is_instance_valid(_active_map):
@@ -46,8 +79,8 @@ func _read_json(path: String) -> Dictionary:
 func _draw() -> void:
 	draw_rect(Rect2(Vector2.ZERO, size), Color(0.025, 0.055, 0.07, 0.96), true)
 	draw_rect(Rect2(Vector2.ZERO, size), Color("#718b85"), false, 1.5, true)
-	draw_string(ThemeDB.fallback_font, Vector2(12, 21), "地圖  ·  " + _map_title, HORIZONTAL_ALIGNMENT_LEFT, -1, 14, Color("#f0d7a0"))
-	var map_rect: Rect2 = Rect2(11, 31, size.x - 22, size.y - 43)
+	draw_string(ThemeDB.fallback_font, Vector2(12, 23), "地圖  ·  " + _map_title, HORIZONTAL_ALIGNMENT_LEFT, -1, 20 if expanded else 14, Color("#f0d7a0"))
+	var map_rect: Rect2 = map_area()
 	draw_rect(map_rect, Color("#152a2e"), true)
 	if is_instance_valid(_active_map):
 		match _active_map.navigation_layout_kind:
@@ -59,11 +92,14 @@ func _draw() -> void:
 	draw_rect(map_rect, Color(0.45, 0.63, 0.59, 0.82), false, 1.0)
 	# Compact north indicator, matching the fixed isometric camera orientation.
 	draw_string(ThemeDB.fallback_font, Vector2(size.x - 23, 46), "N", HORIZONTAL_ALIGNMENT_CENTER, 14, 10, Color("#e7d5a4"))
+	if expanded:
+		draw_string(ThemeDB.fallback_font, Vector2(12, size.y - 9), "● 你　● 地標編號對照右側清單", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("#fff3b0"))
+		return
 	var legend_y: float = size.y - 8.0
 	draw_circle(Vector2(17, legend_y - 4), 3.2, Color("#fff3b0"))
 	draw_string(ThemeDB.fallback_font, Vector2(24, legend_y), "你", HORIZONTAL_ALIGNMENT_LEFT, 24, 10, Color("#e5e9dc"))
 	draw_circle(Vector2(62, legend_y - 4), 3.0, Color("#ec8e79"))
-	draw_string(ThemeDB.fallback_font, Vector2(69, legend_y), "NPC", HORIZONTAL_ALIGNMENT_LEFT, 34, 10, Color("#e5e9dc"))
+	draw_string(ThemeDB.fallback_font, Vector2(69, legend_y), "互動", HORIZONTAL_ALIGNMENT_LEFT, 34, 10, Color("#e5e9dc"))
 	draw_circle(Vector2(116, legend_y - 4), 3.0, Color("#f5c96c"))
 	draw_string(ThemeDB.fallback_font, Vector2(123, legend_y), "目標", HORIZONTAL_ALIGNMENT_LEFT, 34, 10, Color("#e5e9dc"))
 	draw_circle(Vector2(177, legend_y - 4), 3.0, Color("#53c5e8"))
@@ -84,7 +120,7 @@ func _draw_mine(area: Rect2) -> void:
 		var label: String = String(zone.get("label", ""))
 		var center: Vector2 = _screen_point(area, (float(bounds[0]) + float(bounds[1])) * 0.5, (float(bounds[2]) + float(bounds[3])) * 0.5)
 		if area.has_point(center):
-			draw_string(ThemeDB.fallback_font, center + Vector2(-27, 3), label, HORIZONTAL_ALIGNMENT_CENTER, 54, 8, Color("#dce6d7"))
+			draw_string(ThemeDB.fallback_font, center + Vector2(-49 if expanded else -27, 3), label, HORIZONTAL_ALIGNMENT_CENTER, 98 if expanded else 54, 14 if expanded else 8, Color("#dce6d7"))
 	for link: Dictionary in _layout.get("links", []):
 		var a: Array = link.get("a", [])
 		var b: Array = link.get("b", [])
@@ -125,11 +161,17 @@ func _draw_paths(area: Rect2) -> void:
 func _draw_targets(area: Rect2) -> void:
 	if not is_instance_valid(_active_map):
 		return
-	for target: WorldInteractable in _active_map.targets:
-		if not is_instance_valid(target) or not target.visible:
-			continue
-		var color: Color = Color("#53c5e8") if target.kind == "exit" else (Color("#f5c96c") if target.kind == "story" else Color("#ec8e79"))
-		_draw_marker(_screen_point(area, target.global_position.x, target.global_position.z), color, 2.7)
+	var index: int = 0
+	for entry: Dictionary in landmarks():
+		index += 1
+		var target: WorldInteractable = entry.target
+		var point: Vector2 = _screen_point(area, target.global_position.x, target.global_position.z)
+		var color: Color = landmark_color(target.kind)
+		_draw_marker(point, color, 9.0 if expanded else 2.7)
+		if expanded:
+			draw_string(ThemeDB.fallback_font, point + Vector2(-9, 5), str(index), HORIZONTAL_ALIGNMENT_CENTER, 18, 14, Color("#10282e"))
+			if selected_target == target:
+				draw_arc(point, 14, 0, TAU, 32, Color("#fff3b0"), 3, true)
 
 func _draw_player(area: Rect2) -> void:
 	if not is_instance_valid(player):

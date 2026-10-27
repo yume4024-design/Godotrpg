@@ -1,5 +1,9 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-27 最新整合來源以 `./tools/godot.ps1 -Mode RunPrologueCandidate` 啟動：新版灰石村→低語森林→礦坑、已修正防墜與小地圖，現可點擊小地圖或在 M／Menu 手冊選「地圖」查看完整地標。[區域地圖測試與限制](docs/PROLOGUE_AREA_MAP_REPORT.md)。
+
+已固定的 Windows 序章 RC2 在 `builds/prologue-candidate/rc2-20261027/candidate/start_prologue_candidate.cmd`；[包內序章與30分鐘自動長測報告](docs/PROLOGUE_REPAIR_20261027_REPORT.md)。RC2 保留且**不含後續新增的展開地圖**；下列較早日期為歷史進度，人工驗收仍暫停。
+
 2026-10-26 礦坑整體畫面修整已更新來源：[八區清單、18張實景與264＋8項驗證](docs/MINE_VISUAL_FINISH_REPORT.md)。使用`./tools/godot.ps1 -Mode RunMineReference`查看；本輪先畫面、不打包，RC2不含最新修整，人工驗收暫停。
 
 2026-10-26 礦坑八區造景候選與 Windows RC2 已完成整合：深坑道、岩層、彎軌、採掘工具與地下水；[264項來源回歸／137項包內序章／32項重啟及已知差距](docs/MINE_SCENE_COMPLETION_REPORT.md)，[啟動指南](docs/MINE_REFERENCE_GUIDE.md)。人工美術與實體輸入驗收維持暫停。
