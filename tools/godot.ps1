@@ -228,16 +228,37 @@ $startInfo.EnvironmentVariables['APPDATA'] = $profileRoot
 $startInfo.EnvironmentVariables['LOCALAPPDATA'] = $cacheRoot
 $startInfo.EnvironmentVariables['TEMP'] = $tempRoot
 $startInfo.EnvironmentVariables['TMP'] = $tempRoot
-if ($Mode -in @('RunReferenceVillage','RunMineReference','RunBlenderVillage','PreviewGreystoneBlender','PreviewRenRuntime', 'PreviewLiaMovement', 'PreviewCharacters', 'RunG06', 'PreviewGreystone', 'Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
+if ($Mode -in @('RunPrologueCandidate','RunReferenceVillage','RunMineReference','RunBlenderVillage','PreviewGreystoneBlender','PreviewRenRuntime', 'PreviewLiaMovement', 'PreviewCharacters', 'RunG06', 'PreviewGreystone', 'Editor', 'Run', 'PreviewBattle', 'PreviewArt', 'ControllerProbe')) {
     # Use the graphical binary for detached windows. The console wrapper inherits
     # the caller's pipe handles and can stall after a short-lived tool shell exits.
     $graphicalPath = $GodotPath -replace '_console\.exe$', '.exe'
     if (Test-Path -LiteralPath $graphicalPath -PathType Leaf) {
         $startInfo.FileName = $graphicalPath
     }
-    $launched = [System.Diagnostics.Process]::Start($startInfo)
-    Write-Output "Started $Mode (PID $($launched.Id)). Log: $logPath"
-    $launched.Dispose()
+    # CreateProcess can inherit the tool shell's pipe handles even for a GUI
+    # executable. ShellExecute detaches those handles; Godot writes its own log.
+    # ShellExecute cannot take ProcessStartInfo.EnvironmentVariables, so restore
+    # the caller's environment immediately after launching the graphical app.
+    $launchEnvironment = @{ APPDATA=$profileRoot; LOCALAPPDATA=$cacheRoot; TEMP=$tempRoot; TMP=$tempRoot }
+    $previousEnvironment = @{}
+    try {
+        foreach ($name in $launchEnvironment.Keys) {
+            $previousEnvironment[$name] = [Environment]::GetEnvironmentVariable($name, 'Process')
+            [Environment]::SetEnvironmentVariable($name, $launchEnvironment[$name], 'Process')
+        }
+        $detachedInfo = New-Object System.Diagnostics.ProcessStartInfo
+        $detachedInfo.FileName = $startInfo.FileName
+        $detachedInfo.Arguments = $startInfo.Arguments
+        $detachedInfo.WorkingDirectory = $projectRoot
+        $detachedInfo.UseShellExecute = $true
+        $launched = [System.Diagnostics.Process]::Start($detachedInfo)
+        Write-Output "Started $Mode (PID $($launched.Id)). Log: $logPath"
+        $launched.Dispose()
+    } finally {
+        foreach ($name in $previousEnvironment.Keys) {
+            [Environment]::SetEnvironmentVariable($name, $previousEnvironment[$name], 'Process')
+        }
+    }
     return
 }
 if ($Mode -eq 'TestWindowsStability') {

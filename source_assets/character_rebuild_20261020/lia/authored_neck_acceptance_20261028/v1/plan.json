@@ -1,0 +1,35 @@
+{
+  "method": "Authored continuous anatomical neck/clavicle shell with whole-face local replacement; no box clipping, per-cut ribbons or Decimate",
+  "status": "IN_PROGRESS; not approved or rigged",
+  "source_sha256": "935c47d37706c711cafbb8f1156b6efb6fba1cdbc1edd341fcb3b7da4ec01281",
+  "units": "Blender Z-up metres, source character already 1.95m",
+  "radial_segments": 24,
+  "sections_z_radius_x_front_y_back_y": [
+    [1.475, 0.110, -0.124, 0.045],
+    [1.495, 0.107, -0.122, 0.055],
+    [1.515, 0.083, -0.108, 0.055],
+    [1.540, 0.058, -0.078, 0.050],
+    [1.565, 0.045, -0.061, 0.045],
+    [1.600, 0.043, -0.060, 0.045],
+    [1.635, 0.044, -0.058, 0.045],
+    [1.659, 0.047, -0.052, 0.045]
+  ],
+  "front_replacement_half_width_by_z": [
+    [1.487, 0.065], [1.510, 0.095], [1.540, 0.080],
+    [1.565, 0.067], [1.605, 0.063], [1.636, 0.058]
+  ],
+  "front_replacement_max_y": 0.032,
+  "protected": [
+    "All original faces not explicitly listed in receipt",
+    "Original face, hair, hands, boots and outer purple collar",
+    "Gold fastener area abs(x)>0.075 below z=1.510",
+    "Original albedo, UV coordinates and defined source corner normals"
+  ],
+  "known_source_normal_exceptions": [[2805,8417],[3091,9274],[3123,9371]],
+  "limits": [
+    "Closed new neck shell does not prove a seamless neck/head joint or deformation",
+    "Source has other pre-existing seams and non-manifold intersections",
+    "Source outside local face replacement must remain unchanged, except three undefined zero normals",
+    "No production references, battle data, NPC IDs, story flags, rewards or save format changes"
+  ]
+}
