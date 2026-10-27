@@ -74,8 +74,9 @@ foreach ($role in @('candidate','qa')) {
         source_kind='git archive (tracked committed files only)'
         engine='4.7.2.stable.official.ed1daf0bf'
         runtime_origin='Existing verified Godot 4.7.2 runtime; not rebuilt from export templates'
-        entry_scene='res://scenes/main/prologue_candidate.tscn'
-        save_slot='user://crystal_prologue_candidate_20261027_slot_01.json'
+        entry_scene=$(if ($role -eq 'candidate') { 'res://scenes/main/prologue_candidate.tscn' } else { 'res://tests/qa_entry.tscn' })
+        game_scene='res://scenes/main/prologue_candidate.tscn'
+        save_slot=$(if ($role -eq 'candidate') { 'user://crystal_prologue_candidate_20261027_slot_01.json' } else { 'user://mine_reference_tests/story_visual.json' })
         executable_sha256=(Get-FileHash -LiteralPath $runtime -Algorithm SHA256).Hash.ToLowerInvariant()
         pck_sha256=(Get-FileHash -LiteralPath $pck -Algorithm SHA256).Hash.ToLowerInvariant()
         acceptance='Pending package tests; manual acceptance paused'
