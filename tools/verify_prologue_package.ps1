@@ -1,4 +1,4 @@
-﻿param([string]$Root='D:\RPGGAME\builds\prologue-candidate\rc2-20261027', [string]$GodotPath='D:\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-stable_win64_console.exe')
+﻿param([string]$Root='D:\RPGGAME\builds\prologue-candidate\rc3-20261028', [string]$GodotPath='D:\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-stable_win64_console.exe')
 $ErrorActionPreference='Stop'
 foreach ($role in @('candidate','qa')) {
  $folder=Join-Path $Root $role
@@ -48,7 +48,11 @@ function Run-Pack([string]$Name,[string]$Role,[string[]]$Arguments) {
 Run-Pack 'qa-story' 'qa' @()
 Run-Pack 'qa-reload' 'qa' @('--','--reload')
 Run-Pack 'qa-navigation' 'qa' @('--script','res://tests/prologue_navigation_test.gd')
+Run-Pack 'qa-area-map' 'qa' @('--script','res://tests/prologue_area_map_test.gd')
+Run-Pack 'qa-mine-edges' 'qa' @('--script','res://tests/mine_edge_safety_test.gd')
 Run-Pack 'qa-legacy-fixture' 'qa' @('--headless','--script','res://tests/phase5_prologue_test.gd')
+Run-Pack 'qa-migration' 'qa' @('--headless','--script','res://tests/prologue_migration_test.gd')
+Run-Pack 'qa-migration-reload' 'qa' @('--headless','--script','res://tests/prologue_migration_test.gd','--','--reload')
 Run-Pack 'qa-commerce' 'qa' @('--headless','--script','res://tests/prologue_commerce_test.gd')
 Run-Pack 'qa-commerce-reload' 'qa' @('--headless','--script','res://tests/prologue_commerce_test.gd','--','--reload')
 Run-Pack 'candidate-launch' 'candidate' @('--quit-after','180')
