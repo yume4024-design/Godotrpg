@@ -1,0 +1,66 @@
+{
+  "generator": "built-in imagegen edit",
+  "transparent_requested": true,
+  "views": [
+    {
+      "view": "front",
+      "file": "exec-ea00bebe-2fdb-436a-a1ba-d7f720985e0f.png",
+      "prompt": "EDIT ONLY THE ATTACHED IMAGE, a true orthographic unlit base-color projection of our actual Lia 3D model. Produce a texture cleanup for reprojection onto this exact mesh, NOT a redesigned character illustration. Preserve EXACT portrait canvas composition, full-body scale, A-pose, silhouette, all clothing boundaries, hand/finger positions, face/eyes/eyebrows/nose/mouth, blonde hair shape, unusually long neck geometry, purple coat, cream edging and shirt, dark fitted trousers, brown belt/pouch/bracers/boots and gold fasteners. Keep all existing object positions and outfit design. Remove the drawn black polygon grid/wireframe lines, patchy black/gray dirt-like seams, and broken texture scribbles from the purple cloth, cream trim, trousers, exposed wrist/hand skin, leather and hair. Replace those artifacts with clean cohesive soft low-poly anime game albedo colors and very restrained natural fabric/leather variation. Preserve real garment seams, buckle outlines, laces and layer boundaries; remove artificial triangular mesh lines. Clean the noisy chest laces into the same simple crossing brown laces, without changing neckline or garment shape. Do not add lighting, shadows, new details, texture grain, pose changes, props, labels or a new background. This is aligned color paint repair only; do not shorten neck or alter proportions. Transparent background with real alpha.",
+      "sha256": "c11234790218f7d390f9e204971de92352f2ecd60ded47325e0bee8ca791eeba",
+      "source_sha256": "45876b63e39a0966668931ecc7132c826307387a416ba72f4443c532c36bf687",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_zero": 1173670,
+      "alpha_full": 0,
+      "alpha_partial": 399194
+    },
+    {
+      "view": "back",
+      "file": "exec-881f0953-6979-404a-bf77-074dc8c5968e.png",
+      "prompt": "EDIT ONLY THE ATTACHED IMAGE, a true orthographic BACK unlit base-color projection of the actual Lia 3D model. This output is a texture cleanup that will be reprojected onto this EXACT mesh, so preserve exact portrait canvas composition, full-body scale, A-pose, all silhouette contours and clothing boundaries, all finger positions and back-facing orientation. Keep same blonde layered shoulder-length hair, purple high-collar coat and split skirt, cream edging/cuffs, brown belt and hip pouch, dark trousers, leather bracers, brown boots, gold accents. Remove all artificial black drawn polygon grid / wireframe lines from back hair, purple fabric, trousers, hands, boots and bracers. Repair noisy broken gray/white scratches at garment edges into their existing clean cream trim. Preserve genuine garment seams and piece boundaries and original color zones; no costume redesign, no new details, no altered hem, no different hairstyle or extra body parts. Clean cohesive soft low-poly anime game albedo, gentle color variation, NO rendered lighting/shadows/specular highlights. Keep EXACT projection alignment and proportions, no camera change. Real transparent alpha background, no text.",
+      "sha256": "e63e094ea56fca9a313a9d284ad1be787d41cc03af9a6c6e7ce67dcb36b7834e",
+      "source_sha256": "57d279b275504b785a404786dfd8a2fe70a34a6443a5ab4c7b2dd27a8dab4271",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_zero": 1176478,
+      "alpha_full": 0,
+      "alpha_partial": 396386
+    },
+    {
+      "view": "right",
+      "file": "exec-19bed0c4-88bb-4a6f-ab28-c30a419a77a9.png",
+      "prompt": "Edit ONLY this actual 3D model's orthographic right side albedo projection, facing screen left. This is an exact aligned texture cleanup for reprojection, NOT new concept art. Preserve the precise full-body position, size, A-pose silhouette, proportions, hand/fingers, hair shape, face and long neck, clothing outlines and all accessory locations. Keep purple high collar coat and layered cape sleeves, cream hem/cuffs/front shirt, blonde hair, dark pants, brown bracers/belt/boots, gold details, and the brown hip pouch. Remove artificial drawn polygon-grid/wireframe lines, noisy black scratches, pixel-like holes and fragmented gray speckles from fabric, hands, leather and hair colors. Repair existing cream trim color while retaining its exact silhouette and geometry. Keep actual material seams and original color region boundaries, simple soft flat anime game albedo shading with no illumination. NO new design, pose, camera, body proportions, ornaments or anatomy. Absolutely no glow, halo, aura, ground shadow, vignette or colored spill outside the character: real transparent alpha background, zero pixels outside original silhouette. Do not redraw the face or change garment shapes. Keep the original exact 2:3 portrait composition.",
+      "sha256": "f690182d36ea5a52f3f6795a218aaa4eb71f17879b9eaca1f62edba38df44aff",
+      "source_sha256": "beffc92c332e5c3aeea6ef4cc2589bcba51e61c23ec9b51055e8e8ffb9753b52",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_zero": 1330536,
+      "alpha_full": 0,
+      "alpha_partial": 242328
+    },
+    {
+      "view": "left",
+      "file": "exec-28a4a28f-709f-41b4-9b60-5c9c8f5ace54.png",
+      "prompt": "Edit ONLY this actual 3D model's orthographic left side albedo projection, facing screen right. This is an exact aligned texture cleanup for reprojection, NOT new concept art. Preserve the precise full-body position, size, A-pose silhouette, proportions, hand/fingers, hair shape, face and long neck, clothing outlines and all accessory locations. Keep purple high collar coat and layered cape sleeves, cream hem/cuffs/front shirt, blonde hair, dark pants, brown bracers/belt/boots, gold details. Remove artificial drawn polygon-grid/wireframe lines, noisy black scratches, pixel-like holes and fragmented gray speckles from fabric, hands, leather and hair colors. Repair existing cream trim color while retaining its exact silhouette and geometry. Keep actual material seams and original color region boundaries, simple soft flat anime game albedo shading with no illumination. NO new design, pose, camera, body proportions, ornaments or anatomy. Absolutely no glow, halo, aura, ground shadow, vignette or colored spill outside the character: real transparent alpha background, zero pixels outside original silhouette. Do not redraw the face or change garment shapes. Keep the original exact 2:3 portrait composition.",
+      "sha256": "e4e2b660e17232868c9c5683656249d8a216fcfe21468b2e44b9a958d8aeb63a",
+      "source_sha256": "458128043698c90246f9468bd76fcc1137def0df64ba828f561573b6d401b78f",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_zero": 1332953,
+      "alpha_full": 0,
+      "alpha_partial": 239911
+    }
+  ]
+}

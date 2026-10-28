@@ -9,9 +9,16 @@ var transitions: Array[Dictionary] = []
 var checkpoints: Array[Dictionary] = []
 var cycle: int = 0
 var soaking: bool = false
+var tested_source: String = "d8baaee91ef9ec18a2cf0976cc7d55b2761922f2"
+var tested_package: String = "prologue RC2 QA PCK"
+var tested_pck_sha256: String = ""
 const OUTPUT: String = "user://prologue_rc2_soak/report.json"
 
 func _initialize() -> void:
+	for argument: String in OS.get_cmdline_user_args():
+		if argument.begins_with("--tested-source="): tested_source = argument.trim_prefix("--tested-source=")
+		if argument.begins_with("--tested-package="): tested_package = argument.trim_prefix("--tested-package=")
+		if argument.begins_with("--tested-pck-sha="): tested_pck_sha256 = argument.trim_prefix("--tested-pck-sha=")
 	super._initialize()
 	slot = "user://prologue_rc2_soak/soak.json"
 	visual_slot = slot
@@ -96,8 +103,8 @@ func _soak() -> void:
 			_write_report(false, soak_start)
 			print("G075_HEARTBEAT seconds=%.1f cycle=%d map=%s failures=%d" % [(Time.get_ticks_usec()-soak_start)/1000000.0,cycle,map_id,failures])
 			if failures > 0 or Time.get_ticks_usec()-soak_start >= 1800000000: break
-	_write_report(true, soak_start)
 	_check(Time.get_ticks_usec()-soak_start >= 1800000000, "At least 30 rendered minutes")
+	_write_report(true, soak_start)
 	await _end()
 
 func _services() -> void:
@@ -149,7 +156,7 @@ func _write_report(complete: bool, soak_start: int) -> void:
 		metrics[label].draw_min = samples[label].draw_min
 		metrics[label].draw_max = samples[label].draw_max
 		metrics[label].engine_peak_bytes = samples[label].engine_peak
-	var report: Dictionary = {"complete":complete,"pid":OS.get_process_id(),"engine":Engine.get_version_info().string,"renderer":RenderingServer.get_video_adapter_name(),"display":DisplayServer.get_name(),"cap_fps":60,"soak_seconds":(Time.get_ticks_usec()-soak_start)/1000000.0,"total_seconds":(Time.get_ticks_usec()-started_usec)/1000000.0,"checks":checks,"failures":failures,"cycles":cycle,"metrics":metrics,"transitions":transitions,"checkpoints":checkpoints,"source_commit":"d8baaee91ef9ec18a2cf0976cc7d55b2761922f2", "package":"prologue RC2 QA PCK, Godot 4.7.2 console engine and external diagnostic script", "method":"Graphical automated InputMap movement; repositioned route segments; full story once, repeated service/battle/save/load; not human 30-minute playthrough. Timer includes diagnostics and snapshot work."}
+	var report: Dictionary = {"complete":complete,"pid":OS.get_process_id(),"engine":Engine.get_version_info().string,"renderer":RenderingServer.get_video_adapter_name(),"display":DisplayServer.get_name(),"cap_fps":60,"soak_seconds":(Time.get_ticks_usec()-soak_start)/1000000.0,"total_seconds":(Time.get_ticks_usec()-started_usec)/1000000.0,"checks":checks,"failures":failures,"cycles":cycle,"metrics":metrics,"transitions":transitions,"checkpoints":checkpoints,"source_commit":tested_source, "package":tested_package, "pck_sha256":tested_pck_sha256, "runner":"Godot 4.7.2 console engine mounting fixed QA PCK; external diagnostic, not release EXE", "debug_build":OS.is_debug_build(), "method":"Graphical automated InputMap movement; repositioned route segments; full story once, repeated service/battle/save/load; not human 30-minute playthrough. Timer includes diagnostics and snapshot work."}
 	var file: FileAccess = FileAccess.open(OUTPUT,FileAccess.WRITE)
 	file.store_string(JSON.stringify(report,"\t"))
 

@@ -1,0 +1,36 @@
+{
+  "version": "0.6.1-prologue-rc3-20261028",
+  "source_commit": "52c7f1d187c4e4f4039657f0be46b08c09351300",
+  "package_hashes": {
+    "D:\\RPGGAME\\builds\\prologue-candidate\\rc3-20261028\\candidate\\ProjectCrystal.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "D:\\RPGGAME\\builds\\prologue-candidate\\rc3-20261028\\candidate\\ProjectCrystal.pck": "b4bce35e15b9cfdf7fd642552a381de04e23045a21691f2ea98a9dcd3b56d607",
+    "D:\\RPGGAME\\builds\\prologue-candidate\\rc3-20261028\\qa\\ProjectCrystal.pck": "be1754532783552a0dfb4ff09f2831823cb0af6168a1f5d7bce52e6def5253dd",
+    "D:\\RPGGAME\\builds\\prologue-candidate\\rc3-20261028\\qa\\ProjectCrystal.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562"
+  },
+  "method": "Graphical Godot console engine mounts fixed QA PCK; external test only; not a standalone release EXE benchmark or human playthrough",
+  "passed": true,
+  "runs": [
+    {
+      "name": "soak",
+      "script_sha256": "018AF1B6678602E7CC10ADC298050A6675A589DFFD4B9018474258843CC6D546",
+      "started_utc": "2026-10-28T15:13:43.4846516Z",
+      "pid": 19776,
+      "exit_code": 0,
+      "seconds": 1851.8668457,
+      "ended_utc": "2026-10-28T15:44:35.3415979Z"
+    },
+    {
+      "name": "restart",
+      "script_sha256": "D20B315EB150DDE5CE6462CB75D24D16C1DDBE56A13ADABFC3FFF2711A85B999",
+      "started_utc": "2026-10-28T15:44:35.3978615Z",
+      "pid": 25124,
+      "exit_code": 0,
+      "seconds": 9.8741988,
+      "ended_utc": "2026-10-28T15:44:45.2711651Z"
+    }
+  ],
+  "restart_save_hashes": {
+    "D:\\RPGGAME\\builds\\prologue-candidate\\rc3-20261028\\acceptance\\soak-20261028-231343-405\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\prologue_rc2_soak\\soak.json": "2F730C2CEEFE153351AC5F68479E4CA09C7EA859CD917ED0017137B4C8431B7B",
+    "D:\\RPGGAME\\builds\\prologue-candidate\\rc3-20261028\\acceptance\\soak-20261028-231343-405\\profile\\Godot\\app_userdata\\失落星核 — Project Crystal\\prologue_rc2_soak\\soak.json.bak": "24AA59D6C8629521C401E8E9DDF16C6929BDCE0EA5E33654ACB7CD30A1353B17"
+  }
+}

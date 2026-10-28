@@ -1,0 +1,4 @@
+G075_SOAK_STARTED pid=12040 duration_seconds=1800
+G075_RESULT checks=1264 failures=0
+RC2_DEFERRED_FREE_OBSERVATION before=21 after=0
+MINE_STORY_RESULT checks=25 failures=0

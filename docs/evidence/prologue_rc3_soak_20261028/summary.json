@@ -1,0 +1,34 @@
+{
+  "source_commit": "52c7f1d187c4e4f4039657f0be46b08c09351300",
+  "qa_pck_sha256": "be1754532783552a0dfb4ff09f2831823cb0af6168a1f5d7bce52e6def5253dd",
+  "soak_seconds": 1812.760704,
+  "cycles": 27,
+  "final_log_checks": 1264,
+  "metric_snapshot_checks": 1263,
+  "check_count_note": "The complete metric snapshot was written immediately before the final duration assertion. Terminal log has 1264 checks. Future diagnostic now writes report after that assertion; the executed script hash remains in run.json.",
+  "restart_checks": 25,
+  "failures": 0,
+  "transition_count": 81,
+  "transition_mean_ms": 343.15132098765434,
+  "transition_max_ms": 358.861,
+  "process_samples": 299,
+  "process_first_seconds": 356.838,
+  "process_last_seconds": 1850.568,
+  "process_metrics": {
+    "working_set_bytes": {
+      "max": 978407424.0,
+      "last": 977809408.0
+    },
+    "private_bytes": {
+      "max": 2256756736.0,
+      "last": 2256318464.0
+    },
+    "peak_working_set_bytes": {
+      "max": 1015885824.0,
+      "last": 1015885824.0
+    }
+  },
+  "scope": "Native graphical console engine with RC3 QA PCK, debug_build true; not release EXE performance or human acceptance",
+  "runtime_package_unchanged": true,
+  "engine_peak_bytes": 429713519.0
+}

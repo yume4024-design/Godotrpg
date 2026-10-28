@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-29：固定序章 RC3 已完成30分12.8秒圖形自動長測，1264／0＋重啟25／0。[數據與限制](docs/PROLOGUE_RC3_SOAK_REPORT.md)。戰鬥／交易尖峰、新莉雅拓樸與人工終驗仍待，不代表最終發布通過；啟動路徑同下。
+
 2026-10-28 最新 Windows 序章修正版：`builds/prologue-candidate/rc3-20261028/candidate/start_prologue_candidate.cmd`。包含展開地圖、防墜與最新版三區；498項自動檢查及23邊緣案例通過。[RC3結果、下載檔與未完成項目](docs/PROLOGUE_RC3_REPORT.md)。RC2與正式v0.6.1保留；下列較早進度為歷史，人工驗收仍暫停。
 
 2026-10-28 已修正下方來源啟動命令的60秒強制關閉問題；圖形視窗持續71.558秒及載入檢查通過。[啟動修正與限制](docs/PROLOGUE_LAUNCHER_REPAIR_20261028.md)。本輪未更新固定RC2或替換莉雅模型。

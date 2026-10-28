@@ -1,0 +1,10 @@
+{
+  "pid": 12040,
+  "parent_pid": 19776,
+  "name": "Godot_v4.7.2-stable_win64",
+  "game_started": "2026-10-28T15:13:43.5143256Z",
+  "sampling_started_utc": "2026-10-28T15:19:40.3213137Z",
+  "first_seconds_since_start": 356.8083334,
+  "note": "First console-process CSV measures only launcher. This file measures verified rendering child. Initial interval not sampled; peak working set is process lifetime peak.",
+  "sampling_ended_utc": "2026-10-28T15:44:35.2984113Z"
+}

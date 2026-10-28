@@ -1,0 +1,19 @@
+{
+  "kind": "12 second native memory sampler probe, not gameplay or long-run validation",
+  "runs": [
+    {
+      "name": "probe",
+      "samples": 3,
+      "script_sha256": "7E2FA4DCB7B003E6779D5371FEABC37B8BEBCEA74AAE408CAFD370E1B370F98E",
+      "started_utc": "2026-10-28T21:58:13.2506829Z",
+      "pid": 27300,
+      "exit_code": 0,
+      "metrics_pid": 15760,
+      "metrics_name": "Godot_v4.7.2-stable_win64",
+      "seconds": 13.1212499,
+      "ended_utc": "2026-10-28T21:58:26.3589790Z"
+    }
+  ],
+  "passed": true,
+  "actual_engine_pid": 15760
+}

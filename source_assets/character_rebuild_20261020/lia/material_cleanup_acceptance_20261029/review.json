@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-29",
+  "versions": [
+    {
+      "version": "v1",
+      "triangles": 12554,
+      "geometry_uv_normals_unchanged": true,
+      "painted_pixels": 4485688,
+      "glb_sha256": "e69cd8b58627287fc8cd29728d3ca9656aa4363117cd07cbd99079a8ca588af4",
+      "visual_gate": "FAIL",
+      "visual_observations": [
+        "hair and broad clothing wire lines reduced",
+        "collar voids and jagged wrist/hand geometry remain",
+        "rear cream/purple hem misregistration remains"
+      ],
+      "runtime_adopted": false
+    },
+    {
+      "version": "v2",
+      "triangles": 12554,
+      "geometry_uv_normals_unchanged": true,
+      "painted_pixels": 7390403,
+      "glb_sha256": "bd9d5c1c8f016fb12a6e096a4cad642b32b4f728f6e02b393147ab9040b0e5ac",
+      "visual_gate": "FAIL",
+      "visual_observations": [
+        "hair and broad clothing wire lines reduced",
+        "collar voids and jagged wrist/hand geometry remain",
+        "rear cream/purple hem misregistration remains"
+      ],
+      "runtime_adopted": false
+    }
+  ],
+  "static_gate": "PASS",
+  "godot_checks": 22,
+  "godot_failures": 0,
+  "rig_tested": false,
+  "animation_tested": false,
+  "runtime_adopted": false,
+  "human_review": "paused",
+  "next": "Repair measured collar boundaries and wrist/hem topology; do not repeat blind projection to hide geometry defects."
+}

@@ -39,3 +39,12 @@ export.cfg
 /source_assets/character_rebuild_20261020/lia/side_surface_v2_20261028/albedo.png
 /source_assets/character_rebuild_20261020/lia/side_surface_v2_20261028/lia_side_surface.blend
 /source_assets/character_rebuild_20261020/lia/side_surface_v2_20261028/lia_side_surface.glb
+
+# Local Lia full-surface candidate binaries; retain projections, tools and evidence
+/source_assets/character_rebuild_20261020/lia/material_cleanup_20261028/baseline.blend
+/source_assets/character_rebuild_20261020/lia/material_cleanup_v1_20261029/albedo.png
+/source_assets/character_rebuild_20261020/lia/material_cleanup_v1_20261029/lia_material_cleanup.blend
+/source_assets/character_rebuild_20261020/lia/material_cleanup_v1_20261029/lia_material_cleanup.glb
+/source_assets/character_rebuild_20261020/lia/material_cleanup_v2_20261029/albedo.png
+/source_assets/character_rebuild_20261020/lia/material_cleanup_v2_20261029/lia_material_cleanup.blend
+/source_assets/character_rebuild_20261020/lia/material_cleanup_v2_20261029/lia_material_cleanup.glb

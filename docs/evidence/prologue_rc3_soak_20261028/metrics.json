@@ -1,0 +1,1155 @@
+{
+	"cap_fps": 60,
+	"checkpoints": [
+		{
+			"engine_bytes": 411959439.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 22.456439
+		},
+		{
+			"engine_bytes": 396441080.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 44.340166
+		},
+		{
+			"engine_bytes": 397638230.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 67.400981
+		},
+		{
+			"engine_bytes": 412067959.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 89.73232
+		},
+		{
+			"engine_bytes": 396514064.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 111.53236
+		},
+		{
+			"engine_bytes": 397700754.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 134.464393
+		},
+		{
+			"engine_bytes": 412122159.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 156.819697
+		},
+		{
+			"engine_bytes": 396566552.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 178.58625
+		},
+		{
+			"engine_bytes": 397750826.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 201.516648
+		},
+		{
+			"engine_bytes": 412158295.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 223.857556
+		},
+		{
+			"engine_bytes": 396587320.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 245.552416
+		},
+		{
+			"engine_bytes": 397759010.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 268.485098
+		},
+		{
+			"engine_bytes": 412188183.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 290.826363
+		},
+		{
+			"engine_bytes": 396638088.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 312.621447
+		},
+		{
+			"engine_bytes": 397829962.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 335.554169
+		},
+		{
+			"engine_bytes": 412236135.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 357.994089
+		},
+		{
+			"engine_bytes": 396668424.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 380.002354
+		},
+		{
+			"engine_bytes": 397838218.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 403.045181
+		},
+		{
+			"engine_bytes": 412276975.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 425.389034
+		},
+		{
+			"engine_bytes": 396737744.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 447.169556
+		},
+		{
+			"engine_bytes": 397939906.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 470.102097
+		},
+		{
+			"engine_bytes": 412347975.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 492.44451
+		},
+		{
+			"engine_bytes": 396776904.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 514.2407
+		},
+		{
+			"engine_bytes": 397952858.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 537.172948
+		},
+		{
+			"engine_bytes": 412359031.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 559.160144
+		},
+		{
+			"engine_bytes": 396787216.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 580.955674
+		},
+		{
+			"engine_bytes": 397957010.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 603.888177
+		},
+		{
+			"engine_bytes": 412412071.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 626.206064
+		},
+		{
+			"engine_bytes": 396889144.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 647.983778
+		},
+		{
+			"engine_bytes": 398107490.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 670.915938
+		},
+		{
+			"engine_bytes": 412516503.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 693.37581
+		},
+		{
+			"engine_bytes": 396944688.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 715.391969
+		},
+		{
+			"engine_bytes": 398114482.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 738.431266
+		},
+		{
+			"engine_bytes": 412521783.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 760.772381
+		},
+		{
+			"engine_bytes": 396949968.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 782.5509
+		},
+		{
+			"engine_bytes": 398128994.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 805.457989
+		},
+		{
+			"engine_bytes": 412535167.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 827.81442
+		},
+		{
+			"engine_bytes": 396963352.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 849.605508
+		},
+		{
+			"engine_bytes": 398133146.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 872.537851
+		},
+		{
+			"engine_bytes": 412539319.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 894.845991
+		},
+		{
+			"engine_bytes": 396967504.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 916.637641
+		},
+		{
+			"engine_bytes": 398137802.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 939.570179
+		},
+		{
+			"engine_bytes": 412617303.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 961.926247
+		},
+		{
+			"engine_bytes": 397118312.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 983.717398
+		},
+		{
+			"engine_bytes": 398360930.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1006.649789
+		},
+		{
+			"engine_bytes": 412767103.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1029.112117
+		},
+		{
+			"engine_bytes": 397195288.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1051.122925
+		},
+		{
+			"engine_bytes": 398365082.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1074.16187
+		},
+		{
+			"engine_bytes": 412775519.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1096.49912
+		},
+		{
+			"engine_bytes": 397203704.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1118.291146
+		},
+		{
+			"engine_bytes": 398383090.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1141.223445
+		},
+		{
+			"engine_bytes": 412790943.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1163.560519
+		},
+		{
+			"engine_bytes": 397219128.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1185.351531
+		},
+		{
+			"engine_bytes": 398393186.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1208.283718
+		},
+		{
+			"engine_bytes": 412799359.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1230.622292
+		},
+		{
+			"engine_bytes": 397227544.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1252.412707
+		},
+		{
+			"engine_bytes": 398397338.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1275.345316
+		},
+		{
+			"engine_bytes": 412803511.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1297.699076
+		},
+		{
+			"engine_bytes": 397231696.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1319.490497
+		},
+		{
+			"engine_bytes": 398401490.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1342.42381
+		},
+		{
+			"engine_bytes": 412807663.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1364.862598
+		},
+		{
+			"engine_bytes": 397235848.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1386.876174
+		},
+		{
+			"engine_bytes": 398406386.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1409.935365
+		},
+		{
+			"engine_bytes": 412922543.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1432.254208
+		},
+		{
+			"engine_bytes": 397459968.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1454.062113
+		},
+		{
+			"engine_bytes": 398739002.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1476.994166
+		},
+		{
+			"engine_bytes": 413145175.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1499.349317
+		},
+		{
+			"engine_bytes": 397573360.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1521.140541
+		},
+		{
+			"engine_bytes": 398743154.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1544.072962
+		},
+		{
+			"engine_bytes": 413150223.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1566.424662
+		},
+		{
+			"engine_bytes": 397577952.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1588.223068
+		},
+		{
+			"engine_bytes": 398749374.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1611.155202
+		},
+		{
+			"engine_bytes": 413160823.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1633.508125
+		},
+		{
+			"engine_bytes": 397588496.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1655.285169
+		},
+		{
+			"engine_bytes": 398759918.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1678.217528
+		},
+		{
+			"engine_bytes": 413164975.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1700.676804
+		},
+		{
+			"engine_bytes": 397592648.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1722.693119
+		},
+		{
+			"engine_bytes": 398778454.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1745.717852
+		},
+		{
+			"engine_bytes": 413186031.0,
+			"map": "greystone_runtime",
+			"nodes": 4716.0,
+			"objects": 13206.0,
+			"orphans": 28.0,
+			"seconds": 1768.041253
+		},
+		{
+			"engine_bytes": 397613704.0,
+			"map": "forest",
+			"nodes": 862.0,
+			"objects": 7701.0,
+			"orphans": 28.0,
+			"seconds": 1789.816075
+		},
+		{
+			"engine_bytes": 398791518.0,
+			"map": "mine",
+			"nodes": 920.0,
+			"objects": 8291.0,
+			"orphans": 28.0,
+			"seconds": 1812.748348
+		}
+	],
+	"checks": 1263,
+	"complete": true,
+	"cycles": 27,
+	"debug_build": true,
+	"display": "Windows",
+	"engine": "4.7.2-stable (official)",
+	"failures": 0,
+	"method": "Graphical automated InputMap movement; repositioned route segments; full story once, repeated service/battle/save/load; not human 30-minute playthrough. Timer includes diagnostics and snapshot work.",
+	"metrics": {
+		"battle": {
+			"draw_max": 333.0,
+			"draw_min": 101.0,
+			"engine_peak_bytes": 402424370.0,
+			"fps": 57.3367680930762,
+			"frames": 3818,
+			"max_ms": 222.692,
+			"mean_ms": 17.4408156102673,
+			"p95_ms": 16.845,
+			"p99_ms": 51.679
+		},
+		"forest": {
+			"draw_max": 334.0,
+			"draw_min": 288.0,
+			"engine_peak_bytes": 397234194.0,
+			"fps": 59.9089842920848,
+			"frames": 33639,
+			"max_ms": 60.375,
+			"mean_ms": 16.6919872172181,
+			"p95_ms": 16.746,
+			"p99_ms": 16.936
+		},
+		"greystone_runtime": {
+			"draw_max": 1043.0,
+			"draw_min": 776.0,
+			"engine_peak_bytes": 412831653.0,
+			"fps": 59.8171103334979,
+			"frames": 33598,
+			"max_ms": 85.241,
+			"mean_ms": 16.7176246800407,
+			"p95_ms": 16.763,
+			"p99_ms": 16.956
+		},
+		"mine": {
+			"draw_max": 207.0,
+			"draw_min": 184.0,
+			"engine_peak_bytes": 402452740.0,
+			"fps": 59.9964474888998,
+			"frames": 33732,
+			"max_ms": 84.737,
+			"mean_ms": 16.6676535337366,
+			"p95_ms": 16.736,
+			"p99_ms": 16.933
+		},
+		"npc_commerce": {
+			"draw_max": 1213.0,
+			"draw_min": 953.0,
+			"engine_peak_bytes": 429713519.0,
+			"fps": 55.0349481175301,
+			"frames": 1784,
+			"max_ms": 216.046,
+			"mean_ms": 18.1702724215247,
+			"p95_ms": 19.099,
+			"p99_ms": 69.817
+		},
+		"prologue": {
+			"draw_max": 1302.0,
+			"draw_min": 0.0,
+			"engine_peak_bytes": 412806299.0,
+			"fps": 26.6535876534665,
+			"frames": 1009,
+			"max_ms": 7542.169,
+			"mean_ms": 37.5184013875124,
+			"p95_ms": 18.16,
+			"p99_ms": 212.521
+		},
+		"transition": {
+			"draw_max": 1194.0,
+			"draw_min": 175.0,
+			"engine_peak_bytes": 412793167.0,
+			"fps": 56.6127484356403,
+			"frames": 1604,
+			"max_ms": 74.07,
+			"mean_ms": 17.6638659600998,
+			"p95_ms": 27.082,
+			"p99_ms": 68.082
+		}
+	},
+	"package": "0.6.1-prologue-rc3-20261028 QA PCK",
+	"pck_sha256": "be1754532783552a0dfb4ff09f2831823cb0af6168a1f5d7bce52e6def5253dd",
+	"pid": 12040,
+	"renderer": "NVIDIA GeForce RTX 3080",
+	"runner": "Godot 4.7.2 console engine mounting fixed QA PCK; external diagnostic, not release EXE",
+	"soak_seconds": 1812.760704,
+	"source_commit": "52c7f1d187c4e4f4039657f0be46b08c09351300",
+	"total_seconds": 1850.622526,
+	"transitions": [
+		{
+			"cycle": 1,
+			"map": "greystone_runtime",
+			"ms": 348.704
+		},
+		{
+			"cycle": 1,
+			"map": "forest",
+			"ms": 332.806
+		},
+		{
+			"cycle": 1,
+			"map": "mine",
+			"ms": 346.517
+		},
+		{
+			"cycle": 2,
+			"map": "greystone_runtime",
+			"ms": 339.149
+		},
+		{
+			"cycle": 2,
+			"map": "forest",
+			"ms": 349.561
+		},
+		{
+			"cycle": 2,
+			"map": "mine",
+			"ms": 346.11
+		},
+		{
+			"cycle": 3,
+			"map": "greystone_runtime",
+			"ms": 355.236
+		},
+		{
+			"cycle": 3,
+			"map": "forest",
+			"ms": 332.155
+		},
+		{
+			"cycle": 3,
+			"map": "mine",
+			"ms": 343.459
+		},
+		{
+			"cycle": 4,
+			"map": "greystone_runtime",
+			"ms": 353.436
+		},
+		{
+			"cycle": 4,
+			"map": "forest",
+			"ms": 347.451
+		},
+		{
+			"cycle": 4,
+			"map": "mine",
+			"ms": 345.857
+		},
+		{
+			"cycle": 5,
+			"map": "greystone_runtime",
+			"ms": 352.81
+		},
+		{
+			"cycle": 5,
+			"map": "forest",
+			"ms": 347.769
+		},
+		{
+			"cycle": 5,
+			"map": "mine",
+			"ms": 345.62
+		},
+		{
+			"cycle": 6,
+			"map": "greystone_runtime",
+			"ms": 349.516
+		},
+		{
+			"cycle": 6,
+			"map": "forest",
+			"ms": 347.573
+		},
+		{
+			"cycle": 6,
+			"map": "mine",
+			"ms": 344.771
+		},
+		{
+			"cycle": 7,
+			"map": "greystone_runtime",
+			"ms": 354.037
+		},
+		{
+			"cycle": 7,
+			"map": "forest",
+			"ms": 347.749
+		},
+		{
+			"cycle": 7,
+			"map": "mine",
+			"ms": 344.882
+		},
+		{
+			"cycle": 8,
+			"map": "greystone_runtime",
+			"ms": 352.697
+		},
+		{
+			"cycle": 8,
+			"map": "forest",
+			"ms": 346.397
+		},
+		{
+			"cycle": 8,
+			"map": "mine",
+			"ms": 344.617
+		},
+		{
+			"cycle": 9,
+			"map": "greystone_runtime",
+			"ms": 334.827
+		},
+		{
+			"cycle": 9,
+			"map": "forest",
+			"ms": 346.202
+		},
+		{
+			"cycle": 9,
+			"map": "mine",
+			"ms": 344.21
+		},
+		{
+			"cycle": 10,
+			"map": "greystone_runtime",
+			"ms": 333.935
+		},
+		{
+			"cycle": 10,
+			"map": "forest",
+			"ms": 345.711
+		},
+		{
+			"cycle": 10,
+			"map": "mine",
+			"ms": 344.054
+		},
+		{
+			"cycle": 11,
+			"map": "greystone_runtime",
+			"ms": 354.118
+		},
+		{
+			"cycle": 11,
+			"map": "forest",
+			"ms": 346.003
+		},
+		{
+			"cycle": 11,
+			"map": "mine",
+			"ms": 344.007
+		},
+		{
+			"cycle": 12,
+			"map": "greystone_runtime",
+			"ms": 334.311
+		},
+		{
+			"cycle": 12,
+			"map": "forest",
+			"ms": 345.096
+		},
+		{
+			"cycle": 12,
+			"map": "mine",
+			"ms": 342.995
+		},
+		{
+			"cycle": 13,
+			"map": "greystone_runtime",
+			"ms": 348.789
+		},
+		{
+			"cycle": 13,
+			"map": "forest",
+			"ms": 344.581
+		},
+		{
+			"cycle": 13,
+			"map": "mine",
+			"ms": 343.334
+		},
+		{
+			"cycle": 14,
+			"map": "greystone_runtime",
+			"ms": 331.947
+		},
+		{
+			"cycle": 14,
+			"map": "forest",
+			"ms": 344.316
+		},
+		{
+			"cycle": 14,
+			"map": "mine",
+			"ms": 343.535
+		},
+		{
+			"cycle": 15,
+			"map": "greystone_runtime",
+			"ms": 351.06
+		},
+		{
+			"cycle": 15,
+			"map": "forest",
+			"ms": 343.542
+		},
+		{
+			"cycle": 15,
+			"map": "mine",
+			"ms": 343.152
+		},
+		{
+			"cycle": 16,
+			"map": "greystone_runtime",
+			"ms": 347.765
+		},
+		{
+			"cycle": 16,
+			"map": "forest",
+			"ms": 343.398
+		},
+		{
+			"cycle": 16,
+			"map": "mine",
+			"ms": 342.696
+		},
+		{
+			"cycle": 17,
+			"map": "greystone_runtime",
+			"ms": 331.617
+		},
+		{
+			"cycle": 17,
+			"map": "forest",
+			"ms": 343.006
+		},
+		{
+			"cycle": 17,
+			"map": "mine",
+			"ms": 342.777
+		},
+		{
+			"cycle": 18,
+			"map": "greystone_runtime",
+			"ms": 330.472
+		},
+		{
+			"cycle": 18,
+			"map": "forest",
+			"ms": 342.318
+		},
+		{
+			"cycle": 18,
+			"map": "mine",
+			"ms": 342.465
+		},
+		{
+			"cycle": 19,
+			"map": "greystone_runtime",
+			"ms": 346.712
+		},
+		{
+			"cycle": 19,
+			"map": "forest",
+			"ms": 343.2
+		},
+		{
+			"cycle": 19,
+			"map": "mine",
+			"ms": 342.199
+		},
+		{
+			"cycle": 20,
+			"map": "greystone_runtime",
+			"ms": 347.26
+		},
+		{
+			"cycle": 20,
+			"map": "forest",
+			"ms": 342.37
+		},
+		{
+			"cycle": 20,
+			"map": "mine",
+			"ms": 342.516
+		},
+		{
+			"cycle": 21,
+			"map": "greystone_runtime",
+			"ms": 329.698
+		},
+		{
+			"cycle": 21,
+			"map": "forest",
+			"ms": 342.848
+		},
+		{
+			"cycle": 21,
+			"map": "mine",
+			"ms": 341.718
+		},
+		{
+			"cycle": 22,
+			"map": "greystone_runtime",
+			"ms": 329.428
+		},
+		{
+			"cycle": 22,
+			"map": "forest",
+			"ms": 358.861
+		},
+		{
+			"cycle": 22,
+			"map": "mine",
+			"ms": 341.421
+		},
+		{
+			"cycle": 23,
+			"map": "greystone_runtime",
+			"ms": 345.924
+		},
+		{
+			"cycle": 23,
+			"map": "forest",
+			"ms": 341.39
+		},
+		{
+			"cycle": 23,
+			"map": "mine",
+			"ms": 341.494
+		},
+		{
+			"cycle": 24,
+			"map": "greystone_runtime",
+			"ms": 328.821
+		},
+		{
+			"cycle": 24,
+			"map": "forest",
+			"ms": 342.056
+		},
+		{
+			"cycle": 24,
+			"map": "mine",
+			"ms": 340.705
+		},
+		{
+			"cycle": 25,
+			"map": "greystone_runtime",
+			"ms": 330.6
+		},
+		{
+			"cycle": 25,
+			"map": "forest",
+			"ms": 341.642
+		},
+		{
+			"cycle": 25,
+			"map": "mine",
+			"ms": 341.096
+		},
+		{
+			"cycle": 26,
+			"map": "greystone_runtime",
+			"ms": 346.26
+		},
+		{
+			"cycle": 26,
+			"map": "forest",
+			"ms": 341.529
+		},
+		{
+			"cycle": 26,
+			"map": "mine",
+			"ms": 340.846
+		},
+		{
+			"cycle": 27,
+			"map": "greystone_runtime",
+			"ms": 328.477
+		},
+		{
+			"cycle": 27,
+			"map": "forest",
+			"ms": 340.841
+		},
+		{
+			"cycle": 27,
+			"map": "mine",
+			"ms": 340.227
+		}
+	]
+}
