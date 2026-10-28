@@ -9,7 +9,7 @@ foreach ($role in @('candidate','qa')) {
   if ($actual -ne $expected) {throw "Package hash mismatch: $role/$file"}
  }
 }
-$evidence=Join-Path $Root 'acceptance'
+$evidence=Join-Path $Root ('acceptance/run-' + (Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
 $profile=Join-Path $evidence 'profile'
 $tempRoot=Join-Path $evidence 'temp'
 New-Item -ItemType Directory -Path $evidence,$profile,$tempRoot -Force | Out-Null
@@ -40,7 +40,9 @@ function Run-Pack([string]$Name,[string]$Role,[string[]]$Arguments) {
   $output=$stdout.GetAwaiter().GetResult()+$stderr.GetAwaiter().GetResult()
   $output | Set-Content -LiteralPath (Join-Path $evidence ($Name+'-output.txt')) -Encoding utf8
   if($p.ExitCode -ne 0 -or $output -match '(?im)^\s*(SCRIPT ERROR:|ERROR:|Parse Error:|FAIL |Failed loading resource)'){throw "$Name failed"}
-  if ($Name -ne 'candidate-launch' -and $output -notmatch '_RESULT checks=\d+ failures=0') {throw "Missing $Name result"}
+  if ($Name -eq 'qa-mine-edges') {
+   if ($output -notmatch 'MINE_EDGE_RESULT samples=23 new_gaps=0 failures=0') {throw 'Missing successful mine edge result'}
+  } elseif ($Name -ne 'candidate-launch' -and $output -notmatch '_RESULT checks=\d+ failures=0') {throw "Missing $Name result"}
   Write-Output "PACKAGE_TEST=$Name PASS"
   $output -split "`n" | Where-Object {$_ -match '_RESULT '}
  } finally {$p.Dispose()}
@@ -51,6 +53,7 @@ Run-Pack 'qa-navigation' 'qa' @('--script','res://tests/prologue_navigation_test
 Run-Pack 'qa-area-map' 'qa' @('--script','res://tests/prologue_area_map_test.gd')
 Run-Pack 'qa-mine-edges' 'qa' @('--script','res://tests/mine_edge_safety_test.gd')
 Run-Pack 'qa-legacy-fixture' 'qa' @('--headless','--script','res://tests/phase5_prologue_test.gd')
+Run-Pack 'qa-g06-fixture' 'qa' @('--headless','--script','res://tests/greystone_integration_test.gd')
 Run-Pack 'qa-migration' 'qa' @('--headless','--script','res://tests/prologue_migration_test.gd')
 Run-Pack 'qa-migration-reload' 'qa' @('--headless','--script','res://tests/prologue_migration_test.gd','--','--reload')
 Run-Pack 'qa-commerce' 'qa' @('--headless','--script','res://tests/prologue_commerce_test.gd')
