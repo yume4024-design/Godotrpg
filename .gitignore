@@ -30,3 +30,12 @@ export_credentials.cfg
 *.blend1
 *.blend2
 export.cfg
+
+# Lia local side-surface repair intermediates; keep references and receipts
+/source_assets/character_rebuild_20261020/lia/side_surface_20261028/baseline.blend
+/source_assets/character_rebuild_20261020/lia/side_surface_v1_20261028/albedo.png
+/source_assets/character_rebuild_20261020/lia/side_surface_v1_20261028/lia_side_surface.blend
+/source_assets/character_rebuild_20261020/lia/side_surface_v1_20261028/lia_side_surface.glb
+/source_assets/character_rebuild_20261020/lia/side_surface_v2_20261028/albedo.png
+/source_assets/character_rebuild_20261020/lia/side_surface_v2_20261028/lia_side_surface.blend
+/source_assets/character_rebuild_20261020/lia/side_surface_v2_20261028/lia_side_surface.glb

@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-28",
+  "blender": "5.2.2 LTS",
+  "godot": "4.7.2.stable.official.ed1daf0bf",
+  "versions": {
+    "v1": {
+      "glb_sha256": "4505af946ab30ee20457b476100bd3a61103af73cfaf2c3f62ba1bb049adfa4e",
+      "triangles": 12554,
+      "painted_pixels": 430182,
+      "geometry_uv_normals_unchanged": true,
+      "visual_gate": "FAIL",
+      "runtime_adopted": false,
+      "reason": "Face-normal/depth masking missed overlapping cheek skin; visible black wire patch remained."
+    },
+    "v2": {
+      "glb_sha256": "634ebdb699d086b676aedee5d2f3b1622162b6c4e4ff0921c08879f117b449b1",
+      "triangles": 12554,
+      "painted_pixels": 528686,
+      "geometry_uv_normals_unchanged": true,
+      "visual_gate": "FAIL",
+      "runtime_adopted": false,
+      "reason": "Cheek lines substantially reduced with corner normals and bounded cheek layer; collar gaps, back hair/coat wires and jagged generated layers remain."
+    }
+  },
+  "native_views_reviewed": [
+    "Blender front/right/left/back",
+    "Godot body front, head front/side/back/three-quarter"
+  ],
+  "rig_animation_gameplay": "NOT_STARTED for this static model",
+  "human_acceptance": "PAUSED",
+  "runtime_adopted": false
+}

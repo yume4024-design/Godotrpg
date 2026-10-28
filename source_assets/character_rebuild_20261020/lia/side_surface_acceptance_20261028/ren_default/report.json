@@ -1,0 +1,34 @@
+{
+	"animation_tested": false,
+	"asset": "ren_default_regression",
+	"category": "player_character",
+	"checks": 18,
+	"failures": [],
+	"formal_gameplay": false,
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.95000004768372
+	],
+	"import_mode": "PackedScene",
+	"model": "res://assets/models/rebuilt_characters/ren_static.glb",
+	"model_sha256": "f94a54b6eec3875f137e6dd87b79d501ef0d90b7a240f09061a80c857f14a0f0",
+	"physical_input": false,
+	"rigged": false,
+	"solid_materials": [],
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 12808
+}

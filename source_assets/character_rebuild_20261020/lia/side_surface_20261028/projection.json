@@ -1,0 +1,40 @@
+{
+  "source": "source_assets\\character_rebuild_20261020\\lia\\authored_neck_v3_20261028\\lia_authored_neck.blend",
+  "source_sha256": "c69159f4a024c663381fee9b7613a4919436cb5626c159b8ef63295cfa086c25",
+  "body": "LiaRetainedAuthoredNeckSurface",
+  "span": 0.52,
+  "center": [
+    0.0,
+    0.0,
+    1.7350000143051147
+  ],
+  "views": {
+    "right": {
+      "camera_yaw_degrees": 65,
+      "eye_direction": [
+        0.9063078165054321,
+        -0.4226182699203491,
+        0.0
+      ],
+      "horizontal_axis": [
+        0.42261826174069944,
+        0.9063077870366499,
+        0
+      ]
+    },
+    "left": {
+      "camera_yaw_degrees": -65,
+      "eye_direction": [
+        -0.9063078165054321,
+        -0.4226182699203491,
+        0.0
+      ],
+      "horizontal_axis": [
+        0.42261826174069944,
+        -0.9063077870366499,
+        0
+      ]
+    }
+  },
+  "method": "Orthographic emission-only base colour, Standard transform, transparent background, unchanged existing UV/topology; neck stays separate and untouched"
+}

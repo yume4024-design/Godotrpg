@@ -8,10 +8,18 @@ var height: float = 1.95
 var checks: int = 0
 var failures: Array[String] = []
 var output: String
+var raw_glb: bool = false
+var gltf_document: GLTFDocument
+var gltf_state: GLTFState
+var packed_model: PackedScene
+var solid_materials: Array[String] = []
+var verified_solid_materials: Array[String] = []
 const Budget = preload("res://scripts/tools/asset_budget_policy.gd")
 
 func _initialize() -> void:
 	for argument: String in OS.get_cmdline_user_args():
+		if argument == "--raw-glb": raw_glb = true
+		if argument.begins_with("--solid-material="): solid_materials.append(argument.trim_prefix("--solid-material="))
 		if argument.begins_with("--model="): model_path = argument.trim_prefix("--model=")
 		if argument.begins_with("--id="): asset_id = argument.trim_prefix("--id=")
 		if argument.begins_with("--height="): height = argument.trim_prefix("--height=").to_float()
@@ -34,6 +42,11 @@ func _capture(name: String) -> void:
 	var factor: float = 512.0 / mini(image.get_width(), image.get_height())
 	image.resize(roundi(image.get_width() * factor), roundi(image.get_height() * factor), Image.INTERPOLATE_LANCZOS)
 	_check(image.save_webp(output + "/" + name + ".webp", true, 0.92) == OK, name + " captured")
+
+func _instantiate_model() -> Node3D:
+	if raw_glb:
+		return gltf_document.generate_scene(gltf_state) as Node3D
+	return packed_model.instantiate() as Node3D
 
 func _run() -> void:
 	DirAccess.make_dir_recursive_absolute(ProjectSettings.globalize_path(output))
@@ -58,12 +71,21 @@ func _run() -> void:
 	camera.look_at(Vector3(0, height * 0.5, 0))
 	var pivot := Node3D.new()
 	world.add_child(pivot)
-	var packed := load(model_path) as PackedScene
-	_check(packed != null, "surface GLB imports")
-	if packed == null:
-		quit(1)
-		return
-	var model := packed.instantiate() as Node3D
+	if raw_glb:
+		gltf_document = GLTFDocument.new()
+		gltf_state = GLTFState.new()
+		var import_result: Error = gltf_document.append_from_file(model_path, gltf_state)
+		_check(import_result == OK, "raw GLB document imports")
+		if import_result != OK:
+			quit(1)
+			return
+	else:
+		packed_model = load(model_path) as PackedScene
+		_check(packed_model != null, "surface GLB imports")
+		if packed_model == null:
+			quit(1)
+			return
+	var model: Node3D = _instantiate_model()
 	pivot.add_child(model)
 	await process_frame
 	var triangles: int = 0
@@ -86,10 +108,16 @@ func _run() -> void:
 				highest = maxf(highest, transformed.y)
 			_check(arrays[Mesh.ARRAY_TEX_UV] != null and not (arrays[Mesh.ARRAY_TEX_UV] as PackedVector2Array).is_empty(), "UV retained")
 			var material := instance.get_active_material(surface) as StandardMaterial3D
-			_check(material != null and material.albedo_texture != null, "repaired albedo imported")
+			if material != null and material.resource_name in solid_materials:
+				_check(material.albedo_texture == null and is_finite(material.albedo_color.r) and is_finite(material.albedo_color.g) and is_finite(material.albedo_color.b) and is_equal_approx(material.albedo_color.a, 1.0), "declared opaque solid material imported: " + material.resource_name)
+				verified_solid_materials.append(material.resource_name)
+			else:
+				_check(material != null and material.albedo_texture != null, "repaired albedo imported")
 			if material != null and material.albedo_texture != null:
 				textures.append(Vector2i(material.albedo_texture.get_size()))
 				_check(not material.normal_enabled, "diagnosed normal map disabled in candidate")
+	for expected: String in solid_materials:
+		_check(expected in verified_solid_materials, "declared solid material was found: " + expected)
 	_check(finite and absf(lowest) < 0.01 and absf(highest - height) < 0.01, "finite normalized ground/height")
 	_check(Budget.within_budget(triangles, category), category + " triangle budget")
 	_check(model.find_children("*", "Skeleton3D", true, false).is_empty(), "no rig completion claimed")
@@ -105,14 +133,15 @@ func _run() -> void:
 	pivot.rotation.y = PI / 4.0
 	await _capture("head_three_quarter")
 	model.free()
-	model = packed.instantiate() as Node3D
+	model = _instantiate_model()
 	pivot.add_child(model)
 	await process_frame
 	_check(not model.find_children("*", "MeshInstance3D", true, false).is_empty(), "reinstantiate retains model")
 	var report: Dictionary = {"asset": asset_id, "model": model_path, "model_sha256": FileAccess.get_sha256(model_path),
 		"checks": checks, "failures": failures, "triangles": triangles, "category": category,
 		"textures": textures, "height_range": [lowest, highest], "graphical": true,
-		"rigged": false, "animation_tested": false, "formal_gameplay": false, "physical_input": false}
+		"godot": Engine.get_version_info(), "import_mode": "GLTFDocument" if raw_glb else "PackedScene",
+		"solid_materials": verified_solid_materials, "rigged": false, "animation_tested": false, "formal_gameplay": false, "physical_input": false}
 	var file := FileAccess.open(output + "/report.json", FileAccess.WRITE)
 	file.store_string(JSON.stringify(report, "\t"))
 	print("STATIC_CHARACTER_REVIEW ", asset_id, " ", checks, " checks; ", failures.size(), " failures")

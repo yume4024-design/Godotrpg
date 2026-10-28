@@ -1,0 +1,25 @@
+{
+	"asset": "innkeeper_reaudit_20261028",
+	"category": "npc",
+	"checks": 225,
+	"clips": [
+		{
+			"length": 2.0,
+			"name": "idle"
+		},
+		{
+			"length": 2.0,
+			"name": "talk"
+		}
+	],
+	"draw_calls": 2.0,
+	"engine_memory_bytes": 36555825.0,
+	"extended_bat_fold_review": false,
+	"failures": [],
+	"formal_battle_test": false,
+	"graphical": true,
+	"model": "res://assets/models/rebuilt_npc/innkeeper.glb",
+	"model_sha256": "3baeda38ab638039aa01e9b2a4333f118a4df277c89e683ee8b26e70ea9c111d",
+	"physical_input_test": false,
+	"triangles": 12785
+}

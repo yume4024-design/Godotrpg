@@ -1,0 +1,35 @@
+{
+	"animation_tested": false,
+	"asset": "lia_side_v2",
+	"category": "player_character",
+	"checks": 21,
+	"failures": [
+		"repaired albedo imported"
+	],
+	"formal_gameplay": false,
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.95000004768372
+	],
+	"import_mode": "GLTFDocument",
+	"model": "D:/RPGGAME/source_assets/character_rebuild_20261020/lia/side_surface_v2_20261028/lia_side_surface.glb",
+	"model_sha256": "634ebdb699d086b676aedee5d2f3b1622162b6c4e4ff0921c08879f117b449b1",
+	"physical_input": false,
+	"rigged": false,
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 12554
+}

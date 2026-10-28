@@ -1,0 +1,32 @@
+{
+  "date": "2026-10-28",
+  "generator": "built-in image_gen image editing",
+  "transparent_background": true,
+  "new_character_design": false,
+  "prompt_record": "Constraints summary; verbatim editing prompts remain in this Codex tool transcript. This is not a copied verbatim prompt.",
+  "constraints": [
+    "Edit the supplied actual-mesh orthographic albedo render only; preserve square alignment and silhouette.",
+    "Right source faces screen left; left source faces screen right. Do not mirror, change identity, pose, scale, lighting or perspective.",
+    "Repair pink cheek wire cracks and hair/coat baked wire lines; preserve eyes, brows, nose, mouth and approved blonde/purple design.",
+    "Preserve real transparency; no labels, props or background."
+  ],
+  "sources": [
+    {
+      "view": "right",
+      "input": "right_albedo.png",
+      "input_sha256": "bd6992b24f6fc26c667e0f0dcef99d4b0090aff5b882a8faa107d4859e536ede",
+      "output": "right_repair.png",
+      "output_sha256": "a8143319028e3777453951f8e3e233740cb63273eab31928b6514281d46d828c",
+      "tool_original": "C:/Users/yume4/.codex/generated_images/01a12ed0-ff14-7c63-a203-41ad0fb14478/exec-2216ce24-b0b7-4b5b-a04b-065e259da3df.png"
+    },
+    {
+      "view": "left",
+      "input": "left_albedo.png",
+      "input_sha256": "94f31af2090bd3d0cdb1f061082d005be99bbce4d3fe3d25eeaf8fd03053866c",
+      "output": "left_repair.png",
+      "output_sha256": "ccf8f82f5d0c8a0187286f71637c02b360e75d691cf65067a7b618ae1f5cfa0d",
+      "tool_original": "C:/Users/yume4/.codex/generated_images/01a12ed0-ff14-7c63-a203-41ad0fb14478/exec-8613bb69-4214-4769-a403-8bff435ca1f2.png"
+    }
+  ],
+  "reprojection": "Yaw +65 and -65 degrees, orthographic span .52m; depth mask plus bounded cheek-layer correction. Eye/brow/nose/mouth rectangles use original pixels. Back view and neck are not repainted."
+}
