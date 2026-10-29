@@ -1,0 +1,8 @@
+{
+  "passed": true,
+  "exit_code": 0,
+  "seconds": 12.1949776,
+  "command": "start_prologue_candidate.cmd --quit-after 180",
+  "scope": "Actual public CMD launcher and graphical player EXE; frame-limited smoke only, not long soak or manual gameplay",
+  "log": "D:\\RPGGAME\\builds\\prologue-candidate\\rc4-20261029\\candidate\\user_test\\play-26679-9387.log"
+}

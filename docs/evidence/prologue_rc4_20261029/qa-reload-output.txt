@@ -1,0 +1,30 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+QA_JOYPAD_MOTION_ISOLATED []
+PASS Runtime includes Music audio bus
+PASS Runtime includes SFX audio bus
+PASS Latest playable Ren is wired into assembled prologue
+PASS Prologue selects latest reference village
+PASS Prologue uses migrated village layout 4
+PASS Village uses assembled NPC appearance: Blacksmith
+PASS Village uses assembled NPC appearance: ItemMerchant
+PASS Village uses assembled NPC appearance: Innkeeper
+PASS Village uses assembled NPC appearance: Villager
+PASS G06 story scene loads
+PASS Restart offers Continue without replaying E001
+PASS Separate process reads completed save
+PASS Restart preserves final story and quest
+PASS Restart preserves exact currency and both characters
+PASS Restart preserves seal and reward ledger
+PASS Restart preserves equipment
+PASS Assembled prologue keeps candidate Ren configuration
+PASS RPG candidate keeps the navigation map visible
+PASS Developer controls stay hidden during normal play
+PASS F10 opens the candidate developer panel
+PASS F10 closes the candidate developer panel
+PASS RPG HUD includes party HP/MP status cards
+PASS Navigation map title matches the current area
+PASS Playable animated Lia remains integrated
+PASS Mine graphical evidence candidate_ui
+MINE_STORY_RESULT checks=25 failures=0

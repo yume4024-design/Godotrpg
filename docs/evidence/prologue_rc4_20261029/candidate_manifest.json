@@ -1,0 +1,16 @@
+﻿{
+  "version": "0.6.1-prologue-rc4-20261029",
+  "role": "candidate",
+  "source_commit": "222cc5a059360ab392e47a91761319917a2c8699",
+  "source_branch": "feature/greystone-g06",
+  "source_kind": "git archive (tracked committed files only)",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "runtime_origin": "Godot --export-release with matching Windows x86_64 release template",
+  "template_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+  "entry_scene": "res://scenes/main/prologue_candidate.tscn",
+  "game_scene": "res://scenes/main/prologue_candidate.tscn",
+  "save_slot": "user://crystal_prologue_candidate_20261027_slot_01.json",
+  "executable_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+  "pck_sha256": "9e97987e919b089e9e3ed347dc04d7ae0ecbf63620bb1ac8e05af5ccf42ef78f",
+  "acceptance": "Package story/navigation/edges/migration/commerce/collision tests passed; new 30-minute soak pending; manual acceptance paused"
+}

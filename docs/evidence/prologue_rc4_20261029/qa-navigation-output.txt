@@ -1,0 +1,36 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+QA_JOYPAD_MOTION_ISOLATED []
+PASS Actual scene contains latest village master
+PASS Reference village camera applied
+PASS Actual player has rebuilt Ren
+PASS Village minimap loads actual scene's layout
+PASS Capture navigation village
+PASS Navigation test enters forest
+PASS Forest has three central, four outer and two connector roads
+PASS Minimap includes actual forest road (3.0, 0.0)
+PASS Minimap includes actual forest road (0.0, 3.0)
+PASS Minimap includes actual forest road (0.0, -3.0)
+PASS Minimap includes actual forest road (-15.0, 0.0)
+PASS Minimap includes actual forest road (15.0, 0.0)
+PASS Minimap includes actual forest road (0.0, -17.0)
+PASS Minimap includes actual forest road (0.0, 17.0)
+PASS Minimap includes actual forest road (-18.0, 0.0)
+PASS Minimap includes actual forest road (18.0, 0.0)
+PASS Rendered road has minimap coverage TrailSurface0
+PASS Rendered road has minimap coverage TrailSurface1
+PASS Rendered road has minimap coverage TrailSurface2
+PASS Rendered road has minimap coverage TrailSurface3
+PASS Rendered road has minimap coverage TrailSurface4
+PASS Rendered road has minimap coverage TrailSurface5
+PASS Rendered road has minimap coverage TrailSurface6
+PASS Rendered road has minimap coverage TrailSurface7
+PASS Rendered road has minimap coverage TrailSurface8
+PASS Capture navigation forest
+PASS Navigation test enters mine
+PASS Mine shows all eight authored platforms
+PASS Capture navigation mine
+PASS Legacy map can still be selected
+PASS Same-ID legacy village never displays wrong-version roads
+PROLOGUE_NAVIGATION_RESULT checks=31 failures=0

@@ -1,0 +1,85 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+QA_JOYPAD_MOTION_ISOLATED []
+PASS Opening scene starts the real E001 dialogue
+PASS Minimap cannot bypass dialogue lock
+PASS Capture baseline
+PASS Current region can be expanded from the handbook
+PASS Clicking minimap opens area map
+PASS Area map uses existing movement lock
+PASS Held movement cannot move player while map is open
+PASS Escape returns to exploration
+PASS Opening and closing map changes no RPG state
+PASS Navigation test saves through the existing validated service
+PASS Loading while area map was open safely replaces the world
+PASS Map load preserves party inventory and story flags
+PASS Controller Menu opens handbook
+PASS Area map tab is available
+PASS Focus navigation reaches map tab
+PASS Controller A activates map tab
+PASS Selecting active tab retains keyboard focus
+PASS Expanded map is present
+PASS Landmarks match current visible interactables
+PASS Expanded map follows current region
+PASS Every visible landmark has a readable navigation entry
+PASS Controller selection highlights the matching world landmark
+LANDMARK_FOCUS greystone_runtime scroll=[P: (941.0, 229.0), S: (260.0, 353.0)] button=[P: (941.0, 534.0), S: (252.0, 48.0)] offset=73
+PASS Focused landmark scrolls fully into view
+PASS Map stays on screen at (960, 540)
+PASS Map and legend avoid handbook clipping at (960, 540)
+PASS Capture greystone_runtime_960
+PASS Map stays on screen at (1280, 720)
+PASS Map and legend avoid handbook clipping at (1280, 720)
+PASS Capture greystone_runtime_1280
+PASS Map stays on screen at (1920, 1080)
+PASS Map and legend avoid handbook clipping at (1920, 1080)
+PASS Capture greystone_runtime_1920
+PASS Controller B closes map
+PASS Travel for navigation coverage forest
+PASS Controller Menu opens handbook
+PASS Area map tab is available
+PASS Focus navigation reaches map tab
+PASS Controller A activates map tab
+PASS Selecting active tab retains keyboard focus
+PASS Expanded map is present
+PASS Landmarks match current visible interactables
+PASS Expanded map follows current region
+PASS Every visible landmark has a readable navigation entry
+PASS Controller selection highlights the matching world landmark
+LANDMARK_FOCUS forest scroll=[P: (941.0, 229.0), S: (260.0, 353.0)] button=[P: (941.0, 534.0), S: (252.0, 48.0)] offset=127
+PASS Focused landmark scrolls fully into view
+PASS Map stays on screen at (960, 540)
+PASS Map and legend avoid handbook clipping at (960, 540)
+PASS Capture forest_960
+PASS Map stays on screen at (1280, 720)
+PASS Map and legend avoid handbook clipping at (1280, 720)
+PASS Capture forest_1280
+PASS Map stays on screen at (1920, 1080)
+PASS Map and legend avoid handbook clipping at (1920, 1080)
+PASS Capture forest_1920
+PASS Controller B closes map
+PASS Travel for navigation coverage mine
+PASS Controller Menu opens handbook
+PASS Area map tab is available
+PASS Focus navigation reaches map tab
+PASS Controller A activates map tab
+PASS Selecting active tab retains keyboard focus
+PASS Expanded map is present
+PASS Landmarks match current visible interactables
+PASS Expanded map follows current region
+PASS Every visible landmark has a readable navigation entry
+PASS Controller selection highlights the matching world landmark
+LANDMARK_FOCUS mine scroll=[P: (941.0, 229.0), S: (260.0, 353.0)] button=[P: (941.0, 391.0), S: (260.0, 48.0)] offset=0
+PASS Focused landmark scrolls fully into view
+PASS Map stays on screen at (960, 540)
+PASS Map and legend avoid handbook clipping at (960, 540)
+PASS Capture mine_960
+PASS Map stays on screen at (1280, 720)
+PASS Map and legend avoid handbook clipping at (1280, 720)
+PASS Capture mine_1280
+PASS Map stays on screen at (1920, 1080)
+PASS Map and legend avoid handbook clipping at (1920, 1080)
+PASS Capture mine_1920
+PASS Controller B closes map
+PROLOGUE_AREA_MAP_RESULT checks=77 failures=0

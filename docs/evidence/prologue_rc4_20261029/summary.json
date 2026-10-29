@@ -1,0 +1,94 @@
+{
+  "version": "0.6.1-prologue-rc4-20261029",
+  "source_commit": "222cc5a059360ab392e47a91761319917a2c8699",
+  "package_checks": 20983,
+  "failures": 0,
+  "edge_cases": 23,
+  "package_tests": [
+    {
+      "name": "qa-area-map-output",
+      "result": "PROLOGUE_AREA_MAP_RESULT",
+      "checks": 77,
+      "failures": 0
+    },
+    {
+      "name": "qa-collision-snapshot-output",
+      "result": "COLLISION_SNAPSHOT_RESULT",
+      "checks": 20485,
+      "failures": 0
+    },
+    {
+      "name": "qa-commerce-output",
+      "result": "REFERENCE_COMMERCE_RESULT",
+      "checks": 50,
+      "failures": 0
+    },
+    {
+      "name": "qa-commerce-reload-output",
+      "result": "REFERENCE_COMMERCE_RESULT",
+      "checks": 5,
+      "failures": 0
+    },
+    {
+      "name": "qa-g06-fixture-output",
+      "result": "G06_1_RESULT",
+      "checks": 51,
+      "failures": 0
+    },
+    {
+      "name": "qa-legacy-fixture-output",
+      "result": "PHASE5_RESULT",
+      "checks": 69,
+      "failures": 0
+    },
+    {
+      "name": "qa-migration-output",
+      "result": "REFERENCE_MIGRATION_RESULT",
+      "checks": 91,
+      "failures": 0
+    },
+    {
+      "name": "qa-migration-reload-output",
+      "result": "REFERENCE_MIGRATION_RESULT",
+      "checks": 6,
+      "failures": 0
+    },
+    {
+      "name": "qa-mine-edges-output",
+      "edge_cases": 23,
+      "new_gaps": 0,
+      "failures": 0
+    },
+    {
+      "name": "qa-navigation-output",
+      "result": "PROLOGUE_NAVIGATION_RESULT",
+      "checks": 31,
+      "failures": 0
+    },
+    {
+      "name": "qa-reload-output",
+      "result": "MINE_STORY_RESULT",
+      "checks": 25,
+      "failures": 0
+    },
+    {
+      "name": "qa-story-output",
+      "result": "MINE_STORY_RESULT",
+      "checks": 93,
+      "failures": 0
+    }
+  ],
+  "runtime_bytes_equal": 1094,
+  "launcher": {
+    "passed": true,
+    "exit_code": 0,
+    "seconds": 12.1949776,
+    "command": "start_prologue_candidate.cmd --quit-after 180",
+    "scope": "Actual public CMD launcher and graphical player EXE; frame-limited smoke only, not long soak or manual gameplay",
+    "log": "D:\\RPGGAME\\builds\\prologue-candidate\\rc4-20261029\\candidate\\user_test\\play-26679-9387.log"
+  },
+  "rc3_retained_pck_sha256": "b4bce35e15b9cfdf7fd642552a381de04e23045a21691f2ea98a9dcd3b56d607",
+  "long_soak": "PENDING for RC4",
+  "manual_acceptance": "PAUSED by user",
+  "visual_review": "Village, forest and mine native renders inspected. Forest world sign overlaps HUD; not full art acceptance."
+}

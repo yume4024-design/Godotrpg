@@ -1,0 +1,55 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+QA_JOYPAD_MOTION_ISOLATED []
+PASS Integration uses existing main services
+PASS Migration cannot bypass forest tutorial gate
+PASS Real P5 playthrough fixture exists
+PASS Valid legacy save migrates through old and new physics checks
+PASS Import never modifies legacy bytes
+PASS Explicit schema and location layout versions
+PASS Migration preserves party
+PASS Migration preserves inventory
+PASS Migration preserves flags
+PASS Migration preserves quests
+PASS Migration preserves rewards
+PASS Migration preserves story
+PASS Old village maps to safe new entrance
+PASS Save migrated state to isolated G06 slot
+PASS Saving new slot preserves old file
+PASS Production configuration rejects future schema
+PASS Reject outside_old
+PASS Reject preserves file outside_old
+PASS Reject preserves all state outside_old
+PASS Reject old_obstacle
+PASS Reject preserves file old_obstacle
+PASS Reject preserves all state old_obstacle
+PASS Reject unknown_layout
+PASS Reject preserves file unknown_layout
+PASS Reject preserves all state unknown_layout
+PASS Reject new_water
+PASS Reject preserves file new_water
+PASS Reject preserves all state new_water
+PASS Reject new_wall
+PASS Reject preserves file new_wall
+PASS Reject preserves all state new_wall
+PASS Reject future
+PASS Reject preserves file future
+PASS Reject preserves all state future
+PASS Reject bad_reward
+PASS Reject preserves file bad_reward
+PASS Reject preserves all state bad_reward
+PASS Migrate old forest
+PASS Upgrade layout while preserving position: forest
+PASS Migrate old mine
+PASS Upgrade layout while preserving position: mine
+PASS Return to migrated village after other-map checks
+PASS Safe return to retained old village
+PASS Old scene remains available
+PASS Re-enter new village via shared SceneManager
+PASS Entry button/shared manager reaches new village
+PASS Existing Player moves with collision on new map
+PASS Existing party UI works on new map
+PASS Existing receipt prevents duplicate reward
+PASS Final migrated position saves
+PASS Same-process schema 3 reload
+G06_1_RESULT checks=51 failures=0

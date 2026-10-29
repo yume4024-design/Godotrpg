@@ -1,0 +1,13 @@
+{
+  "candidate_entries": 1097,
+  "qa_entries": 1332,
+  "compared_entries": 1094,
+  "allowed_configuration_differences": [
+    "res://project.binary",
+    "res://.godot/global_script_class_cache.cfg",
+    "res://.godot/uid_cache.bin"
+  ],
+  "failures": [],
+  "passed": true,
+  "method": "Fresh empty host; native PCK enumeration includes hidden imported/exported bytes, with ResourceLoader checks."
+}

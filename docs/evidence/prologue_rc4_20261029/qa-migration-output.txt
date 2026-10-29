@@ -1,0 +1,95 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+QA_JOYPAD_MOTION_ISOLATED []
+PASS Blender RPG candidate loads
+PASS Actual completed G06 layout 2 fixture exists
+PASS Old coordinates validated in original map before migration
+PASS Original save bytes preserved
+PASS Old coordinates map to safe new plaza spawn
+PASS Global schema and content versions preserved
+PASS Migration preserves party
+PASS Migration preserves inventory
+PASS Migration preserves flags
+PASS Migration preserves quests
+PASS Migration preserves rewards
+PASS Migration preserves story
+PASS New spawn passes real floor and capsule validation
+PASS Legal deck plank seam remains loadable (27.0, 6.1, -29.0)
+PASS Legal deck plank seam remains loadable (23.0, 3.0, 17.0)
+PASS Legal deck plank seam remains loadable (23.28, 3.0, 17.0)
+PASS Retained G06 configuration rejects future layout
+PASS Historical schema 2 cannot invent layout 4
+PASS Write only isolated candidate slot
+PASS Saving candidate leaves old save untouched
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 4, "x": 28.0, "y": 2.0, "z": -2.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 4, "x": -10.0, "y": 3.0, "z": -15.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 4, "x": 58.0, "y": 0.0, "z": 58.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 4, "x": 9.0, "y": 3.0, "z": -22.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 2, "x": -3.0, "y": 9.0, "z": 3.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Invalid old/new position rejected: { "map": "greystone_runtime", "layout_version": 99, "x": -3.0, "y": 3.1, "z": 3.0 }
+PASS Rejected source bytes retained
+PASS Rejected load preserves party
+PASS Rejected load preserves inventory
+PASS Rejected load preserves flags
+PASS Rejected load preserves quests
+PASS Rejected load preserves rewards
+PASS Rejected load preserves story
+PASS Retained old map validates its former raised east bank
+PASS Layout 3 migrates even where layout 4 lowers its terrace
+PASS Layout 3 source bytes preserved
+PASS Layout 3 maps to safe layout 4 plaza
+PASS Layout 3 preserves party
+PASS Layout 3 preserves inventory
+PASS Layout 3 preserves flags
+PASS Layout 3 preserves quests
+PASS Layout 3 preserves rewards
+PASS Layout 3 preserves story
+PASS RC1 same-slot layout 3 loads into unified candidate
+PASS Load alone preserves original RC1 bytes
+PASS Same-slot load migrates to safe layout 4
+PASS Same-slot migration preserves party
+PASS Same-slot migration preserves inventory
+PASS Same-slot migration preserves flags
+PASS Same-slot migration preserves quests
+PASS Same-slot migration preserves rewards
+PASS Same-slot migration preserves story
+PASS Explicit save persists migrated candidate
+PASS Explicit save retains original as backup
+PASS Reward receipt still prevents duplicate payout
+PASS Read isolated migrated slot again
+REFERENCE_MIGRATION_RESULT checks=91 failures=0

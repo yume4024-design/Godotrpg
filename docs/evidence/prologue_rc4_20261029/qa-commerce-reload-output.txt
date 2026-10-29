@@ -1,0 +1,9 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+QA_JOYPAD_MOTION_ISOLATED []
+PASS Restart offers commerce save
+PASS Fresh process reloads schema 3
+PASS Restart preserves debit ledger
+PASS Restart preserves whole-party recovery
+PASS Restart preserves unique rewards
+REFERENCE_COMMERCE_RESULT checks=5 failures=0
