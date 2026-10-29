@@ -1,5 +1,9 @@
 # 架構設計與實作邊界
 
+## 2026-10-29 存檔位置驗證碰撞快照
+
+ExplorationGame擁有當次遊戲的_location_snapshots，以精確PackedScene為鍵，在地圖ready後、NPC狀態套用前擷取靜態形狀深複本。LocationCollisionSnapshot不持有模型／動畫／現場節點，僅重建隔離物理驗證所需身體；候選莉雅旗標決定其碰撞層。舊版本或未擷取／不支援場景使用原驗證，不改SaveCodec及持久化資料。新增動態／劇情碰撞時須停用或擴充契約。[測試與限制](PROLOGUE_VALIDATION_PERFORMANCE_REPORT.md)。
+
 > **2026-10-14 正文合併更新（優先於本檔較早條款）**：新企劃已由使用者貼文取得，不再待正文。灰石村採 120×120m、Q 版低面數切面、北側公會/西北農田/東北礦坑/東河/南入口/西出口；平台 Windows + Android，iOS 預留。執行以 [GREYSTONE_VILLAGE_SPEC.md](GREYSTONE_VILLAGE_SPEC.md) 與 [GREYSTONE_BUILD_TASKS.md](GREYSTONE_BUILD_TASKS.md) 為準。G01 獨立佔位預覽，不替換正式0.6.1存檔；G06再遷移位置及串接劇情/觸控。本檔舊「待正文」、PC限定、圖片未列公會、固定舊碰撞等描述保留為歷史，不是目前限制。
 
 

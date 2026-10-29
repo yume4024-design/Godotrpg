@@ -144,7 +144,22 @@ func _on_transition(active: bool) -> void:
 		else: story.trigger("game_start", "new_game")
 	_update_lock()
 
+var _location_snapshots: Dictionary = {}
+
+func _remember_location_collision(map: ExplorationMap) -> void:
+	if not greystone_enabled: return
+	for source: PackedScene in travel.maps:
+		if source.resource_path == map.scene_file_path and not _location_snapshots.has(source):
+			var snapshot := LocationCollisionSnapshot.capture(map)
+			if snapshot != null: _location_snapshots[source] = snapshot
+
+func _validation_map(source: PackedScene, candidate_flags: Dictionary) -> Node3D:
+	var snapshot: LocationCollisionSnapshot = _location_snapshots.get(source)
+	return snapshot.instantiate(candidate_flags) if snapshot != null else source.instantiate() as Node3D
+
 func _on_map_changed(map: ExplorationMap) -> void:
+	# Capture authored post-ready geometry before party state hides NPC collision.
+	_remember_location_collision(map)
 	audio.play_music(map.map_id)
 	_area_suppressed = false
 	sequences.bind_map(map)
@@ -365,7 +380,7 @@ func validate_loaded_position(location: Dictionary, candidate_flags: Dictionary)
 	viewport.world_3d = World3D.new()
 	viewport.render_target_update_mode = SubViewport.UPDATE_DISABLED
 	add_child(viewport)
-	var candidate: Node3D = selected.instantiate() as Node3D
+	var candidate: Node3D = _validation_map(selected, candidate_flags)
 	viewport.add_child(candidate)
 	# Reconstruct dynamic collision from the already validated candidate, not this session.
 	for target: Node in candidate.find_children("*", "WorldInteractable", true, false):

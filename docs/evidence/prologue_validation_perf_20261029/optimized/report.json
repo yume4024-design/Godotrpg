@@ -1,0 +1,1107 @@
+{
+  "adapter": "NVIDIA GeForce RTX 3080",
+  "checks": 168,
+  "display": "Windows",
+  "engine": "4.7.2-stable (official)",
+  "failures": 0,
+  "frames": {
+    "battle_forest": {
+      "draw_max": 741.0,
+      "draw_min": 290.0,
+      "fps": 60.00018000054,
+      "frames": 60,
+      "max_ms": 21.558,
+      "mean_ms": 16.6666166666667,
+      "p95_ms": 16.852,
+      "p99_ms": 21.558
+    },
+    "battle_mine": {
+      "draw_max": 212.0,
+      "draw_min": 101.0,
+      "fps": 60.0042684854627,
+      "frames": 264,
+      "max_ms": 28.853,
+      "mean_ms": 16.6654810606061,
+      "p95_ms": 16.717,
+      "p99_ms": 19.33
+    },
+    "load_forest": {
+      "draw_max": 291.0,
+      "draw_min": 290.0,
+      "fps": 58.7738789290746,
+      "frames": 108,
+      "max_ms": 46.641,
+      "mean_ms": 17.0143611111111,
+      "p95_ms": 17.354,
+      "p99_ms": 46.107
+    },
+    "load_greystone_runtime": {
+      "draw_max": 1041.0,
+      "draw_min": 1041.0,
+      "fps": 57.4548777848836,
+      "frames": 107,
+      "max_ms": 60.734,
+      "mean_ms": 17.4049626168224,
+      "p95_ms": 18.386,
+      "p99_ms": 60.465
+    },
+    "load_mine": {
+      "draw_max": 207.0,
+      "draw_min": 178.0,
+      "fps": 60.0088553608181,
+      "frames": 111,
+      "max_ms": 23.583,
+      "mean_ms": 16.6642072072072,
+      "p95_ms": 18.017,
+      "p99_ms": 22.375
+    },
+    "npc_commerce": {
+      "draw_max": 1213.0,
+      "draw_min": 953.0,
+      "fps": 58.9475727089969,
+      "frames": 260,
+      "max_ms": 60.929,
+      "mean_ms": 16.9642269230769,
+      "p95_ms": 17.698,
+      "p99_ms": 59.096
+    },
+    "postbattle_load": {
+      "draw_max": 291.0,
+      "draw_min": 178.0,
+      "fps": 59.3888963915958,
+      "frames": 219,
+      "max_ms": 46.556,
+      "mean_ms": 16.8381643835616,
+      "p95_ms": 17.394,
+      "p99_ms": 45.562
+    },
+    "prologue": {
+      "draw_max": 1302.0,
+      "draw_min": 0.0,
+      "fps": 40.0098762840766,
+      "frames": 1040,
+      "max_ms": 7997.372,
+      "mean_ms": 24.9938288461539,
+      "p95_ms": 17.388,
+      "p99_ms": 53.876
+    },
+    "travel_forest": {
+      "draw_max": 1041.0,
+      "draw_min": 290.0,
+      "fps": 57.6219810437083,
+      "frames": 129,
+      "max_ms": 67.854,
+      "mean_ms": 17.354488372093,
+      "p95_ms": 16.776,
+      "p99_ms": 61.333
+    },
+    "travel_greystone_runtime": {
+      "draw_max": 1194.0,
+      "draw_min": 206.0,
+      "fps": 58.4256008398905,
+      "frames": 130,
+      "max_ms": 62.563,
+      "mean_ms": 17.1157846153846,
+      "p95_ms": 16.787,
+      "p99_ms": 49.41
+    },
+    "travel_mine": {
+      "draw_max": 290.0,
+      "draw_min": 175.0,
+      "fps": 59.9941872298595,
+      "frames": 135,
+      "max_ms": 28.766,
+      "mean_ms": 16.6682814814815,
+      "p95_ms": 16.808,
+      "p99_ms": 23.476
+    }
+  },
+  "method": "Native Release; actual prologue followed by three per-map service/load/battle loops. Timestamp-only production instrumentation in isolated build snapshot. No timed captures; CPU wall spans include stated waits; not GPU timing, long soak, or human playthrough.",
+  "operations": [
+    {
+      "attempt": 0,
+      "kind": "load_greystone_runtime",
+      "ms": 374.959
+    },
+    {
+      "attempt": 0,
+      "kind": "load_forest",
+      "ms": 362.13
+    },
+    {
+      "attempt": 0,
+      "kind": "load_mine",
+      "ms": 365.038
+    },
+    {
+      "attempt": 1,
+      "kind": "load_greystone_runtime",
+      "ms": 373.368
+    },
+    {
+      "attempt": 1,
+      "kind": "load_forest",
+      "ms": 361.586
+    },
+    {
+      "attempt": 1,
+      "kind": "load_mine",
+      "ms": 365.636
+    },
+    {
+      "attempt": 2,
+      "kind": "load_greystone_runtime",
+      "ms": 358.019
+    },
+    {
+      "attempt": 2,
+      "kind": "load_forest",
+      "ms": 360.579
+    },
+    {
+      "attempt": 2,
+      "kind": "load_mine",
+      "ms": 365.414
+    }
+  ],
+  "pid": 11500,
+  "release": true,
+  "seconds": 51.756072,
+  "spikes": [
+    {
+      "cpu_process_ms": 0.0,
+      "ms": 7997.37,
+      "phase": "prologue",
+      "physics_ms": 0.0,
+      "seconds": 7.997391
+    },
+    {
+      "cpu_process_ms": 0.0,
+      "ms": 72.348,
+      "phase": "prologue",
+      "physics_ms": 0.0,
+      "seconds": 8.069733
+    },
+    {
+      "cpu_process_ms": 244.427,
+      "ms": 246.959,
+      "phase": "prologue",
+      "physics_ms": 7990.435,
+      "seconds": 8.316695
+    },
+    {
+      "cpu_process_ms": 35.153,
+      "ms": 35.571,
+      "phase": "prologue",
+      "physics_ms": 1.262,
+      "seconds": 8.352286
+    },
+    {
+      "cpu_process_ms": 35.153,
+      "ms": 50.31,
+      "phase": "prologue",
+      "physics_ms": 1.262,
+      "seconds": 8.92041
+    },
+    {
+      "cpu_process_ms": 35.153,
+      "ms": 53.874,
+      "phase": "prologue",
+      "physics_ms": 1.262,
+      "seconds": 9.074977
+    },
+    {
+      "cpu_process_ms": 53.162,
+      "ms": 96.002,
+      "phase": "prologue",
+      "physics_ms": 1.484,
+      "seconds": 10.18709
+    },
+    {
+      "cpu_process_ms": 95.243,
+      "ms": 75.624,
+      "phase": "prologue",
+      "physics_ms": 14.265,
+      "seconds": 10.262712
+    },
+    {
+      "cpu_process_ms": 95.243,
+      "ms": 35.999,
+      "phase": "prologue",
+      "physics_ms": 14.265,
+      "seconds": 11.131793
+    },
+    {
+      "cpu_process_ms": 22.586,
+      "ms": 59.266,
+      "phase": "prologue",
+      "physics_ms": 18.836,
+      "seconds": 11.896914
+    },
+    {
+      "cpu_process_ms": 58.226,
+      "ms": 123.211,
+      "phase": "prologue",
+      "physics_ms": 0.758,
+      "seconds": 12.435958
+    },
+    {
+      "cpu_process_ms": 58.226,
+      "ms": 39.878,
+      "phase": "prologue",
+      "physics_ms": 0.758,
+      "seconds": 12.841484
+    },
+    {
+      "cpu_process_ms": 122.084,
+      "ms": 77.346,
+      "phase": "prologue",
+      "physics_ms": 0.419,
+      "seconds": 13.368698
+    },
+    {
+      "cpu_process_ms": 76.728,
+      "ms": 42.697,
+      "phase": "prologue",
+      "physics_ms": 0.527,
+      "seconds": 14.561454
+    },
+    {
+      "cpu_process_ms": 10.296,
+      "ms": 41.978,
+      "phase": "prologue",
+      "physics_ms": 0.372,
+      "seconds": 20.259976
+    },
+    {
+      "cpu_process_ms": 10.296,
+      "ms": 56.194,
+      "phase": "prologue",
+      "physics_ms": 0.372,
+      "seconds": 20.765895
+    },
+    {
+      "cpu_process_ms": 4.369,
+      "ms": 63.596,
+      "phase": "prologue",
+      "physics_ms": 0.315,
+      "seconds": 25.878459
+    },
+    {
+      "cpu_process_ms": 4.369,
+      "ms": 62.561,
+      "phase": "travel_greystone_runtime",
+      "physics_ms": 0.315,
+      "seconds": 26.206162
+    },
+    {
+      "cpu_process_ms": 61.894,
+      "ms": 60.464,
+      "phase": "load_greystone_runtime",
+      "physics_ms": 3.749,
+      "seconds": 26.96457
+    },
+    {
+      "cpu_process_ms": 3.542,
+      "ms": 59.094,
+      "phase": "npc_commerce",
+      "physics_ms": 2.266,
+      "seconds": 28.439602
+    },
+    {
+      "cpu_process_ms": 3.542,
+      "ms": 67.853,
+      "phase": "travel_forest",
+      "physics_ms": 2.266,
+      "seconds": 29.05697
+    },
+    {
+      "cpu_process_ms": 67.14,
+      "ms": 46.64,
+      "phase": "load_forest",
+      "physics_ms": 10.859,
+      "seconds": 29.80303
+    },
+    {
+      "cpu_process_ms": 46.301,
+      "ms": 46.155,
+      "phase": "postbattle_load",
+      "physics_ms": 0.876,
+      "seconds": 30.749006
+    },
+    {
+      "cpu_process_ms": 21.76,
+      "ms": 49.279,
+      "phase": "travel_greystone_runtime",
+      "physics_ms": 1.493,
+      "seconds": 34.797914
+    },
+    {
+      "cpu_process_ms": 48.686,
+      "ms": 59.9,
+      "phase": "load_greystone_runtime",
+      "physics_ms": 0.398,
+      "seconds": 35.574044
+    },
+    {
+      "cpu_process_ms": 59.129,
+      "ms": 60.928,
+      "phase": "npc_commerce",
+      "physics_ms": 4.447,
+      "seconds": 37.050966
+    },
+    {
+      "cpu_process_ms": 59.932,
+      "ms": 60.891,
+      "phase": "travel_forest",
+      "physics_ms": 10.727,
+      "seconds": 37.64437
+    },
+    {
+      "cpu_process_ms": 60.439,
+      "ms": 46.106,
+      "phase": "load_forest",
+      "physics_ms": 0.236,
+      "seconds": 38.390153
+    },
+    {
+      "cpu_process_ms": 45.757,
+      "ms": 46.555,
+      "phase": "postbattle_load",
+      "physics_ms": 0.913,
+      "seconds": 39.33646
+    },
+    {
+      "cpu_process_ms": 22.163,
+      "ms": 49.408,
+      "phase": "travel_greystone_runtime",
+      "physics_ms": 1.716,
+      "seconds": 43.385458
+    },
+    {
+      "cpu_process_ms": 22.163,
+      "ms": 60.732,
+      "phase": "load_greystone_runtime",
+      "physics_ms": 1.716,
+      "seconds": 44.162458
+    },
+    {
+      "cpu_process_ms": 6.204,
+      "ms": 59.188,
+      "phase": "npc_commerce",
+      "physics_ms": 0.816,
+      "seconds": 45.620936
+    },
+    {
+      "cpu_process_ms": 6.204,
+      "ms": 61.331,
+      "phase": "travel_forest",
+      "physics_ms": 0.816,
+      "seconds": 46.231723
+    },
+    {
+      "cpu_process_ms": 60.858,
+      "ms": 45.452,
+      "phase": "load_forest",
+      "physics_ms": 11.669,
+      "seconds": 46.976799
+    },
+    {
+      "cpu_process_ms": 45.117,
+      "ms": 45.561,
+      "phase": "postbattle_load",
+      "physics_ms": 1.079,
+      "seconds": 47.922124
+    }
+  ],
+  "timed_methods": [
+    {
+      "fade_and_instance_ms": 88.323,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "prologue",
+      "ready_ms": 39.986,
+      "signals_ms": 20.266,
+      "total_ms": 360.845
+    },
+    {
+      "fade_and_instance_ms": 155.776,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "prologue",
+      "ready_ms": 3.766,
+      "signals_ms": 0.583,
+      "total_ms": 322.063
+    },
+    {
+      "actors_ms": 6.376,
+      "backdrop_manager_ms": 0.01,
+      "kind": "battle_setup",
+      "phase": "prologue",
+      "ui_ms": 0.05
+    },
+    {
+      "battle": "B001",
+      "instantiate_ms": 0.464,
+      "kind": "battle_spawn",
+      "phase": "prologue",
+      "ready_ms": 0.865,
+      "setup_ms": 6.487
+    },
+    {
+      "fade_and_instance_ms": 160.762,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "prologue",
+      "ready_ms": 29.222,
+      "signals_ms": 0.132,
+      "total_ms": 309.407
+    },
+    {
+      "fade_and_instance_ms": 154.793,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "prologue",
+      "ready_ms": 19.606,
+      "signals_ms": 6.324,
+      "total_ms": 322.445
+    },
+    {
+      "fade_and_instance_ms": 151.821,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "prologue",
+      "ready_ms": 3.802,
+      "signals_ms": 0.098,
+      "total_ms": 323.38
+    },
+    {
+      "fade_and_instance_ms": 151.132,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "prologue",
+      "ready_ms": 16.122,
+      "signals_ms": 0.099,
+      "total_ms": 310.572
+    },
+    {
+      "accepted": true,
+      "create_ms": 1.819,
+      "kind": "validate",
+      "layout": 4,
+      "map": "mine",
+      "phase": "prologue",
+      "physics_wait_ms": 26.662,
+      "query_ms": 0.1,
+      "ready_ms": 0.187
+    },
+    {
+      "fade_and_instance_ms": 151.26,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "prologue",
+      "ready_ms": 15.704,
+      "signals_ms": 0.044,
+      "total_ms": 317.074
+    },
+    {
+      "actors_ms": 7.144,
+      "backdrop_manager_ms": 0.154,
+      "kind": "battle_setup",
+      "phase": "prologue",
+      "ui_ms": 0.025
+    },
+    {
+      "battle": "B002",
+      "instantiate_ms": 0.238,
+      "kind": "battle_spawn",
+      "phase": "prologue",
+      "ready_ms": 0.681,
+      "setup_ms": 7.362
+    },
+    {
+      "actors_ms": 6.784,
+      "backdrop_manager_ms": 0.141,
+      "kind": "battle_setup",
+      "phase": "prologue",
+      "ui_ms": 0.021
+    },
+    {
+      "battle": "B002",
+      "instantiate_ms": 0.213,
+      "kind": "battle_spawn",
+      "phase": "prologue",
+      "ready_ms": 0.608,
+      "setup_ms": 6.981
+    },
+    {
+      "fade_and_instance_ms": 151.863,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "prologue",
+      "ready_ms": 4.114,
+      "signals_ms": 0.103,
+      "total_ms": 325.326
+    },
+    {
+      "fade_and_instance_ms": 159.806,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "prologue",
+      "ready_ms": 28.666,
+      "signals_ms": 0.121,
+      "total_ms": 306.234
+    },
+    {
+      "accepted": true,
+      "create_ms": 7.268,
+      "kind": "validate",
+      "layout": 4,
+      "map": "greystone_runtime",
+      "phase": "prologue",
+      "physics_wait_ms": 23.387,
+      "query_ms": 0.064,
+      "ready_ms": 1.861
+    },
+    {
+      "fade_and_instance_ms": 164.146,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "prologue",
+      "ready_ms": 27.735,
+      "signals_ms": 0.069,
+      "total_ms": 313.012
+    },
+    {
+      "fade_and_instance_ms": 157.467,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "travel_greystone_runtime",
+      "ready_ms": 28.036,
+      "signals_ms": 0.067,
+      "total_ms": 305.939
+    },
+    {
+      "accepted": true,
+      "create_ms": 6.927,
+      "kind": "validate",
+      "layout": 4,
+      "map": "greystone_runtime",
+      "phase": "load_greystone_runtime",
+      "physics_wait_ms": 15.974,
+      "query_ms": 0.047,
+      "ready_ms": 1.466
+    },
+    {
+      "fade_and_instance_ms": 163.84,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "load_greystone_runtime",
+      "ready_ms": 27.357,
+      "signals_ms": 0.067,
+      "total_ms": 327.34
+    },
+    {
+      "accepted": true,
+      "create_ms": 6.539,
+      "kind": "validate",
+      "layout": 4,
+      "map": "greystone_runtime",
+      "phase": "services",
+      "physics_wait_ms": 24.013,
+      "query_ms": 0.049,
+      "ready_ms": 1.995
+    },
+    {
+      "fade_and_instance_ms": 163.082,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "services",
+      "ready_ms": 27.125,
+      "signals_ms": 0.068,
+      "total_ms": 326.16
+    },
+    {
+      "fade_and_instance_ms": 171.007,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "travel_forest",
+      "ready_ms": 3.761,
+      "signals_ms": 0.113,
+      "total_ms": 332.946
+    },
+    {
+      "accepted": true,
+      "create_ms": 0.999,
+      "kind": "validate",
+      "layout": 3,
+      "map": "forest",
+      "phase": "load_forest",
+      "physics_wait_ms": 24.654,
+      "query_ms": 0.036,
+      "ready_ms": 0.061
+    },
+    {
+      "fade_and_instance_ms": 151.931,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "load_forest",
+      "ready_ms": 3.49,
+      "signals_ms": 0.043,
+      "total_ms": 313.452
+    },
+    {
+      "actors_ms": 6.864,
+      "backdrop_manager_ms": 0.013,
+      "kind": "battle_setup",
+      "phase": "battle_forest",
+      "ui_ms": 0.027
+    },
+    {
+      "battle": "X001",
+      "instantiate_ms": 0.238,
+      "kind": "battle_spawn",
+      "phase": "battle_forest",
+      "ready_ms": 0.744,
+      "setup_ms": 6.945
+    },
+    {
+      "accepted": true,
+      "create_ms": 0.768,
+      "kind": "validate",
+      "layout": 3,
+      "map": "forest",
+      "phase": "postbattle_load",
+      "physics_wait_ms": 30.945,
+      "query_ms": 0.05,
+      "ready_ms": 0.072
+    },
+    {
+      "fade_and_instance_ms": 152.144,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "postbattle_load",
+      "ready_ms": 3.682,
+      "signals_ms": 0.044,
+      "total_ms": 312.963
+    },
+    {
+      "fade_and_instance_ms": 167.94,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "travel_mine",
+      "ready_ms": 21.079,
+      "signals_ms": 0.17,
+      "total_ms": 333.315
+    },
+    {
+      "accepted": true,
+      "create_ms": 1.492,
+      "kind": "validate",
+      "layout": 4,
+      "map": "mine",
+      "phase": "load_mine",
+      "physics_wait_ms": 22.822,
+      "query_ms": 0.068,
+      "ready_ms": 0.179
+    },
+    {
+      "fade_and_instance_ms": 151.087,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "load_mine",
+      "ready_ms": 15.616,
+      "signals_ms": 0.043,
+      "total_ms": 316.8
+    },
+    {
+      "actors_ms": 7.146,
+      "backdrop_manager_ms": 0.18,
+      "kind": "battle_setup",
+      "phase": "battle_mine",
+      "ui_ms": 0.027
+    },
+    {
+      "battle": "X003",
+      "instantiate_ms": 0.258,
+      "kind": "battle_spawn",
+      "phase": "battle_mine",
+      "ready_ms": 0.716,
+      "setup_ms": 7.391
+    },
+    {
+      "accepted": true,
+      "create_ms": 1.5,
+      "kind": "validate",
+      "layout": 4,
+      "map": "mine",
+      "phase": "postbattle_load",
+      "physics_wait_ms": 30.312,
+      "query_ms": 0.034,
+      "ready_ms": 0.17
+    },
+    {
+      "fade_and_instance_ms": 151.458,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "postbattle_load",
+      "ready_ms": 15.582,
+      "signals_ms": 0.045,
+      "total_ms": 317.097
+    },
+    {
+      "fade_and_instance_ms": 176.527,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "travel_greystone_runtime",
+      "ready_ms": 29.451,
+      "signals_ms": 0.129,
+      "total_ms": 332.675
+    },
+    {
+      "accepted": true,
+      "create_ms": 7.892,
+      "kind": "validate",
+      "layout": 4,
+      "map": "greystone_runtime",
+      "phase": "load_greystone_runtime",
+      "physics_wait_ms": 17.764,
+      "query_ms": 0.064,
+      "ready_ms": 2.051
+    },
+    {
+      "fade_and_instance_ms": 163.403,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "load_greystone_runtime",
+      "ready_ms": 26.751,
+      "signals_ms": 0.07,
+      "total_ms": 326.678
+    },
+    {
+      "accepted": true,
+      "create_ms": 6.512,
+      "kind": "validate",
+      "layout": 4,
+      "map": "greystone_runtime",
+      "phase": "services",
+      "physics_wait_ms": 24.156,
+      "query_ms": 0.049,
+      "ready_ms": 1.869
+    },
+    {
+      "fade_and_instance_ms": 163.268,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "services",
+      "ready_ms": 27.816,
+      "signals_ms": 0.065,
+      "total_ms": 311.007
+    },
+    {
+      "fade_and_instance_ms": 171.194,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "travel_forest",
+      "ready_ms": 3.655,
+      "signals_ms": 0.1,
+      "total_ms": 326.863
+    },
+    {
+      "accepted": true,
+      "create_ms": 0.66,
+      "kind": "validate",
+      "layout": 3,
+      "map": "forest",
+      "phase": "load_forest",
+      "physics_wait_ms": 28.563,
+      "query_ms": 0.034,
+      "ready_ms": 0.06
+    },
+    {
+      "fade_and_instance_ms": 152.181,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "load_forest",
+      "ready_ms": 3.517,
+      "signals_ms": 0.05,
+      "total_ms": 313.007
+    },
+    {
+      "actors_ms": 6.57,
+      "backdrop_manager_ms": 0.008,
+      "kind": "battle_setup",
+      "phase": "battle_forest",
+      "ui_ms": 0.028
+    },
+    {
+      "battle": "X001",
+      "instantiate_ms": 0.249,
+      "kind": "battle_spawn",
+      "phase": "battle_forest",
+      "ready_ms": 0.727,
+      "setup_ms": 6.645
+    },
+    {
+      "accepted": true,
+      "create_ms": 0.625,
+      "kind": "validate",
+      "layout": 3,
+      "map": "forest",
+      "phase": "postbattle_load",
+      "physics_wait_ms": 31.394,
+      "query_ms": 0.033,
+      "ready_ms": 0.058
+    },
+    {
+      "fade_and_instance_ms": 152.075,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "postbattle_load",
+      "ready_ms": 3.513,
+      "signals_ms": 0.044,
+      "total_ms": 313.381
+    },
+    {
+      "fade_and_instance_ms": 167.475,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "travel_mine",
+      "ready_ms": 15.761,
+      "signals_ms": 0.095,
+      "total_ms": 333.102
+    },
+    {
+      "accepted": true,
+      "create_ms": 1.685,
+      "kind": "validate",
+      "layout": 4,
+      "map": "mine",
+      "phase": "load_mine",
+      "physics_wait_ms": 27.254,
+      "query_ms": 0.045,
+      "ready_ms": 0.177
+    },
+    {
+      "fade_and_instance_ms": 151.384,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "load_mine",
+      "ready_ms": 15.963,
+      "signals_ms": 0.044,
+      "total_ms": 316.963
+    },
+    {
+      "actors_ms": 7.017,
+      "backdrop_manager_ms": 0.213,
+      "kind": "battle_setup",
+      "phase": "battle_mine",
+      "ui_ms": 0.026
+    },
+    {
+      "battle": "X003",
+      "instantiate_ms": 0.236,
+      "kind": "battle_spawn",
+      "phase": "battle_mine",
+      "ready_ms": 0.781,
+      "setup_ms": 7.296
+    },
+    {
+      "accepted": true,
+      "create_ms": 1.456,
+      "kind": "validate",
+      "layout": 4,
+      "map": "mine",
+      "phase": "postbattle_load",
+      "physics_wait_ms": 30.473,
+      "query_ms": 0.037,
+      "ready_ms": 0.197
+    },
+    {
+      "fade_and_instance_ms": 151.373,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "postbattle_load",
+      "ready_ms": 15.899,
+      "signals_ms": 0.046,
+      "total_ms": 316.998
+    },
+    {
+      "fade_and_instance_ms": 176.599,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "travel_greystone_runtime",
+      "ready_ms": 29.434,
+      "signals_ms": 0.126,
+      "total_ms": 332.673
+    },
+    {
+      "accepted": true,
+      "create_ms": 7.246,
+      "kind": "validate",
+      "layout": 4,
+      "map": "greystone_runtime",
+      "phase": "load_greystone_runtime",
+      "physics_wait_ms": 19.212,
+      "query_ms": 0.051,
+      "ready_ms": 1.946
+    },
+    {
+      "fade_and_instance_ms": 163.674,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "load_greystone_runtime",
+      "ready_ms": 27.443,
+      "signals_ms": 0.066,
+      "total_ms": 310.711
+    },
+    {
+      "accepted": true,
+      "create_ms": 6.787,
+      "kind": "validate",
+      "layout": 4,
+      "map": "greystone_runtime",
+      "phase": "services",
+      "physics_wait_ms": 23.749,
+      "query_ms": 0.05,
+      "ready_ms": 2.022
+    },
+    {
+      "fade_and_instance_ms": 163.426,
+      "kind": "map_swap",
+      "map": "greystone_runtime",
+      "phase": "services",
+      "ready_ms": 26.922,
+      "signals_ms": 0.067,
+      "total_ms": 326.16
+    },
+    {
+      "fade_and_instance_ms": 170.912,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "travel_forest",
+      "ready_ms": 3.592,
+      "signals_ms": 0.101,
+      "total_ms": 326.684
+    },
+    {
+      "accepted": true,
+      "create_ms": 0.727,
+      "kind": "validate",
+      "layout": 3,
+      "map": "forest",
+      "phase": "load_forest",
+      "physics_wait_ms": 28.322,
+      "query_ms": 0.039,
+      "ready_ms": 0.086
+    },
+    {
+      "fade_and_instance_ms": 151.898,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "load_forest",
+      "ready_ms": 3.626,
+      "signals_ms": 0.045,
+      "total_ms": 312.283
+    },
+    {
+      "actors_ms": 6.668,
+      "backdrop_manager_ms": 0.008,
+      "kind": "battle_setup",
+      "phase": "battle_forest",
+      "ui_ms": 0.027
+    },
+    {
+      "battle": "X001",
+      "instantiate_ms": 0.245,
+      "kind": "battle_spawn",
+      "phase": "battle_forest",
+      "ready_ms": 0.726,
+      "setup_ms": 6.741
+    },
+    {
+      "accepted": true,
+      "create_ms": 0.859,
+      "kind": "validate",
+      "layout": 3,
+      "map": "forest",
+      "phase": "postbattle_load",
+      "physics_wait_ms": 31.048,
+      "query_ms": 0.031,
+      "ready_ms": 0.057
+    },
+    {
+      "fade_and_instance_ms": 152.167,
+      "kind": "map_swap",
+      "map": "forest",
+      "phase": "postbattle_load",
+      "ready_ms": 3.575,
+      "signals_ms": 0.042,
+      "total_ms": 312.726
+    },
+    {
+      "fade_and_instance_ms": 167.304,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "travel_mine",
+      "ready_ms": 16.257,
+      "signals_ms": 0.106,
+      "total_ms": 332.707
+    },
+    {
+      "accepted": true,
+      "create_ms": 1.513,
+      "kind": "validate",
+      "layout": 4,
+      "map": "mine",
+      "phase": "load_mine",
+      "physics_wait_ms": 27.37,
+      "query_ms": 0.046,
+      "ready_ms": 0.192
+    },
+    {
+      "fade_and_instance_ms": 151.498,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "load_mine",
+      "ready_ms": 16.591,
+      "signals_ms": 0.059,
+      "total_ms": 317.095
+    },
+    {
+      "actors_ms": 6.958,
+      "backdrop_manager_ms": 0.157,
+      "kind": "battle_setup",
+      "phase": "battle_mine",
+      "ui_ms": 0.027
+    },
+    {
+      "battle": "X003",
+      "instantiate_ms": 0.254,
+      "kind": "battle_spawn",
+      "phase": "battle_mine",
+      "ready_ms": 0.741,
+      "setup_ms": 7.18
+    },
+    {
+      "accepted": true,
+      "create_ms": 1.42,
+      "kind": "validate",
+      "layout": 4,
+      "map": "mine",
+      "phase": "postbattle_load",
+      "physics_wait_ms": 30.365,
+      "query_ms": 0.044,
+      "ready_ms": 0.169
+    },
+    {
+      "fade_and_instance_ms": 151.446,
+      "kind": "map_swap",
+      "map": "mine",
+      "phase": "postbattle_load",
+      "ready_ms": 16.727,
+      "signals_ms": 0.057,
+      "total_ms": 317.059
+    }
+  ]
+}

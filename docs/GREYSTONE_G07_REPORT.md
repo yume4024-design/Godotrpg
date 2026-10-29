@@ -1,5 +1,7 @@
 # G07 場景效能報告
 
+2026-10-29後續：Windows原生Release短測定位讀檔驗證重建成本，碰撞快照讓村莊建立＋初始化中位數36.610→8.809ms；285項回歸及20485項對照通過。約61ms尖峰仍在，固定RC3未更新。[修正報告](PROLOGUE_VALIDATION_PERFORMANCE_REPORT.md)。
+
 2026-10-29：最新序章 RC3 圖形自動長測1812.761秒、1264／0＋重啟25／0，三區探索約59.82～60.00 FPS；交易／戰鬥最大216～223ms。這次是Godot完整引擎掛載固定QA PCK，debug_build=true，與下方歷史Release長測分開。[完整數據、採樣修正及限制](PROLOGUE_RC3_SOAK_REPORT.md)。
 
 2026-10-22更新：固定RC4／0bb2188於Windows RTX3080原生Release長測1804.213秒、1548／0；另程序讀長測存檔97／0、短Detail208／0及普通啟動／關閉通過。分區FPS、P95／P99、Draw Calls、記憶體及保留的啟動／戰鬥尖峰見[固定包報告](RC4_FIXED_PACKAGE_REPORT.md)。此為自動化圖形驗收，新包實體鍵鼠／Xbox與G08總Gate仍待；不是Android／iOS或新主角替換驗收。

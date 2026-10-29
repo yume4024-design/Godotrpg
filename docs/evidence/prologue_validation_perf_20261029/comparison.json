@@ -1,0 +1,280 @@
+{
+  "baseline": {
+    "checks": 168,
+    "seconds": 51.524519,
+    "validation": {
+      "greystone_runtime": {
+        "samples": 7,
+        "create_plus_ready_median_ms": 36.61,
+        "create_median_ms": 9.979,
+        "ready_median_ms": 26.006
+      },
+      "forest": {
+        "samples": 6,
+        "create_plus_ready_median_ms": 5.4425,
+        "create_median_ms": 1.822,
+        "ready_median_ms": 3.6575
+      },
+      "mine": {
+        "samples": 7,
+        "create_plus_ready_median_ms": 16.718999999999998,
+        "create_median_ms": 1.221,
+        "ready_median_ms": 15.519
+      }
+    },
+    "frames": {
+      "battle_forest": {
+        "draw_max": 741.0,
+        "draw_min": 290.0,
+        "fps": 59.998500037499,
+        "frames": 60,
+        "max_ms": 21.104,
+        "mean_ms": 16.6670833333333,
+        "p95_ms": 16.791,
+        "p99_ms": 21.104
+      },
+      "battle_mine": {
+        "draw_max": 212.0,
+        "draw_min": 101.0,
+        "fps": 59.9992091013346,
+        "frames": 264,
+        "max_ms": 28.67,
+        "mean_ms": 16.6668863636364,
+        "p95_ms": 16.71,
+        "p99_ms": 19.154
+      },
+      "load_forest": {
+        "draw_max": 291.0,
+        "draw_min": 290.0,
+        "fps": 57.9898211451677,
+        "frames": 106,
+        "max_ms": 49.11,
+        "mean_ms": 17.2444056603774,
+        "p95_ms": 39.009,
+        "p99_ms": 45.96
+      },
+      "load_greystone_runtime": {
+        "draw_max": 1041.0,
+        "draw_min": 1041.0,
+        "fps": 55.8263253963259,
+        "frames": 102,
+        "max_ms": 66.649,
+        "mean_ms": 17.9126960784314,
+        "p95_ms": 58.496,
+        "p99_ms": 62.296
+      },
+      "load_mine": {
+        "draw_max": 207.0,
+        "draw_min": 178.0,
+        "fps": 60.003989454434,
+        "frames": 111,
+        "max_ms": 27.432,
+        "mean_ms": 16.6655585585586,
+        "p95_ms": 21.292,
+        "p99_ms": 23.464
+      },
+      "npc_commerce": {
+        "draw_max": 1213.0,
+        "draw_min": 953.0,
+        "fps": 58.3456303257615,
+        "frames": 254,
+        "max_ms": 63.053,
+        "mean_ms": 17.1392440944882,
+        "p95_ms": 17.96,
+        "p99_ms": 56.644
+      },
+      "postbattle_load": {
+        "draw_max": 291.0,
+        "draw_min": 178.0,
+        "fps": 59.2744482739768,
+        "frames": 219,
+        "max_ms": 46.318,
+        "mean_ms": 16.8706757990868,
+        "p95_ms": 20.165,
+        "p99_ms": 45.356
+      },
+      "prologue": {
+        "draw_max": 1302.0,
+        "draw_min": 0.0,
+        "fps": 40.3964459958195,
+        "frames": 1043,
+        "max_ms": 7845.716,
+        "mean_ms": 24.7546529242569,
+        "p95_ms": 17.34,
+        "p99_ms": 54.104
+      },
+      "travel_forest": {
+        "draw_max": 1041.0,
+        "draw_min": 290.0,
+        "fps": 57.874563290032,
+        "frames": 131,
+        "max_ms": 61.716,
+        "mean_ms": 17.278748091603,
+        "p95_ms": 16.732,
+        "p99_ms": 60.157
+      },
+      "travel_greystone_runtime": {
+        "draw_max": 1194.0,
+        "draw_min": 206.0,
+        "fps": 58.5310057950164,
+        "frames": 131,
+        "max_ms": 60.269,
+        "mean_ms": 17.0849618320611,
+        "p95_ms": 16.834,
+        "p99_ms": 49.645
+      },
+      "travel_mine": {
+        "draw_max": 290.0,
+        "draw_min": 175.0,
+        "fps": 60.0026134471635,
+        "frames": 135,
+        "max_ms": 21.893,
+        "mean_ms": 16.6659407407407,
+        "p95_ms": 16.796,
+        "p99_ms": 21.665
+      }
+    },
+    "process_samples": 11,
+    "peak_working_set_mib": 835.0390625,
+    "peak_private_mib": 2063.90625
+  },
+  "optimized": {
+    "checks": 168,
+    "seconds": 51.756072,
+    "validation": {
+      "greystone_runtime": {
+        "samples": 7,
+        "create_plus_ready_median_ms": 8.809,
+        "create_median_ms": 6.927,
+        "ready_median_ms": 1.946
+      },
+      "forest": {
+        "samples": 6,
+        "create_plus_ready_median_ms": 0.8265,
+        "create_median_ms": 0.7475,
+        "ready_median_ms": 0.0605
+      },
+      "mine": {
+        "samples": 7,
+        "create_plus_ready_median_ms": 1.671,
+        "create_median_ms": 1.5,
+        "ready_median_ms": 0.179
+      }
+    },
+    "frames": {
+      "battle_forest": {
+        "draw_max": 741.0,
+        "draw_min": 290.0,
+        "fps": 60.00018000054,
+        "frames": 60,
+        "max_ms": 21.558,
+        "mean_ms": 16.6666166666667,
+        "p95_ms": 16.852,
+        "p99_ms": 21.558
+      },
+      "battle_mine": {
+        "draw_max": 212.0,
+        "draw_min": 101.0,
+        "fps": 60.0042684854627,
+        "frames": 264,
+        "max_ms": 28.853,
+        "mean_ms": 16.6654810606061,
+        "p95_ms": 16.717,
+        "p99_ms": 19.33
+      },
+      "load_forest": {
+        "draw_max": 291.0,
+        "draw_min": 290.0,
+        "fps": 58.7738789290746,
+        "frames": 108,
+        "max_ms": 46.641,
+        "mean_ms": 17.0143611111111,
+        "p95_ms": 17.354,
+        "p99_ms": 46.107
+      },
+      "load_greystone_runtime": {
+        "draw_max": 1041.0,
+        "draw_min": 1041.0,
+        "fps": 57.4548777848836,
+        "frames": 107,
+        "max_ms": 60.734,
+        "mean_ms": 17.4049626168224,
+        "p95_ms": 18.386,
+        "p99_ms": 60.465
+      },
+      "load_mine": {
+        "draw_max": 207.0,
+        "draw_min": 178.0,
+        "fps": 60.0088553608181,
+        "frames": 111,
+        "max_ms": 23.583,
+        "mean_ms": 16.6642072072072,
+        "p95_ms": 18.017,
+        "p99_ms": 22.375
+      },
+      "npc_commerce": {
+        "draw_max": 1213.0,
+        "draw_min": 953.0,
+        "fps": 58.9475727089969,
+        "frames": 260,
+        "max_ms": 60.929,
+        "mean_ms": 16.9642269230769,
+        "p95_ms": 17.698,
+        "p99_ms": 59.096
+      },
+      "postbattle_load": {
+        "draw_max": 291.0,
+        "draw_min": 178.0,
+        "fps": 59.3888963915958,
+        "frames": 219,
+        "max_ms": 46.556,
+        "mean_ms": 16.8381643835616,
+        "p95_ms": 17.394,
+        "p99_ms": 45.562
+      },
+      "prologue": {
+        "draw_max": 1302.0,
+        "draw_min": 0.0,
+        "fps": 40.0098762840766,
+        "frames": 1040,
+        "max_ms": 7997.372,
+        "mean_ms": 24.9938288461539,
+        "p95_ms": 17.388,
+        "p99_ms": 53.876
+      },
+      "travel_forest": {
+        "draw_max": 1041.0,
+        "draw_min": 290.0,
+        "fps": 57.6219810437083,
+        "frames": 129,
+        "max_ms": 67.854,
+        "mean_ms": 17.354488372093,
+        "p95_ms": 16.776,
+        "p99_ms": 61.333
+      },
+      "travel_greystone_runtime": {
+        "draw_max": 1194.0,
+        "draw_min": 206.0,
+        "fps": 58.4256008398905,
+        "frames": 130,
+        "max_ms": 62.563,
+        "mean_ms": 17.1157846153846,
+        "p95_ms": 16.787,
+        "p99_ms": 49.41
+      },
+      "travel_mine": {
+        "draw_max": 290.0,
+        "draw_min": 175.0,
+        "fps": 59.9941872298595,
+        "frames": 135,
+        "max_ms": 28.766,
+        "mean_ms": 16.6682814814815,
+        "p95_ms": 16.808,
+        "p99_ms": 23.476
+      }
+    },
+    "process_samples": 11,
+    "peak_working_set_mib": 836.82421875,
+    "peak_private_mib": 2045.21875
+  }
+}

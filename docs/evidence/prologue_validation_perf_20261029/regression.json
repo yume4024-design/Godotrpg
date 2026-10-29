@@ -1,0 +1,47 @@
+[
+  {
+    "command": "tools/godot.ps1 -Mode TestPhase5",
+    "checks": 69,
+    "failures": 0
+  },
+  {
+    "command": "tools/godot.ps1 -Mode TestPhase5Reload",
+    "checks": 7,
+    "failures": 0
+  },
+  {
+    "command": "tools/godot.ps1 -Mode TestG06",
+    "checks": 51,
+    "failures": 0
+  },
+  {
+    "command": "tools/godot.ps1 -Mode TestG06Reload",
+    "checks": 6,
+    "failures": 0
+  },
+  {
+    "command": "tools/godot.ps1 -Mode TestPrologueMigration",
+    "checks": 91,
+    "failures": 0
+  },
+  {
+    "command": "tools/godot.ps1 -Mode TestPrologueMigrationReload",
+    "checks": 6,
+    "failures": 0
+  },
+  {
+    "command": "tools/godot.ps1 -Mode TestPrologueCommerce",
+    "checks": 50,
+    "failures": 0
+  },
+  {
+    "command": "tools/godot.ps1 -Mode TestPrologueCommerceReload",
+    "checks": 5,
+    "failures": 0
+  },
+  {
+    "command": "tools/godot.ps1 -Mode TestLocationCollisionSnapshot",
+    "checks": 20485,
+    "failures": 0
+  }
+]
