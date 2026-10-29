@@ -216,8 +216,11 @@ func _run() -> void:
 	await _capture("g063-08-small-save-menu")
 	root.size = Vector2i(1280, 720)
 	await _click_menu("保存旅程  [F5]")
-	_check(game.saves.exists(), "Save menu writes final progress")
+	var final_disk: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(slot))
+	_check(game.saves.exists() and final_disk.get("flags", {}).get("chapter_departure_done", false), "Save menu writes final prologue progress to this test slot")
+	print("FINAL_SAVE_DIAGNOSTIC ", JSON.stringify({"slot": slot, "active_slot": game.saves.slot_path, "menu_visible": game.menu.visible, "tab": game.menu.get("_tab"), "message": game.saves.last_message, "gold": final_disk.get("inventory", {}).get("gold", -1)}))
 	_check(await game.saves.request_load(), "Completed new village save reloads")
+	_check(game.flags.has_flag(&"chapter_departure_done") and game.inventory.gold == 212 and game.rewards.was_claimed(&"event:E008"), "Reload retains final quest progress and reward receipt")
 	_check(game.saves.request_save(), "Final save re-established for fresh process test")
 	_finish()
 
@@ -231,3 +234,11 @@ func _finish() -> void:
 	game.queue_free()
 	await process_frame
 	quit(0 if failures==0 else 1)
+
+func _click_menu(text: String) -> void:
+	# Resizing queues a viewport/container update. Wait for the rendered layout
+	# before converting button coordinates into synthetic mouse input.
+	if DisplayServer.get_name() != "headless":
+		await RenderingServer.frame_post_draw
+		await process_frame
+	await super._click_menu(text)

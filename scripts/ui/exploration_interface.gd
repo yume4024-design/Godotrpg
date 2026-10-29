@@ -28,6 +28,10 @@ var _hud_root: Control
 var _top_panel: PanelContainer
 var _status_panel: PanelContainer
 var _world_labels: WorldLabelLayer
+var _menu_button: Button
+var _map_button: Button
+var _status_heading: Label
+var _status_stack: VBoxContainer
 
 func _ready() -> void:
 	var root_control: Control = Control.new()
@@ -57,13 +61,15 @@ func _ready() -> void:
 	var status: PanelContainer = _panel(root_control, Vector4(-390, 22, -24, 185), true)
 	_status_panel = status
 	var status_stack: VBoxContainer = _stack(status)
-	_label(status_stack, "失落星核  /  灰石村的異變", 19, Color("#ebc887"))
+	_status_stack = status_stack
+	_status_heading = _label(status_stack, "失落星核  /  灰石村的異變", 19, Color("#ebc887"))
 	inventory = _label(status_stack, "背包 · 尚無物品", 18)
 	inventory.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	party_status = _label(status_stack, "", 16, Color("#a9d1c6"))
 	save_status = _label(status_stack, "F5 保存 · F9 讀取 · M 任務／旅程", 14, Color("#a3b9b4"))
 	save_status.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	var menu_button: Button = Button.new()
+	_menu_button = menu_button
 	menu_button.text = "旅途手冊  [M]"
 	menu_button.focus_mode = Control.FOCUS_NONE
 	menu_button.pressed.connect(func() -> void: menu_requested.emit())
@@ -118,12 +124,16 @@ func set_dialogue_active(active: bool) -> void:
 	dialogue_panel.visible = active
 	prompt_label.visible = not active
 	footer.visible = not active
+	if _navigation_enabled:
+		_party_vitals.visible = not active
 	if not active and is_instance_valid(_typing):
 		_typing.kill()
 
 func enable_navigation(actor: Node3D, scene_manager: Node, party_members: Array[CombatantState]) -> void:
+	if not _navigation_enabled:
+		_enable_compact_hud()
 	_navigation_enabled = true
-	_party_vitals.visible = true
+	_party_vitals.visible = not dialogue_panel.visible
 	party_status.visible = false
 	refresh_party_vitals(party_members)
 	if not is_instance_valid(_minimap):
@@ -137,9 +147,9 @@ func enable_navigation(actor: Node3D, scene_manager: Node, party_members: Array[
 		_minimap.anchor_left = 1.0
 		_minimap.anchor_right = 1.0
 		_minimap.offset_left = -252
-		_minimap.offset_top = 198
+		_minimap.offset_top = 16
 		_minimap.offset_right = -24
-		_minimap.offset_bottom = 476
+		_minimap.offset_bottom = 294
 		add_child(_minimap)
 	_minimap.call("configure", actor, scene_manager)
 	if not is_instance_valid(_world_labels):
@@ -150,9 +160,66 @@ func enable_navigation(actor: Node3D, scene_manager: Node, party_members: Array[
 		_world_labels.configure(actor, scene_manager as ExplorationSceneManager, label_exclusions)
 	set_input_hint(false)
 
+func _enable_compact_hud() -> void:
+	# Candidate-only presentation: retain the original main scene's layout.
+	_party_vitals.reparent(_hud_root, false)
+	_party_vitals.set_anchors_and_offsets_preset(Control.PRESET_BOTTOM_LEFT)
+	_party_vitals.offset_left = 24
+	_party_vitals.offset_top = -138
+	_party_vitals.offset_right = 24
+	_party_vitals.offset_bottom = -54
+	# Keep the fade above the reparented row during scene transitions.
+	_hud_root.move_child(_party_vitals, fade.get_index())
+	for panel: PanelContainer in [_top_panel, _status_panel]:
+		var style: StyleBoxFlat = panel.get_theme_stylebox("panel").duplicate() as StyleBoxFlat
+		style.content_margin_left = 12
+		style.content_margin_right = 12
+		style.content_margin_top = 10
+		style.content_margin_bottom = 10
+		panel.add_theme_stylebox_override("panel", style)
+	_top_panel.offset_left = 24
+	_top_panel.offset_top = 16
+	_top_panel.offset_right = 424
+	_top_panel.offset_bottom = 16
+	_top_stack.add_theme_constant_override("separation", 4)
+	location.add_theme_font_size_override("font_size", 22)
+	objective.add_theme_font_size_override("font_size", 17)
+	quest.add_theme_font_size_override("font_size", 14)
+	quest.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
+	_status_heading.hide()
+	_status_stack.add_theme_constant_override("separation", 5)
+	inventory.add_theme_font_size_override("font_size", 16)
+	_status_panel.offset_left = -252
+	_status_panel.offset_top = 306
+	_status_panel.offset_right = -24
+	_status_panel.offset_bottom = 306
+	var actions: HBoxContainer = HBoxContainer.new()
+	_status_stack.add_child(actions)
+	_menu_button.reparent(actions, false)
+	_menu_button.text = "手冊 [M]"
+	_menu_button.add_theme_font_size_override("font_size", 16)
+	_menu_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_map_button = Button.new()
+	_map_button.text = "地圖"
+	_map_button.add_theme_font_size_override("font_size", 16)
+	_map_button.focus_mode = Control.FOCUS_NONE
+	_map_button.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	_map_button.pressed.connect(func() -> void: map_requested.emit())
+	actions.add_child(_map_button)
+	if save_status.text.begins_with("F5"):
+		save_status.text = "F5 保存 · F9 讀取"
+	# Containers can grow for messages; shrink again when the text becomes short.
+	_top_stack.minimum_size_changed.connect(_resize_compact_panels)
+	_status_stack.minimum_size_changed.connect(_resize_compact_panels)
+	_resize_compact_panels.call_deferred()
+
+func _resize_compact_panels() -> void:
+	_top_panel.size = Vector2(400, 0)
+	_status_panel.size = Vector2(228, 0)
+
 func label_exclusions() -> Array[Rect2]:
 	var result: Array[Rect2] = []
-	for control: Control in [_top_panel, _status_panel, _minimap, footer, prompt_label, dialogue_panel]:
+	for control: Control in [_top_panel, _status_panel, _minimap, _party_vitals, footer, prompt_label, dialogue_panel]:
 		if not is_instance_valid(control) or not control.is_visible_in_tree(): continue
 		if control is Label and (control as Label).text.is_empty(): continue
 		result.append(control.get_global_transform_with_canvas() * Rect2(Vector2.ZERO, control.size))
@@ -169,7 +236,7 @@ func refresh_party_vitals(party_members: Array[CombatantState]) -> void:
 
 func _build_vital_card(actor: CombatantState) -> Control:
 	var card: PanelContainer = PanelContainer.new()
-	card.custom_minimum_size = Vector2(194, 0)
+	card.custom_minimum_size = Vector2(188, 0)
 	var panel_style: StyleBoxFlat = StyleBoxFlat.new()
 	panel_style.bg_color = Color(0.05, 0.095, 0.11, 0.88)
 	panel_style.border_color = Color(0.31, 0.43, 0.42, 0.78)
@@ -183,14 +250,17 @@ func _build_vital_card(actor: CombatantState) -> Control:
 	var stack: VBoxContainer = VBoxContainer.new()
 	stack.add_theme_constant_override("separation", 2)
 	card.add_child(stack)
-	var heading: Label = _label(stack, "%s  Lv.%d" % [actor.definition.display_name, actor.level], 14, Color("#f1dca8"))
+	var heading: Label = _label(stack, "%s  Lv.%d" % [actor.definition.display_name, actor.level], 16, Color("#f1dca8"))
 	heading.clip_text = true
-	var hp_label: Label = _label(stack, "HP  %d / %d" % [actor.hp, actor.max_hp], 11, Color("#a8d8b4"))
-	hp_label.add_theme_constant_override("line_spacing", 0)
-	var hp_bar: ProgressBar = _vital_bar(actor.hp, actor.max_hp, Color("#55ba74"))
-	stack.add_child(hp_bar)
-	_label(stack, "MP  %d / %d" % [actor.mp, actor.max_mp], 11, Color("#a9c9ee"))
-	stack.add_child(_vital_bar(actor.mp, actor.max_mp, Color("#5798e3")))
+	for entry: Array in [["HP", actor.hp, actor.max_hp, Color("#347b4c")], ["MP", actor.mp, actor.max_mp, Color("#345e94")]]:
+		var bar: ProgressBar = _vital_bar(entry[1], entry[2], entry[3])
+		stack.add_child(bar)
+		var value_label: Label = _label(bar, "%s  %d / %d" % [entry[0], entry[1], entry[2]], 14)
+		value_label.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
+		value_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+		value_label.mouse_filter = Control.MOUSE_FILTER_IGNORE
+		value_label.add_theme_color_override("font_outline_color", Color("#12202b"))
+		value_label.add_theme_constant_override("outline_size", 2)
 	return card
 
 func _vital_bar(value: float, maximum: float, fill_color: Color) -> ProgressBar:
@@ -199,7 +269,7 @@ func _vital_bar(value: float, maximum: float, fill_color: Color) -> ProgressBar:
 	bar.max_value = maxf(maximum, 1.0)
 	bar.value = value
 	bar.show_percentage = false
-	bar.custom_minimum_size = Vector2(0, 7)
+	bar.custom_minimum_size = Vector2(0, 22)
 	var background: StyleBoxFlat = StyleBoxFlat.new()
 	background.bg_color = Color(0.055, 0.075, 0.08, 1)
 	background.set_corner_radius_all(3)
@@ -215,7 +285,7 @@ func set_input_hint(gamepad: bool) -> void:
 	if running_enabled:
 		footer.text = "左搖桿  移動 · LB  跑步     A  互動     Menu  手冊" if gamepad else "WASD / 方向鍵  移動 · Shift  跑步     E  互動     M  手冊"
 	if _navigation_enabled:
-		footer.text += "     F10  開發設定" if not gamepad else "     F10  開發設定"
+		_menu_button.text = "手冊 [Menu]" if gamepad else "手冊 [M]"
 	next_button.text = "A  顯示全文・繼續  ›" if gamepad else "E / 空白鍵 / Enter  顯示全文・繼續  ›"
 
 func show_line(who: String, text: String, index: int, total: int) -> void:

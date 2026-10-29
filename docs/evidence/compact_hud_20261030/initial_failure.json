@@ -1,0 +1,8 @@
+{
+  "checks": 291,
+  "failures": 1,
+  "failure": "Both actual prologue members and completion flags loaded",
+  "finding": "Graphical story fixture retained post-boss state without chapter_departure_done. Previous story test checked only file existence, while headless restart read a different file.",
+  "resolution": "Strengthen final disk and post-load assertions; wait for rendered layout before scripted menu clicks after resize; add VisualMineReferenceStoryReload to read same graphical slot in a fresh process; test six resized handbook saves.",
+  "limitation": "Exact cause of the intermittent original click miss is not proven; full-story rerun before readiness adjustment already passed. No runtime save-format or save-manager change."
+}
