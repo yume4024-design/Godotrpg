@@ -1,0 +1,20 @@
+{
+  "source_commit": "222cc5a059360ab392e47a91761319917a2c8699",
+  "duration_seconds": 1812.100522,
+  "checks": 1264,
+  "failures": 0,
+  "restart_checks": 25,
+  "restart_failures": 0,
+  "transitions": 81,
+  "transition_mean_ms": 343.7307654320988,
+  "transition_max_ms": 361.66,
+  "process_samples": 368,
+  "process_peaks_bytes": {
+    "working_set_bytes": 901763072.0,
+    "private_bytes": 2229919744.0,
+    "peak_working_set_bytes": 940236800.0
+  },
+  "engine_peak_bytes": 424565181.0,
+  "scope": "Graphical automated InputMap movement; repositioned route segments; full story once, repeated service/battle/save/load; not human 30-minute playthrough. Timer includes diagnostics and snapshot work.",
+  "new_forest_label_layer_included": false
+}

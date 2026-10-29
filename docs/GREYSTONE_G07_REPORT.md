@@ -1,5 +1,7 @@
 # G07 場景效能報告
 
+2026-10-29 RC4補登：固定222cc5a／RC4 QA PCK圖形自動長測1812.101秒、1264／0及新程序25／0，368筆真實渲染子程序記憶體採樣；仍有交易／戰鬥尖峰。完整引擎debug模式，不是Release效能。[結果](PROLOGUE_RC4_SOAK_REPORT.md)。
+
 2026-10-29後續：Windows原生Release短測定位讀檔驗證重建成本，碰撞快照讓村莊建立＋初始化中位數36.610→8.809ms；285項回歸及20485項對照通過。約61ms尖峰仍在，固定RC3未更新。[修正報告](PROLOGUE_VALIDATION_PERFORMANCE_REPORT.md)。
 
 2026-10-29：最新序章 RC3 圖形自動長測1812.761秒、1264／0＋重啟25／0，三區探索約59.82～60.00 FPS；交易／戰鬥最大216～223ms。這次是Godot完整引擎掛載固定QA PCK，debug_build=true，與下方歷史Release長測分開。[完整數據、採樣修正及限制](PROLOGUE_RC3_SOAK_REPORT.md)。

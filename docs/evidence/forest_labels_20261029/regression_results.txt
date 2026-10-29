@@ -1,0 +1,17 @@
+TestPrologueAreaMap
+PROLOGUE_AREA_MAP_RESULT checks=77 failures=0
+Log: D:\RPGGAME\artifacts\logs\testprologueareamap-20261029-173810-637.log
+VisualMineReferenceStory
+MINE_STORY_RESULT checks=93 failures=0
+Log: D:\RPGGAME\artifacts\logs\visualminereferencestory-20261029-173957-322.log
+TestMineReferenceStoryReload
+MINE_STORY_RESULT checks=24 failures=0
+Log: D:\RPGGAME\artifacts\logs\testminereferencestoryreload-20261029-174026-170.log
+TestPhase5
+PHASE5_RESULT checks=69 failures=0 renderer=headless
+Log: D:\RPGGAME\artifacts\logs\testphase5-20261029-174036-797.log
+TestWorldLabels final
+WORLD_LABEL_RESULT checks=232 failures=0
+Log: D:\RPGGAME\artifacts\logs\testworldlabels-20261029-174229-242.log
+Check
+exit 0 (tools/godot.ps1 rejects nonzero engine exits and error messages)

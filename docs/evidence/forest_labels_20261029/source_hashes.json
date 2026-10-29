@@ -1,0 +1,6 @@
+{
+  "scripts/ui/world_label_layer.gd": "bcf0c1b398c1e4cc3802950725996758169fe3cb7fdf71b950a7ab909776b21f",
+  "scripts/ui/exploration_interface.gd": "a574a41d0045893b08a3da9ce9387ee3cc7ec799960e06810493d3b60868215a",
+  "tests/world_label_layout_test.gd": "127f27c287cbc055963dfa9a94d11395de0a5934310b74f8fb74fb730b167279",
+  "tools/godot.ps1": "46e200b396cf4eb9c0984dc118296c0714854339b6a7462ba58d01c2d8587e82"
+}

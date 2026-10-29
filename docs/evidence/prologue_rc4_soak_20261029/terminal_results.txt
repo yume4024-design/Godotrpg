@@ -1,0 +1,6 @@
+soak-output.txt
+G075_HEARTBEAT seconds=1812.1 cycle=27 map=mine failures=0
+PASS At least 30 rendered minutes
+G075_RESULT checks=1264 failures=0
+restart-output.txt
+MINE_STORY_RESULT checks=25 failures=0

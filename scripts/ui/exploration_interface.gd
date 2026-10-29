@@ -24,9 +24,14 @@ var _navigation_enabled: bool = false
 var _minimap: Control
 var _top_stack: VBoxContainer
 var _party_vitals: HBoxContainer
+var _hud_root: Control
+var _top_panel: PanelContainer
+var _status_panel: PanelContainer
+var _world_labels: WorldLabelLayer
 
 func _ready() -> void:
 	var root_control: Control = Control.new()
+	_hud_root = root_control
 	root_control.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	root_control.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	add_child(root_control)
@@ -39,6 +44,7 @@ func _ready() -> void:
 	theme.set_color("default_color", "RichTextLabel", Color("#e5e9dc"))
 	root_control.theme = theme
 	var top: PanelContainer = _panel(root_control, Vector4(24, 22, 470, 220))
+	_top_panel = top
 	_top_stack = _stack(top)
 	location = _label(_top_stack, "", 25, Color("#ebc887"))
 	objective = _label(_top_stack, "序章 · 灰石村的異變", 19)
@@ -49,6 +55,7 @@ func _ready() -> void:
 	_party_vitals.visible = false
 	_top_stack.add_child(_party_vitals)
 	var status: PanelContainer = _panel(root_control, Vector4(-390, 22, -24, 185), true)
+	_status_panel = status
 	var status_stack: VBoxContainer = _stack(status)
 	_label(status_stack, "失落星核  /  灰石村的異變", 19, Color("#ebc887"))
 	inventory = _label(status_stack, "背包 · 尚無物品", 18)
@@ -135,7 +142,21 @@ func enable_navigation(actor: Node3D, scene_manager: Node, party_members: Array[
 		_minimap.offset_bottom = 476
 		add_child(_minimap)
 	_minimap.call("configure", actor, scene_manager)
+	if not is_instance_valid(_world_labels):
+		_world_labels = WorldLabelLayer.new()
+		_world_labels.name = "WorldLabels"
+		_hud_root.add_child(_world_labels)
+		_hud_root.move_child(_world_labels, 0)
+		_world_labels.configure(actor, scene_manager as ExplorationSceneManager, label_exclusions)
 	set_input_hint(false)
+
+func label_exclusions() -> Array[Rect2]:
+	var result: Array[Rect2] = []
+	for control: Control in [_top_panel, _status_panel, _minimap, footer, prompt_label, dialogue_panel]:
+		if not is_instance_valid(control) or not control.is_visible_in_tree(): continue
+		if control is Label and (control as Label).text.is_empty(): continue
+		result.append(control.get_global_transform_with_canvas() * Rect2(Vector2.ZERO, control.size))
+	return result
 
 func refresh_party_vitals(party_members: Array[CombatantState]) -> void:
 	if not _navigation_enabled:

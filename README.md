@@ -1,6 +1,8 @@
 # 《失落星核》｜Project Crystal
 
-2026-10-29：序章RC4已匯出，包內20983項檢查、23邊緣案例及玩家啟動器通過。使用 `builds/prologue-candidate/rc4-20261029/candidate/start_prologue_candidate.cmd`；[結果與限制](docs/PROLOGUE_RC4_REPORT.md)。本包包含讀檔快照優化；新長測進行中，角色／HUD美術及人工終驗未完成，舊RC3保留。
+2026-10-29後續：森林標籤遮擋已修正，來源啟動 `./tools/godot.ps1 -Mode RunPrologueCandidate`；[修正報告](docs/FOREST_LABEL_LAYOUT_REPORT.md)。固定RC4另完成30分12.1秒圖形自動長測1264／0＋重啟25／0，[數據與限制](docs/PROLOGUE_RC4_SOAK_REPORT.md)。RC4包不含新標籤程式，不能混用版本驗收。
+
+2026-10-29：序章RC4已匯出，包內20983項檢查、23邊緣案例及玩家啟動器通過。使用 `builds/prologue-candidate/rc4-20261029/candidate/start_prologue_candidate.cmd`；[結果與限制](docs/PROLOGUE_RC4_REPORT.md)。本包包含讀檔快照優化；新長測現已完成（見上方），角色／HUD美術及人工終驗未完成，舊RC3保留。
 
 2026-10-29：固定序章 RC3 已完成30分12.8秒圖形自動長測，1264／0＋重啟25／0。[數據與限制](docs/PROLOGUE_RC3_SOAK_REPORT.md)。戰鬥／交易尖峰、新莉雅拓樸與人工終驗仍待，不代表最終發布通過；啟動路徑同下。
 

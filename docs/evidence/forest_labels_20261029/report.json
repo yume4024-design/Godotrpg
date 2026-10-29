@@ -1,0 +1,229 @@
+{
+  "checks": 232,
+  "failures": 0,
+  "scope": "Graphical candidate forest signage, four viewport sizes, actual E interaction and InputMap movement, hidden targets and scene replacement. Not human input or full UI acceptance.",
+  "views": [
+    {
+      "labels": [
+        {
+          "anchor": "(879.5845, 312.1066)",
+          "rect": "[P: (826.5845, 269.1066), S: (106.0, 35.0)]",
+          "target": "TrainingSupply",
+          "text": "恢復藥補給"
+        },
+        {
+          "anchor": "(460.3116, 131.1413)",
+          "rect": "[P: (479.0, 88.14128), S: (93.0, 35.0)]",
+          "target": "Exit",
+          "text": "← 灰石村"
+        },
+        {
+          "anchor": "(460.3117, 409.2174)",
+          "rect": "[P: (372.8117, 366.2174), S: (175.0, 35.0)]",
+          "target": "Camp",
+          "text": "營地 · 恢復 HP / MP"
+        },
+        {
+          "anchor": "(879.5844, 451.5703)",
+          "rect": "[P: (801.5844, 408.5703), S: (156.0, 35.0)]",
+          "target": "SlimeTrial",
+          "text": "演練 · 森林史萊姆"
+        }
+      ],
+      "view": "entrance_1280",
+      "viewport": "(1280, 720)"
+    },
+    {
+      "labels": [
+        {
+          "anchor": "(879.5845, 312.1066)",
+          "rect": "[P: (826.5845, 269.1066), S: (106.0, 35.0)]",
+          "target": "TrainingSupply",
+          "text": "恢復藥補給"
+        },
+        {
+          "anchor": "(460.3116, 131.1413)",
+          "rect": "[P: (479.0, 88.14128), S: (93.0, 35.0)]",
+          "target": "Exit",
+          "text": "← 灰石村"
+        },
+        {
+          "anchor": "(460.3117, 409.2174)",
+          "rect": "[P: (372.8117, 366.2174), S: (175.0, 35.0)]",
+          "target": "Camp",
+          "text": "營地 · 恢復 HP / MP"
+        },
+        {
+          "anchor": "(879.5844, 451.5703)",
+          "rect": "[P: (801.5844, 408.5703), S: (156.0, 35.0)]",
+          "target": "SlimeTrial",
+          "text": "演練 · 森林史萊姆"
+        }
+      ],
+      "view": "entrance_960",
+      "viewport": "(960, 540)"
+    },
+    {
+      "labels": [
+        {
+          "anchor": "(879.5845, 312.1066)",
+          "rect": "[P: (826.5845, 269.1066), S: (106.0, 35.0)]",
+          "target": "TrainingSupply",
+          "text": "恢復藥補給"
+        },
+        {
+          "anchor": "(460.3116, 131.1413)",
+          "rect": "[P: (479.0, 88.14128), S: (93.0, 35.0)]",
+          "target": "Exit",
+          "text": "← 灰石村"
+        },
+        {
+          "anchor": "(460.3117, 409.2174)",
+          "rect": "[P: (372.8117, 366.2174), S: (175.0, 35.0)]",
+          "target": "Camp",
+          "text": "營地 · 恢復 HP / MP"
+        },
+        {
+          "anchor": "(879.5844, 451.5703)",
+          "rect": "[P: (801.5844, 408.5703), S: (156.0, 35.0)]",
+          "target": "SlimeTrial",
+          "text": "演練 · 森林史萊姆"
+        }
+      ],
+      "view": "entrance_1024",
+      "viewport": "(1024, 768)"
+    },
+    {
+      "labels": [
+        {
+          "anchor": "(879.5845, 312.1066)",
+          "rect": "[P: (826.5845, 269.1066), S: (106.0, 35.0)]",
+          "target": "TrainingSupply",
+          "text": "恢復藥補給"
+        },
+        {
+          "anchor": "(460.3116, 131.1413)",
+          "rect": "[P: (479.0, 88.14128), S: (93.0, 35.0)]",
+          "target": "Exit",
+          "text": "← 灰石村"
+        },
+        {
+          "anchor": "(460.3117, 409.2174)",
+          "rect": "[P: (372.8117, 366.2174), S: (175.0, 35.0)]",
+          "target": "Camp",
+          "text": "營地 · 恢復 HP / MP"
+        },
+        {
+          "anchor": "(879.5844, 451.5703)",
+          "rect": "[P: (801.5844, 408.5703), S: (156.0, 35.0)]",
+          "target": "SlimeTrial",
+          "text": "演練 · 森林史萊姆"
+        }
+      ],
+      "view": "entrance_1920",
+      "viewport": "(1920, 1080)"
+    },
+    {
+      "labels": [
+        {
+          "anchor": "(717.8649, 227.0997)",
+          "rect": "[P: (630.3649, 184.0997), S: (175.0, 35.0)]",
+          "target": "Camp",
+          "text": "營地 · 恢復 HP / MP"
+        },
+        {
+          "anchor": "(1137.138, 269.4527)",
+          "rect": "[P: (863.0, 226.4527), S: (156.0, 35.0)]",
+          "target": "SlimeTrial",
+          "text": "演練 · 森林史萊姆"
+        },
+        {
+          "anchor": "(1137.138, 129.989)",
+          "rect": "[P: (775.0, 86.98895), S: (106.0, 35.0)]",
+          "target": "TrainingSupply",
+          "text": "恢復藥補給"
+        }
+      ],
+      "view": "camp",
+      "viewport": "(1280, 720)"
+    },
+    {
+      "labels": [
+        {
+          "anchor": "(717.8649, 227.0997)",
+          "rect": "[P: (630.3649, 184.0997), S: (175.0, 35.0)]",
+          "target": "Camp",
+          "text": "營地 · 恢復 HP / MP"
+        },
+        {
+          "anchor": "(1137.138, 269.4527)",
+          "rect": "[P: (863.0, 226.4527), S: (156.0, 35.0)]",
+          "target": "SlimeTrial",
+          "text": "演練 · 森林史萊姆"
+        },
+        {
+          "anchor": "(1137.138, 129.989)",
+          "rect": "[P: (775.0, 86.98895), S: (106.0, 35.0)]",
+          "target": "TrainingSupply",
+          "text": "恢復藥補給"
+        }
+      ],
+      "view": "dialogue",
+      "viewport": "(1280, 720)"
+    },
+    {
+      "labels": [
+        {
+          "anchor": "(654.3358, 227.0998)",
+          "rect": "[P: (566.8358, 184.0998), S: (175.0, 35.0)]",
+          "target": "Camp",
+          "text": "營地 · 恢復 HP / MP"
+        },
+        {
+          "anchor": "(1073.609, 269.4528)",
+          "rect": "[P: (863.0, 226.4528), S: (156.0, 35.0)]",
+          "target": "SlimeTrial",
+          "text": "演練 · 森林史萊姆"
+        },
+        {
+          "anchor": "(1073.609, 129.9891)",
+          "rect": "[P: (775.0, 86.98906), S: (106.0, 35.0)]",
+          "target": "TrainingSupply",
+          "text": "恢復藥補給"
+        }
+      ],
+      "view": "after_movement",
+      "viewport": "(1280, 720)"
+    },
+    {
+      "labels": [
+        {
+          "anchor": "(879.5845, 312.1066)",
+          "rect": "[P: (826.5845, 269.1066), S: (106.0, 35.0)]",
+          "target": "TrainingSupply",
+          "text": "恢復藥補給"
+        },
+        {
+          "anchor": "(460.3116, 131.1413)",
+          "rect": "[P: (479.0, 88.14128), S: (93.0, 35.0)]",
+          "target": "Exit",
+          "text": "← 灰石村"
+        },
+        {
+          "anchor": "(460.3117, 409.2174)",
+          "rect": "[P: (372.8117, 366.2174), S: (175.0, 35.0)]",
+          "target": "Camp",
+          "text": "營地 · 恢復 HP / MP"
+        },
+        {
+          "anchor": "(879.5844, 451.5703)",
+          "rect": "[P: (801.5844, 408.5703), S: (156.0, 35.0)]",
+          "target": "SlimeTrial",
+          "text": "演練 · 森林史萊姆"
+        }
+      ],
+      "view": "return_forest",
+      "viewport": "(1280, 720)"
+    }
+  ]
+}
