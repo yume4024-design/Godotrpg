@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [Parameter(Mandatory=$true)][string]$Root,
     [string]$GodotPath='D:\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-stable_win64_console.exe'
@@ -14,6 +14,7 @@ $required=@(
  'res://scenes/main/prologue_candidate.tscn',
  'res://scenes/world/greystone_village.tscn',
  'res://scripts/ui/area_map_panel.gd',
+ 'res://scripts/save/location_collision_snapshot.gd',
  'res://assets/models/rebuilt_characters/ren_runtime.glb',
  'res://assets/models/pixal3d/lia_rigged.glb'
 ) -join ','

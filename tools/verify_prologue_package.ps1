@@ -58,4 +58,5 @@ Run-Pack 'qa-migration' 'qa' @('--headless','--script','res://tests/prologue_mig
 Run-Pack 'qa-migration-reload' 'qa' @('--headless','--script','res://tests/prologue_migration_test.gd','--','--reload')
 Run-Pack 'qa-commerce' 'qa' @('--headless','--script','res://tests/prologue_commerce_test.gd')
 Run-Pack 'qa-commerce-reload' 'qa' @('--headless','--script','res://tests/prologue_commerce_test.gd','--','--reload')
+Run-Pack 'qa-collision-snapshot' 'qa' @('--headless','--script','res://tests/location_collision_snapshot_test.gd')
 Run-Pack 'candidate-launch' 'candidate' @('--quit-after','180')
