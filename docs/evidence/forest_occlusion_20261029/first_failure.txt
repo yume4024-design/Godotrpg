@@ -1,0 +1,13 @@
+Initial locomotion regression
+FAIL Running with LB does not cycle background UI focus
+EXPLORATION_LOCOMOTION_RESULT checks=67 failures=1
+
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+OpenGL API 3.3.0 NVIDIA 617.42 - Compatibility - Using Device: NVIDIA - NVIDIA GeForce RTX 3080
+
+FOCUS_PROBE before visible=false focus=@Button@84:<Button#109890767979>
+FOCUS_PROBE without_input focus=@Button@84:<Button#109890767979>
+FOCUS_PROBE with_LB before=@Button@84:<Button#109890767979> after=@Button@84:<Button#109890767979> enabled=true run=true
+FOCUS_PROBE before visible=true focus=@Button@84:<Button#109890767979>
+FOCUS_PROBE without_input focus=@Button@84:<Button#109890767979>
+FOCUS_PROBE with_LB before=@Button@84:<Button#109890767979> after=@Button@84:<Button#109890767979> enabled=true run=true

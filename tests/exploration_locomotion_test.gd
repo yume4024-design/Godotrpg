@@ -20,6 +20,7 @@ func _run() -> void:
 	DirAccess.make_dir_recursive_absolute(output_path)
 	root.size = Vector2i(1280, 720)
 	root.content_scale_size = Vector2i(1280, 720)
+	root.unfocusable = true # Automated input must not depend on desktop focus stealing.
 	Engine.max_fps = 60
 	var legacy: ExplorationPlayer = load("res://scenes/characters/player.tscn").instantiate()
 	root.add_child(legacy)
@@ -59,8 +60,14 @@ func _run() -> void:
 	var joy: InputEventJoypadButton = InputEventJoypadButton.new()
 	joy.button_index = JOY_BUTTON_LEFT_SHOULDER
 	joy.pressed = true
-	(game.get("bridge_button") as Button).grab_focus()
+	# The developer panel is now hidden by default. Establish a real visible
+	# background focus target before asserting LB cannot cycle it.
+	await _tap(KEY_F10)
+	var background_button: Button = game.get("bridge_button")
+	background_button.grab_focus()
+	await process_frame
 	var prior_focus: Control = root.gui_get_focus_owner()
+	_check(background_button.is_visible_in_tree() and not background_button.disabled and prior_focus == background_button, "Visible background button owns focus before LB regression")
 	Input.parse_input_event(joy)
 	await process_frame
 	_check(game.player.input_component.read_run(), "Xbox LB binding requests run (injected input, not hardware certification)")
@@ -70,6 +77,7 @@ func _run() -> void:
 	Input.parse_input_event(joy_release)
 	await process_frame
 	_check(not game.player.input_component.read_run(), "Releasing LB restores walking")
+	await _tap(KEY_F10)
 	joy.button_index = JOY_BUTTON_LEFT_STICK
 	Input.parse_input_event(joy)
 	await process_frame

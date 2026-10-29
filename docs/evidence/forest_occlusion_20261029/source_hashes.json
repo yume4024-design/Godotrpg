@@ -1,0 +1,7 @@
+{
+  "scripts/world/exploration_occlusion.gd": "1e84de587556207db0443e516e7dbac6f2c3c8fd8e7b5e214773f42420c47528",
+  "scripts/world/forest_presentation.gd": "41ca9ebfbf51317cd265df5459350c11b71d8be4dfeae6c70424d144f65572ed",
+  "tests/forest_occlusion_test.gd": "ee39f00dbcc665eb30aca8f985be493c53a5fc50adb1d945ff0e7a34a37e0814",
+  "tests/exploration_locomotion_test.gd": "9f668d27a85134c851004ea748b6c5de81bcd4f55087bca90265ea8bb7af33b9",
+  "tools/godot.ps1": "2d0efbf1603cf797143415c51eb29b56ab7e707f7050a114f25a16e1ad2fd09f"
+}

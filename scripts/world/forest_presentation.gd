@@ -71,6 +71,7 @@ func _dress() -> void:
 				if original != null and original.resource_name == "ForestEarth":
 					visual.set_surface_override_material(surface,grass)
 		elif path.begins_with("Tree") or (visual.mesh != null and visual.mesh.resource_path.contains("round_tree")):
+			var canopy_surfaces: PackedInt32Array = []
 			for surface: int in visual.mesh.get_surface_count():
 				var original: Material=visual.mesh.surface_get_material(surface)
 				if original == null:continue
@@ -86,6 +87,10 @@ func _dress() -> void:
 							foliage.roughness=.95
 							palette[key]=foliage
 						visual.set_surface_override_material(surface,palette[key])
+						canopy_surfaces.append(surface)
+			if not canopy_surfaces.is_empty():
+				visual.set_meta(&"occlusion_canopy_surfaces", canopy_surfaces)
+				visual.add_to_group(&"exploration_foliage_occluder")
 	# Flatten presentation only. Physical ground and route dimensions stay intact.
 	# One world-space material paints the union, so overlapping planes have the
 	# same color and do not introduce grassy cross seams or raised side faces.

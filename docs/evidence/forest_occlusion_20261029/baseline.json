@@ -1,0 +1,17 @@
+{
+  "checks": 4,
+  "failures": 1,
+  "scope": "Real forest and camera; rendered automated input, not human acceptance.",
+  "views": [
+    {
+      "faded_surfaces": 0,
+      "player": "(-7.0, 0.000391, 4.3)",
+      "view": "before"
+    },
+    {
+      "faded_surfaces": 0,
+      "player": "(-7.0, 0.000391, 4.3)",
+      "view": "baseline_failure"
+    }
+  ]
+}

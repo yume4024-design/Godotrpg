@@ -1,0 +1,20 @@
+TestForestOcclusion
+FOREST_OCCLUSION_RESULT checks=26 failures=0
+Log: D:\RPGGAME\artifacts\logs\testforestocclusion-20261029-175508-300.log
+TestG08Accessibility
+G082_RESULT checks=18 failures=0
+Log: D:\RPGGAME\artifacts\logs\testg08accessibility-20261029-175527-267.log
+TestExplorationLocomotion
+EXPLORATION_LOCOMOTION_RESULT checks=68 failures=0
+Log: D:\RPGGAME\artifacts\logs\testexplorationlocomotion-20261029-175905-992.log
+TestWorldLabels
+WORLD_LABEL_RESULT checks=232 failures=0
+Log: D:\RPGGAME\artifacts\logs\testworldlabels-20261029-175952-243.log
+VisualMineReferenceStory
+MINE_STORY_RESULT checks=93 failures=0
+Log: D:\RPGGAME\artifacts\logs\visualminereferencestory-20261029-180008-338.log
+TestMineReferenceStoryReload
+MINE_STORY_RESULT checks=24 failures=0
+Log: D:\RPGGAME\artifacts\logs\testminereferencestoryreload-20261029-180037-206.log
+Check
+Log: D:\RPGGAME\artifacts\logs\check-20261029-180047-439.log

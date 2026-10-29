@@ -1,0 +1,43 @@
+{
+  "checks": 26,
+  "failures": 0,
+  "scope": "Real forest and camera; rendered automated input, not human acceptance.",
+  "views": [
+    {
+      "faded_surfaces": 0,
+      "player": "(-7.0, 0.000391, 4.3)",
+      "registered_foliage": 24,
+      "view": "before"
+    },
+    {
+      "faded_surfaces": 2,
+      "player": "(-7.0, 0.000391, 4.3)",
+      "registered_foliage": 24,
+      "view": "after"
+    },
+    {
+      "faded_surfaces": 2,
+      "player": "(-7.0, 0.000391, 4.3)",
+      "registered_foliage": 24,
+      "view": "dialogue"
+    },
+    {
+      "faded_surfaces": 2,
+      "player": "(-6.045413, 0.000391, 3.345405)",
+      "registered_foliage": 24,
+      "view": "moving"
+    },
+    {
+      "faded_surfaces": 0,
+      "player": "(-7.0, 0.000391, 0.0)",
+      "registered_foliage": 24,
+      "view": "clear"
+    },
+    {
+      "faded_surfaces": 2,
+      "player": "(-7.0, 0.000391, 4.3)",
+      "registered_foliage": 24,
+      "view": "return"
+    }
+  ]
+}
