@@ -1,0 +1,57 @@
+{
+  "source_sha256": "87f46906023af6294d31c1a434cd5cef5d0389d9e90e40b2bebc03f34a076d1e",
+  "blend_sha256": "fb2091ac1651bafc2f9e7476dab0e02ceabc42724ad19b986da9d5a810617486",
+  "glb_sha256": "fe30d3a95944fabb0e95a06421e842f012cce1f3e6c1e84eaa868d0b3582f5d2",
+  "selected_faces": {
+    "-1": 45,
+    "1": 40
+  },
+  "cut_geometry_elements": {
+    "-1": 58,
+    "1": 63
+  },
+  "unselected_faces_verified": 11459,
+  "maximum_normal_error": 0.00035854163753902665,
+  "normal_calibration": {
+    "storage": "Blender custom_normal INT16_2D",
+    "target_vectors_changed": false,
+    "tolerance": 0.002,
+    "before_maximum": 0.0035068325115155488,
+    "after_maximum": 0.00035854163753902665,
+    "corrected_loops": [
+      {
+        "loop": 16031,
+        "before_code": [
+          7406,
+          0
+        ],
+        "after_code": [
+          7406.0,
+          -103.0
+        ],
+        "before_error": 0.0035068325115155488,
+        "after_error": 0.0
+      },
+      {
+        "loop": 16034,
+        "before_code": [
+          7406,
+          0
+        ],
+        "after_code": [
+          7406.0,
+          0.0
+        ],
+        "before_error": 0.0035068325115155488,
+        "after_error": 0.0
+      }
+    ]
+  },
+  "triangles": 12767,
+  "leather_encoded_rgb": [
+    0.327,
+    0.213,
+    0.199
+  ],
+  "status": "static trial only; sleeve parts overlap hand and are not welded or rigged"
+}

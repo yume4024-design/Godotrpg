@@ -1,0 +1,91 @@
+{
+  "body": {
+    "schema_version": 1,
+    "file": "artifacts\\lia-bracer-rebuild-20261030\\lia_bracer_trial.glb",
+    "category": "player_character",
+    "sha256": "f2b2647ff24d6c7f3afeda22b1c47f9513112c8a2c79435dc87075451ce4484b",
+    "maximum_triangles": 15000,
+    "triangles": 12767,
+    "headroom_triangles": 2233,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 124,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 124,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 2,
+        "mesh": 2,
+        "triangles": 476,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 3,
+        "mesh": 3,
+        "triangles": 256,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 4,
+        "mesh": 4,
+        "triangles": 256,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 5,
+        "mesh": 5,
+        "triangles": 11531,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 3,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "equipment": [],
+  "combined_visible_triangles": 12767,
+  "status": "PASS"
+}

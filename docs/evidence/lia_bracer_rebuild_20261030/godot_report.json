@@ -1,0 +1,40 @@
+{
+	"animation_tested": false,
+	"asset": "lia_bracer_trial",
+	"category": "player_character",
+	"checks": 35,
+	"failures": [],
+	"formal_gameplay": false,
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.95000004768372
+	],
+	"import_mode": "GLTFDocument",
+	"model": "D:/RPGGAME/artifacts/lia-bracer-rebuild-20261030/lia_bracer_trial.glb",
+	"model_sha256": "f2b2647ff24d6c7f3afeda22b1c47f9513112c8a2c79435dc87075451ce4484b",
+	"physical_input": false,
+	"rigged": false,
+	"solid_materials": [
+		"LiaBracerRepairLeather",
+		"LiaBracerRepairLeather",
+		"LiaAuthoredSkin",
+		"LiaAuthoredSkin",
+		"LiaAuthoredSkin"
+	],
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 12767
+}

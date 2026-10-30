@@ -10,13 +10,13 @@ from mathutils import Vector
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from calibrate_corner_normal_codes import calibrate
 
-p=argparse.ArgumentParser();p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--continuous',action='store_true');p.add_argument('--bands',action='store_true');p.add_argument('--source-receipt',type=Path)
+p=argparse.ArgumentParser();p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--continuous',action='store_true');p.add_argument('--bands',action='store_true');p.add_argument('--fit-wrist',action='store_true');p.add_argument('--source-receipt',type=Path)
 a=p.parse_args(sys.argv[sys.argv.index('--')+1:]);sha=hashlib.sha256(a.input.read_bytes()).hexdigest()
 if sha!='b05ac1dd01f0347aa7ab1f73a96f9af73b6ca939349184d5463c20d282c1a7f7':
  if a.source_receipt is None:raise ValueError('Unexpected candidate blend; provide matching source receipt')
  prior=json.loads(a.source_receipt.read_text(encoding='utf-8'))
  if prior.get('blend_sha256')!=sha or prior.get('source_sha256')!='1e8d238dc505c3c347d125b43501093c47f4be5c59df437dd4330e1dc235e37e' or prior.get('method')!='thorough' or len(prior.get('removed_face_ids',[]))!=280:raise ValueError('Source receipt does not describe the expected skirt repair')
-if a.bands and not a.continuous:raise ValueError('Bands require continuous hand')
+if (a.bands or a.fit_wrist) and not a.continuous:raise ValueError('Bands and wrist fitting require continuous hand')
 if a.output.exists():raise FileExistsError('Use a new output directory')
 bpy.ops.wm.open_mainfile(filepath=str(a.input.resolve()))
 scene=bpy.context.scene;body=bpy.data.objects['LiaRetainedAuthoredNeckSurface'];neck=bpy.data.objects['LiaContinuousNeckClavicle'];mesh=body.data
@@ -81,12 +81,17 @@ for sign,label in [(-1,'Right'),(1,'Left')]:
   # The first finger rings share their boundary vertices with the palm.
   rows=[(-.026,.022,.019),(.016,.026,.019),(.045,.030,.018),(.075,.032,.016),(.084,.033,.015)]
   grid=[]
-  for distance,width,thickness in rows:
+  for row_index,(distance,width,thickness) in enumerate(rows):
    row=[]
+   # The first ring matches the measured bracer cross-section at t=-.026m.
+   # Subsequent rings gradually return to the original palm dimensions.
+   center_offset = -.015 if a.fit_wrist and row_index == 0 else 0.0
+   if a.fit_wrist and row_index == 0:
+    width=.032;thickness=.035
    for k in range(5):
     pair=[]
     for side in [-1,1]:
-     pair.append(len(vertices));vertices.append(tuple(wrist+down*distance+across*width*(k/2-1)+depth*thickness*side))
+     pair.append(len(vertices));vertices.append(tuple(wrist+down*distance+across*(center_offset+width*(k/2-1))+depth*thickness*side))
     row.append(pair)
    grid.append(row)
   for r in range(len(rows)-1):
@@ -155,6 +160,6 @@ for o in objects:o.select_set(True)
 bpy.context.view_layer.objects.active=body;bpy.context.preferences.filepaths.file_preview_type='NONE';bpy.ops.file.pack_all()
 blend=out/'lia_hands_trial.blend';glb=out/'lia_hands_trial.glb'
 bpy.ops.wm.save_as_mainfile(filepath=str(blend));bpy.ops.export_scene.gltf(filepath=str(glb),export_format='GLB',use_selection=True,export_animations=False)
-receipt={'source_sha256':sha,'blend_sha256':hashlib.sha256(blend.read_bytes()).hexdigest(),'glb_sha256':hashlib.sha256(glb.read_bytes()).hexdigest(),'removed_face_ids':cut,'cut_face_counts':side_counts,'remaining_faces_verified':len(kept),'maximum_normal_error':max_error,'calibration':calibration,'triangles':triangles,'hand_geometry':('two closed connected palm-and-five-finger meshes' if a.continuous else 'two separate editable meshes; palm and five overlapping fingers per hand'),'bands_added':a.bands,'status':'static trial; no weld, animation or production acceptance'}
+receipt={'source_sha256':sha,'blend_sha256':hashlib.sha256(blend.read_bytes()).hexdigest(),'glb_sha256':hashlib.sha256(glb.read_bytes()).hexdigest(),'removed_face_ids':cut,'cut_face_counts':side_counts,'remaining_faces_verified':len(kept),'maximum_normal_error':max_error,'calibration':calibration,'triangles':triangles,'hand_geometry':('two closed connected palm-and-five-finger meshes' if a.continuous else 'two separate editable meshes; palm and five overlapping fingers per hand'),'bands_added':a.bands,'wrist_fitted_to_measured_section':a.fit_wrist,'status':'static trial; no weld, animation or production acceptance'}
 (out/'receipt.json').write_text(json.dumps(receipt,indent=2)+'\n',encoding='utf-8')
 print('LIA_HAND_TRIAL',json.dumps({k:receipt[k] for k in ['cut_face_counts','remaining_faces_verified','maximum_normal_error','triangles','status']}),flush=True)
