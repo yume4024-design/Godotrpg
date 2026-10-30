@@ -49,6 +49,11 @@ function Run-Pack([string]$Name,[string]$Role,[string[]]$Arguments) {
 }
 Run-Pack 'qa-story' 'qa' @()
 Run-Pack 'qa-reload' 'qa' @('--','--reload')
+Run-Pack 'qa-compact-hud' 'qa' @('--script','res://tests/compact_hud_test.gd')
+Run-Pack 'qa-mine-navigation' 'qa' @('--script','res://tests/mine_navigation_readability_test.gd')
+Run-Pack 'qa-forest-occlusion' 'qa' @('--script','res://tests/forest_occlusion_test.gd')
+Run-Pack 'qa-world-labels' 'qa' @('--script','res://tests/world_label_layout_test.gd')
+Run-Pack 'qa-same-map-refresh' 'qa' @('--script','res://tests/same_map_refresh_contract_test.gd')
 Run-Pack 'qa-navigation' 'qa' @('--script','res://tests/prologue_navigation_test.gd')
 Run-Pack 'qa-area-map' 'qa' @('--script','res://tests/prologue_area_map_test.gd')
 Run-Pack 'qa-mine-edges' 'qa' @('--script','res://tests/mine_edge_safety_test.gd')
