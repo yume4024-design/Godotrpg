@@ -1,0 +1,5 @@
+{
+  "checks": 54,
+  "failures": 0,
+  "scope": "Four real validated reloads before/after Lia recruitment and explicit map refresh. NPC visibility/collision and saved state plus displaced NPC counterexample; no optimization enabled or full-scene equivalence proof."
+}

@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-30：新增讀檔原地刷新對照；莉雅狀態可刷新，但移動過的 NPC 錨點不會復原，因此保留現有地圖重建。[結果](docs/SAME_MAP_REFRESH_CONTRACT_20261030.md)。
+
 2026-10-30：將服務流程分段量測，本次三次約71–73ms尖峰發生於測試後讀檔恢復；[結果與限制](docs/PROLOGUE_SERVICE_PROFILE_20261030.md)。
 
 2026-10-30：最新來源完成原生 Windows Release 短效能診斷，169項測試通過；交易及森林讀檔仍有約85–86ms尖峰。[數據與限制](docs/PROLOGUE_RELEASE_PROFILE_20261030.md)。
