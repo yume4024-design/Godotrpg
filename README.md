@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-30：礦坑小地圖顯示目前區域與通道，展開後可選擇八個區域；[畫面與驗證](docs/MINE_NAVIGATION_READABILITY_REPORT.md)。變更在開發來源，固定RC4未更新。
+
 2026-10-30：新版探索介面減少遮擋、增大HP/MP數字，加入同圖形存檔的新程序讀取驗證；[889項回歸與23個邊緣案例](docs/COMPACT_HUD_REPORT.md)。以 `./tools/godot.ps1 -Mode RunPrologueCandidate` 查看，固定RC4包尚未更新。
 
 2026-10-29後續：森林遮住人物的樹冠會淡化、離開後復原；[實際畫面與461項回歸](docs/FOREST_OCCLUSION_REPORT.md)。僅在開發來源，固定RC4包保留。

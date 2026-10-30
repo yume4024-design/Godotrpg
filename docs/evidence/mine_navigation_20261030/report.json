@@ -1,0 +1,55 @@
+{
+  "checks": 224,
+  "failures": 0,
+  "scope": "Graphical current map, eight actual floor samples, real bridge input, automated controller events; not manual whole-route acceptance.",
+  "zones": [
+    {
+      "expected": "入口營地",
+      "id": "entrance_camp",
+      "position": "(-36.0, 0.000391, 32.0)",
+      "shown": "入口營地"
+    },
+    {
+      "expected": "礦車軌道區",
+      "id": "rail_workings",
+      "position": "(-36.0, 3.000391, -6.0)",
+      "shown": "礦車軌道區"
+    },
+    {
+      "expected": "木橋岔路",
+      "id": "bridge_junction",
+      "position": "(25.0, 3.000391, 1.0)",
+      "shown": "木橋岔路"
+    },
+    {
+      "expected": "水晶採掘區",
+      "id": "crystal_workings",
+      "position": "(-16.0, 7.000391, -34.0)",
+      "shown": "水晶採掘區"
+    },
+    {
+      "expected": "儲物區",
+      "id": "storage",
+      "position": "(32.0, 7.000391, -21.0)",
+      "shown": "儲物區"
+    },
+    {
+      "expected": "地下水道",
+      "id": "waterway",
+      "position": "(32.0, -0.000388, 21.0)",
+      "shown": "地下水道"
+    },
+    {
+      "expected": "危險塌方區",
+      "id": "collapse",
+      "position": "(2.0, 0.000391, 35.0)",
+      "shown": "危險塌方區"
+    },
+    {
+      "expected": "深處核心洞窟",
+      "id": "core_cavern",
+      "position": "(37.0, 0.000391, 42.0)",
+      "shown": "深處核心洞窟"
+    }
+  ]
+}

@@ -6,10 +6,12 @@ extends Control
 signal expand_requested
 var expanded: bool = false
 var selected_target: WorldInteractable
+var selected_zone_id: String = ""
 var player: ExplorationPlayer
 var scene_manager: Node
 var _active_map: ExplorationMap
 var _layout: Dictionary = {}
+var _zones: Array[Dictionary] = []
 var _road_polygons: Array[PackedVector2Array] = []
 var _extent: Vector2 = Vector2(56, 56)
 var _map_title: String = "世界地圖"
@@ -43,13 +45,62 @@ func landmarks() -> Array[Dictionary]:
 
 func select_landmark(target: WorldInteractable) -> void:
 	selected_target = target
+	selected_zone_id = ""
 	queue_redraw()
+
+func zones() -> Array[Dictionary]:
+	return _zones
+
+func select_zone(id: String) -> void:
+	selected_zone_id = id
+	selected_target = null
+	queue_redraw()
+
+func current_zone_label() -> String:
+	if not is_instance_valid(player): return ""
+	for zone: Dictionary in zones():
+		var b: Array = zone.bounds
+		var position: Vector3 = player.global_position
+		if position.x >= b[0] and position.x <= b[1] and position.z >= b[2] and position.z <= b[3] and absf(position.y - float(zone.height)) < 1.6:
+			return zone.label
+	for link: Dictionary in _layout.get("links", []):
+		var start: Vector3 = Vector3(link.a[0], link.a[1], link.a[2])
+		var end: Vector3 = Vector3(link.b[0], link.b[1], link.b[2])
+		var closest: Vector3 = Geometry3D.get_closest_point_to_segment(player.global_position, start, end)
+		if Vector2(player.global_position.x - closest.x, player.global_position.z - closest.z).length() <= float(link.width) * .5 and absf(player.global_position.y - closest.y) < 1.6:
+			return "階梯通道" if link.kind == "stairs" else "木橋通道"
+	return "礦坑通道" if not zones().is_empty() else ""
+
+func zone_badges() -> Array[Dictionary]:
+	var result: Array[Dictionary] = []
+	var area: Rect2 = map_area()
+	var occupied: Array[Rect2] = []
+	for entry: Dictionary in landmarks():
+		var point: Vector3 = entry.target.global_position
+		occupied.append(Rect2(_screen_point(area, point.x, point.z) - Vector2(16, 16), Vector2(32, 32)))
+	if is_instance_valid(player):
+		occupied.append(Rect2(_screen_point(area, player.global_position.x, player.global_position.z) - Vector2(12, 12), Vector2(24, 24)))
+	for zone: Dictionary in zones():
+		var b: Array = zone.bounds
+		var center: Vector2 = _screen_point(area, (float(b[0]) + float(b[1])) * .5, (float(b[2]) + float(b[3])) * .5)
+		for offset: Vector2 in [Vector2.ZERO, Vector2(0,-22), Vector2(-22,0), Vector2(22,0), Vector2(0,22), Vector2(-22,-22), Vector2(22,22), Vector2(22,-22), Vector2(-22,22), Vector2(0,-44), Vector2(-44,0), Vector2(44,0)]:
+			var box := Rect2(center + offset - Vector2(10,10), Vector2(20,20))
+			if not area.encloses(box): continue
+			var blocked: bool = false
+			for other: Rect2 in occupied:
+				if box.grow(2).intersects(other): blocked = true; break
+			if blocked: continue
+			result.append({"zone":zone, "rect":box, "anchor":center})
+			occupied.append(box)
+			break
+	return result
 
 func landmark_color(kind: String) -> Color:
 	return Color("#53c5e8") if kind == "exit" else (Color("#f5c96c") if kind == "story" else Color("#ec8e79"))
 
 func map_area() -> Rect2:
-	var available := Rect2(11, 36 if expanded else 31, size.x - 22, size.y - (66 if expanded else 43))
+	var top: float = 54.0 if not expanded and not current_zone_label().is_empty() else (36.0 if expanded else 31.0)
+	var available := Rect2(11, top, size.x - 22, size.y - top - (30.0 if expanded else 46.0))
 	if not expanded: return available
 	# Keep distances proportional on the large map instead of stretching it.
 	var factor: float = minf(available.size.x / (_extent.x * 2.0), available.size.y / (_extent.y * 2.0))
@@ -60,12 +111,20 @@ func _refresh_map() -> void:
 	_active_map = scene_manager.get("current_map") as ExplorationMap if is_instance_valid(scene_manager) else null
 	_layout = {}
 	_road_polygons.clear()
+	_zones.clear()
 	selected_target = null
+	selected_zone_id = ""
 	_extent = Vector2(56, 56)
 	_map_title = _active_map.display_name if is_instance_valid(_active_map) else "世界地圖"
 	if not is_instance_valid(_active_map):
 		return
 	_layout = _read_json(_active_map.navigation_layout_path) if not _active_map.navigation_layout_path.is_empty() else {}
+	if _active_map.navigation_layout_kind == "mine":
+		for zone: Dictionary in _layout.get("zones", []):
+			if zone.get("bounds", []).size() != 4: continue
+			var entry: Dictionary = zone.duplicate()
+			entry.code = String.chr(65 + _zones.size())
+			_zones.append(entry)
 	_extent = _active_map.navigation_extent
 	_road_polygons = _active_map.navigation_road_footprints()
 	_map_title = _map_title.split(" · ")[0]
@@ -80,6 +139,8 @@ func _draw() -> void:
 	draw_rect(Rect2(Vector2.ZERO, size), Color(0.025, 0.055, 0.07, 0.96), true)
 	draw_rect(Rect2(Vector2.ZERO, size), Color("#718b85"), false, 1.5, true)
 	draw_string(ThemeDB.fallback_font, Vector2(12, 23), "地圖  ·  " + _map_title, HORIZONTAL_ALIGNMENT_LEFT, -1, 20 if expanded else 14, Color("#f0d7a0"))
+	if not expanded and not current_zone_label().is_empty():
+		draw_string(ThemeDB.fallback_font, Vector2(12, 44), "目前：" + current_zone_label(), HORIZONTAL_ALIGNMENT_LEFT, size.x - 24, 14, Color("#e5e9dc"))
 	var map_rect: Rect2 = map_area()
 	draw_rect(map_rect, Color("#152a2e"), true)
 	if is_instance_valid(_active_map):
@@ -87,23 +148,30 @@ func _draw() -> void:
 			"mine": _draw_mine(map_rect)
 			"village": _draw_village(map_rect)
 			"paths": _draw_paths(map_rect)
+		if expanded:
+			_draw_zone_badges()
 		_draw_targets(map_rect)
 		_draw_player(map_rect)
 	draw_rect(map_rect, Color(0.45, 0.63, 0.59, 0.82), false, 1.0)
 	# Compact north indicator, matching the fixed isometric camera orientation.
-	draw_string(ThemeDB.fallback_font, Vector2(size.x - 23, 46), "N", HORIZONTAL_ALIGNMENT_CENTER, 14, 10, Color("#e7d5a4"))
+	draw_string(ThemeDB.fallback_font, Vector2(map_rect.end.x - 12, map_rect.position.y + 14), "N", HORIZONTAL_ALIGNMENT_CENTER, 14, 10, Color("#e7d5a4"))
 	if expanded:
-		draw_string(ThemeDB.fallback_font, Vector2(12, size.y - 9), "● 你　● 地標編號對照右側清單", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("#fff3b0"))
+		draw_string(ThemeDB.fallback_font, Vector2(12, size.y - 9), "▲ 你　數字：互動地標　字母：區域" if not zones().is_empty() else "▲ 你　數字：互動地標", HORIZONTAL_ALIGNMENT_LEFT, -1, 16, Color("#fff3b0"))
 		return
-	var legend_y: float = size.y - 8.0
-	draw_circle(Vector2(17, legend_y - 4), 3.2, Color("#fff3b0"))
-	draw_string(ThemeDB.fallback_font, Vector2(24, legend_y), "你", HORIZONTAL_ALIGNMENT_LEFT, 24, 10, Color("#e5e9dc"))
-	draw_circle(Vector2(62, legend_y - 4), 3.0, Color("#ec8e79"))
-	draw_string(ThemeDB.fallback_font, Vector2(69, legend_y), "互動", HORIZONTAL_ALIGNMENT_LEFT, 34, 10, Color("#e5e9dc"))
-	draw_circle(Vector2(116, legend_y - 4), 3.0, Color("#f5c96c"))
-	draw_string(ThemeDB.fallback_font, Vector2(123, legend_y), "目標", HORIZONTAL_ALIGNMENT_LEFT, 34, 10, Color("#e5e9dc"))
-	draw_circle(Vector2(177, legend_y - 4), 3.0, Color("#53c5e8"))
-	draw_string(ThemeDB.fallback_font, Vector2(184, legend_y), "出口", HORIZONTAL_ALIGNMENT_LEFT, 38, 10, Color("#e5e9dc"))
+	for entry: Array in [[Vector2(17,size.y-29), "你", Color("#fff3b0")], [Vector2(115,size.y-29), "出口", Color("#53c5e8")], [Vector2(17,size.y-10), "互動", Color("#ec8e79")], [Vector2(115,size.y-10), "劇情", Color("#f5c96c")]]:
+		var point: Vector2 = entry[0]
+		_draw_marker(point + Vector2(0,-4), entry[2], 3.2)
+		draw_string(ThemeDB.fallback_font, point + Vector2(9,0), entry[1], HORIZONTAL_ALIGNMENT_LEFT, 80, 13, Color("#e5e9dc"))
+
+func _draw_zone_badges() -> void:
+	for entry: Dictionary in zone_badges():
+		var box: Rect2 = entry.rect
+		var chosen: bool = entry.zone.id == selected_zone_id
+		if box.get_center().distance_to(entry.anchor) > 1:
+			draw_line(entry.anchor, box.get_center(), Color("#a8b6ae"), 1.0, true)
+		draw_rect(box, Color("#24363b"))
+		draw_rect(box, Color("#ffe090") if chosen else Color("#b1c5c1"), false, 2.0 if chosen else 1.0)
+		draw_string(ThemeDB.fallback_font, box.position + Vector2(0,15), entry.zone.code, HORIZONTAL_ALIGNMENT_CENTER, box.size.x, 16, Color("#fff3b0"))
 
 func _draw_mine(area: Rect2) -> void:
 	for water: Dictionary in _layout.get("water", []):
@@ -117,10 +185,10 @@ func _draw_mine(area: Rect2) -> void:
 		var level: float = float(zone.get("height", 0.0))
 		var tint: Color = Color("#6c7d74") if level >= 6 else (Color("#99744c") if level >= 2 else Color("#827e70"))
 		_draw_world_rect(area, float(bounds[0]), float(bounds[1]), float(bounds[2]), float(bounds[3]), tint.darkened(0.28))
-		var label: String = String(zone.get("label", ""))
-		var center: Vector2 = _screen_point(area, (float(bounds[0]) + float(bounds[1])) * 0.5, (float(bounds[2]) + float(bounds[3])) * 0.5)
-		if area.has_point(center):
-			draw_string(ThemeDB.fallback_font, center + Vector2(-49 if expanded else -27, 3), label, HORIZONTAL_ALIGNMENT_CENTER, 98 if expanded else 54, 14 if expanded else 8, Color("#dce6d7"))
+		if (expanded and String(zone.id) == selected_zone_id) or (not expanded and String(zone.label) == current_zone_label()):
+			var top_left: Vector2 = _screen_point(area, float(bounds[0]), float(bounds[2]))
+			var bottom_right: Vector2 = _screen_point(area, float(bounds[1]), float(bounds[3]))
+			draw_rect(Rect2(top_left, bottom_right-top_left), Color("#ffe090"), false, 2.0)
 	for link: Dictionary in _layout.get("links", []):
 		var a: Array = link.get("a", [])
 		var b: Array = link.get("b", [])
@@ -179,9 +247,13 @@ func _draw_player(area: Rect2) -> void:
 	var center: Vector2 = _screen_point(area, player.global_position.x, player.global_position.z)
 	var facing: Vector3 = player.facing_direction()
 	var direction: Vector2 = Vector2(facing.x, facing.z).normalized()
-	if direction.length_squared() > 0.01:
-		draw_line(center, center + Vector2(direction.x, direction.y) * 8.0, Color.WHITE, 2.0, true)
-	_draw_marker(center, Color("#fff3b0"), 4.0)
+	if direction.length_squared() < .01: direction = Vector2.DOWN
+	var side := Vector2(-direction.y, direction.x)
+	var arrow := PackedVector2Array([center + direction * 8, center - direction * 5 + side * 5, center - direction * 5 - side * 5])
+	draw_colored_polygon(arrow, Color("#fff3b0"))
+	var border := arrow.duplicate()
+	border.append(arrow[0])
+	draw_polyline(border, Color("#132124"), 1.5, true)
 
 func _draw_route(area: Rect2, route: Array, color: Color, width: float) -> void:
 	var points: PackedVector2Array = PackedVector2Array()

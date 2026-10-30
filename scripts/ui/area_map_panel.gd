@@ -11,7 +11,7 @@ func _ready() -> void:
 	name = "AreaMapPanel"
 	add_theme_constant_override("separation", 10)
 	var hint := Label.new()
-	hint.text = "選擇地標可定位 · 黃線為道路 · 藍色為出口 · M / Esc / B 返回"
+	hint.text = "選擇地標／區域可定位 · 黃線為道路 · 藍色為出口 · M / Esc / B 返回"
 	hint.add_theme_font_size_override("font_size", 17)
 	hint.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	add_child(hint)
@@ -48,6 +48,7 @@ func _refresh_landmarks(_map: ExplorationMap) -> void:
 	for child: Node in _landmark_list.get_children():
 		_landmark_list.remove_child(child)
 		child.queue_free()
+	_section_title("互動地標 · 數字")
 	var index: int = 0
 	for entry: Dictionary in map_view.landmarks():
 		index += 1
@@ -63,6 +64,25 @@ func _refresh_landmarks(_map: ExplorationMap) -> void:
 		button.focus_entered.connect(_select_landmark.bind(weakref(entry.target)))
 		button.focus_entered.connect(_reveal_landmark.bind(weakref(button)))
 		_landmark_list.add_child(button)
+
+	if not map_view.zones().is_empty():
+		_section_title("區域 · 字母")
+	for zone: Dictionary in map_view.zones():
+		var button := Button.new()
+		button.name = "Zone" + zone.code
+		button.text = "%s  %s" % [zone.code, zone.label]
+		button.alignment = HORIZONTAL_ALIGNMENT_LEFT
+		button.add_theme_font_size_override("font_size", 17)
+		button.pressed.connect(map_view.select_zone.bind(String(zone.id)))
+		button.focus_entered.connect(map_view.select_zone.bind(String(zone.id)))
+		button.focus_entered.connect(_reveal_landmark.bind(weakref(button)))
+		_landmark_list.add_child(button)
+
+func _section_title(text: String) -> void:
+	var heading := Label.new()
+	heading.text = text
+	heading.add_theme_font_size_override("font_size", 17)
+	_landmark_list.add_child(heading)
 
 func _reveal_landmark(reference: WeakRef) -> void:
 	# Newly opened tabs need their nested containers to finish sorting first.
