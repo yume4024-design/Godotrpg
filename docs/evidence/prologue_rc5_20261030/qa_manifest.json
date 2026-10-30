@@ -1,0 +1,16 @@
+{
+  "version": "0.6.1-prologue-rc5-20261030",
+  "role": "qa",
+  "source_commit": "8aa4a662289cdf6846538b0e60c6ef222282211c",
+  "source_branch": "feature/greystone-g06",
+  "source_kind": "git archive (tracked committed files only)",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "runtime_origin": "Godot --export-release with matching Windows x86_64 release template",
+  "template_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+  "entry_scene": "res://tests/qa_entry.tscn",
+  "game_scene": "res://scenes/main/prologue_candidate.tscn",
+  "save_slot": "user://mine_reference_tests/story_visual.json",
+  "executable_sha256": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+  "pck_sha256": "0d69b9c199b98157675dcc89798ccde28100fe16243e71b50f4748ffbc253da3",
+  "acceptance": "Pending package tests; manual acceptance paused"
+}

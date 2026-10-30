@@ -1,0 +1,113 @@
+{
+  "source_commit": "8aa4a662289cdf6846538b0e60c6ef222282211c",
+  "checks": 21844,
+  "failures": 0,
+  "edges": 23,
+  "launcher_exit": 0,
+  "launcher_seconds": 12.6956137,
+  "tests": [
+    {
+      "case": "qa-area-map",
+      "result": "PROLOGUE_AREA_MAP_RESULT",
+      "checks": 77,
+      "failures": 0
+    },
+    {
+      "case": "qa-collision-snapshot",
+      "result": "COLLISION_SNAPSHOT_RESULT",
+      "checks": 20485,
+      "failures": 0
+    },
+    {
+      "case": "qa-commerce",
+      "result": "REFERENCE_COMMERCE_RESULT",
+      "checks": 50,
+      "failures": 0
+    },
+    {
+      "case": "qa-commerce-reload",
+      "result": "REFERENCE_COMMERCE_RESULT",
+      "checks": 5,
+      "failures": 0
+    },
+    {
+      "case": "qa-compact-hud",
+      "result": "COMPACT_HUD_RESULT",
+      "checks": 298,
+      "failures": 0
+    },
+    {
+      "case": "qa-forest-occlusion",
+      "result": "FOREST_OCCLUSION_RESULT",
+      "checks": 26,
+      "failures": 0
+    },
+    {
+      "case": "qa-g06-fixture",
+      "result": "G06_1_RESULT",
+      "checks": 51,
+      "failures": 0
+    },
+    {
+      "case": "qa-legacy-fixture",
+      "result": "PHASE5_RESULT",
+      "checks": 69,
+      "failures": 0
+    },
+    {
+      "case": "qa-migration",
+      "result": "REFERENCE_MIGRATION_RESULT",
+      "checks": 91,
+      "failures": 0
+    },
+    {
+      "case": "qa-migration-reload",
+      "result": "REFERENCE_MIGRATION_RESULT",
+      "checks": 6,
+      "failures": 0
+    },
+    {
+      "case": "qa-mine-edges",
+      "samples": 23,
+      "new_gaps": 0,
+      "failures": 0
+    },
+    {
+      "case": "qa-mine-navigation",
+      "result": "MINE_NAVIGATION_RESULT",
+      "checks": 224,
+      "failures": 0
+    },
+    {
+      "case": "qa-navigation",
+      "result": "PROLOGUE_NAVIGATION_RESULT",
+      "checks": 31,
+      "failures": 0
+    },
+    {
+      "case": "qa-reload",
+      "result": "MINE_STORY_RESULT",
+      "checks": 25,
+      "failures": 0
+    },
+    {
+      "case": "qa-same-map-refresh",
+      "result": "SAME_MAP_REFRESH_RESULT",
+      "checks": 54,
+      "failures": 0
+    },
+    {
+      "case": "qa-story",
+      "result": "MINE_STORY_RESULT",
+      "checks": 94,
+      "failures": 0
+    },
+    {
+      "case": "qa-world-labels",
+      "result": "WORLD_LABEL_RESULT",
+      "checks": 258,
+      "failures": 0
+    }
+  ],
+  "long_soak": "in progress at publication"
+}

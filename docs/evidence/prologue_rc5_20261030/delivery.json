@@ -1,0 +1,13 @@
+{
+  "zip": "builds\\prologue-candidate\\rc5-20261030\\ProjectCrystal-0.6.1-prologue-rc5-Windows.zip",
+  "bytes": 385142910,
+  "sha256": "c8e4c464d76ae075ad884e3600ef2aaa7d7adb8c633abe0015b3f009f2637d29",
+  "files": {
+    "ProjectCrystal.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "ProjectCrystal.pck": "3de732654c8276d929334bb38e775c80b04d79d0d1313c210e79704dbb1894b3",
+    "start_prologue_candidate.cmd": "6138752a5ad6724a30fd47590126380d31a827e1430a59c511550ab727ae295d",
+    "README.txt": "ee65aab685007599923906cf741391e5f61a65957cbd9565bfb7a457cae987c8",
+    "manifest.json": "e3e2290957d02851edb000a9ca26881a66f0b9a1861f5d7ad0e535bcd1b43d69"
+  },
+  "checked": 5
+}

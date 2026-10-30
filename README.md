@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-30：新版 Windows 序章 RC5 候選位於 `builds/prologue-candidate/rc5-20261030/candidate/start_prologue_candidate.cmd`。[包內測試與限制](docs/PROLOGUE_RC5_REPORT.md)；30分鐘自動長測正在進行，人工驗收仍暫停。
+
 2026-10-30：測試將場景釋放與新建分幀，效能未見穩定改善，已撤回。[對照結果](docs/PROLOGUE_TRANSITION_EXPERIMENT_20261030.md)。
 
 2026-10-30：新增讀檔原地刷新對照；莉雅狀態可刷新，但移動過的 NPC 錨點不會復原，因此保留現有地圖重建。[結果](docs/SAME_MAP_REFRESH_CONTRACT_20261030.md)。
