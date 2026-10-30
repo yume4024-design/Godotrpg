@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [string]$GodotPath = 'D:\Godot_v4.7.2-stable_win64.exe\Godot_v4.7.2-stable_win64_console.exe',
     [string]$TemplateRoot = ''
@@ -38,7 +38,7 @@ foreach ($name in @('version.txt','windows_release_x86_64.exe','windows_debug_x8
 # Export only a Git snapshot. Untracked art experiments and local modifications
 # never silently become part of a package labelled with a commit SHA.
 $archive = Join-Path $versionRoot 'source.zip'
-git -C $projectRoot archive --format=zip --output=$archive $commit project.godot default_bus_layout.tres export_presets.cfg assets scenes scripts data tests tools
+git -C $projectRoot archive --format=zip --output=$archive $commit project.godot default_bus_layout.tres export_presets.cfg assets scenes scripts data tests tools docs/ASSET_CREDITS.md docs/GODOT_LICENSES.txt
 if ($LASTEXITCODE -ne 0) { throw 'Git source snapshot failed.' }
 Expand-Archive -LiteralPath $archive -DestinationPath $sourceRoot
 if (-not (Test-Path -LiteralPath (Join-Path $sourceRoot 'default_bus_layout.tres'))) {
@@ -98,6 +98,15 @@ foreach ($role in @('candidate','qa')) {
         executable_sha256=(Get-FileHash -LiteralPath $executable -Algorithm SHA256).Hash.ToLowerInvariant()
         pck_sha256=(Get-FileHash -LiteralPath $pck -Algorithm SHA256).Hash.ToLowerInvariant()
         acceptance='Pending package tests; manual acceptance paused'
+    }
+    if ($role -eq 'candidate') {
+        foreach ($notice in @('ASSET_CREDITS.md','GODOT_LICENSES.txt')) {
+            $sourceNotice = Join-Path (Join-Path $sourceRoot 'docs') $notice
+            if (-not (Test-Path -LiteralPath $sourceNotice -PathType Leaf)) { throw "Missing committed notice: $notice" }
+            Copy-Item -LiteralPath $sourceNotice -Destination (Join-Path $destination $notice)
+        }
+        $manifest.asset_credits_sha256 = (Get-FileHash -LiteralPath (Join-Path $destination 'ASSET_CREDITS.md') -Algorithm SHA256).Hash.ToLowerInvariant()
+        $manifest.godot_notices_sha256 = (Get-FileHash -LiteralPath (Join-Path $destination 'GODOT_LICENSES.txt') -Algorithm SHA256).Hash.ToLowerInvariant()
     }
     $manifest | ConvertTo-Json -Depth 5 | Set-Content -LiteralPath (Join-Path $destination 'manifest.json') -Encoding utf8
 }

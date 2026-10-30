@@ -1,13 +1,15 @@
 # 序章 RC5 Windows 候選版 — 2026-10-30
 
+後續補齊 Godot 授權與素材來源文件；建議使用 [附授權版本](PROLOGUE_RC5_NOTICES_20261030.md)。原五檔 ZIP 保留，原遊戲內容和下方測試結果不變。
+
 固定來源 `8aa4a662289cdf6846538b0e60c6ef222282211c`，分支 `feature/greystone-g06`，版本 `0.6.1-prologue-rc5-20261030`。包含 RC4 後的森林標籤避讓、樹冠遮擋淡化、探索 HUD 與礦坑地圖可讀性修正；原有雷恩與可動莉雅、三區探索、序章戰鬥與存讀檔保留。沒有把尚未合格的莉雅新候選模型換入。正式 v0.6.1 與固定 RC4 保留。
 
 ## 啟動與檔案
 
 - 玩家啟動器：`D:/RPGGAME/builds/prologue-candidate/rc5-20261030/candidate/start_prologue_candidate.cmd`
-- 壓縮包：`D:/RPGGAME/builds/prologue-candidate/rc5-20261030/ProjectCrystal-0.6.1-prologue-rc5-Windows.zip`（385,142,910 bytes）。
+- 附授權壓縮包：`D:/RPGGAME/builds/prologue-candidate/rc5-20261030/ProjectCrystal-0.6.1-prologue-rc5-20261030-Windows-with-notices.zip`（385,186,162 bytes）。原五檔 ZIP（385,142,910 bytes）保留供歷史驗證。
 - 此包的存檔放在自己的 `candidate/user_test`，不會自動取得 RC4 的存檔。若需使用舊候選存檔，先備份，再將其複製到 RC5 的相同相對位置；先前遷移驗證不等於使用者自己的存檔已測試。
-- ZIP 白名單五檔逐一解壓串流比對雜湊，5／5 一致；不包含存檔與日誌。[雜湊](evidence/prologue_rc5_20261030/delivery.json)。
+- 原五檔 ZIP 白名單逐一解壓串流比對雜湊，5／5 一致；附授權七檔版本另見補件報告，兩者均不包含存檔與日誌。[雜湊](evidence/prologue_rc5_20261030/delivery.json)。
 
 ## 包內檢查
 

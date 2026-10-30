@@ -1,0 +1,13 @@
+{
+  "source_commit": "8aa4a662289cdf6846538b0e60c6ef222282211c",
+  "original_zip_sha256": "c8e4c464d76ae075ad884e3600ef2aaa7d7adb8c633abe0015b3f009f2637d29",
+  "supplemented_zip": "D:\\RPGGAME\\builds\\prologue-candidate\\rc5-20261030\\ProjectCrystal-0.6.1-prologue-rc5-20261030-Windows-with-notices.zip",
+  "supplemented_zip_sha256": "b78105e5211da0561b6db84d6d61ffb12b739c7bc1ec39189ea48952a3ae5a96",
+  "size": 385186162,
+  "original_entries_checked": 5,
+  "notice_sha256": {
+    "ASSET_CREDITS.md": "858561ac64afc991f06e2f3a16a12821afd05aa2cdf5d489ae8f4c482b49f3e8",
+    "GODOT_LICENSES.txt": "8f457874821602824bf3db9d47172d1557a9eb6a9c8635a953ea53051a07e335"
+  },
+  "method": "Copied original compressed entries unchanged; added exact committed notices; original ZIP, PCK and manifest preserved."
+}
