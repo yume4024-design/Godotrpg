@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-30：最新來源完成原生 Windows Release 短效能診斷，169項測試通過；交易及森林讀檔仍有約85–86ms尖峰。[數據與限制](docs/PROLOGUE_RELEASE_PROFILE_20261030.md)。
+
 2026-10-30：礦坑小地圖顯示目前區域與通道，展開後可選擇八個區域；[畫面與驗證](docs/MINE_NAVIGATION_READABILITY_REPORT.md)。變更在開發來源，固定RC4未更新。
 
 2026-10-30：新版探索介面減少遮擋、增大HP/MP數字，加入同圖形存檔的新程序讀取驗證；[889項回歸與23個邊緣案例](docs/COMPACT_HUD_REPORT.md)。以 `./tools/godot.ps1 -Mode RunPrologueCandidate` 查看，固定RC4包尚未更新。
