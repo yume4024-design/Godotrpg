@@ -13,4 +13,4 @@
 - `python -m unittest discover -s tests -p test_prologue_notices.py -v`：1／0，使用隔離模擬包檢查原 ZIP 不變、七檔內容及禁止覆寫。
 - `tools/package_prologue.ps1` 也已改為從固定 Git 快照加入兩份文件並在候選 manifest 記錄其 SHA；PowerShell 語法檢查通過。該未來打包流程尚未重跑完整新包；本次 RC5 補件以 `tools/supplement_prologue_notices.py` 完成。
 
-本次只補充已有文件，未重新審定所有素材權利；既有素材來源以固定提交的清單及專案記錄為準。RC5 包內測試見 [RC5 報告](PROLOGUE_RC5_REPORT.md)；其30分鐘圖形長測仍進行中，人工驗收暫停。
+本次只補充已有文件，未重新審定所有素材權利；既有素材來源以固定提交的清單及專案記錄為準。RC5 包內測試見 [RC5 報告](PROLOGUE_RC5_REPORT.md)；其30分鐘圖形長測已完成，見[長測報告](PROLOGUE_RC5_SOAK_REPORT.md)；人工驗收暫停。

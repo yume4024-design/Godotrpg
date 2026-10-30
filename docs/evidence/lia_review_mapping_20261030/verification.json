@@ -1,0 +1,83 @@
+{
+  "checks": {
+    "source_groups_absent": true,
+    "geometry_uv_normals_materials_transforms_equal": true,
+    "packed_image_hashes_equal": true,
+    "review_groups_match": true,
+    "62_samples_mapped": true
+  },
+  "source_sha256": "1e8d238dc505c3c347d125b43501093c47f4be5c59df437dd4330e1dc235e37e",
+  "review_sha256": "13bc411da35f4289249729a571241075ff7a6971872de3c6b8a6faa733270461",
+  "groups": {
+    "Review_within_2mm": 4,
+    "Review_2mm_to_20mm": 39,
+    "Review_over_20mm": 129
+  },
+  "mesh_signatures": {
+    "LiaRetainedAuthoredNeckSurface": {
+      "signature": "4ed6aac6e600ad3ce51fbec6c07d3c7dac925698f4066956c3ce00ced361325b",
+      "vertices": 12726,
+      "faces": 12078,
+      "uv_layers": 1,
+      "materials": [
+        "Material_0"
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    },
+    "LiaContinuousNeckClavicle": {
+      "signature": "36ff21895650d36c9caeca40a2e88cf48d98806ddf8a5db48a785d2ef6163f09",
+      "vertices": 240,
+      "faces": 218,
+      "uv_layers": 1,
+      "materials": [
+        "LiaAuthoredSkin"
+      ],
+      "matrix": [
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    }
+  },
+  "images": {
+    "LiaCleanAlbedo": {
+      "size": [
+        4096,
+        4096
+      ],
+      "packed_sha256": "daab7ca848012cae0f34afa2057942475eebd959dfbe836b95067f345b7f2440"
+    }
+  },
+  "status": "PASS",
+  "scope": "Geometry, UV, corner normals, material slots, transforms and packed image bytes. Review groups only; no art or animation acceptance."
+}
