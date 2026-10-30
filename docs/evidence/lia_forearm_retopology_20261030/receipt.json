@@ -1,0 +1,68 @@
+{
+  "source_sha256": "e8ad4df994e4eb63daf6068a5a9a331a043c1c26d6ba9cd8b07bc9af2101a19a",
+  "blend_sha256": "fff277d5b12abf9002f5c2ac0a6245f25ddb3a42cfd1f75cc4d0f1663feb7d24",
+  "glb_sha256": "5f1774321fd11d29bd5079ee9ad8291794baa998c7ab6e7691f48ac3ff7c4ccc",
+  "selected_faces": {
+    "-1": 276,
+    "1": 226
+  },
+  "cut_geometry_elements": {
+    "-1": 66,
+    "1": 79
+  },
+  "unselected_faces_verified": 11042,
+  "maximum_normal_error": 0.00035854163753902665,
+  "normal_calibration": {
+    "storage": "Blender custom_normal INT16_2D",
+    "target_vectors_changed": false,
+    "tolerance": 0.002,
+    "before_maximum": 0.0035068325115155488,
+    "after_maximum": 0.00035854163753902665,
+    "corrected_loops": [
+      {
+        "loop": 15332,
+        "before_code": [
+          7406,
+          0
+        ],
+        "after_code": [
+          7406.0,
+          -103.0
+        ],
+        "before_error": 0.0035068325115155488,
+        "after_error": 0.0
+      },
+      {
+        "loop": 15335,
+        "before_code": [
+          7406,
+          0
+        ],
+        "after_code": [
+          7406.0,
+          0.0
+        ],
+        "before_error": 0.0035068325115155488,
+        "after_error": 0.0
+      }
+    ]
+  },
+  "triangles": 12561,
+  "forearm_hand_checks": [
+    {
+      "side": "Right",
+      "faces": 235,
+      "single_connected_component": true,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0
+    },
+    {
+      "side": "Left",
+      "faces": 235,
+      "single_connected_component": true,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0
+    }
+  ],
+  "status": "static manual retopology trial; forearm and hand are connected, proximal cuff is separate from original sleeve; no rig"
+}
