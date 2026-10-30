@@ -2,7 +2,7 @@ import sys
 import unittest
 from pathlib import Path
 sys.path.insert(0,str(Path(__file__).resolve().parents[1]/"scripts/tools"))
-from inspect_glb_boundaries import inventory, load_triangles, region_nearest_vertices
+from inspect_glb_boundaries import inventory, load_triangles, region_nearest_vertices, closest_triangle_distance
 from asset_glb_validation import InvalidAsset
 from unittest.mock import patch
 
@@ -25,13 +25,24 @@ class BoundaryInventoryTests(unittest.TestCase):
         data=inventory([(a,b,c)]*3)
         self.assertEqual(data["nonmanifold_edges"],3)
 
-    def test_region_reports_vertex_not_surface_distance(self):
+    def test_region_reports_vertex_and_surface_distances(self):
         triangle=((0,0,0),(1,0,0),(0,1,0))
         reference=((0,0,1),(1,0,1),(0,1,1))
         data=region_nearest_vertices({"surface":[triangle],"neck":[reference]},"neck",[-.1,1.1,-.1,1.1,-.1,.1])
         self.assertEqual(data["boundary_vertices"],3)
         self.assertAlmostEqual(data["nearest_vertex_distance_m"]["min"],1)
+        self.assertAlmostEqual(data["nearest_surface_distance_m"]["min"],1)
+        self.assertEqual(len(data["surface_samples"]),3)
         self.assertEqual(data["exact_shared_vertices_all_meshes"],0)
+
+    def test_surface_distances_cover_interior_edge_vertex_and_degenerate(self):
+        triangle=((0,0,0),(2,0,0),(0,2,0))
+        self.assertAlmostEqual(closest_triangle_distance((.5,.5,1),triangle),1)
+        self.assertAlmostEqual(closest_triangle_distance((1,1,2),triangle),2)
+        self.assertAlmostEqual(closest_triangle_distance((1,-1,0),triangle),1)
+        self.assertAlmostEqual(closest_triangle_distance((-1,-1,0),triangle),2**.5)
+        self.assertAlmostEqual(closest_triangle_distance((.5,1,0),((0,0,0),(1,0,0),(2,0,0))),1)
+        self.assertAlmostEqual(closest_triangle_distance((1,0,0),((0,0,0),)*3),1)
 
     @patch("inspect_glb_boundaries.read_glb")
     def test_rejects_transformed_nodes(self,read):

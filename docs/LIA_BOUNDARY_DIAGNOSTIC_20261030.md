@@ -1,5 +1,7 @@
 # 莉雅候選網格邊界量測 — 2026-10-30
 
+後續已補充到三角表面的距離，見[表面量測](LIA_SURFACE_DISTANCE_20261030.md)；下方是當時的頂點距離結果。
+
 針對仍未合格的莉雅新候選，建立不啟動 Blender／GPU 的唯讀 GLB 邊界分析，供後續實際拓樸修整使用。來源為 `source_assets/character_rebuild_20261020/lia/material_cleanup_v2_20261029/lia_material_cleanup.glb`，SHA256 `bd9d5c1c8f016fb12a6e096a4cad642b32b4f728f6e02b393147ab9040b0e5ac`；來源模型與正式遊戲引用沒有改動。
 
 ## 結果與解讀

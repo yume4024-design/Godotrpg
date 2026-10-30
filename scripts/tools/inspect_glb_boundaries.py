@@ -56,6 +56,29 @@ def inventory(triangles):
             "nonmanifold_edges":sum(c>2 for c in edge_uses.values()),"components":components}
 
 
+def closest_triangle_distance(point, triangle):
+    """Distance to a finite triangle, including edges and degenerate faces."""
+    a,b,c = triangle
+    ab = tuple(b[i]-a[i] for i in range(3))
+    ac = tuple(c[i]-a[i] for i in range(3))
+    ap = tuple(point[i]-a[i] for i in range(3))
+    dot = lambda u,v: sum(u[i]*v[i] for i in range(3))
+    aa, abac, cc = dot(ab,ab),dot(ab,ac),dot(ac,ac)
+    denom = aa*cc-abac*abac
+    if denom > 1e-24:
+        u = (dot(ap,ab)*cc-dot(ap,ac)*abac)/denom
+        v = (dot(ap,ac)*aa-dot(ap,ab)*abac)/denom
+        if u >= 0 and v >= 0 and u+v <= 1:
+            projected = tuple(a[i]+u*ab[i]+v*ac[i] for i in range(3))
+            return math.dist(point,projected)
+    def segment_distance(start,end):
+        direction = tuple(end[i]-start[i] for i in range(3))
+        length_squared = dot(direction,direction)
+        t = max(0.0,min(1.0,dot(tuple(point[i]-start[i] for i in range(3)),direction)/length_squared)) if length_squared > 0 else 0.0
+        return math.dist(point,tuple(start[i]+t*direction[i] for i in range(3)))
+    return min(segment_distance(a,b),segment_distance(b,c),segment_distance(c,a))
+
+
 def region_nearest_vertices(by_object, reference_name, region):
     if reference_name not in by_object:
         raise InvalidAsset("Reference node not found")
@@ -75,6 +98,8 @@ def region_nearest_vertices(by_object, reference_name, region):
     points = {p for edge,count in edges.items() if count == 1 for p in edge
               if x0 <= p[0] <= x1 and y0 <= p[1] <= y1 and z0 <= p[2] <= z1}
     distances = sorted(min(math.dist(p,q) for q in reference) for p in points)
+    surface_samples = sorted((min(closest_triangle_distance(point,triangle) for triangle in by_object[reference_name]), point) for point in points)
+    surface_distances = [row[0] for row in surface_samples]
     if not distances: raise InvalidAsset("No boundary vertices in region")
     all_other_vertices = {p for name,triangles in by_object.items() if name != reference_name
                           for triangle in triangles for p in triangle}
@@ -84,7 +109,13 @@ def region_nearest_vertices(by_object, reference_name, region):
             "nearest_vertex_distance_m":{"min":distances[0],"median":statistics.median(distances),
               "p95":distances[math.ceil(.95*len(distances))-1],"max":distances[-1],
               "within_2mm":sum(d<=.002 for d in distances)},
-            "limits":"Nearest vertex only, not nearest surface, physical gap or overlap."}
+            "nearest_surface_distance_m":{"min":surface_distances[0],"median":statistics.median(surface_distances),
+              "p95":surface_distances[math.ceil(.95*len(surface_distances))-1],"max":surface_distances[-1],
+              "within_2mm":sum(d<=.002 for d in surface_distances)},
+            "surface_extremes":{"closest":[{"distance_m":d,"position":p} for d,p in surface_samples[:5]],
+                                "farthest":[{"distance_m":d,"position":p} for d,p in surface_samples[-5:]]},
+            "surface_samples":[{"distance_m":d,"position":p} for d,p in surface_samples],
+            "limits":"Unsigned distances from selected boundary vertices to reference triangles; not whole-surface gap, intersection or visual verdict."}
 
 
 def load_triangles(path):
@@ -141,7 +172,7 @@ def main():
               "combined":inventory(all_triangles),
               "limits":["Exact coincident coordinates grouped only for counting, never welded",
                         "Exact coincident positions may belong to separate overlapping surfaces; junction counts are not a topology verdict",
-                        "No geometric intersection, tolerance merge, animation, rig or visual quality test",
+                        "No geometric intersection, inside/outside classification, tolerance merge, animation, rig or visual quality test",
                         "Open boundaries can be intentional; diagnose before editing"]}
     if args.region:
         result["region_vertex_comparison"] = region_nearest_vertices(by_object,args.reference_node,args.region)
