@@ -246,7 +246,7 @@ func _draw_player(area: Rect2) -> void:
 		return
 	var center: Vector2 = _screen_point(area, player.global_position.x, player.global_position.z)
 	var facing: Vector3 = player.facing_direction()
-	var direction: Vector2 = Vector2(facing.x, facing.z).normalized()
+	var direction: Vector2 = _map_direction(area, Vector2(facing.x, facing.z))
 	if direction.length_squared() < .01: direction = Vector2.DOWN
 	var side := Vector2(-direction.y, direction.x)
 	var arrow := PackedVector2Array([center + direction * 8, center - direction * 5 + side * 5, center - direction * 5 - side * 5])
@@ -254,6 +254,13 @@ func _draw_player(area: Rect2) -> void:
 	var border := arrow.duplicate()
 	border.append(arrow[0])
 	draw_polyline(border, Color("#132124"), 1.5, true)
+
+func _map_direction(area: Rect2, world_direction: Vector2) -> Vector2:
+	# Match the same world-to-map scaling used for roads and marker positions.
+	# A rectangular map (or unequal world extents) distorts diagonal directions.
+	if _extent.x <= 0.0 or _extent.y <= 0.0:
+		return Vector2.ZERO
+	return Vector2(world_direction.x * area.size.x / _extent.x, world_direction.y * area.size.y / _extent.y).normalized()
 
 func _draw_route(area: Rect2, route: Array, color: Color, width: float) -> void:
 	var points: PackedVector2Array = PackedVector2Array()

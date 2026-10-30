@@ -19,6 +19,19 @@ func _run() -> void:
 	await _click(minimap)
 	_check(not game.menu.visible, "Minimap cannot bypass dialogue lock")
 	await _finish_dialogue()
+	var initial_position: Vector3 = game.player.global_position
+	_key(KEY_W, true)
+	for frame: int in range(24): await physics_frame
+	_key(KEY_W, false)
+	await process_frame
+	_check(game.player.global_position.distance_to(initial_position) > .1, "Real keyboard input moves the player before heading check")
+	var heading: Vector3 = game.player.facing_direction()
+	var map_area: Rect2 = minimap.call("map_area")
+	var map_start: Vector2 = minimap.call("_screen_point", map_area, game.player.global_position.x, game.player.global_position.z)
+	var map_end: Vector2 = minimap.call("_screen_point", map_area, game.player.global_position.x + heading.x, game.player.global_position.z + heading.z)
+	var arrow: Vector2 = minimap.call("_map_direction", map_area, Vector2(heading.x, heading.z))
+	_check(arrow.distance_to((map_end - map_start).normalized()) < .0001, "Moving player arrow follows actual minimap coordinate scaling")
+	await _capture("moving_direction")
 	await _capture("baseline")
 	_check(game.menu.has_method("open_map"), "Current region can be expanded from the handbook")
 	if not game.menu.has_method("open_map"):
