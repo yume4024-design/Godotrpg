@@ -1,0 +1,104 @@
+{
+  "source_sha256": "e8ad4df994e4eb63daf6068a5a9a331a043c1c26d6ba9cd8b07bc9af2101a19a",
+  "blend_sha256": "8525d65ff7c88fb8357de723598a551e6de9b94ae3644df403fcb85bed045e2b",
+  "glb_sha256": "a2c20807c4c0a8c47a9b052dba2c47189cb296dc1939adc6802207c1b06d03d8",
+  "selected_faces": {
+    "-1": 307,
+    "1": 258
+  },
+  "cut_geometry_elements": {
+    "-1": 54,
+    "1": 68
+  },
+  "unselected_faces_verified": 10979,
+  "maximum_normal_error": 0.00035854163753902665,
+  "normal_calibration": {
+    "storage": "Blender custom_normal INT16_2D",
+    "target_vectors_changed": false,
+    "tolerance": 0.002,
+    "before_maximum": 0.0035068325115155488,
+    "after_maximum": 0.00035854163753902665,
+    "corrected_loops": [
+      {
+        "loop": 15228,
+        "before_code": [
+          7406,
+          0
+        ],
+        "after_code": [
+          7406.0,
+          -103.0
+        ],
+        "before_error": 0.0035068325115155488,
+        "after_error": 0.0
+      },
+      {
+        "loop": 15231,
+        "before_code": [
+          7406,
+          0
+        ],
+        "after_code": [
+          7406.0,
+          0.0
+        ],
+        "before_error": 0.0035068325115155488,
+        "after_error": 0.0
+      }
+    ]
+  },
+  "triangles": 12527,
+  "forearm_hand_checks": [
+    {
+      "side": "Right",
+      "faces": 256,
+      "single_connected_component": true,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0
+    },
+    {
+      "side": "Left",
+      "faces": 258,
+      "single_connected_component": true,
+      "nonmanifold_edges": 0,
+      "degenerate_faces": 0
+    }
+  ],
+  "sleeve_boundaries": [
+    {
+      "side": -1,
+      "outer_vertices": 11,
+      "inner_vertices": 12,
+      "removed_fragment_source_faces": [],
+      "nested_before": false,
+      "nested_after": true,
+      "liner_maximum_shift_m": 0.009716256180869763,
+      "outer_area": 0.007676614491294415,
+      "inner_area": 0.006649840660772123
+    },
+    {
+      "side": 1,
+      "outer_vertices": 13,
+      "inner_vertices": 13,
+      "removed_fragment_source_faces": [
+        [
+          10139,
+          10140,
+          10141
+        ]
+      ],
+      "nested_before": false,
+      "nested_after": true,
+      "liner_maximum_shift_m": 0.005641400788551223,
+      "outer_area": 0.00827724421161024,
+      "inner_area": 0.006297982275231731
+    }
+  ],
+  "sleeve_texture_median_rgb": [
+    0.42941179871559143,
+    0.2705882489681244,
+    0.5843137502670288
+  ],
+  "matched_sleeve": true,
+  "status": "static manual retopology trial; forearm and hand are connected, proximal cuff is separate from original sleeve; no rig"
+}

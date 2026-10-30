@@ -1,0 +1,9 @@
+{
+  "fixture_sha256": "ec0e5ae81478d57c7aa8bc937c4fd1831f7ba66d121c8d6490007d9d8cdd7de2",
+  "input_candidate_sha256": "a2c20807c4c0a8c47a9b052dba2c47189cb296dc1939adc6802207c1b06d03d8",
+  "modification": "Left sleeve outer seam displaced 0.01 m along arm cross-axis in an independent GLB copy",
+  "expected": "reject, nonzero exit, no passing report",
+  "actual_exit_code": 1,
+  "observed_error": "AssertionError: ('Left', 0.009999996051192284)",
+  "passing_report_created": false
+}

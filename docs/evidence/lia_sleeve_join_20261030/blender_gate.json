@@ -1,0 +1,201 @@
+{
+  "source": "D:\\RPGGAME\\artifacts\\lia-sleeve-boundary-trial-20261030\\lia_forearm_trial.glb",
+  "blender_version": "5.2.2 LTS",
+  "triangle_budget": 15000,
+  "category": "player_character",
+  "preflight": {
+    "schema_version": 1,
+    "file": "artifacts\\lia-sleeve-boundary-trial-20261030\\lia_forearm_trial.glb",
+    "category": "player_character",
+    "sha256": "a2c20807c4c0a8c47a9b052dba2c47189cb296dc1939adc6802207c1b06d03d8",
+    "maximum_triangles": 15000,
+    "triangles": 12527,
+    "headroom_triangles": 2473,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 476,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 288,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 80,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 40,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 60,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 34,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 2,
+        "mesh": 2,
+        "triangles": 288,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 2,
+        "mesh": 2,
+        "triangles": 80,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 2,
+        "mesh": 2,
+        "triangles": 40,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 2,
+        "mesh": 2,
+        "triangles": 60,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 2,
+        "mesh": 2,
+        "triangles": 30,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 3,
+        "mesh": 3,
+        "triangles": 11051,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 6,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "exported": false,
+  "unverified": [
+    "silhouette",
+    "overlapping faces",
+    "rig deformation",
+    "animation transitions",
+    "engine functional QA"
+  ],
+  "total_triangles": 12527,
+  "objects": [
+    {
+      "name": "LiaContinuousNeckClavicle",
+      "triangles": 476,
+      "vertices": 298,
+      "uv_layers": 1,
+      "nonmanifold_edges": 114,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaHandLeft",
+      "triangles": 502,
+      "vertices": 600,
+      "uv_layers": 1,
+      "nonmanifold_edges": 470,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaHandRight",
+      "triangles": 498,
+      "vertices": 592,
+      "uv_layers": 1,
+      "nonmanifold_edges": 462,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaRetainedAuthoredNeckSurface",
+      "triangles": 11051,
+      "vertices": 12038,
+      "uv_layers": 1,
+      "nonmanifold_edges": 10251,
+      "degenerate_faces": 0
+    }
+  ],
+  "ignored_importer_bone_helpers": [],
+  "failures": [],
+  "warnings": [
+    "NONMANIFOLD_OR_BOUNDARY"
+  ],
+  "basic_checks_passed": true
+}

@@ -1,0 +1,22 @@
+{
+  "input_sha256": "a2c20807c4c0a8c47a9b052dba2c47189cb296dc1939adc6802207c1b06d03d8",
+  "blender_version": "5.2.2 LTS",
+  "static_outer_seam_gate": "PASS",
+  "tolerance_m": 1e-05,
+  "rows": [
+    {
+      "side": "Right",
+      "outer_seam_vertices": 11,
+      "maximum_body_vertex_distance_m": 6.006850128414953e-08
+    },
+    {
+      "side": "Left",
+      "outer_seam_vertices": 13,
+      "maximum_body_vertex_distance_m": 7.174367766538126e-08
+    }
+  ],
+  "limitations": [
+    "Checks coincident outer seam vertices only; separate mesh objects are not welded",
+    "Does not test normals, whole sleeve intersections, weights or animation"
+  ]
+}

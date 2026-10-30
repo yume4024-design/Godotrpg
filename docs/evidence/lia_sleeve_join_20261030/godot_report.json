@@ -1,0 +1,46 @@
+{
+	"animation_tested": false,
+	"asset": "lia_sleeve_join",
+	"category": "player_character",
+	"checks": 48,
+	"failures": [],
+	"formal_gameplay": false,
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.95000004768372
+	],
+	"import_mode": "GLTFDocument",
+	"model": "D:/RPGGAME/artifacts/lia-sleeve-boundary-trial-20261030/lia_forearm_trial.glb",
+	"model_sha256": "a2c20807c4c0a8c47a9b052dba2c47189cb296dc1939adc6802207c1b06d03d8",
+	"physical_input": false,
+	"rigged": false,
+	"solid_materials": [
+		"LiaAuthoredSkin",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve"
+	],
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 12527
+}
