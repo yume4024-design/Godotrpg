@@ -1,0 +1,49 @@
+{
+	"animation_tested": false,
+	"asset": "lia_collar_rebuild",
+	"category": "player_character",
+	"checks": 56,
+	"failures": [],
+	"formal_gameplay": false,
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.95000004768372
+	],
+	"import_mode": "GLTFDocument",
+	"model": "D:/RPGGAME/artifacts/lia-collar-checked-20261030/lia_collar_trial.glb",
+	"model_sha256": "bffab07c98b145a40506af870006bed4fd2e4a4f0dcb0b76f51b88d15b4b2629",
+	"physical_input": false,
+	"rigged": false,
+	"solid_materials": [
+		"LiaMatchedSleeve",
+		"LiaForearmCuff",
+		"LiaCollarLining",
+		"LiaAuthoredSkin",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve"
+	],
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 12394
+}
