@@ -1,0 +1,133 @@
+{
+  "source_sha256": "0409ee2d7c447df2717e71a506d908ccd5cdab5193fa0e1b11459ba7fef50d9b",
+  "changes": [
+    {
+      "source_face": 1714,
+      "before": 3,
+      "after": 5
+    },
+    {
+      "source_face": 1715,
+      "before": 3,
+      "after": 3
+    },
+    {
+      "source_face": 1717,
+      "before": 3,
+      "after": 3
+    },
+    {
+      "source_face": 1960,
+      "before": 3,
+      "after": 3
+    },
+    {
+      "source_face": 2160,
+      "before": 3,
+      "after": 3
+    },
+    {
+      "source_face": 2161,
+      "before": 3,
+      "after": 3
+    },
+    {
+      "source_face": 2162,
+      "before": 3,
+      "after": 4
+    },
+    {
+      "source_face": 2163,
+      "before": 3,
+      "after": 3
+    },
+    {
+      "source_face": 2164,
+      "before": 3,
+      "after": 3
+    },
+    {
+      "source_face": 2504,
+      "before": 3,
+      "after": 0
+    },
+    {
+      "source_face": 3257,
+      "before": 3,
+      "after": 0
+    },
+    {
+      "source_face": 3476,
+      "before": 3,
+      "after": 0
+    }
+  ],
+  "planes": [
+    {
+      "origin": [
+        -0.11261752992868423,
+        -0.05813160911202431,
+        1.5975395441055298
+      ],
+      "normal": [
+        0.8563884496688843,
+        -0.02803760953247547,
+        -0.5155704021453857
+      ]
+    },
+    {
+      "origin": [
+        -0.10095909237861633,
+        -0.0012717145727947354,
+        1.613645076751709
+      ],
+      "normal": [
+        0.8017560243606567,
+        -0.4281155467033386,
+        -0.4170183837413788
+      ]
+    }
+  ],
+  "shared_cut_vertices": 22,
+  "unselected_faces_verified": 10751,
+  "maximum_normal_error": 0.00010642788210490845,
+  "calibration": {
+    "storage": "Blender custom_normal INT16_2D",
+    "target_vectors_changed": false,
+    "tolerance": 0.002,
+    "before_maximum": 0.0035068325115155488,
+    "after_maximum": 0.00010642788210490845,
+    "corrected_loops": [
+      {
+        "loop": 15129,
+        "before_code": [
+          7406,
+          0
+        ],
+        "after_code": [
+          7406.0,
+          -103.0
+        ],
+        "before_error": 0.0035068325115155488,
+        "after_error": 0.0
+      },
+      {
+        "loop": 15132,
+        "before_code": [
+          7406,
+          0
+        ],
+        "after_code": [
+          7406.0,
+          0.0
+        ],
+        "before_error": 0.0035068325115155488,
+        "after_error": 0.0
+      }
+    ]
+  },
+  "triangles": 12394,
+  "blend_sha256": "e77b8e89d132740209a12e5e64d2441592ff95d4cea58f4c5be2446e5350ce71",
+  "glb_sha256": "35f3e9eeae213d0b919c0d1262116b54154164ed29f63b4f6c212a93a5ae5705",
+  "status": "static candidate, visual and animation acceptance required"
+}

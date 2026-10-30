@@ -1,5 +1,37 @@
 # 莉雅立領重建候選 — 2026-10-30
 
+## 後續修整：左內領穿入面切割
+
+本次已消除斜側可見的長紫色碎片及其上方小尖角；整體角色仍 visual FAIL，沒有換入正式遊戲。上一輪領片重建及提交屬實際進展；以下保留原始報告作比較。
+
+- [射線定位](evidence/lia_collar_rebuild_20261030/inner_clip/ray_diagnosis.json)確認舊布料同時跨越肩部與新內領，不能直接整片刪除。沿新內領第16、94面所在平面向布料側移1mm切割，保留肩部一側，切口插值保留UV與法線；相鄰邊共用切割頂點，未全身合點。
+- 第一版只沿前段切割，第二版加入後段內壁，仍有小尖角；[殘餘定位](evidence/lia_collar_rebuild_20261030/inner_clip/residual_diagnosis.json)確認原面1714在原選區之外，納入後在最後斜側渲染消失。這是依實際射線證據局部修整，沒有重跑生成或盲目減面。
+- 共12個來源面：9個保留外側切割部分、3個完整位於內側而移除；10,751個未選面逐一保留座標與UV，法線最大誤差0.00010643。頭髮、頸部、雙手及新立領本身未改動。
+- 最終12,394／15,000 triangles，Blender 5.2.2 LTS重新匯入PASS，無退化面；仍有NONMANIFOLD_OR_BOUNDARY警告。切口沒有與新領焊接，不能稱封閉或可直接蒙皮。
+- Godot 4.7.2／Windows Compatibility／RTX3080圖形靜態檢查56項、0失敗。未測試新角色動作、戰鬥、存讀檔；未改遊戲程式、正式角色、數值、劇情或存檔。正式莉雅SHA與前輪一致。
+
+[斜側修正後](evidence/lia_collar_rebuild_20261030/inner_clip/neck_three_quarter.png)／[正面](evidence/lia_collar_rebuild_20261030/inner_clip/neck_front.png)／[背面](evidence/lia_collar_rebuild_20261030/inner_clip/neck_back.png)／[側面](evidence/lia_collar_rebuild_20261030/inner_clip/neck_side.png)／[Godot全身](evidence/lia_collar_rebuild_20261030/inner_clip/godot_front.webp)。
+[修整收據](evidence/lia_collar_rebuild_20261030/inner_clip/receipt.json)／[Blender結果](evidence/lia_collar_rebuild_20261030/inner_clip/blender_gate.json)／[Godot結果](evidence/lia_collar_rebuild_20261030/inner_clip/godot_report.json)。
+
+**仍待處理：**背面披肩與肩部碎面、立領底緣間隙、頸肩比例、臉側／髮尾、衣料配色及骨架動作。僅本次左內領目標碎片通過視覺確認，不能代表所有視角或角色整體合格。序章仍未最終完成，人工終驗及Android／iOS繼續暫停。
+
+候選：D:/RPGGAME/artifacts/lia-collar-clipped-final-20261030/lia_collar_clipped.blend 及同名.glb。
+GLB SHA256：35f3e9eeae213d0b919c0d1262116b54154164ed29f63b4f6c212a93a5ae5705。
+Blend SHA256：e77b8e89d132740209a12e5e64d2441592ff95d4cea58f4c5be2446e5350ce71。
+
+實際執行命令（cwd D:/RPGGAME；輸出目錄必須不存在）：
+
+~~~powershell
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' --background --factory-startup --python-exit-code 1 --python scripts/tools/clip_lia_inner_collar.py -- --input artifacts/lia-collar-checked-20261030/lia_collar_trial.blend --output artifacts/lia-collar-clipped-final-20261030
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' --background --factory-startup --python-exit-code 1 --python scripts/tools/render_lia_repair_inspection.py -- --input artifacts/lia-collar-clipped-final-20261030/lia_collar_clipped.blend --output artifacts/lia-collar-clipped-final-render-20261030 --view neck_front --view neck_three_quarter --view neck_back --view neck_side
+& 'C:/Program Files/Blender Foundation/Blender 5.2/blender.exe' --background --factory-startup --python-exit-code 1 --python docs/skills/ai-3d-agent/scripts/check_export.py -- --input artifacts/lia-collar-clipped-final-20261030/lia_collar_clipped.glb --output artifacts/lia-collar-clipped-final-20261030/blender_gate --project-root D:/RPGGAME --category player_character --require-uv
+$env:APPDATA='D:/RPGGAME/artifacts/lia-collar-clipped-final-20261030/profile'
+$env:LOCALAPPDATA=$env:APPDATA
+& 'D:/Godot_v4.7.2-stable_win64.exe/Godot_v4.7.2-stable_win64_console.exe' --path D:/RPGGAME --script res://tests/static_character_review.gd -- --raw-glb --portrait --id=lia_collar_clip_final --solid-material=LiaAuthoredSkin --solid-material=LiaForearmLeather --solid-material=LiaForearmTrim --solid-material=LiaForearmCuff --solid-material=LiaMatchedSleeve --solid-material=LiaCollarLining --model=D:/RPGGAME/artifacts/lia-collar-clipped-final-20261030/lia_collar_clipped.glb --output=D:/RPGGAME/artifacts/lia-collar-clipped-final-20261030/godot
+~~~
+
+## 前輪立領重建紀錄
+
 **立領外形、內襯與滾邊已重新建模；整體角色仍 visual FAIL，未換入遊戲。** 沿用最新袖口候選，保留先前手部與前臂進展。上一輪已有已提交、已測試的模型改動，屬有進展。本輪沒有重跑 ComfyUI，也沒有再調整失敗頸部圓柱配方。
 
 ## 實際改動
