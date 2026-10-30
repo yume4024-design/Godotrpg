@@ -59,6 +59,51 @@ func _soak() -> void:
 			await create_timer(.25).timeout
 	await _end()
 
+func _set_service_phase(label: String) -> void:
+	phase_label = label
+	PrologueProfileTrace.phase = label
+
+func _services() -> void:
+	phase_label = "npc_commerce"
+	var panel: CommercePanel = game.get("commerce")
+	for npc: String in ["Guildmaster", "ItemMerchant", "Innkeeper"]:
+		_set_service_phase("service_" + npc.to_lower() + "_open")
+		var target: WorldInteractable = game.travel.current_map.get_node_or_null("NPCs/"+npc)
+		if target == null:
+			_check(false,"NPC exists " + npc)
+			continue
+		await _place(target.global_position+Vector3(0,.1,1.4))
+		await _tap(KEY_E)
+		if npc == "Guildmaster":
+			_set_service_phase("service_guildmaster_dialogue")
+			_set_service_phase("service_" + npc.to_lower() + "_dialogue")
+			await _finish_dialogue()
+		else:
+			_check(panel.visible,"Service opens " + npc)
+			var gold_before: int = game.inventory.gold
+			var items_before: int = game.inventory.count(&"potion")
+			if npc == "Innkeeper": game.party.member(&"ren").damage(10)
+			_set_service_phase("service_" + npc.to_lower() + "_confirm")
+			var point: Vector2 = root.get_final_transform()*panel.confirm_button.get_global_transform_with_canvas()*(panel.confirm_button.size*.5)
+			for pressed: bool in [true,false]:
+				var event: InputEventMouseButton = InputEventMouseButton.new()
+				event.position=point
+				event.global_position=point
+				event.button_index=MOUSE_BUTTON_LEFT
+				event.pressed=pressed
+				Input.parse_input_event(event)
+				await process_frame
+			_set_service_phase("service_" + npc.to_lower() + "_dialogue")
+			await _finish_dialogue()
+			await _tap(KEY_ESCAPE)
+			if npc == "ItemMerchant":
+				_check(game.inventory.gold == gold_before - InventoryManager.POTION_PRICE and game.inventory.count(&"potion") == items_before+1, "Shop transaction settles exactly once")
+			else:
+				_check(game.inventory.gold == gold_before - InventoryManager.INN_PRICE and game.party.members().all(func(a: CombatantState) -> bool: return a.hp == a.max_hp and a.mp == a.max_mp), "Inn debit and full party recovery")
+	_set_service_phase("service_restore")
+	_check(await game.saves.request_load(),"Restore pretransaction validated snapshot")
+
+
 func _end() -> void:
 	sampling=false
 	var metrics: Dictionary={}
@@ -66,7 +111,7 @@ func _end() -> void:
 		metrics[label]=_stats(samples[label].frames)
 		metrics[label].draw_min=samples[label].draw_min
 		metrics[label].draw_max=samples[label].draw_max
-	var report: Dictionary={"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"pid":OS.get_process_id(),"seconds":(Time.get_ticks_usec()-started_usec)/1000000.0,"frames":metrics,"spikes":spike_rows,"operations":operation_rows,"timed_methods":PrologueProfileTrace.rows,"method":"Native Release; actual prologue followed by three per-map service/load/battle loops. Timestamp-only production instrumentation in isolated build snapshot. No timed captures; CPU wall spans include stated waits; not GPU timing, long soak, or human playthrough."}
+	var report: Dictionary={"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"pid":OS.get_process_id(),"seconds":(Time.get_ticks_usec()-started_usec)/1000000.0,"frames":metrics,"spikes":spike_rows,"operations":operation_rows,"timed_methods":PrologueProfileTrace.rows,"method":"Native Release; actual prologue followed by three per-map service/load/battle loops. Timestamp-only production instrumentation in isolated build snapshot. Services broken down by NPC and restore; no timed captures; CPU wall spans include stated waits; not GPU timing, long soak, or human playthrough."}
 	FileAccess.open("user://prologue_profile/report.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
 	await RenderingServer.frame_post_draw
 	root.get_texture().get_image().save_webp("user://prologue_profile/final.webp")

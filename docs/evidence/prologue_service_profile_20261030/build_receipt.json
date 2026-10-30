@@ -1,0 +1,38 @@
+{
+  "source_commit": "bd9948532b2dee14bb52f1bf6985ed335884a099",
+  "overlays": {
+    "tests/prologue_performance_probe.gd": "08dcb8444884d99175371ebc0db42ee16ce08e85cfa697522397052e851d315f",
+    "tests/prologue_profile_trace.gd": "da605cc8cd041ea45de095a7c536a5a65d1c6ecc970d476a381630db323934f0"
+  },
+  "instrumented_methods": [
+    {
+      "path": "scripts/core/exploration_game.gd",
+      "method": "validate_loaded_position",
+      "original_method_sha256": "db032f791c38a311b4ea5a5082e55b891c93613134c560a0622416fcf3b2225e",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/core/battle_flow.gd",
+      "method": "_spawn",
+      "original_method_sha256": "84cde5c3433d4939b5c5a9186b1e97d5f8f017a1ded9f3559409ac2d8e0e39f7",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/battle/battle_arena.gd",
+      "method": "setup",
+      "original_method_sha256": "00933f8ef3ed625536b4946de097b4c5ed1802590a4179bacf30c790d44b1126",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/world/scene_manager.gd",
+      "method": "_swap",
+      "original_method_sha256": "f700d2b01f3ebbc9a16bee8f8bf34c4641bbbef4df79cc05f3330f4d9670d212",
+      "timing_only": true
+    }
+  ],
+  "runtime_kind": "Godot Windows x64 Release export with timing-only source overlays",
+  "files": {
+    "ProjectCrystal.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "ProjectCrystal.pck": "35419e273bbb6f4749bead81e2f5df49eeb324bd4485e7a019af761b7cda7fda"
+  }
+}

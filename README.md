@@ -1,5 +1,7 @@
 # 《失落星核》｜Project Crystal
 
+2026-10-30：將服務流程分段量測，本次三次約71–73ms尖峰發生於測試後讀檔恢復；[結果與限制](docs/PROLOGUE_SERVICE_PROFILE_20261030.md)。
+
 2026-10-30：最新來源完成原生 Windows Release 短效能診斷，169項測試通過；交易及森林讀檔仍有約85–86ms尖峰。[數據與限制](docs/PROLOGUE_RELEASE_PROFILE_20261030.md)。
 
 2026-10-30：礦坑小地圖顯示目前區域與通道，展開後可選擇八個區域；[畫面與驗證](docs/MINE_NAVIGATION_READABILITY_REPORT.md)。變更在開發來源，固定RC4未更新。
