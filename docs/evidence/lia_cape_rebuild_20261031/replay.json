@@ -1,0 +1,7 @@
+{
+  "glb_sha256": "221fcb561103b80276e304fe013a3a7fc9b10e211c24ed8fa6724c1a557baa9d",
+  "matches_final": true,
+  "selection": "docs/evidence/lia_cape_rebuild_20261031/selection.json",
+  "output": "artifacts/lia-cape-replay",
+  "blender_version": "5.2.2 LTS"
+}

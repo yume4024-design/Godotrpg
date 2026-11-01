@@ -1,0 +1,52 @@
+{
+	"animation_tested": false,
+	"asset": "lia_cape_fitted",
+	"category": "player_character",
+	"checks": 63,
+	"failures": [],
+	"formal_gameplay": false,
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.95000004768372
+	],
+	"import_mode": "GLTFDocument",
+	"model": "D:/RPGGAME/artifacts/lia-cape-fitted-20261031/lia_cape_trial.glb",
+	"model_sha256": "221fcb561103b80276e304fe013a3a7fc9b10e211c24ed8fa6724c1a557baa9d",
+	"physical_input": false,
+	"rigged": false,
+	"solid_materials": [
+		"LiaMatchedSleeve",
+		"LiaForearmCuff",
+		"LiaCollarLining",
+		"LiaMatchedSleeve",
+		"LiaForearmCuff",
+		"LiaCollarLining",
+		"LiaAuthoredSkin",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve"
+	],
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 11492
+}
