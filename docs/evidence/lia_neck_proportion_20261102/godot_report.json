@@ -1,0 +1,52 @@
+{
+	"animation_tested": false,
+	"asset": "lia_neck_normalized",
+	"category": "player_character",
+	"checks": 63,
+	"failures": [],
+	"formal_gameplay": false,
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.94999992847443
+	],
+	"import_mode": "GLTFDocument",
+	"model": "D:/RPGGAME/artifacts/lia-neck-normalized-20261102/lia_neck_fit.glb",
+	"model_sha256": "ea23b06c1967de071c2b102259bf0b007fef416ab3051f4941ffd5c2e71b37ae",
+	"physical_input": false,
+	"rigged": false,
+	"solid_materials": [
+		"LiaMatchedSleeve",
+		"LiaForearmCuff",
+		"LiaCollarLining",
+		"LiaMatchedSleeve",
+		"LiaForearmCuff",
+		"LiaCollarLining",
+		"LiaAuthoredSkin",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve"
+	],
+	"textures": [
+		"(4096, 4096)"
+	],
+	"triangles": 11492
+}

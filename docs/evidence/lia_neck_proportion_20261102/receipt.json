@@ -1,0 +1,215 @@
+{
+  "source_sha256": "b9820e6db0f18892fbd703febd6ae6176c485ccdee78406e9bfaf0d6dbff3586",
+  "transition_z": [
+    1.515,
+    1.635
+  ],
+  "head_down_m": 0.035,
+  "minimum_jacobian": 0.5625000000000003,
+  "objects": [
+    {
+      "object": "LiaRetainedAuthoredNeckSurface",
+      "fixed_vertices": 10261,
+      "rigidly_translated_vertices": 957,
+      "moved_vertices": 1260,
+      "face_edge_length_max_error": 0,
+      "uv_unchanged": true,
+      "normal_calibration": {
+        "storage": "Blender custom_normal INT16_2D",
+        "target_vectors_changed": false,
+        "tolerance": 0.002,
+        "before_maximum": 0.007445127845536686,
+        "after_maximum": 0.00014371160071389817,
+        "corrected_loops": [
+          {
+            "loop": 10831,
+            "before_code": [
+              12783,
+              0
+            ],
+            "after_code": [
+              12778.0,
+              -165.0
+            ],
+            "before_error": 0.007445127845536686,
+            "after_error": 0.000137296617845874
+          },
+          {
+            "loop": 12955,
+            "before_code": [
+              12783,
+              0
+            ],
+            "after_code": [
+              12783.0,
+              0.0
+            ],
+            "before_error": 0.007445127845536686,
+            "after_error": 0.000137296617845874
+          },
+          {
+            "loop": 13225,
+            "before_code": [
+              7406,
+              0
+            ],
+            "after_code": [
+              7406.0,
+              -103.0
+            ],
+            "before_error": 0.0035068325115155488,
+            "after_error": 0.0
+          },
+          {
+            "loop": 13228,
+            "before_code": [
+              7406,
+              0
+            ],
+            "after_code": [
+              7406.0,
+              0.0
+            ],
+            "before_error": 0.0035068325115155488,
+            "after_error": 0.0
+          }
+        ]
+      }
+    },
+    {
+      "object": "LiaContinuousNeckClavicle",
+      "fixed_vertices": 72,
+      "rigidly_translated_vertices": 72,
+      "moved_vertices": 168,
+      "face_edge_length_max_error": 0,
+      "uv_unchanged": true,
+      "normal_calibration": {
+        "storage": "Blender custom_normal INT16_2D",
+        "target_vectors_changed": false,
+        "tolerance": 0.002,
+        "before_maximum": 0.00023484285258939863,
+        "after_maximum": 0.00023484285258939863,
+        "corrected_loops": []
+      }
+    }
+  ],
+  "unchanged_before_uniform_normalization": [
+    "LiaHandRight",
+    "LiaHandLeft",
+    "LiaAuthoredCollar",
+    "LiaContinuousCapelet"
+  ],
+  "normalization": {
+    "applied": true,
+    "original_height": 1.915000081062317,
+    "target_height": 1.95,
+    "uniform_scale": 1.01827671929824,
+    "normal_calibrations": {
+      "LiaRetainedAuthoredNeckSurface": {
+        "storage": "Blender custom_normal INT16_2D",
+        "target_vectors_changed": false,
+        "tolerance": 0.002,
+        "before_maximum": 0.00742438291992619,
+        "after_maximum": 0.00020157580600026242,
+        "corrected_loops": [
+          {
+            "loop": 10831,
+            "before_code": [
+              12781,
+              0
+            ],
+            "after_code": [
+              12775.0,
+              -165.0
+            ],
+            "before_error": 0.00742438291992619,
+            "after_error": 0.00010484838221257619
+          },
+          {
+            "loop": 12955,
+            "before_code": [
+              12781,
+              0
+            ],
+            "after_code": [
+              12781.0,
+              0.0
+            ],
+            "before_error": 0.00742438291992619,
+            "after_error": 0.00010484838221257619
+          },
+          {
+            "loop": 13225,
+            "before_code": [
+              7405,
+              0
+            ],
+            "after_code": [
+              7407.0,
+              -103.0
+            ],
+            "before_error": 0.003506704747218894,
+            "after_error": 1.0548380344146328e-05
+          },
+          {
+            "loop": 13228,
+            "before_code": [
+              7405,
+              0
+            ],
+            "after_code": [
+              7405.0,
+              0.0
+            ],
+            "before_error": 0.003506704747218894,
+            "after_error": 1.0548380344146328e-05
+          }
+        ]
+      },
+      "LiaContinuousNeckClavicle": {
+        "storage": "Blender custom_normal INT16_2D",
+        "target_vectors_changed": false,
+        "tolerance": 0.002,
+        "before_maximum": 0.00014996597030901343,
+        "after_maximum": 0.00014996597030901343,
+        "corrected_loops": []
+      },
+      "LiaHandRight": {
+        "storage": "Blender custom_normal INT16_2D",
+        "target_vectors_changed": false,
+        "tolerance": 0.002,
+        "before_maximum": 1.3235385514500729e-05,
+        "after_maximum": 1.3235385514500729e-05,
+        "corrected_loops": []
+      },
+      "LiaHandLeft": {
+        "storage": "Blender custom_normal INT16_2D",
+        "target_vectors_changed": false,
+        "tolerance": 0.002,
+        "before_maximum": 1.1067791709858241e-05,
+        "after_maximum": 1.1067791709858241e-05,
+        "corrected_loops": []
+      },
+      "LiaAuthoredCollar": {
+        "storage": "Blender custom_normal INT16_2D",
+        "target_vectors_changed": false,
+        "tolerance": 0.002,
+        "before_maximum": 0.0001981747797377089,
+        "after_maximum": 0.0001981747797377089,
+        "corrected_loops": []
+      },
+      "LiaContinuousCapelet": {
+        "storage": "Blender custom_normal INT16_2D",
+        "target_vectors_changed": false,
+        "tolerance": 0.002,
+        "before_maximum": 7.319000933220258e-05,
+        "after_maximum": 7.319000933220258e-05,
+        "corrected_loops": []
+      }
+    }
+  },
+  "triangles": 11492,
+  "blend_sha256": "9d0a72d8642bef5799e691a1c5e64aa33ac87bf4e6853cd439b26c92cb4cfe98",
+  "glb_sha256": "ea23b06c1967de071c2b102259bf0b007fef416ab3051f4941ffd5c2e71b37ae",
+  "status": "static neck proportion candidate; no rig or formal integration"
+}
