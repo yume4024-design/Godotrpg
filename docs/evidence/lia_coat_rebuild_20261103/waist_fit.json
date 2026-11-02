@@ -1,0 +1,7 @@
+{
+  "blender": "5.2.2 LTS",
+  "input": "artifacts\\lia-coat-final-20261103\\lia_tailored_coat.blend",
+  "checks": 432,
+  "failures": [],
+  "scope": "Static waist-band radial visibility, not animation or full body intersection QA"
+}

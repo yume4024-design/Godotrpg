@@ -1,0 +1,365 @@
+{
+  "source": "D:\\RPGGAME\\artifacts\\lia-coat-final-20261103\\lia_tailored_coat.glb",
+  "blender_version": "5.2.2 LTS",
+  "triangle_budget": 15000,
+  "category": "player_character",
+  "preflight": {
+    "schema_version": 1,
+    "file": "artifacts\\lia-coat-final-20261103\\lia_tailored_coat.glb",
+    "category": "player_character",
+    "sha256": "7d6522d9d6a33f4348c2c94fe41917f7af348ac4c63a86e77ba9ceb2789962de",
+    "maximum_triangles": 15000,
+    "triangles": 6474,
+    "headroom_triangles": 8526,
+    "triangle_gate": "PASS",
+    "status": "PASS",
+    "measurement": "GLB active scene triangle primitives; Blender evaluated QA separate",
+    "requirements": {
+      "uv": true,
+      "rig": false
+    },
+    "max_weight_sum_error": 0.0,
+    "primitives": [
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 20,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 72,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 0,
+        "mesh": 0,
+        "triangles": 40,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 60,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 56,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 1,
+        "mesh": 1,
+        "triangles": 140,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 2,
+        "mesh": 2,
+        "triangles": 476,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 3,
+        "mesh": 3,
+        "triangles": 288,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 3,
+        "mesh": 3,
+        "triangles": 80,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 3,
+        "mesh": 3,
+        "triangles": 40,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 3,
+        "mesh": 3,
+        "triangles": 60,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 3,
+        "mesh": 3,
+        "triangles": 112,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 4,
+        "mesh": 4,
+        "triangles": 288,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 4,
+        "mesh": 4,
+        "triangles": 80,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 4,
+        "mesh": 4,
+        "triangles": 40,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 4,
+        "mesh": 4,
+        "triangles": 60,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 4,
+        "mesh": 4,
+        "triangles": 96,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 5,
+        "mesh": 5,
+        "triangles": 2042,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 5,
+        "mesh": 5,
+        "triangles": 336,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 6,
+        "mesh": 6,
+        "triangles": 464,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 6,
+        "mesh": 6,
+        "triangles": 216,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 6,
+        "mesh": 6,
+        "triangles": 112,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 6,
+        "mesh": 6,
+        "triangles": 392,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 6,
+        "mesh": 6,
+        "triangles": 432,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 6,
+        "mesh": 6,
+        "triangles": 352,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      },
+      {
+        "node": 6,
+        "mesh": 6,
+        "triangles": 120,
+        "attributes": [
+          "NORMAL",
+          "POSITION",
+          "TEXCOORD_0"
+        ]
+      }
+    ],
+    "skins": [],
+    "materials": 12,
+    "animations": [],
+    "failures": [],
+    "warnings": [],
+    "visual_gate": "HUMAN_REVIEW",
+    "animation_gate": "NOT_STARTED"
+  },
+  "exported": false,
+  "unverified": [
+    "silhouette",
+    "overlapping faces",
+    "rig deformation",
+    "animation transitions",
+    "engine functional QA"
+  ],
+  "total_triangles": 6474,
+  "objects": [
+    {
+      "name": "LiaAuthoredCollar",
+      "triangles": 132,
+      "vertices": 378,
+      "uv_layers": 1,
+      "nonmanifold_edges": 378,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaContinuousCapelet",
+      "triangles": 256,
+      "vertices": 768,
+      "uv_layers": 1,
+      "nonmanifold_edges": 768,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaContinuousNeckClavicle",
+      "triangles": 476,
+      "vertices": 298,
+      "uv_layers": 1,
+      "nonmanifold_edges": 114,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaHandLeft",
+      "triangles": 580,
+      "vertices": 756,
+      "uv_layers": 1,
+      "nonmanifold_edges": 626,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaHandRight",
+      "triangles": 564,
+      "vertices": 724,
+      "uv_layers": 1,
+      "nonmanifold_edges": 594,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaRetainedAuthoredNeckSurface",
+      "triangles": 2378,
+      "vertices": 2808,
+      "uv_layers": 1,
+      "nonmanifold_edges": 2590,
+      "degenerate_faces": 0
+    },
+    {
+      "name": "LiaTailoredOutfit",
+      "triangles": 2088,
+      "vertices": 4083,
+      "uv_layers": 1,
+      "nonmanifold_edges": 4144,
+      "degenerate_faces": 0
+    }
+  ],
+  "ignored_importer_bone_helpers": [],
+  "failures": [],
+  "warnings": [
+    "NONMANIFOLD_OR_BOUNDARY"
+  ],
+  "basic_checks_passed": true
+}

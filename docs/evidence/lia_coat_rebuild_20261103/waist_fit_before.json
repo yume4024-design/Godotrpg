@@ -1,0 +1,1328 @@
+{
+  "blender": "5.2.2 LTS",
+  "input": "artifacts\\lia-coat-trial-20261103\\lia_tailored_coat.blend",
+  "checks": 432,
+  "failures": [
+    {
+      "z": 1.173,
+      "angle": 25,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 30,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 35,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 40,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 45,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 50,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 55,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 60,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 95,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 100,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 105,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 110,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 115,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 120,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 125,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 130,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 135,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 140,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 145,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 150,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 155,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 160,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 165,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 170,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 175,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.173,
+      "angle": 180,
+      "material": "LiaCollarLining",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 185,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 190,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 195,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 200,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 205,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 210,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 215,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 220,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 225,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 230,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 235,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 240,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 245,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 250,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 255,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 260,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 265,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 270,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 275,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 280,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 285,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 290,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 295,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 300,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 305,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 310,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 315,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 320,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 325,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 330,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.173,
+      "angle": 335,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 25,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 30,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 35,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 40,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 45,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 50,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 55,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 60,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 95,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 100,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 105,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 110,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 115,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 120,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 125,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 130,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 135,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 140,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 145,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 150,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 155,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 160,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 165,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 170,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 175,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.18,
+      "angle": 180,
+      "material": "LiaCollarLining",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 185,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 190,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 195,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 200,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 205,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 210,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 215,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 220,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 225,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 230,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 235,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 240,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 245,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 250,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 255,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 260,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 265,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 270,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 275,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 280,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 285,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 290,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 295,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 300,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 305,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 310,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 315,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 320,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 325,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 330,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.18,
+      "angle": 335,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 10,
+      "material": "LiaForearmCuff",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 15,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 25,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 30,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 35,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 40,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 50,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 55,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 60,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 65,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 70,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 75,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 80,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 85,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 90,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 95,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 100,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 105,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 110,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 115,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 120,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 125,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 130,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 135,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 140,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 145,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 150,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 155,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 160,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 165,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 170,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 175,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.19,
+      "angle": 180,
+      "material": "LiaCollarLining",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 185,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 190,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 195,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 200,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 205,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 210,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 215,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 220,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 225,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 230,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 235,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 240,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 245,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 250,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 255,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 260,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 265,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 270,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 275,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 280,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 285,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 290,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 295,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 300,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 305,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 310,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 320,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 325,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 330,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 335,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 345,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.19,
+      "angle": 350,
+      "material": "LiaForearmCuff",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 10,
+      "material": "LiaForearmCuff",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 15,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 25,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 35,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 95,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 105,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 110,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 115,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 120,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 125,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 130,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 135,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 140,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 145,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 150,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 155,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 160,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 165,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 170,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 175,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailRight"
+    },
+    {
+      "z": 1.2,
+      "angle": 180,
+      "material": "LiaCollarLining",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 185,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 190,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 195,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 200,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 205,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 210,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 215,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 220,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 225,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 230,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 235,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 240,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 245,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 250,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 255,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 265,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 325,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 335,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 345,
+      "material": "LiaMatchedSleeve",
+      "object": "LiaCoatTailLeft"
+    },
+    {
+      "z": 1.2,
+      "angle": 350,
+      "material": "LiaForearmCuff",
+      "object": "LiaCoatTailLeft"
+    }
+  ],
+  "scope": "Static waist-band radial visibility, not animation or full body intersection QA"
+}

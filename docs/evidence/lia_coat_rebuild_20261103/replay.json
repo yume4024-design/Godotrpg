@@ -1,0 +1,23 @@
+{
+  "byte_identical": false,
+  "final_sha256": "7d6522d9d6a33f4348c2c94fe41917f7af348ac4c63a86e77ba9ceb2789962de",
+  "replay_sha256": "c9f66fc518ec3a4cc26fc21e8fb45d53b40d40240d4be0eebf21b83b4da51e1a",
+  "json_geometry_indices_normals_materials_images_identical": true,
+  "uv_differences": [
+    {
+      "mesh": "LiaTailoredBodice",
+      "semantic": "TEXCOORD_0",
+      "buffer_view": 96,
+      "changed_floats": 4,
+      "maximum_difference": 5.960464477539063e-08
+    },
+    {
+      "mesh": "LiaTailoredBodice",
+      "semantic": "TEXCOORD_0",
+      "buffer_view": 100,
+      "changed_floats": 16,
+      "maximum_difference": 5.960464477539063e-08
+    }
+  ],
+  "scope": "Small bevel UV rounding differences on untextured new outfit; no byte-identical claim"
+}

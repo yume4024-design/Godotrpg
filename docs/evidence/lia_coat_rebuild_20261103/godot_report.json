@@ -1,0 +1,60 @@
+{
+	"animation_tested": false,
+	"asset": "lia_coat_final",
+	"category": "player_character",
+	"checks": 85,
+	"failures": [],
+	"formal_gameplay": false,
+	"godot": {
+		"build": "official",
+		"hash": "ed1daf0bf001b61586d9930840f2f1394092c079",
+		"hex": 263938,
+		"major": 4,
+		"minor": 7,
+		"patch": 2,
+		"status": "stable",
+		"string": "4.7.2-stable (official)",
+		"timestamp": 0
+	},
+	"graphical": true,
+	"height_range": [
+		0.0,
+		1.94999992847443
+	],
+	"import_mode": "GLTFDocument",
+	"model": "D:/RPGGAME/artifacts/lia-coat-final-20261103/lia_tailored_coat.glb",
+	"model_sha256": "7d6522d9d6a33f4348c2c94fe41917f7af348ac4c63a86e77ba9ceb2789962de",
+	"physical_input": false,
+	"rigged": false,
+	"solid_materials": [
+		"LiaMatchedSleeve",
+		"LiaForearmCuff",
+		"LiaCollarLining",
+		"LiaMatchedSleeve",
+		"LiaForearmCuff",
+		"LiaCollarLining",
+		"LiaAuthoredSkin",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve",
+		"LiaAuthoredSkin",
+		"LiaForearmLeather",
+		"LiaForearmTrim",
+		"LiaForearmCuff",
+		"LiaMatchedSleeve",
+		"LiaMatchedSleeve",
+		"LiaForearmCuff",
+		"LiaCoatUnderlayer",
+		"LiaCollarLining",
+		"LiaCoatLeather",
+		"LiaCoatGold",
+		"LiaCoatLaces"
+	],
+	"textures": [
+		"(4096, 4096)",
+		"(2048, 2048)"
+	],
+	"triangles": 6474
+}
