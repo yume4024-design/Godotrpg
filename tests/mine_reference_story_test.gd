@@ -64,6 +64,9 @@ func _capture(label: String) -> void:
 	await RenderingServer.frame_post_draw
 	_check(root.get_texture().get_image().save_webp("user://mine_reference_tests/"+label+".webp")==OK,"Mine graphical evidence "+label)
 
+func _lia_visual_matches(appearance: PackedScene) -> bool:
+	return appearance != null and appearance.resource_path == "res://scenes/characters/lia_pixal_visual.tscn"
+
 func _finish() -> void:
 	_check(_latest_candidate_hero_wired, "Assembled prologue keeps candidate Ren configuration")
 	var minimap: Control = game.ui.get_node_or_null("ExplorationMinimap") as Control
@@ -84,7 +87,7 @@ func _finish() -> void:
 		var expected_title: String = "廢棄礦坑" if game.travel.current_map.map_id == &"mine" else ("低語森林" if game.travel.current_map.map_id == &"forest" else "灰石村")
 		_check(String(minimap.get("_map_title")) == expected_title, "Navigation map title matches the current area")
 	var lia := game.party.member(&"lia")
-	_check(lia != null and lia.definition.appearance.resource_path == "res://scenes/characters/lia_pixal_visual.tscn", "Playable animated Lia remains integrated")
+	_check(lia != null and _lia_visual_matches(lia.definition.appearance), "Playable animated Lia remains integrated")
 	await _capture("candidate_ui")
 	var result: Dictionary = {"checks":checks,"failures":failures,"engine":Engine.get_version_info().string,"display":DisplayServer.get_name(),"mode":"reload" if "--reload" in OS.get_cmdline_user_args() else "prologue"}
 	FileAccess.open("user://mine_reference_tests/story_result.json",FileAccess.WRITE).store_string(JSON.stringify(result,"  "))

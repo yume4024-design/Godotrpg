@@ -1,0 +1,18 @@
+{
+	"checks": 196,
+	"failures": [
+		"skin Binding",
+		"skin CrookTip",
+		"skin Grip",
+		"skin Shaft",
+		"skin WillowCrook",
+		"geometry count preserved"
+	],
+	"limits": [
+		"Native automated controller review only",
+		"Not gameplay/save regression, terrain IK or human acceptance"
+	],
+	"model": "D:/RPGGAME/artifacts/lia-rig-trial-20261103/lia_rigged.glb",
+	"renderer": "Windows",
+	"triangles": 6614
+}

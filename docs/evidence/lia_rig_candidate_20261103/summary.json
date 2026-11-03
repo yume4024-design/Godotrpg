@@ -1,0 +1,25 @@
+{
+  "source": "artifacts\\lia-coat-final-20261103\\lia_tailored_coat.blend",
+  "source_sha256": "2254aeb44c49422d9d2ef098f4037a4ffc077044631dc25fb5ed90261efbbdde",
+  "triangles": 6474,
+  "bones": 19,
+  "geometry_uv_unchanged": true,
+  "weight_max_error": 2.9802322387695312e-08,
+  "max_influences": 2,
+  "cycle_distances": {
+    "walk": 0.9738300740718842,
+    "run": 1.6035846173763275
+  },
+  "sha256": {
+    "lia_rigged.blend": "b7ce42fd57e55945a5ccd3ac4f4c81722c3604dbd02c250422271ce8ed0d0107",
+    "lia_rigged.glb": "c1ca74967909d0fdcbf745a3ed144d5c6267a6c695dfba560a7b9da0e2c53bb1"
+  },
+  "limitations": [
+    "Candidate only; no formal game replacement",
+    "Single aggregate finger bone; staff grip not individually authored",
+    "No terrain IK or collision-free cloth claim",
+    "Gameplay, transitions and visual deformation require separate tests"
+  ],
+  "pose_samples": 127,
+  "formal_model_sha256": "8436c96f94e8091fdb836ac09b6c83439b3c6856626db637597cd32b960c7f24"
+}

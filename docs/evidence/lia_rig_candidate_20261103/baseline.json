@@ -1,0 +1,7 @@
+{
+  "command": "tools/godot.ps1 -Mode VisualMineReferenceStory",
+  "checks": 94,
+  "failures": 0,
+  "local_log": "artifacts\\logs\\visualminereferencestory-20261103-182031-569.log",
+  "sha256": "3d946df637ac430f7ef018c56a8168dd428aa8bacdafaf058dd6184d22d8d5f9"
+}

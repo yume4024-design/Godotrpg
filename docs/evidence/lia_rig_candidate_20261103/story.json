@@ -1,0 +1,15 @@
+{
+  "battles_observed": 3,
+  "checks_before_base_finish": 103,
+  "failures": 0,
+  "limits": [
+    "Automatic graphical regression, not human playthrough",
+    "Candidate appearance injection only; production model unchanged"
+  ],
+  "model": "D:/RPGGAME/artifacts/lia-rig-axis-fixed-20261103/lia_rigged.glb",
+  "renderer": "Windows",
+  "final_checks": 112,
+  "final_failures": 0,
+  "local_log": "artifacts\\lia-rig-axis-fixed-20261103\\story.log",
+  "log_sha256": "261c0c7c480cdce7116c71bde310c8667c247eaaadfdd59759ed5ef85eaa442f"
+}
