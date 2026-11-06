@@ -65,7 +65,7 @@ func _capture(label: String) -> void:
 	_check(root.get_texture().get_image().save_webp("user://mine_reference_tests/"+label+".webp")==OK,"Mine graphical evidence "+label)
 
 func _lia_visual_matches(appearance: PackedScene) -> bool:
-	return appearance != null and appearance.resource_path == "res://scenes/characters/lia_pixal_visual.tscn"
+	return appearance != null and appearance.resource_path == "res://scenes/characters/lia_rebuilt_visual.tscn"
 
 func _finish() -> void:
 	_check(_latest_candidate_hero_wired, "Assembled prologue keeps candidate Ren configuration")

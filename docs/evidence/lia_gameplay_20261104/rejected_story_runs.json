@@ -1,0 +1,34 @@
+{
+  "reason": "Counters and exit code did not capture null-map script error; rejected despite printed zero failures. Fixed by inspecting NPC after transition and using the existing error-scanning Godot launcher. Initial typed-array constructor parse failure also retained.",
+  "runs": [
+    {
+      "log": "artifacts/lia-grip-narrow-20261104/story_final.log",
+      "sha256": "2c37b312a7b8a9206f23f490477ef0b82e7cdb5f9317be0174bd40847429af02",
+      "rejected": true,
+      "errors": [
+        "SCRIPT ERROR: Cannot call method 'get_node' on a null value.",
+        "   at: _attach_game (res://tests/lia_rebuild_story_test.gd:59)",
+        "       [0] _attach_game (res://tests/lia_rebuild_story_test.gd:59)"
+      ]
+    },
+    {
+      "log": "artifacts/lia-grip-narrow-20261104/reload_final.log",
+      "sha256": "ac0518088e8d7971cde5621d522b6266d95ec6fac24755505075657f9081e443",
+      "rejected": true,
+      "errors": [
+        "SCRIPT ERROR: Cannot call method 'get_node' on a null value.",
+        "   at: _attach_game (res://tests/lia_rebuild_story_test.gd:59)",
+        "       [0] _attach_game (res://tests/lia_rebuild_story_test.gd:59)"
+      ]
+    },
+    {
+      "log": "artifacts/lia-grip-narrow-20261104/story.log",
+      "sha256": "27ab3a0b0ff8a825b4ec5f0a3d9c636c0a84e0bb29560437b9a63854c2b57c3d",
+      "rejected": true,
+      "errors": [
+        "SCRIPT ERROR: Parse Error: Cannot call on an expression. Use \".call()\" if it's a Callable.",
+        "   at: GDScript::reload (res://tests/lia_rebuild_story_test.gd:48)"
+      ]
+    }
+  ]
+}

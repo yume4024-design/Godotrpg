@@ -1,0 +1,112 @@
+{
+  "verified_on": "2026-11-06",
+  "engine": "4.7.2.stable.official.ed1daf0bf",
+  "blender": "5.2.2 LTS",
+  "model": {
+    "sha256": "a7ea56fe02283c6c0b9bc91a5c5fd0b276c3cfb70e46b835f4805c4b4131cff1",
+    "bytes": 19112556
+  },
+  "triangles": 6474,
+  "staff_triangles": 140,
+  "bones": 29,
+  "clips": 10,
+  "gates": {
+    "controller": "278/0",
+    "movement": "110/0",
+    "installed_prologue": "133/0",
+    "new_process_reload": "37/0",
+    "old_pixal": "88/0",
+    "ren_runtime": "93/0",
+    "foot_boundary": "10/0",
+    "old_save_migration": "91/0",
+    "migration_restart": "6/0",
+    "project_load": "PASS"
+  },
+  "logs": [
+    {
+      "log": "artifacts/lia-grip-narrow-20261104/controller_final.log",
+      "sha256": "2a111af64669f6a04d071e8d31d08b79db3542fb7fd957ccbdc9374ddf3531ef",
+      "result_lines": [
+        "LIA_REBUILD_CONTROLLER_RESULT checks=278 failures=0"
+      ]
+    },
+    {
+      "log": "artifacts/lia-grip-narrow-20261104/movement_final.log",
+      "sha256": "ffd4ef587bb346ef303f53cf0aac69a9371ffd66c4ec94242801f571aa8a6651",
+      "result_lines": [
+        "LIA_CANDIDATE_MOVEMENT {\"checks\":110,\"failures\":0,\"foot_placement\":true,\"limits\":[\"Automated InputMap movement, not human Xbox acceptance\",\"Foot placement opt-in flag is recorded; not production enablement\"],\"maximum_stance_m\":0.0603346824645996,\"minimum_sole_m\":-0.0134334564208984,\"missed_points\":[],\"pose_samples\":462,\"ray_misses\":0,\"renderer\":\"Windows\",\"routes\":[{\"end\":\"(-4.952962, 3.044382, -6.76475)\",\"frames\":332,\"grounded\":332,\"reached\":true,\"run\":false,\"target\":\"(-5.0, 3.0, -7.0)\"},{\"end\":\"(-8.816983, 3.044382, -9.662736)\",\"frames\":161,\"grounded\":161,\"reached\":true,\"run\":false,\"target\":\"(-9.0, 3.0, -9.8)\"},{\"end\":\"(-5.200095, 3.044382, -7.139588)\",\"frames\":147,\"grounded\":147,\"reached\":true,\"run\":false,\"target\":\"(-5.0, 3.0, -7.0)\"},{\"end\":\"(-3.049904, 3.035799, 2.769996)\",\"frames\":338,\"grounded\":338,\"reached\":true,\"run\":false,\"target\":\"(-3.0, 3.0, 3.0)\"},{\"end\":\"(-7.0, 0.064141, 29.22495)\",\"frames\":77,\"grounded\":77,\"reached\":true,\"run\":true,\"target\":\"(-7.0, 0.0, 29.0)\"},{\"end\":\"(-7.0, 1.455871, 26.24561)\",\"frames\":49,\"grounded\":49,\"reached\":true,\"run\":true,\"target\":\"(-7.0, 1.5, 26.0)\"},{\"end\":\"(-7.000001, 2.955893, 23.24561)\",\"frames\":51,\"grounded\":51,\"reached\":true,\"run\":true,\"target\":\"(-7.0, 3.0, 23.0)\"},{\"end\":\"(-7.0, 1.677572, 25.80137)\",\"frames\":34,\"grounded\":34,\"reached\":true,\"run\":true,\"target\":\"(-7.0, 1.5, 26.0)\"},{\"end\":\"(-7.0, 0.173666, 28.80914)\",\"frames\":41,\"grounded\":41,\"reached\":true,\"run\":true,\"target\":\"(-7.0, 0.0, 29.0)\"},{\"end\":\"(-23.85298, 5.97529, -24.82355)\",\"frames\":116,\"grounded\":116,\"reached\":true,\"run\":true,\"target\":\"(-24.0, 6.0, -25.0)\"},{\"end\":\"(-24.93659, 6.056839, -28.76941)\",\"frames\":55,\"grounded\":55,\"reached\":true,\"run\":true,\"target\":\"(-25.0, 6.0, -29.0)\"},{\"end\":\"(-10.23831, 6.056839, -28.99632)\",\"frames\":196,\"grounded\":196,\"reached\":true,\"run\":true,\"target\":\"(-10.0, 6.0, -29.0)\"},{\"end\":\"(7.814201, 6.058696, -28.99982)\",\"frames\":241,\"grounded\":241,\"reached\":true,\"run\":true,\"target\":\"(8.0, 6.0, -29.0)\"},{\"end\":\"(3.139281, 6.058696, -35.79748)\",\"frames\":110,\"grounded\":110,\"reached\":true,\"run\":true,\"target\":\"(3.0, 6.0, -36.0)\"},{\"end\":\"(0.086743, 10.00388, -42.79992)\",\"frames\":129,\"grounded\":129,\"reached\":true,\"run\":true,\"target\":\"(0.0, 10.0, -43.0)\"},{\"end\":\"(18.82172, 3.080029, -5.893287)\",\"frames\":75,\"grounded\":75,\"reached\":true,\"run\":true,\"target\":\"(19.0, 3.08, -6.0)\"},{\"end\":\"(26.78943, 3.700066, -5.997268)\",\"frames\":109,\"grounded\":109,\"reached\":true,\"run\":true,\"target\":\"(27.0, 3.7, -6.0)\"},{\"end\":\"(34.81774, 3.132857, -5.999939)\",\"frames\":107,\"grounded\":107,\"reached\":true,\"run\":true,\"target\":\"(35.0, 3.08, -6.0)\"},{\"end\":\"(38.79293, 3.06816, -5.999997)\",\"frames\":53,\"grounded\":53,\"reached\":true,\"run\":true,\"target\":\"(39.0, 3.0, -6.0)\"},{\"end\":\"(39.94131, 3.06816, -9.805496)\",\"frames\":53,\"grounded\":53,\"reached\":true,\"run\":true,\"target\":\"(40.0, 3.0, -10.0)\"},{\"end\":\"(39.99842, 5.992212, -16.79516)\",\"frames\":110,\"grounded\":110,\"reached\":true,\"run\":true,\"target\":\"(40.0, 6.0, -17.0)\"}],\"worst_penetration\":{\"distance\":-0.0134334564208984,\"left\":0.00403928756713867,\"player\":\"(7.814201, 6.058696, -28.99982)\",\"right\":-0.0134334564208984,\"sample\":325},\"worst_stance\":{\"distance\":0.0603346824645996,\"left\":0.0680346488952637,\"player\":\"(4.687132, 6.00018, -28.99956)\",\"right\":0.0603346824645996,\"sample\":317}}"
+      ]
+    },
+    {
+      "log": "artifacts/logs/check-20261104-072236-851.log",
+      "sha256": "acab080fe55c229169b1e2fcc100ffcb5d2446096214ccc697f74c7cc0b79a9d",
+      "result_lines": []
+    },
+    {
+      "log": "artifacts/logs/testpixalcharacters-20261104-072557-042.log",
+      "sha256": "b79c305a5b136ba3651c541439a2cca580627510da90b546e7c40598d1f4ae5d",
+      "result_lines": [
+        "PIXAL_CHARACTER_RESULT checks=88 failures=0"
+      ]
+    },
+    {
+      "log": "artifacts/logs/testfemalefootboundary-20261104-072301-580.log",
+      "sha256": "118f859697356d8902e3d9a030f7bccc4065759460e886566d4ab161b0478322",
+      "result_lines": [
+        "FEMALE_FOOT_BOUNDARY_RESULT checks=10 failures=0"
+      ]
+    },
+    {
+      "log": "artifacts/logs/visualrenruntime-20261104-072645-913.log",
+      "sha256": "0e3fc561f8bfd384a91e28a2775cefb2cbe2b20c322e3f4777793285253804fa",
+      "result_lines": [
+        "REN_RUNTIME_RESULT: checks=93 failures=0"
+      ]
+    },
+    {
+      "log": "artifacts/logs/testprologuemigration-20261104-072726-599.log",
+      "sha256": "0f0ab14a2c18cfd1fef679ee84b7b9c25d5a304e8aca9615f4f348b521b18a97",
+      "result_lines": [
+        "REFERENCE_MIGRATION_RESULT checks=91 failures=0"
+      ]
+    },
+    {
+      "log": "artifacts/logs/testprologuemigrationreload-20261104-072854-296.log",
+      "sha256": "3ba226f4fbe9f94b54fc7b3985e49c37d4582369d84406db1ee996baf9f2654c",
+      "result_lines": [
+        "REFERENCE_MIGRATION_RESULT checks=6 failures=0"
+      ]
+    },
+    {
+      "log": "artifacts/logs/visualliarebuiltstory-20261106-115153-931.log",
+      "sha256": "496b4875c53baf0eff8bded138283f4d1907e2674153ea8d478bbfd3dffb239e",
+      "result_lines": [
+        "MINE_STORY_RESULT checks=133 failures=0"
+      ]
+    },
+    {
+      "log": "artifacts/logs/visualliarebuiltreload-20261106-115249-183.log",
+      "sha256": "eada25623a80759124d2c6256c36daff69c2cd29adbc263e1b7e8504b6deacf5",
+      "result_lines": [
+        "MINE_STORY_RESULT checks=37 failures=0"
+      ]
+    }
+  ],
+  "limits": [
+    "Automatic native graphical tests, not human acceptance",
+    "Foot placement calibrated only in opt-in movement fixture",
+    "Fixed RC5 and formal v0.6.1 untouched; no current package or 30 minute performance result"
+  ],
+  "source_files": {
+    "scripts/characters/female_actor.gd": "234610ceb901537a7d4fef6efad93704ff9c163c74865ee548446d739c885639",
+    "scripts/characters/lia_foot_placement.gd": "c8f93611707484fed313f2d79e49de2a4d241133b76cd699be508c0caff9f736",
+    "scripts/core/greystone_integration.gd": "bdecce323e212bd9ee3d9b02f9e9571c4026e38f4efd7960038b2730660c06d6",
+    "scenes/main/prologue_candidate.tscn": "2a02146673f7006011b889d001db90fdff026fe815f3783d12d1d4155662da7f",
+    "scenes/characters/lia_rebuilt_visual.tscn": "2dabae0210c5067bad599faabf208fd4d1e24d1e14c708a88bcc3b860aa58ee9",
+    "tests/lia_rebuild_controller_test.gd": "cc4871d7cb8884eeefc08406bf42aa6874bdcea8b5011376f4bfa75d76c999fc",
+    "tests/lia_rebuild_story_test.gd": "7ae07e75bdcaa1cf99453b33b13aeff20b19545ab1038c096bdcbda0f9cc1f43",
+    "tests/lia_rebuild_movement_test.gd": "2b4184c9a06511e9d0ce96a72fedb0103838d37b9c6122e89a8c820d371e2dd5",
+    "tests/mine_reference_story_test.gd": "5e96f5c53e3307e4f03f63e6820aca818472203273c9c0a4588470baaad2869a",
+    "tools/godot.ps1": "fddf73ed010f723e6456e263312a90e472f9e9566113a90f955b4c9b60b0cb04"
+  }
+}

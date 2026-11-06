@@ -1,0 +1,29 @@
+{
+  "source": "source_assets/character_rebuild_20261020/lia/rig_candidate_20261103/lia_rigged.blend",
+  "triangles": 6474,
+  "bones": 29,
+  "animation_clips": 10,
+  "rigid_staff_triangles": 140,
+  "files": {
+    "source_assets/character_rebuild_20261020/lia/grip_locomotion_20261104/lia_grip.blend": {
+      "sha256": "af6ade9f4aabda3c34d6f8c6a6584e57ebc541e729d9f252f0439ffc99fc316c",
+      "bytes": 18906061
+    },
+    "source_assets/character_rebuild_20261020/lia/grip_locomotion_20261104/lia_locomotion.blend": {
+      "sha256": "74e4c36a0d8fa168a8ffad50676299ab0f4ce2be61061ec43f8ebacc72e84f49",
+      "bytes": 18925389
+    },
+    "assets/models/rebuilt_characters/lia_runtime.glb": {
+      "sha256": "a7ea56fe02283c6c0b9bc91a5c5fd0b276c3cfb70e46b835f4805c4b4131cff1",
+      "bytes": 19112556
+    },
+    "assets/models/rebuilt_characters/lia_motion_profile.tres": {
+      "sha256": "3675efead91436cea4c82694989146db85805de16c6ef51e10c4ac987931c0ad",
+      "bytes": 283
+    }
+  },
+  "limits": [
+    "Foot placement remains opt-in pending cross-map moving-actor review",
+    "Playable prologue candidate only; fixed RC5 package and formal v0.6.1 untouched"
+  ]
+}

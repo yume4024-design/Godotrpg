@@ -4,6 +4,7 @@ var candidate: PackedScene
 var source_path: String
 var output_dir: String
 var battles_observed: int = 0
+var installed_village_checks: int = 0
 
 func _initialize() -> void:
 	var args: PackedStringArray = OS.get_cmdline_user_args()
@@ -20,6 +21,7 @@ func _initialize() -> void:
 	visual_slot = "user://lia_rebuild_story/visual.json"
 
 func _create_game() -> ExplorationGame:
+	if "--installed" in OS.get_cmdline_user_args(): return super._create_game()
 	var doc := GLTFDocument.new()
 	var state := GLTFState.new()
 	_check(doc.append_from_file(source_path, state) == OK, "Candidate GLB loads for actual story")
@@ -32,6 +34,20 @@ func _create_game() -> ExplorationGame:
 	actor.set("staff_rest_origin", Vector3(-.463, 1.015, -.061))
 	actor.set("palm_rest_origin", Vector3(-.463, 1.015, -.061))
 	actor.set("motion_profile", load(source_path.get_base_dir().path_join("lia_motion_profile.tres")))
+	if "--grip" in OS.get_cmdline_user_args():
+		var grip: Dictionary = JSON.parse_string(FileAccess.get_file_as_string(source_path.get_base_dir().path_join("grip_receipt.json")))
+		var origin: Array = grip.staff_rest_origin_godot
+		var direction: Array = grip.staff_rest_direction_godot
+		actor.set("staff_rest_origin", Vector3(origin[0], origin[1], origin[2]))
+		actor.set("palm_rest_origin", Vector3(origin[0], origin[1], origin[2]))
+		actor.set("staff_rest_direction", Vector3(direction[0], direction[1], direction[2]))
+		actor.set("staff_thickness_scale", grip.staff_thickness_scale)
+		actor.set("staff_grip_clip", &"staff_grip")
+	if "--narrow" in OS.get_cmdline_user_args():
+		actor.set("walk_animation", &"walk_narrow")
+		actor.set("run_animation", &"run_narrow")
+		var loops: Array[StringName] = [&"walk", &"run", &"walk_narrow", &"run_narrow"]
+		actor.set("looping_clips", loops)
 	candidate = PackedScene.new()
 	_check(candidate.pack(actor) == OK, "Pack existing actor with candidate appearance")
 	actor.free()
@@ -39,6 +55,10 @@ func _create_game() -> ExplorationGame:
 
 func _attach_game(instance: ExplorationGame) -> void:
 	super._attach_game(instance)
+	if "--installed" in OS.get_cmdline_user_args():
+		_check(instance.companion_appearance.resource_path == "res://scenes/characters/lia_rebuilt_visual.tscn", "Installed prologue selects rebuilt companion")
+		instance.travel.transition_changed.connect(_observe_installed_map.bind(instance))
+		return
 	# Greystone _ready duplicates definitions before assigning presentations.
 	# Update those private instances before recruitment/load; retain all RPG fields.
 	for definition: CombatantDefinition in instance.battles.definitions:
@@ -46,7 +66,20 @@ func _attach_game(instance: ExplorationGame) -> void:
 	for definition: CombatantDefinition in instance.party.recruit_definitions:
 		if definition.id == &"lia": definition.appearance = candidate
 
+func _observe_installed_map(active: bool, instance: ExplorationGame) -> void:
+	if active: return
+	var map: ExplorationMap = instance.travel.current_map
+	_check(is_instance_valid(map), "Completed transition has a current map")
+	if not is_instance_valid(map) or map.map_id != &"greystone_runtime": return
+	installed_village_checks += 1
+	var npc: CartoonActor = map.get_node_or_null("NPCs/Lia/Appearance") as CartoonActor
+	_check(npc != null and npc.scene_file_path == instance.companion_appearance.resource_path, "Loaded village NPC uses rebuilt companion")
+	if npc == null: return
+	_check(npc.model.resource_path == "res://assets/models/rebuilt_characters/lia_runtime.glb", "Village NPC uses delivered model")
+	_check((npc.get("skeleton") as Skeleton3D).get_bone_count() == 29, "Village NPC imports rebuilt grip bones")
+
 func _lia_visual_matches(appearance: PackedScene) -> bool:
+	if "--installed" in OS.get_cmdline_user_args(): return super._lia_visual_matches(appearance)
 	return appearance == candidate
 
 func _manager() -> BattleManager:
@@ -62,7 +95,7 @@ func _manager() -> BattleManager:
 			for mesh: MeshInstance3D in meshes:
 				if (lia.get("staff_visual") as Node).is_ancestor_of(mesh): continue
 				for surface: int in mesh.mesh.get_surface_count(): count += mesh.mesh.surface_get_array_index_len(surface) / 3
-			_check(count == 6474 and skeleton.get_bone_count() == 19, "Real battle contains rebuilt Lia geometry and rig")
+			_check(count == 6474 and skeleton.get_bone_count() == (29 if "--grip" in OS.get_cmdline_user_args() else 19), "Real battle contains rebuilt Lia geometry and rig")
 			_check((lia.get("animation_player") as AnimationPlayer).has_animation(&"cast"), "Real battle retains candidate casting clip")
 			battles_observed += 1
 			await _capture("battle_" + str(battles_observed))
@@ -75,6 +108,8 @@ func _capture(label: String) -> void:
 	_check(root.get_texture().get_image().save_webp(output_dir.path_join(label + ".webp")) == OK, "Candidate native story capture " + label)
 
 func _finish() -> void:
+	if "--installed" in OS.get_cmdline_user_args():
+		_check(installed_village_checks > 0, "Installed NPC was actually checked after transition")
 	var reload_only: bool = "--reload" in OS.get_cmdline_user_args()
 	if not reload_only: _check(battles_observed >= 2, "Candidate observed in tutorial and boss battles")
 	var lia: CombatantState = game.party.member(&"lia")
@@ -85,5 +120,5 @@ func _finish() -> void:
 		_check((restored.get("animation_player") as AnimationPlayer).has_animation(&"run"), "Saved party can instantiate animated model")
 		restored.free()
 	var suffix: String = "reload" if reload_only else "story"
-	FileAccess.open(output_dir.path_join(suffix + ".json"), FileAccess.WRITE).store_string(JSON.stringify({"checks_before_base_finish":checks,"failures":failures,"battles_observed":battles_observed,"model":source_path,"renderer":DisplayServer.get_name(),"limits":["Automatic graphical regression, not human playthrough","Candidate appearance injection only; production model unchanged"]}, "\t"))
+	FileAccess.open(output_dir.path_join(suffix + ".json"), FileAccess.WRITE).store_string(JSON.stringify({"checks_before_base_finish":checks,"failures":failures,"installed_village_checks":installed_village_checks,"battles_observed":battles_observed,"model":source_path,"renderer":DisplayServer.get_name(),"limits":["Automatic graphical regression, not human playthrough","Installed prologue candidate" if "--installed" in OS.get_cmdline_user_args() else "Candidate appearance injection only"]}, "\t"))
 	await super._finish()

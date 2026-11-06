@@ -1,0 +1,199 @@
+{
+	"checks": 110,
+	"failures": 0,
+	"foot_placement": true,
+	"limits": [
+		"Automated InputMap movement, not human Xbox acceptance",
+		"Foot placement opt-in flag is recorded; not production enablement"
+	],
+	"maximum_stance_m": 0.0603346824645996,
+	"minimum_sole_m": -0.0134334564208984,
+	"missed_points": [],
+	"pose_samples": 462,
+	"ray_misses": 0,
+	"renderer": "Windows",
+	"routes": [
+		{
+			"end": "(-4.952962, 3.044382, -6.76475)",
+			"frames": 332,
+			"grounded": 332,
+			"reached": true,
+			"run": false,
+			"target": "(-5.0, 3.0, -7.0)"
+		},
+		{
+			"end": "(-8.816983, 3.044382, -9.662736)",
+			"frames": 161,
+			"grounded": 161,
+			"reached": true,
+			"run": false,
+			"target": "(-9.0, 3.0, -9.8)"
+		},
+		{
+			"end": "(-5.200095, 3.044382, -7.139588)",
+			"frames": 147,
+			"grounded": 147,
+			"reached": true,
+			"run": false,
+			"target": "(-5.0, 3.0, -7.0)"
+		},
+		{
+			"end": "(-3.049904, 3.035799, 2.769996)",
+			"frames": 338,
+			"grounded": 338,
+			"reached": true,
+			"run": false,
+			"target": "(-3.0, 3.0, 3.0)"
+		},
+		{
+			"end": "(-7.0, 0.064141, 29.22495)",
+			"frames": 77,
+			"grounded": 77,
+			"reached": true,
+			"run": true,
+			"target": "(-7.0, 0.0, 29.0)"
+		},
+		{
+			"end": "(-7.0, 1.455871, 26.24561)",
+			"frames": 49,
+			"grounded": 49,
+			"reached": true,
+			"run": true,
+			"target": "(-7.0, 1.5, 26.0)"
+		},
+		{
+			"end": "(-7.000001, 2.955893, 23.24561)",
+			"frames": 51,
+			"grounded": 51,
+			"reached": true,
+			"run": true,
+			"target": "(-7.0, 3.0, 23.0)"
+		},
+		{
+			"end": "(-7.0, 1.677572, 25.80137)",
+			"frames": 34,
+			"grounded": 34,
+			"reached": true,
+			"run": true,
+			"target": "(-7.0, 1.5, 26.0)"
+		},
+		{
+			"end": "(-7.0, 0.173666, 28.80914)",
+			"frames": 41,
+			"grounded": 41,
+			"reached": true,
+			"run": true,
+			"target": "(-7.0, 0.0, 29.0)"
+		},
+		{
+			"end": "(-23.85298, 5.97529, -24.82355)",
+			"frames": 116,
+			"grounded": 116,
+			"reached": true,
+			"run": true,
+			"target": "(-24.0, 6.0, -25.0)"
+		},
+		{
+			"end": "(-24.93659, 6.056839, -28.76941)",
+			"frames": 55,
+			"grounded": 55,
+			"reached": true,
+			"run": true,
+			"target": "(-25.0, 6.0, -29.0)"
+		},
+		{
+			"end": "(-10.23831, 6.056839, -28.99632)",
+			"frames": 196,
+			"grounded": 196,
+			"reached": true,
+			"run": true,
+			"target": "(-10.0, 6.0, -29.0)"
+		},
+		{
+			"end": "(7.814201, 6.058696, -28.99982)",
+			"frames": 241,
+			"grounded": 241,
+			"reached": true,
+			"run": true,
+			"target": "(8.0, 6.0, -29.0)"
+		},
+		{
+			"end": "(3.139281, 6.058696, -35.79748)",
+			"frames": 110,
+			"grounded": 110,
+			"reached": true,
+			"run": true,
+			"target": "(3.0, 6.0, -36.0)"
+		},
+		{
+			"end": "(0.086743, 10.00388, -42.79992)",
+			"frames": 129,
+			"grounded": 129,
+			"reached": true,
+			"run": true,
+			"target": "(0.0, 10.0, -43.0)"
+		},
+		{
+			"end": "(18.82172, 3.080029, -5.893287)",
+			"frames": 75,
+			"grounded": 75,
+			"reached": true,
+			"run": true,
+			"target": "(19.0, 3.08, -6.0)"
+		},
+		{
+			"end": "(26.78943, 3.700066, -5.997268)",
+			"frames": 109,
+			"grounded": 109,
+			"reached": true,
+			"run": true,
+			"target": "(27.0, 3.7, -6.0)"
+		},
+		{
+			"end": "(34.81774, 3.132857, -5.999939)",
+			"frames": 107,
+			"grounded": 107,
+			"reached": true,
+			"run": true,
+			"target": "(35.0, 3.08, -6.0)"
+		},
+		{
+			"end": "(38.79293, 3.06816, -5.999997)",
+			"frames": 53,
+			"grounded": 53,
+			"reached": true,
+			"run": true,
+			"target": "(39.0, 3.0, -6.0)"
+		},
+		{
+			"end": "(39.94131, 3.06816, -9.805496)",
+			"frames": 53,
+			"grounded": 53,
+			"reached": true,
+			"run": true,
+			"target": "(40.0, 3.0, -10.0)"
+		},
+		{
+			"end": "(39.99842, 5.992212, -16.79516)",
+			"frames": 110,
+			"grounded": 110,
+			"reached": true,
+			"run": true,
+			"target": "(40.0, 6.0, -17.0)"
+		}
+	],
+	"worst_penetration": {
+		"distance": -0.0134334564208984,
+		"left": 0.00403928756713867,
+		"player": "(7.814201, 6.058696, -28.99982)",
+		"right": -0.0134334564208984,
+		"sample": 325
+	},
+	"worst_stance": {
+		"distance": 0.0603346824645996,
+		"left": 0.0680346488952637,
+		"player": "(4.687132, 6.00018, -28.99956)",
+		"right": 0.0603346824645996,
+		"sample": 317
+	}
+}

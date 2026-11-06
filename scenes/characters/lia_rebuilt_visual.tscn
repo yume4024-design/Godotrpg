@@ -1,0 +1,16 @@
+[gd_scene format=3]
+[ext_resource type="Script" path="res://scripts/characters/female_actor.gd" id="Actor"]
+[ext_resource type="PackedScene" path="res://assets/models/rebuilt_characters/lia_runtime.glb" id="Model"]
+[ext_resource type="Resource" path="res://assets/models/rebuilt_characters/lia_motion_profile.tres" id="Motion"]
+[node name="LiaRebuiltVisual" type="Node3D"]
+script = ExtResource("Actor")
+model = ExtResource("Model")
+motion_profile = ExtResource("Motion")
+walk_animation = &"walk_narrow"
+run_animation = &"run_narrow"
+looping_clips = Array[StringName]([&"walk", &"run", &"walk_narrow", &"run_narrow"])
+staff_grip_clip = &"staff_grip"
+staff_thickness_scale = 0.7
+staff_rest_origin = Vector3(-0.47068822383880615, 1.000762701034546, -0.020365532487630844)
+palm_rest_origin = Vector3(-0.47068822383880615, 1.000762701034546, -0.020365532487630844)
+staff_rest_direction = Vector3(-0.8772684335708618, 0.48000022768974304, -0.0)

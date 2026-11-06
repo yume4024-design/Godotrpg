@@ -1,5 +1,9 @@
 extends "res://scripts/characters/user_hero_actor.gd"
 @export var staff_rest_origin: Vector3 = Vector3(-.67,.955,.085)
+@export var staff_rest_direction: Vector3 = Vector3.UP
+@export_range(.1, 2.0) var staff_thickness_scale: float = 1.0
+@export var staff_grip_clip: StringName = &""
+var _staff_grip_rotations: Dictionary[int, Quaternion] = {}
 @export var palm_rest_origin: Vector3 = Vector3(-.66,.95,.08)
 ## Optional authored presentation; existing actors retain their default behavior.
 @export var create_staff_attachment: bool = true
@@ -50,6 +54,7 @@ func _ready() -> void:
 			animation_player.add_animation_library(library_name, library)
 		animation_player.callback_mode_process = AnimationMixer.ANIMATION_CALLBACK_MODE_PROCESS_MANUAL
 		animation_player.animation_finished.connect(_finished)
+		_cache_staff_grip()
 	var hand: int = skeleton.find_bone("HandRight")
 	if hand >= 0 and create_staff_attachment:
 		var socket: BoneAttachment3D = BoneAttachment3D.new()
@@ -57,7 +62,8 @@ func _ready() -> void:
 		skeleton.add_child(socket)
 		staff_visual = load("res://assets/models/female/willow_staff.glb").instantiate()
 		socket.add_child(staff_visual)
-		staff_visual.transform = skeleton.get_bone_global_rest(hand).affine_inverse() * Transform3D(Basis.IDENTITY, staff_rest_origin)
+		var staff_basis: Basis = Basis(Quaternion(Vector3.UP, staff_rest_direction.normalized())).scaled_local(Vector3(staff_thickness_scale, 1, staff_thickness_scale))
+		staff_visual.transform = skeleton.get_bone_global_rest(hand).affine_inverse() * Transform3D(staff_basis, staff_rest_origin)
 		staff_visual.visible = false
 		staff_focus = Marker3D.new()
 		staff_focus.position = Vector3(.07,.75,0)
@@ -71,6 +77,20 @@ func _ready() -> void:
 		socket.add_child(palm_focus)
 		palm_focus.transform = skeleton.get_bone_global_rest(casting_hand).affine_inverse()*Transform3D(Basis.IDENTITY,palm_rest_origin)
 	if equipment_visual != null: equipment_visual.setup(skeleton)
+
+func _cache_staff_grip() -> void:
+	if staff_grip_clip == &"": return
+	if not animation_player.has_animation(staff_grip_clip):
+		push_error("Configured staff grip animation is missing: " + String(staff_grip_clip))
+		return
+	animation_player.play(staff_grip_clip)
+	animation_player.seek(animation_player.get_animation(staff_grip_clip).length, true)
+	animation_player.advance(0)
+	for name: String in ["HandRight", "IndexRight", "IndexTipRight", "MiddleRight", "MiddleTipRight", "RingRight", "RingTipRight", "PinkyRight", "PinkyTipRight", "ThumbRight", "ThumbTipRight"]:
+		var index: int = skeleton.find_bone(name)
+		if index >= 0:
+			_staff_grip_rotations[index] = skeleton.get_bone_pose_rotation(index)
+	_reset_clip()
 
 func get_spell_focus() -> Node3D:
 	return staff_focus if staff_visual != null and staff_visual.visible else palm_focus
@@ -91,6 +111,8 @@ func set_equipment_visual(weapon: ItemDefinition) -> void:
 	if staff_visual != null:
 		staff_visual.visible = weapon != null and weapon.id == &"willow_staff"
 		if not staff_visual.visible:
+			for index: int in _staff_grip_rotations:
+				skeleton.set_bone_pose_rotation(index, _clip_rest[index])
 			for name: String in ["FingersRight","IndexRight","MiddleRight","RingRight","PinkyRight","ThumbRight"]:
 				var finger: int = skeleton.find_bone(name)
 				if _clip_rest.has(finger): skeleton.set_bone_pose_rotation(finger,_clip_rest[finger])
@@ -98,6 +120,10 @@ func set_equipment_visual(weapon: ItemDefinition) -> void:
 func _apply_grip() -> void:
 	if equipment_visual != null: equipment_visual.apply_grip()
 	if staff_visual == null or not staff_visual.visible: return
+	if not _staff_grip_rotations.is_empty():
+		for index: int in _staff_grip_rotations:
+			skeleton.set_bone_pose_rotation(index, _staff_grip_rotations[index])
+		return
 	_curl_bone("FingersRight",.45)
 	for name: String in ["IndexRight","MiddleRight","RingRight","PinkyRight"]:
 		_curl_bone(name,.35)
@@ -241,3 +267,4 @@ func set_dead(value: bool) -> void:
 		_blend_positions.clear()
 	super.set_dead(value)
 	_update_face(0)
+	if value and not _staff_grip_rotations.is_empty(): _apply_grip()

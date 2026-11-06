@@ -1,0 +1,12 @@
+{
+	"battles_observed": 0,
+	"checks_before_base_finish": 28,
+	"failures": 0,
+	"installed_village_checks": 2,
+	"limits": [
+		"Automatic graphical regression, not human playthrough",
+		"Installed prologue candidate"
+	],
+	"model": "D:\\RPGGAME\\assets\\models\\rebuilt_characters\\lia_runtime.glb",
+	"renderer": "Windows"
+}

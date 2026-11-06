@@ -1,0 +1,93 @@
+{
+  "source_sha256": "b7ce42fd57e55945a5ccd3ac4f4c81722c3604dbd02c250422271ce8ed0d0107",
+  "geometry_uv_unchanged": true,
+  "bones": 29,
+  "new_bones": [
+    "IndexRight",
+    "IndexTipRight",
+    "MiddleRight",
+    "MiddleTipRight",
+    "RingRight",
+    "RingTipRight",
+    "PinkyRight",
+    "PinkyTipRight",
+    "ThumbRight",
+    "ThumbTipRight"
+  ],
+  "grip_measurements": {
+    "IndexRight": {
+      "opposition_degrees": 0,
+      "proximal_degrees": 18,
+      "distal_degrees": 66,
+      "minimum_sampled_shaft_clearance_m": -0.00016895140480008633,
+      "tip_center_radius_m": 0.02877355104611447,
+      "samples": "vertices, internal edge midpoints and face centers; not continuous collision proof"
+    },
+    "MiddleRight": {
+      "opposition_degrees": 0,
+      "proximal_degrees": 3,
+      "distal_degrees": 87,
+      "minimum_sampled_shaft_clearance_m": -0.00012919734440483902,
+      "tip_center_radius_m": 0.028952060630885023,
+      "samples": "vertices, internal edge midpoints and face centers; not continuous collision proof"
+    },
+    "RingRight": {
+      "opposition_degrees": 0,
+      "proximal_degrees": 18,
+      "distal_degrees": 69,
+      "minimum_sampled_shaft_clearance_m": -1.0531963218932822e-05,
+      "tip_center_radius_m": 0.028850822997274112,
+      "samples": "vertices, internal edge midpoints and face centers; not continuous collision proof"
+    },
+    "PinkyRight": {
+      "opposition_degrees": 0,
+      "proximal_degrees": 21,
+      "distal_degrees": 54,
+      "minimum_sampled_shaft_clearance_m": 0.0001282439930259012,
+      "tip_center_radius_m": 0.029029723253628934,
+      "samples": "vertices, internal edge midpoints and face centers; not continuous collision proof"
+    },
+    "ThumbRight": {
+      "opposition_degrees": 50,
+      "proximal_degrees": 9,
+      "distal_degrees": 63,
+      "minimum_sampled_shaft_clearance_m": 0.0001987533870774008,
+      "tip_center_radius_m": 0.027191870783311294,
+      "samples": "vertices, internal edge midpoints and face centers; not continuous collision proof"
+    }
+  },
+  "staff_thickness_scale": 0.7,
+  "staff_rest_origin_godot": [
+    -0.47068822383880615,
+    1.000762701034546,
+    -0.020365532487630844
+  ],
+  "staff_rest_direction_godot": [
+    -0.8772684335708618,
+    0.48000022768974304,
+    -0.0
+  ],
+  "weight_error": 2.9802322387695312e-08,
+  "sha256": {
+    "lia_rigged.blend": "af6ade9f4aabda3c34d6f8c6a6584e57ebc541e729d9f252f0439ffc99fc316c",
+    "lia_rigged.glb": "cbbe56f08169fe173a108d14d24b6d8baee7ed6935a061348feb8c05f942fa27"
+  },
+  "limitations": [
+    "Sparse shaft sample fitting; visual inspection and runtime tests still required",
+    "Candidate only; original gameplay and character remain unchanged"
+  ],
+  "grip_pose_bones": [
+    "IndexRight",
+    "IndexTipRight",
+    "MiddleRight",
+    "MiddleTipRight",
+    "RingRight",
+    "RingTipRight",
+    "PinkyRight",
+    "PinkyTipRight",
+    "ThumbRight",
+    "ThumbTipRight",
+    "HandRight"
+  ],
+  "metadata_correction": "HandRight is an existing bone; ten digit bones added, eleven grip poses authored."
+}

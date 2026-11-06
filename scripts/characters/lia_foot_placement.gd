@@ -8,6 +8,11 @@ var sole_height: float = .16
 # Conservative footprint around the measured GLB rest bounds (-.135..+.267m).
 const SOLE_FRONT: float = .27
 const SOLE_BACK: float = .14
+# Candidate-specific footprint; defaults preserve previously tested actors.
+var sole_front: float = SOLE_FRONT
+var sole_back: float = SOLE_BACK
+var sole_half_width: float = .10
+var normalize_stance_lift: bool = false
 var allow_motion: bool = false
 var enabled: bool = true
 var physics_pose: bool = false
@@ -48,24 +53,24 @@ func _sample_ground(delta: float) -> void:
 			var forward: Vector3 = actor.global_basis.z.normalized()
 			var right: Vector3 = actor.global_basis.x.normalized()
 			var model_scale: float = skeleton.global_basis.get_scale().y
-			var front: Dictionary = _ray_hit(ankle+forward*SOLE_FRONT*model_scale)
-			var back: Dictionary = _ray_hit(ankle-forward*SOLE_BACK*model_scale)
+			var front: Dictionary = _ray_hit(ankle+forward*sole_front*model_scale)
+			var back: Dictionary = _ray_hit(ankle-forward*sole_back*model_scale)
 			if not front.is_empty(): support.append(front.position)
 			if not back.is_empty(): support.append(back.position)
 			# Terrain triangle seams can cross the boot diagonally; a centre
 			# line alone misses the higher outer sole corner.
 			if float(actor.get("_motion"))>.01:
-				for length: float in [SOLE_FRONT,-SOLE_BACK]:
-					for width: float in [-.10,.10]:
+				for length: float in [sole_front,-sole_back]:
+					for width: float in [-sole_half_width,sole_half_width]:
 						var corner: Dictionary = _ray_hit(ankle+(forward*length+right*width)*model_scale)
 						if not corner.is_empty(): support.append(corner.position)
 			if not front.is_empty() and not back.is_empty():
-				var grade_forward: float = (front.position.y-back.position.y)/((SOLE_FRONT+SOLE_BACK)*model_scale)
+				var grade_forward: float = (front.position.y-back.position.y)/((sole_front+sole_back)*model_scale)
 				var grade_side: float = -(hit.normal as Vector3).dot(right)/hit.normal.y
 				var candidate: Vector3 = (Vector3.UP-forward*grade_forward-right*grade_side).normalized()
 				if candidate.dot(Vector3.UP)>.85: hit.normal = candidate
 				var center: Vector3 = hit.position
-				center.y = maxf(center.y,lerpf(back.position.y,front.position.y,SOLE_BACK/(SOLE_FRONT+SOLE_BACK)))
+				center.y = maxf(center.y,lerpf(back.position.y,front.position.y,sole_back/(sole_front+sole_back)))
 				hit.position = center
 			hit["supports"] = support
 			var normal: Vector3 = hit.normal
@@ -121,6 +126,13 @@ func _apply_pose(delta: float) -> void:
 		var ankle: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone("Foot"+side)).origin
 		var height: float = sole_height*skeleton.global_basis.get_scale().y
 		_lifts[side] = clampf((ankle-actor.global_position).dot(actor.global_basis.y.normalized())-height,0,.35)
+	if normalize_stance_lift and _lifts.size() == 2:
+		# Authored root bob can lift both ankle estimates. Preserve relative swing
+		# clearance, while the grounded capsule still has one planted foot.
+		var shared_lift: float = minf(_lifts["Left"], _lifts["Right"])
+		for side: String in _lifts: _lifts[side] -= shared_lift
+	for side: String in _last_ground:
+		var ankle: Vector3 = skeleton.global_transform*skeleton.get_bone_global_pose(skeleton.find_bone("Foot"+side)).origin
 		_targets[side] = _desired_target(side,_last_ground[side],ankle)
 	var slope: float = 0
 	for hit: Dictionary in _last_ground.values(): slope = maxf(slope,acos(clampf((hit.normal as Vector3).dot(Vector3.UP),-1,1)))

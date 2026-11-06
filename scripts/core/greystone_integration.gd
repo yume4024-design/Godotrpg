@@ -9,6 +9,7 @@ const NpcVisual = preload("res://scripts/characters/rigged_npc_visual.gd")
 @export var village_switch_label: String = "G06 新舊村莊往返"
 ## Isolated candidates can inject appearance without changing IDs or RPG data.
 @export var hero_appearance: PackedScene = preload("res://scenes/characters/ren_pixal_visual.tscn")
+@export var companion_appearance: PackedScene = preload("res://scenes/characters/lia_pixal_visual.tscn")
 var bridge_button: Button
 var import_button: Button
 var mobile_input: MobileInputLayer
@@ -47,13 +48,13 @@ func _ready() -> void:
 		if battles.definitions[index].id == &"ren": battles.definitions[index] = starting_character
 		if battles.definitions[index].id == &"lia":
 			var lia_definition: CombatantDefinition = battles.definitions[index].duplicate()
-			lia_definition.appearance = load("res://scenes/characters/lia_pixal_visual.tscn")
+			lia_definition.appearance = companion_appearance
 			battles.definitions[index] = lia_definition
 	# Recruitment and save decoding must select the same presentation resource.
 	for index: int in range(party.recruit_definitions.size()):
 		if party.recruit_definitions[index].id == &"lia":
 			var recruit_definition: CombatantDefinition = party.recruit_definitions[index].duplicate()
-			recruit_definition.appearance = load("res://scenes/characters/lia_pixal_visual.tscn")
+			recruit_definition.appearance = companion_appearance
 			party.recruit_definitions[index] = recruit_definition
 	var old_appearance: CartoonActor = player.appearance
 	player.visual.remove_child(old_appearance)
@@ -181,6 +182,17 @@ func import_legacy() -> bool:
 
 func _on_map_changed(map: ExplorationMap) -> void:
 	_set_speaking_npc(null)
+	if map.map_id == &"greystone_runtime":
+		for target: WorldInteractable in map.targets:
+			if target.interaction_id != &"npc_lia": continue
+			var previous: Node3D = target.get_node_or_null("Appearance")
+			if previous == null or previous.scene_file_path == companion_appearance.resource_path: continue
+			var replacement: Node3D = companion_appearance.instantiate()
+			replacement.name = "Appearance"
+			replacement.transform = previous.transform
+			target.remove_child(previous)
+			previous.queue_free()
+			target.add_child(replacement)
 	if is_instance_valid(occlusion): occlusion.set_map(map)
 	# Integration-only routing; old production scene and forest resource stay intact.
 	if map.map_id == &"forest":

@@ -1,0 +1,12 @@
+{
+	"checks": 278,
+	"failures": [],
+	"limits": [
+		"Native automated controller review only",
+		"Not gameplay/save regression, terrain IK or human acceptance"
+	],
+	"model": "D:/RPGGAME/artifacts/lia-grip-narrow-20261104/lia_rigged.glb",
+	"renderer": "Windows",
+	"staff_triangles": 140,
+	"triangles": 6474
+}
