@@ -11,6 +11,8 @@ const FALL: ShaderMaterial = preload("res://assets/materials/greystone/blender_s
 const FLAME: Shader = preload("res://assets/shaders/mine/flame.gdshader")
 const FALL_STREAM: Shader = preload("res://assets/shaders/greystone/reference_fall.gdshader")
 const FOAM: Shader = preload("res://assets/shaders/greystone/reference_foam.gdshader")
+const BUILDING_DETAIL: Shader = preload("res://assets/shaders/greystone/building_detail.gdshader")
+
 const TIMBER: Shader = preload("res://assets/shaders/mine/wood.gdshader")
 
 func _ready() -> void:
@@ -35,6 +37,7 @@ func _ready() -> void:
 	lantern.emission = Color(1.0,.38,.07)
 	lantern.emission_energy_multiplier = .7
 	lantern.roughness = .65
+	var building_materials: Dictionary = {}
 	var masonry: ShaderMaterial = ROCK.duplicate()
 	masonry.set_shader_parameter("masonry_joints", true)
 	for node: Node in village.find_children("*", "MeshInstance3D", true, false):
@@ -74,6 +77,9 @@ func _ready() -> void:
 				elif material and material.resource_name == "ReferenceFacade_stone":
 					# Blender's procedural stone graph is not encoded by glTF.
 					mesh.set_surface_override_material(index, ROCK)
+				elif material is StandardMaterial3D:
+					var detail: ShaderMaterial = _building_detail(material as StandardMaterial3D, building_materials)
+					if detail != null: mesh.set_surface_override_material(index, detail)
 		elif path.begins_with("Mine/") and "TorchFlame" in mesh.name:
 			mesh.material_override = flame
 			mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
@@ -145,3 +151,23 @@ func _apply_clearing_verge(mesh: MeshInstance3D) -> void:
 	clearing.set_shader_parameter("clearing_edge_start", starts)
 	clearing.set_shader_parameter("clearing_edge_end", ends)
 	mesh.material_override = clearing
+
+func _building_detail(source: StandardMaterial3D, cache: Dictionary) -> ShaderMaterial:
+	var token: String = source.resource_name
+	if not (token.begins_with("ReferenceRoof_") or token.begins_with("ReferenceFacade_")):
+		return null
+	var kind: int = -1
+	if token.ends_with("_plaster") or token.ends_with("_plaster_shade"): kind = 0
+	elif token.ends_with("_timber") or token.ends_with("_timber_light") or token.ends_with("_door") or token.ends_with("_shutter"): kind = 1
+	elif "_tile" in token: kind = 2
+	if kind < 0: return null
+	# Shared by appearance across all six instances; imported sources stay intact.
+	var key: String = str(kind)+":"+source.albedo_color.to_html(true)
+	if not cache.has(key):
+		var result := ShaderMaterial.new()
+		result.shader = BUILDING_DETAIL
+		result.resource_name = "VillageDetail_"+key
+		result.set_shader_parameter("base_color", source.albedo_color)
+		result.set_shader_parameter("surface_kind", kind)
+		cache[key] = result
+	return cache[key] as ShaderMaterial

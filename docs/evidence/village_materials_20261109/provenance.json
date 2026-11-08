@@ -1,0 +1,18 @@
+{
+  "logs": {
+    "artifacts/logs/material-before-20261109.log": "8495906991ba684f4d9bf7a74fc68206e23f2733e3a427afd6093d7fcd34e6a7",
+    "artifacts/logs/material-after-20261109.log": "521f5bb735695b06880285bbe798eff03932d6a74e6a049bab64bc7d295b0909",
+    "artifacts/logs/material-refined-20261109.log": "521f5bb735695b06880285bbe798eff03932d6a74e6a049bab64bc7d295b0909",
+    "artifacts/logs/check-20261109-061328-081.log": "acab080fe55c229169b1e2fcc100ffcb5d2446096214ccc697f74c7cc0b79a9d"
+  },
+  "scope": "Native Godot 4.7.2 graphical before/after; material-only; no new full prologue or physical input claim",
+  "first_pass": "artifacts/village_materials_20261109/first_pass_strong_grain retained; stronger grain rejected visually",
+  "images_viewed": [
+    "gameplay",
+    "inn",
+    "inn_close",
+    "shop",
+    "weapon",
+    "plaza"
+  ]
+}

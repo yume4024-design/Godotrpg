@@ -1,0 +1,49 @@
+{
+  "gpu": "NVIDIA GeForce RTX 3080",
+  "method": "120 frame_post_draw intervals/view; cap60; native editor binary; no endurance or GPU timing",
+  "renderer": "gl_compatibility",
+  "resolution": [
+    1920,
+    1080
+  ],
+  "sources": {
+    "assets/collisions/greystone/reference_v5/bounds.tscn": "326358e6ffd40eb101bdac7c9316805a8129360fa70eb9cb25e8c556a66143a8",
+    "assets/models/greystone/reference_v5/paths.glb": "0636b0798fc0e243161bbf2fff560f93576114e1171350620d46e198d3409633",
+    "assets/models/greystone/reference_v5/terrain.glb": "f26695fe8e86596397a019bd258d50b9f2be4d2a378a0a3e52d3081e97a1b8c7",
+    "scenes/main/main.tscn": "9d722364c4960b2735c5fc426c8f21bab12ed4d58ac9a3a119879a60f40505ec",
+    "scenes/world/greystone/reference_v5/buildings.tscn": "e1300ca65603a06a38470725b95b048d1f32f7940e480d8c9ffde51414b1d54a",
+    "scripts/world/reference_village_surfaces.gd": "566723c3f7c678bc1eba95180bb6ee96f06425d2613868a3f783d7d41b4072d4"
+  },
+  "views": {
+    "inn": {
+      "draw_max": 1958,
+      "mean_ms": 16.66655,
+      "p95_ms": 16.693,
+      "p99_ms": 16.753
+    },
+    "inn_close": {
+      "draw_max": 982,
+      "mean_ms": 16.6664333333333,
+      "p95_ms": 16.697,
+      "p99_ms": 16.772
+    },
+    "plaza": {
+      "draw_max": 3691,
+      "mean_ms": 16.6664916666667,
+      "p95_ms": 16.686,
+      "p99_ms": 16.704
+    },
+    "shop": {
+      "draw_max": 1584,
+      "mean_ms": 16.6665583333333,
+      "p95_ms": 16.687,
+      "p99_ms": 16.693
+    },
+    "weapon": {
+      "draw_max": 1747,
+      "mean_ms": 16.666375,
+      "p95_ms": 16.693,
+      "p99_ms": 16.934
+    }
+  }
+}
