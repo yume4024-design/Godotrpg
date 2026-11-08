@@ -18,14 +18,42 @@ def instrument(work,path,name,stops,tail):
   assert timed.count(anchor)==1,(path,name,anchor,timed.count(anchor))
   timed=timed.replace(anchor,anchor+'\n\tvar qa_'+label+': int = Time.get_ticks_usec()',1)
  final=tail[0];record=tail[1]
+ record=record[:-1]+',"started_us":qa_start,"ended_us":Time.get_ticks_usec(),"end_frame":Engine.get_process_frames()}'
  assert timed.count(final)==1,(path,name,final)
  timed=timed.replace(final,'\tPrologueProfileTrace.rows.append('+record+')\n'+final,1)
  stripped='\n'.join(l for l in timed.splitlines() if not re.match(r'\s*(var qa_\w+: int = Time.get_ticks_usec\(\)|PrologueProfileTrace.rows.append\()',l))
  assert stripped==original,(path,name,'not timing-only')
  p.write_text(s.replace(original,timed,1),encoding='utf-8')
  return {'path':path,'method':name,'original_method_sha256':hashlib.sha256(original.encode()).hexdigest(),'timing_only':True}
+def instrument_span(work,path,name,kind):
+ p=work/path;s=p.read_text(encoding='utf-8-sig');original=method(s,name)
+ lines=original.splitlines();lines.insert(1,'\tvar qa_start: int = Time.get_ticks_usec()')
+ lines.append('\tPrologueProfileTrace.rows.append({"kind":"'+kind+'","phase":PrologueProfileTrace.phase,"started_us":qa_start,"ended_us":Time.get_ticks_usec(),"end_frame":Engine.get_process_frames(),"ms":(Time.get_ticks_usec()-qa_start)/1000.0})')
+ timed='\n'.join(lines)
+ stripped='\n'.join(l for l in timed.splitlines() if not re.match(r'\s*(var qa_\w+: int = Time.get_ticks_usec\(\)|PrologueProfileTrace.rows.append\()',l))
+ baseline='\n'.join(l for l in original.splitlines() if not re.match(r'\s*(var qa_\w+: int = Time.get_ticks_usec\(\)|PrologueProfileTrace.rows.append\()',l))
+ assert stripped==baseline,(path,name,'not timing-only')
+ p.write_text(s.replace(original,timed,1),encoding='utf-8')
+ return {'path':path,'method':name,'original_method_sha256':hashlib.sha256(original.encode()).hexdigest(),'timing_only':True}
+
+def instrument_collision_detail(work):
+ p=work/'scripts/world/blender_village_geometry.gd';s=p.read_text(encoding='utf-8');original=method(s,'_ready')
+ def row(kind,clock,extra=''):
+  return 'PrologueProfileTrace.rows.append({"kind":"'+kind+'","phase":PrologueProfileTrace.phase,"started_us":'+clock+',"ended_us":Time.get_ticks_usec(),"ms":(Time.get_ticks_usec()-'+clock+')/1000.0'+extra+'})'
+ timed=original.replace('func _ready() -> void:', 'func _ready() -> void:\n\tvar qa_bounds_start: int = Time.get_ticks_usec()',1)
+ anchor='\tfor node: Node in find_children("*", "MeshInstance3D", true, false):'
+ assert timed.count(anchor)==1
+ timed=timed.replace(anchor,'\t'+row('village_bounds','qa_bounds_start')+'\n'+anchor,1)
+ anchor='\t\t\tmesh.create_trimesh_collision()'
+ assert timed.count(anchor)==1
+ timed=timed.replace(anchor,'\t\t\tvar qa_tri_start: int = Time.get_ticks_usec()\n'+anchor+'\n\t\t\t'+row('village_trimesh','qa_tri_start',',"mesh":str(mesh.name)'),1)
+ stripped='\n'.join(l for l in timed.splitlines() if not re.match(r'\s*(var qa_\w+: int = Time.get_ticks_usec\(\)|PrologueProfileTrace.rows.append\()',l))
+ assert stripped==original
+ p.write_text(s.replace(original,timed,1),encoding='utf-8')
+ return {'path':str(p.relative_to(work)),'method':'_ready breakdown','original_method_sha256':hashlib.sha256(original.encode()).hexdigest(),'timing_only':True}
+
 def main():
- ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--overlay',action='append',default=[])
+ ap=argparse.ArgumentParser(description=__doc__);ap.add_argument('--output',type=Path,required=True);ap.add_argument('--overlay',action='append',default=[]);ap.add_argument('--detail-geometry',action='store_true')
  a=ap.parse_args();out=a.output.resolve();assert not out.exists();out.mkdir(parents=True);work=out/'source';work.mkdir()
  commit=subprocess.check_output(['git','-C',str(ROOT),'rev-parse','HEAD'],text=True).strip()
  archive=out/'source.zip';subprocess.run(['git','-C',str(ROOT),'archive','--format=zip','--output='+str(archive),commit,'project.godot','default_bus_layout.tres','export_presets.cfg','assets','scenes','scripts','data','tests'],check=True)
@@ -49,6 +77,10 @@ def main():
  ('\tcurrent_map = scene.instantiate() as ExplorationMap','instance'),('\t_container.add_child(current_map)','ready'),('\tmap_changed.emit(current_map)','signals')],
  ('\ttransitioning = false','{"kind":"map_swap","phase":PrologueProfileTrace.phase,"map":str(current_map.map_id),"fade_and_instance_ms":(qa_instance-qa_start)/1000.0,"ready_ms":(qa_ready-qa_instance)/1000.0,"signals_ms":(qa_signals-qa_ready)/1000.0,"total_ms":(Time.get_ticks_usec()-qa_start)/1000.0}'))]
  for spec in specs:receipt['instrumented_methods'].append(instrument(work,*spec))
+ if a.detail_geometry:
+  receipt['instrumented_methods'].append(instrument_collision_detail(work))
+  for spec in [('scripts/world/blender_village_geometry.gd','_ready','village_geometry'),('scripts/world/blender_village_geometry.gd','_solid_ground','village_solid_ground'),('scripts/world/reference_village_surfaces.gd','_ready','village_surfaces'),('scripts/world/reference_village_surfaces.gd','_apply_clearing_verge','village_clearing')]:
+   receipt['instrumented_methods'].append(instrument_span(work,*spec))
  project=work/'project.godot';text=project.read_text(encoding='utf-8');text=text.replace('run/main_loop_type.prologue_qa="PrologueCandidateTestTree"','run/main_loop_type.prologue_qa="ProloguePerformanceProbe"');project.write_text(text,encoding='utf-8')
  profile=out/'build-profile';profile.mkdir();templates=ROOT/'artifacts/godot-user/Godot/export_templates/4.7.2.stable'
  assert (templates/'version.txt').read_text().strip()=='4.7.2.stable'

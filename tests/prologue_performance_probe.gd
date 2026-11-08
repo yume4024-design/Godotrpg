@@ -3,24 +3,42 @@ extends "res://tests/prologue_rc2_stability_test.gd"
 ## Short native Release diagnostic; deliberately not a 30-minute soak.
 var spike_rows: Array[Dictionary] = []
 var operation_rows: Array[Dictionary] = []
+var phase_sizes: Dictionary = {}
+var requested_size := Vector2i(1280, 720)
 
 func _initialize() -> void:
+	if OS.has_environment("CRYSTAL_PROFILE_WIDTH") and OS.has_environment("CRYSTAL_PROFILE_HEIGHT"):
+		requested_size = Vector2i(int(OS.get_environment("CRYSTAL_PROFILE_WIDTH")), int(OS.get_environment("CRYSTAL_PROFILE_HEIGHT")))
 	super._initialize()
 	slot = "user://prologue_profile/probe.json"
 	visual_slot = slot
 	DirAccess.make_dir_recursive_absolute("user://prologue_profile")
 
+func _set_profile_resolution() -> void:
+	root.size = requested_size
+	root.content_scale_size = Vector2i(1280, 720)
+
+func _attach_game(instance: ExplorationGame) -> void:
+	super._attach_game(instance)
+	_set_profile_resolution()
+
 func _sample_frame() -> void:
-	var elapsed_ms: float = (Time.get_ticks_usec() - previous_usec) / 1000.0
+	var interval_start: int = previous_usec
+	var interval_end: int = Time.get_ticks_usec()
+	var elapsed_ms: float = (interval_end - interval_start) / 1000.0
 	super._sample_frame()
+	if not phase_sizes.has(phase_label): phase_sizes[phase_label] = []
+	var dimensions: String = str(root.size)
+	if not phase_sizes[phase_label].has(dimensions): phase_sizes[phase_label].append(dimensions)
 	if elapsed_ms > 33.0:
-		spike_rows.append({"phase":phase_label,"ms":elapsed_ms,"cpu_process_ms":Performance.get_monitor(Performance.TIME_PROCESS)*1000.0,"physics_ms":Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000.0,"seconds":(Time.get_ticks_usec()-started_usec)/1000000.0})
+		spike_rows.append({"interval_start_us":interval_start,"interval_end_us":interval_end,"end_frame":Engine.get_process_frames(),"phase":phase_label,"ms":elapsed_ms,"cpu_process_ms":Performance.get_monitor(Performance.TIME_PROCESS)*1000.0,"physics_ms":Performance.get_monitor(Performance.TIME_PHYSICS_PROCESS)*1000.0,"seconds":(Time.get_ticks_usec()-started_usec)/1000000.0})
 
 func _capture(_label: String) -> void:
 	# Readback / PNG encoding is excluded from measured frame timings.
 	pass
 
 func _soak() -> void:
+	_set_profile_resolution()
 	_check(not OS.is_debug_build() and DisplayServer.get_name()=="Windows", "Probe uses real Windows release template")
 	for attempt: int in range(3):
 		for map_id: StringName in [&"greystone_runtime", &"forest", &"mine"]:
@@ -111,10 +129,12 @@ func _end() -> void:
 		metrics[label]=_stats(samples[label].frames)
 		metrics[label].draw_min=samples[label].draw_min
 		metrics[label].draw_max=samples[label].draw_max
-	var report: Dictionary={"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"pid":OS.get_process_id(),"seconds":(Time.get_ticks_usec()-started_usec)/1000000.0,"frames":metrics,"spikes":spike_rows,"operations":operation_rows,"timed_methods":PrologueProfileTrace.rows,"method":"Native Release; actual prologue followed by three per-map service/load/battle loops. Timestamp-only production instrumentation in isolated build snapshot. Services broken down by NPC and restore; no timed captures; CPU wall spans include stated waits; not GPU timing, long soak, or human playthrough."}
-	FileAccess.open("user://prologue_profile/report.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
+		metrics[label].engine_peak_bytes=samples[label].engine_peak
 	await RenderingServer.frame_post_draw
-	root.get_texture().get_image().save_webp("user://prologue_profile/final.webp")
+	var final_image: Image = root.get_texture().get_image()
+	var report: Dictionary={"requested_size":[requested_size.x,requested_size.y],"final_render_size":[final_image.get_width(),final_image.get_height()],"phase_window_sizes":phase_sizes,"quality_preset":int(game.get("quality").preset),"checks":checks,"failures":failures,"release":not OS.is_debug_build(),"display":DisplayServer.get_name(),"engine":Engine.get_version_info().string,"adapter":RenderingServer.get_video_adapter_name(),"pid":OS.get_process_id(),"seconds":(Time.get_ticks_usec()-started_usec)/1000000.0,"frames":metrics,"spikes":spike_rows,"operations":operation_rows,"timed_methods":PrologueProfileTrace.rows,"method":"Native Release; actual prologue followed by three per-map service/load/battle loops. Timestamp-only production instrumentation in isolated build snapshot. Services broken down by NPC and restore; no timed captures; CPU wall spans include stated waits; not GPU timing, long soak, or human playthrough."}
+	FileAccess.open("user://prologue_profile/report.json",FileAccess.WRITE).store_string(JSON.stringify(report,"  "))
+	final_image.save_webp("user://prologue_profile/final.webp")
 	print("PROLOGUE_PROFILE_RESULT checks=%d failures=%d release=%s seconds=%.3f" % [checks,failures,not OS.is_debug_build(),report.seconds])
 	game.queue_free()
 	await process_frame

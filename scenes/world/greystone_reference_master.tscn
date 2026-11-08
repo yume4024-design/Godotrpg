@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/vegetation.glb" id="6"]
 [ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/props.glb" id="7"]
 [ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/mine.glb" id="8"]
-[ext_resource type="PackedScene" path="res://assets/models/greystone/reference_v5/bounds.glb" id="9"]
+[ext_resource type="PackedScene" path="res://assets/collisions/greystone/reference_v5/bounds.tscn" id="9"]
 
 [node name="GreystoneBlenderMaster" type="Node3D"]
 script = ExtResource("Geometry")

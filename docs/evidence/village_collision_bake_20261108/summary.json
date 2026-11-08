@@ -1,0 +1,1094 @@
+{
+  "kind": "Short native Windows Release diagnostics; not 30-minute soak or human acceptance",
+  "source_commit": "000789e0e66c5d14287376294c02e12b4272e4b7",
+  "runs": {
+    "baseline_720": {
+      "directory": "builds/prologue-profile-20261106/collision-detail-retry-000789e/run-20261108-053352-457",
+      "report_sha256": "be82722c029b7c50dffad5125cebaed576178d8dbc1d9a3f89152f89f734cdd6",
+      "run": {
+        "build": "D:\\RPGGAME\\builds\\prologue-profile-20261106\\collision-detail-retry-000789e",
+        "pid": 5896,
+        "passed": true,
+        "kind": "Short native Release performance diagnostic, not soak or human acceptance",
+        "requested_width": 1280,
+        "requested_height": 720,
+        "exit_code": 0,
+        "seconds": 54.6155117
+      },
+      "checks": 169,
+      "failures": 0,
+      "seconds": 52.543681,
+      "engine": "4.7.2-stable (official)",
+      "adapter": "NVIDIA GeForce RTX 3080",
+      "release": true,
+      "display": "Windows",
+      "frames": {
+        "battle_forest": {
+          "draw_max": 825.0,
+          "draw_min": 294.0,
+          "fps": 60.0036602232736,
+          "frames": 60,
+          "max_ms": 16.83,
+          "mean_ms": 16.66565,
+          "p95_ms": 16.696,
+          "p99_ms": 16.83
+        },
+        "battle_mine": {
+          "draw_max": 296.0,
+          "draw_min": 131.0,
+          "fps": 60.0039957206241,
+          "frames": 264,
+          "max_ms": 21.728,
+          "mean_ms": 16.6655568181818,
+          "p95_ms": 16.699,
+          "p99_ms": 16.833
+        },
+        "load_forest": {
+          "draw_max": 307.0,
+          "draw_min": 296.0,
+          "fps": 58.5521040535947,
+          "frames": 108,
+          "max_ms": 48.723,
+          "mean_ms": 17.0788055555556,
+          "p95_ms": 17.503,
+          "p99_ms": 48.382
+        },
+        "load_greystone_runtime": {
+          "draw_max": 1053.0,
+          "draw_min": 1053.0,
+          "fps": 57.1182547247843,
+          "frames": 106,
+          "max_ms": 64.712,
+          "mean_ms": 17.507537735849,
+          "p95_ms": 18.549,
+          "p99_ms": 63.556
+        },
+        "load_mine": {
+          "draw_max": 206.0,
+          "draw_min": 177.0,
+          "fps": 59.9984432836337,
+          "frames": 111,
+          "max_ms": 22.296,
+          "mean_ms": 16.6670990990991,
+          "p95_ms": 17.952,
+          "p99_ms": 21.704
+        },
+        "postbattle_load": {
+          "draw_max": 307.0,
+          "draw_min": 177.0,
+          "fps": 59.2755392314751,
+          "frames": 219,
+          "max_ms": 48.714,
+          "mean_ms": 16.8703652968036,
+          "p95_ms": 17.589,
+          "p99_ms": 47.995
+        },
+        "prologue": {
+          "draw_max": 1348.0,
+          "draw_min": 0.0,
+          "fps": 39.3170229479111,
+          "frames": 1052,
+          "max_ms": 8635.581,
+          "mean_ms": 25.4342756653992,
+          "p95_ms": 17.35,
+          "p99_ms": 46.423
+        },
+        "service_guildmaster_dialogue": {
+          "draw_max": 1202.0,
+          "draw_min": 1188.0,
+          "fps": 59.5279434087685,
+          "frames": 12,
+          "max_ms": 17.286,
+          "mean_ms": 16.7988333333333,
+          "p95_ms": 17.286,
+          "p99_ms": 17.286
+        },
+        "service_guildmaster_open": {
+          "draw_max": 1208.0,
+          "draw_min": 1023.0,
+          "fps": 59.9954403465337,
+          "frames": 30,
+          "max_ms": 17.337,
+          "mean_ms": 16.6679333333333,
+          "p95_ms": 17.166,
+          "p99_ms": 17.337
+        },
+        "service_innkeeper_confirm": {
+          "draw_max": 1003.0,
+          "draw_min": 1003.0,
+          "fps": 57.0027931368637,
+          "frames": 6,
+          "max_ms": 18.806,
+          "mean_ms": 17.543,
+          "p95_ms": 18.806,
+          "p99_ms": 18.806
+        },
+        "service_innkeeper_dialogue": {
+          "draw_max": 997.0,
+          "draw_min": 976.0,
+          "fps": 60.9902788272247,
+          "frames": 18,
+          "max_ms": 17.329,
+          "mean_ms": 16.3960555555556,
+          "p95_ms": 17.329,
+          "p99_ms": 17.329
+        },
+        "service_innkeeper_open": {
+          "draw_max": 1094.0,
+          "draw_min": 997.0,
+          "fps": 60.0494807721562,
+          "frames": 30,
+          "max_ms": 17.529,
+          "mean_ms": 16.6529333333333,
+          "p95_ms": 17.238,
+          "p99_ms": 17.529
+        },
+        "service_itemmerchant_confirm": {
+          "draw_max": 1104.0,
+          "draw_min": 1104.0,
+          "fps": 58.9906696424182,
+          "frames": 6,
+          "max_ms": 17.184,
+          "mean_ms": 16.9518333333333,
+          "p95_ms": 17.184,
+          "p99_ms": 17.184
+        },
+        "service_itemmerchant_dialogue": {
+          "draw_max": 1094.0,
+          "draw_min": 1073.0,
+          "fps": 60.2540713341256,
+          "frames": 18,
+          "max_ms": 17.22,
+          "mean_ms": 16.5963888888889,
+          "p95_ms": 17.22,
+          "p99_ms": 17.22
+        },
+        "service_itemmerchant_open": {
+          "draw_max": 1208.0,
+          "draw_min": 1094.0,
+          "fps": 60.2060250176103,
+          "frames": 30,
+          "max_ms": 17.824,
+          "mean_ms": 16.6096333333333,
+          "p95_ms": 17.244,
+          "p99_ms": 17.824
+        },
+        "service_restore": {
+          "draw_max": 1053.0,
+          "draw_min": 965.0,
+          "fps": 56.9904245629775,
+          "frames": 109,
+          "max_ms": 68.141,
+          "mean_ms": 17.5468073394496,
+          "p95_ms": 26.918,
+          "p99_ms": 65.986
+        },
+        "travel_forest": {
+          "draw_max": 1053.0,
+          "draw_min": 307.0,
+          "fps": 57.5701385030425,
+          "frames": 129,
+          "max_ms": 65.284,
+          "mean_ms": 17.3701162790698,
+          "p95_ms": 16.706,
+          "p99_ms": 63.992
+        },
+        "travel_greystone_runtime": {
+          "draw_max": 1206.0,
+          "draw_min": 205.0,
+          "fps": 58.1066355095907,
+          "frames": 130,
+          "max_ms": 66.09,
+          "mean_ms": 17.2097384615385,
+          "p95_ms": 16.735,
+          "p99_ms": 53.65
+        },
+        "travel_mine": {
+          "draw_max": 307.0,
+          "draw_min": 179.0,
+          "fps": 60.001040018027,
+          "frames": 135,
+          "max_ms": 22.201,
+          "mean_ms": 16.6663777777778,
+          "p95_ms": 16.759,
+          "p99_ms": 22.068
+        }
+      },
+      "spans": {
+        "village_geometry": {
+          "samples": 13,
+          "median_ms": 15.649,
+          "max_ms": 20.594
+        },
+        "village_bounds": {
+          "samples": 13,
+          "median_ms": 7.563,
+          "max_ms": 8.415
+        },
+        "village_surfaces": {
+          "samples": 13,
+          "median_ms": 4.313,
+          "max_ms": 8.56
+        },
+        "village_ready": {
+          "samples": 13,
+          "median_ms": 28.558,
+          "max_ms": 38.67
+        }
+      },
+      "working_set_peak_bytes": 870453248,
+      "private_peak_bytes": 2302459904,
+      "memory_sample_count": 11
+    },
+    "rejected_cache_720": {
+      "directory": "builds/prologue-profile-20261108/box-cache-000789e/run-20261108-053217-883",
+      "report_sha256": "66a70d52c16f65869bbb67115907fb24766926da4068b698eff59f1cb5245a33",
+      "run": {
+        "build": "D:\\RPGGAME\\builds\\prologue-profile-20261108\\box-cache-000789e",
+        "pid": 4904,
+        "passed": true,
+        "kind": "Short native Release performance diagnostic, not soak or human acceptance",
+        "requested_width": 1280,
+        "requested_height": 720,
+        "exit_code": 0,
+        "seconds": 53.7035707
+      },
+      "checks": 169,
+      "failures": 0,
+      "seconds": 51.985469,
+      "engine": "4.7.2-stable (official)",
+      "adapter": "NVIDIA GeForce RTX 3080",
+      "release": true,
+      "display": "Windows",
+      "frames": {
+        "battle_forest": {
+          "draw_max": 825.0,
+          "draw_min": 294.0,
+          "fps": 59.9982600504585,
+          "frames": 60,
+          "max_ms": 16.936,
+          "mean_ms": 16.66715,
+          "p95_ms": 16.774,
+          "p99_ms": 16.936
+        },
+        "battle_mine": {
+          "draw_max": 296.0,
+          "draw_min": 131.0,
+          "fps": 60.0019773378895,
+          "frames": 264,
+          "max_ms": 22.088,
+          "mean_ms": 16.6661174242424,
+          "p95_ms": 16.695,
+          "p99_ms": 16.837
+        },
+        "load_forest": {
+          "draw_max": 307.0,
+          "draw_min": 296.0,
+          "fps": 58.5484219844987,
+          "frames": 108,
+          "max_ms": 48.502,
+          "mean_ms": 17.0798796296296,
+          "p95_ms": 17.507,
+          "p99_ms": 48.501
+        },
+        "load_greystone_runtime": {
+          "draw_max": 1053.0,
+          "draw_min": 1053.0,
+          "fps": 56.8693325149872,
+          "frames": 106,
+          "max_ms": 67.117,
+          "mean_ms": 17.5841698113208,
+          "p95_ms": 18.866,
+          "p99_ms": 66.998
+        },
+        "load_mine": {
+          "draw_max": 206.0,
+          "draw_min": 177.0,
+          "fps": 60.0043138236424,
+          "frames": 111,
+          "max_ms": 22.723,
+          "mean_ms": 16.6654684684685,
+          "p95_ms": 18.102,
+          "p99_ms": 22.316
+        },
+        "postbattle_load": {
+          "draw_max": 307.0,
+          "draw_min": 177.0,
+          "fps": 59.1366694335787,
+          "frames": 219,
+          "max_ms": 55.137,
+          "mean_ms": 16.9099817351598,
+          "p95_ms": 17.68,
+          "p99_ms": 48.474
+        },
+        "prologue": {
+          "draw_max": 1348.0,
+          "draw_min": 0.0,
+          "fps": 40.2290183817988,
+          "frames": 1054,
+          "max_ms": 8023.546,
+          "mean_ms": 24.8576783681214,
+          "p95_ms": 17.366,
+          "p99_ms": 49.469
+        },
+        "service_guildmaster_dialogue": {
+          "draw_max": 1202.0,
+          "draw_min": 1188.0,
+          "fps": 59.5182001696269,
+          "frames": 12,
+          "max_ms": 17.179,
+          "mean_ms": 16.8015833333333,
+          "p95_ms": 17.179,
+          "p99_ms": 17.179
+        },
+        "service_guildmaster_open": {
+          "draw_max": 1208.0,
+          "draw_min": 1023.0,
+          "fps": 59.9944805077933,
+          "frames": 30,
+          "max_ms": 17.182,
+          "mean_ms": 16.6682,
+          "p95_ms": 17.17,
+          "p99_ms": 17.182
+        },
+        "service_innkeeper_confirm": {
+          "draw_max": 1003.0,
+          "draw_min": 1003.0,
+          "fps": 56.9632871614245,
+          "frames": 6,
+          "max_ms": 18.679,
+          "mean_ms": 17.5551666666667,
+          "p95_ms": 18.679,
+          "p99_ms": 18.679
+        },
+        "service_innkeeper_dialogue": {
+          "draw_max": 997.0,
+          "draw_min": 976.0,
+          "fps": 60.9844929986414,
+          "frames": 18,
+          "max_ms": 17.307,
+          "mean_ms": 16.3976111111111,
+          "p95_ms": 17.307,
+          "p99_ms": 17.307
+        },
+        "service_innkeeper_open": {
+          "draw_max": 1094.0,
+          "draw_min": 997.0,
+          "fps": 60.054168860312,
+          "frames": 30,
+          "max_ms": 17.455,
+          "mean_ms": 16.6516333333333,
+          "p95_ms": 17.236,
+          "p99_ms": 17.455
+        },
+        "service_itemmerchant_confirm": {
+          "draw_max": 1104.0,
+          "draw_min": 1104.0,
+          "fps": 58.8598840460284,
+          "frames": 6,
+          "max_ms": 17.257,
+          "mean_ms": 16.9895,
+          "p95_ms": 17.257,
+          "p99_ms": 17.257
+        },
+        "service_itemmerchant_dialogue": {
+          "draw_max": 1094.0,
+          "draw_min": 1073.0,
+          "fps": 60.3065583382193,
+          "frames": 18,
+          "max_ms": 17.132,
+          "mean_ms": 16.5819444444444,
+          "p95_ms": 17.132,
+          "p99_ms": 17.132
+        },
+        "service_itemmerchant_open": {
+          "draw_max": 1208.0,
+          "draw_min": 1094.0,
+          "fps": 60.2027629054656,
+          "frames": 30,
+          "max_ms": 17.945,
+          "mean_ms": 16.6105333333333,
+          "p95_ms": 17.285,
+          "p99_ms": 17.945
+        },
+        "service_restore": {
+          "draw_max": 1053.0,
+          "draw_min": 965.0,
+          "fps": 57.0294319393334,
+          "frames": 108,
+          "max_ms": 65.751,
+          "mean_ms": 17.5348055555556,
+          "p95_ms": 27.372,
+          "p99_ms": 65.435
+        },
+        "travel_forest": {
+          "draw_max": 1053.0,
+          "draw_min": 307.0,
+          "fps": 57.6010630745036,
+          "frames": 129,
+          "max_ms": 64.079,
+          "mean_ms": 17.3607906976744,
+          "p95_ms": 16.716,
+          "p99_ms": 63.497
+        },
+        "travel_greystone_runtime": {
+          "draw_max": 1206.0,
+          "draw_min": 205.0,
+          "fps": 58.0404041576574,
+          "frames": 130,
+          "max_ms": 67.312,
+          "mean_ms": 17.2293769230769,
+          "p95_ms": 16.727,
+          "p99_ms": 54.276
+        },
+        "travel_mine": {
+          "draw_max": 307.0,
+          "draw_min": 179.0,
+          "fps": 60.0095748610556,
+          "frames": 135,
+          "max_ms": 24.395,
+          "mean_ms": 16.6640074074074,
+          "p95_ms": 16.926,
+          "p99_ms": 22.254
+        }
+      },
+      "spans": {
+        "village_geometry": {
+          "samples": 13,
+          "median_ms": 16.446,
+          "max_ms": 22.111
+        },
+        "village_bounds": {
+          "samples": 13,
+          "median_ms": 8.484,
+          "max_ms": 10.433
+        },
+        "village_surfaces": {
+          "samples": 13,
+          "median_ms": 4.469,
+          "max_ms": 7.129
+        },
+        "village_ready": {
+          "samples": 13,
+          "median_ms": 29.847,
+          "max_ms": 38.77
+        }
+      },
+      "working_set_peak_bytes": 884510720,
+      "private_peak_bytes": 2278400000,
+      "memory_sample_count": 11
+    },
+    "baked_720": {
+      "directory": "builds/prologue-profile-20261108/baked-bounds-000789e/run-20261108-054005-566",
+      "report_sha256": "832adf39a1c49a2f31b7e0ff06c10ddd6f1efdc441137de7dda4f17cbe49e98d",
+      "run": {
+        "build": "D:\\RPGGAME\\builds\\prologue-profile-20261108\\baked-bounds-000789e",
+        "pid": 16132,
+        "passed": true,
+        "kind": "Short native Release performance diagnostic, not soak or human acceptance",
+        "requested_width": 1280,
+        "requested_height": 720,
+        "exit_code": 0,
+        "seconds": 53.9445568
+      },
+      "checks": 169,
+      "failures": 0,
+      "seconds": 52.003755,
+      "engine": "4.7.2-stable (official)",
+      "adapter": "NVIDIA GeForce RTX 3080",
+      "release": true,
+      "display": "Windows",
+      "frames": {
+        "battle_forest": {
+          "draw_max": 825.0,
+          "draw_min": 294.0,
+          "fps": 60.0067807662266,
+          "frames": 60,
+          "max_ms": 23.377,
+          "mean_ms": 16.6647833333333,
+          "p95_ms": 16.844,
+          "p99_ms": 23.377
+        },
+        "battle_mine": {
+          "draw_max": 296.0,
+          "draw_min": 131.0,
+          "fps": 60.0045685296494,
+          "frames": 264,
+          "max_ms": 32.794,
+          "mean_ms": 16.6653977272727,
+          "p95_ms": 16.772,
+          "p99_ms": 16.96
+        },
+        "load_forest": {
+          "draw_max": 307.0,
+          "draw_min": 296.0,
+          "fps": 58.1102650425481,
+          "frames": 107,
+          "max_ms": 56.898,
+          "mean_ms": 17.2086635514019,
+          "p95_ms": 17.328,
+          "p99_ms": 51.795
+        },
+        "load_greystone_runtime": {
+          "draw_max": 1053.0,
+          "draw_min": 1053.0,
+          "fps": 56.8532018448067,
+          "frames": 107,
+          "max_ms": 75.055,
+          "mean_ms": 17.5891588785047,
+          "p95_ms": 21.262,
+          "p99_ms": 65.937
+        },
+        "load_mine": {
+          "draw_max": 206.0,
+          "draw_min": 177.0,
+          "fps": 59.9971460816999,
+          "frames": 111,
+          "max_ms": 26.841,
+          "mean_ms": 16.6674594594595,
+          "p95_ms": 17.956,
+          "p99_ms": 24.853
+        },
+        "postbattle_load": {
+          "draw_max": 307.0,
+          "draw_min": 177.0,
+          "fps": 59.1044461926886,
+          "frames": 219,
+          "max_ms": 55.949,
+          "mean_ms": 16.919200913242,
+          "p95_ms": 17.649,
+          "p99_ms": 49.606
+        },
+        "prologue": {
+          "draw_max": 1348.0,
+          "draw_min": 0.0,
+          "fps": 39.8086966720579,
+          "frames": 1042,
+          "max_ms": 8021.527,
+          "mean_ms": 25.1201391554703,
+          "p95_ms": 17.662,
+          "p99_ms": 64.008
+        },
+        "service_guildmaster_dialogue": {
+          "draw_max": 1202.0,
+          "draw_min": 1188.0,
+          "fps": 59.4654060000595,
+          "frames": 12,
+          "max_ms": 17.318,
+          "mean_ms": 16.8165,
+          "p95_ms": 17.318,
+          "p99_ms": 17.318
+        },
+        "service_guildmaster_open": {
+          "draw_max": 1208.0,
+          "draw_min": 1023.0,
+          "fps": 59.9946004859562,
+          "frames": 30,
+          "max_ms": 17.398,
+          "mean_ms": 16.6681666666667,
+          "p95_ms": 17.338,
+          "p99_ms": 17.398
+        },
+        "service_innkeeper_confirm": {
+          "draw_max": 1003.0,
+          "draw_min": 1003.0,
+          "fps": 56.5120747466375,
+          "frames": 6,
+          "max_ms": 19.211,
+          "mean_ms": 17.6953333333333,
+          "p95_ms": 19.211,
+          "p99_ms": 19.211
+        },
+        "service_innkeeper_dialogue": {
+          "draw_max": 997.0,
+          "draw_min": 976.0,
+          "fps": 61.0811361091316,
+          "frames": 18,
+          "max_ms": 17.462,
+          "mean_ms": 16.3716666666667,
+          "p95_ms": 17.462,
+          "p99_ms": 17.462
+        },
+        "service_innkeeper_open": {
+          "draw_max": 1094.0,
+          "draw_min": 997.0,
+          "fps": 60.0927832573494,
+          "frames": 30,
+          "max_ms": 18.271,
+          "mean_ms": 16.6409333333333,
+          "p95_ms": 17.279,
+          "p99_ms": 18.271
+        },
+        "service_itemmerchant_confirm": {
+          "draw_max": 1104.0,
+          "draw_min": 1104.0,
+          "fps": 58.4356769286208,
+          "frames": 6,
+          "max_ms": 17.745,
+          "mean_ms": 17.1128333333333,
+          "p95_ms": 17.745,
+          "p99_ms": 17.745
+        },
+        "service_itemmerchant_dialogue": {
+          "draw_max": 1094.0,
+          "draw_min": 1073.0,
+          "fps": 60.3974149906384,
+          "frames": 18,
+          "max_ms": 17.389,
+          "mean_ms": 16.557,
+          "p95_ms": 17.389,
+          "p99_ms": 17.389
+        },
+        "service_itemmerchant_open": {
+          "draw_max": 1208.0,
+          "draw_min": 1094.0,
+          "fps": 60.2280232961994,
+          "frames": 30,
+          "max_ms": 21.272,
+          "mean_ms": 16.6035666666667,
+          "p95_ms": 17.318,
+          "p99_ms": 21.272
+        },
+        "service_restore": {
+          "draw_max": 1053.0,
+          "draw_min": 965.0,
+          "fps": 57.0759363624449,
+          "frames": 108,
+          "max_ms": 76.097,
+          "mean_ms": 17.5205185185185,
+          "p95_ms": 27.455,
+          "p99_ms": 61.388
+        },
+        "travel_forest": {
+          "draw_max": 1053.0,
+          "draw_min": 307.0,
+          "fps": 56.0944896218569,
+          "frames": 127,
+          "max_ms": 87.529,
+          "mean_ms": 17.827062992126,
+          "p95_ms": 16.803,
+          "p99_ms": 83.955
+        },
+        "travel_greystone_runtime": {
+          "draw_max": 1206.0,
+          "draw_min": 205.0,
+          "fps": 58.2481901615222,
+          "frames": 130,
+          "max_ms": 62.121,
+          "mean_ms": 17.1679153846154,
+          "p95_ms": 17.066,
+          "p99_ms": 48.658
+        },
+        "travel_mine": {
+          "draw_max": 307.0,
+          "draw_min": 179.0,
+          "fps": 59.9737714706102,
+          "frames": 135,
+          "max_ms": 34.334,
+          "mean_ms": 16.6739555555555,
+          "p95_ms": 16.812,
+          "p99_ms": 30.359
+        }
+      },
+      "spans": {
+        "village_geometry": {
+          "samples": 13,
+          "median_ms": 9.821,
+          "max_ms": 13.727
+        },
+        "village_bounds": {
+          "samples": 13,
+          "median_ms": 0.98,
+          "max_ms": 1.389
+        },
+        "village_surfaces": {
+          "samples": 13,
+          "median_ms": 4.846,
+          "max_ms": 7.727
+        },
+        "village_ready": {
+          "samples": 13,
+          "median_ms": 23.998,
+          "max_ms": 31.757
+        }
+      },
+      "working_set_peak_bytes": 868347904,
+      "private_peak_bytes": 2280632320,
+      "memory_sample_count": 11
+    }
+  },
+  "tests": [
+    {
+      "log": "artifacts/logs/bakereferencebounds-20261108-053500-016.log",
+      "sha256": "938df82e10aa527ac1cd85ed1a51030ba56a5f3c4db916789292acb56ec4f490",
+      "result_lines": [
+        "REFERENCE_BOUNDS_BAKE count=1272 unique_shapes=100 output=res://assets/collisions/greystone/reference_v5/bounds.tscn"
+      ],
+      "full_log_error_scan": "clean"
+    },
+    {
+      "log": "artifacts/logs/testreferencebounds-20261108-053554-398.log",
+      "sha256": "ff29eacc6112e116edac14b4e9a1f9c988845653866686eb46df62ba54f8a43f",
+      "result_lines": [
+        "REFERENCE_BOUNDS_RESULT checks=12335 failures=0 colliders=1272 unique_shapes=100"
+      ],
+      "full_log_error_scan": "clean"
+    },
+    {
+      "log": "artifacts/logs/testlocationcollisionsnapshot-20261108-053632-267.log",
+      "sha256": "c99214ce98dffaffa2d17e224396dc3e067e108a296a299b46ff196811787e00",
+      "result_lines": [
+        "COLLISION_SNAPSHOT_RESULT checks=20485 failures=0"
+      ],
+      "full_log_error_scan": "clean"
+    },
+    {
+      "log": "artifacts/logs/testprologuemigration-20261108-053631-336.log",
+      "sha256": "0f0ab14a2c18cfd1fef679ee84b7b9c25d5a304e8aca9615f4f348b521b18a97",
+      "result_lines": [
+        "REFERENCE_MIGRATION_RESULT checks=91 failures=0"
+      ],
+      "full_log_error_scan": "clean"
+    },
+    {
+      "log": "artifacts/logs/testprologuemigrationreload-20261108-053838-328.log",
+      "sha256": "3ba226f4fbe9f94b54fc7b3985e49c37d4582369d84406db1ee996baf9f2654c",
+      "result_lines": [
+        "REFERENCE_MIGRATION_RESULT checks=6 failures=0"
+      ],
+      "full_log_error_scan": "clean"
+    },
+    {
+      "log": "artifacts/logs/testreferencevillage-20261108-053633-392.log",
+      "sha256": "c3a46cea9eb6e4716396c726dda8bbefbc5fb56440f674c623eceb7cf4258b13",
+      "result_lines": [
+        "REFERENCE_VILLAGE_RESULT {\"checks\":88,\"failures\":[],\"scope\":\"Native InputMap player traversal, two bridges, five stair routes and sampled obstacles; no physical input certification\"}"
+      ],
+      "full_log_error_scan": "clean"
+    },
+    {
+      "log": "artifacts/logs/visualliarebuiltstory-20261108-053857-797.log",
+      "sha256": "496b4875c53baf0eff8bded138283f4d1907e2674153ea8d478bbfd3dffb239e",
+      "result_lines": [
+        "MINE_STORY_RESULT checks=133 failures=0"
+      ],
+      "full_log_error_scan": "clean"
+    },
+    {
+      "log": "artifacts/logs/visualliarebuiltreload-20261108-054245-511.log",
+      "sha256": "eada25623a80759124d2c6256c36daff69c2cd29adbc263e1b7e8504b6deacf5",
+      "result_lines": [
+        "MINE_STORY_RESULT checks=37 failures=0"
+      ],
+      "full_log_error_scan": "clean"
+    },
+    {
+      "log": "artifacts/logs/testprofileresolution-20261108-054953-418.log",
+      "sha256": "ca7c543046713b61380ec1b05c019feccce1938a6928caf8e4a7fe72cc96ee63",
+      "result_lines": [
+        "PROFILE_RESOLUTION_RESULT {\"checks\":2,\"failures\":0,\"rows\":[{\"image\":\"(1280, 720)\",\"requested\":\"(1280, 720)\",\"texture_api\":\"(1280.0, 720.0)\",\"ui_scale\":\"[X: (1.0, 0.0), Y: (0.0, 1.0), O: (0.0, 0.0)]\",\"window\":\"(1280, 720)\"},{\"image\":\"(1920, 1080)\",\"requested\":\"(1920, 1080)\",\"texture_api\":\"(2880.0, 1620.0)\",\"ui_scale\":\"[X: (1.5, 0.0), Y: (0.0, 1.5), O: (0.0, 0.0)]\",\"window\":\"(1920, 1080)\"}]}"
+      ],
+      "full_log_error_scan": "clean"
+    }
+  ],
+  "rejected_hd_collector": {
+    "path": "builds/prologue-profile-20261108/baked-bounds-hd-000789e/run-20261108-054642-724",
+    "checks": 169,
+    "gameplay_failures": 0,
+    "collector_passed": false,
+    "reason": "Texture get_size reported 2880x1620 under UI scaling; actual saved image is 1920x1080. Collector fixed to verify image pixels; rerun required."
+  },
+  "verified_hd": {
+    "run": "builds\\prologue-profile-20261108\\baked-bounds-hd-verified-retry-000789e\\run-20261108-235502-017",
+    "checks": 169,
+    "failures": 0,
+    "seconds": 51.982726,
+    "frames": {
+      "battle_forest": {
+        "draw_max": 825.0,
+        "draw_min": 292.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 60.0243098454874,
+        "frames": 60,
+        "max_ms": 18.512,
+        "mean_ms": 16.6599166666667,
+        "p95_ms": 16.792,
+        "p99_ms": 18.512
+      },
+      "battle_mine": {
+        "draw_max": 296.0,
+        "draw_min": 131.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 60.0030410632175,
+        "frames": 264,
+        "max_ms": 22.145,
+        "mean_ms": 16.665821969697,
+        "p95_ms": 16.703,
+        "p99_ms": 16.956
+      },
+      "load_forest": {
+        "draw_max": 305.0,
+        "draw_min": 294.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 58.5374102832885,
+        "frames": 108,
+        "max_ms": 49.575,
+        "mean_ms": 17.0830925925926,
+        "p95_ms": 17.243,
+        "p99_ms": 47.815
+      },
+      "load_greystone_runtime": {
+        "draw_max": 1051.0,
+        "draw_min": 1051.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 57.8838633313299,
+        "frames": 107,
+        "max_ms": 57.49,
+        "mean_ms": 17.2759719626168,
+        "p95_ms": 19.299,
+        "p99_ms": 56.124
+      },
+      "load_mine": {
+        "draw_max": 204.0,
+        "draw_min": 175.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 60.0021730516727,
+        "frames": 111,
+        "max_ms": 21.663,
+        "mean_ms": 16.6660630630631,
+        "p95_ms": 17.945,
+        "p99_ms": 21.249
+      },
+      "postbattle_load": {
+        "draw_max": 305.0,
+        "draw_min": 175.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 59.2300098716683,
+        "frames": 219,
+        "max_ms": 50.995,
+        "mean_ms": 16.8833333333333,
+        "p95_ms": 17.383,
+        "p99_ms": 48.086
+      },
+      "prologue": {
+        "draw_max": 1348.0,
+        "draw_min": 0.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 40.1217668877197,
+        "frames": 1050,
+        "max_ms": 8021.627,
+        "mean_ms": 24.9241266666667,
+        "p95_ms": 17.487,
+        "p99_ms": 50.865
+      },
+      "service_guildmaster_dialogue": {
+        "draw_max": 1186.0,
+        "draw_min": 1186.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 59.4780798493222,
+        "frames": 12,
+        "max_ms": 17.436,
+        "mean_ms": 16.8129166666667,
+        "p95_ms": 17.436,
+        "p99_ms": 17.436
+      },
+      "service_guildmaster_open": {
+        "draw_max": 1206.0,
+        "draw_min": 1021.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 60.0063606742315,
+        "frames": 30,
+        "max_ms": 18.436,
+        "mean_ms": 16.6649,
+        "p95_ms": 17.907,
+        "p99_ms": 18.436
+      },
+      "service_innkeeper_confirm": {
+        "draw_max": 1001.0,
+        "draw_min": 1001.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 56.6540139368874,
+        "frames": 6,
+        "max_ms": 19.137,
+        "mean_ms": 17.651,
+        "p95_ms": 19.137,
+        "p99_ms": 19.137
+      },
+      "service_innkeeper_dialogue": {
+        "draw_max": 995.0,
+        "draw_min": 974.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 61.0674591865815,
+        "frames": 18,
+        "max_ms": 17.358,
+        "mean_ms": 16.3753333333333,
+        "p95_ms": 17.358,
+        "p99_ms": 17.358
+      },
+      "service_innkeeper_open": {
+        "draw_max": 1092.0,
+        "draw_min": 995.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 60.0456346823586,
+        "frames": 30,
+        "max_ms": 18.513,
+        "mean_ms": 16.654,
+        "p95_ms": 17.556,
+        "p99_ms": 18.513
+      },
+      "service_itemmerchant_confirm": {
+        "draw_max": 1102.0,
+        "draw_min": 1102.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 58.8096918372148,
+        "frames": 6,
+        "max_ms": 17.459,
+        "mean_ms": 17.004,
+        "p95_ms": 17.459,
+        "p99_ms": 17.459
+      },
+      "service_itemmerchant_dialogue": {
+        "draw_max": 1092.0,
+        "draw_min": 1071.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 60.3459836395333,
+        "frames": 18,
+        "max_ms": 17.169,
+        "mean_ms": 16.5711111111111,
+        "p95_ms": 17.169,
+        "p99_ms": 17.169
+      },
+      "service_itemmerchant_open": {
+        "draw_max": 1206.0,
+        "draw_min": 1092.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 60.2033669736369,
+        "frames": 30,
+        "max_ms": 20.811,
+        "mean_ms": 16.6103666666667,
+        "p95_ms": 17.3,
+        "p99_ms": 20.811
+      },
+      "service_restore": {
+        "draw_max": 1051.0,
+        "draw_min": 963.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 57.9337384171667,
+        "frames": 111,
+        "max_ms": 60.804,
+        "mean_ms": 17.2610990990991,
+        "p95_ms": 25.542,
+        "p99_ms": 54.478
+      },
+      "travel_forest": {
+        "draw_max": 1051.0,
+        "draw_min": 305.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 57.699562814851,
+        "frames": 130,
+        "max_ms": 63.31,
+        "mean_ms": 17.3311538461538,
+        "p95_ms": 16.709,
+        "p99_ms": 62.322
+      },
+      "travel_greystone_runtime": {
+        "draw_max": 1204.0,
+        "draw_min": 203.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 58.9218375042853,
+        "frames": 132,
+        "max_ms": 56.502,
+        "mean_ms": 16.9716363636364,
+        "p95_ms": 16.755,
+        "p99_ms": 43.326
+      },
+      "travel_mine": {
+        "draw_max": 305.0,
+        "draw_min": 177.0,
+        "engine_peak_bytes": 0.0,
+        "fps": 60.0006666740742,
+        "frames": 135,
+        "max_ms": 22.933,
+        "mean_ms": 16.6664814814815,
+        "p95_ms": 16.842,
+        "p99_ms": 21.382
+      }
+    },
+    "phase_window_sizes": {
+      "battle_forest": [
+        "(1920, 1080)"
+      ],
+      "battle_mine": [
+        "(1920, 1080)"
+      ],
+      "load_forest": [
+        "(1920, 1080)"
+      ],
+      "load_greystone_runtime": [
+        "(1920, 1080)"
+      ],
+      "load_mine": [
+        "(1920, 1080)"
+      ],
+      "postbattle_load": [
+        "(1920, 1080)"
+      ],
+      "prologue": [
+        "(1920, 1080)",
+        "(960, 540)",
+        "(1280, 720)"
+      ],
+      "service_guildmaster_dialogue": [
+        "(1920, 1080)"
+      ],
+      "service_guildmaster_open": [
+        "(1920, 1080)"
+      ],
+      "service_innkeeper_confirm": [
+        "(1920, 1080)"
+      ],
+      "service_innkeeper_dialogue": [
+        "(1920, 1080)"
+      ],
+      "service_innkeeper_open": [
+        "(1920, 1080)"
+      ],
+      "service_itemmerchant_confirm": [
+        "(1920, 1080)"
+      ],
+      "service_itemmerchant_dialogue": [
+        "(1920, 1080)"
+      ],
+      "service_itemmerchant_open": [
+        "(1920, 1080)"
+      ],
+      "service_restore": [
+        "(1920, 1080)"
+      ],
+      "travel_forest": [
+        "(1920, 1080)"
+      ],
+      "travel_greystone_runtime": [
+        "(1920, 1080)"
+      ],
+      "travel_mine": [
+        "(1920, 1080)"
+      ]
+    },
+    "final_render_size": [
+      1920,
+      1080
+    ],
+    "report_sha256": "7a8cec6a5c17e28062667c0e3fbb50232437c6361f8d3f91417339f9f1d311cf",
+    "working_set_peak_bytes": 881631232,
+    "private_peak_bytes": 2360131584,
+    "engine_memory": null,
+    "engine_memory_note": "Release monitor returned zero; unavailable, not zero consumption",
+    "startup_note": "prologue contains first-load 8021.627ms interval and UI resolution tests; not steady 1080p gameplay"
+  },
+  "final_check": {
+    "log": "artifacts/logs/check-20261108-235632-949.log",
+    "error_count": 0,
+    "sha256": "5eddfa09bf79dfeaa0d6d444ca3a3e907decf94f05d801cb56e317a65cb9715b"
+  }
+}

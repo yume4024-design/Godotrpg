@@ -1,5 +1,8 @@
 # Project Crystal 開發規範
 
+> **2026-11-08 最新平台決策**：Android／iOS 開發永久中止；只開發 Windows，以目前 Ryzen 5 5600／RTX 3080 12GB／32GB 電腦、1080p／60 FPS 為優化目標。歷史手機「暫停／待驗收」不再是待辦或發布門檻；詳見 [Windows 基準](docs/WINDOWS_PC_TARGET.md)。實際效能仍須量測，人工終驗暫停狀態不變。
+
+
 > **2026-10-14 正文合併更新（優先於本檔較早條款）**：新企劃已由使用者貼文取得，不再待正文。灰石村採 120×120m、Q 版低面數切面、北側公會/西北農田/東北礦坑/東河/南入口/西出口；平台 Windows + Android，iOS 預留。執行以 [docs/GREYSTONE_VILLAGE_SPEC.md](docs/GREYSTONE_VILLAGE_SPEC.md) 與 [docs/GREYSTONE_BUILD_TASKS.md](docs/GREYSTONE_BUILD_TASKS.md) 為準。G01 獨立佔位預覽，不替換正式0.6.1存檔；G06再遷移位置及串接劇情/觸控。本檔舊「待正文」、PC限定、圖片未列公會、固定舊碰撞等描述保留為歷史，不是目前限制。
 
 

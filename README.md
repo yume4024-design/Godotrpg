@@ -1,5 +1,8 @@
 # 《失落星核》｜Project Crystal
 
+> **2026-11-08 最新平台決策**：Android／iOS 開發永久中止；只開發 Windows，以目前 Ryzen 5 5600／RTX 3080 12GB／32GB 電腦、1080p／60 FPS 為優化目標。歷史手機「暫停／待驗收」不再是待辦或發布門檻；詳見 [Windows 基準](docs/WINDOWS_PC_TARGET.md)。實際效能仍須量測，人工終驗暫停狀態不變。
+
+
 2026-10-30：固定 RC5 已完成30分04秒圖形自動長測，1265／0及獨立重啟25／0；[效能與限制](docs/PROLOGUE_RC5_SOAK_REPORT.md)。人工最終驗收仍暫停。
 
 2026-10-30：新版 Windows 序章 RC5 候選位於 `builds/prologue-candidate/rc5-20261030/candidate/start_prologue_candidate.cmd`。[包內測試與限制](docs/PROLOGUE_RC5_REPORT.md)；30分鐘自動長測正在進行，人工驗收仍暫停。

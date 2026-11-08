@@ -1,0 +1,23 @@
+{
+  "checks": 20485,
+  "engine": "4.7.2-stable (official)",
+  "failures": [],
+  "maps": [
+    {
+      "body_count": 1518,
+      "checks": 7528,
+      "map": "res://scenes/world/reference_candidate/greystone_runtime.tscn"
+    },
+    {
+      "body_count": 37,
+      "checks": 6098,
+      "map": "res://scenes/world/expanded/forest.tscn"
+    },
+    {
+      "body_count": 4,
+      "checks": 6852,
+      "map": "res://scenes/world/mine_reference/mine.tscn"
+    }
+  ],
+  "scope": "Independent real full-map versus physics-snapshot queries, including Lia before/after recruitment; not visual or input acceptance."
+}

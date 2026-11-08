@@ -1,4 +1,4 @@
-param([Parameter(Mandatory=$true)][string]$Build)
+param([Parameter(Mandatory=$true)][string]$Build, [ValidateRange(960,7680)][int]$Width=1280, [ValidateRange(540,4320)][int]$Height=720)
 $ErrorActionPreference='Stop'
 $Build=(Resolve-Path -LiteralPath $Build).Path
 $run=Join-Path $Build ('run-'+(Get-Date -Format 'yyyyMMdd-HHmmss-fff'))
@@ -6,15 +6,17 @@ $profile=Join-Path $run 'profile'
 New-Item -ItemType Directory -Path $run,$profile | Out-Null
 $info=[Diagnostics.ProcessStartInfo]::new()
 $info.FileName=Join-Path $Build 'ProjectCrystal.exe';$info.WorkingDirectory=$Build
-$info.Arguments='--log-file "'+(Join-Path $run 'native.log')+'"'
+$info.Arguments='--resolution '+$Width+'x'+$Height+' --log-file "'+(Join-Path $run 'native.log')+'"'
 $info.UseShellExecute=$false;$info.CreateNoWindow=$true
 $info.RedirectStandardOutput=$true;$info.RedirectStandardError=$true
 $info.EnvironmentVariables['APPDATA']=$profile;$info.EnvironmentVariables['LOCALAPPDATA']=$profile
 $info.EnvironmentVariables['TEMP']=$run;$info.EnvironmentVariables['TMP']=$run
 $info.EnvironmentVariables['CRYSTAL_QA_ISOLATE_JOYPAD_MOTION']='1'
+$info.EnvironmentVariables['CRYSTAL_PROFILE_WIDTH']=[string]$Width
+$info.EnvironmentVariables['CRYSTAL_PROFILE_HEIGHT']=[string]$Height
 $p=[Diagnostics.Process]::new();$p.StartInfo=$info
 $watch=[Diagnostics.Stopwatch]::StartNew();$started=$false
-$record=[ordered]@{build=$Build;pid=$null;passed=$false;kind='Short native Release performance diagnostic, not soak or human acceptance'}
+$record=[ordered]@{build=$Build;pid=$null;passed=$false;kind='Short native Release performance diagnostic, not soak or human acceptance';requested_width=$Width;requested_height=$Height}
 $csv=Join-Path $run 'process.csv'
 'seconds,working_set_bytes,private_bytes' | Set-Content -LiteralPath $csv
 try {
@@ -36,6 +38,9 @@ try {
  if($reports.Count -ne 1){throw 'Missing unique probe report'}
  $r=Get-Content -LiteralPath $reports[0].FullName -Raw | ConvertFrom-Json
  if(-not $r.release -or $r.display -ne 'Windows' -or $r.failures -ne 0 -or $r.timed_methods.Count -eq 0){throw 'Release/profile contract failed'}
+ if($null -ne $r.final_render_size){
+  if($r.final_render_size[0] -ne $Width -or $r.final_render_size[1] -ne $Height){throw 'Actual render size differs from requested resolution'}
+ } elseif($Width -ne 1280 -or $Height -ne 720){throw 'This old probe does not verify requested resolution; rebuild it before HD testing'}
  Copy-Item -LiteralPath $reports[0].FullName -Destination (Join-Path $run 'report.json')
  Copy-Item -LiteralPath (Join-Path $reports[0].Directory.FullName 'final.webp') -Destination (Join-Path $run 'final.webp')
  $record.passed=$true

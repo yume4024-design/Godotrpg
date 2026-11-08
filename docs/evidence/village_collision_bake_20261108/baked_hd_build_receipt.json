@@ -1,0 +1,70 @@
+{
+  "source_commit": "000789e0e66c5d14287376294c02e12b4272e4b7",
+  "overlays": {
+    "tests/prologue_performance_probe.gd": "b2ff6d748de761dfb346cbf3aa88c01ca0a1967c76b6120417338235b00aa2e7",
+    "tests/prologue_profile_trace.gd": "da605cc8cd041ea45de095a7c536a5a65d1c6ecc970d476a381630db323934f0",
+    "scenes/world/greystone_reference_master.tscn": "8b41a0f27665a172411ebc1811f9cc5fa3ff28ce79bb591b8fe76f0c7ea4a1db",
+    "assets/collisions/greystone/reference_v5/bounds.tscn": "326358e6ffd40eb101bdac7c9316805a8129360fa70eb9cb25e8c556a66143a8"
+  },
+  "instrumented_methods": [
+    {
+      "path": "scripts/core/exploration_game.gd",
+      "method": "validate_loaded_position",
+      "original_method_sha256": "db032f791c38a311b4ea5a5082e55b891c93613134c560a0622416fcf3b2225e",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/core/battle_flow.gd",
+      "method": "_spawn",
+      "original_method_sha256": "84cde5c3433d4939b5c5a9186b1e97d5f8f017a1ded9f3559409ac2d8e0e39f7",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/battle/battle_arena.gd",
+      "method": "setup",
+      "original_method_sha256": "00933f8ef3ed625536b4946de097b4c5ed1802590a4179bacf30c790d44b1126",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/world/scene_manager.gd",
+      "method": "_swap",
+      "original_method_sha256": "f700d2b01f3ebbc9a16bee8f8bf34c4641bbbef4df79cc05f3330f4d9670d212",
+      "timing_only": true
+    },
+    {
+      "path": "scripts\\world\\blender_village_geometry.gd",
+      "method": "_ready breakdown",
+      "original_method_sha256": "062398079f2ff3d3295756442db63ecdbcd1188534ee570d8d998ae0f9db616a",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/world/blender_village_geometry.gd",
+      "method": "_ready",
+      "original_method_sha256": "e7e7a267c54aaf92700ec423984823f04412c602a514697e35871ea11437a00c",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/world/blender_village_geometry.gd",
+      "method": "_solid_ground",
+      "original_method_sha256": "f9e030403626308db82001abaf8229983943a25339d50e8fb2cd19f754c45cb8",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/world/reference_village_surfaces.gd",
+      "method": "_ready",
+      "original_method_sha256": "3da175214c242cf76515a37dbe0076bd9af8ef8893c36e47d30445a6eb4611d4",
+      "timing_only": true
+    },
+    {
+      "path": "scripts/world/reference_village_surfaces.gd",
+      "method": "_apply_clearing_verge",
+      "original_method_sha256": "bdf7c55aa512a39018202edabb78cd137a4a5909fb10e8427e4c6bc4acff0932",
+      "timing_only": true
+    }
+  ],
+  "runtime_kind": "Godot Windows x64 Release export with timing-only source overlays",
+  "files": {
+    "ProjectCrystal.exe": "d34d36f3be1a6c49c56525ae86469b92e4f417ddf0b43cf00dd80c385c4b0562",
+    "ProjectCrystal.pck": "ef79c786f45a1a7cd624323e06ed806798b56c19cfde070d9cb589b499846913"
+  }
+}
